@@ -11,35 +11,30 @@ Requires [meridian-base](https://github.com/haowjy/meridian-base) to be installe
 
 ## Contents
 
-### Agents (14)
+### Agents (8)
 
 | Agent | Model | Purpose |
 |---|---|---|
 | `dev-orchestrator` | opus | Full SDLC orchestrator (loads base + dev skills) |
 | `coder` | codex | Production code writer — implements scoped tasks |
-| `reviewer` | gpt | General code reviewer — broad quality dimensions |
-| `reviewer-planning` | opus | Architecture alignment reviewer |
-| `reviewer-security` | gpt | Security analysis — attack surface, vulnerabilities |
-| `reviewer-solid` | gpt | SOLID principles — structural quality, design consistency |
-| `reviewer-concurrency` | gpt | Concurrency correctness — race conditions, deadlocks |
-| `browser-tester` | sonnet | Browser-based QA — visual verification, user flows |
-| `smoke-tester` | sonnet | External QA — end-to-end testing from user perspective |
-| `unit-tester` | gpt | Focused unit test writer |
-| `verifier` | sonnet | Runs tests, type checks, linters — fixes mechanical failures |
+| `reviewer` | gpt | General code reviewer — orchestrator sets lens via prompt |
+| `tester` | sonnet | Versatile QA — verifies builds, writes tests, runs smoke/browser tests |
 | `investigator` | gpt | Bug investigation — brief triage, quick-fix or file GH issue |
-| `researcher` | gpt | Read-only codebase explorer — answers questions with evidence |
-| `documenter` | opus | Documentation maintainer — keeps docs in sync with code |
+| `researcher` | codex | External researcher — best practices, alternatives, web search |
+| `documenter` | opus | Technical documentation orchestrator — synthesizes codebase mirror in $MERIDIAN_FS_DIR via explorer subagents |
+| `explorer` | codex-spark | Fast codebase explorer — reads files, searches code, mines past conversations |
 
-### Skills (6)
+### Skills (7)
 
 | Skill | Purpose |
 |---|---|
 | `dev-workflow` | Development lifecycle orchestration — phase loop, agent staffing, complexity routing |
-| `design` | Interactive architecture design — collaborative problem-solving, design artifacts |
+| `architecture-design` | Architecture design methodology — problem framing, tradeoff analysis, Mermaid diagrams |
+| `mermaid` | Mermaid diagram syntax rules and validation script |
 | `plan-implementation` | Breaking designs into executable phases — dependency mapping, agent headcount |
 | `reviewing` | Adversarial code review methodology — review lenses, severity framework |
 | `issue-tracking` | GitHub Issues integration — severity labels, work-item linking, `gh` CLI patterns |
-| `documenting` | Documentation synchronization — two-pass discovery + writing pattern |
+| `tech-docs` | Technical documentation — compressed codebase mirror in $MERIDIAN_FS_DIR with architecture, features, and decision rationale |
 
 ## Cross-Source Dependencies
 
@@ -74,7 +69,7 @@ meridian install @haowjy/meridian-dev-workflow
 designing → reviewing → planning → implementing → done
 ```
 
-Each phase has associated agents and artifacts. The `dev-workflow` skill orchestrates the full loop; phase-specific skills (`design`, `plan-implementation`, `reviewing`) teach the craft for each phase.
+Each phase has associated agents and artifacts. The `dev-workflow` skill orchestrates the full loop; phase-specific skills (`architecture-design`, `plan-implementation`, `reviewing`) teach the craft for each phase.
 
 ## See Also
 

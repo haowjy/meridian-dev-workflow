@@ -4,9 +4,9 @@ Reference this when writing entries to `decision-log.md`, `implementation-log.md
 
 Artifact placement policy comes from `__meridian-work-coordination`. This file only defines the content and format of work-scoped artifacts that already live under `$MERIDIAN_WORK_DIR`.
 
-## overview.md Template
+## overview.md
 
-Create this during the design phase. It's the primary design document — the thing another engineer reads to understand what you're building and why.
+This is often created during the design phase. It's the primary design document — the thing another engineer reads to understand what you're building and why.
 
 ```markdown
 # {Work Item Title}
@@ -48,13 +48,13 @@ get decided (move them to decision-log.md).
 
 Adapt this template freely. Some work items need a detailed architecture section; others need two sentences. The template shows what's available, not what's required.
 
-## decision-log.md Entry Format
+## decision-log.md
 
 Decisions are append-only and immutable. Once recorded, they don't get edited or deleted — if a decision is reversed, record a new decision that supersedes it.
 
 This matters because subagents and future sessions need to understand not just what was decided, but why, and what alternatives were considered. Without this, agents re-derive decisions or silently contradict earlier choices.
 
-### Entry format
+### A common entry pattern
 
 ```markdown
 ## D-{N}: {Decision Title}
@@ -118,13 +118,13 @@ reworking the middleware.
 
 Entries are numbered sequentially: D-1, D-2, D-3, etc. Never reuse a number. If D-3 gets superseded, it stays as D-3 with `Status: superseded by D-7` — and D-7 explains the new decision.
 
-## implementation-log.md Entry Format
+## implementation-log.md
 
 The implementation log captures findings during implementation — things that aren't decisions but need to be recorded so they don't get lost. Bugs found, unexpected behaviors, backlog items discovered, deferred review findings, and coordination notes.
 
 Unlike the decision log, entries here are informational. They describe what was found, not what was decided. If a finding leads to a decision, record the decision separately in `decision-log.md`.
 
-### Entry format
+### A common entry pattern
 
 ```markdown
 ## IL-{N}: {Title}

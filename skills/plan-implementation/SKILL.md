@@ -68,7 +68,7 @@ A blueprint is the phase spec file itself. It lives in `$MERIDIAN_WORK_DIR/plan/
 
 **Constraints and boundaries.** What the coder should not do is as important as what they should do. If a file is out of scope, say so. If there's a known issue they should avoid fixing in this phase, say so. Boundary clarity prevents scope creep.
 
-**Verification criteria.** Concrete checks the coder (and later the verifier) can run. "Tests pass" is bare minimum. "Token validation rejects expired tokens with a 401, test case exists in `tests/auth/`" is actionable.
+**Verification criteria.** Concrete checks the coder (and later the tester in verify mode) can run. "Tests pass" is bare minimum. "Token validation rejects expired tokens with a 401, test case exists in `tests/auth/`" is actionable.
 
 ### What stays out of a blueprint
 
@@ -92,18 +92,18 @@ Pick review lenses based on what the phase actually touches:
 
 | Phase touches | Reviewer lens |
 |---------------|---------------|
-| Shared state, locks, async | `reviewer-concurrency` |
-| Auth, input handling, user data | `reviewer-security` |
-| New abstractions, interfaces, module boundaries | `reviewer-solid` |
-| Foundational phase that later phases build on | `reviewer-planning` |
+| Shared state, locks, async | `reviewer` (concurrency lens) |
+| Auth, input handling, user data | `reviewer` (security lens) |
+| New abstractions, interfaces, module boundaries | `reviewer` (solid lens) |
+| Foundational phase that later phases build on | `reviewer` (planning lens) |
 
 Two reviewers is the default. Three for high-risk phases. One for simple/mechanical phases. Zero for trivial changes (config tweaks, renames).
 
 ### Other agents
 
-- **Verifier:** Include for any phase that modifies logic. The verifier runs tests and type checks, fixing mechanical issues before reviewers see the code. This avoids wasting reviewer attention on things a type checker catches.
-- **Unit tester:** Include when the phase creates behavior that's hard to verify manually — edge cases, error paths, boundary conditions.
-- **Smoke tester:** Include when the phase produces user-visible behavior that benefits from end-to-end validation.
+- **Tester (verify mode):** Include for any phase that modifies logic. The tester (in verify mode) runs tests and type checks, fixing mechanical issues before reviewers see the code. This avoids wasting reviewer attention on things a type checker catches.
+- **Tester (unit-test mode):** Include when the phase creates behavior that's hard to verify manually — edge cases, error paths, boundary conditions.
+- **Tester (smoke/browser mode):** Include when the phase produces user-visible behavior that benefits from end-to-end validation.
 - **Investigator:** Not staffed per phase. Spawned reactively when the coder or reviewer flags something outside the current scope.
 
 ## Writing Phase Files
@@ -112,14 +112,7 @@ Write phase specs in `$MERIDIAN_WORK_DIR/plan/`. Each phase gets a file named `p
 
 The phase spec IS the blueprint. Write it with the coder as your audience. It should be complete enough that the coder can work from this file plus the referenced source files, without reading the full design doc.
 
-Each phase file covers:
-
-1. **Scope** — what to build and why
-2. **Files to modify** — every file the phase is expected to touch
-3. **Dependencies** — which phases must complete first and what interfaces they provide
-4. **Verification criteria** — concrete, runnable checks
-5. **Agent headcount** — implementer, reviewers, and other agents for this phase
-6. **Context files** — what to pass as `-f` references when spawning the coder
+A strong phase file usually captures scope (including why it matters), expected file boundaries, dependencies and the interfaces they provide, concrete verification criteria, planned agent staffing, and the context files to pass with `-f` when spawning the coder.
 
 Read `resources/planning-reference.md` for detailed conventions on phase file naming, dependency graph formats, right-sizing heuristics, and context file selection.
 
@@ -139,15 +132,7 @@ The phase spec is always included. Add existing source files that show patterns 
 
 ## When Planning Is Done
 
-You have a `plan/` directory with phase files. Each phase has:
-
-- Clear scope with the "why" explained
-- Specific file boundaries
-- Dependencies on other phases with interface contracts included
-- Concrete verification criteria
-- Agent staffing decided
-
-The execution order is clear from the dependency map. You know which phases can run in parallel and which must be sequential. The orchestrator can now move to `implementing` and start executing phases.
+Planning is in good shape when the `plan/` directory contains phase files with clear scope and intent, specific file boundaries, explicit dependencies with interface contracts, concrete verification criteria, and staffing decisions. At that point the dependency map should make execution order obvious, including which phases can run in parallel versus sequentially, and the orchestrator can move to `implementing`.
 
 ## Adapting the Plan
 

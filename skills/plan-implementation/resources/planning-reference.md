@@ -16,9 +16,9 @@ Format: `phase-{N}-{slug}.md`
 Good: `phase-1-data-model.md`, `phase-3-auth-middleware.md`
 Bad: `phase-1.md`, `phase-3-update-several-files.md`
 
-### Structure
+### Typical Structure
 
-Each phase file covers these sections. Keep them proportional to the phase's complexity — a simple phase might need one sentence per section.
+A typical phase file includes sections like the ones below. Treat this as a reference pattern and size each section to the phase's complexity — a simple phase might only need a sentence or two per section.
 
 ```markdown
 # Phase {N}: {Title}
@@ -47,8 +47,8 @@ make the coder go read other phase files.
 
 ## Agent Headcount
 - **Implementer:** `coder`, model: `codex`
-- **Reviewers:** `reviewer-solid`, `reviewer-security`
-- **Verifier:** yes
+- **Reviewers:** `reviewer` (solid lens), `reviewer` (security lens)
+- **Tester (verify mode):** yes
 
 ## Context Files
 Files to pass as `-f` when spawning the coder:
@@ -151,7 +151,7 @@ Fewer, more relevant files beat a large pile of "might be useful" files.
 
 - **Don't create cleanup-only phases.** Bake cleanup into each phase. A "Phase 5: cleanup" means Phases 1-4 left messes, which means their scope was wrong.
 
-- **Write verification criteria the verifier can actually check.** "Should work correctly" is not verifiable. "Tests pass, type checker clean, endpoint returns 401 for expired tokens" is verifiable. If you can't write a concrete check, the scope is probably too vague.
+- **Write verification criteria the tester (verify mode) can actually check.** "Should work correctly" is not verifiable. "Tests pass, type checker clean, endpoint returns 401 for expired tokens" is verifiable. If you can't write a concrete check, the scope is probably too vague.
 
 - **Plan for the review loop.** Each phase might take 1-3 fix-and-re-review cycles. Complex phases with concurrency or security concerns tend toward 3 cycles. Simple data model phases tend toward 1. Factor this into your time estimates.
 
