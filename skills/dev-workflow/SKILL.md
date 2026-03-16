@@ -95,7 +95,7 @@ Spawn an `investigator` to handle findings in parallel. Investigator quick-fixes
 You do not need `issue-tracking` directly here; the investigator carries it. Your role is triage and orchestration.
 
 ## Cross-Workspace Coordination
-When multiple work items are active, run `meridian work list` before design and read overlapping design docs. During implementation, log overlap in `implementation-log.md` with `coordination` category. Use separate git worktrees to isolate parallel efforts (see `resources/workflow-examples.md`). Each worktree is file-isolated, and coordination remains visible via `meridian work list` and `meridian work show`.
+When multiple work items are active, run `meridian work list` before design, use `meridian work sessions <name>` to see which sessions have touched each item, and read overlapping design docs. During implementation, log overlap in `implementation-log.md` with `coordination` category. Use separate git worktrees to isolate parallel efforts (see `resources/workflow-examples.md`). Each worktree is file-isolated, and coordination remains visible via `meridian work list` and `meridian work show`.
 
 ## Tracking Artifacts
 All tracking artifacts live in `$MERIDIAN_WORK_DIR/`:

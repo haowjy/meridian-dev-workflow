@@ -10,7 +10,6 @@ from dataclasses import dataclass
 from functools import lru_cache
 from urllib.parse import urldefrag, urlsplit
 
-
 MD_LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 WIKI_LINK_RE = re.compile(r"@?\[\[([^\]]+)\]\]")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
@@ -60,11 +59,7 @@ def list_markdown_files(root_dir: str, respect_gitignore: bool = True) -> list[s
                 text=True,
                 check=True,
             )
-            files = [
-                os.path.join(root_dir, line)
-                for line in result.stdout.splitlines()
-                if line
-            ]
+            files = [os.path.join(root_dir, line) for line in result.stdout.splitlines() if line]
             # `git ls-files --cached` can include paths that are deleted in the
             # working tree but still present in the index; only lint files that
             # currently exist on disk.
@@ -104,7 +99,7 @@ def clean_md_target(target: str) -> str:
 
 def extract_links(file_path: str, include_wikilinks: bool) -> list[LinkRef]:
     refs: list[LinkRef] = []
-    with open(file_path, "r", encoding="utf-8") as f:
+    with open(file_path, encoding="utf-8") as f:
         in_fence = False
         for line_no, line in enumerate(f, start=1):
             if FENCE_RE.match(line):
@@ -166,7 +161,7 @@ def resolve_candidate_paths(ref: LinkRef, repo_root: str) -> tuple[list[str], st
 
     if ref.kind == "wiki":
         # Wiki links can omit extension and can point to folder README.
-        root, ext = os.path.splitext(base)
+        _root, ext = os.path.splitext(base)
         if ext == "":
             candidates.append(base + ".md")
             candidates.append(os.path.join(base, "README.md"))
@@ -190,7 +185,7 @@ def github_slug(text: str) -> str:
 def heading_anchors(file_path: str) -> set[str]:
     anchors: set[str] = set()
     counts: dict[str, int] = {}
-    with open(file_path, "r", encoding="utf-8") as f:
+    with open(file_path, encoding="utf-8") as f:
         for line in f:
             m = HEADING_RE.match(line)
             if not m:
@@ -205,9 +200,7 @@ def heading_anchors(file_path: str) -> set[str]:
     return anchors
 
 
-def check_ref(
-    ref: LinkRef, root_dir: str, repo_root: str, check_anchors: bool
-) -> BrokenRef | None:
+def check_ref(ref: LinkRef, root_dir: str, repo_root: str, check_anchors: bool) -> BrokenRef | None:
     target = ref.raw_target
     if is_external(target):
         return None
@@ -291,13 +284,17 @@ def main() -> int:
     for md_file in md_files:
         refs = extract_links(md_file, include_wikilinks=include_wikilinks)
         for ref in refs:
-            issue = check_ref(ref, root_dir=root_dir, repo_root=repo_root, check_anchors=check_anchors)
+            issue = check_ref(
+                ref, root_dir=root_dir, repo_root=repo_root, check_anchors=check_anchors
+            )
             if issue is not None:
                 broken.append(issue)
 
     if broken:
         for issue in broken:
-            print(f"broken: {issue.source_rel}:{issue.line_no} -> {issue.raw_target} ({issue.reason})")
+            print(
+                f"broken: {issue.source_rel}:{issue.line_no} -> {issue.raw_target} ({issue.reason})"
+            )
         return 1
 
     mode = "markdown + wikilinks" if include_wikilinks else "markdown only"

@@ -33,7 +33,7 @@ The code shows the how. The mirror captures what the code can't easily tell you:
 - **Data flows** — how data moves through the system, state transitions, integration points
 - **Decision rationale** — why this approach over alternatives, what constraints drove the design, what tradeoffs were accepted
 
-Decision rationale tends to live in conversations and commit messages, not in code. When it's missing, go find it — don't guess and don't skip it. Rationale is the most valuable part of technical docs because it's the hardest to recover later.
+Decision rationale tends to live in session transcripts and commit messages, not in code. When it's missing, go find it — don't guess and don't skip it. Rationale is the most valuable part of technical docs because it's the hardest to recover later.
 
 ## Writing style
 
