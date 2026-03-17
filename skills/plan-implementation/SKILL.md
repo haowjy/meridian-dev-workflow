@@ -1,15 +1,15 @@
 ---
 name: plan-implementation
-description: Break a design into executable implementation phases with focused blueprints, dependency mapping, and agent staffing. Use this after a design doc exists and before spawning coders — whenever you need to decompose a design into phases, write phase specs, or figure out execution order and parallelism. Also activate when entering the planning phase of dev-workflow.
+description: Break a design into executable implementation phases with focused blueprints, dependency mapping, and agent staffing. Use this after a design doc exists and before spawning coders — whenever you need to decompose a design into phases, write phase specs, or figure out execution order and parallelism. Also activate when entering the planning phase of dev-orchestration.
 ---
 
 # Plan Implementation
 
 You have a design doc. Now you need to turn it into work that agents can execute. This skill teaches you how to decompose a design into phases, write focused blueprints for each, map dependencies, and staff the agents.
 
-The central idea: **blueprint distillation**. Don't hand the coder your full design doc and hope they extract what's relevant. Instead, compress the design into a focused, phase-specific blueprint that contains only what the coder needs for that phase. Research consistently shows that LLMs perform better with focused, relevant context than with a full information dump. A coder working on "Phase 3: auth middleware" doesn't need the database migration plan from Phase 1. It needs the interfaces Phase 1 produced and the specific requirements for Phase 3.
+The central idea is focused blueprints. Don't hand a coder the full design doc and expect it to extract what matters. Coders do better with phase-specific context that includes only the interfaces, constraints, and verification criteria needed for that phase.
 
-This skill assumes work setup and artifact placement already come from `__meridian-work-coordination`. Keep phase files and other work-scoped planning artifacts under `$MERIDIAN_WORK_DIR`.
+This skill assumes work setup and artifact placement already come from `/__meridian-work-coordination`. Keep phase files and other work-scoped planning artifacts under `$MERIDIAN_WORK_DIR`.
 
 ## Phase Decomposition
 
@@ -19,16 +19,33 @@ A good phase is:
 
 - **Independently testable.** When it's done, you can verify it works without waiting for later phases. This is the most important property — if you can't test it, you can't gate it.
 - **Bounded to specific files.** The coder knows exactly what to touch and what not to touch. Vague scope leads to scope creep.
-- **Right-sized.** The sweet spot is 2-8 files. More than ~10 files means the phase is probably doing too much — split it. One file usually means it's too small — merge it with the next phase unless that single file is genuinely complex.
-- **Completable in one spawn.** If you're not confident a single coder can do it in one session, it's too big.
+- **Right-sized.** If you're not confident a single coder can complete it in one session and produce a testable result, it's too big — split it.
+- **Self-contained.** The coder shouldn't need to understand unrelated subsystems to do the work.
 
 Break along natural seams: data model first, then the layer that uses it, then the layer that uses that. If the design has clear architectural boundaries, those are your phase boundaries.
 
+### Signs a phase is too big
+
+- It requires understanding multiple unrelated subsystems.
+- It has internal sequencing ("do A, then B, then C") that should really be separate checkpoints.
+- You can't write concrete verification criteria because the scope is too diffuse.
+- The scope keeps accumulating "and also..." tasks.
+
+When this happens, split at the internal dependency boundary you already see.
+
+### Signs a phase is too small
+
+- It is a one-file mechanical tweak with trivial verification.
+- It exists only because every file change was treated as its own phase.
+- Reviewing it separately adds overhead without reducing risk.
+
+When this happens, merge it into an adjacent phase that touches related code.
+
 ### What to do when decomposition is hard
 
-Some designs resist clean decomposition — everything depends on everything. That usually means the design itself has tight coupling. Before forcing it into phases, reconsider whether the design needs a clearer separation of concerns. If the design is sound but inherently interconnected, find the narrowest interface between the parts and cut there.
+Some designs resist clean decomposition — everything depends on everything. That usually means the design or architecture itself has tight coupling. Before forcing it into phases, reconsider whether the design or code architecture needs a clearer separation of concerns or deeper refactor. If the design is sound but inherently interconnected, find the narrowest interface between the parts and cut there.
 
-## Dependency Mapping
+## Dependencies and Execution Order
 
 Once you have phases, map which ones depend on which. This determines execution order and parallelism.
 
@@ -38,7 +55,7 @@ Three things to capture for each phase:
 2. **What it produces** — interfaces, schemas, or patterns that later phases depend on.
 3. **What it's independent of** — phases that can run in parallel because they don't share inputs or outputs.
 
-From the dependency map, derive execution groups (rounds). Each round contains phases that can run in parallel. Minimize the number of rounds — that's your critical path.
+From the dependency map, derive execution rounds. Each round contains phases that can run in parallel. Minimize the number of rounds — that's your critical path.
 
 ```
 Round 1: Phase 1                    (foundation — everything depends on it)
@@ -50,97 +67,110 @@ Round 3: Phase 4                    (needs Phase 2 and Phase 3)
 
 If a phase might invalidate the whole approach — a speculative performance optimization, an unproven integration, a dependency you haven't tested — make it an early phase. Find out it doesn't work before you've built five phases on top of it.
 
-Similarly, front-load phases that produce interfaces other phases consume. Get the contracts stable early so downstream phases aren't coding against a moving target.
+Similarly, front-load phases that produce interfaces downstream phases consume. Get the contracts stable early so later phases aren't coding against a moving target.
 
-## Blueprint Distillation
+## Writing Blueprints
 
-This is the key step. For each phase, write a blueprint that gives the coder everything it needs — and nothing it doesn't.
+For each phase, write a blueprint that gives the coder everything it needs, and nothing it doesn't. The blueprint is the phase spec file in `$MERIDIAN_WORK_DIR/plan/`, and it should be self-contained enough that the coder does not need to mine the full design doc.
 
-A blueprint is the phase spec file itself. It lives in `$MERIDIAN_WORK_DIR/plan/` and becomes the primary context the coder receives. Write it so the coder has complete, self-contained instructions without needing to search the full design doc.
+### Include
 
-### What goes into a blueprint
+- **Scope and intent.** What to build and why, so judgment calls on edge cases stay aligned.
+- **Files to modify.** Exact files in scope, with short notes on expected changes.
+- **Dependencies and interface contracts.** Paste relevant signatures and schema contracts directly; don't force cross-referencing.
+- **Patterns to follow.** Point to one concrete existing file when conventions matter.
+- **Constraints and boundaries.** State what is explicitly out of scope.
+- **Verification criteria.** Define concrete checks that can gate completion.
 
-**Scope and intent.** What to build and why. The "why" matters because it helps the coder make good judgment calls on edge cases. "Add token validation" is less useful than "Add token validation so we can reject expired credentials at the middleware layer before they reach route handlers."
+### Exclude
 
-**Interface contracts.** If this phase consumes interfaces from a prior phase, include them directly in the blueprint. Don't say "see Phase 1" — paste the relevant type signatures, function contracts, or schema definitions. The coder shouldn't have to cross-reference other phase files.
-
-**Patterns to follow.** If the codebase has established conventions (error handling patterns, naming conventions, module structure), point to a specific existing file as an example. "Follow the pattern in `src/auth/existing_handler.py`" is concrete. "Follow existing patterns" is not.
-
-**Constraints and boundaries.** What the coder should not do is as important as what they should do. If a file is out of scope, say so. If there's a known issue they should avoid fixing in this phase, say so. Boundary clarity prevents scope creep.
-
-**Verification criteria.** Concrete checks the coder (and later the verification-tester) can run. "Tests pass" is bare minimum. "Token validation rejects expired tokens with a 401, test case exists in `tests/auth/`" is actionable.
-
-### What stays out of a blueprint
-
-- Design rationale that doesn't affect implementation ("we considered three approaches and picked this one")
-- Plans for other phases ("in Phase 4 we'll add rate limiting")
-- Broad architectural context that doesn't change what the coder does in this phase
+- Design rationale that doesn't change implementation behavior.
+- Plans for later phases.
+- Broad context that does not affect current code decisions.
 
 The test: if removing a sentence from the blueprint wouldn't change what the coder builds, that sentence doesn't belong there.
 
-## Agent Headcount
+### Lightweight blueprint example
 
-For each phase, decide who works on it. The staffing depends on what the phase touches and how risky it is.
+```markdown
+# Phase: Auth middleware token validation
 
-### Implementer
+## Scope
+Add middleware-level token expiration checks so expired credentials are rejected before route handlers.
 
-Usually `coder`. For phases with significant UI/UX work, complex architectural decisions, or heavy ambiguity, consider `coder -m opus` for a stronger model.
+## Files to Modify
+- `src/auth/middleware.py` -- implement validation path
+- `tests/auth/test_middleware.py` -- add expiration coverage
 
-### Reviewers
+## Dependencies
+- Requires: Token claims interface from prior phase
+- Independent of: UI error copy phase
 
-Pick review focus based on what the phase actually touches. The `review-orchestration` skill has the full methodology; here's a quick guide:
+## Interface Contract
+`TokenClaims(expires_at: datetime, subject: str, scopes: list[str])`
 
-| Phase touches | Review focus |
-|---------------|-------------|
-| Shared state, locks, async | Concurrency — races, deadlocks, ordering (see `review/resources/concurrency.md`) |
-| Auth, input handling, user data | Security — trust boundaries, validation, injection (see `review/resources/security.md`) |
-| New abstractions, interfaces, module boundaries | Architecture — SOLID, coupling, design alignment (see `review/resources/architecture.md`) |
-| Foundational phase that later phases build on | Design alignment — does this set up the next phase correctly? |
-
-Two reviewers is the default. Three for high-risk phases. One for simple/mechanical phases. Zero for trivial changes.
-
-### Testers
-
-- **verification-tester:** Include for any phase that modifies logic. Runs tests, type checks, and linters, fixing mechanical issues before reviewers see the code.
-- **unit-tester:** Include when the phase creates behavior that's hard to verify manually — edge cases, error paths, boundary conditions.
-- **smoke-tester:** Include when the phase produces user-facing behavior that benefits from end-to-end validation.
-- **browser-tester:** Include when the phase touches frontend UI and needs visual/interaction verification.
-- **investigator:** Not staffed per phase. Spawned reactively when the coder or reviewer flags something outside the current scope.
-
-## Writing Phase Files
-
-Write phase specs in `$MERIDIAN_WORK_DIR/plan/`. Each phase gets a file named `phase-{N}-{slug}.md`.
-
-The phase spec IS the blueprint. Write it with the coder as your audience. It should be complete enough that the coder can work from this file plus the referenced source files, without reading the full design doc.
-
-A strong phase file usually captures scope (including why it matters), expected file boundaries, dependencies and the interfaces they provide, concrete verification criteria, planned agent staffing, and the context files to pass with `-f` when spawning the coder.
-
-Read `resources/planning-reference.md` for detailed conventions on phase file naming, dependency graph formats, right-sizing heuristics, and context file selection.
-
-### Context files for the coder spawn
-
-When spawning the coder, pass:
-
-```bash
-meridian spawn -a coder -m codex \
-  -p "Phase N: [description]" \
-  -f $MERIDIAN_WORK_DIR/plan/phase-N-slug.md \
-  -f src/relevant/existing_code.py \
-  -f src/relevant/interfaces_from_prior_phase.py
+## Verification Criteria
+- [ ] `uv run pytest tests/auth/test_middleware.py` passes
+- [ ] Expired tokens return `401`
+- [ ] `uv run pyright` passes
 ```
 
-The phase spec is always included. Add existing source files that show patterns to follow or interfaces to consume. Don't include everything in the repo — pick what's relevant.
+Use any filename convention that keeps ordering and intent obvious to the team. The quality of the blueprint matters more than the exact naming pattern.
+
+## Context File Selection
+
+Pick `-f` context files deliberately when spawning coders. Too little context forces guessing; too much context drowns signal.
+
+Always include:
+
+- The phase blueprint itself.
+- Source files the coder will edit.
+
+Include when relevant:
+
+- Interface definitions produced by upstream phases.
+- One existing file that demonstrates the pattern to follow.
+- The design overview, if the phase needs broader architectural constraints.
+
+Leave out:
+
+- Unrelated phase blueprints.
+- Tests and docs for code untouched by this phase.
+- Rationale documents that do not affect implementation decisions.
+
+## Agent Staffing
+
+For each phase, match staffing to risk and ambiguity.
+
+Implementer:
+Usually `coder`. Use a stronger reasoning model for phases with architectural ambiguity or complex tradeoffs.
+
+Reviewers:
+Choose review lenses based on likely failure modes that tests may miss (security, concurrency, architecture fit, design alignment). Increase reviewer depth as risk increases.
+
+Testing:
+Default to `verification-tester` for behavior-changing phases so tests, typing, and lint are cleared before review. Add `unit-tester`, `smoke-tester`, or `browser-tester` based on what could fail in practice.
+
+`investigator` is reactive, not pre-staffed. Spawn only when implementation or review surfaces off-scope uncertainty.
+
+## Practical Tips
+
+- Avoid cleanup-only phases. Integrate cleanup into each phase's done criteria.
+- Write verification criteria that can be objectively checked.
+- Plan for review and rework loops on higher-risk phases.
+- Define and propagate interface contracts early so downstream phases code against stable shapes.
+- Number phases by execution order so parallel rounds stay obvious.
 
 ## When Planning Is Done
 
-Planning is in good shape when the `plan/` directory contains phase files with clear scope and intent, specific file boundaries, explicit dependencies with interface contracts, concrete verification criteria, and staffing decisions. At that point the dependency map should make execution order obvious, including which phases can run in parallel versus sequentially, and the orchestrator can move to `implementing`.
+You're ready to move to `implementing` when each phase file gives the coder clear scope and intent, the files to touch are explicit, dependencies include the actual interface contracts, and you can write concrete verification criteria. The dependency map should make execution order obvious — including what can run in parallel.
 
 ## Adapting the Plan
 
 Plans rarely survive first contact with implementation unchanged. When a phase reveals that the plan needs adjustment:
 
 - Update the affected phase files in `plan/`
-- Record the change and reasoning in `decision-log.md`
+- Record the change and reasoning in your design doc
 - If the change affects dependencies, re-evaluate downstream phases
 
 Don't treat the plan as sacred. It's a tool for coordination, not a contract. If reality diverges from the plan, update the plan to match reality — then continue with accurate information.

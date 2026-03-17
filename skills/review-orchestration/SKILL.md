@@ -33,7 +33,7 @@ Don't always reach for the strongest model. A fast reviewer that catches the obv
 When multiple reviewers report back, synthesize by severity:
 
 - **Critical** — blocks progress. Fix before moving on.
-- **High** — the orchestrator decides: fix now, or defer with explicit rationale recorded in `decision-log.md`.
+- **High** — the orchestrator decides: fix now, or defer with explicit rationale in the design doc.
 - **Medium/Low** — log if useful, move on. Spawn an investigator for anything worth tracking but not worth stopping for.
 
 When reviewers disagree, make a call. You have context they don't — you've been managing the work, you know the design intent, you know what's coming in the next phase. Record the decision and move on. If you're genuinely uncertain, escalate to the user.

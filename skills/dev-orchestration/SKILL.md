@@ -1,8 +1,8 @@
 ---
-name: dev-workflow
+name: dev-orchestration
 description: Development lifecycle orchestration — sequencing design, review, planning, and implementation phases with multi-agent coordination. Use this whenever you're working on a feature, refactor, or bug fix that involves more than one step. Activate for any task that benefits from phased execution, subagent delegation, or structured review — even if the user doesn't explicitly ask for a "workflow."
 ---
-# Dev Workflow
+# Dev Orchestration
 
 You orchestrate work phases, delegate execution and review, and keep state visible so future agents can resume cleanly.
 
@@ -44,7 +44,23 @@ Read `plan-implementation` for phase decomposition, dependencies, and staffing.
 
 The loop per phase: **Code → Test → Review → Fix if needed.**
 
-Spawn a coder with full context (design docs, phase spec, relevant source). Then launch testers appropriate to what the phase changed — match testing to what could actually go wrong. Not every phase needs every kind of testing.
+### Spawning the coder
+
+The phase spec lists what context files the coder needs. Always include the phase spec itself and the files the coder will modify. When a phase depends on a prior phase, use `--from` to pass that spawn's report and file list — the coder can explore further on its own:
+
+```bash
+meridian spawn -a coder \
+  -p "Phase 2: [description]" \
+  --from p107 \
+  -f $MERIDIAN_WORK_DIR/plan/phase-2-slug.md \
+  -f src/relevant/file_to_modify.py
+```
+
+Too few context files and the coder guesses at conventions; too many and it drowns in noise. The phase spec's Context Files section is your guide — pass what's listed there.
+
+### Testing and review
+
+Launch testers appropriate to what the phase changed — match testing to what could actually go wrong. Not every phase needs every kind of testing.
 
 Fan out reviewers for the things testing can't catch. Read `review-orchestration` for focus areas and model selection. If fixes surface, spawn targeted corrections and re-review — but cap rework at three cycles. If it's still unstable, the problem is likely structural; escalate to the user.
 
@@ -54,19 +70,10 @@ When coders or reviewers surface out-of-scope findings, don't derail the active 
 
 The point of tracking artifacts is resumability — a future agent (or you, after compaction) should be able to read `$MERIDIAN_WORK_DIR/` and understand what happened, what was decided, and what's left.
 
-```
-$MERIDIAN_WORK_DIR/
-  overview.md              # Problem, approach, architecture
-  decision-log.md          # Why choices were made, what was rejected
-  implementation-log.md    # Bugs found, surprises, deferred items, coordination notes
-  plan/
-    phase-1-slug.md        # Per-phase specs
-```
-
-Both logs are append-only — if a decision gets reversed, record a new entry that supersedes the old one. Keep entries concrete (file paths, error messages, evidence) rather than vague. Cross-reference between logs when a finding leads to a decision.
+Keep design docs, phase plans, and review notes as separate files so each artifact has a clear purpose and future agents can find context quickly. Keep entries concrete (file paths, error messages, evidence) rather than vague.
 
 Before marking work `done`, confirm phases are reviewed, tests pass, and deferred items are tracked.
 
 ## Cross-Workspace Coordination
 
-When multiple work items are active, run `meridian work list` before design, use `meridian work sessions <name>` to see which sessions have touched each item, and read overlapping design docs. Log coordination in `implementation-log.md`. Use separate git worktrees to isolate parallel efforts.
+When multiple work items are active, run `meridian work list` before design, use `meridian work sessions <name>` to see which sessions have touched each item, and read overlapping design docs. Log coordination notes in your work directory. Use separate git worktrees to isolate parallel efforts.

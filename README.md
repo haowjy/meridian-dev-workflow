@@ -1,4 +1,4 @@
-# meridian-dev-workflow
+# meridian-dev-orchestration
 
 Opinionated software development lifecycle methodology for Meridian. A complete dev team — coder, reviewers, testers, investigator, researcher, documenter — plus structured workflow skills for design → plan → implement → review → test → document.
 
@@ -28,7 +28,7 @@ Requires [meridian-base](https://github.com/haowjy/meridian-base) to be installe
 
 | Skill | Purpose |
 |---|---|
-| `dev-workflow` | Development lifecycle orchestration — phase loop, agent staffing, complexity routing |
+| `dev-orchestration` | Development lifecycle orchestration — phase loop, agent staffing, complexity routing |
 | `architecture-design` | Architecture design methodology — problem framing, tradeoff analysis, Mermaid diagrams |
 | `mermaid` | Mermaid diagram syntax rules and validation script |
 | `plan-implementation` | Breaking designs into executable phases — dependency mapping, agent headcount |
@@ -50,17 +50,17 @@ The install engine's dependency resolver warns about cross-source deps but does 
 
 ```bash
 # Install everything
-meridian install @haowjy/meridian-dev-workflow
+meridian install @haowjy/meridian-dev-orchestration
 
 # Or selectively
-meridian install @haowjy/meridian-dev-workflow --agents coder,reviewer
+meridian install @haowjy/meridian-dev-orchestration --agents coder,reviewer
 ```
 
 Requires `meridian-base` to be installed first:
 
 ```bash
 meridian install @haowjy/meridian-base
-meridian install @haowjy/meridian-dev-workflow
+meridian install @haowjy/meridian-dev-orchestration
 ```
 
 ## The Lifecycle
@@ -69,7 +69,7 @@ meridian install @haowjy/meridian-dev-workflow
 designing → reviewing → planning → implementing → done
 ```
 
-Each phase has associated agents and artifacts. The `dev-workflow` skill orchestrates the full loop; phase-specific skills (`architecture-design`, `plan-implementation`, `reviewing`) teach the craft for each phase.
+Each phase has associated agents and artifacts. The `dev-orchestration` skill orchestrates the full loop; phase-specific skills (`architecture-design`, `plan-implementation`, `reviewing`) teach the craft for each phase.
 
 ## See Also
 

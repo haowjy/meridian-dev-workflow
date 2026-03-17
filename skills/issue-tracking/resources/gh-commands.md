@@ -184,7 +184,7 @@ gh issue close 42 --comment "Fixed in $(git rev-parse --short HEAD)"
 ### When a decision is made
 
 ```bash
-gh issue close 42 --comment "Decided: use JWT with 15-minute expiry. Recorded in decision-log.md."
+gh issue close 42 --comment "Decided: use JWT with 15-minute expiry."
 ```
 
 ### Automatic closure via commit message
