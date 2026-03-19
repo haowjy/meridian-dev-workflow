@@ -23,7 +23,7 @@ meridian spawn -a designer --from p1 -p "Design JWT token validation — explore
 meridian spawn -a coder --from p1 -p "Phase 1: JWT token validation" -f plan/phase-1.md
 meridian spawn -a coder --from p1 -p "Phase 2: Middleware integration" -f plan/phase-2.md
 
-# Review — fan out reviewers on a different model family
+# Review — fan out reviewers with different focus areas
 meridian spawn -a reviewer --from p2 -p "Review phase 1 — focus on security"
 meridian spawn -a reviewer --from p3 -p "Review phase 2 — focus on error handling"
 
