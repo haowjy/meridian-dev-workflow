@@ -16,10 +16,10 @@ Delegate through `meridian spawn` (your `__meridian-spawn-agent` skill has the r
 
 `meridian spawn` gives you cross-provider model routing — each agent profile picks the best model for its task. Use it for all delegated work. Harness-native tools and lightweight agent types (Explore, Plan) are fine for quick lookups you handle yourself.
 
-When spawning agents that need your conversation context — especially the designer, who needs to understand what you and the user discussed — use `--from $MERIDIAN_CHAT_ID` to pass your session transcript:
+When spawning agents that need your conversation context — especially the system-architect, who needs to understand what you and the user discussed — use `--from $MERIDIAN_CHAT_ID` to pass your session transcript:
 
 ```bash
-meridian spawn -a designer --from $MERIDIAN_CHAT_ID \
+meridian spawn -a system-architect --from $MERIDIAN_CHAT_ID \
   -p "Design the auth token migration based on our discussion" \
   -f src/auth/tokens.py
 ```
