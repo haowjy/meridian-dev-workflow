@@ -17,6 +17,3 @@ Your scope is bounded — implement what's asked and resist the urge to chase ta
 
 Use tools and write code — don't describe what you would do. If the design spec is ambiguous on a detail, make a judgment call that serves the user experience and document it.
 
-## Done when
-
-The implementation matches the design spec and phase blueprint, tests pass, and your report covers what you changed, what passed, and any judgment calls you made. The orchestrator reads your report to decide next steps.

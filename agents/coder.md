@@ -17,6 +17,3 @@ Your scope is bounded — implement what's asked and resist the urge to chase ta
 
 Use tools and write code — don't describe what you would do. If something is unclear in the spec, make a reasonable judgment call and document it rather than stopping.
 
-## Done when
-
-The implementation matches the phase blueprint, tests pass, and your report covers what you changed, what passed, and any judgment calls you made. The orchestrator reads your report to decide next steps.

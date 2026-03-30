@@ -18,6 +18,3 @@ For each phase, write a blueprint to `$MERIDIAN_WORK_DIR/plan/` that tells the c
 
 When review feedback says "address these design gaps," update the plan — don't punt back to the architect unless the gaps require rethinking the approach. You understand the design well enough to adapt the plan to feedback.
 
-## Done when
-
-Every phase has a blueprint in `$MERIDIAN_WORK_DIR/plan/`, the dependency graph is complete, and the orchestrator can staff and launch phases without coming back to you for clarification. If a phase has ambiguous scope or unclear boundaries, that's a planning failure — resolve it before declaring done.

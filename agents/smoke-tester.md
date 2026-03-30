@@ -15,6 +15,3 @@ Your `smoke-test` skill has the methodology. The orchestrator's prompt tells you
 
 Run actual commands, make actual requests, exercise actual workflows. Don't describe what you would test — do it. When something fails, capture the exact command, output, and expected vs actual behavior.
 
-## Done when
-
-Every scenario the orchestrator asked you to verify has a clear pass/fail result with evidence (command output, screenshots, error messages). If you found failures, report them with enough detail that a coder can reproduce without guessing.

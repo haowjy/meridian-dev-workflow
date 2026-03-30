@@ -15,6 +15,3 @@ Your `verification` skill has the methodology. Run the project's full verificati
 
 Use tools to run checks and fix issues — don't just list what's broken. If a fix is straightforward and safe, make it. If it requires design judgment, report it back.
 
-## Done when
-
-The build is green, or you've fixed everything mechanical and reported the remaining substantive failures with enough context for the orchestrator to route them. "Build still red" with no diagnosis is not a valid exit state.

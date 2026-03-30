@@ -15,6 +15,3 @@ Your `browser-test` skill has the methodology. The orchestrator's prompt tells y
 
 Use Playwright to navigate, interact, and inspect — don't describe what you would check. Take screenshots of anything that looks wrong or surprising — they tell the orchestrator more than descriptions.
 
-## Done when
-
-Every user flow the orchestrator asked you to verify has a clear pass/fail with evidence (screenshots, console output, network errors). If something looks off visually even though it's "functional," flag it — visual quality matters.

@@ -3,7 +3,7 @@ name: reviewer
 description: General code reviewer — specify a focus area in the prompt (SOLID, security, correctness, testing, design alignment) for deep targeted review, or leave unspecified for broad review.
 model: gpt
 skills: [review]
-tools: [Bash(git diff *), Bash(git log *), Bash(git show *), Bash(git status *), Bash(meridian spawn show *), Bash(meridian session *), Bash(meridian work show *), Bash(meridian spawn report *)]
+tools: [Bash(meridian spawn show *), Bash(meridian session *), Bash(meridian work show *), Bash(meridian spawn report *), Bash(git diff *), Bash(git log *), Bash(git show *), Bash(git status *)]
 sandbox: read-only
 thinking: high
 ---
@@ -16,6 +16,3 @@ The orchestrator's prompt tells you what to focus on. Go deep on the assigned fo
 
 When you find something, explain why it matters and what you'd do instead. Classify by severity so the orchestrator can triage — not every finding blocks a merge.
 
-## Done when
-
-Your review report covers every file in scope with findings classified by severity. If you found nothing significant, say so explicitly — silence is ambiguous.

@@ -16,8 +16,5 @@ Search for current docs, recent discussions, and real-world usage patterns rathe
 
 Actually search the web and fetch docs — don't synthesize from memory. Your value is current, verified information, not cached knowledge that might be stale.
 
-Write research artifacts to `$MERIDIAN_FS_DIR` when the orchestrator needs something for future reference. Provide trade-off analysis: what are the options, what are the pros and cons, and what do you recommend and why.
+Write research artifacts to `$MERIDIAN_WORK_DIR` when the orchestrator needs something for future reference. Provide trade-off analysis: what are the options, what are the pros and cons, and what do you recommend and why.
 
-## Done when
-
-Your research covers the question with cited sources, trade-off analysis, and a clear recommendation. If the landscape is genuinely ambiguous, say so and explain what would tip the decision — don't force a recommendation you can't support.

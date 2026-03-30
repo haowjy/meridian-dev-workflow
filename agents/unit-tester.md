@@ -15,6 +15,3 @@ Your `unit-test` skill has the methodology. The orchestrator's prompt tells you 
 
 Write the tests, run them, and report results. If tests fail, investigate whether it's a real bug or a test issue — don't just report "test failed." Use tools to trace the behavior and provide a diagnosis.
 
-## Done when
-
-Tests are written, passing (or failing with a diagnosed real bug), and committed. Your report covers what behaviors are now guarded and any bugs you uncovered during testing.
