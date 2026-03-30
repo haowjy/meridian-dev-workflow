@@ -28,7 +28,7 @@ meridian spawn -a reviewer --from p2 -p "Review phase 1 — focus on security"
 meridian spawn -a reviewer --from p3 -p "Review phase 2 — focus on error handling"
 
 # Test — verify the build is clean
-meridian spawn -a verification-tester -p "Run tests, type checks, and lint"
+meridian spawn -a verifier -p "Run tests, type checks, and lint"
 
 # Investigate — triage an unexpected finding without derailing the main work
 meridian spawn -a investigator -p "The reviewer found a race condition in refresh.py — quick-fix or file an issue"
@@ -66,7 +66,7 @@ The orchestrator picks the right agent for each task.
 
 | Agent | Model | Role |
 |---|---|---|
-| `verification-tester` | gpt | Runs tests, type checks, and linters — fixes mechanical breakage, reports real issues |
+| `verifier` | gpt | Runs tests, type checks, and linters — fixes mechanical breakage, reports real issues |
 | `unit-tester` | gpt | Writes and runs targeted unit tests for specific edge cases and regression guards |
 | `smoke-tester` | codex | End-to-end testing from the user's perspective — CLI flows, HTTP requests, race probes |
 | `browser-tester` | opus | Browser-based QA — visual verification, user flows, form testing, console errors |
@@ -78,8 +78,8 @@ The orchestrator picks the right agent for each task.
 | Skill | What it teaches |
 |---|---|
 | `dev-orchestration` | Phase sequencing, agent staffing, scaling ceremony to task complexity |
-| `architecture-design` | Collaborative design with the user — problem framing, tradeoff analysis, Mermaid diagrams |
-| `plan-implementation` | Decomposing designs into phases — focused blueprints, dependency mapping, execution order |
+| `architecture` | Collaborative design with the user — problem framing, tradeoff analysis, Mermaid diagrams |
+| `planning` | Decomposing designs into phases — focused blueprints, dependency mapping, execution order |
 | `review-orchestration` | Directing reviewers — choosing focus areas, model diversity, synthesizing findings |
 
 **Agent methodology:**
@@ -87,11 +87,11 @@ The orchestrator picks the right agent for each task.
 | Skill | What it teaches |
 |---|---|
 | `review` | Adversarial code review — severity thinking, structured reporting |
-| `issue-tracking` | GitHub Issues integration — labels, work-item linking, `gh` CLI patterns |
-| `browser-testing` | Browser QA methodology — visual verification, accessibility, console errors |
-| `smoke-testing` | End-to-end testing methodology — CLI, HTTP, race probes, interruption recovery |
-| `unit-testing` | Focused test writing — edge cases, regression guards, tricky logic |
-| `verification-testing` | Build verification — getting tests, types, and lint green |
+| `issues` | GitHub Issues integration — labels, work-item linking, `gh` CLI patterns |
+| `browser-test` | Browser QA methodology — visual verification, accessibility, console errors |
+| `smoke-test` | End-to-end testing methodology — CLI, HTTP, race probes, interruption recovery |
+| `unit-test` | Focused test writing — edge cases, regression guards, tricky logic |
+| `verification` | Build verification — getting tests, types, and lint green |
 | `tech-docs` | Technical documentation — compressed codebase mirror with architecture and decision rationale |
 | `mermaid` | Mermaid diagram syntax rules and validation |
 
@@ -99,7 +99,7 @@ The orchestrator picks the right agent for each task.
 
 The `dev-orchestrator` agent loads skills from both this repo and `meridian-base`:
 
-- `__meridian-spawn-agent` (base) — how to spawn and coordinate agents
+- `__meridian-spawn` (base) — how to spawn and coordinate agents
 - `__meridian-session-context` (base) — how to mine past sessions for context
 - `__meridian-work-coordination` (base) — how to manage work items
 

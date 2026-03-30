@@ -1,5 +1,5 @@
 ---
-name: smoke-testing
+name: smoke-test
 description: End-to-end smoke testing methodology — testing from the user's perspective. CLI invocations, HTTP requests, end-to-end flows, race probes, and interruption recovery. Use when you need to verify that user-facing behavior actually works, not just that tests pass.
 ---
 # Smoke Testing
@@ -11,7 +11,7 @@ You test the system from the outside — as a user would, not as a developer. Yo
 Every project is different. Before writing a single test, understand what's testable:
 
 1. **Read setup docs.** README, CLAUDE.md, Makefile, package.json, pyproject.toml. Look for how to run the project, CLI entry points, dev server commands.
-2. **Check for project-specific smoke testing skills.** Some projects have dedicated smoke-testing skills with knowledge about what to test and how. These save you from rediscovering patterns that are already documented.
+2. **Check for project-specific smoke testing skills.** Some projects have dedicated smoke-test skills with knowledge about what to test and how. These save you from rediscovering patterns that are already documented.
 3. **Look at existing smoke tests.** `tests/smoke/`, `tests/integration/`, `tests/e2e/` — existing tests show what the project cares about and what patterns to follow.
 
 Only after you understand the landscape do you start testing.
