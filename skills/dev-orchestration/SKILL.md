@@ -27,7 +27,7 @@ meridian spawn -a dev-runner \
   -f $MERIDIAN_WORK_DIR/decisions.md
 ```
 
-The legacy **dev-orchestrator** combines both roles in a single agent. It still works for simpler tasks where the overhead of a formal handoff isn't justified, but for substantive work the split gives better results — interactive alignment on the plan, then uninterrupted execution.
+For simple work that does not need a full architect → planner flow, keep planning lightweight: capture a brief inline plan, then spawn **dev-runner** directly. Execution still belongs to **dev-runner**; **dev-orchestrator** does not execute code.
 
 ## Phases of Work
 
@@ -48,7 +48,7 @@ The biggest mistake is over-coordinating simple work or under-coordinating compl
 
 Skip straight to implementation when the intent is obvious and the blast radius is small. Add design when there are genuine tradeoffs. Add more phases when work crosses module boundaries, changes interfaces, or requires coordination with other efforts.
 
-In the split model, this maps directly to orchestrator choice: use **dev-orchestrator** when the work needs interactive design alignment or has real architectural tradeoffs; spawn **dev-runner** directly when a solid plan already exists and autonomous execution is appropriate; use **dev-orchestrator** for simple tasks where the handoff overhead isn't justified.
+In the split model, this maps directly to orchestrator choice: use **dev-orchestrator** when the work needs interactive design alignment or has real architectural tradeoffs; spawn **dev-runner** directly when a solid plan already exists or when simple work can be captured as a brief inline plan. **dev-orchestrator** always hands off execution to **dev-runner**.
 
 ## Design
 
@@ -104,13 +104,18 @@ The point of tracking artifacts is resumability — a future agent (or you, afte
 
 Keep design docs, phase plans, and review notes as separate files so each artifact has a clear purpose and future agents can find context quickly. Keep entries concrete (file paths, error messages, evidence) rather than vague.
 
+Use a consistent artifact contract:
+- `$MERIDIAN_WORK_DIR/design.md` for approved architecture decisions.
+- `$MERIDIAN_WORK_DIR/plan/phase-*.md` for current blueprint state.
+- `$MERIDIAN_WORK_DIR/decisions.md` for execution-time pivots, review triage, and deferrals.
+
 Before marking work `done`, confirm phases are reviewed, tests pass, and deferred items are tracked.
 
 ## Decision Log
 
 Decisions are the hardest context to recover later. Without a record of what was tried and rejected, future agents re-litigate settled questions, waste time, and often repeat the same mistakes. Design docs usually preserve the final WHAT; the decision log preserves the reasoning journey: WHY, alternatives considered, and what changed over time.
 
-Append decisions to `$MERIDIAN_WORK_DIR/decisions.md` as work progresses. Capture pivots, plan changes, and design changes with their rationale while the context is fresh. This log gets archived with `meridian work done`, so the next agent can resume with the same judgment context instead of rebuilding it from scratch.
+Append decisions to `$MERIDIAN_WORK_DIR/decisions.md` as work progresses. Capture execution-time pivots, review triage, and deferrals with rationale while context is fresh. Keep approved architecture decisions in `$MERIDIAN_WORK_DIR/design.md`, and keep phase intent current in `$MERIDIAN_WORK_DIR/plan/phase-*.md`. This log gets archived with `meridian work done`, so the next agent can resume with the same judgment context instead of rebuilding it from scratch.
 
 ## Cross-Workspace Coordination
 

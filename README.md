@@ -1,75 +1,87 @@
 # meridian-dev-workflow
 
-An opinionated dev team for [Meridian](https://github.com/haowjy/meridian-channel).
-Install this and your orchestrator gets a full squad — coder, reviewers,
-testers, investigator, researcher, documenter — plus workflow skills that
-teach it how to run a structured software development lifecycle.
+An opinionated multi-agent dev team for structured software development,
+built on [Meridian](https://github.com/haowjy/meridian-channel)'s coordination
+primitives. Install this and your orchestrator gets a full squad — architects,
+coders, reviewers, testers, researchers, and documenter — plus workflow skills
+that teach it how to run a structured development lifecycle.
 
 Built on [meridian-base](https://github.com/haowjy/meridian-base). Both must
 be installed.
 
-## What You Get
+## Split Orchestration Model
 
-The orchestrator can now run a full dev lifecycle autonomously:
+The dev lifecycle is split across two orchestrators:
+
+**dev-orchestrator** (interactive) owns the front half — understanding
+requirements, exploring tradeoffs, and producing an approved plan. It spawns
+architects, reviewers, and the planner WITH the user. Every design decision
+goes through the user before proceeding.
+
+**dev-runner** (autonomous) owns the back half — executing the approved plan
+through code, test, review, and fix loops without human intervention. It's
+spawned by dev-orchestrator with all plan artifacts once the user approves.
 
 ```bash
-# Research phase — explore the codebase on a fast model
-meridian spawn -a researcher -p "Map the auth module — all token handling and session management"
+# The orchestrator handles design + planning interactively...
+meridian spawn -a dev-orchestrator -p "Build JWT token validation for the auth module"
 
-# Design phase — spawn a designer to flesh out the architecture
-meridian spawn -a designer --from p1 -p "Design JWT token validation — explore tradeoffs between symmetric and asymmetric signing"
-
-# Implementation — spawn coders in parallel, passing prior context
-meridian spawn -a coder --from p1 -p "Phase 1: JWT token validation" -f plan/phase-1.md
-meridian spawn -a coder --from p1 -p "Phase 2: Middleware integration" -f plan/phase-2.md
-
-# Review — fan out reviewers with different focus areas
-meridian spawn -a reviewer --from p2 -p "Review phase 1 — focus on security"
-meridian spawn -a reviewer --from p3 -p "Review phase 2 — focus on error handling"
-
-# Test — verify the build is clean
-meridian spawn -a verifier -p "Run tests, type checks, and lint"
-
-# Investigate — triage an unexpected finding without derailing the main work
-meridian spawn -a investigator -p "The reviewer found a race condition in refresh.py — quick-fix or file an issue"
+# ...then hands off to dev-runner for autonomous execution
+meridian spawn -a dev-runner \
+  -p "Execute the implementation plan for JWT validation" \
+  -f $MERIDIAN_WORK_DIR/design.md \
+  -f $MERIDIAN_WORK_DIR/plan/phase-1-validation.md \
+  -f $MERIDIAN_WORK_DIR/plan/phase-2-middleware.md
 ```
-
-Each agent has a model, sandbox tier, and skill set tuned to its role.
-The orchestrator picks the right agent for each task.
 
 ## Agents
 
-**Orchestration:**
+**Orchestrators:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `dev-orchestrator` | (configured default) | Plans, delegates, and drives work through design → plan → implement → review → test |
+| `dev-orchestrator` | (harness default) | Interactive design and planning with the user — spawns architect, reviewers, planner, then hands off to dev-runner |
+| `dev-runner` | claude-opus-4-6 | Autonomous implementation — executes all phases through code/test/review/fix loops |
+
+**Design & Planning:**
+
+| Agent | Model | Role |
+|---|---|---|
+| `architect` | opus | Explores tradeoffs and produces design docs that implementation agents build from |
+| `planner` | opus | Decomposes designs into independently executable phases with dependency mapping |
+| `frontend-designer` | opus | UI/UX design specs — layout, hierarchy, motion, aesthetic direction for frontend-coder |
 
 **Implementation:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `designer` | opus | Explores tradeoffs, creates design docs, and captures decisions with rationale |
-| `coder` | codex | Implements scoped tasks from phase specs and design docs |
-| `researcher` | codex | Explores best practices, alternatives, and architecture patterns via web search |
-| `explorer` | gpt-5.3-codex-spark | Fast, cheap codebase explorer — reads files, searches code, mines past sessions |
-| `documenter` | opus | Synthesizes technical documentation from codebase into `$MERIDIAN_FS_DIR` |
+| `coder` | codex | Production code writer — implements scoped tasks from phase blueprints |
+| `frontend-coder` | opus | Production frontend code with distinctive design quality via the frontend-design skill |
+| `refactorer` | gpt | Reduces codebase entropy — structural cleanup, SOLID fixes, dependency untangling |
 
-**Review:**
-
-| Agent | Model | Role |
-|---|---|---|
-| `reviewer` | gpt | Broad code review across quality dimensions — the orchestrator sets the focus via prompt |
-| `investigator` | gpt | Brief triage of flagged issues — quick-fixes trivial items, files GH issues for the rest |
-
-**Testing:**
+**Testing & Verification:**
 
 | Agent | Model | Role |
 |---|---|---|
 | `verifier` | gpt | Runs tests, type checks, and linters — fixes mechanical breakage, reports real issues |
-| `unit-tester` | gpt | Writes and runs targeted unit tests for specific edge cases and regression guards |
-| `smoke-tester` | codex | End-to-end testing from the user's perspective — CLI flows, HTTP requests, race probes |
-| `browser-tester` | opus | Browser-based QA — visual verification, user flows, form testing, console errors |
+| `unit-tester` | gpt | Writes and runs targeted unit tests for edge cases and regression guards |
+| `smoke-tester` | sonnet | End-to-end testing from the user's perspective — CLI flows, HTTP requests, race probes |
+| `browser-tester` | opus | Browser-based QA via Playwright — visual verification, user flows, console errors |
+
+**Review & Analysis:**
+
+| Agent | Model | Role |
+|---|---|---|
+| `reviewer` | gpt | Deep code review — specify a focus area (security, SOLID, correctness) or leave broad |
+| `investigator` | gpt | Brief triage of flagged issues — quick-fixes trivial items, files GH issues for the rest |
+
+**Research & Documentation:**
+
+| Agent | Model | Role |
+|---|---|---|
+| `researcher` | codex | Best practices, library comparisons, and architecture patterns via web search |
+| `explorer` | gpt-5.3-codex-spark | Fast, cheap codebase explorer — reads files, searches code, mines past sessions |
+| `documenter` | opus | Synthesizes codebase architecture into a compressed technical mirror in `$MERIDIAN_FS_DIR` |
 
 ## Skills
 
@@ -77,10 +89,11 @@ The orchestrator picks the right agent for each task.
 
 | Skill | What it teaches |
 |---|---|
-| `dev-orchestration` | Phase sequencing, agent staffing, scaling ceremony to task complexity |
-| `architecture` | Collaborative design with the user — problem framing, tradeoff analysis, Mermaid diagrams |
+| `dev-orchestration` | Phase sequencing, multi-agent coordination, scaling ceremony to complexity |
+| `architecture` | Problem framing, tradeoff analysis, visual communication with Mermaid diagrams |
 | `planning` | Decomposing designs into phases — focused blueprints, dependency mapping, execution order |
 | `review-orchestration` | Directing reviewers — choosing focus areas, model diversity, synthesizing findings |
+| `agent-staffing` | Team composition — which agents to spawn, how many, what runs in parallel |
 
 **Agent methodology:**
 
@@ -89,15 +102,16 @@ The orchestrator picks the right agent for each task.
 | `review` | Adversarial code review — severity thinking, structured reporting |
 | `issues` | GitHub Issues integration — labels, work-item linking, `gh` CLI patterns |
 | `browser-test` | Browser QA methodology — visual verification, accessibility, console errors |
-| `smoke-test` | End-to-end testing methodology — CLI, HTTP, race probes, interruption recovery |
+| `smoke-test` | End-to-end testing — CLI, HTTP, race probes, interruption recovery |
 | `unit-test` | Focused test writing — edge cases, regression guards, tricky logic |
 | `verification` | Build verification — getting tests, types, and lint green |
 | `tech-docs` | Technical documentation — compressed codebase mirror with architecture and decision rationale |
+| `frontend-design` | Distinctive, production-grade frontend interfaces — anti-generic-AI aesthetics |
 | `mermaid` | Mermaid diagram syntax rules and validation |
 
 ## Cross-Source Dependencies
 
-The `dev-orchestrator` agent loads skills from both this repo and `meridian-base`:
+Several agents load skills from both this repo and `meridian-base`:
 
 - `__meridian-spawn` (base) — how to spawn and coordinate agents
 - `__meridian-session-context` (base) — how to mine past sessions for context

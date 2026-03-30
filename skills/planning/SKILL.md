@@ -11,6 +11,11 @@ The central idea is focused blueprints. Don't hand a coder the full design doc a
 
 This skill assumes work setup and artifact placement already come from `/__meridian-work-coordination`. Keep phase files and other work-scoped planning artifacts under `$MERIDIAN_WORK_DIR`.
 
+Artifact convention for planning and execution:
+- `$MERIDIAN_WORK_DIR/design.md` captures approved architecture decisions.
+- `$MERIDIAN_WORK_DIR/plan/phase-*.md` is the current blueprint state.
+- `$MERIDIAN_WORK_DIR/decisions.md` records execution-time pivots, review triage, and deferrals.
+
 ## Phase Decomposition
 
 Break the design into phases. Each phase becomes a unit of work assigned to a single coder agent in a single session. The goal is phases that are small enough to be completable but large enough to be meaningful.
@@ -170,7 +175,8 @@ You're ready to move to `implementing` when each phase file gives the coder clea
 Plans rarely survive first contact with implementation unchanged. When a phase reveals that the plan needs adjustment:
 
 - Update the affected phase files in `plan/`
-- Record the change and reasoning in your design doc
+- If the approved architecture direction changes, update `$MERIDIAN_WORK_DIR/design.md`
+- Record execution-time pivots and rationale in `$MERIDIAN_WORK_DIR/decisions.md`
 - If the change affects dependencies, re-evaluate downstream phases
 
 Don't treat the plan as sacred. It's a tool for coordination, not a contract. If reality diverges from the plan, update the plan to match reality — then continue with accurate information.

@@ -33,10 +33,10 @@ Check your project config (CLAUDE.md, agent profiles) for current model assignme
 When multiple reviewers report back, synthesize by severity:
 
 - **Critical** — blocks progress. Fix before moving on.
-- **High** — the orchestrator decides: fix now, or defer with explicit rationale in the design doc.
+- **High** — the orchestrator decides: fix now, or defer with explicit rationale in `$MERIDIAN_WORK_DIR/decisions.md`.
 - **Medium/Low** — log if useful, move on. Spawn an investigator for anything worth tracking but not worth stopping for.
 
-When reviewers disagree, make a call. You have context they don't — you've been managing the work, you know the design intent, you know what's coming in the next phase. Record the decision and move on. If you're genuinely uncertain, escalate to the user.
+When reviewers disagree, make a call. You have context they don't — you've been managing the work, you know the design intent, you know what's coming in the next phase. Record review triage decisions in `$MERIDIAN_WORK_DIR/decisions.md` and move on. If the outcome changes approved architecture direction, update `$MERIDIAN_WORK_DIR/design.md` too. If you're genuinely uncertain, escalate to the user.
 
 Cap review rounds at two for design and three for implementation. If it's still not converging, the issue is structural — more review won't fix it.
 

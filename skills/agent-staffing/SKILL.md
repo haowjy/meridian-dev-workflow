@@ -26,13 +26,22 @@ It runs interactively with the user through design and planning, then hands off 
 
 It runs the code → test → review → fix loop per phase, tracks progress in `status.md`, and adapts to findings without stopping for approval. It should be the primary consumer of `agent-staffing` advice when composing phase teams.
 
-**dev-orchestrator** (legacy) combines both roles. Still appropriate for simpler tasks where the overhead of a formal handoff isn't justified — small bug fixes, single-phase changes, or exploratory work where design and execution are interleaved. For anything with multiple phases or real design decisions, prefer the split.
+For simple work that does not need the full architect → planner flow, keep planning lightweight (brief inline plan) and spawn **dev-runner** directly. Execution still belongs to **dev-runner**.
 
-The remaining sections — Coders, Reviewers, Testers, etc. — are primarily consumed by the executor (dev-runner or dev-orchestrator) when composing per-phase teams. Plan-orchestrator doesn't staff implementation phases; it staffs design and review during the planning process.
+The remaining sections — Coders, Reviewers, Testers, etc. — are primarily consumed by the executor (**dev-runner**) when composing per-phase teams. **dev-orchestrator** staffs design and planning work, then hands off execution.
 
 ## Coders
 
 One coder per phase — multiple coders on the same files create merge conflicts and duplicated work. If a phase feels too big for one coder, the plan needs splitting. Pick the coder variant that matches the work: `coder` for backend/infrastructure, `frontend-coder` for UI.
+
+## Refactorer
+
+Use `refactorer` as structural support for the delivery pipeline:
+- Run after implementation phases to pay down structural debt while context is fresh.
+- Spawn when reviewers flag SOLID violations, tangled dependencies, or abstraction drift.
+- Use proactively before major new work in messy areas to reduce entropy first.
+
+Treat refactoring as infrastructure work that makes every other agent more effective — cleaner boundaries, lower coordination overhead, and more consistent patterns for coders/reviewers/testers.
 
 ## Reviewers
 
