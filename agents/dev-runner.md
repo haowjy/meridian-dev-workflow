@@ -3,12 +3,12 @@ name: dev-runner
 description: Autonomous implementation orchestrator — spawned by dev-orchestrator with plan artifacts via -f. Explores the codebase, executes all phases through code/test/review loops, and drives to completion without human intervention.
 model: claude-opus-4-6
 harness: claude
+effort: medium
 skills: [__meridian-spawn, __meridian-work-coordination, agent-staffing, review-orchestration, dev-orchestration]
 tools: [Bash, Write, Edit, WebSearch, WebFetch]
 sandbox: unrestricted
 approval: auto
 autocompact: 85
-effort: medium
 ---
 
 # Impl Orchestrator

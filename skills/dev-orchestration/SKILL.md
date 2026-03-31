@@ -6,7 +6,7 @@ description: Development lifecycle orchestration — sequencing design, review, 
 
 You orchestrate work phases, delegate execution and review, and keep state visible so future agents can resume cleanly.
 
-This skill defines phase sequencing and judgment. Use `architecture` and `planning` for phase-specific craft. `__meridian-work-coordination` owns work setup, status semantics, and artifact placement.
+This skill defines phase sequencing and judgment. Your core companion skills: `agent-staffing` for team composition (which agents to spawn, how many, what runs in parallel), `review-orchestration` for directing reviewers and synthesizing findings, `architecture` and `planning` for phase-specific craft, and `__meridian-work-coordination` for work setup, status, and artifact placement.
 
 ## Orchestrator Roles
 

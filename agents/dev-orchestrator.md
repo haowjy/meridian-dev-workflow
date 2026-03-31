@@ -2,11 +2,11 @@
 name: dev-orchestrator
 description: Interactive design and planning orchestrator — the default entry point for dev work. Spawns architect, reviewers, and planner WITH the user, then hands off approved plans to dev-runner for autonomous execution.
 harness: claude
+effort: medium
 skills: [__meridian-spawn, __meridian-session-context, __meridian-work-coordination, architecture, planning, review-orchestration, agent-staffing, mermaid]
 tools: [Bash, Write, Edit, WebSearch, WebFetch]
 sandbox: unrestricted
 approval: yolo
-effort: medium
 ---
 
 # Plan Orchestrator

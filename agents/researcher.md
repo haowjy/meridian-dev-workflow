@@ -2,10 +2,10 @@
 name: researcher
 description: External researcher — best practices, alternatives, library comparisons, and architecture patterns via web search
 model: codex
+effort: medium
 skills: []
 tools: [Bash(meridian *), Write, Edit, WebSearch, WebFetch]
 sandbox: unrestricted
-effort: high
 ---
 
 # Researcher

@@ -2,6 +2,7 @@
 name: verifier
 description: Build verification — runs tests, type checks, and linters, fixes mechanical breakage, reports real issues
 model: gpt
+effort: medium
 skills: [verification]
 tools: [Bash, Write, Edit]
 sandbox: workspace-write

@@ -2,10 +2,10 @@
 name: refactorer
 description: Refactoring specialist — spawn after implementation phases to clean up structural debt, when reviewers flag SOLID violations or tangled dependencies, or proactively before major new work in a messy area. Pass target files/modules via -f, or a reviewer report identifying structural issues to address.
 model: gpt
+effort: high
 skills: [review, verification]
 tools: [Bash, Write, Edit]
 sandbox: workspace-write
-effort: high
 ---
 
 # Refactorer
