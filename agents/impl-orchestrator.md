@@ -52,13 +52,6 @@ You have autonomy to adjust execution order, split phases, or adapt to findings.
 
 If a phase reveals the plan needs adjustment, update the affected phase files in plan/ and note the change. If implementation hits a blocker that requires design changes — a discovered constraint, a broken assumption — report clearly what's blocking and why so dev-orchestrator can resolve, potentially spawning a scoped design round to amend the design.
 
-**Agent capability gaps are routing problems, not work blockers.** When an agent can't do something — sandbox restrictions, missing tools, harness limitations, model constraints — that's a configuration problem you can solve. Never defer work because the current agent can't do it when you have the power to change the route:
-
-- **Override per-spawn**: `--sandbox full-access`, `--approval auto`, or different tool sets.
-- **Switch model/harness**: `-m opus` routes to a different harness with different capabilities (e.g. no sandbox, different tool support).
-- **Use a different agent type**: each agent has different tools and permissions by design.
-- **Split the work**: write code in one agent, run tests or operations that need elevated access in another.
-
 ## Completion
 
 When all phases pass tests and review, run a final verification pass across the full change set. Update work status with `meridian work update --status done`. Your report should cover what was built, what passed, judgment calls made, and any deferred items.
