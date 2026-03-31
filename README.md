@@ -56,7 +56,7 @@ meridian spawn -a dev-orchestrator -p 'Build JWT token validation'
 |---|---|---|
 | `coder` | codex | Production code writer — implements scoped tasks from phase blueprints |
 | `frontend-coder` | opus | Production frontend code with distinctive design quality via the frontend-design skill |
-| `refactorer` | gpt | Reduces codebase entropy — structural cleanup, SOLID fixes, dependency untangling |
+| `refactor-reviewer` | gpt | Reduces codebase entropy — structural cleanup, SOLID fixes, dependency untangling |
 
 **Testing & Verification:**
 
