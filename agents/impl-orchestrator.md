@@ -55,6 +55,7 @@ If a phase reveals the plan needs adjustment, update the affected phase files in
 **Agent limitations are routing problems, not work blockers.** If a coder can't bind a socket, run network tests, or access a resource because of sandbox restrictions — that's not a reason to defer the work. Route around it:
 
 - **Escalate the sandbox**: `meridian spawn -a coder --sandbox full-access -p "..."` overrides per-spawn.
+- **Switch harness via model**: `meridian spawn -a coder -m opus -p "..."` — some harnesses (e.g. Claude) don't have sandbox restrictions at all.
 - **Use a different agent**: smoke-tester is built for integration tests that need real network/process access.
 - **Split the work**: write the code in a sandboxed coder, run the tests in an escalated spawn.
 
