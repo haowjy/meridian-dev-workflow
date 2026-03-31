@@ -43,7 +43,7 @@ A typical review round might fan out a reviewer with a correctness focus, a revi
 
 If a reviewer found something valid, fix it. Agents are cheap — spawning a coder or refactorer to fix a style issue costs seconds, not hours. Don't create a backlog of deferred paper cuts that never get addressed. The only findings to skip are ones the reviewer got wrong (misunderstood the intent, flagged something that's actually correct).
 
-When reviewers disagree, you have context they don't — you've been managing the work, you know the design intent, you know what's coming in the next phase. Make a call and record it in `$MERIDIAN_WORK_DIR/decisions.md`. If the outcome changes approved architecture direction, update `$MERIDIAN_WORK_DIR/design.md` too. If you're genuinely uncertain, escalate to the user.
+When reviewers disagree, you have context they don't — you've been managing the work, you know the design intent, you know what's coming in the next phase. Make a call and record it in `$MERIDIAN_WORK_DIR/decisions.md`. If the outcome changes approved architecture direction, update the relevant docs in `$MERIDIAN_WORK_DIR/design/` too. If you're genuinely uncertain, escalate to the user.
 
 Cap review rounds at two for design and three for implementation. If it's still not converging, the issue is structural — more review won't fix it.
 

@@ -9,29 +9,27 @@ that teach it how to run a structured development lifecycle.
 Built on [meridian-base](https://github.com/haowjy/meridian-base). Both must
 be installed.
 
-## Split Orchestration Model
+## Split Orchestration → 3-Orchestrator Model
 
-The dev lifecycle is split across two orchestrators:
+The dev lifecycle is split across three orchestrators:
 
-**dev-orchestrator** (interactive) owns the front half — understanding
-requirements, exploring tradeoffs, and producing an approved plan. It spawns
-architects, reviewers, and the planner WITH the user. Every design decision
-goes through the user before proceeding.
+**dev-orchestrator** (interactive) owns the user relationship — understanding
+intent, clarifying requirements, reviewing designs with the user, and approving
+implementation plans.
 
-**dev-runner** (autonomous) owns the back half — executing the approved plan
-through code, test, review, and fix loops without human intervention. It's
-spawned by dev-orchestrator with all plan artifacts once the user approves.
+**design-orchestrator** (autonomous) owns design exploration — architecture,
+tradeoffs, review cycles, and implementation planning until the design package
+is ready for approval.
+
+**impl-orchestrator** (autonomous) owns execution — implementing approved phases
+through code, test, review, and fix loops until complete.
 
 ```bash
-# The orchestrator handles design + planning interactively...
-meridian spawn -a dev-orchestrator -p "Build JWT token validation for the auth module"
+# dev-orchestrator handles requirements + design review
+meridian spawn -a dev-orchestrator -p 'Build JWT token validation'
 
-# ...then hands off to dev-runner for autonomous execution
-meridian spawn -a dev-runner \
-  -p "Execute the implementation plan for JWT validation" \
-  -f $MERIDIAN_WORK_DIR/design.md \
-  -f $MERIDIAN_WORK_DIR/plan/phase-1-validation.md \
-  -f $MERIDIAN_WORK_DIR/plan/phase-2-middleware.md
+# dev-orchestrator spawns design-orchestrator for autonomous design
+# dev-orchestrator reviews the design with the user, then spawns impl-orchestrator
 ```
 
 ## Agents
@@ -40,8 +38,9 @@ meridian spawn -a dev-runner \
 
 | Agent | Model | Role |
 |---|---|---|
-| `dev-orchestrator` | (harness default) | Interactive design and planning with the user — spawns architect, reviewers, planner, then hands off to dev-runner |
-| `dev-runner` | claude-opus-4-6 | Autonomous implementation — executes all phases through code/test/review/fix loops |
+| `dev-orchestrator` | (harness default) | User relationship — understands intent, reviews designs, approves plans |
+| `design-orchestrator` | opus | Autonomous design — architecture, tradeoffs, review cycles, implementation planning |
+| `impl-orchestrator` | claude-opus-4-6 | Autonomous implementation — executes all phases through code/test/review/fix loops |
 
 **Design & Planning:**
 
@@ -81,7 +80,7 @@ meridian spawn -a dev-runner \
 |---|---|---|
 | `researcher` | codex | Best practices, library comparisons, and architecture patterns via web search |
 | `explorer` | gpt-5.3-codex-spark | Fast, cheap codebase explorer — reads files, searches code, mines past sessions |
-| `documenter` | opus | Synthesizes codebase architecture into a compressed technical mirror in `$MERIDIAN_FS_DIR` |
+| `documenter` | opus | Technical document synthesis — writes clear, linked docs humans and agents can navigate |
 
 ## Skills
 
@@ -89,7 +88,9 @@ meridian spawn -a dev-runner \
 
 | Skill | What it teaches |
 |---|---|
-| `dev-orchestration` | Phase sequencing, multi-agent coordination, scaling ceremony to complexity |
+| `decision-log` | Decision capture — reasoning, alternatives, constraints |
+| `dev-artifacts` | Shared artifact convention between orchestrators |
+| `context-handoffs` | Context scoping for agent spawns |
 | `architecture` | Problem framing, tradeoff analysis, visual communication with Mermaid diagrams |
 | `planning` | Decomposing designs into phases — focused blueprints, dependency mapping, execution order |
 | `review-orchestration` | Directing reviewers — choosing focus areas, model diversity, synthesizing findings |
@@ -105,7 +106,7 @@ meridian spawn -a dev-runner \
 | `smoke-test` | End-to-end testing — CLI, HTTP, race probes, interruption recovery |
 | `unit-test` | Focused test writing — edge cases, regression guards, tricky logic |
 | `verification` | Build verification — getting tests, types, and lint green |
-| `tech-docs` | Technical documentation — compressed codebase mirror with architecture and decision rationale |
+| `tech-docs` | Technical writing craft — hierarchical docs, linking strategy, and progressive disclosure |
 | `frontend-design` | Distinctive, production-grade frontend interfaces — anti-generic-AI aesthetics |
 | `mermaid` | Mermaid diagram syntax rules and validation |
 
