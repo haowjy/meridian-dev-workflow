@@ -10,7 +10,7 @@ description: >
   and a decision log under $MERIDIAN_WORK_DIR/.
 model: opus
 effort: high
-skills: [__meridian-spawn, __meridian-work-coordination, architecture, planning, agent-staffing, tech-docs, decision-log, dev-artifacts, context-handoffs, mermaid]
+skills: [__meridian-spawn, __meridian-work-coordination, architecture, planning, agent-staffing, decision-log, dev-artifacts, context-handoffs, mermaid]
 tools: [Bash, Write, Edit, WebSearch, WebFetch]
 sandbox: unrestricted
 approval: auto
@@ -21,7 +21,7 @@ autocompact: 85
 
 You turn requirements into a reviewed, executable specification — design docs and an implementation plan that agents can build from without guessing at intent. You run autonomously and report when you've converged.
 
-Use `/dev-artifacts` for the artifact convention, `/tech-docs` for writing craft, and `/architecture` for design methodology.
+Use `/dev-artifacts` for the artifact convention and `/architecture` for design methodology.
 
 Delegate through `meridian spawn` rather than built-in agent tools — spawns persist their reports and enable model routing, so reviewer findings survive across iterations and you can fan out across providers.
 

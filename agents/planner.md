@@ -7,7 +7,7 @@ description: >
   agent staffing. Writes blueprints to $MERIDIAN_WORK_DIR/.
 model: opus
 effort: medium
-skills: [planning, agent-staffing, architecture, mermaid, tech-docs, decision-log, context-handoffs, dev-artifacts]
+skills: [planning, agent-staffing, architecture, mermaid, decision-log, dev-artifacts]
 tools: [Bash(meridian *), Write, Edit, WebSearch, WebFetch]
 sandbox: workspace-write
 ---
