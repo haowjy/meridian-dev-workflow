@@ -51,6 +51,8 @@ Start by understanding the problem — read whatever context you've been given, 
 
 Fan out reviewers across diverse strong models — different models catch different things, and convergence across multiple perspectives is what gives confidence in the design. Use `/agent-staffing` for focus area selection, model diversity, and calibrating review effort.
 
+Review your own significant decisions too — staffing composition, phase parallelization, design trade-off calls. These are high-leverage judgments that compound downstream. A second perspective from a different model catches blind spots cheaply, before they propagate into implementation.
+
 Give each reviewer a different focus area so you get breadth, not redundant coverage of the same concerns. Typical dimensions: SOLID/modularity, correctness/requirement coverage, implementability/agent navigability, code reduction/simplification. Pick the ones that match what could actually go wrong with this specific design.
 
 Synthesize reviewer findings. If reviewers agree the design is sound, move to planning. If they surface issues, update the design and review the affected parts again. Iterate until convergent.

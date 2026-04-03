@@ -36,7 +36,7 @@ Use `/dev-artifacts` for artifact placement — consistent locations let downstr
 
 Start by understanding the full picture — read whatever context you've been given, explore the design artifacts to see how components interact, and validate that the plan's assumptions still hold against the actual codebase. From there, the path depends on what you find.
 
-**Code, verify, review.** Each phase needs implementation, verification, and review — but how you sequence and scale these depends on the phase. Use `/agent-staffing` to compose the right team, choose focus areas, and calibrate review effort. A straightforward phase might need one coder and a quick verification pass. A high-risk phase might need multiple reviewers with model diversity and deeper testing.
+**Compose a team before writing code.** Use `/agent-staffing` to staff each phase — coders, reviewers, testers. If your caller provided staffing recommendations, use those as a starting point. If not, compose your own team before starting implementation. The default is delegation, not solo execution — an orchestrator that implements its own phases bypasses the review, structural review, and smoke-test lanes that catch what the implementer can't see in their own work.
 
 **Carry context forward.** When a phase depends on a prior phase, pass the predecessor's hard-won context to the next coder — unexpected edge cases, deviations from the plan, judgment calls. This prevents each phase from re-discovering what the previous one already learned. See `/context-handoffs` for how to scope what each agent receives.
 
@@ -44,7 +44,7 @@ Start by understanding the full picture — read whatever context you've been gi
 
 ## Convergence
 
-A phase is done when you judge the implementation sound based on evidence — reviewer feedback, test results, verification passes. If reviewers disagree or go in circles, you have context they don't — the full design, prior phases, runtime discoveries. Make the call, and log the reasoning in the decision log so future agents understand what was decided and why.
+A phase is done when reviewers converge — no new substantive findings across the review team. Keep iterating while reviewers surface real issues; stop when they come back clean. If reviewers disagree or go in circles, you have context they don't — the full design, prior phases, runtime discoveries. You can override and stop early, but log the reasoning in the decision log so future agents understand what was decided and why. If reviews aren't converging after multiple iterations, that's usually a signal the design has a structural problem — investigate or escalate.
 
 ## Adaptation
 
