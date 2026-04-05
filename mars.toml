@@ -1,6 +1,6 @@
 [package]
 name = "meridian-dev-workflow"
-version = "0.0.2"
+version = "0.0.5"
 description = "Opinionated dev team for Meridian — architects, coders, reviewers, testers, and the skills that coordinate them."
 
 [dependencies.meridian-base]
@@ -10,19 +10,21 @@ url = "https://github.com/haowjy/meridian-base"
 url = "https://github.com/anthropics/skills"
 skills = ["frontend-design"]
 
+[settings]
+
 [models.opus]
 harness = "claude"
+description = "Strong orchestrator. Creative but can hallucinate. Best for orchestration, architecture, and design exploration."
 provider = "anthropic"
 match = ["*opus*"]
 exclude = ["*:*"]
-description = "Strong orchestrator. Creative but can hallucinate. Best for orchestration, architecture, and design exploration."
 
 [models.sonnet]
 harness = "claude"
+description = "Balanced performance and cost. Good general-purpose model."
 provider = "anthropic"
 match = ["*sonnet*"]
 exclude = ["*:*"]
-description = "Balanced performance and cost. Good general-purpose model."
 
 [models.haiku]
 harness = "claude"
@@ -32,37 +34,56 @@ exclude = ["*:*"]
 
 [models.mini]
 harness = "codex"
+description = "Fast and cheap. Good for bulk exploration and simple tasks."
 provider = "openai"
 match = ["gpt-*-mini"]
 exclude = ["*-nano"]
-description = "Fast and cheap. Good for bulk exploration and simple tasks."
 
 [models.codex]
 harness = "codex"
+description = "Default backend implementer. Fast, token-efficient, faithful to instructions. Weak at frontend."
 provider = "openai"
 match = ["*codex*"]
-exclude = ["*-mini", "*-spark", "*-max"]
-description = "Default backend implementer. Fast, token-efficient, faithful to instructions. Weak at frontend."
+exclude = [
+    "*-mini",
+    "*-spark",
+    "*-max",
+]
 
 [models.gpt]
 harness = "codex"
+description = "Strongest generalist. Best for review, verification, security, and architectural judgment."
 provider = "openai"
 match = ["gpt-5*"]
-exclude = ["*codex*", "*-pro", "*-mini", "*-nano", "*-chat", "*-turbo"]
-description = "Strongest generalist. Best for review, verification, security, and architectural judgment."
+exclude = [
+    "*codex*",
+    "*-pro",
+    "*-mini",
+    "*-nano",
+    "*-chat",
+    "*-turbo",
+]
 
 [models.gpt52]
 harness = "codex"
+description = "Extremely thorough reviewer, but slow."
 provider = "openai"
 match = ["gpt-5.2*"]
-exclude = ["*codex*", "*-pro", "*-mini", "*-nano", "*-chat", "*-turbo"]
-description = "Extremely thorough reviewer, but slow."
+exclude = [
+    "*codex*",
+    "*-pro",
+    "*-mini",
+    "*-nano",
+    "*-chat",
+    "*-turbo",
+]
 
 [models.gemini]
 harness = "opencode"
-provider = "google"
-match = ["gemini*", "*pro*"]
-exclude = ["*-customtools"]
 description = "Large context window. Best for multimodal tasks."
-
-[settings]
+provider = "google"
+match = [
+    "gemini*",
+    "*pro*",
+]
+exclude = ["*-customtools"]
