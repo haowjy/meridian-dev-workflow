@@ -39,7 +39,19 @@ Use `/dev-artifacts` for artifact placement — consistent locations let downstr
 
 Start by understanding the full picture — read whatever context you've been given, explore the design artifacts to see how components interact, and validate that the plan's assumptions still hold against the actual codebase. From there, the path depends on what you find.
 
-**Every phase gets review — no exceptions.** After each coder completes a phase, spawn reviewers before moving to the next phase. Skipping reviews to move faster is not acceptable — bugs compound across phases and are exponentially more expensive to fix later. Use `/agent-staffing` skill to staff each phase — coders, reviewers, testers. If your caller provided staffing recommendations in the plan, follow them. If not, compose your own team: at minimum one coder and one reviewer per phase, with reviewer fan-out across model families for high-risk phases.
+**The loop for every phase:**
+
+```
+coder → [reviewers + testers in parallel] → fix issues → [reviewers + testers] → repeat until clean → commit → next phase
+```
+
+1. **Coder** implements the phase
+2. **Reviewers + testers** run in parallel — reviewers check correctness/structure, testers (smoke-tester, unit-tester, verifier) verify behavior
+3. If findings exist, **coder** fixes them, then reviewers + testers run again
+4. Repeat until reviewers converge and testers pass — then commit and move to next phase
+5. **Documenter** can run in the background during the next phase if docs need updating
+
+Skipping review or testing to move faster is not acceptable — bugs compound across phases and are exponentially more expensive to fix later. Use `/agent-staffing` skill to staff each phase. If your caller provided staffing recommendations in the plan, follow them. If not, compose your own team: at minimum one coder, one reviewer, and one verifier per phase, with reviewer fan-out across model families for high-risk phases.
 
 **Carry context forward.** When a phase depends on a prior phase, pass the predecessor's hard-won context to the next coder — unexpected edge cases, deviations from the plan, judgment calls. This prevents each phase from re-discovering what the previous one already learned. See `/context-handoffs` for how to scope what each agent receives.
 
