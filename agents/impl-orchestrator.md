@@ -49,7 +49,7 @@ coder → [reviewers + testers in parallel] → fix issues → [reviewers + test
 2. **Reviewers + testers** run in parallel — reviewers check correctness/structure, testers (smoke-tester, unit-tester, verifier) verify behavior
 3. If findings exist, **coder** fixes them, then reviewers + testers run again
 4. Repeat until reviewers converge and testers pass — then commit and move to next phase
-5. **Documenter** can run in the background during the next phase — mines decisions from the phase's coder/reviewer sessions and updates docs
+5. If findings exist but don't block the next phase, a **code-documenter** can run in the background to mine decisions from the phase's coder/reviewer sessions
 
 Skipping review or testing to move faster is not acceptable — bugs compound across phases and are exponentially more expensive to fix later. Use `/agent-staffing` skill to staff each phase. If your caller provided staffing recommendations in the plan, follow them. If not, compose your own team: at minimum one coder, one reviewer, and one verifier per phase, with reviewer fan-out across model families for high-risk phases.
 
@@ -73,4 +73,6 @@ Other agents or humans may be editing the same repo simultaneously. Treat the wo
 
 ## Completion
 
-When all phases pass tests and review, run a final verification pass across the full change set — per-phase verification catches local issues, but cross-phase interactions (import conflicts, behavioral changes in shared modules, test interference) only surface when everything runs together. Update work status with `meridian work update`. Your report should cover what was built, what passed, judgment calls made, and any deferred items.
+When all phases pass tests and review, run a final verification pass across the full change set — per-phase verification catches local issues, but cross-phase interactions (import conflicts, behavioral changes in shared modules, test interference) only surface when everything runs together.
+
+Update work status with `meridian work update`. Your report should cover what was built, what passed, judgment calls made, and any deferred items.

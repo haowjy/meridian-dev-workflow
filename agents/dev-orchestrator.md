@@ -93,6 +93,26 @@ meridian spawn show <spawn_id>
 
 When impl-orchestrator reports back, relay results to the user. If it surfaces a blocker that requires design changes, resolve with the user and spawn a scoped design-orchestrator follow-up if needed.
 
+## Documentation Phase
+
+After impl-orchestrator completes successfully, spawn docs-orchestrator to update documentation for what changed. This follows the same scaling ceremony as everything else — match effort to scope.
+
+- **Trivial** (typo fix, config change): Spawn a code-documenter + reviewer directly. Light but still verified — even small doc changes can introduce inaccuracies.
+- **Simple** (small feature, bug fix): Spawn a code-documenter + reviewer for affected fs/ domains.
+- **Substantive/Complex** (new feature, refactor, system redesign): Spawn docs-orchestrator with impl context. It drives write/review/fix loops for both the codebase mirror and user-facing docs.
+
+```bash
+meridian spawn -a docs-orchestrator --from $IMPL_SESSION_ID \
+  -p "Update documentation for [feature]. Subsystems touched: [list]. Key changes: [summary]." \
+  -f $MERIDIAN_WORK_DIR/design/overview.md
+# → blocks until done, returns terminal status
+
+meridian spawn show <spawn_id>
+# → full report + metadata
+```
+
+Pass the impl session context (--from) so docs-orchestrator can mine decisions from the implementation conversation — reasoning that would otherwise be lost to compaction. The design overview gives it architectural context for what was built.
+
 ## Concurrent Work
 
 Other agents or humans may be editing the same repo simultaneously. You are not the only one working — treat the working tree as shared space.

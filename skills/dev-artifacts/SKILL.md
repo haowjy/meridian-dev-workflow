@@ -27,12 +27,25 @@ All work artifacts live under `$MERIDIAN_WORK_DIR/`. This convention defines wha
 | plan/ | design-orchestrator (via planners) | impl-orchestrator, dev-orchestrator |
 | plan/status.md | impl-orchestrator | dev-orchestrator |
 | decisions.md | impl-orchestrator | dev-orchestrator |
+| $MERIDIAN_FS_DIR | docs-orchestrator (via code-documenters) | all agents |
 
 Artifacts flow forward: design-orchestrator writes the specification (design/ + plan/), impl-orchestrator reads it and writes the execution record (plan/status.md + decisions.md), dev-orchestrator reads everything to review with the user.
 
 ## Rejected Iterations
 
 Replace rejected designs atomically. Approved artifacts live at `design/` and `plan/` — not versioned alongside rejected drafts. Git history preserves prior iterations if anyone needs them. The current state of these directories is always the approved state.
+
+## Documentation Layers
+
+Three distinct documentation surfaces exist, each serving a different audience:
+
+**`$MERIDIAN_FS_DIR` (fs/)** — Agent-facing codebase mirror. Domain-structured compression of the architecture: what exists, how it works, why it's that way. Organized by conceptual domain (named for architectural concepts, not source paths). Agents read this to orient on unfamiliar subsystems without scanning every source file. The code-documenter maintains it; the dev-orchestrator triggers the docs-orchestrator to coordinate updates after implementation completes.
+
+**`docs/`** — User-facing documentation. CLI reference, getting started guides, configuration docs. Written for humans who use the project, not agents navigating the codebase.
+
+**`$MERIDIAN_WORK_DIR`** — Work-scoped artifacts including research, design, and plans. Research stays here — it's ephemeral context for the current work item. Lasting findings from research get synthesized into the relevant fs/ domain doc when the work completes, not copied verbatim.
+
+fs/ has no `research/` subdirectory. If you're writing research, it belongs in the work item. If the research produced durable knowledge about a subsystem, that knowledge belongs in the fs/ domain doc for that subsystem.
 
 ## This Convention Is Swappable
 
