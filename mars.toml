@@ -43,7 +43,7 @@ exclude = ["*-nano"]
 harness = "codex"
 description = "Default backend implementer. Fast, token-efficient, faithful to instructions. Weak at frontend."
 provider = "openai"
-match = ["*codex*"]
+match = ["gpt-*-codex"]
 exclude = [
     "*-mini",
     "*-spark",
