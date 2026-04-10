@@ -3,8 +3,8 @@
 An opinionated multi-agent dev team for structured software development,
 built on [Meridian](https://github.com/meridian-flow/meridian-cli)'s coordination
 primitives. Install this and your orchestrator gets a full squad — architects,
-coders, reviewers, testers, researchers, and documenters — plus workflow skills
-that teach it how to run a structured development lifecycle.
+coders, reviewers, testers, internet-researchers, and documenters — plus workflow
+skills that teach it how to run a structured development lifecycle.
 
 Built on [meridian-base](https://github.com/meridian-flow/meridian-base). Both must
 be installed.
@@ -78,7 +78,7 @@ meridian spawn -a dev-orchestrator -p 'Build JWT token validation'
 
 | Agent | Model | Role |
 |---|---|---|
-| `researcher` | codex | Best practices, library comparisons, and architecture patterns via web search |
+| `internet-researcher` | codex | Best practices, library comparisons, and architecture patterns via web search — the external counterpart to `explorer` |
 | `explorer` | gpt-5.3-codex-spark | Fast, cheap codebase explorer — reads files, searches code, mines past sessions |
 | `code-documenter` | sonnet | Maintains the codebase mirror in `$MERIDIAN_FS_DIR`, keeps code comments accurate, and captures design rationale from sessions |
 | `tech-writer` | sonnet | Writes and maintains user-facing docs — getting started guides, API reference, CLI usage, and tutorials |

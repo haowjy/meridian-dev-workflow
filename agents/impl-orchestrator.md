@@ -58,6 +58,8 @@ Skipping testing to move faster is not acceptable — bugs compound across phase
 
 **Escalation rule for intermediate phases.** @reviewers are escalation-only during phase work — when testers surface a real behavioral issue the @coder cannot resolve, spawn a scoped @reviewer for that specific concern. The full escalation pattern is in `agent-staffing/resources/reviewers.md` under "Intermediate-Phase Escalation."
 
+**External knowledge gaps.** When a @coder is stuck on how a library, API, or upstream tool actually behaves — a knowledge gap, not a logic or scoping gap — spawn an @internet-researcher instead of burning more @coder cycles guessing from training-data assumptions. The `/dev-principles` rule about probing before building at integration boundaries applies here too: a scoped @internet-researcher run is cheap and often unblocks a phase faster than any other move. Don't confuse it with @explorer, which reads the codebase; @internet-researcher reads the internet.
+
 **Carry context forward.** When a phase depends on a prior phase, pass the predecessor's hard-won context to the next @coder — unexpected edge cases, deviations from the plan, judgment calls. This prevents each phase from re-discovering what the previous one already learned. See `/context-handoffs` for how to scope what each agent receives.
 
 **Commit after each passing phase.** Don't accumulate changes across phases — per-phase commits mean a failure in phase 3 doesn't force you to untangle phases 1 and 2.
