@@ -20,4 +20,6 @@ Your `/planning` skill has the methodology — phase decomposition, dependency m
 
 For each phase, write a blueprint to `$MERIDIAN_WORK_DIR/` (see `/dev-artifacts` for placement) that tells the @coder exactly what to build, what files to touch, what interfaces to respect, and what to verify. Include a Mermaid diagram showing phase dependencies and execution order — visual dependency graphs help orchestrators parallelize phases and @coders understand where their work fits.
 
+Every plan must include a complete staffing section — the @impl-orchestrator executes exactly what you specify and nothing more. Use `/agent-staffing` and `/planning` (staffing section) to compose the team. Specify concrete model names from `meridian models list`, not just role names. If you output a plan without staffing, the orchestrator runs @coders only with no review loops.
+
 Absorb review feedback into the plan yourself — you understand the design well enough to adapt. Escalate to the @architect only when feedback requires rethinking the fundamental approach.
