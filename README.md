@@ -1,12 +1,12 @@
 # meridian-dev-workflow
 
 An opinionated multi-agent dev team for structured software development,
-built on [Meridian](https://github.com/haowjy/meridian-channel)'s coordination
+built on [Meridian](https://github.com/meridian-flow/meridian-cli)'s coordination
 primitives. Install this and your orchestrator gets a full squad — architects,
 coders, reviewers, testers, researchers, and documenters — plus workflow skills
 that teach it how to run a structured development lifecycle.
 
-Built on [meridian-base](https://github.com/haowjy/meridian-base). Both must
+Built on [meridian-base](https://github.com/meridian-flow/meridian-base). Both must
 be installed.
 
 ## Split Orchestration → 3-Orchestrator Model
@@ -128,8 +128,8 @@ resolve from the base source. Both sources must be installed.
 ## Install
 
 ```bash
-meridian mars add haowjy/meridian-base
-meridian mars add haowjy/meridian-dev-workflow
+meridian mars add meridian-flow/meridian-base
+meridian mars add meridian-flow/meridian-dev-workflow
 ```
 
 ## Layout
@@ -141,5 +141,5 @@ skills/*/SKILL.md        # Skills (with optional resources/ subdirectory)
 
 ## See Also
 
-- [meridian-channel](https://github.com/haowjy/meridian-channel) — the Meridian coordination engine
-- [meridian-base](https://github.com/haowjy/meridian-base) — core coordination layer this builds on
+- [meridian-cli](https://github.com/meridian-flow/meridian-cli) — the Meridian coordination engine
+- [meridian-base](https://github.com/meridian-flow/meridian-base) — core coordination layer this builds on
