@@ -1,6 +1,6 @@
 [package]
 name = "meridian-dev-workflow"
-version = "0.0.14"
+version = "0.0.15"
 description = "Opinionated dev team for Meridian — architects, coders, reviewers, testers, and the skills that coordinate them."
 
 [dependencies.meridian-base]
@@ -9,6 +9,10 @@ url = "https://github.com/meridian-flow/meridian-base"
 [dependencies.anthropic-skills]
 url = "https://github.com/anthropics/skills"
 skills = ["frontend-design"]
+
+[dependencies.caveman]
+url = "https://github.com/JuliusBrussee/caveman"
+skills = ["caveman"]
 
 [settings]
 models_cache_ttl_hours = 24

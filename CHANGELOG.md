@@ -9,6 +9,26 @@ Versions prior to 0.0.14 are tracked only in git history.
 
 ## [Unreleased]
 
+## [0.0.15] - 2026-04-10
+
+### Added
+
+- `caveman` skill (external dependency on
+  [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)) loaded
+  into the three intermediary orchestrators — `@design-orchestrator`,
+  `@impl-orchestrator`, and `@docs-orchestrator` — to compress their
+  coordination chatter (delegation prompts, decision log entries, phase
+  status updates) without affecting human-facing artifacts. Each
+  orchestrator runs `caveman full` mode with an agent-specific extension
+  to caveman's "keep substance" rule: decision logs, phase status updates,
+  and scenarios/ seeds still record the *why* in caveman style so resumed
+  work can rehydrate reasoning. Sub-agent profiles (`@architect`, `@coder`,
+  `@code-documenter`, `@tech-writer`, etc.) stay non-caveman, so design
+  docs, code, fs/ mirrors, and user-facing docs are unaffected.
+- `caveman` dependency declared in `mars.toml` — downstream projects that
+  pin to `v0.0.15` pick it up transitively; pinning to `v0.0.14` skips the
+  caveman layer entirely.
+
 ## [0.0.14] - 2026-04-10
 
 ### Added
