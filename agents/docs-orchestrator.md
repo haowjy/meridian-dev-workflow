@@ -10,7 +10,7 @@ model: opus
 effort: medium
 skills: [meridian-spawn, meridian-cli, meridian-work-coordination, session-mining, agent-staffing, decision-log, dev-artifacts, context-handoffs, dev-principles, caveman, shared-workspace]
 tools: [Bash]
-disallowed-tools: [Agent, Edit, Write, NotebookEdit]
+disallowed-tools: [Agent, Edit, Write, NotebookEdit, Bash(git revert:*), Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access
 approval: auto
 autocompact: 85

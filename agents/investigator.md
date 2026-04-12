@@ -5,6 +5,7 @@ model: gpt
 effort: high
 skills: [issues, meridian-spawn, context-handoffs, dev-principles, shared-workspace]
 tools: [Bash, Write, Edit, WebSearch, WebFetch]
+disallowed-tools: [Bash(git revert:*), Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access
 ---
 
