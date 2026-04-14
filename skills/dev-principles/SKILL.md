@@ -1,6 +1,6 @@
 ---
 name: dev-principles
-description: Use when designing, implementing, reviewing, or refactoring code as shared operating guidance — covers patterns LLM agents systematically get wrong (refactoring discipline, abstraction judgment, deletion courage, edge-case thinking, integration-boundary probing, structural health signals). Loaded into orchestrators to trigger proactive refactoring and into reviewers to guide what to flag.
+description: Use when designing, implementing, reviewing, or refactoring code as shared operating guidance — covers patterns LLM agents systematically get wrong (refactoring discipline, abstraction judgment, deletion courage, dependency judgment, design probing, edge-case thinking, integration-boundary probing, structural health signals). Loaded into orchestrators to trigger proactive refactoring and into reviewers to guide what to flag.
 ---
 
 # Refactor Early, Refactor Continuously
@@ -35,6 +35,18 @@ description: Use when designing, implementing, reviewing, or refactoring code as
 - Investigate behavior not covered by tests before deleting; untested paths may still carry edge-case handling.
 - Challenge preserved code that lacks a clear reason to exist.
 
+# Depend Deliberately
+
+The pair to deletion: offloading code whose purpose is already well-solved by someone else. Both reduce what you own.
+
+- Treat a well-maintained library as a pre-validated abstraction; it has already survived the Rule of Three in the wild.
+- A dependency earns its place when it deletes more code than it adds, and its API shape aligns with a real seam in your problem.
+- Measure simplicity by total code owned + cognitive load + failure modes + test matrix. Import count and `pyproject.toml` line count are proxies that drift from actual complexity.
+- Reject deps that merely swap one primitive for another of equivalent size. Accept deps that collapse subsystems.
+- Criteria before adopting: active maintenance, mature API, battle-tested in comparable projects, scope that matches your need (not a superset you will ignore half of).
+- Don't add a dep for a three-line problem. The question is net complexity, not dep minimization *or* dep maximization.
+- Watch for the anti-dep frame: "stdlib-only is cleaner" is a reflex, not a principle. Evaluate each case on total ownership.
+
 # Follow Existing Patterns
 
 - Read the surrounding code before implementation and match existing conventions.
@@ -51,6 +63,18 @@ Treat each signal as an immediate action trigger, not backlog material:
 - Adding one variant requires edits in five or more files.
 - An abstraction accumulates conditionals to fit new cases.
 - Greppability drops due to dynamic dispatch, metaprogramming, or computed names.
+- Platform-specific imports (`fcntl`, `msvcrt`, `termios`, `winreg`, `pwd`, `select.kqueue`) or OS-conditional branches appear in more than one module — mechanism is leaking into policy and the abstraction boundary needs to collapse to one adapter.
+
+# Probe Your Options Before You Commit
+
+Deduction from reading code is cheap but wrong often enough to cost rework cycles. When two credible directions exist and choosing wrong is expensive, run the cheapest experiment that distinguishes them before committing.
+
+- Before a refactor, probe runtime behavior to identify what's load-bearing. Code tells you what's there; only observation tells you what's needed.
+- Before choosing between a library and hand-rolled code, prototype one side far enough to measure LOC, failure modes, and ergonomics. Don't argue in the abstract.
+- Before scoping a port, redesign, or large deletion, list the assumptions that would flip scope by 2x or more and probe those first.
+- Treat "we'll find out during implementation" as a risk flag, not a plan. A 30-minute probe at design time prevents days of rework.
+- Match investment to reversibility: cheap experiments for one-way-door decisions, skip for reversible ones.
+- When you catch yourself deducing instead of probing ("this looks like phantom complexity"), stop and design the probe. The instinct to deduce is the signal.
 
 # Probe Before You Build at Integration Boundaries
 
@@ -74,6 +98,16 @@ Code that talks to external systems — CLI tools, APIs, wire protocols, servers
 - Treat `HACK` and `WORKAROUND` comments as fence markers; investigate root cause before deletion.
 - Do not assume generated structure is meaningful; verify intent explicitly.
 - Investigate uncertainty rather than preserving or deleting blindly.
+
+## Name the Constraint Before Deleting
+
+Reading code tells you what it does, not why it exists. Before proposing removal, name the constraint it is solving:
+
+- `git log -S "<symbol>"` or `git log --follow <file>` to find the introducing commit and its message.
+- Tests that exercise the code specifically, not only indirectly through a caller.
+- Decision logs, archived work items, or design artifacts that reference the feature.
+
+If you cannot name the constraint after looking, the code may genuinely be phantom — proceed cautiously. If you can name it, the code is load-bearing; deletion reintroduces the constraint you just identified. "Looks excessive to a fresh reader" is not the same as "is excessive." Code that defends an invariant under concurrent load, preserves an interactive fidelity, or captures an otherwise-racy observation will always look excessive on a calm read — that is the nature of load-bearing defense.
 
 # For Orchestrators
 

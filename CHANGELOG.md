@@ -4,6 +4,19 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.0.22] - 2026-04-14
+
+### Changed
+- `shared-workspace` skill scope tightened. Removed from agents that don't mutate repo state: `@explorer`, `@reviewer`, `@refactor-reviewer`, `@architect`, `@planner`, `@frontend-designer`, `@internet-researcher`. Orientation (`meridian work` / `git status` at session start) and the safety rules (no destructive git, no `git add -A`, don't delete unfamiliar untracked files) don't apply to read-only agents or agents that only write to `$MERIDIAN_WORK_DIR/` — their caller already holds repo orientation. Retained on all four orchestrators, code-editing agents (`@coder`, `@frontend-coder`, `@verifier`, `@investigator`, `@code-documenter`, `@tech-writer`, `@unit-tester`), and broad-permission testers (`@browser-tester`, `@smoke-tester`) where the safety rules are real guardrails.
+- `@dev-orchestrator`: `effort: medium` → `effort: high`. User-facing orchestrator handling intent gathering, design review, and redesign routing across design/impl orchestrators was under-resourced at medium.
+- `dev-principles` skill: new "Depend Deliberately" section — the pair to "Delete Often". A well-maintained library is a pre-validated abstraction; it has already survived the Rule of Three in the wild. Dependency earns its place when it deletes more code than it adds and collapses subsystems rather than swapping primitives. Simplicity measured by total ownership (code + cognitive load + failure modes + test matrix), not import count. Rejects the reflexive "stdlib-only is cleaner" frame.
+- `dev-principles` skill: new "Probe Your Options Before You Commit" section — deduction from reading code is cheap but wrong often enough to cost rework cycles. Match probe investment to decision reversibility: cheap experiments for one-way-door decisions, skip for reversible ones. Treat "we'll find out during implementation" as a risk flag, not a plan. When you catch yourself deducing instead of probing ("this looks like phantom complexity"), stop and design the probe.
+- `dev-principles` skill: new "Name the Constraint Before Deleting" subsection under integration-boundary probing — reading code tells you what it does, not why it exists. `git log -S <symbol>`, targeted tests, decision logs before removal. "Looks excessive to a fresh reader" is not the same as "is excessive" — code defending an invariant under concurrent load or preserving interactive fidelity will always look excessive on a calm read.
+- `dev-principles` skill: new structural-health signal — platform-specific imports (`fcntl`, `msvcrt`, `termios`, `winreg`, `pwd`, `select.kqueue`) or OS-conditional branches appearing in more than one module. Mechanism is leaking into policy; collapse to one adapter.
+
+### Added
+- `disallowed-tools` entries for destructive git commands (`git revert:*`, `git checkout --:*`, `git restore:*`, `git reset --hard:*`, `git clean:*`) on agents with `Bash` tool access. Hard guard alongside the `shared-workspace` safety rules — prevents accidental destruction of other actors' uncommitted work even if the skill guidance is ignored.
+
 ## [0.0.19] - 2026-04-11
 
 ### Changed
