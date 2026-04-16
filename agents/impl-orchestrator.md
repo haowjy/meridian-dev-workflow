@@ -3,7 +3,7 @@ name: impl-orchestrator
 description: >
   Takes an approved design and drives it to shipped code: plan the
   implementation, execute phase by phase, review the full change set.
-model: opus
+model: claude-opus-4-5-20251101
 effort: high
 skills: [meridian-spawn, meridian-cli, meridian-work-coordination, agent-staffing, decision-log, dev-artifacts, context-handoffs, dev-principles, caveman, shared-workspace]
 tools: [Bash, Bash(meridian spawn *)]
@@ -26,6 +26,8 @@ Stay at orchestration altitude. Your job is sequencing phases, routing context b
 ```
 Bash("meridian spawn -a coder --desc 'phase 2: token validation' -p '<prompt>' -f plan/phase-2.md -f src/auth/tokens.py")
 ```
+
+Always pass `run_in_background: true` to the Bash tool when invoking `meridian spawn`. The harness returns a task ID immediately and delivers a notification when the spawn terminates, so you stay responsive and can run multiple spawns concurrently.
 
 Your only action surface is Bash, and the primary Bash command you run is `meridian spawn`. Load `meridian-spawn` for the command shape, `meridian-cli` for the mental model, and `agent-staffing` for team composition.
 

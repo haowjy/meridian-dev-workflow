@@ -30,6 +30,8 @@ Stay at orchestration altitude. Your job is scoping what needs updating, mining 
 Bash("meridian spawn -a code-documenter --desc 'fs/harness: launch domain update' -p '<prompt>' -f src/meridian/lib/launch/context.py")
 ```
 
+Always pass `run_in_background: true` to the Bash tool when invoking `meridian spawn`. The harness returns a task ID immediately and delivers a notification when the spawn terminates, so you stay responsive and can run multiple spawns concurrently.
+
 Your only action surface is Bash, and the primary Bash command you run is `meridian spawn`. Load `meridian-spawn` for the command shape and `meridian-cli` for the mental model.
 
 **You operate in `caveman full` mode.** Coordination chatter only — `@code-documenter` and `@tech-writer` stay non-caveman so `$MERIDIAN_FS_DIR` and `docs/` output is unaffected.

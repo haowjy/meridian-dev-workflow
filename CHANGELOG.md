@@ -4,6 +4,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.0.27] - 2026-04-16
+
+### Changed
+- All four orchestrators (`@dev-orchestrator`, `@design-orchestrator`, `@impl-orchestrator`, `@docs-orchestrator`): added reiteration line — "Always pass `run_in_background: true` to the Bash tool when invoking `meridian spawn`. The harness returns a task ID immediately and delivers a notification when the spawn terminates, so you stay responsive and can run multiple spawns concurrently." Skill-level teaching already exists in `meridian-spawn` but profile-level reiteration needed to reliably steer models. Root cause: p47 impl-orch spawned planner in background and ended its turn with report "Waiting for planner spawn to complete" — background mode treated as handoff instead of a notification-delivery convenience.
+- `@design-orchestrator` and `@impl-orchestrator`: `model: opus` → `model: claude-opus-4-5-20251101`. Version-pinned for autonomous-run stability; pattern-match passthrough in `meridian-cli`'s model resolver routes the raw ID to the Claude harness.
+
 ## [0.0.26] - 2026-04-16
 
 ### Added
