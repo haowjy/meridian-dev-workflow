@@ -7,9 +7,8 @@ description: >
 model: opus
 effort: high
 skills: [meridian-spawn, meridian-cli, meridian-work-coordination, architecture, agent-staffing, decision-log, dev-artifacts, context-handoffs, dev-principles, caveman, shared-workspace]
-tools: [Bash, Write, Edit]
-disallowed-tools: [Bash(git revert:*), Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
-disallowed-tools: [Agent]
+tools: [Bash, Bash(meridian spawn *), Write, Edit]
+disallowed-tools: [Agent, Bash(git revert:*), Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access
 approval: auto
 autocompact: 85

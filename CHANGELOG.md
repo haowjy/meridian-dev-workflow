@@ -4,6 +4,16 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.0.25] - 2026-04-16
+
+### Changed
+- `@impl-orchestrator` full prompt rewrite. Old prompt framed delegation as a constraint ("never write code") and scattered spawn triggers across 6 sections. New prompt mirrors `@design-orchestrator` structure: positive role identity ("you drive it to shipped code"), inline WHY for the delegation rule, explicit "`meridian spawn` is a shell command you invoke through the Bash tool" teaching with a concrete `Bash("meridian spawn -a coder ...")` example, and a centralized Delegation Strategy section listing every agent's spawn trigger. Root-caused from p1900 where opus used Edit 6× and Write 12× despite `disallowed-tools: [Edit, Write, NotebookEdit]` — prompt-steering, not YAML enforcement, is the primary guardrail.
+- `@impl-orchestrator`: `effort: medium` → `effort: high`. Multi-hour autonomous orchestration runs need the thinking budget for instruction compliance under pressure.
+- `@docs-orchestrator`: `effort: medium` → `effort: high`. Same autonomous-run reasoning. Opening rewritten for positive framing. Removed defensive "don't work around this through Bash file writes" hedge — hedges plant the workaround idea before forbidding it. Added `meridian spawn` Bash-tool teaching with concrete example.
+- `@dev-orchestrator`: added `meridian spawn` Bash-tool teaching with concrete example and `/meridian-cli` skill reference.
+- `@design-orchestrator`: merged duplicate `disallowed-tools` keys into one. YAML last-key-wins meant the destructive-git restrictions were silently dropped — only `[Agent]` was enforced.
+- All four orchestrators: `tools: [Bash]` → `tools: [Bash, Bash(meridian spawn *)]`. Generic `Bash` remains for reading and verification commands; the explicit `Bash(meridian spawn *)` entry signals to readers and future stricter allowlist enforcement that `meridian spawn` is the primary action tool.
+
 ## [0.0.22] - 2026-04-14
 
 ### Changed
