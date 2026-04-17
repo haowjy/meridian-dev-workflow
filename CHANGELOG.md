@@ -4,6 +4,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.0.28] - 2026-04-17
+
+### Changed
+- All agents: comprehensive `disallowed-tools` hardening. Block `ScheduleWakeup` (use `run_in_background` instead), `Cron*`, `PushNotification`, `RemoteTrigger`, `EnterPlanMode`, `ExitPlanMode`, `EnterWorktree`, `ExitWorktree`, `NotebookEdit`. Keep `LSP` and `Monitor` available (code intelligence, background process streaming). Orchestrators keep `Task*` (work tracking). `@dev-orchestrator` keeps `AskUserQuestion` (user clarification). Root cause: p2084 impl-orch used `ScheduleWakeup` to "wait" for child spawn instead of `run_in_background` notification — tool was available despite profile teaching the correct pattern.
+- `@impl-orchestrator`: Explore phase removed — verification responsibility stays with `@dev-orchestrator` and `@design-orchestrator` where design decisions are made. Phase Loop simplified: testers + quick `@reviewer` (fast model) run in parallel during each phase, catch obvious issues before final fan-out. Final Review findings route back through Phase Loop, not just coder fixes.
+
 ## [0.0.27] - 2026-04-16
 
 ### Changed
