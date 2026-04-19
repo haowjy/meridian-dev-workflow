@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.0.31] - 2026-04-19
+
 ### Added
 - `refactoring-principles` skill: structural-improvement guidance for design, impl, and review. Core judgments: refactor early while context fresh, small behavior-preserving moves over big redesigns, duplication beats wrong abstraction but must be discoverable. Structural risk signals catalog. Smell families: `smells/bloaters.md`, `smells/change-preventers.md`, `smells/couplers.md`, `smells/dispensables.md`, `smells/oo-abusers.md`. Refactoring moves: `moves/composing-methods.md`, `moves/moving-features.md`, `moves/organizing-data.md`, `moves/simplifying-conditionals.md`, `moves/dealing-with-generalization.md`. Detection and review-translation resources.
 - `@refactor-coder` agent: executes behavior-preserving structural refactors. Spawned when primary objective is structural improvement (naming, locality, legacy isolation, extensibility) not feature shipping. Loads `refactoring-principles`. Model: codex, effort: high. Task-containment rules: one coherent unit per spawn — naming unification, boundary extraction, compatibility isolation, branching consolidation, or obsolete-path cleanup. Reports residual risk and scope misalignment.
