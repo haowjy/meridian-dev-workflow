@@ -1,6 +1,7 @@
 ---
 name: smoke-test
-description: Use when verifying user-facing behavior end-to-end — CLI invocations, HTTP requests, integration flows, race probes, interruption recovery. Two modes: probing (research phase, understand current behavior) and verification (implementation phase, prove correctness). Mandatory for changes that cross integration boundaries. Not the right fit for internal logic verification — that's unit testing.
+description: >
+  Use when verifying user-facing behavior end-to-end — CLI invocations, HTTP requests, integration flows, race probes, interruption recovery. Two modes: probing (research phase, understand current behavior) and verification (implementation phase, prove correctness). Mandatory for changes that cross integration boundaries. Not the right fit for internal logic verification — that's unit testing.
 ---
 
 # Smoke Testing
