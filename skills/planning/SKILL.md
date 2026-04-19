@@ -1,6 +1,6 @@
 ---
 name: planning
-description: Use after a design package exists and before coders are spawned — decomposing a design into executable phases, writing phase blueprints, mapping dependencies, sequencing refactors, and figuring out parallelism posture. Not the right fit when the design itself is unresolved (escalate back to design instead).
+description: Use after a design package exists and before coders are spawned — decomposing a design into executable phases and subphases, writing blueprints, mapping dependencies, sequencing refactors, and figuring out parallelism posture. Not the right fit when the design itself is unresolved (escalate back to design instead).
 ---
 
 # Plan Implementation
@@ -9,7 +9,9 @@ Design describes target state. Plan describes execution delta.
 
 The plan is a delta, not a restatement of the full system. The point is to translate design intent into phase-by-phase executable work with explicit ownership and verification.
 
-Planner output must be executable by impl-orch without hidden assumptions.
+Planner output must be executable by @impl-orchestrator without hidden assumptions.
+
+See `resources/execution-model.md` for the phase/subphase execution diagram the plan drives.
 
 ## Inputs You Must Consume
 
@@ -47,66 +49,37 @@ Thorough planning is expensive. Do it anyway. Re-implementing on a thin plan cos
 
 ## Phase Decomposition
 
-Break work into phases that a single coder can complete in one focused session.
+Break work into phases. A phase is substantial enough to deserve its own exit gate — a full verification sweep and reviewer fan-out.
 
 A good phase is:
 
 - **Independently testable** (most important): completion can be verified without waiting on later phases.
 - **Bounded to specific files/modules**: ownership is clear and cross-phase collision risk stays low.
-- **Right-sized**: substantial enough to matter, small enough to complete and review cleanly.
+- **Right-sized**: substantial enough to matter, small enough for a phase exit gate to be meaningful.
+
+## Subphases
+
+Within a phase, break work into subphases when the phase is large enough that intermediate checkpoints would catch drift earlier than the phase exit gate would.
+
+A subphase is:
+
+- **Smaller than a phase, larger than a commit.**
+- **Independently verifiable at a light level** — compiles, existing tests still pass, contract of the subphase holds.
+- **Allowed to break things temporarily within the phase** — the phase exit gate catches problems the light verification missed. This is why phases still get the full gate.
+
+Phases can be flat when they are already small. Subphases are explicit when they add checkpoint value.
+
+### Verification Levels
+
+- **Between subphases — light verification.** `@verifier` confirming the build and existing test suite stay green. Quick feedback to keep momentum. Not the place for reviewer fan-out or smoke tests.
+- **Phase exit gate — full verification.** `@verifier` (full), `@smoke-tester`, `@unit-tester` or `@integration-tester` as applicable, `@reviewer` fan-out across focus areas, `@refactor-reviewer` for structural health.
 
 Keep blueprints self-contained. Include only context that changes implementation decisions.
 
-## Required Files
+## Output Contract
 
-Write exactly:
-
-1. `plan/overview.md`
-2. `plan/phase-N-<slug>.md` files
-3. `plan/leaf-ownership.md`
-4. `plan/status.md`
-
-## `plan/overview.md` Contract
-
-Include:
-
-- `Parallelism Posture` and `Cause`
-- round list
-- per-round justifications tied to concrete constraints
-- refactor-handling table covering every `R0N`
-- Mermaid fanout matching the round list
-- explicit staffing contract for per-phase teams and final review loop
-
-## Staffing Is Mandatory Output
-
-Every plan must include staffing concrete enough for impl-orch to execute directly.
-
-Staffing contract must include:
-
-1. **Per-phase teams**: coder model, tester lanes (`@verifier`, `@smoke-tester`, `@unit-tester`, `@browser-tester` as applicable), and intermediate-phase escalation reviewer policy.
-2. **Final review loop**: reviewer model mix, focus lanes, and structural review assignment.
-3. **Escalation policy**: when tester findings require scoped reviewer intervention instead of direct fix/retest.
-
-A plan without staffing drives execution toward coder-only behavior with weak review loops.
-
-## Phase Blueprint Contract
-
-Each phase file includes:
-
-- scope and boundaries
-- touched files/modules
-- claimed EARS statement IDs
-- touched refactor IDs
-- dependencies
-- tester lanes
-- exit criteria
-
-## `plan/leaf-ownership.md` Contract
-
-- One row per EARS statement ID (`S<subsystem>.<section>.<letter><number>`)
-- Complete + exclusive ownership
-- Status, tester lane, evidence pointer
-- Revised annotation propagation on redesign cycles (`revised: <reason>`)
+Produce the standard `plan/` package defined by `/dev-artifacts`.
+Include staffing concrete enough that `@impl-orchestrator` can execute directly.
 
 ## Non-Negotiable Rules
 
