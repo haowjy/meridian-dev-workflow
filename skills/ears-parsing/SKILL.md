@@ -36,4 +36,4 @@ For each claimed statement ID include:
 - observed result
 - expected result when falsified
 
-Tester lanes report. Impl-orch updates `plan/leaf-ownership.md`.
+Tester lanes report. @impl-orchestrator updates `plan/leaf-ownership.md`.

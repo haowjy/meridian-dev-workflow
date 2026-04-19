@@ -1,131 +1,104 @@
 ---
 name: dev-principles
-description: Use when designing, implementing, reviewing, or refactoring code as shared operating guidance — covers patterns LLM agents systematically get wrong (refactoring discipline, abstraction judgment, deletion courage, dependency judgment, design probing, edge-case thinking, integration-boundary probing, structural health signals). Loaded into orchestrators to trigger proactive refactoring and into reviewers to guide what to flag.
+description: Use when designing, implementing, reviewing, or refactoring code as shared operating guidance — covers patterns LLM agents systematically get wrong (refactoring discipline, abstraction judgment, deletion courage, dependency judgment, design probing, edge-case thinking, integration-boundary probing). Loaded into orchestrators to trigger proactive refactoring and into reviewers to guide what to flag.
 ---
 
 # Refactor Early, Refactor Continuously
 
-- Run @refactor-reviewer in design review and again in the final end-to-end implementation review loop.
-- Act on refactor findings in the active loop; do not defer structural fixes once surfaced.
-- Perform preparatory refactoring before feature work; make the change easy, then make the easy change.
-- Keep refactoring and feature commits separate; do not wear both hats in one commit.
-- Treat declining refactor rates as a primary risk signal: refactored lines dropped from 24% to 9.5% in AI-assisted workflows.
+Context decays. Refactoring later means re-learning what you already knew. Kent Beck: "First make the change easy, then make the easy change."
+
+- Run @refactor-reviewer in design review and again in final implementation review.
+- Fix refactor findings in active loop. Do not defer by default.
+- Do preparatory refactors before feature work.
+- Keep refactor and feature commits separate.
+- Treat falling refactor rate as risk signal.
 
 # Edge-Case Thinking
 
-- Treat edge cases, failure modes, and boundary conditions as first-class requirements, not test afterthoughts.
-- Require design artifacts to enumerate edge cases explicitly before implementation starts.
-- Before each implementation phase, identify additional edge cases not covered in the design and pass them to testers.
-- Testers must generate independent edge cases beyond the phase's claimed EARS statements.
-- Consider "works on happy path" an incomplete result, not a passing result.
+- Edge cases, failures, boundaries are first-class requirements.
+- Design artifacts must enumerate edge cases before implementation.
+- Add phase-specific edge cases before each implementation phase.
+- Testers add independent edge cases beyond claimed EARS IDs.
+- Happy-path-only is incomplete.
 
 # Abstraction Judgment
 
-- Leave two similar cases duplicated; do not abstract yet.
-- Extract an abstraction at three or more genuine instances of the same semantic pattern.
-- Distinguish surface similarity from semantic similarity; similar shape does not imply shared behavior.
-- Treat added parameters or branching in an abstraction as a wrong-abstraction signal.
-- Fix wrong abstractions immediately: inline, delete, and let the right pattern re-emerge.
-- Apply DRY aggressively to utilities (parsing, formatting, validation) and cautiously to business logic.
+Premature abstraction locks in the wrong axis of variation. Two cases look similar by coincidence; three reveal the true pattern. Sandi Metz: "Duplication is far cheaper than the wrong abstraction."
+
+- Two similar cases: keep duplicated.
+- Three+ true semantic matches: extract abstraction.
+- Surface similarity != semantic similarity.
+- New parameters/branches in abstraction: wrong-abstraction signal.
+- Fix wrong abstraction immediately: inline/delete and re-form.
+- DRY hard on utilities, cautious on business logic.
 
 # Delete Aggressively
 
-- Bias toward deletion when code has no clear active purpose.
-- Remove dead code, unused abstractions, speculative features, and unrequested helpers.
-- Investigate behavior not covered by tests before deleting; untested paths may still carry edge-case handling.
-- Challenge preserved code that lacks a clear reason to exist.
+Dead code makes the codebase harder to navigate for both LLMs and humans. LLMs default to preserving code — passivity is the failure mode, not over-deletion.
+
+- Think about deletion aggressively, especially during review.
+- Flag dead code, speculative helpers, unused abstractions.
+- Probe untested behavior before proposing deletion.
+- Challenge preserved code with no clear reason.
+- Confirm with human before executing deletions.
 
 # Depend Deliberately
 
-The pair to deletion: offloading code whose purpose is already well-solved by someone else. Both reduce what you own.
-
-- Treat a well-maintained library as a pre-validated abstraction; it has already survived the Rule of Three in the wild.
-- A dependency earns its place when it deletes more code than it adds, and its API shape aligns with a real seam in your problem.
-- Measure simplicity by total code owned + cognitive load + failure modes + test matrix. Import count and `pyproject.toml` line count are proxies that drift from actual complexity.
-- Reject deps that merely swap one primitive for another of equivalent size. Accept deps that collapse subsystems.
-- Criteria before adopting: active maintenance, mature API, battle-tested in comparable projects, scope that matches your need (not a superset you will ignore half of).
-- Don't add a dep for a three-line problem. The question is net complexity, not dep minimization *or* dep maximization.
-- Watch for the anti-dep frame: "stdlib-only is cleaner" is a reflex, not a principle. Evaluate each case on total ownership.
+- Good dependency deletes more code than it adds.
+- Choose deps that collapse subsystems, not primitive swaps.
+- Evaluate total ownership: code + cognitive load + failures + test matrix.
+- Adoption criteria: active maintenance, mature API, battle-tested fit, scope match.
+- Do not add dep for trivial problems.
+- Reject reflex frames (`stdlib-only` or `always-dep`).
 
 # Follow Existing Patterns
 
-- Read the surrounding code before implementation and match existing conventions.
-- Reuse established patterns for solved problems, even if you would design differently from scratch.
-- Avoid introducing new idioms for routine tasks; each novel pattern increases maintenance cost.
-- Prefer consistency and predictability over cleverness.
+- Read surrounding code first.
+- Reuse established project patterns.
+- Avoid introducing new idioms for routine tasks.
+- Prefer consistency over cleverness.
 
-# Structural Health Signals
+# Probe Before Committing
 
-Treat each signal as an immediate action trigger, not backlog material:
+- If two credible options exist and wrong choice is expensive, run the cheapest probe.
+- Probe load-bearing runtime behavior before refactor/delete.
+- Prototype library vs hand-rolled enough to compare LOC/failure modes/ergonomics.
+- Identify assumptions that can 2x scope; probe those first.
+- "Find out during implementation" is a risk flag.
+- Match probe effort to reversibility.
 
-- Module exceeds 500 lines or holds more than three responsibilities.
-- Import list growth indicates rising coupling.
-- Adding one variant requires edits in five or more files.
-- An abstraction accumulates conditionals to fit new cases.
-- Greppability drops due to dynamic dispatch, metaprogramming, or computed names.
-- Platform-specific imports (`fcntl`, `msvcrt`, `termios`, `winreg`, `pwd`, `select.kqueue`) or OS-conditional branches appear in more than one module — mechanism is leaking into policy and the abstraction boundary needs to collapse to one adapter.
+# Probe Integration Boundaries
 
-# Probe Your Options Before You Commit
+You cannot deduce your way to correctness at system boundaries. Real systems have undocumented behaviors, version-specific quirks, and implicit contracts that only probing reveals.
 
-Deduction from reading code is cheap but wrong often enough to cost rework cycles. When two credible directions exist and choosing wrong is expensive, run the cheapest experiment that distinguishes them before committing.
+- Before adapter work, probe real system behavior.
+- Verify config fields end-to-end against installed tool/version.
+- Extract and reference real schema/spec when available.
+- Add protocol-level observability from the start.
+- Internal tests passing is necessary, not sufficient.
+- Failure traces must show sent payload, received payload, mismatch point.
 
-- Before a refactor, probe runtime behavior to identify what's load-bearing. Code tells you what's there; only observation tells you what's needed.
-- Before choosing between a library and hand-rolled code, prototype one side far enough to measure LOC, failure modes, and ergonomics. Don't argue in the abstract.
-- Before scoping a port, redesign, or large deletion, list the assumptions that would flip scope by 2x or more and probe those first.
-- Treat "we'll find out during implementation" as a risk flag, not a plan. A 30-minute probe at design time prevents days of rework.
-- Match investment to reversibility: cheap experiments for one-way-door decisions, skip for reversible ones.
-- When you catch yourself deducing instead of probing ("this looks like phantom complexity"), stop and design the probe. The instinct to deduce is the signal.
+# No Regressions
 
-# Probe Before You Build at Integration Boundaries
-
-Code that talks to external systems — CLI tools, APIs, wire protocols, servers — is fundamentally different from self-contained code. Its correctness depends on assumptions about the other side, and those assumptions can't be verified by reading your own code.
-
-- Before writing an adapter, probe the real system: run the binary, hit the endpoints, generate the schema, read the actual response. Code against what you observed, not what you assumed.
-- Configuration is integration too. When you add a field to an external tool's config based on docs, verify the installed tool honors it end-to-end — parser acceptance isn't behavior, and docs often describe features the installed version doesn't implement.
-- If the external system provides a schema or spec (OpenAPI, JSON Schema, `--help`, protocol docs), extract it and reference it in the implementation. Don't guess at required fields, endpoint paths, or wire formats.
-- Build observability into integration code from the start — wire logging, request/response capture, state transition traces. You can't verify what you can't see, and integration bugs are invisible without protocol-level visibility.
-- Treat "it compiles and the internal tests pass" as necessary but not sufficient for integration code. The only proof is running against the real external system.
-- When integration fails, the debug trace should show exactly what was sent, what came back, and where the mismatch is. If it can't, the observability is inadequate.
+- Changes must not break existing behavior unless explicitly intended.
+- Reviewers and orchestrators verify this before merge.
+- Bugs get regression tests before the fix.
 
 # Keep Docs Current
 
-- Update docs in the same change as the behavior they describe — doc drift compounds silently and future readers trust stale docs until they break.
-- Reference material for external tools is a snapshot; re-verify against the tool when versions change.
+- Update docs in same change as behavior.
+- Re-verify external-tool references when versions change.
 
 # Chesterton's Fence
 
 - Understand why code exists before removing it.
-- Treat `HACK` and `WORKAROUND` comments as fence markers; investigate root cause before deletion.
-- Do not assume generated structure is meaningful; verify intent explicitly.
-- Investigate uncertainty rather than preserving or deleting blindly.
+- Investigate uncertainty; do not preserve/delete blindly.
 
-## Name the Constraint Before Deleting
+## Name Constraint Before Deleting
 
-Reading code tells you what it does, not why it exists. Before proposing removal, name the constraint it is solving:
+- Check introducing history: `git log -S "<symbol>"`, `git log --follow <file>`.
+- Find tests that explicitly exercise the code.
+- Find decision logs/work artifacts referencing the behavior.
+- If constraint is unknown: delete cautiously.
+- If constraint is known: code is load-bearing until replacement exists.
 
-- `git log -S "<symbol>"` or `git log --follow <file>` to find the introducing commit and its message.
-- Tests that exercise the code specifically, not only indirectly through a caller.
-- Decision logs, archived work items, or design artifacts that reference the feature.
-
-If you cannot name the constraint after looking, the code may genuinely be phantom — proceed cautiously. If you can name it, the code is load-bearing; deletion reintroduces the constraint you just identified. "Looks excessive to a fresh reader" is not the same as "is excessive." Code that defends an invariant under concurrent load, preserves an interactive fidelity, or captures an otherwise-racy observation will always look excessive on a calm read — that is the nature of load-bearing defense.
-
-# For Orchestrators
-
-## Never Write Code Directly
-
-Orchestrators coordinate — they never write code or edit source files, regardless of how trivial the change seems. This isn't ceremony for its own sake:
-
-- **Spawns produce artifacts.** A @coder spawn generates a traceable report, changed file list, and session transcript. Direct edits via Bash leave no trail — if something breaks downstream, there's nothing to inspect.
-- **Review catches what the author can't see.** Even a one-line change can have unintended consequences. The orchestrator that wrote the code can't objectively review it — the same blind spot that let the bug through will let it pass review.
-- **Workarounds compound.** When Edit/Write are blocked, writing files via `Bash(cat >)` or `python3 -c` bypasses the restriction without removing the reason it exists. Each workaround teaches the next session that the rules are negotiable.
-
-If a task is too trivial for a full @impl-orchestrator cycle, the @dev-orchestrator should spawn the appropriate implementer (for example, @coder for code, @frontend-coder for UI work, @code-documenter or @tech-writer for docs-only changes) + @verifier directly, adding @smoke-tester or @unit-tester as warranted — not hand it to an @impl-orchestrator that shortcuts the process.
-
-## Refactor Continuously
-
-The `@refactor-reviewer -> @coder` loop is mandatory and immediate:
-
-- Run @refactor-reviewer during design review and during the final implementation review loop.
-- Resolve structural findings before final convergence; do not defer them to follow-up work by default.
-- During intermediate implementation phases, use tester-led loops; escalate to @reviewers only for unresolved behavioral concerns.
-- Maintain structural health proactively; reactive refactors are slower and riskier.

@@ -14,6 +14,9 @@ skills = ["frontend-design"]
 url = "https://github.com/JuliusBrussee/caveman"
 skills = ["caveman"]
 
+[local-dependencies.meridian-prompter]
+url = "https://github.com/meridian-flow/meridian-prompter"
+
 [settings]
 targets = [
     ".agents",

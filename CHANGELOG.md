@@ -4,6 +4,16 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `refactoring-principles` skill: structural-improvement guidance for design, impl, and review. Core judgments: refactor early while context fresh, small behavior-preserving moves over big redesigns, duplication beats wrong abstraction but must be discoverable. Structural risk signals catalog. Smell families: `smells/bloaters.md`, `smells/change-preventers.md`, `smells/couplers.md`, `smells/dispensables.md`, `smells/oo-abusers.md`. Refactoring moves: `moves/composing-methods.md`, `moves/moving-features.md`, `moves/organizing-data.md`, `moves/simplifying-conditionals.md`, `moves/dealing-with-generalization.md`. Detection and review-translation resources.
+- `@refactor-coder` agent: executes behavior-preserving structural refactors. Spawned when primary objective is structural improvement (naming, locality, legacy isolation, extensibility) not feature shipping. Loads `refactoring-principles`. Model: codex, effort: high. Task-containment rules: one coherent unit per spawn — naming unification, boundary extraction, compatibility isolation, branching consolidation, or obsolete-path cleanup. Reports residual risk and scope misalignment.
+
+### Changed
+- `@refactor-reviewer`: full rewrite. Now loads `refactoring-principles`. Structured around smell detection and severity judgment. Body expanded with concrete what-to-look-for list (scattered edits, mixed responsibilities, misleading names, frozen wrong axis, repeated branching, legacy smear, dead structure, cost-free indirection), severity rubric (broad coordinated edits > wrong-place agent edits > weak names > legacy clutter), and selective skill-reference routing table (change-preventers for scattered fan-out, bloaters for oversized classes, couplers for weak locality, dispensables + deprecation-and-legacy for dead structure, moves/ for unclear remedy).
+- `@design-orchestrator`: loads `refactoring-principles` skill.
+- `dev-principles` skill: trimmed and reorganized.
+- `context-handoffs` skill: trimmed.
+
 ## [0.0.30] - 2026-04-19
 
 ### Added

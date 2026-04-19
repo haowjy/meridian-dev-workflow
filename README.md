@@ -31,8 +31,8 @@ codebase mirror and user-facing docs through write/review/fix loops.
 # dev-orchestrator handles requirements + design review
 meridian spawn -a dev-orchestrator -p 'Build JWT token validation'
 
-# dev-orch spawns design-orch → reviews design with user → spawns impl-orch (planning role)
-# → reviews plan with user → spawns impl-orch (execution role) → spawns docs-orch
+# @dev-orchestrator spawns @design-orchestrator → reviews design with user → spawns @impl-orchestrator (planning role)
+# → reviews plan with user → spawns @impl-orchestrator (execution role) → spawns @docs-orchestrator
 ```
 
 ## Agents
@@ -84,7 +84,7 @@ meridian spawn -a dev-orchestrator -p 'Build JWT token validation'
 |---|---|---|
 | `internet-researcher` | codex | Best practices, library comparisons, and architecture patterns via web search — the external counterpart to `explorer` |
 | `explorer` | gpt-5.4-mini | Fast, cheap codebase explorer — reads files, searches code, mines past sessions |
-| `code-documenter` | sonnet | Maintains the codebase mirror in `$MERIDIAN_FS_DIR`, keeps code comments accurate, and captures design rationale from sessions |
+| `code-documenter` | sonnet | Maintains the codebase mirror in `.meridian/fs/`, keeps code comments accurate, and captures design rationale from sessions |
 | `tech-writer` | sonnet | Writes and maintains user-facing docs — getting started guides, API reference, CLI usage, and tutorials |
 
 ## Skills
@@ -135,6 +135,7 @@ resolve from the base source. Both sources must be installed.
 ```bash
 meridian mars add meridian-flow/meridian-base
 meridian mars add meridian-flow/meridian-dev-workflow
+meridian config set primary.agent dev-orchestrator
 ```
 
 ## Layout
