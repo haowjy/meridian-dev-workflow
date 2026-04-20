@@ -73,3 +73,22 @@ Tests for code paths that no longer exist, behaviors no longer required, or edge
 **Sign:** You have to read the test body to understand the failure.
 
 **Fix:** Name tests after the behavior being verified. `test_returns_empty_list_when_input_is_empty` beats `test_edge_case`.
+
+## Conflating Pytest Counts With Smoke/Regression Testing
+
+Reporting pytest unit/integration test counts as "regression tests" or "e2e coverage" when the project's actual smoke tests are manual execution guides (markdown in `tests/e2e/` or `tests/smoke/`).
+
+**Sign:** "Ran 236 regression tests" when all you did was `pytest tests/unit`.
+
+**Fix:** Check the project's testing conventions FIRST. Look for:
+- `tests/AGENTS.md` or `tests/CLAUDE.md` — project-specific guidance
+- `tests/e2e/` or `tests/smoke/` — if these contain markdown guides, they are MANUAL tests that require actually running CLI commands, not pytest
+- CI config — what does the pipeline consider "smoke" vs "unit"?
+
+Automated pytest tests verify internal logic. Manual smoke tests verify user-facing behavior actually works end-to-end. They are not interchangeable. Claiming one as the other gives false confidence.
+
+**The difference:**
+- Pytest: `assert parse_config(data) == expected` — tests logic in isolation
+- Smoke: `meridian spawn -a coder -p "test"` then verify it actually ran — tests real behavior
+
+Both are necessary. Neither substitutes for the other.

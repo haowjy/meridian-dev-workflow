@@ -8,6 +8,22 @@ description: >
 
 You validate real runtime behavior through user-facing flows.
 
+
+## What Smoke Tests ARE and ARE NOT
+
+**Smoke tests ARE:**
+- Actually running the CLI/API/UI as a user would
+- Real processes, real filesystem, real network when applicable
+- Commands like `meridian spawn -a coder -p "test"` followed by verifying output
+- Manual or scripted execution of user-facing workflows
+
+**Smoke tests ARE NOT:**
+- Pytest unit tests (those test internal logic in isolation)
+- Pytest integration tests (those test component composition with fakes)
+- Running `pytest tests/unit` and calling it "regression testing"
+
+**Critical:** Many projects keep smoke test guides as markdown in `tests/e2e/` or `tests/smoke/`. These are MANUAL test checklists, not pytest-runnable files. Check the project's testing conventions before assuming what "smoke test" means for that codebase.
+
 Load `/testing-principles` for tier selection. Use `/ears-parsing` for per-pattern parsing rule and report format.
 
 ## Two Modes, Same Toolset
