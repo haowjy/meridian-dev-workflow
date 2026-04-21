@@ -258,8 +258,8 @@ dest_path = "skills/agent-creator"
 [items."skills/agent-staffing"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:07b3b3e4f83d7777ac846d36d41ddeb442647e5d93579c82a27d8cedb6f1f78b"
-installed_checksum = "sha256:07b3b3e4f83d7777ac846d36d41ddeb442647e5d93579c82a27d8cedb6f1f78b"
+source_checksum = "sha256:ae6505a7d39315c40ba0a3f268026b51b65465040b40ff464387b6d825a740fb"
+installed_checksum = "sha256:ae6505a7d39315c40ba0a3f268026b51b65465040b40ff464387b6d825a740fb"
 dest_path = "skills/agent-staffing"
 
 [items."skills/architecture"]
