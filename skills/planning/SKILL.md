@@ -15,7 +15,7 @@ See `resources/execution-model.md` for the phase/subphase execution diagram.
 
 ## Phase
 
-An independently testable stopping point. Ends with a full gate.
+An independently testable checkpoint. Ends with a full gate.
 
 A good phase is:
 

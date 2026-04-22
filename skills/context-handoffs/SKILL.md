@@ -11,7 +11,7 @@ description: Context scoping for agent spawns — use when deciding what context
 ## Choose Mechanism
 
 - `-f`: default. Folders for structure, specific files for content.
-- `--from`: use for reasoning/history not yet materialized.
+- `--from`: use for reasoning/history not yet materialized. Takes a spawn id for predecessor reasoning, or `$MERIDIAN_CHAT_ID` to pull the top-level primary session — the root conversation at the top of the chat tree, available at any spawn depth.
 - Materialize first when context is critical.
 
 ```bash
@@ -29,6 +29,13 @@ meridian spawn -a coder -p "Implement auth middleware" \
 ```bash
 # Good: reasoning context from prior spawn
 meridian spawn -a reviewer --from p203 -p "Review against design intent"
+
+# Top-level conversation gives framing; files still supply scope
+meridian spawn -a coder \
+  --from $MERIDIAN_CHAT_ID \
+  -f plan/phase-2.md \
+  -f src/auth/ \
+  -p "Implement phase 2 per the approach discussed at the primary"
 
 # Materialize critical reasoning before spawn
 meridian spawn -a coder -p "Implement event store" -f <work_dir>/approach.md

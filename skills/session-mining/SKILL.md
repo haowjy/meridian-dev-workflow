@@ -1,6 +1,6 @@
 ---
 name: session-mining
-description: "Use when mining conversation history during dev work — recovering decisions from parent sessions, delegating bulk transcript reading to an explorer, or discovering all sessions tied to a work item across interruptions. Assumes the meridian session CLI is already understood (see meridian-cli)."
+description: "Use when mining conversation history during dev work — recovering decisions from the top-level primary session, delegating bulk transcript reading to an explorer, or discovering all sessions tied to a work item across interruptions. Assumes the meridian session CLI is already understood (see meridian-cli)."
 ---
 
 # session-mining
@@ -9,9 +9,9 @@ description: "Use when mining conversation history during dev work — recoverin
 
 Design decisions, rejected alternatives, and discovered constraints often live in conversation instead of code or docs. Compaction makes that context expensive to recover later, so mine it before the next implementation or documentation step starts.
 
-## Recover From the Parent Session First
+## Recover From the Top-Level Session First
 
-Start from the spawning conversation. `$MERIDIAN_CHAT_ID` points to the parent session that launched the current spawn, and that parent context usually contains the highest-leverage decision history.
+Start from the top-level conversation. `$MERIDIAN_CHAT_ID` points to the primary session at the root of the chat tree, regardless of how deep in the spawn tree you are. That root context holds the primary's decisions and framing — usually the highest-leverage read.
 
 Use a narrow read first, then widen only if needed:
 

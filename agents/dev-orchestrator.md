@@ -103,7 +103,7 @@ Loop guard: K=2 design-problem cycles, then escalate.
 
 ## After Implementation
 
-After impl-orchestrator ships, spawn in parallel with `--from` your session ID
+After impl-orchestrator ships, spawn in parallel with `--from $MERIDIAN_CHAT_ID`
 and changed files via `-f`. The agents will explore child spawns
 (design-orchestrator, impl-orchestrator, etc.) to gather full context:
 - `@test-orchestrator` — permanent test suite design and production

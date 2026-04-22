@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-04-21
+
 ### Changed
 - Context backend migration: `.meridian/fs/` → kb (`meridian context kb`), `.meridian/work/<id>/` → work dir (`meridian work current`). All agents and skills use query commands instead of path construction or env vars.
 - Agents updated: architect, code-documenter, design-orchestrator, design-writer, dev-orchestrator, frontend-designer — removed path reconstruction, `meridian context --json`, hardcoded `.meridian/fs/` and `.meridian/work/` paths.
@@ -15,6 +17,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `dev-principles`: two new sections at top — "Spec-Driven Development" (requirements → EARS spec → architecture → verified impl, spec is the contract) and "Treat Requirements as Hypotheses" (XY Problem, JTBD framing, solution-free problem statements).
 
 ### Changed
+- `@impl-orchestrator`: through-execution contract. Phase gates = checkpoints, not stops. Three named early exits (redesign brief, escalated blocker, caller-scoped subset w/ explicit stop language). Final report split: completion-shape vs early-exit-shape. Phase def: "stopping point" → "checkpoint". `<delegate_writing>` block: `>>` and `sed -i` allowed, destructive rewrites banned. "adjust scope" removed from adapt clause.
+- `@dev-orchestrator`: post-impl spawn uses `--from $MERIDIAN_CHAT_ID` (was ambiguous "your session ID").
+- `orchestrate` skill: new "Match prompt scope to agent scope" clause. Cadence instructions ≠ completion scope.
+- `planning` skill: phase def aligned with impl-orchestrator ("stopping point" → "checkpoint").
+- `context-handoffs` skill: `--from` covers `<spawn-id>` and `$MERIDIAN_CHAT_ID` (top-level primary at any depth). Worked example added.
+- `session-mining` skill: `$MERIDIAN_CHAT_ID` semantics corrected — top-level primary, not parent. Heading, body, frontmatter all fixed.
 - `@dev-orchestrator`: reframed as "primary developer / translator between user and technical teams." New requirements gathering section — XY Problem awareness, JTBD-style questioning, first-principles challenge, solution-free gating before routing to design. Specialist routing table expanded: design-writer, smoke-tester for probing, investigator for diagnosis. Post-impl routing: test-orchestrator + code-documenter + tech-writer in parallel with `--from` session context. Planner terminal state handling (probe-request → smoke-tester, structural-blocking → design-orchestrator). Writing constraint: delegate via specialists, exceptions for requirements.md and prompts.
 - `@design-orchestrator`: reframed as technical design owner, not problem discovery. Sonnet 1M model, autocompact 30. Explores technical options (not first-principle problems — that's dev-orchestrator). Challenges technical feasibility. Expanded refactoring awareness — "clean codebase is prerequisite, design time is cheapest fix." Spawns explorer, refactor-reviewer, reviewer. Uses smoke-tester for probes not coder.
 - `@impl-orchestrator`: broke coder-centrism. New definitions section (phase, subphase, probe, diagnosis — each with right agent). Subphase loop: probe-first step, light reviewer per subphase, route issues by type (impl → coder, behavioral → smoke-tester, root-cause → investigator). Phase gate: one general reviewer (save fan-out for final gate), temp unit/integration tests deleted after. Final gate: reviewer fan-out by focus area, duplicate higher-level with opus, refactor-reviewer on full change set. Judgment/escalation discipline — recognize non-converging cycles, escalate redesign briefs.
