@@ -1,6 +1,12 @@
 ---
 name: frontend-coder
-description: Use when a scoped UI implementation task needs distinctive design quality rather than only production correctness — pick over @coder when the aesthetic matters. Spawn with `meridian spawn -a frontend-coder`, passing phase blueprints and context with -f.
+description: >
+  Use for any scoped frontend/UI implementation: React/TSX components,
+  Storybook stories, CSS, visual states, interaction behavior, responsive
+  layout, or user-facing component work. Pick over @coder for frontend/** or
+  UI work, even when the task seems mostly functional. Spawn with
+  `meridian spawn -a frontend-coder`, passing phase blueprints and context
+  with -f.
 model: opus
 effort: medium
 skills: [frontend-design, shared-workspace]

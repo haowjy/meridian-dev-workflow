@@ -1,6 +1,11 @@
 ---
 name: coder
-description: Use when a scoped implementation task is ready to execute against a phase blueprint. Spawn with `meridian spawn -a coder`, passing the blueprint and context files with -f.
+description: >
+  Use for scoped backend, CLI, infrastructure, and non-UI implementation tasks
+  ready to execute against a phase blueprint. Do not use for React, TSX, CSS,
+  Storybook, or user-facing component work; use @frontend-coder for those.
+  Spawn with `meridian spawn -a coder`, passing the blueprint and context
+  files with -f.
 model: codex
 effort: high
 skills: [dev-principles, shared-workspace]
