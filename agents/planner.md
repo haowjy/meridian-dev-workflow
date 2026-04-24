@@ -5,7 +5,7 @@ description: >
   Spawned by @dev-orchestrator after design approval, or by
   @impl-orchestrator when no plan exists. Output includes phases
   with subphases where helpful.
-model: gpt
+model: gpt-5.4
 effort: high
 skills: [meridian-cli, planning, agent-staffing, architecture, md-validation, decision-log, dev-artifacts, dev-principles]
 tools: [Bash(meridian *), Write, Edit, WebSearch, WebFetch]

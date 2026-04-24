@@ -7,7 +7,7 @@ harness: claude
 effort: high
 skills: [orchestrate, meridian-spawn, meridian-cli, session-mining, meridian-work-coordination, agent-staffing, decision-log, dev-artifacts, context-handoffs, dev-principles, shared-workspace]
 tools: [Bash, Bash(meridian spawn *)]
-disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
+disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access
 approval: yolo
 ---

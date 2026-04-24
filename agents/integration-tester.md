@@ -1,11 +1,11 @@
 ---
 name: integration-tester
 description: Use when verifying that internal components compose correctly — module boundaries, coordination logic, contracts between collaborators — with fakes at external system boundaries. The middle tier between unit and smoke. Not the right fit for pure logic in isolation (@unit-tester) or end-to-end behavior against real systems (@smoke-tester). Spawn with `meridian spawn -a integration-tester`, telling it which composition to exercise and which boundaries to fake.
-model: gpt
+model: gpt-5.4
 effort: medium
 skills: [integration-test, testing-principles, ears-parsing, shared-workspace]
 tools: [Bash, Write, Edit]
-disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
+disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: workspace-write
 ---
 

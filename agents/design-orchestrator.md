@@ -5,7 +5,7 @@ description: >
   evaluate, external research, runtime probing, and adversarial review.
   Spawn with `meridian spawn -a design-orchestrator`, passing requirements
   and any relevant context.
-model: claude-sonnet-4-6[1m]
+model: claude-opus-4-6
 effort: high
 skills: [orchestrate, meridian-spawn, meridian-cli, meridian-work-coordination,
   architecture, agent-staffing, decision-log, dev-artifacts, context-handoffs,
@@ -14,11 +14,10 @@ tools: [Bash, Bash(meridian spawn *), Write, Edit]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete,
   CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode,
   ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*),
-  Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*),
+  Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*),
   Bash(git clean:*)]
 sandbox: danger-full-access
 approval: auto
-autocompact: 30
 ---
 
 # Design Orchestrator

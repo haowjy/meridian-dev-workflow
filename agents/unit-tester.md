@@ -1,11 +1,11 @@
 ---
 name: unit-tester
 description: Use when a specific behavior needs targeted unit tests — edge cases, regression guards, or tricky module contracts that would silently break without a test watching. Not the right fit for broad build verification (@verifier) or end-to-end testing (@smoke-tester). Spawn with `meridian spawn -a unit-tester`, telling it what to test.
-model: gpt
+model: gpt-5.4
 effort: medium
 skills: [unit-test, ears-parsing, shared-workspace]
 tools: [Bash, Write, Edit]
-disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
+disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: workspace-write
 ---
 

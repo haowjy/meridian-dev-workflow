@@ -6,7 +6,7 @@ description: >
   documentation implementation can build from. Spawn with
   `meridian spawn -a architect`, passing conversation context with --from and
   relevant files with -f. Writes to the work directory.
-model: gpt
+model: gpt-5.4
 effort: high
 skills: [meridian-cli, md-validation, architecture, tech-docs, decision-log, context-handoffs, dev-artifacts, dev-principles]
 tools: [Bash(meridian *), Bash(git *), Write, Edit, WebSearch, WebFetch]

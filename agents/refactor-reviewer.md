@@ -1,11 +1,16 @@
 ---
 name: refactor-reviewer
 description: Use when structural health of a change or module needs review — tangled dependencies, mixed concerns, coupling, or rearrangement opportunities that compound across future work. Pair with @reviewer during design review and final implementation review. Spawn with `meridian spawn -a refactor-reviewer`, passing target files with -f. Read-only — reports findings, doesn't execute.
-model: gpt
+model: gpt-5.4
 effort: high
+models:
+  gpt:
+    effort: high
+  opus:
+    effort: high
 skills: [meridian-cli, refactoring-principles, dev-principles, review, decision-log, context-handoffs]
 tools: [Bash(meridian spawn show *), Bash(meridian session *), Bash(meridian work show *), Bash(git diff *), Bash(git log *), Bash(git show *), Bash(git status *)]
-disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree]
+disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*)]
 sandbox: read-only
 ---
 

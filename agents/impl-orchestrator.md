@@ -4,11 +4,11 @@ description: >
   Drives implementation to shipped code. Works with a formal plan or
   spawns @planner to create one. Runs phase/subphase loops, drives
   verification, adapts when reality diverges, runs final gate before ship.
-model: claude-opus-4-5-20251101
+model: claude-opus-4-5
 effort: high
 skills: [orchestrate, meridian-spawn, meridian-cli, meridian-work-coordination, agent-staffing, decision-log, dev-artifacts, context-handoffs, dev-principles, planning, caveman, shared-workspace]
 tools: [Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(git status *), Bash(git diff *), Bash(rg *), Bash(sed *), Bash(ls *), Bash(pwd)]
-disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
+disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access
 approval: auto
 ---

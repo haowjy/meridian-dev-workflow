@@ -5,7 +5,7 @@ description: >
   suite. Runs parallel with @code-documenter and @tech-writer. Spawn with
   `meridian spawn -a test-orchestrator`, passing impl context and changed
   files with -f.
-model: gpt
+model: gpt-5.4
 effort: high
 skills: [orchestrate, meridian-spawn, meridian-cli, meridian-work-coordination,
   testing-principles, agent-staffing, decision-log, dev-artifacts,
@@ -14,7 +14,7 @@ tools: [Bash, Bash(meridian spawn *)]
 disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate,
   CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger,
   EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*),
-  Bash(git checkout --:*), Bash(git restore:*), Bash(git reset --hard:*),
+  Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*),
   Bash(git clean:*)]
 sandbox: danger-full-access
 approval: auto
