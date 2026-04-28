@@ -11,7 +11,7 @@ Writer/reader rules for work-dir artifacts, and the placement rules for docs tha
 | `plan/` | @planner (spawned by @dev-orchestrator) | @impl-orchestrator, @dev-orchestrator |
 | `plan/preservation-hint.md` | @dev-orchestrator | @planner, @impl-orchestrator |
 | `decisions.md` | @design-orchestrator, @impl-orchestrator | all downstream |
-| kb (`meridian context kb`) | @code-documenter | all agents |
+| kb (`meridian context kb`) | @kb-writer, @kb-maintainer | all agents |
 
 ## Redesign And Rejections
 
@@ -21,12 +21,12 @@ Writer/reader rules for work-dir artifacts, and the placement rules for docs tha
 
 ## Documentation Layers
 
-- **kb** (`meridian context kb`) — durable agent-facing architecture docs.
+- **kb** (`meridian context kb`) — persistent knowledge base. Decisions, domain knowledge, architecture, synthesized research.
 - **`docs/`** — user-facing docs.
 - **work dir** (`meridian work current`) — work-scoped artifacts and research.
 
 Rules:
 
-- Do not create a `research/` directory in the kb.
-- Work research stays in the work directory.
-- Durable findings are synthesized into kb domain docs.
+- Work-scoped research stays in the work directory during the work item.
+- Durable findings are synthesized into KB via @kb-writer when work completes.
+- See `/kb-conventions` for what belongs in KB vs work dir.

@@ -25,6 +25,19 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `agent-staffing/builders.md`: coder catalog entries updated — @coder is full-stack, @frontend-coder is visual design fidelity. Added @mockup-gen, @imagegen, @browser entries.
 - `agent-staffing/testers.md`: @browser-tester entry updated for `playwright-cli` usage and `--annotate` for interactive browser sessions.
 - `agent-staffing/reviewers.md`: added @alignment-reviewer entry with usage at plan verification and impl final gate.
+- `@dev-orchestrator`: `@code-documenter` → `@kb-writer` in routing and post-impl. Post-impl now spawns `@kb-maintainer` after kb-writer completes for structural health.
+- `@impl-orchestrator`: `@code-documenter` → `@kb-writer`, `@kb-maintainer`, `@tech-writer`.
+- `@test-orchestrator`: description updated — runs parallel with `@kb-writer` not `@code-documenter`.
+- `agent-staffing/maintainers.md`: `@code-documenter` → `@kb-writer` + `@kb-maintainer` entries.
+- `dev-artifacts/ownership.md`: KB ownership updated to @kb-writer/@kb-maintainer. Documentation layers reframed — KB is persistent knowledge base, not code mirror. Points to `/kb-conventions`.
+- `dev-principles` skill: added "Diagram First" section — default to mermaid diagrams for structural communication.
+- README: topology, agent table, lifecycle, and cross-source deps updated for KB agents and explorer move.
+
+### Removed
+- `@code-documenter` agent: replaced by `@kb-writer` + `@kb-maintainer` in meridian-base.
+- `@explorer` agent: moved to meridian-base — generic cheap reader, not dev-workflow-specific.
+- `decision-log` skill: moved to meridian-base for broader reuse.
+- `session-mining` skill: moved to meridian-base for broader reuse.
 
 ## [0.1.7] - 2026-04-25
 

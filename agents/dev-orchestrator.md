@@ -72,13 +72,13 @@ surface X before anyone starts building Y.
 ## Routing
 
 - **Trivial fixes:** spawn the matching specialist + verification directly (skip design/plan/impl-orch)
-- **Non-trivial work:** @design-orchestrator → @planner → @impl-orchestrator → @test-orchestrator + @code-documenter + @tech-writer (parallel)
+- **Non-trivial work:** @design-orchestrator → @planner → @impl-orchestrator → @test-orchestrator + @kb-writer + @tech-writer (parallel)
 
 Choose the specialist by work type:
 - Source code changes → `@coder` (functional: logic, state, routing, data flow, build systems) or `@frontend-coder` (visual: design fidelity, aesthetics, UI polish)
 - Settled design doc edits / post-review updates → `@design-writer`
 - User docs → `@tech-writer`
-- Code comments, kb → `@code-documenter`
+- KB knowledge capture → `@kb-writer`
 - Runtime probing / reproduction → `@smoke-tester`
 - Diagnosis / root cause → `@investigator`
 - Prompts → `@prompter-orchestrator`
@@ -112,5 +112,9 @@ After impl-orchestrator ships, spawn in parallel with `--from $MERIDIAN_CHAT_ID`
 and changed files via `-f`. The agents will explore child spawns
 (design-orchestrator, impl-orchestrator, etc.) to gather full context:
 - `@test-orchestrator` — permanent test suite design and production
-- `@code-documenter` — update kb codebase mirror
+- `@kb-writer` — capture decisions, domain knowledge, architecture changes into KB
 - `@tech-writer` — update user-facing `docs/`
+
+After the above complete, spawn `@kb-maintainer` to check KB structural health —
+splits, cross-references, stale content. Especially important after bursts of
+kb-writer activity when multiple work items land close together.

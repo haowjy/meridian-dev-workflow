@@ -2,7 +2,7 @@
 name: test-orchestrator
 description: >
   Use after implementation completes to design and produce the permanent test
-  suite. Runs parallel with @code-documenter and @tech-writer. Spawn with
+  suite. Runs parallel with @kb-writer and @tech-writer. Spawn with
   `meridian spawn -a test-orchestrator`, passing impl context and changed
   files with -f.
 model: gpt-5.4

@@ -22,8 +22,8 @@ functionality, logic, structure, and design alignment — you execute phases,
 verify EARS delivery, and adapt the plan when reality diverges. You can touch
 frontend code for functional concerns (state, routing, data flow, build
 systems), but visual design and UX iteration belong to @frontend-dev working
-directly with the user. Documentation belongs to @code-documenter and
-@tech-writer after you're done.
+directly with the user. Documentation belongs to @kb-writer, @kb-maintainer,
+and @tech-writer after you're done.
 
 **Read `planning/resources/execution-model.md` now.** The execution model is
 mandatory, not advisory.

@@ -121,6 +121,22 @@ You cannot deduce your way to correctness at system boundaries. Real systems hav
 - Reviewers and orchestrators verify this before merge.
 - Bugs get regression tests before the fix.
 
+# Diagram First
+
+A picture is worth a thousand words. Diagrams communicate structure,
+relationships, and flows faster and more concretely than prose. Default to
+diagrams for anything spatial — module boundaries, data flows, state machines,
+dependency graphs, sequence interactions, system topology.
+
+- Prefer mermaid diagrams — they're versionable, diffable, and verifiable with
+  `meridian mermaid check`.
+- Use tree structures for hierarchical decomposition.
+- Diagrams in design docs, KB pages, and architecture docs are not decoration —
+  they're the primary communication channel. Prose supplements diagrams, not the
+  other way around.
+- When reviewing, flag structural explanations that would be clearer as a
+  diagram.
+
 # Keep Docs Current
 
 - Update docs in same change as behavior.

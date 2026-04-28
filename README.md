@@ -29,13 +29,14 @@ before coding, routes findings by type, runs verification gates.
 **test-orchestrator** (autonomous) — designs and produces the permanent test
 suite after implementation ships. Risk-based strategy, adversarial testing.
 
-**code-documenter** + **tech-writer** (autonomous, parallel) — update codebase
-mirror (kb) and user-facing docs respectively after implementation.
+**kb-writer** + **kb-maintainer** + **tech-writer** (autonomous, parallel) —
+capture decisions and domain knowledge into KB, maintain KB structural health,
+and update user-facing docs respectively after implementation.
 
 ```bash
 # Full lifecycle:
 # dev-orchestrator → design-orchestrator → planner → impl-orchestrator
-#   → test-orchestrator + code-documenter + tech-writer (parallel)
+#   → test-orchestrator + kb-writer + kb-maintainer + tech-writer (parallel)
 meridian spawn -a dev-orchestrator -p 'Build JWT token validation'
 ```
 
@@ -89,7 +90,8 @@ meridian spawn -a dev-orchestrator -p 'Build JWT token validation'
 |---|---|---|
 | `web-researcher` | codex | Best practices, library comparisons, and architecture patterns via web search — the external counterpart to `explorer` |
 | `explorer` | gpt-5.4-mini | Fast, cheap codebase explorer — reads files, searches code, mines past sessions |
-| `code-documenter` | sonnet | Maintains the codebase mirror in the knowledge base, keeps code comments accurate, and captures design rationale from sessions |
+| `kb-writer` | sonnet | Writes and updates the project's knowledge base — decisions, domain knowledge, architecture, synthesized research |
+| `kb-maintainer` | gpt | Structural health of the KB — splits, merges, cross-references, staleness, conflict resolution |
 | `tech-writer` | sonnet | Writes and maintains user-facing docs — getting started guides, API reference, CLI usage, and tutorials |
 
 ## Skills
@@ -130,7 +132,8 @@ Several agents load skills from both this repo and `meridian-base`:
 - `meridian-spawn` (base) — how to spawn and coordinate agents
 - `meridian-cli` (base) — meridian and mars CLI mental model, sessions, and diagnostics
 - `meridian-work-coordination` (base) — how to manage work items
-- `session-mining` (dev-workflow) — workflow patterns for mining decisions from session history
+- `session-mining` (base) — workflow patterns for mining decisions from session history
+- `kb-conventions` (base) — KB structure, navigation, writing standards, flag protocol
 
 The install engine warns about cross-source deps but doesn't fail — these
 resolve from the base source. Both sources must be installed.
