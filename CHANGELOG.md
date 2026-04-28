@@ -4,8 +4,27 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `@alignment-reviewer` agent: coverage verification — checks whether one artifact delivers what another promised (plan vs design, impl vs spec, code vs architecture). Takes source of truth via `-f`, optional conversation context via `--from`. Reports items as Covered/Gap/Partial/Drift. Model: gpt55, read-only.
+- `@frontend-dev` agent: primary visual/UX entry point — the visual counterpart to @dev-orchestrator. Works directly with user to iterate on design through rapid mockup cycles. Opus model, `harness: claude`, `approval: yolo`. Spawns @mockup-gen, @browser, @frontend-designer, @frontend-coder, @browser-tester, @imagegen.
+- `@mockup-gen` agent: fast throwaway visual mockups using the project's real frontend components and design system. Speed over polish — hardcode data, skip edge cases, get something visual in front of the user fast. Model: gpt55.
+- `@imagegen` agent: native image generation. UI concept mockups, visual explorations, icons, reference imagery. Usually spawned on explicit user request. Model: gpt55.
+- `@browser` agent: general-purpose browser interaction via `playwright-cli`. Scraping, data extraction, screenshots, interactive annotation, design research — the prompt defines the purpose. Model: gpt55.
+- `playwright-cli` dependency: Microsoft's `@playwright/cli` skill for harness-agnostic browser automation via Bash. Replaces Playwright MCP plugin.
+
 ### Changed
 - `@dev-orchestrator`: frontmatter no longer forces generic `effort: high`; model alias policy now owns effort default.
+- `@dev-orchestrator`: checkpoints now explicitly pass behavioral spec (`-f design/spec/`) to planner and impl-orchestrator when present — EARS traceability mandatory when EARS exist. Fixed stale `@prompt-writer` → `@prompter-orchestrator` reference. Routing table clarifies coder vs frontend-coder: functional (logic, state, routing, data flow) vs visual (design fidelity, aesthetics, UI polish).
+- `@impl-orchestrator`: scope clarified — functionality, logic, structure, and design alignment. Can touch frontend code for functional concerns; visual/UX iteration belongs to @frontend-dev. Phase exit gate gains @alignment-reviewer lane for EARS verification + @browser-tester for functional frontend verification. Can respawn @planner mid-flight when EARS gaps found at phase gates. Final gate uses @alignment-reviewer with full design package for holistic design-intent check.
+- `@planner`: "or lighter context" removed — requires design package with requirements, no escape hatch. Can be spawned by @impl-orchestrator for mid-flight plan adjustment. Two new thoroughness checks: every requirement in `requirements.md` maps to a delivering subphase, every EARS statement maps to a subphase whose blueprint actually scopes the work (table assignment alone is not delivery).
+- `@coder`: description reframed from file-type restriction to intent-based routing. Now full-stack: backend, frontend logic, CLI, infrastructure, data flow, build systems. "Do not use for React, TSX, CSS" restriction removed. Description adds spawn/prompt guidance (subphase, EARS statements, integration boundaries).
+- `@frontend-coder`: model `claude-opus-4-6` → `gpt55` (clear specs don't need Opus aesthetic judgment — GPT executes faithfully against design targets). Fan-out updated `opus`/`opus47` → `gpt55`/`codex`. Description reframed: pick when visual quality and design fidelity are the primary concern, not just because file is frontend code. Body shifted from autonomous aesthetic judgment ("generic UI is a failure") to faithful spec execution ("match the visual target"). Adds mockup/screenshot guidance.
+- `@refactor-coder`: dropped "scoped" filler from description. Added prompt guidance: state structural move and behavior-preservation constraints.
+- `@browser-tester`: model `claude-opus-4-6` → `gpt55` (GPT excels at computer use). MCP Playwright plugin → `playwright-cli` skill (harness-agnostic CLI). Sandbox → `danger-full-access` (browser automation needs it). Description adds spawn/prompt guidance.
+- `browser-test` skill: refactored to methodology-only — references `/playwright-cli` for browser mechanics instead of teaching Playwright usage.
+- `agent-staffing/builders.md`: coder catalog entries updated — @coder is full-stack, @frontend-coder is visual design fidelity. Added @mockup-gen, @imagegen, @browser entries.
+- `agent-staffing/testers.md`: @browser-tester entry updated for `playwright-cli` usage and `--annotate` for interactive browser sessions.
+- `agent-staffing/reviewers.md`: added @alignment-reviewer entry with usage at plan verification and impl final gate.
 
 ## [0.1.7] - 2026-04-25
 

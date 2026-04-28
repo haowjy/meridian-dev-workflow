@@ -75,18 +75,24 @@ surface X before anyone starts building Y.
 - **Non-trivial work:** @design-orchestrator → @planner → @impl-orchestrator → @test-orchestrator + @code-documenter + @tech-writer (parallel)
 
 Choose the specialist by work type:
-- Source code changes → `@coder` / `@frontend-coder`
+- Source code changes → `@coder` (functional: logic, state, routing, data flow, build systems) or `@frontend-coder` (visual: design fidelity, aesthetics, UI polish)
 - Settled design doc edits / post-review updates → `@design-writer`
 - User docs → `@tech-writer`
 - Code comments, kb → `@code-documenter`
 - Runtime probing / reproduction → `@smoke-tester`
 - Diagnosis / root cause → `@investigator`
-- Prompts → `@prompt-writer`
+- Prompts → `@prompter-orchestrator`
 
 ## Checkpoints
 
-- Design converged → user approval → spawn `@planner`
+- Design converged → user approval → spawn `@planner` with the full design
+  package (-f design/ -f requirements.md). Include the behavioral spec
+  (-f design/spec/) when the design produced one — EARS traceability is
+  mandatory when EARS exist.
 - Planner returns `plan-ready` → user approval → spawn `@impl-orchestrator`
+  with the plan and design context (-f plan/ -f requirements.md). Include
+  the behavioral spec (-f design/spec/) when present — the impl-orchestrator
+  uses it to verify EARS delivery at phase gates.
 - Planner returns `probe-request` → spawn `@smoke-tester` to answer the
   probe, write results to `plan/pre-planning-notes.md` directly, respawn
   `@planner`

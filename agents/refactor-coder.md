@@ -1,8 +1,16 @@
 ---
 name: refactor-coder
-description: Use when a scoped, behavior-preserving structural refactor is ready to execute. Pick over `@coder` when the primary objective is improving code structure, naming, locality, legacy isolation, or extensibility rather than shipping a new feature. Spawn with `meridian spawn -a refactor-coder`, passing the refactor objective, constraints, and affected files with `-f`.
-model: codex
-effort: high
+description: >
+  Use when a behavior-preserving structural refactor is ready to execute.
+  Pick over @coder when the primary objective is improving code structure,
+  naming, locality, legacy isolation, or extensibility rather than shipping
+  new behavior. Spawn with `meridian spawn -a refactor-coder`, passing the
+  affected files with -f. State the structural move to make and the
+  behavior-preservation constraints in the prompt — the orchestrator owns
+  decomposition, the refactor-coder owns correct execution of the assigned
+  unit.
+model: gpt55
+effort: medium
 skills: [refactoring-principles, dev-principles, shared-workspace]
 tools: [Bash, Write, Edit]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]

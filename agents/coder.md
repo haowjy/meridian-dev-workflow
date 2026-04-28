@@ -1,11 +1,13 @@
 ---
 name: coder
 description: >
-  Use for scoped backend, CLI, infrastructure, and non-UI implementation tasks
-  ready to execute against a phase blueprint. Do not use for React, TSX, CSS,
-  Storybook, or user-facing component work; use @frontend-coder for those.
-  Spawn with `meridian spawn -a coder`, passing the blueprint and context
-  files with -f.
+  Use for implementation tasks ready to execute against a phase blueprint —
+  backend, frontend logic, CLI, infrastructure, data flow, build systems.
+  Pick over @frontend-coder when functional correctness is the goal; pick
+  @frontend-coder when visual design fidelity is. Spawn with
+  `meridian spawn -a coder`, passing the blueprint and relevant source
+  files with -f. Tell it which subphase to implement, which EARS statements
+  it owns, and any integration boundaries to respect.
 model: gpt55
 effort: low
 models:

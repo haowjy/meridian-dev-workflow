@@ -54,7 +54,7 @@ When a phase talks to an external system:
 
 See resources for detailed catalogs:
 
-- `resources/reviewers.md` — @reviewer and @refactor-reviewer
+- `resources/reviewers.md` — @reviewer, @refactor-reviewer, and @alignment-reviewer
 - `resources/testers.md` — @verifier, @smoke-tester, @unit-tester, @integration-tester, @browser-tester
 - `resources/builders.md` — @coders, @architects, @web-researchers, @explorers
 - `resources/maintainers.md` — @code-documenter, @tech-writer, @investigator
