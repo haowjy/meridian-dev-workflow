@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-04-30
+
 ### Added
 - `@alignment-reviewer` agent: coverage verification — checks whether one artifact delivers what another promised (plan vs design, impl vs spec, code vs architecture). Takes source of truth via `-f`, optional conversation context via `--from`. Reports items as Covered/Gap/Partial/Drift. Model: gpt55, read-only.
 - `@frontend-dev` agent: primary visual/UX entry point — the visual counterpart to @dev-orchestrator. Works directly with user to iterate on design through rapid mockup cycles. Opus model, `harness: claude`, `approval: yolo`. Spawns @mockup-gen, @browser, @frontend-designer, @frontend-coder, @browser-tester, @imagegen.
