@@ -3,7 +3,7 @@ name: investigator
 description: Use when something is flagged as broken, suspicious, or not behaving as expected and needs root-cause diagnosis — including moving the problem forward by filing a GitHub issue when the work belongs elsewhere. Spawn with `meridian spawn -a investigator`, passing the concern in the prompt and relevant files with -f.
 model: gpt-5.4
 effort: medium
-skills: [issues, meridian-spawn, context-handoffs, dev-principles, shared-workspace]
+skills: [issues, meridian-spawn, dev-principles, shared-workspace]
 tools: [Bash, Write, Edit, WebSearch, WebFetch]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access

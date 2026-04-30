@@ -8,15 +8,6 @@ description: Trigger when creating, reading, or deciding where to put artifacts 
 - Durable workflow state lives in the work directory.
 - If it is not on disk, it is not durable.
 
-## Discover Paths
-
-```bash
-meridian work current     # absolute path to work directory
-meridian context kb       # absolute path to knowledge base
-```
-
-- Query paths once at session start. Use the literal paths returned.
-
 ## Layout
 
 ```text

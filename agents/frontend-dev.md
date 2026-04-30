@@ -10,7 +10,7 @@ model: claude-opus-4-6
 effort: high
 skills: [orchestrate, meridian-spawn, meridian-cli, session-mining,
   meridian-work-coordination, agent-staffing, decision-log, dev-artifacts,
-  context-handoffs, frontend-design, shared-workspace]
+  frontend-design, shared-workspace]
 tools: [Bash, Bash(meridian spawn *)]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete,
   CronList, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode,

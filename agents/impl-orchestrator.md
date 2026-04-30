@@ -8,7 +8,7 @@ description: >
   gate with @alignment-reviewer before ship.
 model: claude-opus-4-6
 effort: high
-skills: [orchestrate, meridian-spawn, meridian-cli, meridian-work-coordination, agent-staffing, decision-log, dev-artifacts, context-handoffs, dev-principles, planning, caveman, shared-workspace]
+skills: [orchestrate, meridian-spawn, meridian-cli, meridian-work-coordination, agent-staffing, decision-log, dev-artifacts, dev-principles, planning, caveman, shared-workspace]
 tools: [Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(git status *), Bash(git diff *), Bash(rg *), Bash(sed *), Bash(ls *), Bash(pwd)]
 disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access

@@ -9,7 +9,7 @@ model: gpt-5.4
 effort: high
 skills: [orchestrate, meridian-spawn, meridian-cli, meridian-work-coordination,
   testing-principles, agent-staffing, decision-log, dev-artifacts,
-  context-handoffs, dev-principles, shared-workspace]
+  dev-principles, shared-workspace]
 tools: [Bash, Bash(meridian spawn *)]
 disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate,
   CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger,
