@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Removed
+- `meridian-cli` from cross-source dependencies in README (skill deleted from meridian-base).
+
 ## [0.2.0] - 2026-04-30
 
 ### Added

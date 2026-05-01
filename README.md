@@ -130,7 +130,6 @@ meridian spawn -a product-manager -p 'Build JWT token validation'
 Several agents load skills from both this repo and `meridian-base`:
 
 - `meridian-spawn` (base) — how to spawn and coordinate agents
-- `meridian-cli` (base) — meridian and mars CLI mental model, sessions, and diagnostics
 - `meridian-work-coordination` (base) — how to manage work items
 - `session-mining` (base) — workflow patterns for mining decisions from session history
 - `kb-conventions` (base) — KB structure, navigation, writing standards, flag protocol
