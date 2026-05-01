@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@product-manager`: `<delegate_writing>` → generic `<delegate>` block. Covers all work types (investigation, diagnosis, implementation, writing) not just file writes. Bright-line test: "if you're reading source files, reproducing errors, or running non-git commands, you've crossed into work that belongs to a spawn." Same exceptions (requirements.md, prompt files, explicit user request).
+
 ## [0.2.1] - 2026-05-01
 
 ### Removed
