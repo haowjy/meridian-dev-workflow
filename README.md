@@ -17,7 +17,7 @@ The dev lifecycle splits across orchestrators with distinct ownership:
 user and technical teams. Requirements gathering, scope sizing, design/plan
 approval, redesign routing. Spawns everything downstream.
 
-**architect-lead** (autonomous) — owns the technical design. Challenges
+**design-lead** (autonomous) — owns the technical design. Challenges
 feasibility, explores structural options, produces behavioral spec + architecture.
 
 **planner** (autonomous) — decomposes design into executable phases with
@@ -35,7 +35,7 @@ and update user-facing docs respectively after implementation.
 
 ```bash
 # Full lifecycle:
-# product-manager → architect-lead → planner → tech-lead
+# product-manager → design-lead → planner → tech-lead
 #   → qa-lead + kb-writer + kb-maintainer + tech-writer (parallel)
 meridian spawn -a product-manager -p 'Build JWT token validation'
 ```
@@ -47,7 +47,7 @@ meridian spawn -a product-manager -p 'Build JWT token validation'
 | Agent | Model | Role |
 |---|---|---|
 | `product-manager` | (harness default) | Primary developer — requirements gathering, routing, design/plan approval, redesign routing |
-| `architect-lead` | sonnet 1M | Technical design — challenges feasibility, explores options, produces spec + architecture |
+| `design-lead` | sonnet 1M | Technical design — challenges feasibility, explores options, produces spec + architecture |
 | `tech-lead` | opus | Phase-by-phase execution — probe/code/verify loops, gates, final review |
 | `qa-lead` | gpt | Permanent test suite — risk-based strategy, tier design, adversarial testing |
 
