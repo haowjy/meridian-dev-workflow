@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-05-02
+
 ### Changed
 - Agent profiles: migrated 6 agents from deprecated `models:` to `fanout:` + `model-policies:` (browser, browser-tester, coder, frontend-coder, mockup-gen, refactor-reviewer).
 - Skill frontmatter: migrated all 17 skills from legacy `disable-model-invocation`/`allow_implicit_invocation` to canonical `invocation: explicit`.
