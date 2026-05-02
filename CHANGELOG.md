@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-05-02
+
 ### Changed
 - `@product-manager` → `@product-lead`. Role name reflects leadership over product direction, not middle-management.
 
