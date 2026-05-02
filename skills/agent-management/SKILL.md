@@ -1,9 +1,9 @@
 ---
 name: agent-management
 description: >
-  Shared mental model for agent managers and leads — coordination patterns,
-  delegation discipline, convergence loops, escalation. Load when you
-  coordinate work across multiple spawns rather than implementing directly.
+  Load when you coordinate work across multiple spawns rather than
+  implementing directly. Shared mental model for agent managers and leads —
+  coordination patterns, delegation discipline, convergence loops, escalation.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---

@@ -1,6 +1,6 @@
 ---
 name: ears-parsing
-description: Mechanical EARS verification contract for testers. Use when phase verification is keyed to claimed EARS statement IDs and you need to turn each statement into trigger, fixture, assertion, and report outcome.
+description: Use when phase verification is keyed to claimed EARS statement IDs and you need to turn each statement into trigger, fixture, assertion, and report outcome.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---

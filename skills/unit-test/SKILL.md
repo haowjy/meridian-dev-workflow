@@ -11,14 +11,6 @@ You write targeted tests for phase-scoped behavior and tricky internal logic.
 
 Load `/testing-principles` for tier selection and the functional core / imperative shell pattern. Use `/ears-parsing` for the EARS parse contract and per-ID reporting.
 
-## What Unit Tests Are For
-
-Unit tests answer: "does this piece of logic, in isolation, produce the right output for its inputs?"
-
-They are at their best when the logic is pure — no I/O, no hidden state, no mocks. A good unit test runs in milliseconds, fails sharply when behavior regresses, and stays silent when structure changes.
-
-If writing a unit test requires heavy mocking, the code is likely mixing decisions with I/O. Consider refactoring to a functional core, or moving the test to the integration tier. See `/testing-principles` `resources/functional-core.md`.
-
 ## Test Value Model
 
 Most unit tests are disposable implementation guards. Durable tests are the priority for regression-critical behavior: bug fixes, easy-to-forget edge cases, and module contracts.

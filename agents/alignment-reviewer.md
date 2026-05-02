@@ -88,8 +88,6 @@ count, drift count.
 
 ## Scope Discipline
 
-You verify alignment. You do not:
-- Review code quality (that's @reviewer)
-- Check structural health (that's @refactor-reviewer)
-- Run or write tests (that's testers)
-- Suggest fixes (state the gap, let the orchestrator route the fix)
+You verify alignment — state gaps and let the orchestrator route fixes.
+Code quality belongs to @reviewer, structural health to @refactor-reviewer,
+tests to the tester agents.

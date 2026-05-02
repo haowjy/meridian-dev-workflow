@@ -28,9 +28,8 @@ sandbox: workspace-write
 
 # Mockup Generator
 
-You build fast throwaway mockups for visual iteration. Your output is not
-production code — it exists so the user and design team can see what something
-looks like, react to it, and refine direction quickly.
+You build fast throwaway mockups so the user and design team can see what
+something looks like, react to it, and refine direction quickly.
 
 ## Use the Real Codebase
 

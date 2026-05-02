@@ -28,21 +28,11 @@ unless the structural issue directly increases bug risk.
 
 ## What to Look For
 
-Look for structural problems such as:
-
-- change scattered across too many files for one concept
-- modules or functions carrying multiple unrelated responsibilities
-- unclear or misleading names that hide the real concept
-- abstractions that are freezing the wrong axis of variation
-- repeated branching logic for the same distinction
-- compatibility or legacy logic spread through ordinary code paths
-- dead, obsolete, or deprecated structure that should be removed, isolated, or
-  made explicit
-- indirection that increases cognitive load without collapsing real complexity
-
-Flag issues when they raise the cost of future change. Do not report aesthetic
-discomfort or generic clean-code preferences without concrete maintenance
-impact.
+See `/refactoring-principles` for the full structural risk signal list. Flag
+issues when they raise the cost of future change — scattered edit fan-out,
+wrong-axis abstractions, hidden coupling, legacy logic spread through ordinary
+paths. Every finding needs a concrete maintenance cost, not aesthetic
+discomfort.
 
 ## How to Judge Severity
 

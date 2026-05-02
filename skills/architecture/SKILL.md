@@ -1,26 +1,56 @@
 ---
 name: architecture
-description: Use when designing a system, component, or significant change — problem framing, tradeoff analysis, and approach evaluation. Triggers on phrases like "how should we architect this", "let's think about how to build X", or descriptions of non-trivial features, refactors, or system redesigns that need structural thinking before implementation.
+description: >
+  Shared vocabulary for architectural thinking — boundaries, dependencies,
+  tradeoff dimensions, and structural risk. Load when designing, writing
+  about, or planning around system architecture.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---
 
-# Architecture Design
+# Architecture
 
-## Frame the problem
+## Boundaries
 
-When someone opens with a solution, identify the real pain first: goals, constraints, and failure modes. A design cannot be judged without a clear problem statement — and a solution proposed before the problem is understood tends to solve the wrong thing.
+A good boundary has high cohesion within and loose coupling between. Types
+that show up in practice:
 
-## Explore multiple approaches
+- **Module** — code organization, import direction, visibility
+- **Process** — separate runtime, communication over IPC/network
+- **Trust** — authenticated vs unauthenticated, user vs admin, internal vs external
+- **API/contract** — versioned interface that callers depend on
 
-The first plausible approach is often not the best one — it's just the first one that came to mind, shaped by whatever context you loaded most recently. Surface hidden constraints, propose alternatives, and compare them on the dimensions that matter for this work. Even when one approach seems obvious, articulating why it wins over alternatives strengthens the design and gives @reviewers something concrete to evaluate.
+Boundaries are expensive to move once code builds on both sides. Getting them
+wrong early means broad edits later.
 
-## Make tradeoffs explicit
+## Dependencies
 
-For each approach, spell out benefits, risks, and operational consequences. Prioritize tradeoffs tied to real constraints (performance, reliability, complexity, delivery risk), not generic pros/cons. Tradeoffs that aren't made explicit become surprises during implementation — when they're most expensive to deal with.
+Direction matters more than count. Depend toward stability — things that
+change less. When a volatile component depends on a stable one, changes stay
+local. When a stable component depends on a volatile one, changes ripple.
 
-## Stress-test the chosen direction
+Watch for: circular dependencies, stable code depending on volatile code,
+leaking internal representation across a boundary.
 
-Review the chosen direction against feasibility and integration risk. Ask focused @reviewers to dig into specific concerns rather than broad shallow scans — a @reviewer with a clear question produces sharper findings than one told to "look for problems."
+## Tradeoff Dimensions
 
-Common dimensions: **feasibility** (can this actually be built as described?), **scope boundaries** (what's in and out?), **integration risks** (how does this connect to existing systems?), **scalability**, **security implications**, **migration path** (how do you get from here to there?), **alternative approaches** (were other options considered?), and **testability**. Not every dimension applies to every design — pick the ones that match what could actually go wrong.
+Not every dimension applies to every decision. Pick the ones that match what
+could actually go wrong:
+
+- **Reversibility** — how expensive to change this later?
+- **Coupling** — how many things break when this changes?
+- **Complexity** — total ownership cost: code, tests, failure modes, onboarding
+- **Migration path** — how do you get from here to there?
+- **Integration risk** — undocumented behavior, version-specific quirks, implicit contracts
+- **Testability** — can the design be verified at natural seam points?
+- **Scope boundaries** — what's in and what's out?
+
+## Structural Risk
+
+Wrong calls are expensive in proportion to how much code builds on top of
+them. Highest-risk decisions: component boundaries, data model shape, trust
+boundaries, and API contracts. Lower-risk: internal implementation within a
+well-bounded module.
+
+Match scrutiny to risk. A boundary decision that three teams build on
+deserves tradeoff comparison and review. An internal helper function does not.

@@ -19,7 +19,7 @@ commit = "0dcd84f81c30617a9e394ac8e0e1dca76c2cfc38"
 
 [dependencies.playwright-cli]
 url = "https://github.com/microsoft/playwright-cli"
-commit = "8d95174a8f8effd61cd23d3793d9d73c771b9a4f"
+commit = "212b11d473c976efd443b53baa3ed8fe243a408b"
 
 [items."agents/alignment-reviewer.md"]
 source = "_self"
@@ -28,18 +28,11 @@ source_checksum = "sha256:347740ffac93f7d043e96ccdeb7706e4357cfa03e4c18466d9a4fd
 installed_checksum = "sha256:347740ffac93f7d043e96ccdeb7706e4357cfa03e4c18466d9a4fdadf792ccff"
 dest_path = "agents/alignment-reviewer.md"
 
-[items."agents/architect-lead.md"]
-source = "_self"
-kind = "agent"
-source_checksum = "sha256:430b7050147c11d5480bcc94f5a4e332d9f888e23740ecefd76d0e72a38ef8d1"
-installed_checksum = "sha256:430b7050147c11d5480bcc94f5a4e332d9f888e23740ecefd76d0e72a38ef8d1"
-dest_path = "agents/architect-lead.md"
-
 [items."agents/architect.md"]
 source = "_self"
 kind = "agent"
-source_checksum = "sha256:631668980b6679fd11c88c79ddc6c20b513d6f01a176a2c362b50bd665abc19e"
-installed_checksum = "sha256:631668980b6679fd11c88c79ddc6c20b513d6f01a176a2c362b50bd665abc19e"
+source_checksum = "sha256:951e6ffc2a1bc490f17fd8672b627ee423e86608e9e1420395dad0b76973d9ae"
+installed_checksum = "sha256:951e6ffc2a1bc490f17fd8672b627ee423e86608e9e1420395dad0b76973d9ae"
 dest_path = "agents/architect.md"
 
 [items."agents/browser-tester.md"]
@@ -63,11 +56,18 @@ source_checksum = "sha256:b817d5c8812a642f3afe5c57d28d7d4cfa9055391c8cea3d601624
 installed_checksum = "sha256:b817d5c8812a642f3afe5c57d28d7d4cfa9055391c8cea3d601624075be5c533"
 dest_path = "agents/coder.md"
 
+[items."agents/design-lead.md"]
+source = "_self"
+kind = "agent"
+source_checksum = "sha256:6df0c320350fb3acba43f18a8338bbd6680cc4f882da5d04e3f787108bcaff14"
+installed_checksum = "sha256:6df0c320350fb3acba43f18a8338bbd6680cc4f882da5d04e3f787108bcaff14"
+dest_path = "agents/design-lead.md"
+
 [items."agents/design-writer.md"]
 source = "_self"
 kind = "agent"
-source_checksum = "sha256:4a9cb00671996c9d2672925bad2a88f9c17c5eced183fe5daa72bf219cce38cc"
-installed_checksum = "sha256:4a9cb00671996c9d2672925bad2a88f9c17c5eced183fe5daa72bf219cce38cc"
+source_checksum = "sha256:090720741979a74c3b7d311bdb59d682e772cc853756817c02d49308d68636aa"
+installed_checksum = "sha256:090720741979a74c3b7d311bdb59d682e772cc853756817c02d49308d68636aa"
 dest_path = "agents/design-writer.md"
 
 [items."agents/explorer.md"]
@@ -88,8 +88,8 @@ dest_path = "agents/frontend-coder.md"
 [items."agents/frontend-designer.md"]
 source = "_self"
 kind = "agent"
-source_checksum = "sha256:afe78a666cefe064da0acc50fdfbfb3e3d2209a10eb8017884ca7c37ca771d9e"
-installed_checksum = "sha256:afe78a666cefe064da0acc50fdfbfb3e3d2209a10eb8017884ca7c37ca771d9e"
+source_checksum = "sha256:a0d7204d31de5616690d81b7d0dbdd045537bf485f67f071574fe0249df6fa6a"
+installed_checksum = "sha256:a0d7204d31de5616690d81b7d0dbdd045537bf485f67f071574fe0249df6fa6a"
 dest_path = "agents/frontend-designer.md"
 
 [items."agents/imagegen.md"]
@@ -294,8 +294,8 @@ dest_path = "skills/agent-artifacts"
 [items."skills/agent-management"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:e6cd9cdc98bf3697e7e0ffde98cfd51aa092d93c1da16edebfe48ce1fe17c9ec"
-installed_checksum = "sha256:e6cd9cdc98bf3697e7e0ffde98cfd51aa092d93c1da16edebfe48ce1fe17c9ec"
+source_checksum = "sha256:8b1d358bca1344fd988dea09ff1584fe6e28c9a1ab8d0184906f15522ed67346"
+installed_checksum = "sha256:8b1d358bca1344fd988dea09ff1584fe6e28c9a1ab8d0184906f15522ed67346"
 dest_path = "skills/agent-management"
 
 [items."skills/agent-staffing"]
@@ -337,8 +337,8 @@ dest_path = "skills/design-principles"
 [items."skills/dev-artifacts"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:cdda5ffac9f68ac0d4e36ec561744cd314ea1a741faa6d93154350498df2dbf9"
-installed_checksum = "sha256:cdda5ffac9f68ac0d4e36ec561744cd314ea1a741faa6d93154350498df2dbf9"
+source_checksum = "sha256:4a3bad2a2c5213fd4e47aefcf3cfef41fec61082848a8996df0a1c8025f68b1f"
+installed_checksum = "sha256:4a3bad2a2c5213fd4e47aefcf3cfef41fec61082848a8996df0a1c8025f68b1f"
 dest_path = "skills/dev-artifacts"
 
 [items."skills/dev-principles"]

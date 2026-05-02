@@ -1,9 +1,14 @@
 ---
 name: smoke-tester
-description: Use when a change needs end-to-end verification from the user's perspective — CLI invocations, HTTP requests, real integration flows, and anything that only surfaces at runtime against the real system. Mandatory for integration boundaries. Spawn with `meridian spawn -a smoke-tester`, telling it what changed and what to verify.
+description: >
+  Use when you need to understand or verify runtime behavior against the real
+  system — CLI invocations, HTTP requests, real integration flows, and anything
+  that only surfaces at runtime. Probing mode maps existing behavior for design;
+  verification mode proves a change works. Mandatory for integration boundaries.
+  Spawn with `meridian spawn -a smoke-tester`, telling it what to probe or verify.
 model: gpt-5.4
 effort: high
-skills: [smoke-test, ears-parsing, shared-workspace]
+skills: [smoke-test, ears-parsing, shared-workspace, issues]
 tools: [Bash, Write, Edit]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access

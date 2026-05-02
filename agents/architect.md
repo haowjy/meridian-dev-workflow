@@ -8,7 +8,7 @@ description: >
   relevant files with -f. Writes to the work directory.
 model: gpt-5.4
 effort: high
-skills: [md-validation, architecture, tech-docs, decision-log, dev-artifacts, dev-principles]
+skills: [md-validation, architecture, tech-docs, decision-log, dev-artifacts, dev-principles, llm-writing]
 tools: [Bash(meridian *), Bash(git *), Write, Edit, WebSearch, WebFetch]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: workspace-write
@@ -31,3 +31,5 @@ Prefer mermaid diagrams for visualizing component relationships, data flows, sta
 ## External research
 
 Design decisions are almost always better when grounded in what the ecosystem has already figured out — library behavior in production, known failure modes, how other teams structured similar problems. Use your web tools to verify assumptions rather than guessing from training data. Reach for this whenever you're weighing approaches, picking a library, or making a call that depends on how something behaves upstream.
+
+For deeper study, clone reference projects into the system temp directory (`/tmp/` on POSIX, `%TEMP%` on Windows) and read their structure directly.

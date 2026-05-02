@@ -1,12 +1,10 @@
 ---
 name: browser-test
 description: >
-  Testing methodology for browser-based verification. Use when verifying
-  a frontend change requires a real browser — visual rendering, user flows,
-  form behavior, accessibility, or console error detection that only
-  surfaces at runtime. Not the right fit when unit or integration tests
-  already cover the behavior. Pair with `/playwright-cli` for browser
-  mechanics.
+  Use when verifying a frontend change requires a real browser — visual
+  rendering, user flows, form behavior, accessibility, or console error
+  detection that only surfaces at runtime. Pair with `/playwright-cli` for
+  browser mechanics.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---

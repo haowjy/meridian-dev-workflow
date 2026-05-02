@@ -1,10 +1,9 @@
 ---
 name: dev-principles
 description: >
-  Implementation operating guidance — refactoring discipline, abstraction
-  judgment, deletion courage, dependency judgment, pattern adherence. Load
-  when implementing, reviewing, or refactoring code. Design-facing guidance
-  (spec-driven, requirements-as-hypotheses, probing, edge-case thinking)
+  Load when implementing, reviewing, or refactoring code. Implementation
+  operating guidance — refactoring discipline, abstraction judgment, deletion
+  courage, dependency judgment, pattern adherence. Design-facing guidance
   lives in design-principles.
 disable-model-invocation: true
 allow_implicit_invocation: false

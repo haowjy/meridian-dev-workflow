@@ -1,10 +1,10 @@
 ---
 name: design-principles
 description: >
+  Load when evaluating requirements, producing design packages, or deciding
+  whether a problem is well-understood before committing to a solution.
   Design-facing operating guidance — problem framing, requirements validation,
-  probing discipline, and edge-case thinking. Load when evaluating requirements,
-  producing design packages, or deciding whether a problem is well-understood
-  before committing to a solution.
+  probing discipline, and edge-case thinking.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---

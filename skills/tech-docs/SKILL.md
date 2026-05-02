@@ -1,25 +1,32 @@
 ---
 name: tech-docs
-description: Use when writing, reviewing, or restructuring technical documents — design docs, reference material, architecture specs, or any structured documentation that humans and agents rely on. Covers structure, clarity, and navigability.
+description: >
+  Load when writing design documents — architecture specs, behavioral specs,
+  component docs, feasibility reports. Covers structure and clarity for the
+  artifacts under design/ in the work directory.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---
 
 # Tech Docs
 
-Good technical writing lets a reader — human or agent — find what they need, understand it without chasing context across five files, and trust that what they're reading reflects reality. Every doc you write either accelerates the next person or wastes their time.
+Methodology for writing design documents — the artifacts under `design/` that
+architects produce and coders build from. Use `/dev-artifacts` for file
+placement, this skill for how to write them.
+
+Load `/llm-writing` if it isn't already loaded.
 
 ## One Concept Per Document
 
-A document that covers two concerns drifts twice as fast and gets read by people who only need half of it. Apply the same SRP discipline you'd apply to code:
-
-- One component, one interface, one interaction pattern, one decision per file.
-- When a doc starts covering two things, split it. The discomfort of having "too many files" is less than the cost of a doc that's half-relevant to every reader.
-- Name files by what they describe, not by when they were written. `token-validation.md` ages better than `auth-redesign-notes.md`.
+One component, one interface, one interaction pattern, one decision per file.
+When a doc starts covering two things, split it. Name files by what they
+describe (`token-validation.md`), not when they were written
+(`auth-redesign-notes.md`).
 
 ## Hierarchical Structure
 
-Depth matches complexity. A simple topic gets a flat file. A complex subsystem gets nested directories. No artificial ceiling.
+Depth matches complexity. A simple topic gets a flat file. A complex subsystem
+gets nested directories.
 
 ```
 overview.md
@@ -30,35 +37,28 @@ overview.md
     <topic>.md
 ```
 
-The overview at each level orients the reader: what exists here, how the pieces relate, and where to go deeper. A reader who only reads the overview should still walk away oriented.
+The overview at each level orients the reader: what exists here, how pieces
+relate, where to go deeper.
 
 ## Linked Web
 
-Documents link to related docs using relative paths. A component doc links to the components it interacts with, the interfaces it implements, the tradeoffs that shaped it. Links serve two purposes: navigation and making dependency relationships explicit. Broken links are broken promises; maintain them as you'd maintain broken imports.
+Link to related docs using relative paths — components link to what they
+interact with, interfaces they implement, tradeoffs that shaped them. Links
+make dependency relationships explicit and navigable. Maintain them as you
+would imports.
 
-## Writing for Agents
+## Style
 
-Agents scan for structure, match keywords, and build context from whatever file they're handed. Write docs that work when read in isolation:
+Write docs that work when read in isolation — self-contained, with enough
+inline context that a reader doesn't need three other docs first. Be concrete:
+file paths, function names, type signatures. State invariants explicitly.
 
-- **Self-contained.** Include enough inline context that a reader doesn't need three other docs first.
-- **Scannable.** Use headers, bullet lists, and tables so an agent can jump to the relevant section. Bold key terms on first use.
-- **Concrete.** Reference file paths, function names, and line numbers. "The auth module" is vague; "`src/auth/token.py:validate()`" is actionable.
-- **State the invariants.** Agents don't infer constraints — they follow instructions. If a component assumes single-threaded access, say so explicitly.
-
-## Writing Style
-
-**Diagrams over words.** Prefer visual representations for flows, state machines, and dependency graphs. Tables for comparisons. A diagram that shows the relationship is worth more than three paragraphs describing it.
-
-**Compress, don't narrate.** Every sentence earns its place. One sentence per concept. If a diagram says it, don't also say it in text.
-
-**Reference, don't duplicate.** Point to source locations rather than pasting code. Snippets only for critical patterns — atomic operations, race guards, non-obvious invariants.
-
-**WHAT and WHY, not HOW.** Code shows the how. Documentation captures what the code can't easily tell you: component relationships, dependency directions, data flows, and especially why the system ended up this way.
+Prefer mermaid diagrams for component relationships, data flows, state
+machines. Tables for comparisons. Capture what code can't easily tell you:
+dependency directions, data flows, and why the system is shaped this way.
+Reference source locations rather than pasting code.
 
 ## Verification
 
-After writing or restructuring linked docs, run the co-located link checker to catch broken internal links and anchors:
-
-```bash
-scripts/check-md-links.sh <doc-root>
-```
+After writing or restructuring linked docs, run `meridian kg check` for broken
+links and `meridian mermaid check` for diagram validity.

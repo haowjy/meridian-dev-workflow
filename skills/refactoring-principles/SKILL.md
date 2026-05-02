@@ -1,20 +1,18 @@
 ---
 name: refactoring-principles
 description: >
-  Shared guidance for judging and improving code structure. Use when
-  designing, implementing, or reviewing code where extensibility,
-  maintainability, and agent execution speed matter, especially when
-  deciding whether to refactor early, how to judge structural debt, and
-  how to distinguish real design problems from stylistic preferences.
+  Load when designing, implementing, or reviewing code where extensibility,
+  maintainability, and agent execution speed matter — deciding whether to
+  refactor early, judging structural debt, distinguishing real design problems
+  from stylistic preferences.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---
 
 # Refactoring Principles
 
-Refactoring is behavior-preserving structural improvement. Its purpose is not
-tidiness for its own sake; it is to make the next change smaller, safer, and
-easier to reason about.
+Refactoring is behavior-preserving structural improvement. The goal is making
+the next change smaller, safer, and easier to reason about.
 
 In agent-heavy development, refactoring matters more, not less. Execution is
 cheap, so structural debt compounds quickly: hidden coupling, weak locality,

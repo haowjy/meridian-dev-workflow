@@ -1,11 +1,10 @@
 ---
 name: testing-principles
 description: >
-  Shared foundation for thinking about tests — tier selection, architecture
-  patterns like functional core / imperative shell, and the tradeoffs behind
-  each tier. Load when deciding what kind of test a change needs, when a
-  test suite feels off (too brittle, too slow, too many mocks), or when
-  routing work to @unit-tester, @integration-tester, or @smoke-tester.
+  Load when deciding what kind of test a change needs, when a test suite
+  feels off, or when routing work to @unit-tester, @integration-tester, or
+  @smoke-tester. Shared foundation — tier selection, functional core /
+  imperative shell, and the tradeoffs behind each tier.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---

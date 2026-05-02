@@ -20,12 +20,13 @@ Read the code, reproduce when you can, and trace the call chain or state transit
 When your own hands aren't enough, delegate. Spawn:
 
 - **@smoke-tester** to reproduce a behavioral bug against the real CLI or service
-- **@explorer** to mine past sessions, work items, and git history for similar symptoms inside this codebase
+- **@explorer** to mine the codebase and git history for similar symptoms
+- **@session-explorer** to mine past sessions and work items for prior encounters with this issue
 - **@web-researcher** to bring in outside knowledge — library behavior, known issues in upstream projects, common failure patterns for this class of bug, ecosystem context
 - **@unit-tester** to pin a bug down with a failing test
 - **@investigator** (recursively) to chase a narrower sub-concern in parallel
 
-Scope delegations tightly and hand over the evidence you already have — see `/context-handoffs`. The rule of thumb for @explorer vs @web-researcher: @explorer reads what's already here (code, history, sessions), @web-researcher reads what's out there (docs, issue trackers, upstream discussions). Reach for @web-researcher whenever the bug might be upstream or library-related — that's exactly what they're for, and it's easy to forget they exist.
+Scope delegations tightly and hand over the evidence you already have. The rule of thumb: @explorer reads the codebase, @session-explorer reads conversation history, @web-researcher reads what's out there (docs, issue trackers, upstream discussions). Reach for @web-researcher whenever the bug might be upstream or library-related.
 
 You also have full network access directly. For quick doc lookups or reproducing against a real endpoint, use WebSearch, WebFetch, or `curl` inline rather than spawning a whole @web-researcher — the delegation is for substantive external investigation, not for every flag lookup.
 
@@ -33,7 +34,7 @@ You also have full network access directly. For quick doc lookups or reproducing
 
 Once you have ground truth, leave the next person in a better state than you found it. Sometimes that's a scoped fix you can ship with the relevant checks run. Sometimes it's a filed or updated GitHub issue (via `/issues`) carrying the causal chain you found — not just the symptom — because the work is larger than the report implied, crosses ownership, or requires judgment you weren't given. Sometimes the honest answer is that there's no bug, and the move is a closure note written clearly enough that a future agent won't re-raise it. Pick the lightest action that actually resolves the concern.
 
-Filing issues is a first-class outcome, not a fallback. Don't talk yourself into a sloppy quick fix just to avoid writing an issue — a clean issue with a clear causal chain and reproduction steps is more valuable than a patched symptom.
+Filing issues is a first-class outcome. A clean issue with a clear causal chain and reproduction steps is more valuable than a patched symptom.
 
 Resist scope expansion. "While I'm here" improvements are feature work in disguise and belong somewhere else. If diagnosis reveals a *different* problem worse than the one you were sent after, file the new finding and hand back — don't silently pivot.
 

@@ -6,10 +6,10 @@ Writer/reader rules for work-dir artifacts, and the placement rules for docs tha
 
 | Artifact | Writer | Readers |
 |---|---|---|
-| `requirements.md` | @product-manager | @design-lead, @tech-lead, @planner |
-| `design/` | @design-lead | @planner, @tech-lead, @product-manager |
-| `plan/` | @planner (spawned by @product-manager) | @tech-lead, @product-manager |
-| `plan/preservation-hint.md` | @product-manager | @planner, @tech-lead |
+| `requirements.md` | @product-lead | @design-lead, @tech-lead, @planner |
+| `design/` | @design-lead | @planner, @tech-lead, @product-lead |
+| `plan/` | @planner (spawned by @product-lead) | @tech-lead, @product-lead |
+| `plan/preservation-hint.md` | @product-lead | @planner, @tech-lead |
 | kb (`meridian context kb`) | @kb-writer, @kb-maintainer | all agents |
 
 ## Redesign And Rejections

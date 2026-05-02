@@ -1,91 +1,72 @@
 ---
 name: smoke-test
 description: >
-  Use when verifying user-facing behavior end-to-end — CLI invocations, HTTP requests, integration flows, race probes, interruption recovery. Two modes: probing (research phase, understand current behavior) and verification (implementation phase, prove correctness). Mandatory for changes that cross integration boundaries. Not the right fit for internal logic verification — that's unit testing.
+  Use when you need to understand or verify runtime behavior against the real
+  system — CLI invocations, HTTP requests, integration flows, race probes,
+  interruption recovery. Two modes: probing (how does this behave?) and
+  verification (does this change work?). Mandatory for integration boundaries.
 disable-model-invocation: true
 allow_implicit_invocation: false
 ---
 
 # Smoke Testing
 
-You validate real runtime behavior through user-facing flows.
+Run the real system and observe what happens. Real processes, real filesystem,
+real network.
 
+Load `/testing-principles` for tier selection. Use `/ears-parsing` for
+per-pattern parsing and report format.
 
-## What Smoke Tests ARE and ARE NOT
+Check README, AGENTS/CLAUDE guidance, build files, and existing smoke/e2e tests
+for canonical invocation patterns. Many projects keep smoke test guides as
+markdown in `tests/e2e/` or `tests/smoke/` — check conventions before assuming
+what format to use.
 
-**Smoke tests ARE:**
-- Actually running the CLI/API/UI as a user would
-- Real processes, real filesystem, real network when applicable
-- Commands like `meridian spawn -a coder -p "test"` followed by verifying output
-- Manual or scripted execution of user-facing workflows
+## Two Modes
 
-**Smoke tests ARE NOT:**
-- Pytest unit tests (those test internal logic in isolation)
-- Pytest integration tests (those test component composition with fakes)
-- Running `pytest tests/unit` and calling it "regression testing"
-
-**Critical:** Many projects keep smoke test guides as markdown in `tests/e2e/` or `tests/smoke/`. These are MANUAL test checklists, not pytest-runnable files. Check the project's testing conventions before assuming what "smoke test" means for that codebase.
-
-Load `/testing-principles` for tier selection. Use `/ears-parsing` for per-pattern parsing rule and report format.
-
-## Two Modes, Same Toolset
-
-Smoke testing shows up in two contexts. The tools and craft are identical; the intent differs.
-
-| Mode | Spawned during | Question you're answering |
+| Mode | Phase | Question |
 |---|---|---|
-| **Probing** | Research phase | "How does this system behave today?" |
-| **Verification** | Implementation phase | "Does this change work correctly?" |
+| **Probing** | Research / design | "How does this system behave today?" |
+| **Verification** | Implementation | "Does this change work correctly?" |
 
-Recognize the mode from the prompt. If the caller wants to understand existing behavior, you are probing. If the caller wants evidence a change meets its contract, you are verifying.
+Recognize the mode from the prompt. The tools are identical; the intent differs.
 
-### Probing Mode
+### Probing
 
-Exploratory. The question is open. You run commands to map behavior, find constraints, and surface surprises so the design or plan can incorporate them.
+Exploratory. Run commands to map behavior, find constraints, surface surprises.
 
-- Exercise normal paths and note what the system actually does.
-- Probe edges: what happens at boundaries, under failure, with unusual input.
-- Document discovered behavior, discovered constraints, and anything that contradicts stated assumptions.
-- You are not proving the system correct. You are describing it accurately.
+- Exercise normal paths, note what the system actually does
+- Probe edges: boundaries, failure, unusual input
+- Document discovered behavior, constraints, and anything that contradicts
+  stated assumptions
 
 Report findings as observations, not pass/fail.
 
-### Verification Mode
+### Verification
 
-Confirmatory. The question is closed — the phase claims specific EARS statements; your job is evidence for or against them.
+Confirmatory. The phase claims specific EARS statements; produce evidence for
+or against them.
 
-- Read the phase blueprint's `Claimed EARS statements`.
-- Load referenced spec leaves.
-- Treat claimed IDs as mandatory baseline coverage.
-- Verify each claimed ID against concrete evidence, then run exploratory probes beyond the claim.
+- Read the phase blueprint's `Claimed EARS statements`
+- Load referenced spec leaves
+- Treat claimed IDs as mandatory baseline coverage
+- Verify each claimed ID, then probe beyond the claim
 
 Report per-ID outcomes (`verified` / `falsified` / `unparseable` / `blocked`).
 
-## Before You Test (Both Modes)
+## Execution
 
-Check README, AGENTS/CLAUDE guidance, build files, and existing smoke/e2e tests for canonical invocation patterns. Match established conventions unless there is a concrete reason to diverge.
-
-## How to Execute
-
-- Run real commands and real workflows.
-- Build disposable environments when honesty requires fresh state (temp repo, throwaway config, stub dependency, clean process boundary).
-- Cover relevant backend/provider variants explicitly; report what was and was not tested.
-- Go adversarial after the happy path: bad input, interruption, sequencing mistakes, and boundary conditions.
-- Focus on user-visible behavior: exit codes, error messages, output shape, and on-disk side effects.
+Build disposable environments when fresh state matters (temp repo, throwaway
+config, clean process boundary). Go adversarial after the happy path: bad input,
+interruption, sequencing, boundary conditions. Focus on user-visible behavior:
+exit codes, error messages, output shape, on-disk side effects.
 
 ## Reporting
 
-**Probing:**
-- discovered behavior and constraints
-- surprises worth surfacing to design/plan
-- exact commands and outputs
-- open questions
+**Probing:** discovered behavior, constraints, surprises, exact commands and
+outputs, open questions.
 
-**Verification:**
-- per-claimed-ID outcomes with evidence
-- exact commands and outputs
-- exploratory findings beyond claimed IDs
-- surprising behavior worth escalation
-- coverage gaps and reasons
+**Verification:** per-claimed-ID outcomes with evidence, exact commands and
+outputs, exploratory findings beyond claimed IDs, coverage gaps.
 
 @tech-lead owns `plan/leaf-ownership.md` updates based on verification reports.

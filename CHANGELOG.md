@@ -4,6 +4,50 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@product-manager` → `@product-lead`. Role name reflects leadership over product direction, not middle-management.
+
+#### LLM writing cleanup and skill propagation
+- `@tech-writer`: added `intent-modeling` — mines conversation history for what to document.
+- `@architect`: re-added `tech-docs` skill (was removed prematurely, before recognizing tech-docs is design doc methodology).
+- `@design-writer`: added `tech-docs` skill. Body trimmed — inlined mermaid/link-checker guidance replaced with skill references.
+- `@imagegen`: added `intent-modeling`. Description now tells callers to specify visual intent before spawning. Body addresses underspecified prompts. Removed prescribed work directory output.
+- `@smoke-tester`: description rewritten to cover both probing and verification modes equally.
+- `@investigator`: split `@explorer` reference into `@explorer` (codebase) + `@session-explorer` (sessions). Trimmed contrastive filler.
+- `@web-researcher`: updated routing for explorer/session-explorer split.
+- `@refactor-coder`: positive opener (was "not to add features; it is to improve"). Cut orchestrator-scoping "good units" list. Trimmed skill restatement in Refactoring Posture. Compressed Behavior Preservation.
+- `@refactor-reviewer`: compressed "What to Look For" — references skill instead of duplicating 8-bullet list.
+- `@alignment-reviewer`: scope discipline flipped from negative list to positive routing.
+- `@unit-tester`: trimmed "safety net" metaphor.
+- `@verifier`: trimmed "clearing mechanical noise" restatement.
+- `@frontend-coder`: trimmed "separate polished UI from functional-but-flat" filler.
+- `@mockup-gen`: trimmed redundant "not production code" from body opener (description already routes on this).
+- `refactoring-principles` skill: "not tidiness for its own sake" → "the goal is making the next change smaller."
+- `architecture` skill: reshaped from process prescription (frame → explore → compare → stress-test) to shared vocabulary (boundaries, dependencies, tradeoff dimensions, structural risk). All three consumers benefit now, not just architect.
+- `unit-test` skill: cut "What Unit Tests Are For" section — testing-principles covers tier definition, agent knows what unit tests are.
+- `tech-docs` skill: scoped as design document methodology. Removed obsolete `scripts/` (check-md-links replaced by `meridian kg check`). Removed "Writing for Agent Consumers" — readability principles apply to all readers.
+- `smoke-test` skill: rewritten for equal probing/verification coverage. Killed contrastive "ARE and ARE NOT" section.
+- `agent-staffing/builders.md`: added `@session-explorer` entry with routing guidance.
+- `agent-staffing/maintainers.md`: updated `@kb-writer` entry for `@session-explorer` delegation.
+- `@product-lead`: prescriptive requirements gathering (7 bullet points with examples) compressed to principles. Added `intent-modeling` skill — handles hypothesis-vs-spec reasoning that was hand-rolled in the body.
+- `@tech-lead`: trimmed 211→105 lines. Cut execution loop duplication with `planning/resources/execution-model.md` (was restating the entire subphase/gate/final-gate loop). Cut prescriptive "Before Any Final Report" checklist — replaced with two report shapes. Added `intent-modeling` — launch prompt interpretation and redesign-brief judgment are intent calls. `@product-manager` refs → `@product-lead`.
+- `@design-lead`: trimmed 184→105 lines. Cut 40-line "Design Artifact Hygiene" section (detailed kb-maintainer instructions) to one sentence. Cut "Refactoring Awareness" section that restated `refactoring-principles` skill. Fixed stale `meridian spawn -a architect-lead` in description. Added `llm-writing`.
+- `@planner`: trimmed 131→95 lines. Cut prescriptive thoroughness checklist into prose principles. `@product-manager` refs → `@product-lead`. Added `llm-writing`.
+- `@qa-lead`: trimmed 136→75 lines. Collapsed step-by-step "Strategy Before Tests" into principle-level guidance. Collapsed "Produce Tests" prescriptive sections.
+- `@tech-writer`: trimmed 100→60 lines. Cut "Writing Principles" section (generic writing advice now covered by `llm-writing`). Compressed Diátaxis to bullets. Added `llm-writing`.
+- `@design-writer`: trimmed 67→45 lines. Cut "Quality Bar" checklist. Added `llm-writing`.
+- `@architect`: added `llm-writing`.
+- `@frontend-designer`: added `llm-writing`.
+- `@reviewer`: `models:` fan-out field → `fanout:` (new schema).
+- `@design-lead`, `@qa-lead`, `@ux-lead`: added `intent-modeling`. All orchestrators interpret caller intent and make escalation/routing judgments.
+- `@ux-lead`: `@product-manager` refs → `@product-lead`.
+- `review` skill: trimmed 76→50 lines. Cut "What wastes everyone's time" (negative framing). Cut "How to Conduct the Review" prescriptive steps. Description trigger-first.
+- All skill descriptions: trigger-first ("Load when..." / "Use when...") instead of content-first. Fixed: `agent-management`, `design-principles`, `dev-principles`, `planning`, `refactoring-principles`, `testing-principles`, `browser-test`, `ears-parsing`, `issues`.
+- `issues` skill: trimmed 114→38 lines. Cut prescriptive examples, negative framing ("When NOT to Create"), verbose workflow integration. Opening now leads with "agents systematically under-file" to counter the actual failure mode.
+- `@product-lead`, `@design-lead`, `@tech-lead`, `@qa-lead`: added `issues` skill — leads triage reviewer findings and should file non-blocking issues rather than losing them.
+- `@coder`, `@smoke-tester`: added `issues` skill — discover file-worthy problems during implementation and testing.
+- All `@product-manager` and `@architect-lead` references updated across agents and skill resources.
+
 ## [0.2.3] - 2026-05-02
 
 ### Changed
