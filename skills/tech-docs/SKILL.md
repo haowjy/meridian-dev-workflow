@@ -4,8 +4,7 @@ description: >
   Load when writing design documents — architecture specs, behavioral specs,
   component docs, feasibility reports. Covers structure and clarity for the
   artifacts under design/ in the work directory.
-disable-model-invocation: true
-allow_implicit_invocation: false
+invocation: explicit
 ---
 
 # Tech Docs

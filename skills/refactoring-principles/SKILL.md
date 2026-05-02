@@ -5,8 +5,7 @@ description: >
   maintainability, and agent execution speed matter — deciding whether to
   refactor early, judging structural debt, distinguishing real design problems
   from stylistic preferences.
-disable-model-invocation: true
-allow_implicit_invocation: false
+invocation: explicit
 ---
 
 # Refactoring Principles

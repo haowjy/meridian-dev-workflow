@@ -8,11 +8,10 @@ description: >
   verify. Pass relevant source files with -f for context on what to expect.
 model: gpt55
 effort: low
-models:
-  gpt55:
-    effort: low
-  codex:
-    effort: high
+fanout: [gpt55, codex]
+model-policies:
+  - match: {alias: codex}
+    override: {effort: high}
 skills: [playwright-cli, browser-test, shared-workspace]
 tools: [Bash, Write, Edit]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete,

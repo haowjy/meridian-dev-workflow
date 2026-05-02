@@ -4,8 +4,7 @@ description: >
   Load when reviewing code, designs, or plans — adversarial mindset, severity
   handling, and structured reporting. Use for PR reviews, phase reviews,
   design reviews, and any task where the goal is finding problems.
-disable-model-invocation: true
-allow_implicit_invocation: false
+invocation: explicit
 ---
 # Review
 

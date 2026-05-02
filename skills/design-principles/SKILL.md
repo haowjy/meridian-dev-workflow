@@ -5,8 +5,7 @@ description: >
   whether a problem is well-understood before committing to a solution.
   Design-facing operating guidance — problem framing, requirements validation,
   probing discipline, and edge-case thinking.
-disable-model-invocation: true
-allow_implicit_invocation: false
+invocation: explicit
 ---
 
 # Spec-Driven Development

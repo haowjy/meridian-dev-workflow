@@ -5,8 +5,7 @@ description: >
   rendering, user flows, form behavior, accessibility, or console error
   detection that only surfaces at runtime. Pair with `/playwright-cli` for
   browser mechanics.
-disable-model-invocation: true
-allow_implicit_invocation: false
+invocation: explicit
 ---
 
 # Browser Testing

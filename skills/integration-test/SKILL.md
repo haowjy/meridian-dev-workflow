@@ -1,8 +1,7 @@
 ---
 name: integration-test
 description: Use when verifying that internal components compose correctly — module boundaries, coordination logic, contracts between collaborators — with fakes at external system boundaries. The middle tier between unit and smoke. Not the right fit for pure logic (unit-test) or real runtime behavior against live systems (smoke-test).
-disable-model-invocation: true
-allow_implicit_invocation: false
+invocation: explicit
 ---
 
 # Integration Testing

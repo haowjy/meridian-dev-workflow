@@ -10,11 +10,10 @@ description: >
   available.
 model: gpt55
 effort: low
-models:
-  gpt55:
-    effort: low
-  codex:
-    effort: high
+fanout: [gpt55, codex]
+model-policies:
+  - match: {alias: codex}
+    override: {effort: high}
 skills: [frontend-design, shared-workspace]
 tools: [Bash, Write, Edit]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete,

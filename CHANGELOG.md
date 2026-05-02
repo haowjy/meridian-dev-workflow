@@ -4,6 +4,13 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Agent profiles: migrated 6 agents from deprecated `models:` to `fanout:` + `model-policies:` (browser, browser-tester, coder, frontend-coder, mockup-gen, refactor-reviewer).
+- Skill frontmatter: migrated all 17 skills from legacy `disable-model-invocation`/`allow_implicit_invocation` to canonical `invocation: explicit`.
+
+### Added
+- `bootstrap/imagegen-setup/BOOTSTRAP.md`: documents Codex `[features] image_generation = true` config requirement for imagegen agent.
+
 ## [0.3.0] - 2026-05-02
 
 ### Changed

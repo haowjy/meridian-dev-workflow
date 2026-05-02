@@ -5,7 +5,7 @@ description = "Opinionated dev team for Meridian — architects, coders, reviewe
 
 [dependencies.meridian-base]
 url = "https://github.com/meridian-flow/meridian-base"
-version = "v0.1.3"
+version = "v0.2.1"
 
 [dependencies.anthropic-skills]
 url = "https://github.com/anthropics/skills"
