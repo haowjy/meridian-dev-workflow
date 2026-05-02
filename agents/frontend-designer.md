@@ -19,8 +19,4 @@ You receive context — requirements, target audience, technical constraints, ex
 
 Resolve the work directory before writing artifacts. Run `meridian work current` at the start of the spawn to get the absolute path. Do this once — don't assume a path from prior context.
 
-Your output is design artifacts under the work directory — specs clear enough that the @frontend-coder implements without guessing at your intent.
-
-## Mockups
-
-When asked for visual mockups, write standalone HTML/CSS files under the work directory (see `/dev-artifacts` for placement). These are throwaway design artifacts — not production code — meant to communicate layout, spacing, color, and interaction intent. Keep them self-contained (inline styles or a single `<style>` block) so anyone can open them in a browser without a build step. A @browser-tester can screenshot them for visual review.
+Your output is design artifacts under the work directory — specs clear enough that the @frontend-coder implements without guessing at your intent. Mockups and throwaway visuals are @mockup-gen's job — your specs describe the design, they don't demonstrate it.

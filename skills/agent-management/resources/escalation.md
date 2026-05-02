@@ -35,7 +35,7 @@ When design/plan is fundamentally broken, terminate with a Redesign Brief:
 
 ## design-problem vs scope-problem
 
-**design-problem:** The design itself is wrong. Needs @architect-lead.
+**design-problem:** The design itself is wrong. Needs @design-lead.
 **scope-problem:** The plan is wrong but design is fine. Needs replanning.
 
 Get this right — wrong classification wastes cycles.

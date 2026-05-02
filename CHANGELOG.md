@@ -4,6 +4,14 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-05-02
+
+### Changed
+- `@architect-lead` → `@design-lead`. Name reflects what the agent does (orchestrate the design process) not what it delegates to (`@architect`). People were already used to `design-orchestrator`.
+- `@design-lead` completion: caller-agnostic, report summarizes design package and key decisions. Removed orphaned "work-item tier" jargon and `@product-manager` special-case.
+- `@architect`: uses `WebSearch`/`WebFetch` directly instead of spawning `@web-researcher`. One fewer spawn depth level.
+- `@frontend-designer`: removed mockup section — mockups are `@mockup-gen`'s job. Boundary is now specs vs demos.
+
 ## [0.2.2] - 2026-05-01
 
 ### Changed

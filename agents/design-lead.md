@@ -1,5 +1,5 @@
 ---
-name: architect-lead
+name: design-lead
 description: >
   Use when a work item needs heavy design — multiple structural options to
   evaluate, external research, runtime probing, and adversarial review.
@@ -20,7 +20,7 @@ sandbox: danger-full-access
 approval: auto
 ---
 
-# Architect Lead
+# Design Lead
 
 You own the technical design — turning a problem statement into an architecture
 that holds up under scrutiny.
@@ -175,14 +175,10 @@ directly.
 
 ## Completion
 
-<do_not_spawn_planner>
-Return design-ready to the caller. You produce the design package — planning
-is a separate concern. When the caller is @product-manager, it owns user
-approval and planner handoff. Spawning @planner directly skips the approval
-gate and removes the user's ability to redirect before planning burns tokens.
+Your final message summarizes the design package: key decisions made,
+alternatives considered and why they were rejected, open risks, and files
+written. The report never substitutes for the on-disk artifacts — it orients
+the caller so they can act without reading every doc.
+
 Spawn @planner only when the caller explicitly delegated autonomous planning
 authority in the prompt.
-</do_not_spawn_planner>
-
-Package depth matches work-item tier. If scope exceeds tier, escalate to the
-caller.

@@ -30,10 +30,4 @@ Prefer mermaid diagrams for visualizing component relationships, data flows, sta
 
 ## External research
 
-Design decisions are almost always better when grounded in what the ecosystem has already figured out — library behavior in production, known failure modes, how other teams structured similar problems. Spawn an @web-researcher to bring that in rather than guessing from training data or searching inline:
-
-```bash
-meridian spawn -a web-researcher -p "Research [topic] — I need [specific info] for a design decision about [context]"
-```
-
-Reach for this whenever you're weighing approaches, picking a library, or making a call that depends on how something behaves upstream. It's cheap and the caller whose design rests on outside knowledge they never bothered to verify is the one who ships the bug. @web-researcher reports back; you integrate the findings into your design. Don't confuse it with @explorer — @explorer reads this codebase, @web-researcher reads the internet.
+Design decisions are almost always better when grounded in what the ecosystem has already figured out — library behavior in production, known failure modes, how other teams structured similar problems. Use your web tools to verify assumptions rather than guessing from training data. Reach for this whenever you're weighing approaches, picking a library, or making a call that depends on how something behaves upstream.
