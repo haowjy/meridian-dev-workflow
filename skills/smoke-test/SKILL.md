@@ -5,7 +5,7 @@ description: >
   system — CLI invocations, HTTP requests, integration flows, race probes,
   interruption recovery. Two modes: probing (how does this behave?) and
   verification (does this change work?). Mandatory for integration boundaries.
-invocation: explicit
+model-invocable: false
 ---
 
 # Smoke Testing

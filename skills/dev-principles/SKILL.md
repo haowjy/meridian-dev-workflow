@@ -5,7 +5,7 @@ description: >
   operating guidance — refactoring discipline, abstraction judgment, deletion
   courage, dependency judgment, pattern adherence. Design-facing guidance
   lives in design-principles.
-invocation: explicit
+model-invocable: false
 ---
 
 # Refactor Early, Refactor Continuously

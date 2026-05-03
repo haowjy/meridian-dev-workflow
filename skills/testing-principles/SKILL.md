@@ -5,7 +5,7 @@ description: >
   feels off, or when routing work to @unit-tester, @integration-tester, or
   @smoke-tester. Shared foundation — tier selection, functional core /
   imperative shell, and the tradeoffs behind each tier.
-invocation: explicit
+model-invocable: false
 ---
 
 # Testing Principles

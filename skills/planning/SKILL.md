@@ -4,7 +4,7 @@ description: >
   Load when producing or executing plans. Shared definitions — phases,
   subphases, verification levels, probe/diagnosis lanes, and the execution
   model. Used by both @planner and @tech-lead.
-invocation: explicit
+model-invocable: false
 ---
 
 # Plan Execution

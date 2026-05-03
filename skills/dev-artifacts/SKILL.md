@@ -1,7 +1,7 @@
 ---
 name: dev-artifacts
 description: Trigger when creating, reading, or deciding where to put artifacts in the work directory — design packages, plans, decision logs, status files, preservation hints.
-invocation: explicit
+model-invocable: false
 ---
 
 # Dev Artifacts

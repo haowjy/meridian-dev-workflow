@@ -4,14 +4,14 @@ Agent profiles and skills for the dev orchestration workflow.
 
 ## Releasing
 
-Use `mars version` (or `meridian mars version`) for releases:
+Use `meridian mars version` for releases:
 
 ```bash
-mars version patch --push       # bump, commit, tag, push
-mars version minor --push       # minor bump when scope warrants it
+meridian mars version patch --push       # bump, commit, tag, push
+meridian mars version minor --push       # minor bump when scope warrants it
 ```
 
-This bumps `mars.toml`, promotes CHANGELOG.md `[Unreleased]` to the new version, commits, tags, and optionally pushes. Write changelog entries under `[Unreleased]` as you work — `mars version` handles the rest.
+This bumps `mars.toml`, promotes CHANGELOG.md `[Unreleased]` to the new version, commits, tags, and optionally pushes. Write changelog entries under `[Unreleased]` as you work — `meridian mars version` handles the rest.
 
 ### After Release
 

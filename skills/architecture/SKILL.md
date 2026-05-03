@@ -4,7 +4,7 @@ description: >
   Shared vocabulary for architectural thinking — boundaries, dependencies,
   tradeoff dimensions, and structural risk. Load when designing, writing
   about, or planning around system architecture.
-invocation: explicit
+model-invocable: false
 ---
 
 # Architecture

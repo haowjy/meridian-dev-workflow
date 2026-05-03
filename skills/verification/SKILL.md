@@ -1,7 +1,7 @@
 ---
 name: verification
 description: Use after implementation to get the build green — running tests, type checks, and linters, fixing mechanical breakage, and reporting substantive issues. The "does it compile and pass" baseline, not creative testing. Not the right fit for edge-case coverage (unit-test) or user-flow verification (smoke-test).
-invocation: explicit
+model-invocable: false
 ---
 # Verification
 

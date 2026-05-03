@@ -1,7 +1,7 @@
 ---
 name: ears-parsing
 description: Use when phase verification is keyed to claimed EARS statement IDs and you need to turn each statement into trigger, fixture, assertion, and report outcome.
-invocation: explicit
+model-invocable: false
 ---
 
 # EARS Parsing

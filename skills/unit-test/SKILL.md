@@ -1,7 +1,7 @@
 ---
 name: unit-test
 description: Use when verifying particular behaviors in isolation — edge cases, regression guards, tricky internal logic, and phase-scoped contracts that need a test pinning them down. Not the right fit for broad build verification (that's verification), component composition (integration-test), or end-to-end user flows (smoke-test).
-invocation: explicit
+model-invocable: false
 ---
 
 # Unit Testing
