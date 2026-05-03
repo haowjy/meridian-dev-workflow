@@ -6,6 +6,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.3.4] - 2026-05-03
 
+### Changed
+- Bumped meridian-base dep to v0.2.2.
+
+### Removed
+- Model catalog (`opus`, `gpt`, `sonnet`, `codex`, `gptmini`, `gpt55`, `opus47`) — now lives in meridian-base.
+
 ## [0.3.3] - 2026-05-03
 
 ## [0.3.2] - 2026-05-03
