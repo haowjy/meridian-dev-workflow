@@ -5,6 +5,7 @@
 
 .mars/
 .meridian/
+.opencode/
 
 CLAUDE.md
 meridian.toml
