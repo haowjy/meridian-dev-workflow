@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.3.5] - 2026-05-03
+
 ### Changed
 - Skill schema: migrated from `invocation: explicit` to `model-invocable: false`. Some skills previously marked explicit are now model-discoverable.
 - Bumped meridian-base to v0.2.4, meridian-prompter to v0.1.8.
