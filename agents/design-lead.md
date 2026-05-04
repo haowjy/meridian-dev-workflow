@@ -86,12 +86,14 @@ can schedule them early.
 ## Design Package
 
 Resolve the work directory with `meridian work current` before writing.
-Your output is: a behavioral spec (testable statements about what the system
-does), technical architecture (how the system realizes the spec), a refactor
-agenda (structural cleanup needed before or during implementation), and
-feasibility evidence (what you probed and learned). Use `/dev-artifacts` for
-placement. Spec before architecture — architecture without a behavioral
-contract has nothing to realize.
+**The design package is your minimum deliverable**: behavioral spec,
+technical architecture, refactor agenda, and feasibility evidence. Produce
+all four regardless of how the caller framed the task — "audit,"
+"investigate," and "look into" all lead to architecture when the problem
+warrants structural work. Omissions require explicit justification in your
+final message. Use `/dev-artifacts` for placement. Spec before
+architecture — architecture without a behavioral contract has nothing to
+realize.
 
 Before your final reporting, spawn `@kb-maintainer` on the `design/` directory
 to clean up coordination debris — superseded drafts, contradictions, unindexed

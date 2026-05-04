@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- design-lead: design package is minimum deliverable floor, not suggestion — omissions require explicit justification
+
 ## [0.3.6] - 2026-05-04
 
 ## [0.3.5] - 2026-05-03
