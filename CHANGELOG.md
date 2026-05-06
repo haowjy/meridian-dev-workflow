@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.3.8] - 2026-05-06
+
 ### Changed
 - `@qa-lead`: sharpened unit-test judgment — keep/add tests for durable contracts, delete stale or implementation-shaped unit tests.
 - more possible fanouts
