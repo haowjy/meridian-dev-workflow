@@ -9,9 +9,9 @@ description: >
   prompt. Pass URLs or context with -f.
 model: gpt55
 effort: low
-fanout: [gpt55, codex]
+fanout: [gpt55, gpt]
 model-policies:
-  - match: {alias: codex}
+  - match: {alias: gpt}
     override: {effort: high}
 skills: [playwright-cli, shared-workspace]
 tools: [Bash, Write, Edit, WebSearch, WebFetch]

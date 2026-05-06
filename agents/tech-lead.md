@@ -8,6 +8,10 @@ description: >
   `meridian spawn -a tech-lead`, passing plan and design context with -f.
 model: claude-opus-4-6
 effort: high
+fanout: [gpt55, claude-opus-4-6]
+model-policies:
+  - match: {alias: gpt55}
+    override: {effort: medium}
 skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-workspace, decision-log, intent-modeling, issues]
 tools: [Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(git status *), Bash(git diff *), Bash(rg *), Bash(sed *), Bash(ls *), Bash(pwd)]
 disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]

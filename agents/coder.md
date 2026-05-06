@@ -8,8 +8,8 @@ description: >
   `meridian spawn -a coder`, passing the blueprint and relevant source
   files with -f. Tell it which subphase to implement, which EARS statements
   it owns, and any integration boundaries to respect.
-model: gpt55
-effort: low
+model: codex
+effort: high
 fanout: [gpt55, codex]
 model-policies:
   - match: {alias: codex}

@@ -3,6 +3,10 @@ name: frontend-designer
 description: Use when UI/UX design specs are needed with distinctive, non-generic aesthetics — layout, hierarchy, motion, and visual direction. Spawn with `meridian spawn -a frontend-designer`, passing requirements and constraints with -f or in the prompt. Writes specs to the work directory.
 model: claude-opus-4-6
 effort: high
+fanout: [claude-opus-4-6, gpt55]
+model-policies:
+  - match: {alias: gpt55}
+    override: {effort: medium}
 skills: [frontend-design, md-validation, llm-writing]
 tools: [Bash(meridian *), Write, Edit, WebSearch, WebFetch]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]

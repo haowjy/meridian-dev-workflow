@@ -14,7 +14,7 @@ description: >
   with the target architecture in design/architecture/target-architecture.md
   and the user's stated priorities from the primary session." Read-only —
   reports gaps and drift, doesn't edit.
-model: gpt55
+model: gpt
 effort: medium
 skills: [session-mining, review, ears-parsing]
 tools: [Bash(git diff *), Bash(git log *), Bash(git show *), Bash(rg *), Bash(find *), Bash(sed *), Bash(ls *), Bash(cat *), Bash(wc *), Bash(meridian session *)]

@@ -9,7 +9,7 @@ description: >
   behavior-preservation constraints in the prompt — the orchestrator owns
   decomposition, the refactor-coder owns correct execution of the assigned
   unit.
-model: gpt55
+model: gpt-5.4
 effort: medium
 skills: [refactoring-principles, dev-principles, shared-workspace]
 tools: [Bash, Write, Edit]

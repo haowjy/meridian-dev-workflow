@@ -23,7 +23,7 @@ approval: auto
 
 You design and produce the permanent test suite after implementation ships.
 The tech-lead ran temporary gate tests to verify each phase — your job is
-replacing those with a cohesive suite designed as a whole.
+shaping the smallest durable suite that protects behavior worth keeping.
 
 Use `/testing-principles` for tier selection and test design guidance.
 
@@ -44,6 +44,28 @@ Map EARS statements and risk areas to test tiers as one coherent suite:
 
 Avoid redundant coverage across tiers. Spawn `@reviewer` to challenge the
 strategy before producing tests.
+
+## Unit Test Judgment
+
+Unit tests earn their place by protecting a contract at lower cost than a
+higher-boundary test.
+
+Keep or add a unit test when a small, fast example gives clear feedback on
+behavior that is hard to reason about or expensive to exercise through the full
+system. The failure should identify a broken contract, not a changed
+implementation.
+
+Strong unit tests often cover parsers, reducers, state machines, normalization,
+conflict resolution, recovery logic, cache policy, or a regression with a clear
+input/output shape. The list is calibration, not permission: if the contract is
+unclear, do not add the test.
+
+Prefer integration, contract, CLI, or smoke tests for wiring, orchestration,
+configuration, filesystem/process effects, presentation, and user workflows.
+
+Delete or replace unit tests that preserve private structure, duplicate stronger
+boundary coverage, depend on mock choreography, need frequent fixture rewrites,
+or no longer protect behavior anyone intends to keep.
 
 ## Produce Tests
 
