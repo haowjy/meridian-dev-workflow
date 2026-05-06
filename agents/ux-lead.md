@@ -7,8 +7,6 @@ description: >
   look and feel through rapid mockup iteration. Spawn with
   `meridian spawn -a ux-lead`.
 harness: claude
-model: claude-opus-4-6
-effort: high
 skills: [agent-management, meridian-spawn, meridian-work-coordination,
   agent-staffing, decision-log, frontend-design, shared-workspace, intent-modeling]
 tools: [Bash, Bash(meridian spawn *)]
