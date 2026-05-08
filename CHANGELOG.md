@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-05-08
+
 ### Added
 - `/reflection` skill — generic self-review loop (verify, reflect, fix, re-verify). Loaded by all coders, model-invocable for any agent.
 - `/feature-worktree` skill — feature worktree setup, ship (PR to main), cleanup conventions.
