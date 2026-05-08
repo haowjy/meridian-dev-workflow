@@ -4,6 +4,25 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/reflection` skill — generic self-review loop (verify, reflect, fix, re-verify). Loaded by all coders, model-invocable for any agent.
+- `/feature-worktree` skill — feature worktree setup, ship (PR to main), cleanup conventions.
+- `bootstrap/feature-worktree` — harness permission setup for worktree paths.
+- net-negative section in `/refactoring-principles` — refactors that grow the codebase need justification.
+- "Watch for stalls" in tech-lead and product-lead — stop and reflect when something isn't converging instead of spawning harder.
+- Ship defined: final gate passes → PR from feature worktree to main.
+
+### Changed
+- Execution model: removed @verifier and @reviewer from subphase loop. Coders self-verify and self-review via `/reflection`. 3 spawns per subphase → 1.
+- Execution model: phase exit gate and final gate marked parallel (`--bg` + `spawn wait`).
+- Design-lead: collapsed 4 sequential stages into 2 parallel fan-outs (investigate + synthesize/converge). Added `--continue` for probing spawns deeper. Review is now multi-reviewer parallel fan-out.
+- Design-lead: scoped to design altitude — spec (EARS) + target architecture, not implementation detail.
+- Refactor-reviewer: deletion-first mandate — start with what can be removed, block net-positive refactors.
+- Tech-lead: creates feature worktree before first phase, ships via PR. Added git worktree/push/branch/gh tools.
+
+### Removed
+- `@verifier` agent — replaced by coder self-verification via `/reflection`.
+
 ## [0.3.9] - 2026-05-06
 
 ## [0.3.8] - 2026-05-06

@@ -12,7 +12,7 @@ Each `plan/phase-N-<slug>.md` contains, in order:
    - scope (what this subphase does)
    - files / modules touched
    - dependencies on prior subphases
-   - light verification criteria (what `@verifier` must confirm before moving on)
+   - light verification criteria (what the coder's self-review must confirm before moving on)
    - estimated size (helps judge if it should be split further)
 4. **Phase Exit Gate** — full tester lanes and reviewer focus areas that must pass before the phase commits.
 5. **Claimed EARS statements** — IDs this phase owns.
@@ -49,7 +49,7 @@ Include:
 
 Every plan must include staffing concrete enough for @tech-lead to execute directly:
 
-1. **Per-phase teams** — implementer variant (`@coder`, `@refactor-coder`, `@frontend-coder`), tester lanes (`@verifier`, `@smoke-tester`, `@unit-tester`, `@integration-tester`, `@browser-tester` as applicable), probe/diagnosis steps where behavior is unclear.
+1. **Per-phase teams** — implementer variant (`@coder`, `@refactor-coder`, `@frontend-coder`), tester lanes (`@smoke-tester`, `@unit-tester`, `@integration-tester`, `@browser-tester` as applicable), probe/diagnosis steps where behavior is unclear.
 2. **Final review loop** — reviewer focus areas, `@refactor-reviewer` (full change set), and `@smoke-tester` (end-to-end).
 3. **Escalation policy** — when findings require routing to `@smoke-tester` (behavioral), `@investigator` (root-cause), or redesign escalation to @product-lead.
 

@@ -81,6 +81,12 @@ Choose the specialist by work type:
   probe, write results to `plan/pre-planning-notes.md`, respawn `@planner`
 - Planner returns `structural-blocking` -> route back to `@design-lead`
 
+## Watch for Stalls
+
+When something is taking too long, step back and reflect on why before
+respawning. More spawns at the same failing approach is the most expensive
+way to not make progress. Change the approach or reframe the problem.
+
 ## Redesign Loop
 
 From @tech-lead `Redesign Brief`:

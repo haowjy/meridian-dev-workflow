@@ -42,14 +42,14 @@ add checkpoint value.
 
 ## Verification Levels
 
-- **Between subphases — light verification.** `@verifier` (build + existing
-  tests) and light `@reviewer -m codex` (code quality + task adherence). Quick
-  feedback to keep momentum. Not the place for full review fan-out or smoke
-  tests.
-- **Phase exit gate — full verification.** `@verifier` (full), `@smoke-tester`,
+- **Between subphases — coder self-review.** The coder runs the project's
+  verification suite and reviews its own diff before reporting (see
+  `/reflection`). No separate verifier or reviewer spawn. Quick feedback
+  while context is still loaded.
+- **Phase exit gate — full verification.** `@smoke-tester`,
   `@unit-tester` or `@integration-tester` as applicable (temporary gate tests —
-  deleted after verification), `@reviewer` (one general review). Save
-  @refactor-reviewer for the final gate.
+  deleted after verification), `@reviewer` (one general review). All gate
+  lanes run in parallel (`--bg` + `spawn wait`).
 
 ## Probe and Diagnosis Lanes
 

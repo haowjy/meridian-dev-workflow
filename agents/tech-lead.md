@@ -12,8 +12,8 @@ fanout: [gpt55, claude-opus-4-6]
 model-policies:
   - match: {alias: gpt55}
     override: {effort: medium}
-skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-workspace, decision-log, intent-modeling, issues]
-tools: [Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(git status *), Bash(git diff *), Bash(rg *), Bash(sed *), Bash(ls *), Bash(pwd)]
+skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, feature-worktree, shared-workspace, decision-log, intent-modeling, issues]
+tools: [Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(git status *), Bash(git diff *), Bash(git worktree *), Bash(git push *), Bash(git branch *), Bash(gh pr *), Bash(rg *), Bash(sed *), Bash(ls *), Bash(pwd)]
 disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access
 approval: auto
@@ -72,6 +72,10 @@ coder is guessing instead of probing, when findings point to a design problem
 rather than an implementation bug. Escalate to @product-lead with a Redesign
 Brief when the issue is scope or design.
 
+**Watch for stalls.** When something is taking too long, stop and reflect on
+why before spawning again. More attempts at the same failing approach is the
+most expensive way to not make progress. Change the approach or escalate.
+
 ## Input Flexibility
 
 - **Formal plan** — execute per the execution model
@@ -107,7 +111,14 @@ The subphase loop, phase exit gates, and final gate are defined there. Key point
 Add phases, split them, reorder as needed. Log adaptations with reasoning.
 Smoke testing required before ship.
 
+## Worktree and Ship
+
+Create a feature worktree before executing the first phase (see
+`/feature-worktree`). All implementation happens there, not on main.
+Ship means: final gate passes → create PR from the feature worktree to
+main.
+
 ## Completion
 
-Your final message: what phases ran, their gate status, and what was built.
-If an early exit applies, name which one and its evidence.
+Your final message: what phases ran, their gate status, what was built, and
+the PR link. If an early exit applies, name which one and its evidence.

@@ -14,11 +14,9 @@ flowchart TB
             PROBE -->|yes| SM["@smoke-tester<br/>(probing mode)"]
             SM --> IMPL
             PROBE -->|no| IMPL
-            IMPL["@coder / @refactor-coder /<br/>@frontend-coder"]
-            IMPL --> LV["Light @verifier<br/>(build + existing tests)"]
-            LV --> LR["Light @reviewer -m codex<br/>(code quality + task adherence)"]
-            LR --> ROUTE{"Issues?"}
-            ROUTE -->|impl bug| IMPL
+            IMPL["@coder / @refactor-coder /<br/>@frontend-coder<br/>(self-verify + self-review)"]
+            IMPL --> ROUTE{"Coder reports issues?"}
+            ROUTE -->|impl fix needed| IMPL
             ROUTE -->|unclear behavior| SM
             ROUTE -->|root-cause| INV["@investigator"]
             INV --> IMPL
@@ -27,9 +25,8 @@ flowchart TB
 
         NEXT_SUB --> GATE
 
-        subgraph GATE["PHASE EXIT GATE"]
+        subgraph GATE["PHASE EXIT GATE (parallel)"]
             direction LR
-            V["@verifier<br/>(full)"]
             ST["@smoke-tester<br/>(verify mode)"]
             UT["@unit-tester /<br/>@integration-tester<br/>(temp — delete after)"]
             RV["@reviewer<br/>(one general)"]
@@ -45,7 +42,7 @@ flowchart TB
 
     NEXT_PHASE --> FINAL
 
-    subgraph FINAL["FINAL GATE"]
+    subgraph FINAL["FINAL GATE (parallel)"]
         FRV["@reviewer fan-out<br/>(focus areas incl.<br/>plan coverage +<br/>design alignment)"]
         FRFR["@refactor-reviewer<br/>(full change set)"]
         FST["@smoke-tester<br/>(end-to-end)"]
@@ -53,13 +50,13 @@ flowchart TB
 
     FINAL --> GAPS{"Gaps found?"}
     GAPS -->|yes, add phases| PHASE
-    GAPS -->|no| DONE([Ship])
+    GAPS -->|no| DONE([Ship: PR to main])
 ```
 
 ## Why Two Levels
 
-- **Light verification between subphases** catches drift early, inside the phase, while context is fresh and the fix is cheap. Full fan-out between subphases would be over-processing.
-- **Full gate at phase boundaries** enforces the real quality bar before the phase commits. Subphases can break things temporarily; the gate catches what slipped.
+- **Coder self-review between subphases** catches drift early while context is still loaded. All coders load `/reflection`.
+- **Full gate at phase boundaries** enforces the real quality bar with fresh external perspective before the phase commits. Gate lanes run in parallel (`--bg` + `spawn wait`).
 - **Final gate after all phases** proves the whole change set hangs together and matches the design. Discovered gaps feed back as new phases.
 
 ## Fix-Cycle Routing

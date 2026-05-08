@@ -100,8 +100,8 @@ single-shot.
   external boundaries.
 - `@smoke-tester` — real runtime behavior against real interfaces. Two modes
   (probing vs verification) — see `/smoke-test`.
-- `@verifier` — build-green baseline (tests pass, types check, lint clean). Not
-  a tier; the floor.
+Coders self-verify (tests pass, types check, lint clean) via `/reflection`
+before reporting — that's the floor, not a separate agent.
 
 Pick the tier that matches the question. Stack tiers only when the question
 spans them.

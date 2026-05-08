@@ -11,7 +11,7 @@ description: >
   unit.
 model: gpt-5.4
 effort: medium
-skills: [refactoring-principles, dev-principles, shared-workspace]
+skills: [refactoring-principles, dev-principles, reflection, shared-workspace]
 tools: [Bash, Write, Edit]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access

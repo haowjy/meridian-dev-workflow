@@ -84,6 +84,17 @@ Be suspicious when:
 - compatibility behavior is mixed into ordinary paths instead of isolated
 - old code is preserved without a clear reason, owner, or exit condition
 
+## Refactors Should Be Net-Negative
+
+A refactor that grows the codebase is suspect. The default outcome is less
+code, not more. When a refactor is net-positive in line count, that needs
+explicit justification: what structural value outweighs the added surface
+area?
+
+Check this during `/reflection`. If the diff adds more than it removes and
+you can't articulate why, the refactor drifted from structural improvement
+into additive feature work.
+
 ## What Refactoring Should Produce
 
 A successful refactor makes the codebase easier to extend without increasing

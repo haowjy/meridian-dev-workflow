@@ -14,7 +14,7 @@ fanout: [gpt55, codex]
 model-policies:
   - match: {alias: codex}
     override: {effort: high}
-skills: [dev-principles, shared-workspace, issues]
+skills: [dev-principles, reflection, shared-workspace, issues]
 tools: [Bash, Write, Edit]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access
