@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/dev-principles`: separation of concerns now explains the LLM-agent cost — smaller files mean less context consumed per read.
+
 ## [0.5.0] - 2026-05-09
 
 ### Changed

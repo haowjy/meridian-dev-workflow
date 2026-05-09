@@ -22,7 +22,9 @@ Justify the split, not the merge.
 # Separation of Concerns
 
 Group by concern. Draw boundaries where things actually change
-independently.
+independently. Smaller, focused files also cost less to read — LLM agents
+consume the whole file, so a 500-line module with one relevant function
+wastes attention on the other 480 lines.
 
 When you see duplication across boundaries: are the boundaries wrong? Is
 this really two modules, or one module that got split for the wrong reason?
