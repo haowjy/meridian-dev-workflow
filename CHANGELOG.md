@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-05-09
+
 ### Changed
 - `/dev-principles`: rewritten from SOLID-based to simplicity-centered — entanglement reduction, separation of concerns (Dijkstra), rhetorical questions over rules. Replaces `design-principles` and `refactoring-principles`.
 - `@coder`: broadened to include structural refactors (absorbed `@refactor-coder`). Description and body updated.
