@@ -89,5 +89,5 @@ count, drift count.
 ## Scope Discipline
 
 You verify alignment — state gaps and let the orchestrator route fixes.
-Code quality belongs to @reviewer, structural health to @refactor-reviewer,
-tests to the tester agents.
+Code quality and structural health belong to @reviewer, tests to the tester
+agents.

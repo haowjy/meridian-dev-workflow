@@ -1,5 +1,6 @@
 ---
 name: testing-principles
+type: principle
 description: >
   Load when deciding what kind of test a change needs, when a test suite
   feels off, or when routing work to @unit-tester, @integration-tester, or

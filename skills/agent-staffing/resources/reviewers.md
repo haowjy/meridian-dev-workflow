@@ -12,8 +12,6 @@ These should be part of design review and the final implementation review loop u
 
 @reviewer — adversarial code analysis with a specified focus area. Give each @reviewer a different focus area so you get breadth — the change itself tells you what perspectives matter. Common dimensions: correctness and contract compliance, concurrent state and races, security and trust boundaries, design alignment. Pick the ones that match what could actually go wrong with this specific change. Read-only.
 
-@refactor-reviewer — structural review for tangled dependencies, mixed concerns, and coupling. Reports findings with recommended moves. Include this in design review and the final implementation review loop. Structural drift compounds silently across phases; catching it only at the end is expensive, but forcing structural fan-out in every intermediate phase spends review budget inefficiently. Read-only.
-
 @alignment-reviewer — coverage verification: does one artifact deliver what another promised? Not adversarial code review — it checks whether requirements, EARS statements, and design intent survived into plans and implementations. Pass the source of truth with -f, optionally pass --from for conversational context. Use at two points: (1) after @planner produces a plan, verify the plan covers all requirements and EARS from the design; (2) at the tech-lead's final gate, verify the full implementation delivers the design's architectural intent. Can also be used at phase exit gates when EARS traceability matters — cheaper than a full @reviewer for mechanical coverage checks. Read-only.
 
 ## Focus Areas
@@ -24,7 +22,7 @@ The change tells you what perspectives matter. Think about what could go wrong t
 - **Concurrent state and races** — shared mutable state, lock ordering, TOCTOU
 - **Security and trust boundaries** — input validation, privilege escalation, injection vectors
 - **Design alignment** — does the implementation match the spec? (Always include this one)
-- **Module structure** — covered by @refactor-reviewer as a default lane
+- **Module structure** — use @reviewer with structural focus
 
 Not all apply to every change. The goal is matching review perspectives to actual risk, not checking every box.
 

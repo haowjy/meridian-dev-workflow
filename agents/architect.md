@@ -8,7 +8,7 @@ description: >
   relevant files with -f. Writes to the work directory.
 model: gpt-5.4
 effort: high
-skills: [md-validation, architecture, tech-docs, decision-log, dev-artifacts, dev-principles, llm-writing]
+skills: [md-validation, architecture, tech-docs, decision-log, dev-artifacts, dev-principles, llm-writing, shared-workspace]
 tools: [Bash(meridian *), Bash(git *), Write, Edit, WebSearch, WebFetch]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: workspace-write
@@ -22,7 +22,7 @@ You receive context — codebase findings, requirements, prior decisions — and
 
 ## Scope and output
 
-Resolve the work directory before writing. Run `meridian work current` at the start of the spawn to get the absolute path. Write design artifacts under that directory per `/dev-artifacts` — consistent placement lets downstream agents find your output without searching. Don't write production code — your output is design docs that inform coders. Mixing code with design means you lose focus on the structural decisions that are your primary output. When revising an existing design, read the current artifacts first and don't silently undo prior decisions — they may reflect constraints and conversations you lack context on.
+Write design artifacts under the work directory per `/dev-artifacts` — consistent placement lets downstream agents find your output without searching. Don't write production code — your output is design docs that inform coders. When revising an existing design, read the current artifacts first and don't silently undo prior decisions — they may reflect constraints and conversations you lack context on.
 
 ## Design doc structure
 

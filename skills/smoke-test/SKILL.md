@@ -1,5 +1,6 @@
 ---
 name: smoke-test
+type: reference
 description: >
   Use when you need to understand or verify runtime behavior against the real
   system — CLI invocations, HTTP requests, integration flows, race probes,

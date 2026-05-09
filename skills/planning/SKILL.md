@@ -1,5 +1,6 @@
 ---
 name: planning
+type: reference
 description: >
   Load when producing or executing plans. Shared definitions — phases,
   subphases, verification levels, probe/diagnosis lanes, and the execution

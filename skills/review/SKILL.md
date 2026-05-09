@@ -1,5 +1,6 @@
 ---
 name: review
+type: reference
 description: >
   Load when reviewing code, designs, or plans — adversarial mindset, severity
   handling, and structured reporting. Use for PR reviews, phase reviews,
@@ -51,4 +52,5 @@ are blocking.
 
 - [`resources/security.md`](resources/security.md) — trust boundaries, input validation, auth, secrets
 - [`resources/concurrency.md`](resources/concurrency.md) — races, deadlocks, shared state, cancellation
-- [`resources/architecture.md`](resources/architecture.md) — SOLID, abstractions, module boundaries, design alignment
+- [`resources/architecture.md`](resources/architecture.md) — independence, boundaries, module structure, design alignment
+- [`resources/structural-health/`](resources/structural-health/) — code smells, refactoring moves, deprecation patterns (use when focus is structural)

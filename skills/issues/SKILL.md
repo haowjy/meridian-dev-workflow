@@ -1,5 +1,6 @@
 ---
 name: issues
+type: reference
 description: Use when you find bugs, unexpected behavior, deferred decisions, or backlog items worth tracking beyond the current work item. Also use when asked to file an issue or when investigation determines a GH issue is needed rather than a quick fix.
 ---
 

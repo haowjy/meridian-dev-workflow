@@ -1,5 +1,6 @@
 ---
 name: dev-artifacts
+type: reference
 description: Trigger when creating, reading, or deciding where to put artifacts in the work directory — design packages, plans, decision logs, status files, preservation hints.
 model-invocable: false
 ---

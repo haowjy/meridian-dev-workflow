@@ -71,5 +71,4 @@ Write mockups where they're easy to find and render. If the project has a dev
 server, write files the dev server can serve. Otherwise, write standalone HTML
 files that open in a browser directly.
 
-Resolve the work directory with `meridian work current` and write mockups there.
 Your final message: what you built, where the files are, and how to view them.

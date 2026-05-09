@@ -1,5 +1,6 @@
 ---
 name: agent-staffing
+type: reference
 description: Use when composing a team for a design or implementation phase — choosing which agents to spawn, how many, what runs in parallel, which review focus areas to cover, and how to scale effort to complexity. Also use when deciding whether a task is small enough to skip orchestration ceremony or large enough to warrant fan-out.
 model-invocable: false
 ---
@@ -55,7 +56,7 @@ When a phase talks to an external system:
 
 See resources for detailed catalogs:
 
-- `resources/reviewers.md` — @reviewer, @refactor-reviewer, and @alignment-reviewer
+- `resources/reviewers.md` — @reviewer and @alignment-reviewer
 - `resources/testers.md` — @smoke-tester, @unit-tester, @integration-tester, @browser-tester
 - `resources/builders.md` — @coders, @architects, @web-researchers, @explorers
 - `resources/maintainers.md` — @kb-writer, @kb-maintainer, @tech-writer, @investigator

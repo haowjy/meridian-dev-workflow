@@ -1,80 +1,58 @@
 ---
 name: dev-principles
+type: principle
 description: >
-  Load when implementing, reviewing, or refactoring code. Implementation
-  operating guidance — refactoring discipline, abstraction judgment, deletion
-  courage, dependency judgment, pattern adherence. Design-facing guidance
-  lives in design-principles.
+  Load when implementing, reviewing, refactoring, or designing. Core
+  engineering values — simplicity, separation of concerns, structural
+  judgment. The operating lens for all code decisions.
 model-invocable: false
 ---
 
-# Refactor Early, Refactor Continuously
+# Simplicity
 
-Context decays. Refactoring later means re-learning what you already knew. Kent Beck: "First make the change easy, then make the easy change."
+The default failure mode is over-engineering, not under-engineering. Every
+boundary, type, and layer is a cost.
 
-- Run @refactor-reviewer in design review and again in final implementation review.
-- Fix refactor findings in active loop. Do not defer by default.
-- Do preparatory refactors before feature work.
-- Keep refactor and feature commits separate.
-- Treat falling refactor rate as risk signal.
+Before adding structure, ask: is this actually a separate concern, or one
+thing wearing two names? If these pieces always change together, they are
+one thing. Partitioning does not make code simpler — independence does.
+
+Justify the split, not the merge.
+
+# Separation of Concerns
+
+Group by concern. Draw boundaries where things actually change
+independently.
+
+When you see duplication across boundaries: are the boundaries wrong? Is
+this really two modules, or one module that got split for the wrong reason?
+Step back and rethink the structure — don't patch it with extraction.
+
+# Make Changes Easy
+
+Refactoring is disentangling. The question is: what would you need to
+understand to make the next change here? Reduce that.
+
+Refactor early while context is fresh. A refactor that grows the codebase
+is suspect — are you disentangling, or adding ceremony?
 
 # Abstraction Judgment
 
-Premature abstraction locks in the wrong axis of variation. Two cases look similar by coincidence; three reveal the true pattern. Sandi Metz: "Duplication is far cheaper than the wrong abstraction."
+Before extracting: is this real shared behavior, or surface similarity?
+Two cases look alike by coincidence. Three reveal the pattern.
 
-- Two similar cases: keep duplicated.
-- Three+ true semantic matches: extract abstraction.
-- Surface similarity != semantic similarity.
-- New parameters/branches in abstraction: wrong-abstraction signal.
-- Fix wrong abstraction immediately: inline/delete and re-form.
-- DRY hard on utilities, cautious on business logic.
+When an abstraction grows flags and branches: did it capture the wrong
+concept? Inline and re-form rather than patch.
 
-# Delete Aggressively
+# Deletion
 
-Dead code makes the codebase harder to navigate for both LLMs and humans. LLMs default to preserving code — passivity is the failure mode, not over-deletion.
+Dead code is entanglement surface. LLMs default to preserving.
 
-- Think about deletion aggressively, especially during review.
-- Flag dead code, speculative helpers, unused abstractions.
-- Probe untested behavior before proposing deletion.
-- Challenge preserved code with no clear reason.
-- Confirm with human before executing deletions.
+Before deleting: what constraint is this carrying? Before preserving: is
+there actually a constraint, or just inertia?
 
-# Depend Deliberately
+# Consistency
 
-- Good dependency deletes more code than it adds.
-- Choose deps that collapse subsystems, not primitive swaps.
-- Evaluate total ownership: code + cognitive load + failures + test matrix.
-- Adoption criteria: active maintenance, mature API, battle-tested fit, scope match.
-- Do not add dep for trivial problems.
-- Reject reflex frames (`stdlib-only` or `always-dep`).
-
-# Follow Existing Patterns
-
-- Read surrounding code first.
-- Reuse established project patterns.
-- Avoid introducing new idioms for routine tasks.
-- Prefer consistency over cleverness.
-
-# No Regressions
-
-- Changes must not break existing behavior unless explicitly intended.
-- Reviewers and orchestrators verify this before merge.
-- Bugs get regression tests before the fix.
-
-# Keep Docs Current
-
-- Update docs in same change as behavior.
-- Re-verify external-tool references when versions change.
-
-# Chesterton's Fence
-
-- Understand why code exists before removing it.
-- Investigate uncertainty; do not preserve/delete blindly.
-
-## Name Constraint Before Deleting
-
-- Check introducing history: `git log -S "<symbol>"`, `git log --follow <file>`.
-- Find tests that explicitly exercise the code.
-- Find decision logs/work artifacts referencing the behavior.
-- If constraint is unknown: delete cautiously.
-- If constraint is known: code is load-bearing until replacement exists.
+Read surrounding code first. Does the project already solve this? Prefer
+its patterns over introducing new ones. A good dependency deletes more code
+than it adds.

@@ -4,6 +4,35 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/dev-principles`: rewritten from SOLID-based to simplicity-centered — entanglement reduction, separation of concerns (Dijkstra), rhetorical questions over rules. Replaces `design-principles` and `refactoring-principles`.
+- `@coder`: broadened to include structural refactors (absorbed `@refactor-coder`). Description and body updated.
+- `@reviewer`: structural health added as a focus lane (absorbed `@refactor-reviewer`). Description updated.
+- `@tech-lead`: references updated — `@coder` for refactors, `@reviewer` with structural focus. Worktree section now uses `/meridian-work-coordination` instead of `/feature-worktree`.
+- `@design-lead`: design methodology folded into agent body (was in deleted `design-principles` skill). Skills list updated.
+- `@alignment-reviewer`: simplified reviewer references.
+- `@product-lead`: simplified reviewer references.
+- `agent-staffing`: removed `@refactor-reviewer` from catalogs, updated structural review routing.
+- `execution-model`: removed `@refactor-coder` from mermaid diagram, `@refactor-reviewer` → `@reviewer (structural focus)`.
+- `plan-package`: removed `@refactor-coder` from staffing contract, updated final review loop.
+- `review/resources/architecture.md`: replaced SOLID terminology with independence/entanglement framing.
+- `review/SKILL.md`: added `structural-health/` to resource list.
+- All skills tagged with `type:` field (principle, guardrail, or reference).
+
+### Removed
+- `@refactor-coder` agent — absorbed into `@coder`.
+- `@refactor-reviewer` agent — absorbed into `@reviewer` (structural focus lane).
+- `/design-principles` skill — methodology folded into `@design-lead` body.
+- `/refactoring-principles` skill — values into `/dev-principles`, resources moved to `review/resources/structural-health/`.
+- `/reflection` skill — moved to `meridian-base` as a generic capability.
+- `/feature-worktree` skill — obsoleted by `meridian work start --worktree`.
+- `/verification` skill — orphaned since `@verifier` removal in v0.4.0.
+
+### Fixed
+- README: removed stale `@verifier` row, phantom `context-handoffs` and `mermaid` skills, deduplicated `dev-artifacts`, added missing `testing-principles` and `integration-test`.
+- `architect`, `planner`, `frontend-designer`: added missing `shared-workspace` skill.
+- Trimmed redundant "resolve work directory" instructions from agent bodies — `shared-workspace` covers this.
+
 ## [0.4.1] - 2026-05-09
 
 ### Changed

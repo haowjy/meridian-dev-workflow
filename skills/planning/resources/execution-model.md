@@ -14,7 +14,7 @@ flowchart TB
             PROBE -->|yes| SM["@smoke-tester<br/>(probing mode)"]
             SM --> IMPL
             PROBE -->|no| IMPL
-            IMPL["@coder / @refactor-coder /<br/>@frontend-coder<br/>(self-verify + self-review)"]
+            IMPL["@coder / @frontend-coder<br/>(self-verify + self-review)"]
             IMPL --> ROUTE{"Coder reports issues?"}
             ROUTE -->|impl fix needed| IMPL
             ROUTE -->|unclear behavior| SM
@@ -44,7 +44,7 @@ flowchart TB
 
     subgraph FINAL["FINAL GATE (parallel)"]
         FRV["@reviewer fan-out<br/>(focus areas incl.<br/>plan coverage +<br/>design alignment)"]
-        FRFR["@refactor-reviewer<br/>(full change set)"]
+        FRFR["@reviewer<br/>(structural focus,<br/>full change set)"]
         FST["@smoke-tester<br/>(end-to-end)"]
     end
 

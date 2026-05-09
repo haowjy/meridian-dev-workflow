@@ -1,5 +1,6 @@
 ---
 name: architecture
+type: reference
 description: >
   Shared vocabulary for architectural thinking — boundaries, dependencies,
   tradeoff dimensions, and structural risk. Load when designing, writing

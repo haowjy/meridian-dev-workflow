@@ -64,15 +64,13 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Agent | Model | Role |
 |---|---|---|
-| `coder` | codex | Production code writer — implements scoped tasks from phase blueprints |
+| `coder` | codex | Production code writer — implements scoped tasks and behavior-preserving refactors |
 | `frontend-coder` | opus | Production frontend code with distinctive design quality via the frontend-design skill |
-| `refactor-reviewer` | gpt | Reduces codebase entropy — structural cleanup, SOLID fixes, dependency untangling |
 
 **Testing & Verification:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `verifier` | gpt | Runs tests, type checks, and linters — fixes mechanical breakage, reports real issues |
 | `unit-tester` | gpt | Writes and runs targeted unit tests for edge cases and regression guards |
 | `smoke-tester` | gpt-5.4 | End-to-end testing from the user's perspective — CLI flows, HTTP requests, race probes |
 | `browser-tester` | opus | Browser-based QA via Playwright — visual verification, user flows, console errors |
@@ -81,7 +79,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Agent | Model | Role |
 |---|---|---|
-| `reviewer` | gpt | Deep code review — specify a focus area (security, SOLID, correctness) or leave broad |
+| `reviewer` | gpt | Deep code review — specify a focus area (security, structural health, correctness) or leave broad |
 | `investigator` | gpt | Brief triage of flagged issues — quick-fixes trivial items, files GH issues for the rest |
 
 **Research & Documentation:**
@@ -101,14 +99,13 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | Skill | What it teaches |
 |---|---|
 | `decision-log` | Decision capture — reasoning, alternatives, constraints |
-| `dev-artifacts` | Shared artifact convention between orchestrators |
-| `context-handoffs` | Context scoping for agent spawns |
+| `dev-artifacts` | Shared artifact convention between orchestrators — v3 layout with spec/architecture trees |
 | `session-mining` | Session-mining workflow patterns — recover parent-session decisions and delegate bulk transcript reads |
 | `architecture` | Problem framing, tradeoff analysis, approach evaluation |
 | `planning` | Decomposing design packages into executable phases — EARS ownership, parallelism posture, staffing |
 | `agent-staffing` | Team composition — which agents to spawn, how many, what runs in parallel |
-| `dev-principles` | Engineering principles LLM agents systematically violate — refactoring, abstraction, deletion, edge cases |
-| `dev-artifacts` | Shared artifact convention between orchestrators — v3 layout with spec/architecture trees |
+| `dev-principles` | Simplicity, separation of concerns, structural judgment — the operating lens for code decisions |
+| `testing-principles` | Test tier selection, risk-based coverage, functional core / imperative shell |
 
 **Agent methodology:**
 
@@ -119,11 +116,10 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | `browser-test` | Browser QA methodology — visual verification, accessibility, console errors |
 | `smoke-test` | End-to-end testing — CLI, HTTP, race probes, interruption recovery |
 | `unit-test` | Focused test writing — edge cases, regression guards, tricky logic |
-| `verification` | Build verification — getting tests, types, and lint green |
+| `integration-test` | Composition testing — module boundaries, fakes at external systems |
 | `ears-parsing` | Mechanical EARS verification contract for testers — per-pattern parse and per-ID reporting |
 | `tech-docs` | Technical writing craft — hierarchical docs, linking strategy, and progressive disclosure |
 | `frontend-design` | Distinctive, production-grade frontend interfaces — anti-generic-AI aesthetics |
-| `mermaid` | Mermaid diagram syntax rules and validation |
 
 ## Cross-Source Dependencies
 

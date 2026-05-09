@@ -12,7 +12,7 @@ fanout: [gpt55, claude-opus-4-6]
 model-policies:
   - match: {alias: gpt55}
     override: {effort: medium}
-skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, feature-worktree, shared-workspace, decision-log, intent-modeling, issues]
+skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-workspace, decision-log, intent-modeling, issues]
 tools: [Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(git status *), Bash(git diff *), Bash(git worktree *), Bash(git push *), Bash(git branch *), Bash(gh pr *), Bash(rg *), Bash(sed *), Bash(ls *), Bash(pwd)]
 disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: danger-full-access
@@ -97,12 +97,12 @@ Execute phases per the execution model in `planning/resources/execution-model.md
 The subphase loop, phase exit gates, and final gate are defined there. Key points:
 
 - Probe before coding when behavior is unclear
-- Route by implementer type: `@coder` for feature work, `@refactor-coder` for
-  structural cleanup, `@frontend-coder` for visual design fidelity
+- Route by implementer type: `@coder` for feature work (including structural
+  refactors), `@frontend-coder` for visual design fidelity
 - Phase exit gates and the final gate are mandatory — never skip them
 - When EARS gaps appear at phase gates, spawn @planner to adjust remaining phases
-- The final gate includes @reviewer fan-out, @refactor-reviewer, @smoke-tester,
-  and @alignment-reviewer with the full design package
+- The final gate includes @reviewer fan-out (with structural focus lane),
+  @smoke-tester, and @alignment-reviewer with the full design package
 
 **NEVER skip the final gate.**
 
@@ -113,10 +113,10 @@ Smoke testing required before ship.
 
 ## Worktree and Ship
 
-Create a feature worktree before executing the first phase (see
-`/feature-worktree`). All implementation happens there, not on main.
-Ship means: final gate passes → create PR from the feature worktree to
-main.
+Use `meridian work start --worktree` to create a feature worktree before
+executing the first phase (see `/meridian-work-coordination`). All
+implementation happens there, not on main. Ship means: final gate passes →
+create PR from the feature worktree to main.
 
 ## Completion
 

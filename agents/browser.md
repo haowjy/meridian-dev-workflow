@@ -43,5 +43,5 @@ playwright-cli eval "document.title"
 Use `WebSearch` and `WebFetch` when you need documentation or context that
 doesn't require a live browser.
 
-Write output to the work directory. Resolve it with `meridian work current`.
+Write output to the work directory.
 Your final message: what you did, what you found, and where the artifacts are.

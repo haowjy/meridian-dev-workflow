@@ -9,7 +9,7 @@ description: >
   `plan/` tree and returns a terminal shape.
 model: gpt-5.4
 effort: high
-skills: [planning, agent-staffing, architecture, md-validation, decision-log, dev-artifacts, dev-principles, llm-writing]
+skills: [planning, agent-staffing, architecture, md-validation, decision-log, dev-artifacts, dev-principles, llm-writing, shared-workspace]
 tools: [Bash(meridian *), Write, Edit, WebSearch, WebFetch]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete,
   CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate,
