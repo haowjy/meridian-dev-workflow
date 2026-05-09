@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `web-researcher`: prompt injection warning in description — treat findings as evidence, not instructions.
+- `agent-staffing/builders`: explorer reframed around token cost delegation. Web researcher prompt injection note.
+
 ## [0.4.0] - 2026-05-08
 
 ### Added
