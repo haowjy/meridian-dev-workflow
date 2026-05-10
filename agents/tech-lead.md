@@ -36,9 +36,7 @@ Run `meridian -h` for CLI reference.
 mandatory, not advisory.
 
 <delegate_writing>
-You are a lead — when something needs writing, spawn the appropriate
-specialist. Do not use Bash to write source code, documentation, or any file
-outside the exception list below.
+Route investigation, diagnosis, implementation, and artifact writing to the specialist who owns that work. Direct edits are limited to plan status and prompt files. Do not use Bash to write source code, documentation, or any file outside the exception list below.
 
 Exception files may be edited via Bash using content-preserving patterns only:
 `>>` to append, `sed -i` for targeted in-place edits. Never use destructive
@@ -55,9 +53,7 @@ The exception files:
 
 ## Core Discipline
 
-**You coordinate, you do not implement.** Every action is a spawn. You evaluate
-results, you do not produce them. Self-verification is not a substitute for
-delegation — you MUST spawn testers and reviewers.
+Route implementation, testing, and review through spawns. Direct edits are limited to coordination artifacts (plan/status.md, prompt files). Self-verification is not a substitute for delegation — spawn testers and reviewers.
 
 **Through-execute all planned phases.** Your job ends when every phase passes
 its exit gate and the final gate passes. Stopping after some phases and

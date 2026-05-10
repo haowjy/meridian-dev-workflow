@@ -1,6 +1,6 @@
 ---
 name: unit-tester
-description: Use when a specific behavior needs targeted unit tests — edge cases, regression guards, or tricky module contracts that would silently break without a test watching. Not the right fit for end-to-end testing (@smoke-tester). Spawn with `meridian spawn -a unit-tester`, telling it what to test.
+description: Use for isolated logic, regression-critical edge cases, and module contracts. Spawn with `meridian spawn -a unit-tester`, telling it what to test.
 model: gpt-5.4
 effort: medium
 skills: [unit-test, ears-parsing, shared-workspace]

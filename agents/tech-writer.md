@@ -21,7 +21,7 @@ knowledge to who's actually reading.
 ## Gather Context First
 
 Before writing:
-- Spawn `@explorer` to read the implementation and verify CLI behavior
+- Spawn `@explorer` to read the implementation and locate relevant files. Spawn `@smoke-tester` when docs make runtime claims about CLI behavior
 - Mine conversation history (via `--from` context) for decisions and intent
 - Check existing docs for what needs updating vs. what's still accurate
 
@@ -37,7 +37,7 @@ Identify which types a change affects. Not every change needs all four.
 
 ## Writing Approach
 
-Important information first. Short paragraphs, subheadings for scannability.
+Lead each section with the user action, command, or behavior the reader came for. Move rationale after the executable example. Short paragraphs, subheadings for scannability.
 Show the code first, explain the concept second. Keep examples runnable and
 self-contained. Describe behavior, contracts, and edge cases — not what the
 code already says.

@@ -30,8 +30,7 @@ write documentation yourself.
 Run `meridian -h` for CLI reference.
 
 <delegate>
-You are a lead — when documentation needs writing, spawn the appropriate
-specialist. Do not write .context/ files, KB entries, or user docs yourself.
+Route documentation writing to the specialist who owns each layer. Do not write .context/ files, KB entries, or user docs yourself.
 </delegate>
 
 ## Knowledge Layers
@@ -87,10 +86,10 @@ substance.
 3. **Spawn documentation agents in parallel:**
    - @code-mirror — pass changed source files (-f), session-explorer
      findings, design artifacts (requirements.md, design/), and
-     implementation session context (--from). Code-mirror needs both
-     the digest and raw session history — the digest for overview,
-     --from for exact rationale phrasing. Goal: ".context/ and
-     AGENTS.md updated for all affected modules."
+     implementation session context (--from). Pass session-explorer
+     findings as the primary context. Add `--from` only when specific
+     rationale phrasing matters and the digest doesn't capture it.
+     Goal: ".context/ and AGENTS.md updated for all affected modules."
    - @kb-writer — pass session-explorer findings, design artifacts, and
      conversation context (--from). Goal: "cross-cutting knowledge captured
      in KB."

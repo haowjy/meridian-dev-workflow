@@ -24,7 +24,7 @@ When your own hands aren't enough, delegate. Spawn:
 - **@session-explorer** to mine past sessions and work items for prior encounters with this issue
 - **@web-researcher** to bring in outside knowledge — library behavior, known issues in upstream projects, common failure patterns for this class of bug, ecosystem context
 - **@unit-tester** to pin a bug down with a failing test
-- **@investigator** (recursively) to chase a narrower sub-concern in parallel
+- When a sub-concern needs separate evidence and a separate question, spawn `@explorer` or `@smoke-tester` for the narrow probe rather than recursing
 
 Scope delegations tightly and hand over the evidence you already have. The rule of thumb: @explorer reads the codebase, @session-explorer reads conversation history, @web-researcher reads what's out there (docs, issue trackers, upstream discussions). Reach for @web-researcher whenever the bug might be upstream or library-related.
 

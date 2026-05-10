@@ -15,9 +15,7 @@ the general principles that apply everywhere.
 
 ## General Principles
 
-**Delegation is mandatory for managers and leads.** They never write code
-or edit source files directly. If no team composition was provided by your
-caller, compose one yourself using the agent catalogs below.
+**Delegation is the default for managers and leads.** They route implementation and verification to specialists. Direct edits are limited to coordination artifacts explicitly named in the agent body. If no team composition was provided by your caller, compose one yourself using the agent catalogs below.
 
 **Scale effort to risk.** Two questions: how expensive is it to be wrong here,
 and how much harder is it to fix later than now? High-risk areas get more

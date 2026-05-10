@@ -53,8 +53,9 @@ ownership.
 
 ## Planning Priorities
 
-- **Parallelize aggressively.** Phases touching non-overlapping files default
-  to parallel unless a dependency prevents it.
+- **Parallelize when independence is proven** and coordination cost stays low.
+  Phases touching non-overlapping files default to parallel unless a
+  dependency prevents it.
 - **Sequence refactors early** when they unlock parallel feature work.
 - **Complete and exclusive ownership** of EARS statements.
 - **Route by work type.** Identify subphases that need probing or diagnosis
@@ -79,9 +80,7 @@ Include staffing concrete enough that `@tech-lead` can execute directly.
 - `probe-request`
 - `structural-blocking`
 
-Even for small tasks, produce the plan — @tech-lead executes it. If the
-caller's prompt uses imperative language like "implement" or "add", treat it
-as a plan request.
+Even for small tasks, produce the plan — @tech-lead executes it. If you were spawned as `@planner`, produce a plan. Do not infer intent from individual verbs.
 
 Absorb plan-review feedback yourself when it doesn't require rethinking design.
 Escalate to `@architect` only when feedback requires changing structural

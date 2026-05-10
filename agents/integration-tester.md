@@ -1,6 +1,6 @@
 ---
 name: integration-tester
-description: Use when verifying that internal components compose correctly — module boundaries, coordination logic, contracts between collaborators — with fakes at external system boundaries. The middle tier between unit and smoke. Not the right fit for pure logic in isolation (@unit-tester) or end-to-end behavior against real systems (@smoke-tester). Spawn with `meridian spawn -a integration-tester`, telling it which composition to exercise and which boundaries to fake.
+description: Use for internal component composition with faked external boundaries — module boundaries, coordination logic, contracts between collaborators. Spawn with `meridian spawn -a integration-tester`, telling it which composition to exercise and which boundaries to fake. For real end-to-end behavior, use `@smoke-tester`.
 model: gpt-5.4
 effort: medium
 skills: [integration-test, testing-principles, ears-parsing, shared-workspace]

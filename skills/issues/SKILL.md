@@ -6,11 +6,10 @@ description: Use when you find bugs, unexpected behavior, deferred decisions, or
 
 # Issue Tracking
 
-File GitHub issues proactively. If it's worth mentioning in a report, it's
-worth an issue.
+File GitHub issues proactively. File an issue when follow-up needs durable tracking beyond the current report.
 
 GitHub Issues are a visibility layer on top of spawn reports and work-scoped
-notes. If `gh` is unavailable, skip issue creation silently and log locally.
+notes. If `gh` is unavailable, report that issue filing was skipped and log the draft locally.
 
 ## When to File
 

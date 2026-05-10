@@ -36,6 +36,6 @@ During intermediate implementation phases, involve @reviewers only when testers 
 
 ## Synthesizing Findings
 
-Fix valid findings — agents are cheap. The only findings to skip are ones the @reviewer got wrong. When @reviewers disagree, the orchestrator has context they don't — the full design, prior phases, runtime discoveries. Make the call and record it in the decision log.
+Fix valid findings by default. Defer only with explicit rationale recorded in the decision log. When @reviewers disagree, the orchestrator has context they don't — the full design, prior phases, runtime discoveries. Make the call and record it in the decision log.
 
 If reviews aren't converging after multiple iterations, that's usually a signal the design has a structural problem — investigate or escalate rather than forcing convergence.
