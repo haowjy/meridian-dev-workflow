@@ -4,6 +4,26 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `@code-mirror` agent: focused writer for .context/CONTEXT.md and AGENTS.md — inline knowledge colocated with source code. Sonnet model, workspace-write sandbox.
+- `@kb-lead` agent: post-implementation knowledge capture coordinator. Routes to @code-mirror (.context/), @kb-writer (KB), @tech-writer (docs/). Replaces product-lead's parallel kb-writer + tech-writer + kb-maintainer spawns.
+
+### Changed
+- `@product-lead`: post-implementation routing simplified — spawns @qa-lead + @kb-lead instead of three parallel doc agents + sequential kb-maintainer. Passes work directory context (`-f $(meridian work current)`) to kb-lead. `<delegate>` tag uses behavioral framing instead of role identity.
+- `@tech-lead`: replaced contradictory "every action is a spawn" absolute with scoped behavioral guidance. `<delegate>` tag uses behavioral framing.
+- `@planner`: replaced brittle verb-inference routing rule with spawn-identity check. "Parallelize aggressively" → "parallelize when independence is proven."
+- `@investigator`: replaced recursive self-spawning with @explorer/@smoke-tester delegation for narrow probes.
+- `@tech-writer`: fixed wrong-agent routing — @explorer for reading, @smoke-tester for runtime verification. "Important information first" → lead with user action/command/behavior.
+- `@alignment-reviewer`: replaced contrastive definition with positive framing.
+- `@ux-lead`: `<delegate>` tag uses behavioral routing instead of role identity.
+- `@unit-tester`, `@integration-tester`: descriptions reframed positively instead of "not the right fit for."
+- `agent-staffing`: "delegation is mandatory" → "delegation is the default" with coordination-artifact exception.
+- `agent-staffing/reviewers`: over-absolute skip rule replaced with decision-log rationale.
+- `agent-staffing/testers`: "only verification that matters" → "mandatory behavioral lane."
+- `agent-staffing/builders`: empty superlative replaced with specific @web-researcher staffing guidance.
+- `issues`: over-absolute filing rule replaced with durable-tracking test. Silent `gh` failure → explicit reporting.
+- `unit-test`, `integration-test`: descriptions reframed positively.
+
 ## [0.5.2] - 2026-05-10
 
 ## [0.5.1] - 2026-05-09
