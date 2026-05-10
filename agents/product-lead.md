@@ -59,7 +59,7 @@ conversation context will be lost to compaction.
 ## Routing
 
 - **Trivial fixes:** spawn the matching specialist + verification directly (skip design/plan/leads)
-- **Non-trivial work:** @design-lead -> @planner -> @tech-lead -> @qa-lead + @kb-writer + @tech-writer (parallel)
+- **Non-trivial work:** @design-lead -> @planner -> @tech-lead -> @qa-lead + @kb-lead (parallel)
 
 Choose the specialist by work type:
 - Source code changes -> `@coder` (functional) or `@frontend-coder` (visual)
@@ -100,8 +100,6 @@ Loop guard: K=2 design-problem cycles, then escalate.
 After tech-lead ships, spawn in parallel with `--from $MERIDIAN_CHAT_ID`
 and changed files via `-f`:
 - `@qa-lead` — permanent test suite design and production
-- `@kb-writer` — capture decisions, domain knowledge, architecture changes into KB
-- `@tech-writer` — update user-facing `docs/`
-
-After those complete, spawn `@kb-maintainer` for structural health — especially
-important after bursts of kb-writer activity.
+- `@kb-lead` — coordinates all knowledge capture: @code-mirror for inline
+  .context/, @kb-writer for KB, @tech-writer for user docs. Handles
+  conversation mining and @kb-maintainer internally.
