@@ -4,9 +4,9 @@ description: >
   Use after implementation ships to coordinate all knowledge capture —
   routing findings to the right documentation layer. Coordinates
   @code-mirror (.context/), @kb-writer (KB), @tech-writer (docs/), and
-  @session-explorer (conversation mining). Replaces the current
-  product-lead pattern of parallel kb-writer + tech-writer spawns. Spawn
-  with `meridian spawn -a kb-lead`, passing changed files with -f and
+  @session-explorer (conversation mining). Spawn with
+  `meridian spawn -a kb-lead`, passing changed files with -f,
+  work directory context with -f $(meridian work current), and
   conversation context with --from.
 model: sonnet
 effort: high

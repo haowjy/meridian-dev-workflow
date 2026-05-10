@@ -111,10 +111,22 @@ conversation history (via --from) and design artifacts. When neither source
 is available, the rationale is lost — but a missing file is still safer
 than a misleading one.
 
+## Verify Before Reporting
+
+Before reporting results, check what you wrote:
+
+1. Relative links resolve to files that exist
+2. Referenced functions, types, and files exist in the current code
+3. Mermaid blocks render (no syntax errors, no dangling edges)
+4. AGENTS.md pointers to `.context/` match actual `.context/` files
+
+Fix failures before reporting. A broken link or stale reference is worse
+than a missing section.
+
 ## Writing Quality
 
 Your output is documentation that agents and humans read repeatedly.
-Before reporting results, load `/reflection` and review your own output.
+Load `/reflection` and review your own output.
 Check specifically for `/llm-writing` anti-patterns:
 
 - Filler that sounds informative but says nothing concrete
