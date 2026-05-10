@@ -100,3 +100,4 @@ changed files via `-f`, and work directory context
 (`-f $(meridian work current)`):
 - `@qa-lead` — permanent test suite design and production
 - `@kb-lead` — all knowledge capture across .context/, KB, and docs/
+

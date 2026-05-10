@@ -4,6 +4,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `@qa-design-lead`: analysis-only agent spawned by @qa-lead when the test suite has structural problems. Reads test files and explorer report, produces `design/test-strategy.md`. No sub-spawning — pure analysis and doc writing. Covers tier audit, diff analysis of coder-touched tests, anti-pattern inventory, conftest map, decomposition plan.
+
+### Changed
+- `@qa-lead`: full loop driver — explores first (spawns @explorer), decides whether to spawn @qa-design-lead for heavy redesign or proceed inline, runs one @reviewer pass, then hands off to `@coder --skills unit-test` or `@coder --skills integration-test`. Adds Edit tool for `# qa-validated: <work-item>` markers. Drops direct use of @unit-tester and @integration-tester in favor of `@coder` + skill routing.
+
 ## [0.5.7] - 2026-05-10
 
 ### Changed
