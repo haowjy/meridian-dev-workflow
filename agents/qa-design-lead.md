@@ -62,8 +62,8 @@ issues. Read each flagged test file directly, largest first (`wc -l` to
 prioritize). Read conftest files at every level. Read `tests/support/` for
 shared helper inventory. Then write the design doc.
 
-If something is broken enough to block CI right now, put it at the top of the
-strategy as priority-0 — qa-lead handles it before the rest of the phases.
+If something is broken enough to block CI, note it at the top of the strategy.
+qa-lead handles it before the rest of the phases run.
 
 ## Report
 
