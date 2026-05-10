@@ -106,6 +106,9 @@ substance.
 
 5. **Structural health.** Spawn @kb-maintainer targeting both the KB and any
    .context/ directories that were created or heavily modified.
+   Why after writes: new pages create orphan nodes and break existing
+   cross-references. Run after @kb-writer and @code-mirror finish so
+   @kb-maintainer sees the full graph.
 
 6. **Report.** Summarize what was captured, which layers were updated, and
    any remaining gaps.

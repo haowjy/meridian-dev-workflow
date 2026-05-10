@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@kb-lead`: step 5 (structural health) explains why it's sequenced after writers — new pages create orphan nodes and break cross-references.
+
 ## [0.5.3] - 2026-05-10
 
 ### Added
