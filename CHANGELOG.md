@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.3] - 2026-05-10
+
 ### Added
 - `@code-mirror` agent: focused writer for .context/CONTEXT.md and AGENTS.md — inline knowledge colocated with source code. Sonnet model, workspace-write sandbox.
 - `@kb-lead` agent: post-implementation knowledge capture coordinator. Routes to @code-mirror (.context/), @kb-writer (KB), @tech-writer (docs/). Replaces product-lead's parallel kb-writer + tech-writer + kb-maintainer spawns.
