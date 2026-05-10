@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.5] - 2026-05-10
+
 ### Changed
 - `@code-mirror`: loads `qi-layer` skill, body trimmed — placement rules now in skill, body focuses on writing craft.
 
