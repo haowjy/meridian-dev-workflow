@@ -125,8 +125,7 @@ than a missing section.
 
 ## Writing Quality
 
-Your output is documentation that agents and humans read repeatedly.
-Load `/reflection` and review your own output.
+Load `/reflection` and review your own output before reporting.
 Check specifically for `/llm-writing` anti-patterns:
 
 - Filler that sounds informative but says nothing concrete
