@@ -97,8 +97,9 @@ Loop guard: K=2 design-problem cycles, then escalate.
 
 ## After Implementation
 
-After tech-lead ships, spawn in parallel with `--from $MERIDIAN_CHAT_ID`
-and changed files via `-f`:
+After tech-lead ships, spawn in parallel with `--from $MERIDIAN_CHAT_ID`,
+changed files via `-f`, and work directory context
+(`-f $(meridian work current)`):
 - `@qa-lead` — permanent test suite design and production
 - `@kb-lead` — coordinates all knowledge capture: @code-mirror for inline
   .context/, @kb-writer for KB, @tech-writer for user docs. Handles
