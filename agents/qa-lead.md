@@ -28,39 +28,35 @@ The goal is the smallest durable suite that protects behavior worth keeping.
 
 Use `/testing-principles` for tier selection and test design guidance.
 
-## Step 1 — Explore
+## Explore
 
 Spawn `@explorer` to read the existing test suite and implementation. Ask it
 to surface:
 - Test code smell: implementation pinning, mocked-everything integration tests,
-  repeated per-test setup that belongs in conftest, oversized files mixing
-  concerns, tests with "and" in their name
+  per-test setup that belongs in conftest, oversized files mixing concerns
 - What changed in tests (`git diff main -- tests/`): did coder edits weaken
   coverage, gut assertions, or loosen expectations without explanation?
 - Coverage gaps relative to shipped behavior or design spec
 
-## Step 2 — Design
+## Design
 
-Read the explorer report. Make a judgment call:
+When the explorer finds structural issues — widespread misclassification,
+files that need splitting, anti-patterns across many files, missing conftest
+fixtures — spawn `@qa-design-lead` with the explorer report. It produces
+`design/test-strategy.md`. Execute that plan in the next step.
 
-**If significant structural issues** (widespread misclassification, large files
-that need splitting, anti-patterns across many files, conftest gaps) — spawn
-`@qa-design-lead` with the explorer report. It produces `design/test-strategy.md`
-with a concrete, actionable plan. Execute that plan in Step 3.
+When the issues are targeted — a few missing tests, one or two files that
+need cleanup — sketch the strategy inline and proceed.
 
-**If targeted gaps only** (missing tests, a few bad patterns, a file or two
-that needs cleanup) — sketch the strategy inline. No sub-agent needed.
+## Review
 
-## Step 3 — Review
+Spawn `@reviewer` once with the strategy or design doc. Ask it to challenge
+coverage gaps, over-testing of low-risk code, implementation-pinning tests,
+and tier placement. Incorporate findings. One reviewer pass.
 
-Spawn `@reviewer` once with the strategy (or design doc). Challenge it on:
-coverage gaps, over-testing low-risk code, tests that pin implementation,
-and whether the tier choices are right. Incorporate findings, don't spawn
-a second reviewer.
+## Execute
 
-## Step 4 — Execute
-
-Hand off to coders with the appropriate test skill. Route by what's needed:
+Spawn coders with the appropriate test skill:
 
 ```bash
 # Pure logic, edge cases, regression guards
@@ -72,37 +68,30 @@ meridian spawn -a coder --skills integration-test,testing-principles,shared-work
   --prompt-file <brief>
 ```
 
-Spawn parallel coders per phase from the design doc, or per concern if you
-designed inline. Each coder gets a scoped brief: what to test, what tier,
-what files to touch, what the acceptance criterion is.
-
-After coders finish, run `uv run pytest tests/ -q` and verify green.
+Spawn parallel coders per phase from the design doc, or per concern when
+designing inline. Each coder gets a scoped brief: what to test, what tier,
+what files to touch, what passing looks like. After coders finish, run
+`uv run pytest tests/ -q` and verify green.
 
 ## Validation Markers
 
-When a file passes review and is in good shape, add a module-level comment:
+When a file passes review — correct tier, behavioral assertions, no
+implementation pinning — instruct the coder to add a module-level comment:
 
 ```python
 # qa-validated: <work-item-slug>
 ```
 
-Instruct coders to add this marker when they finish a file that meets the
-design bar: correct tier, behavioral assertions, no implementation pinning.
 Files without this marker are candidates for future design review.
 
 ## Unit Test Judgment
 
 Unit tests earn their place by protecting a contract at lower cost than a
-higher-boundary test. Keep or add a unit test when a small, fast example
-gives clear feedback on behavior that is hard to reason about or expensive
-to exercise through the full system.
+higher-boundary test. Add one when a small, fast example gives clear feedback
+on behavior that is hard to reason about or expensive to exercise through the
+full system. The failure should identify a broken contract, not a changed
+implementation.
 
 Delete or replace unit tests that preserve private structure, duplicate
-stronger boundary coverage, depend on mock choreography, or no longer
-protect behavior anyone intends to keep.
-
-## Report
-
-Your final message: what the explorer found, whether you spawned
-@qa-design-lead and why, what the coders shipped, and whether the suite
-is green.
+stronger boundary coverage, depend on mock choreography, or no longer protect
+behavior anyone intends to keep.
