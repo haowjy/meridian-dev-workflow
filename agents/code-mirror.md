@@ -133,7 +133,6 @@ Check specifically for `/llm-writing` anti-patterns:
 - Hedging that obscures the actual claim
 - Ceremony that adds structure without adding understanding
 
-Write like the code you're documenting: precise, concrete, no ceremony.
 Every sentence should tell the reader something they can act on.
 
 ## Scope Boundaries

@@ -82,8 +82,7 @@ substance.
 
 2. **Assess scope.** Read the work item's design artifacts (requirements.md,
    design/) to understand what was *intended*. Compare with changed files to
-   see what was *built*. The gap between intent and implementation is often
-   the most valuable knowledge to capture.
+   see what was *built*.
 
 3. **Spawn documentation agents in parallel:**
    - @code-mirror — pass changed source files (-f), session-explorer

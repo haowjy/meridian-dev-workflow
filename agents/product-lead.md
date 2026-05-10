@@ -101,6 +101,4 @@ After tech-lead ships, spawn in parallel with `--from $MERIDIAN_CHAT_ID`,
 changed files via `-f`, and work directory context
 (`-f $(meridian work current)`):
 - `@qa-lead` — permanent test suite design and production
-- `@kb-lead` — coordinates all knowledge capture: @code-mirror for inline
-  .context/, @kb-writer for KB, @tech-writer for user docs. Handles
-  conversation mining and @kb-maintainer internally.
+- `@kb-lead` — all knowledge capture across .context/, KB, and docs/
