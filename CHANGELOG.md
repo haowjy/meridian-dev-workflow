@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.8] - 2026-05-10
+
 ### Added
 - `@qa-design-lead`: analysis-only agent spawned by @qa-lead when the test suite has structural problems. Reads test files and explorer report, produces `design/test-strategy.md`. No sub-spawning — pure analysis and doc writing. Covers tier audit, diff analysis of coder-touched tests, anti-pattern inventory, conftest map, decomposition plan.
 
