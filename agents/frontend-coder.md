@@ -11,10 +11,12 @@ description: >
   build, and any responsive or interaction requirements. Pass mockup files
   or screenshots when available — clear visual targets produce better
   results than prose descriptions.
-model: gpt55
-effort: low
-fanout: [gpt55, codex]
+model: opus47
+effort: high
+fanout: [opus47, gpt55, codex]
 model-policies:
+  - match: {alias: gpt55}
+    override: {effort: low}
   - match: {alias: codex}
     override: {effort: high}
 skills: [frontend-design, reflection, shared-workspace]
