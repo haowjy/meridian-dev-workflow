@@ -10,7 +10,7 @@ description: >
   conversation context with --from.
 model: sonnet
 effort: high
-skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, agent-staffing, shared-workspace, intent-modeling, issues]
+skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, agent-staffing, qi-layer, shared-workspace, intent-modeling, issues]
 tools: [Bash, Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(meridian context *)]
 disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate,
   CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger,

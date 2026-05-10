@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@kb-lead`: loads `qi-layer` — placement rules inform routing decisions (what goes to @code-mirror vs @kb-writer).
+
 ## [0.5.6] - 2026-05-10
 
 ## [0.5.5] - 2026-05-10
