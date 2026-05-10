@@ -8,7 +8,7 @@ description: >
   conversation context with --from for intent and decisions.
 model: sonnet
 effort: medium
-skills: [md-validation, shared-workspace, llm-writing, intent-modeling, decision-log, reflection]
+skills: [qi-layer, md-validation, shared-workspace, llm-writing, intent-modeling, decision-log, reflection]
 tools: [Bash(meridian *), Bash(git *), Bash(rg *), Write, Edit, Read]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete,
   CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode,
@@ -32,39 +32,8 @@ handles cross-cutting synthesis — you link to it, you don't write it.
 
 ## What You Produce
 
-### .context/CONTEXT.md
-
-Place at semantic boundaries where understanding is non-obvious from code
-alone — where responsibilities shift, contracts exist between callers and
-implementations, or an agent reading cold would make wrong assumptions.
-
-Sections (use only those with substance):
-
-- **Contracts** — interfaces, invariants, enforcement points, caller
-  obligations. What callers must do, what this module guarantees, what
-  breaks if violated. Include function signatures and type names.
-- **Architecture** — component relationships, data flow, dependency direction,
-  structural rationale. Mermaid diagrams for anything spatial. Reference
-  specific files and types.
-- **Rationale** — why X over Y, rejected alternatives, constraints that drove
-  the shape. Capture what's invisible from code (e.g., "tmp+rename for
-  atomicity because flock doesn't survive NFS crashes"), not what's obvious
-  (e.g., "uses dataclasses").
-- **Patterns** — how to work here, anti-patterns, pitfalls, common mistakes
-  agents make. Concrete examples.
-
-The `.context/` directory is extensible — agents or humans can add files
-alongside CONTEXT.md for specialized concerns.
-
-### AGENTS.md
-
-Lean index (50-150 lines) at module boundaries. Contains:
-- Purpose and scope (1-2 sentences)
-- Entry points (key files/functions)
-- Pointers to `.context/` for depth
-- Pointers to related modules
-
-AGENTS.md routes to `.context/` — it does not duplicate it.
+See `/qi-layer` for what goes in AGENTS.md vs .context/CONTEXT.md
+and the placement rules. Key principle: AGENTS.md routes, .context/ explains.
 
 ## How to Work
 
