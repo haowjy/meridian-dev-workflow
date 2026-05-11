@@ -7,7 +7,7 @@ description: >
   the right test skill. Runs parallel with @kb-lead and @tech-writer. Spawn
   with `meridian spawn -a qa-lead`, passing impl context and changed files
   with -f.
-model: gpt-5.4
+model: sonnet
 effort: high
 skills: [agent-management, meridian-spawn, meridian-work-coordination,
   testing-principles, intent-modeling, issues]
