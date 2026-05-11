@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@qa-lead`: gpt-5.4 (Codex) → sonnet (Claude). Orchestrators need native blocking spawn-wait, not Codex poll loops. Sonnet handles test design decisions fine.
+
 ## [0.5.10] - 2026-05-11
 
 ### Changed
