@@ -10,12 +10,26 @@ description: >
 model: sonnet
 effort: medium
 skills: [dev-artifacts, architecture, tech-docs, md-validation, shared-workspace, llm-writing]
-tools: [Bash(git *), Bash(meridian *), Write, Edit]
-disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete,
-  CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate,
-  AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode,
-  EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*),
-  Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
+tools:
+  'bash(git *)': allow
+  'bash(meridian *)': allow
+  write: allow
+  edit: allow
+  agent: deny
+  notebook: deny
+  cron: deny
+  task: deny
+  ask_user: deny
+  notifications: deny
+  plan_mode: deny
+  worktree: deny
+  'bash(git revert:*)': deny
+  'bash(git checkout:*)': deny
+  'bash(git switch:*)': deny
+  'bash(git stash:*)': deny
+  'bash(git restore:*)': deny
+  'bash(git reset --hard:*)': deny
+  'bash(git clean:*)': deny
 sandbox: workspace-write
 ---
 

@@ -9,8 +9,27 @@ description: >
 model: gpt-5.4
 effort: high
 skills: [md-validation, architecture, tech-docs, decision-log, dev-artifacts, dev-principles, llm-writing, shared-workspace]
-tools: [Bash(meridian *), Bash(git *), Write, Edit, WebSearch, WebFetch]
-disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
+tools:
+  'bash(meridian *)': allow
+  'bash(git *)': allow
+  write: allow
+  edit: allow
+  web: allow
+  agent: deny
+  notebook: deny
+  cron: deny
+  task: deny
+  ask_user: deny
+  notifications: deny
+  plan_mode: deny
+  worktree: deny
+  'bash(git revert:*)': deny
+  'bash(git checkout:*)': deny
+  'bash(git switch:*)': deny
+  'bash(git stash:*)': deny
+  'bash(git restore:*)': deny
+  'bash(git reset --hard:*)': deny
+  'bash(git clean:*)': deny
 sandbox: workspace-write
 ---
 

@@ -17,7 +17,17 @@ description: >
 model: gpt
 effort: medium
 skills: [session-mining, review, ears-parsing]
-tools: [Bash(git diff *), Bash(git log *), Bash(git show *), Bash(rg *), Bash(find *), Bash(sed *), Bash(ls *), Bash(cat *), Bash(wc *), Bash(meridian session *)]
+tools:
+  'bash(git diff *)': allow
+  'bash(git log *)': allow
+  'bash(git show *)': allow
+  'bash(rg *)': allow
+  'bash(find *)': allow
+  'bash(sed *)': allow
+  'bash(ls *)': allow
+  'bash(cat *)': allow
+  'bash(wc *)': allow
+  'bash(meridian session *)': allow
 sandbox: read-only
 ---
 

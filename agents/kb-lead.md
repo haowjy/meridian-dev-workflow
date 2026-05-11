@@ -11,12 +11,28 @@ description: >
 model: sonnet
 effort: high
 skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, agent-staffing, qi-layer, shared-workspace, intent-modeling, issues]
-tools: [Bash, Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(meridian context *)]
-disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate,
-  CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger,
-  EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*),
-  Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*),
-  Bash(git reset --hard:*), Bash(git clean:*)]
+tools:
+  bash: allow
+  'bash(meridian spawn *)': allow
+  'bash(meridian session *)': allow
+  'bash(meridian work *)': allow
+  'bash(meridian context *)': allow
+  agent: deny
+  edit: deny
+  write: deny
+  notebook: deny
+  cron: deny
+  ask_user: deny
+  notifications: deny
+  plan_mode: deny
+  worktree: deny
+  'bash(git revert:*)': deny
+  'bash(git checkout:*)': deny
+  'bash(git switch:*)': deny
+  'bash(git stash:*)': deny
+  'bash(git restore:*)': deny
+  'bash(git reset --hard:*)': deny
+  'bash(git clean:*)': deny
 sandbox: danger-full-access
 approval: auto
 ---

@@ -5,8 +5,28 @@ model: gpt-5.4
 effort: high
 fanout: [gpt, opus]
 skills: [md-validation, review, decision-log, dev-principles]
-tools: [Bash(meridian spawn show *), Bash(meridian session *), Bash(meridian work show *), Bash(meridian spawn report *), Bash(git diff *), Bash(git log *), Bash(git show *), Bash(git status *)]
-disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*)]
+tools:
+  'bash(meridian spawn show *)': allow
+  'bash(meridian session *)': allow
+  'bash(meridian work show *)': allow
+  'bash(meridian spawn report *)': allow
+  'bash(git diff *)': allow
+  'bash(git log *)': allow
+  'bash(git show *)': allow
+  'bash(git status *)': allow
+  agent: deny
+  edit: deny
+  write: deny
+  notebook: deny
+  cron: deny
+  task: deny
+  ask_user: deny
+  notifications: deny
+  plan_mode: deny
+  worktree: deny
+  'bash(git checkout:*)': deny
+  'bash(git switch:*)': deny
+  'bash(git stash:*)': deny
 sandbox: read-only
 ---
 

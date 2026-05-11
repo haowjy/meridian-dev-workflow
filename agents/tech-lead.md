@@ -13,8 +13,36 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: medium}
 skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-workspace, decision-log, intent-modeling, issues]
-tools: [Bash(meridian spawn *), Bash(meridian session *), Bash(meridian work *), Bash(git status *), Bash(git diff *), Bash(git worktree *), Bash(git push *), Bash(git branch *), Bash(gh pr *), Bash(rg *), Bash(sed *), Bash(ls *), Bash(pwd)]
-disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
+tools:
+  'bash(meridian spawn *)': allow
+  'bash(meridian session *)': allow
+  'bash(meridian work *)': allow
+  'bash(git status *)': allow
+  'bash(git diff *)': allow
+  'bash(git worktree *)': allow
+  'bash(git push *)': allow
+  'bash(git branch *)': allow
+  'bash(gh pr *)': allow
+  'bash(rg *)': allow
+  'bash(sed *)': allow
+  'bash(ls *)': allow
+  'bash(pwd)': allow
+  agent: deny
+  edit: deny
+  write: deny
+  notebook: deny
+  cron: deny
+  ask_user: deny
+  notifications: deny
+  plan_mode: deny
+  worktree: deny
+  'bash(git revert:*)': deny
+  'bash(git checkout:*)': deny
+  'bash(git switch:*)': deny
+  'bash(git stash:*)': deny
+  'bash(git restore:*)': deny
+  'bash(git reset --hard:*)': deny
+  'bash(git clean:*)': deny
 sandbox: danger-full-access
 approval: auto
 ---

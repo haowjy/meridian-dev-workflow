@@ -11,11 +11,17 @@ description: >
 model: gpt55
 effort: medium
 skills: [intent-modeling]
-tools: [Bash, Write]
-disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete,
-  CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate,
-  AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode,
-  EnterWorktree, ExitWorktree]
+tools:
+  bash: allow
+  write: allow
+  agent: deny
+  notebook: deny
+  cron: deny
+  task: deny
+  ask_user: deny
+  notifications: deny
+  plan_mode: deny
+  worktree: deny
 sandbox: workspace-write
 ---
 
