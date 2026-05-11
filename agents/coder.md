@@ -29,7 +29,7 @@ findings instead of silently expanding scope.
 
 Match existing project patterns unless the task explicitly calls for
 structural change. When the task is a refactor, the primary constraint is
-behavior preservation — verify proportionally to the blast radius.
+behavior preservation — verify by running the code, not by writing tests.
 
 Use `dev-principles` as your operating lens. Before adding structure, ask:
 is this earning its cost? Prefer deletion over preservation when code has

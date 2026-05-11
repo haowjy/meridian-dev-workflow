@@ -53,6 +53,13 @@ Dead code is entanglement surface. LLMs default to preserving.
 Before deleting: what constraint is this carrying? Before preserving: is
 there actually a constraint, or just inertia?
 
+# Testing
+
+Verify your changes by running the program. Fix tests that break because
+of your changes. New test coverage is designed after implementation by
+dedicated testers — a coder who pads a change with new tests is doing
+work that will be thrown away and redone.
+
 # Consistency
 
 Read surrounding code first. Does the project already solve this? Prefer
