@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.10] - 2026-05-11
+
 ### Changed
 - `dev-principles`: added Testing section — coders verify by running the program, fix broken tests, leave new test design to dedicated testers. Stops coders from padding changes with hundreds of lines of unit tests.
 - `@coder`: "verify proportionally to blast radius" → "verify by running the code, not by writing tests."
