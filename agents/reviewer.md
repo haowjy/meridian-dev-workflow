@@ -6,10 +6,8 @@ effort: high
 model-policies:
   - match: {alias: gpt}
     override: {}
-    fallback-order: 1
   - match: {alias: opus}
     override: {}
-    fallback-order: 2
 skills: [md-validation, review, decision-log, dev-principles]
 tools:
   'bash(meridian spawn show *)': allow

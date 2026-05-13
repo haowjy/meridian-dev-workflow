@@ -11,10 +11,8 @@ effort: high
 model-policies:
   - match: {alias: gpt55}
     override: {harness: opencode, effort: medium}
-    fallback-order: 1
   - match: {alias: claude-opus-4-6}
     override: {}
-    fallback-order: 2
 skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-workspace, decision-log, intent-modeling, issues]
 tools:
   'bash(meridian spawn *)': allow

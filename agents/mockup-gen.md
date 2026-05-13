@@ -13,13 +13,10 @@ effort: high
 model-policies:
   - match: {alias: opus47}
     override: {}
-    fallback-order: 1
   - match: {alias: gpt55}
     override: {effort: low}
-    fallback-order: 2
   - match: {alias: codex}
     override: {effort: high}
-    fallback-order: 3
 skills: [frontend-design, shared-workspace]
 tools:
   bash: allow

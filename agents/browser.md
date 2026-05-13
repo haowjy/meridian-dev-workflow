@@ -12,10 +12,8 @@ effort: low
 model-policies:
   - match: {alias: gpt55}
     override: {}
-    fallback-order: 1
   - match: {alias: gpt}
     override: {effort: high}
-    fallback-order: 2
 skills: [playwright-cli, shared-workspace]
 tools:
   bash: allow
