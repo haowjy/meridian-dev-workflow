@@ -9,10 +9,13 @@ description: >
   prompt. Pass URLs or context with -f.
 model: gpt55
 effort: low
-fanout: [gpt55, gpt]
 model-policies:
+  - match: {alias: gpt55}
+    override: {}
+    fallback-order: 1
   - match: {alias: gpt}
     override: {effort: high}
+    fallback-order: 2
 skills: [playwright-cli, shared-workspace]
 tools:
   bash: allow

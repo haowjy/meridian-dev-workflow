@@ -13,12 +13,16 @@ description: >
   results than prose descriptions.
 model: opus47
 effort: high
-fanout: [opus47, gpt55, codex]
 model-policies:
+  - match: {alias: opus47}
+    override: {}
+    fallback-order: 1
   - match: {alias: gpt55}
     override: {effort: low}
+    fallback-order: 2
   - match: {alias: codex}
     override: {effort: high}
+    fallback-order: 3
 skills: [frontend-design, reflection, shared-workspace]
 tools:
   bash: allow
