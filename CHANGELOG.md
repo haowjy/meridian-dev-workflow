@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-05-14
+
 ### Changed
 - Workflow: default path is now design-lead → tech-lead. Planner removed entirely from active lifecycle.
 - `@product-lead`: routing simplified — design → user approval → tech-lead. Planner checkpoint removed. Post-impl spawns @kb-lead; @qa-lead spawned only on explicit need or tech-lead escalation. Redesign loop routes design-lead → tech-lead directly.

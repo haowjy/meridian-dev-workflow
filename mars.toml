@@ -1,11 +1,7 @@
 [package]
 name = "meridian-dev-workflow"
-version = "0.6.2"
+version = "0.7.0"
 description = "Opinionated dev team for Meridian — architects, coders, reviewers, testers, and the skills that coordinate them."
-primary_agent = "product-lead"
-
-[package.targets]
-required = [".codex", ".claude", ".opencode"]
 
 [dependencies.meridian-base]
 url = "https://github.com/meridian-flow/meridian-base"
