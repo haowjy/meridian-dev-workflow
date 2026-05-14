@@ -9,7 +9,7 @@ description: >
   Writes to the work directory under `design/`.
 model: sonnet
 effort: medium
-skills: [dev-artifacts, architecture, tech-docs, md-validation, shared-workspace, llm-writing]
+skills: [dev-artifacts, architecture, tech-docs, md-validation, llm-writing]
 tools:
   'bash(git *)': allow
   'bash(meridian *)': allow

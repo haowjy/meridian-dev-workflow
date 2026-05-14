@@ -8,7 +8,7 @@ description: >
   conversation context with --from for intent and decisions.
 model: sonnet
 effort: medium
-skills: [qi-layer, md-validation, shared-workspace, llm-writing, intent-modeling, decision-log, reflection]
+skills: [qi-layer, md-validation, llm-writing, intent-modeling, decision-log, reflection]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow

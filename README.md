@@ -1,62 +1,62 @@
 # meridian-dev-workflow
 
 An opinionated multi-agent dev team for structured software development,
-built on [Meridian](https://github.com/meridian-flow/meridian-cli)'s coordination
+built on [Meridian](https://github.com/haowjy/meridian-cli)'s coordination
 primitives. Install this and your orchestrator gets a full squad — architects,
 coders, reviewers, testers, web-researchers, and documenters — plus workflow
 skills that teach it how to run a structured development lifecycle.
 
-Built on [meridian-base](https://github.com/meridian-flow/meridian-base). Both must
+Built on [meridian-base](https://github.com/haowjy/meridian-base). Both must
 be installed.
+
 
 ## Orchestrator Topology
 
-The dev lifecycle splits across orchestrators with distinct ownership:
+The dev lifecycle splits across leads with distinct ownership:
 
 **product-lead** (interactive) — the primary developer. Translates between
-user and technical teams. Requirements gathering, scope sizing, design/plan
-approval, redesign routing. Spawns everything downstream.
+user and technical teams. Requirements gathering, scope sizing, design
+approval, implementation routing. Spawns everything downstream.
 
-**design-lead** (autonomous) — owns the technical design. Challenges
-feasibility, explores structural options, produces behavioral spec + architecture.
+**design-lead** (autonomous) — owns the technical design. Explores structural
+options, produces high-level structure, key interfaces, boundaries, patterns,
+and tradeoffs.
 
-**planner** (autonomous) — decomposes design into executable phases with
-parallelism posture, EARS ownership, and staffing.
+**tech-lead** (autonomous) — owns implementation end-to-end. Decomposes work,
+coordinates specialists, verifies functionality, owns targeted boundary tests,
+safely restructures, and runs a final structural review before shipping.
 
-**tech-lead** (autonomous) — drives phase-by-phase execution. Probes
-before coding, routes findings by type, runs verification gates.
+**qa-lead** (autonomous, specialist) — designs and improves the permanent
+test suite. Spawned when the test suite needs significant structural work
+beyond what tech-lead handles inline.
 
-**qa-lead** (autonomous) — designs and produces the permanent test
-suite after implementation ships. Risk-based strategy, adversarial testing.
-
-**kb-writer** + **kb-maintainer** + **tech-writer** (autonomous, parallel) —
-capture decisions and domain knowledge into KB, maintain KB structural health,
-and update user-facing docs respectively after implementation.
+**kb-lead** (autonomous, conditional) — coordinates knowledge capture across
+.context/, KB, and docs/ layers. Spawned when implementation produces
+understanding worth preserving; timing depends on the workflow.
 
 ```bash
-# Full lifecycle:
-# product-lead → design-lead → planner → tech-lead
-#   → qa-lead + kb-writer + kb-maintainer + tech-writer (parallel)
+# Default lifecycle:
+# product-lead → design-lead → tech-lead
+# kb-lead runs when knowledge capture is needed (pre-merge, post-ship, or on request)
 meridian spawn -a product-lead -p 'Build JWT token validation'
 ```
 
 ## Agents
 
-**Orchestrators:**
+**Leads:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `product-lead` | (harness default) | Primary developer — requirements gathering, routing, design/plan approval, redesign routing |
-| `design-lead` | sonnet 1M | Technical design — challenges feasibility, explores options, produces spec + architecture |
-| `tech-lead` | opus | Phase-by-phase execution — probe/code/verify loops, gates, final review |
-| `qa-lead` | gpt | Permanent test suite — risk-based strategy, tier design, adversarial testing |
+| `product-lead` | (harness default) | Primary developer — requirements gathering, routing, design approval |
+| `design-lead` | opus | Technical design — structural options, interfaces, boundaries, tradeoffs |
+| `tech-lead` | opus | Implementation owner — decomposition, coordination, verification, structural review |
+| `qa-lead` | sonnet | Test suite specialist — risk-based strategy, tier design, structural test work |
 
-**Design & Planning:**
+**Design:**
 
 | Agent | Model | Role |
 |---|---|---|
 | `architect` | gpt | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
-| `planner` | gpt | Decomposes design packages into executable phases with EARS-statement ownership and parallelism posture |
 | `design-writer` | sonnet | Lightweight design doc writer — post-review updates, scope adjustments, settled design edits |
 | `frontend-designer` | opus | UI/UX design specs — layout, hierarchy, motion, aesthetic direction for frontend-coder |
 
@@ -88,6 +88,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 |---|---|---|
 | `web-researcher` | codex | Best practices, library comparisons, and architecture patterns via web search — the external counterpart to `explorer` |
 | `explorer` | gpt-5.4-mini | Fast, cheap codebase explorer — reads files, searches code, mines past sessions |
+| `kb-lead` | sonnet | Coordinates knowledge capture — routes to @code-mirror, @kb-writer, @tech-writer |
 | `kb-writer` | sonnet | Writes and updates the project's knowledge base — decisions, domain knowledge, architecture, synthesized research |
 | `kb-maintainer` | gpt | Structural health of the KB — splits, merges, cross-references, staleness, conflict resolution |
 | `tech-writer` | sonnet | Writes and maintains user-facing docs — getting started guides, API reference, CLI usage, and tutorials |
@@ -99,7 +100,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | Skill | What it teaches |
 |---|---|
 | `decision-log` | Decision capture — reasoning, alternatives, constraints |
-| `dev-artifacts` | Shared artifact convention between orchestrators — v3 layout with spec/architecture trees |
+| `dev-artifacts` | Shared artifact convention between leads — v3 layout with spec/architecture trees |
 | `session-mining` | Session-mining workflow patterns — recover parent-session decisions and delegate bulk transcript reads |
 | `architecture` | Problem framing, tradeoff analysis, approach evaluation |
 | `planning` | Decomposing design packages into executable phases — EARS ownership, parallelism posture, staffing |

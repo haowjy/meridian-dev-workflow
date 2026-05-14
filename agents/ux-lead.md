@@ -8,7 +8,7 @@ description: >
   `meridian spawn -a ux-lead`.
 harness: claude
 skills: [agent-management, meridian-spawn, meridian-work-coordination,
-  agent-staffing, decision-log, frontend-design, shared-workspace, intent-modeling]
+  agent-staffing, decision-log, frontend-design, intent-modeling]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

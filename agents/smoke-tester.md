@@ -8,7 +8,7 @@ description: >
   Spawn with `meridian spawn -a smoke-tester`, telling it what to probe or verify.
 model: gpt-5.4
 effort: high
-skills: [smoke-test, ears-parsing, shared-workspace, issues]
+skills: [smoke-test, ears-parsing, issues]
 tools:
   bash: allow
   write: allow

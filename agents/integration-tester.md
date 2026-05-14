@@ -1,9 +1,13 @@
 ---
 name: integration-tester
-description: Use for internal component composition with faked external boundaries — module boundaries, coordination logic, contracts between collaborators. Spawn with `meridian spawn -a integration-tester`, telling it which composition to exercise and which boundaries to fake. For real end-to-end behavior, use `@smoke-tester`.
+description: >
+  DEPRECATED — use `@coder --skills integration-test` instead. Retained as
+  a legacy artifact. The integration-test skill carries the methodology;
+  @coder provides the execution capability.
 model: gpt-5.4
+model-invocable: false
 effort: medium
-skills: [integration-test, testing-principles, ears-parsing, shared-workspace]
+skills: [integration-test, testing-principles, ears-parsing]
 tools:
   bash: allow
   write: allow
@@ -26,7 +30,11 @@ tools:
 sandbox: workspace-write
 ---
 
-# Integration Tester
+# Integration Tester (Deprecated)
+
+> **This agent is deprecated.** Use `@coder --skills integration-test` instead.
+> The `integration-test` skill carries the methodology; `@coder` provides the
+> execution capability.
 
 Use `/integration-test` for method and reporting.
 Exercise the requested composition with fakes at external boundaries.

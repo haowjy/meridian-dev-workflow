@@ -8,11 +8,12 @@ description: >
   verify. Pass relevant source files with -f for context on what to expect.
 model: gpt55
 effort: low
-fanout: [gpt55, codex]
 model-policies:
+  - match: {alias: gpt55}
+    override: {}
   - match: {alias: codex}
     override: {effort: high}
-skills: [playwright-cli, browser-test, shared-workspace]
+skills: [playwright-cli, browser-test]
 tools:
   bash: allow
   write: allow

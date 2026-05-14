@@ -10,13 +10,14 @@ description: >
   available.
 model: opus47
 effort: high
-fanout: [opus47, gpt55, codex]
 model-policies:
+  - match: {alias: opus47}
+    override: {}
   - match: {alias: gpt55}
     override: {effort: low}
   - match: {alias: codex}
     override: {effort: high}
-skills: [frontend-design, shared-workspace]
+skills: [frontend-design]
 tools:
   bash: allow
   write: allow

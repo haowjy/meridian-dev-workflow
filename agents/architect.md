@@ -8,7 +8,7 @@ description: >
   relevant files with -f. Writes to the work directory.
 model: gpt-5.4
 effort: high
-skills: [md-validation, architecture, tech-docs, decision-log, dev-artifacts, dev-principles, llm-writing, shared-workspace]
+skills: [md-validation, architecture, tech-docs, decision-log, dev-artifacts, dev-principles, llm-writing]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow

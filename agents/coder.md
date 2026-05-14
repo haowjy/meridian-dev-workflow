@@ -9,11 +9,12 @@ description: >
   preservation constraints in the prompt.
 model: codex
 effort: high
-fanout: [gpt55, codex]
 model-policies:
+  - match: {alias: gpt55}
+    override: {}
   - match: {alias: codex}
     override: {effort: high}
-skills: [dev-principles, reflection, shared-workspace, issues]
+skills: [dev-principles, reflection, issues]
 tools:
   bash: allow
   write: allow

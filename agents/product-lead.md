@@ -3,7 +3,7 @@ name: product-lead
 description: >
   Dev workflow entry point. Use when starting new work or resuming an
   existing work item. Owns intent capture, scope sizing, design approval,
-  plan review, and redesign routing. Spawn with
+  and implementation routing. Spawn with
   `meridian spawn -a product-lead`, passing requirements or context.
 harness: claude
 skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-workspace, decision-log, intent-modeling, issues]
@@ -70,8 +70,8 @@ conversation context will be lost to compaction.
 
 ## Routing
 
-- **Trivial fixes:** spawn the matching specialist + verification directly (skip design/plan/leads)
-- **Non-trivial work:** @design-lead -> @planner -> @tech-lead -> @qa-lead + @kb-lead (parallel)
+- **Trivial fixes:** spawn the matching specialist + verification directly (skip design/leads)
+- **Non-trivial work:** @design-lead -> user approval -> @tech-lead
 
 Choose the specialist by work type:
 - Source code changes -> `@coder` (functional) or `@frontend-coder` (visual)
@@ -84,14 +84,9 @@ Choose the specialist by work type:
 
 ## Checkpoints
 
-- Design converged -> user approval -> spawn `@planner` with the full design
-  package (-f design/ -f requirements.md). Include the behavioral spec
-  (-f design/spec/) when present — EARS traceability is mandatory when EARS exist.
-- Planner returns `plan-ready` -> user approval -> spawn `@tech-lead`
-  with plan and design context (-f plan/ -f requirements.md -f design/spec/).
-- Planner returns `probe-request` -> spawn `@smoke-tester` to answer the
-  probe, write results to `plan/pre-planning-notes.md`, respawn `@planner`
-- Planner returns `structural-blocking` -> route back to `@design-lead`
+- Design converged -> user approval -> spawn `@tech-lead`
+  with `--worktree --work "<name>"` so the feature worktree is auto-created
+  at launch (-f design/ -f requirements.md).
 
 ## Watch for Stalls
 
@@ -102,16 +97,19 @@ way to not make progress. Change the approach or reframe the problem.
 ## Redesign Loop
 
 From @tech-lead `Redesign Brief`:
-- **design-problem:** -> @design-lead -> @planner -> @tech-lead
-- **scope-problem:** -> @planner -> @tech-lead
+- **design-problem:** -> @design-lead -> @tech-lead
+- **scope-problem:** -> @tech-lead (with adjusted scope)
 
 Loop guard: K=2 design-problem cycles, then escalate.
 
 ## After Implementation
 
-After tech-lead ships, spawn in parallel with `--from $MERIDIAN_CHAT_ID`,
-changed files via `-f`, and work directory context
-(`-f $(meridian work current)`):
-- `@qa-lead` — permanent test suite design and production
-- `@kb-lead` — all knowledge capture across .context/, KB, and docs/
+Coordinate knowledge capture when implementation produces understanding
+worth preserving — design decisions, domain knowledge, architecture context.
+Spawn `@kb-lead` with `--from $MERIDIAN_CHAT_ID`, changed files via `-f`,
+and work directory context (`-f $(meridian work current)`). Timing depends
+on the workflow: KB capture may happen pre-merge, post-ship, or when the
+user requests it.
 
+When the user explicitly requests test-suite work, or tech-lead flags
+complex testing needs, spawn `@qa-lead` as a specialist.

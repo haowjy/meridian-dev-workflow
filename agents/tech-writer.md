@@ -7,7 +7,7 @@ description: >
   with --from and relevant source files with -f.
 model: sonnet
 effort: medium
-skills: [meridian-spawn, md-validation, shared-workspace, llm-writing, intent-modeling]
+skills: [meridian-spawn, md-validation, llm-writing, intent-modeling]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow
