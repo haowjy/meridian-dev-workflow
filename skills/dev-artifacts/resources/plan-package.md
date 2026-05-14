@@ -31,7 +31,7 @@ Phases without subphases may omit section 3; the phase exit gate still applies.
 - `plan/phase-N-<slug>.md`: per-phase scope, subphases, exit gate, claims.
 - `plan/leaf-ownership.md`: exclusive phase ownership for each spec leaf.
 - `plan/status.md`: phase and subphase lifecycle truth.
-- `plan/pre-planning-notes.md`: runtime observations before planner spawn.
+- `plan/pre-planning-notes.md`: runtime observations before planning.
 - `plan/preservation-hint.md`: redesign carry-over guidance.
 
 ## `plan/overview.md` Contract
@@ -49,7 +49,7 @@ Include:
 
 Every plan must include staffing concrete enough for @tech-lead to execute directly:
 
-1. **Per-phase teams** — implementer variant (`@coder`, `@frontend-coder`), tester lanes (`@smoke-tester`, `@unit-tester`, `@integration-tester`, `@browser-tester` as applicable), probe/diagnosis steps where behavior is unclear.
+1. **Per-phase teams** — implementer variant (`@coder`, `@frontend-coder`), tester lanes (`@smoke-tester`, `@coder --skills unit-test,testing-principles`, `@coder --skills integration-test,testing-principles`, `@browser-tester` as applicable), probe/diagnosis steps where behavior is unclear.
 2. **Final review loop** — reviewer focus areas (including structural focus on full change set), and `@smoke-tester` (end-to-end).
 3. **Escalation policy** — when findings require routing to `@smoke-tester` (behavioral), `@investigator` (root-cause), or redesign escalation to @product-lead.
 

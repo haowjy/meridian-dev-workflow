@@ -4,7 +4,7 @@ type: reference
 description: >
   Load when producing or executing plans. Shared definitions — phases,
   subphases, verification levels, probe/diagnosis lanes, and the execution
-  model. Used by both @planner and @tech-lead.
+  model. Used by @tech-lead for plan execution.
 model-invocable: false
 ---
 
@@ -48,7 +48,7 @@ add checkpoint value.
   `/reflection`). No separate verifier or reviewer spawn. Quick feedback
   while context is still loaded.
 - **Phase exit gate — full verification.** `@smoke-tester`,
-  `@unit-tester` or `@integration-tester` as applicable (temporary gate tests —
+  `@coder --skills unit-test,testing-principles` or `@coder --skills integration-test,testing-principles` as applicable (temporary gate tests —
   deleted after verification), `@reviewer` (one general review). All gate
   lanes run in parallel (`--bg` + `spawn wait`).
 

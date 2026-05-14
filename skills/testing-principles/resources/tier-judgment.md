@@ -7,9 +7,9 @@ Choosing the right tier is usually the difference between a test that catches re
 ```mermaid
 flowchart TD
     START[New behavior to test] --> Q1{"Pure logic?<br/>No I/O?"}
-    Q1 -->|yes| UNIT["UNIT<br/>@unit-tester"]
+    Q1 -->|yes| UNIT["UNIT<br/>@coder + unit-test"]
     Q1 -->|no| Q2{"Components composing<br/>with fakeable boundaries?"}
-    Q2 -->|yes| INT["INTEGRATION<br/>@integration-tester"]
+    Q2 -->|yes| INT["INTEGRATION<br/>@coder + integration-test"]
     Q2 -->|no| Q3{"Real runtime behavior<br/>with real systems?"}
     Q3 -->|yes| SMOKE["SMOKE / E2E<br/>@smoke-tester"]
     Q3 -->|no| REFACTOR["Code is probably mixing<br/>decisions and I/O —<br/>consider refactoring first"]

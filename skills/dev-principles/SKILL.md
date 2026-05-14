@@ -46,12 +46,28 @@ Two cases look alike by coincidence. Three reveal the pattern.
 When an abstraction grows flags and branches: did it capture the wrong
 concept? Inline and re-form rather than patch.
 
-# Deletion
+# Deletion and Structural Cleanup
 
-Dead code is entanglement surface. LLMs default to preserving.
+LLMs default to preserving code. Fight that instinct.
 
-Before deleting: what constraint is this carrying? Before preserving: is
-there actually a constraint, or just inertia?
+**Dead code: delete it.** Unused functions, unreachable branches, commented-out
+blocks, stale imports, orphaned files. Dead code is not "keeping options open"
+— it's entanglement surface that misleads readers and accumulates coupling.
+If it's dead, remove it in the same change.
+
+**Obvious duplication: collapse it.** When the same logic appears in multiple
+places, unify it. Don't leave "will clean up later" TODOs — later never
+comes, and every copy drifts independently.
+
+**Structural problems are immediate tech debt.** Circular dependencies,
+god modules, leaky abstractions, misplaced responsibilities — fix them when
+you find them, not in a future cleanup pass. Structural rot compounds:
+every change built on a broken foundation makes the next fix harder.
+
+**Escalate deep rot.** When structural problems are large enough that fixing
+them risks breaking unrelated behavior or requires rethinking module
+boundaries, escalate to the user rather than silently working around it.
+Name the problem, explain the risk, and propose a path.
 
 # Testing
 

@@ -28,7 +28,7 @@ flowchart TB
         subgraph GATE["PHASE EXIT GATE (parallel)"]
             direction LR
             ST["@smoke-tester<br/>(verify mode)"]
-            UT["@unit-tester /<br/>@integration-tester<br/>(temp — delete after)"]
+            UT["@coder + unit-test /<br/>@coder + integration-test<br/>(temp — delete after)"]
             RV["@reviewer<br/>(one general)"]
         end
 

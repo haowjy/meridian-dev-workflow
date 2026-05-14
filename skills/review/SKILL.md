@@ -54,3 +54,4 @@ are blocking.
 - [`resources/concurrency.md`](resources/concurrency.md) — races, deadlocks, shared state, cancellation
 - [`resources/architecture.md`](resources/architecture.md) — independence, boundaries, module structure, design alignment
 - [`resources/structural-health/`](resources/structural-health/) — code smells, refactoring moves, deprecation patterns (use when focus is structural)
+- [`resources/test-quality.md`](resources/test-quality.md) — edge cases over happy paths, tautological assertions, tier placement, test effectiveness (use when focus is test quality)

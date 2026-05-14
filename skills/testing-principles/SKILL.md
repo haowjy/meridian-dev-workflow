@@ -3,9 +3,10 @@ name: testing-principles
 type: principle
 description: >
   Load when deciding what kind of test a change needs, when a test suite
-  feels off, or when routing work to @unit-tester, @integration-tester, or
-  @smoke-tester. Shared foundation — tier selection, functional core /
-  imperative shell, and the tradeoffs behind each tier.
+  feels off, or when routing work to @smoke-tester or @coder with
+  testing skills. Shared foundation — tier selection, functional core /
+  imperative shell, and the tradeoffs behind each tier. Always include
+  this skill when spawning @coder for testing work.
 model-invocable: false
 ---
 
@@ -93,14 +94,15 @@ Tests that compile and achieve coverage are not the same as tests that catch
 bugs. Generate → execute → analyze gaps → regenerate iteratively, not
 single-shot.
 
-## When Each Tester Agent Applies
+## When Each Tester Applies
 
-- `@unit-tester` — phase-scoped tests on the functional core, edge cases,
-  regression guards.
-- `@integration-tester` — composition across internal components with fakes at
-  external boundaries.
+- `@coder --skills unit-test,testing-principles` — phase-scoped tests on the
+  functional core, edge cases, regression guards.
+- `@coder --skills integration-test,testing-principles` — composition across
+  internal components with fakes at external boundaries.
 - `@smoke-tester` — real runtime behavior against real interfaces. Two modes
   (probing vs verification) — see `/smoke-test`.
+
 Coders self-verify (tests pass, types check, lint clean) via `/reflection`
 before reporting — that's the floor, not a separate agent.
 

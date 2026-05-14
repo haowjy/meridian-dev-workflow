@@ -4,6 +4,35 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Workflow: default path is now design-lead → tech-lead. Planner removed entirely from active lifecycle.
+- `@product-lead`: routing simplified — design → user approval → tech-lead. Planner checkpoint removed. Post-impl spawns @kb-lead; @qa-lead spawned only on explicit need or tech-lead escalation. Redesign loop routes design-lead → tech-lead directly.
+- `@design-lead`: lighter output — high-level structure, key interfaces, boundaries, patterns, tradeoffs, risks. Removed "minimum deliverable" heavyweight spec language. Removed @planner auto-spawn. Description reframed from "heavy design" to "design guidance."
+- `@tech-lead`: owns work decomposition directly from design, functional verification, targeted boundary tests, safe restructuring, and final structural review. Planner escalation removed. Integration testing uses `@coder --skills integration-test` instead of `@integration-tester`.
+- `@qa-lead`: repositioned from mandatory post-impl phase to specialist escalation. Description reframed — spawned for significant structural test-suite work, not routine post-impl.
+- `@kb-lead`: description softened — "when implementation knowledge needs capturing" instead of "after implementation ships." Timing left intentionally flexible.
+- `agent-staffing/resources/testers.md`: permanent test suite note updated — @tech-lead owns with @qa-lead as specialist escalation. `@integration-tester` replaced with `@coder --skills integration-test`.
+- `dev-artifacts/resources/ownership.md`: plan/ writer changed from @planner to @tech-lead. @planner removed from all artifact readers.
+- `planning/SKILL.md`: description updated — used by @tech-lead, not @planner.
+- `agent-staffing/resources/reviewers.md`: @alignment-reviewer usage updated — planner verification point replaced with design verification.
+- README: lifecycle updated to design-lead → tech-lead default. Planner removed from topology and agent table. qa-lead marked as specialist.
+
+- `@tech-lead` Implementation: coder spawns scoped to one subphase, 2-4 files. Parallel `--bg` when file sets are disjoint, sequential when they overlap.
+- `@tech-lead` Verification: test-quality reviewer spawned after test-writing at phase gates.
+- All callers: `@unit-tester` → `@coder --skills unit-test,testing-principles`. `@coder --skills integration-test` → `@coder --skills integration-test,testing-principles`. Updated in tech-lead, qa-lead, investigator, planning, agent-staffing, dev-artifacts.
+- `testing-principles`: description notes to always include when spawning coder for testing. "When Each Tester Applies" section uses `@coder --skills` patterns.
+- `dev-principles` Deletion: rewrote from hedging questions to direct mandates — delete dead code, collapse duplication, fix structural rot immediately, escalate deep rot.
+- `agent-staffing/resources/builders.md`: coder entry reframed around small spawn scope and parallel-when-disjoint.
+- `agent-staffing/resources/reviewers.md`: test quality added as review focus area.
+
+### Added
+- `review/resources/test-quality.md`: review focus area for test effectiveness — edge cases over happy paths, tautological assertions, mock-dominated tests, tier placement.
+
+### Deprecated
+- `@planner`: marked deprecated with `model-invocable: false`. Retained as legacy artifact; no lead or orchestrator routes to it. Default workflow is design-lead → tech-lead.
+- `@integration-tester`: marked deprecated with `model-invocable: false`. Use `@coder --skills integration-test` instead. The skill carries the methodology; @coder provides execution.
+- `@unit-tester`: marked deprecated with `model-invocable: false`. Use `@coder --skills unit-test,testing-principles` instead.
+
 ## [0.6.2] - 2026-05-11
 
 ## [0.6.1] - 2026-05-11

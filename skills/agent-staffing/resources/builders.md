@@ -4,7 +4,7 @@ Agents that produce artifacts — code, design docs, research findings, and capt
 
 ## Coders
 
-@coder — production code writer across the full stack: backend, frontend logic, CLI, infrastructure, data flow, build systems. Implements tasks from phase blueprints. One @coder per phase — multiple @coders on the same files create merge conflicts and duplicated work. If a phase feels too big for one @coder, splitting the plan is better than parallelizing coders. The exception is when phases touch cleanly disjoint file sets, determined at plan time — then @coders can run in parallel across phases.
+@coder — production code writer across the full stack: backend, frontend logic, CLI, infrastructure, data flow, build systems. One subphase per spawn, 2-4 files with -f, clear task description. Run in parallel (`--bg`) when file sets are disjoint; sequential when they overlap. When a task feels too big for one coder, split the plan.
 
 @frontend-coder — production frontend code writer for visual/UI work where design fidelity and aesthetics are the primary concern. Same staffing rules as @coder. Pick this variant when the work is about what users see and feel — matching a design spec, implementing visual polish — not just because the file is frontend code. Pass mockups or screenshots when available.
 
