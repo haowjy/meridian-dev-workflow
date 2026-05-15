@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@smoke-tester`: worktree-native default. Caller owns worktree placement. Temp envs only for destructive probes or clean-baseline comparisons.
+- `smoke-test`: execution guidance worktree-first, disposable envs as exception. Shared-workspace safety lives in skill, not duplicated in agent.
+- `agent-staffing/resources/testers.md`: @smoke-tester lane now active-worktree by default.
+
 ## [0.7.0] - 2026-05-14
 
 ### Changed
