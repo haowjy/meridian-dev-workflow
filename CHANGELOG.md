@@ -4,6 +4,25 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `@simplify-reviewer` agent: structural friction hunter. Finds shallow modules, fragmentation, deletion targets, and deep-module opportunities. Spawned by @design-lead (investigation) and @tech-lead (final structural review). Read-only, outputs concrete simplification moves with leverage priority. Model: gpt.
+- `/simplify` skill: methodology for hunting structural friction — shallow modules, fragmented concerns, deletion targets, inline targets, deep-module opportunities. Resources reference the structural-health catalog under `/review`.
+- `@product-lead` shared language: mines KB and codebase for existing terminology via @explorer, grills user for convergence, produces canonical-only `glossary.md` alongside `requirements.md`. Unresolved terminology discrepancies logged separately.
+- `/handoff` skill: prompt craft for subagent handoffs — context matching, boundary setting, exit criteria. Teaches orchestrators to give subagents exactly what they need for verifiable output. Pass artifacts via `-f` instead of inlining. When spawning with `--from`, teaches pointing to session content instead of restating it. Loaded by @product-lead, @design-lead, @tech-lead.
+
+### Changed
+- `/dev-principles`: "Good software is software that is easy to change" as opening. Added deep modules over shallow modules section. Added anti-festering — tech debt compounds at agent speed. Added tests at interfaces not internals to enable safe simplification. Coders write tests freely; qa-lead does cleanup audit.
+- `@coder`: pre-edit XML `<boundary_rule>` gate — new files, classes, and abstractions require independent-concern justification. Shallow modules explicitly called out as structural debt to avoid. Dropped prose repetition.
+- `@tech-lead`: final structural review adds `@simplify-reviewer` lane. `@reviewer (structural focus)` narrowed — deep-module territory owned by `@simplify-reviewer`. QA Escalation → QA Audit: standard post-impl step, not escalation.
+- `@design-lead`: investigation fan-out adds `@simplify-reviewer` (replaces `@reviewer (structural focus)` overlap). Investigation findings must be written into design documents immediately, not left in conversation context. Design decisions are live, not accumulated — drop what the latest direction invalidates. Reviewer handoffs pass current direction only, not abandoned decisions.
+- `@qa-lead`: repositioned from emergency responder to standard post-impl test audit — adds boundary tests for interfaces and edge cases, deletes tests that don't protect real behavior. Spawned by @product-lead and @tech-lead as a standard phase. Model changed from sonnet to gpt55. Execute section now has explicit Delete lane via `edit`.
+- `@qa-designer` (was `@qa-design-lead`): renamed and reframed — independently audits test suite and designs correct shape (tier placement, coverage gaps, delete targets). Standard spawn by @qa-lead, not emergency-only. Model changed from claude-opus-4-6 to gpt55.
+- `agent-staffing`: reviewers catalog updated with @simplify-reviewer entry and spawning guidance.
+- `@design-writer`, `@tech-writer`, `@code-mirror`: model changed from sonnet to deepseek (DeepSeek V4 Pro) with sonnet as fallback candidate.
+- `@reviewer`: opus fallback replaced with deepseek candidate.
+- `@tech-lead`: model changed from claude-opus-4-6 to gpt55 with claude-opus-4-6 as fallback.
+- `@web-researcher`: model changed from codex to gpt-5.4-mini (harness: codex).
+
 ## [0.7.1] - 2026-05-15
 
 ### Changed

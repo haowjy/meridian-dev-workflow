@@ -10,6 +10,10 @@ model-invocable: false
 
 # Simplicity
 
+Good software is software that is easy to change. Every boundary, type, and
+layer is a cost — it should earn its place by making future changes smaller
+and safer.
+
 The default failure mode is over-engineering, not under-engineering. Every
 boundary, type, and layer is a cost.
 
@@ -18,6 +22,20 @@ thing wearing two names? If these pieces always change together, they are
 one thing. Partitioning does not make code simpler — independence does.
 
 Justify the split, not the merge.
+
+## Deep Modules Over Shallow Modules
+
+A deep module hides substantial complexity behind a simple interface. The
+caller gets a lot of functionality for little interface cost.
+
+A shallow module has a complex interface but hides little — many exports,
+small implementation. If a module has one exported function that wraps three
+lines, it's shallow — keep that function in the file that calls it.
+
+Prefer one deep module over three shallow ones. If a module has one exported
+function that wraps three lines, it's shallow — keep that function in the
+file that calls it. When 3+ shallow modules in the same directory touch the
+same concept, bundle them into one deep module with a few well-named exports.
 
 # Separation of Concerns
 
@@ -63,6 +81,7 @@ comes, and every copy drifts independently.
 god modules, leaky abstractions, misplaced responsibilities — fix them when
 you find them, not in a future cleanup pass. Structural rot compounds:
 every change built on a broken foundation makes the next fix harder.
+Tech debt left to fester at agent speed compounds in hours, not months.
 
 **Escalate deep rot.** When structural problems are large enough that fixing
 them risks breaking unrelated behavior or requires rethinking module
@@ -72,9 +91,17 @@ Name the problem, explain the risk, and propose a path.
 # Testing
 
 Verify your changes by running the program. Fix tests that break because
-of your changes. New test coverage is designed after implementation by
-dedicated testers — a coder who pads a change with new tests is doing
-work that will be thrown away and redone.
+of your changes. Coders write tests freely during implementation — no
+restriction on adding coverage.
+
+After implementation, qa-lead audits the test suite: adds boundary tests
+for interfaces and edge cases, deletes tests that don't protect real
+behavior.
+
+Test at module interfaces, not internals. Tests pinned to implementation
+details make refactoring dangerous — a change that preserves behavior breaks
+tests. Tests at interfaces make simplification safe: refactor freely, tests
+confirm behavior hasn't changed.
 
 # Consistency
 

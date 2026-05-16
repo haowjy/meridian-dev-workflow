@@ -6,14 +6,14 @@ description: >
   functional verification, targeted boundary tests, safe restructuring,
   and final structural review. Spawn with
   `meridian spawn -a tech-lead`, passing design context with -f.
-model: claude-opus-4-6
+model: gpt55
 effort: high
 model-policies:
   - match: {alias: gpt55}
-    override: {harness: opencode, effort: medium}
+    override: {effort: high}
   - match: {alias: claude-opus-4-6}
     override: {}
-skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-workspace, decision-log, intent-modeling, issues, testing-principles, dev-principles, architecture]
+skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-workspace, decision-log, intent-modeling, issues, testing-principles, dev-principles, architecture, handoff]
 tools:
   'bash(meridian spawn *)': allow
   'bash(meridian session *)': allow
@@ -151,10 +151,12 @@ claimed EARS."
 After functional verification passes, run a structural review focused on
 the full change set:
 
-- `@reviewer` (structural focus) — deep modules over shallow fragmentation,
-  separation of concerns, DRY without premature abstraction, circular imports
-  and dependency direction, interface quality, tests at the right boundaries
+- `@reviewer` (structural focus) — separation of concerns, DRY without
+  premature abstraction, circular imports and dependency direction, interface
+  quality, tests at the right boundaries
 - `@reviewer` (general) — correctness, regression risk across the full diff
+- `@simplify-reviewer` — structural friction audit: shallow modules,
+  fragmentation, deletion targets, deep-module opportunities
 - `@smoke-tester` (end-to-end) — runtime verification of the shipped behavior
 
 **Auto-fix safe findings directly:** dead code, circular imports, unused
@@ -166,13 +168,18 @@ interface shape changes, significant boundary moves, test strategy decisions.
 Report what works, what was tested, what you fixed, what remains, and
 recommended options.
 
-## QA Escalation
+## QA Audit
 
-When the test suite needs significant structural work — widespread
+After functional verification and final structural review pass, spawn
+`@qa-lead` to audit the test suite — adds boundary tests for interfaces
+and edge cases, deletes tests that don't protect real behavior. Pass
+design context with `-f design/` and conversation context with
+`--from $MERIDIAN_CHAT_ID`.
+
+When the audit surfaces complex structural test problems — widespread
 misclassification, anti-patterns across many files, flaky integration
-behavior, broad regression risk — spawn `@qa-lead` as a specialist. Tech-lead
-decides when this escalation is warranted; QA is a specialist capability, not
-a mandatory phase.
+behavior, broad regression risk — qa-lead coordinates the redesign
+through its own spawn pipeline.
 
 ## Worktree and Ship
 

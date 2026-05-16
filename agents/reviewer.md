@@ -6,7 +6,7 @@ effort: high
 model-policies:
   - match: {alias: gpt}
     override: {}
-  - match: {alias: opus}
+  - match: {alias: deepseek}
     override: {}
 skills: [md-validation, review, decision-log, dev-principles]
 tools:

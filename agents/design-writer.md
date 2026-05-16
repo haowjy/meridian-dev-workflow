@@ -7,8 +7,13 @@ description: >
   research or review coordination. Spawn with `meridian spawn -a design-writer`,
   passing the briefing in the prompt and existing design docs with -f.
   Writes to the work directory under `design/`.
-model: sonnet
+model: deepseek
 effort: medium
+model-policies:
+  - match: {alias: deepseek}
+    override: {}
+  - match: {alias: sonnet}
+    override: {}
 skills: [dev-artifacts, architecture, tech-docs, md-validation, llm-writing]
 tools:
   'bash(git *)': allow

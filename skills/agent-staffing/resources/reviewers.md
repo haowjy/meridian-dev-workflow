@@ -14,6 +14,8 @@ These should be part of design review and the final implementation review loop u
 
 @alignment-reviewer — coverage verification: does one artifact deliver what another promised? Not adversarial code review — it checks whether requirements, EARS statements, and design intent survived into plans and implementations. Pass the source of truth with -f, optionally pass --from for conversational context. Use at two points: (1) after design converges, verify the design covers all requirements; (2) at the tech-lead's final gate, verify the full implementation delivers the design's architectural intent. Can also be used at phase exit gates when EARS traceability matters — cheaper than a full @reviewer for mechanical coverage checks. Read-only.
 
+@simplify-reviewer — structural friction hunter: finds shallow modules, fragmentation, deletion targets, and deep-module opportunities. Spawn at two points: (1) during design-lead's investigation phase to audit existing code for structural debt that would block clean design; (2) at tech-lead's final gate to check whether implementation created shallow modules or let entropy accumulate. Reports concrete simplification moves with leverage priority. Read-only.
+
 ## Focus Areas
 
 The change tells you what perspectives matter. Think about what could go wrong that testing won't catch:

@@ -6,8 +6,13 @@ description: >
   understand it, writes .context/ to explain it. Spawn with
   `meridian spawn -a code-mirror`, passing changed files with -f and
   conversation context with --from for intent and decisions.
-model: sonnet
+model: deepseek
 effort: medium
+model-policies:
+  - match: {alias: deepseek}
+    override: {}
+  - match: {alias: sonnet}
+    override: {}
 skills: [qi-layer, md-validation, llm-writing, intent-modeling, decision-log, reflection]
 tools:
   'bash(meridian *)': allow

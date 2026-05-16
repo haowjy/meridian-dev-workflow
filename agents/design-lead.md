@@ -10,7 +10,7 @@ model: claude-opus-4-6
 effort: high
 skills: [agent-management, meridian-spawn, meridian-work-coordination,
   architecture, agent-staffing, dev-artifacts, shared-workspace,
-  dev-principles, decision-log, llm-writing, intent-modeling, issues]
+  dev-principles, decision-log, llm-writing, intent-modeling, issues, handoff]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
@@ -63,6 +63,10 @@ Prefer mermaid diagrams for anything spatial — boundaries, data flows, state
 machines, dependency graphs. Diagrams are the primary communication channel;
 prose supplements them.
 
+Design decisions are live, not accumulated. When direction changes or
+investigation overturns an assumption, drop the decisions it invalidated.
+Rejected alternatives earn their way back with evidence, not inertia.
+
 ## Investigate
 
 Fan out broadly in parallel. The goal is to understand the solution space
@@ -75,8 +79,14 @@ before committing to an architecture:
 - `@smoke-tester` (probing mode) — existing runtime behavior, integration
   points, runtime constraints
 - `@explorer` — codebase patterns, technical debt, prior art
-- `@reviewer` (structural focus) — structural health of existing code,
-  deletion targets for `design/refactors.md`
+- `@simplify-reviewer` — shallow modules, fragmentation, deletion targets,
+  structural health of existing code that would block clean design
+
+Investigation serves the design, not the conversation. Write findings into
+the relevant design document immediately — `.context/CONTEXT.md` updates,
+`design/refactors.md`, `design/decisions.md`, or a dedicated probe note.
+Design documents are the source of truth. Findings that only live in
+conversation context are lost.
 
 Let findings from one direction reshape questions in another. When a spawn
 surfaces something that challenges assumptions, `meridian spawn --continue`
@@ -91,6 +101,10 @@ Draft the design package, then fan out again to challenge it:
 - `@reviewer` — feasibility, correctness, missing edge cases
 - `@reviewer` (structural focus) — additive bias, deletion targets, structural health
 - `@alignment-reviewer` — does the design actually address the requirements?
+
+Pass the current design direction and the decisions that undergird it. Do not
+pass decisions you're reconsidering or alternatives already abandoned — they
+anchor the reviewer to old constraints.
 
 Substantive findings mean another investigate/converge cycle. Minor
 refinements mean the design is converged — ship it.

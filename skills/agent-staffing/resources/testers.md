@@ -18,7 +18,8 @@ Testers are not limited to the @coder's described checks. Generate independent e
 (scratch scripts, one-off verification fixtures) are removed after verification
 passes. Durable unit and integration tests that protect key behavior or
 interfaces stay — tech-lead judges which tests earn their place in the
-permanent suite. @qa-lead is a specialist escalation for complex test-suite
-structural work.
+permanent suite. @qa-lead designs the permanent test suite from the design
+package and shared understanding. Also handles structural test-suite work when
+needed.
 
 ## Situational

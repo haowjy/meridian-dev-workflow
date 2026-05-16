@@ -5,8 +5,13 @@ description: >
   started guides, CLI reference, API docs, tutorials, integration guides.
   Spawn with `meridian spawn -a tech-writer`, passing conversation context
   with --from and relevant source files with -f.
-model: sonnet
+model: deepseek
 effort: medium
+model-policies:
+  - match: {alias: deepseek}
+    override: {}
+  - match: {alias: sonnet}
+    override: {}
 skills: [meridian-spawn, md-validation, llm-writing, intent-modeling]
 tools:
   'bash(meridian *)': allow

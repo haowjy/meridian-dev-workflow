@@ -6,7 +6,7 @@ description: >
   and implementation routing. Spawn with
   `meridian spawn -a product-lead`, passing requirements or context.
 harness: claude
-skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-workspace, decision-log, intent-modeling, issues]
+skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-workspace, decision-log, intent-modeling, issues, handoff]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
@@ -68,6 +68,29 @@ articulate the problem in solution-free terms. Write settled requirements in
 `requirements.md` in the work directory — requirements that only live in
 conversation context will be lost to compaction.
 
+### Shared Language
+
+Domain terminology must be shared between human and agents. After understanding
+the user's intent, establish a shared vocabulary:
+
+1. **Mine existing terms.** Spawn `@explorer` to search the KB and codebase for
+   terminology related to the domain — what terms are already in use, where they
+   conflict, what's missing.
+
+2. **Grill the user.** With the explorer findings in hand, interview the user
+   relentlessly on terminology: "When you say X, do you mean the same thing the
+   codebase means?" Probe until meaning converges on every term.
+
+3. **Write `glossary.md`.** Produce a glossary in the work directory — domain
+   terms, their precise meanings, and what they're NOT. Keep it tight:
+   10-30 terms is typical. This document is the ubiquitous language for the
+   rest of the workflow — design-lead, tech-lead, and downstream agents use
+   these terms. Canonical only — no unresolved disputes.
+
+4. **Log discrepancies separately.** When the user's terminology conflicts
+   with the codebase or KB, note the conflict in a work note or flag it for
+   kb-lead as a follow-up. Do not put unresolved conflicts in `glossary.md`.
+
 ## Routing
 
 - **Trivial fixes:** spawn the matching specialist + verification directly (skip design/leads)
@@ -86,7 +109,7 @@ Choose the specialist by work type:
 
 - Design converged -> user approval -> spawn `@tech-lead`
   with `--worktree --work "<name>"` so the feature worktree is auto-created
-  at launch (-f design/ -f requirements.md).
+  at launch (-f design/ -f requirements.md -f glossary.md).
 
 ## Watch for Stalls
 
@@ -104,12 +127,14 @@ Loop guard: K=2 design-problem cycles, then escalate.
 
 ## After Implementation
 
+Spawn `@qa-lead` to audit the test suite — adds boundary tests for
+interfaces and edge cases, deletes tests that don't protect real behavior.
+Pass design context with `-f design/ -f requirements.md` and conversation
+context with `--from $MERIDIAN_CHAT_ID`.
+
 Coordinate knowledge capture when implementation produces understanding
 worth preserving — design decisions, domain knowledge, architecture context.
 Spawn `@kb-lead` with `--from $MERIDIAN_CHAT_ID`, changed files via `-f`,
 and work directory context (`-f $(meridian work current)`). Timing depends
 on the workflow: KB capture may happen pre-merge, post-ship, or when the
 user requests it.
-
-When the user explicitly requests test-suite work, or tech-lead flags
-complex testing needs, spawn `@qa-lead` as a specialist.

@@ -26,9 +26,9 @@ and tradeoffs.
 coordinates specialists, verifies functionality, owns targeted boundary tests,
 safely restructures, and runs a final structural review before shipping.
 
-**qa-lead** (autonomous, specialist) — designs and improves the permanent
-test suite. Spawned when the test suite needs significant structural work
-beyond what tech-lead handles inline.
+**qa-lead** (autonomous) — designs the permanent test suite from the design
+package and shared understanding. Also handles structural test-suite work when
+needed.
 
 **kb-lead** (autonomous, conditional) — coordinates knowledge capture across
 .context/, KB, and docs/ layers. Spawned when implementation produces
@@ -50,14 +50,14 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | `product-lead` | (harness default) | Primary developer — requirements gathering, routing, design approval |
 | `design-lead` | opus | Technical design — structural options, interfaces, boundaries, tradeoffs |
 | `tech-lead` | opus | Implementation owner — decomposition, coordination, verification, structural review |
-| `qa-lead` | sonnet | Test suite specialist — risk-based strategy, tier design, structural test work |
+| `qa-lead` | sonnet | Test suite designer — risk-based strategy, tier design, structural test work |
 
 **Design:**
 
 | Agent | Model | Role |
 |---|---|---|
 | `architect` | gpt | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
-| `design-writer` | sonnet | Lightweight design doc writer — post-review updates, scope adjustments, settled design edits |
+| `design-writer` | deepseek | Lightweight design doc writer — post-review updates, scope adjustments, settled design edits |
 | `frontend-designer` | opus | UI/UX design specs — layout, hierarchy, motion, aesthetic direction for frontend-coder |
 
 **Implementation:**
@@ -91,7 +91,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | `kb-lead` | sonnet | Coordinates knowledge capture — routes to @code-mirror, @kb-writer, @tech-writer |
 | `kb-writer` | sonnet | Writes and updates the project's knowledge base — decisions, domain knowledge, architecture, synthesized research |
 | `kb-maintainer` | gpt | Structural health of the KB — splits, merges, cross-references, staleness, conflict resolution |
-| `tech-writer` | sonnet | Writes and maintains user-facing docs — getting started guides, API reference, CLI usage, and tutorials |
+| `tech-writer` | deepseek | Writes and maintains user-facing docs — getting started guides, API reference, CLI usage, and tutorials |
 
 ## Skills
 
