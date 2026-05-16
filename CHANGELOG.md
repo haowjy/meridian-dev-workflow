@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.2] - 2026-05-16
+
 ### Added
 - `@simplify-reviewer` agent: structural friction hunter. Finds shallow modules, fragmentation, deletion targets, and deep-module opportunities. Spawned by @design-lead (investigation) and @tech-lead (final structural review). Read-only, outputs concrete simplification moves with leverage priority. Model: gpt.
 - `/simplify` skill: methodology for hunting structural friction — shallow modules, fragmented concerns, deletion targets, inline targets, deep-module opportunities. Resources reference the structural-health catalog under `/review`.
