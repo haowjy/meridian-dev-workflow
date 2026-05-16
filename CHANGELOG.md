@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.6] - 2026-05-16
+
 ### Changed
 - `@kb-lead`, `@product-lead`, `@design-lead`, `@tech-lead`, `@design-writer`, `@reviewer`: carry `shared-dao`
 - `@product-lead`: renamed `glossary.md` to `vocab.md`
