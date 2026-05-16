@@ -9,7 +9,7 @@ description: >
   -f $(meridian work current), and conversation context with --from.
 model: sonnet
 effort: high
-skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, agent-staffing, qi-layer, shared-workspace, intent-modeling, issues]
+skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, agent-staffing, qi-layer, shared-workspace, intent-modeling, issues, handoff]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
