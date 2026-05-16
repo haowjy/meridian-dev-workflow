@@ -13,7 +13,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: sonnet}
     override: {}
-skills: [agent-management, meridian-spawn, meridian-work-coordination, handoff,
+skills: [agent-management, meridian-spawn, meridian-work-coordination, clear-mind,
   testing-principles, shared-workspace, intent-modeling, issues]
 tools:
   bash: allow

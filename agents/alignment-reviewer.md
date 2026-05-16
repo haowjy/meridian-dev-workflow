@@ -76,7 +76,7 @@ Implementation that works but violates the design's structural model is drift.
 **Conversational intent** — when conversation history is available, check
 whether the user's stated priorities and decisions survived into the formal
 artifacts and downstream work. Intent expressed in conversation but missing from
-artifacts is a handoff gap.
+artifacts is a clear-mind gap.
 
 ## Report Format
 

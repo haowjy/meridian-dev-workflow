@@ -6,7 +6,7 @@ description: >
   `meridian spawn -a product-lead`, passing requirements or context.
   First session of any work item.
 harness: claude
-skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-workspace, decision-log, intent-modeling, issues, handoff]
+skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-workspace, decision-log, intent-modeling, issues, clear-mind]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

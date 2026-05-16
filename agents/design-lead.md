@@ -10,7 +10,7 @@ model: claude-opus-4-6
 effort: high
 skills: [agent-management, meridian-spawn, meridian-work-coordination,
   architecture, agent-staffing, dev-artifacts, shared-workspace,
-  dev-principles, decision-log, llm-writing, intent-modeling, issues, handoff]
+  dev-principles, decision-log, llm-writing, intent-modeling, issues, clear-mind]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
