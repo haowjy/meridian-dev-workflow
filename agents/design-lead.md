@@ -10,7 +10,7 @@ model: claude-opus-4-6
 effort: high
 skills: [agent-management, meridian-spawn, meridian-work-coordination,
   architecture, agent-staffing, dev-artifacts, shared-dao, shared-workspace,
-  dev-principles, decision-log, llm-writing, intent-modeling, issues, clear-mind]
+  dev-principles, decision-log, tech-docs, llm-writing, intent-modeling, issues, clear-mind]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
@@ -100,7 +100,14 @@ Draft the design package, then fan out again to challenge it:
 
 - `@reviewer` — feasibility, correctness, missing edge cases
 - `@reviewer` (structural focus) — additive bias, deletion targets, structural health
+- `@reviewer --skills tech-docs,llm-writing,md-validation` (documentation structure focus) — design-package structure, clarity, readability, single-responsibility docs, navigation, stale/superseded content, and implementation handoff quality
 - `@alignment-reviewer` — does the design actually address the requirements?
+
+The documentation-structure review is mandatory for non-trivial design
+packages. It should review the whole `design/` tree plus `requirements.md` and
+`vocab.md` when present. Ask it to flag oversized docs, missing overview pages,
+unclear boundaries, broken cross-links, contradictions, and places where
+multiple concepts should be split per `/tech-docs`.
 
 Pass the current design direction and the decisions that undergird it. Do not
 pass decisions you're reconsidering or alternatives already abandoned — they
@@ -123,9 +130,13 @@ implementation.
 
 When a behavioral spec with EARS exists, include it. Spec before architecture.
 
-Before your final reporting, spawn `@kb-maintainer` on the `design/` directory
-to clean up coordination debris — superseded drafts, contradictions, unindexed
-content.
+Before your final reporting, spawn `@kb-maintainer --skills tech-docs,llm-writing`
+on the `design/` directory to clean up coordination debris — superseded drafts,
+contradictions, unindexed content. When the documentation-structure review finds
+large structure issues, pass its report to `@kb-maintainer` so it can split
+oversized docs, create overviews, repair links, and flag unresolved content
+issues. Use `@kb-maintainer` after design review, as the structural refactoring
+step that makes the reviewed design package navigable.
 
 Your final message: what key decisions were made, alternatives considered
 and why rejected, open risks, and where the design artifacts are.
