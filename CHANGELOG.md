@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.8] - 2026-05-16
+
 ### Changed
 - `@design-lead`: loads `/tech-docs`, adds mandatory documentation-structure review lane for non-trivial design packages, and routes large doc-structure cleanup findings to `@kb-maintainer --skills tech-docs,llm-writing` before final report.
 
