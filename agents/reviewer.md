@@ -8,7 +8,7 @@ model-policies:
     override: {}
   - match: {alias: deepseek}
     override: {}
-skills: [md-validation, review, decision-log, dev-principles]
+skills: [md-validation, review, decision-log, dev-principles, shared-dao]
 tools:
   'bash(meridian spawn show *)': allow
   'bash(meridian session *)': allow

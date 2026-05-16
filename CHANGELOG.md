@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@kb-lead`, `@product-lead`, `@design-lead`, `@tech-lead`, `@design-writer`, `@reviewer`: carry `shared-dao`
+- `@product-lead`: renamed `glossary.md` to `vocab.md`
+- `@qa-lead`: final report must show add audit, delete audit, no-op rationale, and validation. Explicitly explains why tests were added, deleted, kept, moved, or left unchanged.
+
 ## [0.7.5] - 2026-05-16
 
 ## [0.7.4] - 2026-05-16

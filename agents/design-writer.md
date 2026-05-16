@@ -14,7 +14,7 @@ model-policies:
     override: {}
   - match: {alias: sonnet}
     override: {}
-skills: [dev-artifacts, architecture, tech-docs, md-validation, llm-writing]
+skills: [dev-artifacts, architecture, shared-dao, tech-docs, md-validation, llm-writing]
 tools:
   'bash(git *)': allow
   'bash(meridian *)': allow

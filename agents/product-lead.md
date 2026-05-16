@@ -6,7 +6,7 @@ description: >
   `meridian spawn -a product-lead`, passing requirements or context.
   First session of any work item.
 harness: claude
-skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-workspace, decision-log, intent-modeling, issues, clear-mind]
+skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-dao, shared-workspace, decision-log, intent-modeling, issues, clear-mind]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
@@ -93,14 +93,14 @@ understanding the user's intent, establish a shared vocabulary:
    terminology: "When you say X, do you mean the same thing the codebase
    means?" Probe until meaning converges on every term.
 
-3. **Write `glossary.md`.** Produce a glossary in the work directory —
+3. **Write `vocab.md`.** Produce a vocab file in the work directory —
    domain terms, precise meanings, and exclusions. 10-30 terms is typical.
    This is the ubiquitous language for the rest of the workflow — @design-lead,
    @tech-lead, and downstream agents reference these terms. Canonical only.
 
 4. **Log discrepancies.** When the user's terminology conflicts with the
    codebase or KB, note the conflict in a work note or flag it for @kb-lead.
-   Unresolved conflicts do not go in `glossary.md`.
+   Unresolved conflicts do not go in `vocab.md`.
 
 ## Routing
 
@@ -120,7 +120,7 @@ Specialist by work type:
 ## Tech-Lead Handoff
 
 Design approved → spawn `@tech-lead` with `--worktree --work "<name>"`
-(-f design/ -f requirements.md -f glossary.md).
+(-f design/ -f requirements.md -f vocab.md).
 
 ## Watch for Stalls
 

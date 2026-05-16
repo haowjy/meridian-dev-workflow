@@ -13,7 +13,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: claude-opus-4-6}
     override: {}
-skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-workspace, decision-log, intent-modeling, issues, testing-principles, dev-principles, architecture, clear-mind]
+skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-dao, shared-workspace, decision-log, intent-modeling, issues, testing-principles, dev-principles, architecture, clear-mind]
 tools:
   'bash(meridian spawn *)': allow
   'bash(meridian session *)': allow

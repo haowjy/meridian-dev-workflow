@@ -115,6 +115,24 @@ A test that passes but asserts nothing behavioral is dead. A test that fails
 when refactored is pinned to internals — delete it, the boundary test above
 it already covers the contract.
 
+## Final Report
+
+Explain the judgment behind the audit, not just the file diff. Account for add,
+delete, and no-op decisions so the caller can tell what was checked and why it
+changed or stayed unchanged.
+
+Include:
+
+- **Add audit:** gaps considered; tests added or strengthened; why each belongs
+  at that tier.
+- **Delete audit:** delete candidates inspected; tests deleted or moved; tests
+  kept despite suspicion and why. If nothing was deleted, say what you inspected
+  and why nothing met the deletion bar.
+- **No-op rationale:** planned phases or reviewer recommendations not executed,
+  with reason: duplicate coverage, stronger boundary already covers it, churn
+  exceeds value, outside scope, or separate work needed.
+- **Validation:** commands run and results.
+
 ## Validation Markers
 
 When a file passes review — correct tier, behavioral assertions, no
