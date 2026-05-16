@@ -9,8 +9,8 @@ commit = "f458cee31a7577a47ba0c9a101976fa599385174"
 
 [dependencies.meridian-base]
 url = "github.com/meridian-flow/meridian-base"
-version = "v0.4.8"
-commit = "b1172f9bd153ff96729026c6830f33f03f6fed4b"
+version = "v0.4.9"
+commit = "39197afd844d038b058eabb3eef3a6e6f0ab6142"
 
 [dependencies.meridian-prompter]
 url = "github.com/meridian-flow/meridian-prompter"
@@ -797,13 +797,13 @@ installed_checksum = "sha256:ffaa9227f9724d4a1c4beb2d44d639ea08d2aa52126af51e720
 [items."skill/shared-dao"]
 source = "meridian-base"
 kind = "skill"
-version = "v0.4.8"
-source_checksum = "sha256:957aca87bafa9f37708534b262bc3a3249ea6a3a70a42be3163b343ad4401231"
+version = "v0.4.9"
+source_checksum = "sha256:c01d93eb54c2751139907cdf477bfe6b3c34f53bea8949c152ec6301c3e43480"
 
 [[items."skill/shared-dao".outputs]]
 target_root = ".mars"
 dest_path = "skills/shared-dao"
-installed_checksum = "sha256:957aca87bafa9f37708534b262bc3a3249ea6a3a70a42be3163b343ad4401231"
+installed_checksum = "sha256:c01d93eb54c2751139907cdf477bfe6b3c34f53bea8949c152ec6301c3e43480"
 
 [items."skill/shared-workspace"]
 source = "meridian-base"
