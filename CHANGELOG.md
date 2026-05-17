@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.10] - 2026-05-17
+
 ### Changed
 - `@product-lead`, `@ux-lead`: route by installed agent descriptions and ownership instead of fixed specialist lists; make evidence-gathering spawns active and lifecycle leads reactive.
 - `@ux-lead`: run exploration and user critique as parallel visual-design tracks; verify spawn reports produced the expected visual artifact.
