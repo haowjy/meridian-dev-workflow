@@ -104,18 +104,19 @@ understanding the user's intent, establish a shared vocabulary:
 
 ## Routing
 
-Trivial fixes route straight to the matching specialist + verification,
-skipping design/leads. Non-trivial work: @design-lead → user approval →
-@tech-lead.
+Use the installed Meridian agent descriptions as the routing source of truth:
+before spawning, read the relevant descriptions, think carefully about
+ownership, and route to the most specific specialist. When ownership is
+ambiguous, state the distinction before choosing. Delegate substantive work to
+the specialist who owns it.
 
-Specialist by work type:
-- Source code changes → `@coder` or `@frontend-coder` (visual)
-- Design doc edits → `@design-writer`
-- User docs → `@tech-writer`
-- KB capture → `@kb-writer`
-- Runtime probing → `@smoke-tester`
-- Root cause diagnosis → `@investigator`
-- Prompts → `@prompt-dev` (if available) or `@coder`
+Be active about evidence: spawn `@explorer` for internal evidence and shared
+language, and `@web-researcher` for exploratory or confirming external
+evidence. Be reactive with lifecycle leads: use `@design-lead` after the
+problem is clear and design is needed, `@tech-lead` after design approval,
+`@qa-lead` after implementation, and `@kb-lead` when durable knowledge should
+be preserved. Other specialists remain available: choose them by description
+whenever they are the most specific owner for the work.
 
 ## Tech-Lead Handoff
 

@@ -10,6 +10,7 @@ description: >
   available.
 model: opus47
 effort: high
+approval: auto
 model-policies:
   - match: {alias: opus47}
     override: {}

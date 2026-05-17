@@ -4,6 +4,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@product-lead`, `@ux-lead`: route by installed agent descriptions and ownership instead of fixed specialist lists; make evidence-gathering spawns active and lifecycle leads reactive.
+- `@ux-lead`: run exploration and user critique as parallel visual-design tracks; verify spawn reports produced the expected visual artifact.
+- `@mockup-gen`: auto approval enabled.
+- `AGENTS.md`: clarify source-only prompt editing and generated `.mars/` sync boundary.
+
 ## [0.7.9] - 2026-05-17
 
 ### Changed
