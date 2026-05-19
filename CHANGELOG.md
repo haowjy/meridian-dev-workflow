@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.11] - 2026-05-19
+
 ### Changed
 - `@qa-lead`: simplified from 4-phase orchestrator to hands-on agent — gathers context via explorer/session-explorer, makes deletion/addition judgments directly, reviewer pass on the diff. Most QA passes should be net-negative in test lines.
 - `@kb-lead`: reframed from post-implementation capture coordinator to general documentation coordinator — any doc goal (cleanup, restructuring, term changes, coverage audits, post-impl capture). Added `@kb-maintainer` to layer table with conditional sequencing.
