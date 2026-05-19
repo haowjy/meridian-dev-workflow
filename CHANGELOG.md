@@ -4,6 +4,16 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@qa-lead`: simplified from 4-phase orchestrator to hands-on agent — gathers context via explorer/session-explorer, makes deletion/addition judgments directly, reviewer pass on the diff. Most QA passes should be net-negative in test lines.
+- `@kb-lead`: reframed from post-implementation capture coordinator to general documentation coordinator — any doc goal (cleanup, restructuring, term changes, coverage audits, post-impl capture). Added `@kb-maintainer` to layer table with conditional sequencing.
+
+### Added
+- `post-impl-capture` skill: extracted kb-lead's implementation-specific coordination sequence. Callers pass `--skills post-impl-capture` when spawning kb-lead after implementation ships.
+
+### Removed
+- `@qa-designer`: orphaned by qa-lead simplification — qa-lead now makes tier/deletion judgments directly.
+
 ## [0.7.10] - 2026-05-17
 
 ### Changed
