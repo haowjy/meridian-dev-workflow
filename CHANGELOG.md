@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.15] - 2026-05-22
+
 ### Changed
 - `/dev-principles`, `@tech-lead`: softened the new testing and LOC-growth guidance from procedural wording to judgment-oriented heuristics while keeping the smoke-first, lower-tier-tests-when-justified posture.
 - `@kb-lead`: coverage review now pushes KB cleanup toward current, consolidated pages instead of additive layering.
