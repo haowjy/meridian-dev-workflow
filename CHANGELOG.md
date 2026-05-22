@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.14] - 2026-05-22
+
 ### Changed
 - `/dev-principles`: testing guidance now favors durable boundary coverage over routine test addition. Added end-of-change LOC reflection so code growth needs a concrete justification and a re-check against shallow wrappers, duplicated logic, and weak boundaries.
 - `@tech-lead`: verification defaults to smoke testing and review. Lower-tier tests are now conditional on durable boundary, composition, or narrow logic risk. Final structural review now checks net LOC growth before stopping.
