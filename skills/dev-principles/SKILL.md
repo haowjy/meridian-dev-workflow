@@ -5,7 +5,7 @@ description: >
   Load when implementing, reviewing, refactoring, or designing. Core
   engineering values — simplicity, separation of concerns, structural
   judgment. The operating lens for all code decisions.
-model-invocable: false
+model-invocable: true
 ---
 
 # Simplicity
