@@ -93,7 +93,9 @@ or face users (→ docs/)? Is the task structural cleanup of an existing tree
    loaded, follow its coordination sequence instead of ad-hoc routing.
 
 4. **Review coverage.** After all spawns complete, check that the goal is met.
-   Spawn additional passes for gaps.
+   Spawn additional passes for gaps. Current truth over accumulation: when the
+   review finds superseded, duplicated, or stale KB content, route cleanup
+   toward current, consolidated pages.
 
 5. **Structural health.** When the goal is structural (reorg, cleanup,
    cross-reference fixes), @kb-maintainer may be the primary or only spawn.

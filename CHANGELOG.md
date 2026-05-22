@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/dev-principles`, `@tech-lead`: softened the new testing and LOC-growth guidance from procedural wording to judgment-oriented heuristics while keeping the smoke-first, lower-tier-tests-when-justified posture.
+- `@kb-lead`: coverage review now pushes KB cleanup toward current, consolidated pages instead of additive layering.
+- `@code-mirror`: now carries `/shared-dao` so inline code-colocated docs use the same term-discipline as KB work.
+
 ## [0.7.14] - 2026-05-22
 
 ### Changed

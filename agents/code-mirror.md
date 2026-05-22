@@ -13,7 +13,7 @@ model-policies:
     override: {}
   - match: {alias: sonnet}
     override: {}
-skills: [qi-layer, md-validation, llm-writing, intent-modeling, decision-log, reflection]
+skills: [qi-layer, shared-dao, md-validation, llm-writing, intent-modeling, decision-log, reflection]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow

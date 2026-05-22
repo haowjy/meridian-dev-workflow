@@ -94,19 +94,19 @@ Verify changes by running the program and the project's existing checks.
 
 Add tests when they protect a durable boundary, contract, or hard-to-smoke
 edge case. Prefer smoke verification and focused integration tests when they
-answer the question with lower maintenance cost. Use unit tests for pure
-logic, parsing edges, and other narrow cases where they give the strongest
-signal.
+answer the question with lower maintenance cost. Unit tests fit best where
+narrow logic, parsing edges, or similar cases give stronger signal than
+higher-tier checks.
 
 Test at module interfaces. Interface-focused tests make simplification safe:
 refactor freely, keep behavior stable, and let tests confirm the contract
 still holds.
 
-Before stopping, check the net LOC change in your diff and explain any
-meaningful growth. New lines should buy clear behavior, a real boundary, or a
+Treat code growth as a cost. Notice meaningful LOC growth and make sure it
+earns its place through clearer behavior, a real boundary, or a
 simplification that removes reasoning cost elsewhere. When the diff grows a
-lot, re-examine it for unnecessary files, shallow wrappers, duplicated
-logic, or boundaries that did not earn their cost.
+lot, re-examine it for unnecessary files, shallow wrappers, duplicated logic,
+or boundaries that did not earn their cost.
 
 When a test-suite audit is needed, qa-lead reshapes the permanent suite
 toward high-leverage boundary coverage and removes tests that do not protect

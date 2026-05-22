@@ -19,10 +19,11 @@ tools:
   'bash(meridian session *)': allow
   'bash(meridian work *)': allow
   'bash(git status *)': allow
+  'bash(git branch --list *)': allow
+  'bash(git branch --show-current)': allow
   'bash(git diff *)': allow
-  'bash(git worktree *)': allow
+  'bash(git worktree add *)': allow
   'bash(git push *)': allow
-  'bash(git branch *)': allow
   'bash(gh pr *)': allow
   'bash(rg *)': allow
   'bash(sed *)': allow
@@ -37,9 +38,15 @@ tools:
   notifications: deny
   plan_mode: deny
   worktree: deny
+  'bash(git branch -d:*)': deny
+  'bash(git branch -D:*)': deny
+  'bash(git branch -m:*)': deny
+  'bash(git branch -M:*)': deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
+  'bash(git merge:*)': deny
+  'bash(git rebase:*)': deny
   'bash(git stash:*)': deny
   'bash(git restore:*)': deny
   'bash(git reset --hard:*)': deny
@@ -127,7 +134,7 @@ probing mode. Route implementation findings by type:
 ## Verification
 
 Own functional verification directly. After each significant implementation
-step, choose the cheapest lane that gives strong evidence:
+step, prefer the lightest verification that gives credible evidence:
 
 - `@smoke-tester` (verify mode) for runtime behavior and integration
   boundaries
@@ -150,8 +157,8 @@ indicates broken production behavior, stale/wrong tests, weak boundaries, or
 the wrong test tier. Fix or delete tests accordingly.
 
 Prefer smoke verification and review by default. Add lower-tier tests when
-they protect a durable boundary or answer a question higher-tier verification
-cannot answer cheaply.
+they protect a durable boundary or give clearer signal than higher-tier
+verification.
 
 When a behavioral spec with EARS exists, verify EARS delivery at step
 boundaries — not just "does the code work" but "does the code deliver the
