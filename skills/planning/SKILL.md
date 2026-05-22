@@ -47,10 +47,12 @@ add checkpoint value.
   verification suite and reviews its own diff before reporting (see
   `/reflection`). No separate verifier or reviewer spawn. Quick feedback
   while context is still loaded.
-- **Phase exit gate — full verification.** `@smoke-tester`,
-  `@coder --skills unit-test,testing-principles` or `@coder --skills integration-test,testing-principles` as applicable (temporary gate tests —
-  deleted after verification), `@reviewer` (one general review). All gate
-  lanes run in parallel (`--bg` + `spawn wait`).
+- **Phase exit gate — full verification.** `@smoke-tester` and `@reviewer`
+  are the default lanes. Add `@coder --skills integration-test,testing-principles`
+  or `@coder --skills unit-test,testing-principles` only when the phase
+  introduces a durable boundary, composition risk, or narrow logic risk that
+  higher-tier verification cannot cover cheaply. All gate lanes run in
+  parallel (`--bg` + `spawn wait`).
 
 ## Probe and Diagnosis Lanes
 

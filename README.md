@@ -71,7 +71,6 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Agent | Model | Role |
 |---|---|---|
-| `unit-tester` | gpt | Writes and runs targeted unit tests for edge cases and regression guards |
 | `smoke-tester` | gpt-5.4 | End-to-end testing from the user's perspective — CLI flows, HTTP requests, race probes |
 | `browser-tester` | opus | Browser-based QA via Playwright — visual verification, user flows, console errors |
 

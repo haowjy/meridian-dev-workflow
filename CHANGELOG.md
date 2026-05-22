@@ -4,6 +4,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/dev-principles`: testing guidance now favors durable boundary coverage over routine test addition. Added end-of-change LOC reflection so code growth needs a concrete justification and a re-check against shallow wrappers, duplicated logic, and weak boundaries.
+- `@tech-lead`: verification defaults to smoke testing and review. Lower-tier tests are now conditional on durable boundary, composition, or narrow logic risk. Final structural review now checks net LOC growth before stopping.
+- `planning`, `plan-package`: phase exit gates and staffing now treat unit/integration test lanes as justified exceptions instead of default lanes.
+- README: removed stale `@unit-tester` testing row.
+
 ## [0.7.13] - 2026-05-22
 
 ## [0.7.12] - 2026-05-19

@@ -90,18 +90,27 @@ Name the problem, explain the risk, and propose a path.
 
 # Testing
 
-Verify your changes by running the program. Fix tests that break because
-of your changes. Coders write tests freely during implementation — no
-restriction on adding coverage.
+Verify changes by running the program and the project's existing checks.
 
-After implementation, qa-lead audits the test suite: adds boundary tests
-for interfaces and edge cases, deletes tests that don't protect real
-behavior.
+Add tests when they protect a durable boundary, contract, or hard-to-smoke
+edge case. Prefer smoke verification and focused integration tests when they
+answer the question with lower maintenance cost. Use unit tests for pure
+logic, parsing edges, and other narrow cases where they give the strongest
+signal.
 
-Test at module interfaces, not internals. Tests pinned to implementation
-details make refactoring dangerous — a change that preserves behavior breaks
-tests. Tests at interfaces make simplification safe: refactor freely, tests
-confirm behavior hasn't changed.
+Test at module interfaces. Interface-focused tests make simplification safe:
+refactor freely, keep behavior stable, and let tests confirm the contract
+still holds.
+
+Before stopping, check the net LOC change in your diff and explain any
+meaningful growth. New lines should buy clear behavior, a real boundary, or a
+simplification that removes reasoning cost elsewhere. When the diff grows a
+lot, re-examine it for unnecessary files, shallow wrappers, duplicated
+logic, or boundaries that did not earn their cost.
+
+When a test-suite audit is needed, qa-lead reshapes the permanent suite
+toward high-leverage boundary coverage and removes tests that do not protect
+real behavior.
 
 # Consistency
 

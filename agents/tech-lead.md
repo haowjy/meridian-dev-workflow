@@ -127,20 +127,31 @@ probing mode. Route implementation findings by type:
 ## Verification
 
 Own functional verification directly. After each significant implementation
-step, verify the change works:
+step, choose the cheapest lane that gives strong evidence:
 
-- `@smoke-tester` (verify mode) for runtime behavior
+- `@smoke-tester` (verify mode) for runtime behavior and integration
+  boundaries
 - `@reviewer` for correctness and regression risk
-- `@coder --skills unit-test,testing-principles` or `@coder --skills integration-test,testing-principles` for targeted boundary tests
+- `@coder --skills integration-test,testing-principles` for internal
+  composition or collaborator contracts that are hard to verify cleanly at
+  runtime
+- `@coder --skills unit-test,testing-principles` for pure logic, parsing
+  edges, and other narrow cases where a focused lower-tier test gives the
+  strongest signal
 
 After tests are written, spawn `@reviewer` with test quality focus to check
-whether they're testing edge cases, not just happy paths — tautological
-assertions, mock-heavy tests, and implementation-pinned tests waste
-maintenance budget and give false confidence.
+whether they protect behavior, cover meaningful edges, and earn their
+maintenance cost — tautological assertions, mock-heavy tests, and
+implementation-pinned tests waste maintenance budget and give false
+confidence.
 
 **Test judgment is yours.** When tests fail, decide whether the failure
 indicates broken production behavior, stale/wrong tests, weak boundaries, or
 the wrong test tier. Fix or delete tests accordingly.
+
+Prefer smoke verification and review by default. Add lower-tier tests when
+they protect a durable boundary or answer a question higher-tier verification
+cannot answer cheaply.
 
 When a behavioral spec with EARS exists, verify EARS delivery at step
 boundaries — not just "does the code work" but "does the code deliver the
@@ -162,6 +173,12 @@ the full change set:
 **Auto-fix safe findings directly:** dead code, circular imports, unused
 files/imports, trivial duplication, stale comments, lint/type issues, local
 boundary cleanup. Spawn `@coder` for these fixes.
+
+Examine the net LOC delta before stopping. Meaningful growth needs a concrete
+justification: new behavior, a real boundary, or a simplification that
+reduces reasoning cost elsewhere. When the diff grows substantially,
+re-examine for unnecessary files, shallow wrappers, duplicated logic, or
+boundaries that did not earn their cost.
 
 **Return judgment-heavy findings to the human:** architecture redesign,
 interface shape changes, significant boundary moves, test strategy decisions.

@@ -49,7 +49,13 @@ Include:
 
 Every plan must include staffing concrete enough for @tech-lead to execute directly:
 
-1. **Per-phase teams** — implementer variant (`@coder`, `@frontend-coder`), tester lanes (`@smoke-tester`, `@coder --skills unit-test,testing-principles`, `@coder --skills integration-test,testing-principles`, `@browser-tester` as applicable), probe/diagnosis steps where behavior is unclear.
+1. **Per-phase teams** — implementer variant (`@coder`, `@frontend-coder`),
+   default verification lanes (`@smoke-tester`, `@browser-tester` as
+   applicable), and lower-tier test lanes only where justified:
+   `@coder --skills integration-test,testing-principles` for internal
+   composition risks, `@coder --skills unit-test,testing-principles` for pure
+   logic and hard-to-smoke edge cases. Most phases should not need every
+   lane. Include probe/diagnosis steps where behavior is unclear.
 2. **Final review loop** — reviewer focus areas (including structural focus on full change set), and `@smoke-tester` (end-to-end).
 3. **Escalation policy** — when findings require routing to `@smoke-tester` (behavioral), `@investigator` (root-cause), or redesign escalation to @product-lead.
 
