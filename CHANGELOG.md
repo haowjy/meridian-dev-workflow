@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.17] - 2026-05-22
+
 ### Added
 - `thermo-nuclear-review` skill — extremely strict maintainability review for abstraction quality, file-size growth, and spaghetti detection. Adapted from [cursor/plugins](https://github.com/cursor/plugins). Not model-invocable; load explicitly when you want the harshest lens.
 
