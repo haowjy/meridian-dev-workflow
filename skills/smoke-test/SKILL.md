@@ -12,15 +12,16 @@ model-invocable: false
 # Smoke Testing
 
 Run the real system and observe what happens. Real processes, real filesystem,
-real network.
+real network. In this workflow, smoke testing means manual runtime verification
+by an agent unless the caller explicitly asks for an automated e2e test suite.
 
 Load `/testing-principles` for tier selection. Use `/ears-parsing` for
 per-pattern parsing and report format.
 
-Check README, AGENTS/CLAUDE guidance, build files, and existing smoke/e2e tests
-for canonical invocation patterns. Many projects keep smoke test guides as
-markdown in `tests/e2e/` or `tests/smoke/` — check conventions before assuming
-what format to use.
+Check README, AGENTS/CLAUDE guidance, build files, and existing smoke/e2e
+guides for canonical invocation patterns. Many projects keep manual smoke
+guides as markdown in `tests/e2e/` or `tests/smoke/` — check conventions before
+assuming what format to use.
 
 ## Two Modes
 
@@ -74,10 +75,13 @@ effects.
 
 ## Reporting
 
-**Probing:** discovered behavior, constraints, surprises, exact commands and
-outputs, open questions.
+**Probing:** discovered behavior, constraints, surprises, exact manual commands
+and outputs, open questions.
 
-**Verification:** per-claimed-ID outcomes with evidence, exact commands and
-outputs, exploratory findings beyond claimed IDs, coverage gaps.
+**Verification:** per-claimed-ID outcomes with manual runtime evidence, exact
+commands and outputs, exploratory findings beyond claimed IDs, coverage gaps.
+
+Report smoke results as manual runtime evidence. Do not summarize automated
+pytest/unit/integration/type/lint checks as smoke coverage.
 
 @tech-lead owns `plan/leaf-ownership.md` updates based on verification reports.

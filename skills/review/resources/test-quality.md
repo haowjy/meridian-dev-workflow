@@ -23,8 +23,8 @@ break the test, it's testing the wrong thing.
 
 **Risk-proportionate coverage.** High-risk paths (data integrity, auth,
 integration boundaries, state machines) deserve exhaustive edge cases.
-Low-risk paths (formatting, simple getters) deserve nothing or a smoke test.
-Flag over-testing of low-risk code and under-testing of high-risk code.
+Low-risk paths (formatting, simple getters) deserve nothing or a manual smoke
+check. Flag over-testing of low-risk code and under-testing of high-risk code.
 
 ## Would They Catch a Real Bug?
 
@@ -47,8 +47,9 @@ behavior, the mock still passes and the test lies. Flag for refactoring
 
 **Tier placement.** Is this test at the right level? Unit tests that need
 filesystem setup are integration tests in disguise. Integration tests that
-spin up real databases are smoke tests. Smoke tests that verify string
-formatting should be unit tests.
+spin up real databases are manual smoke checks or automated e2e tests, not
+ordinary integration tests. Manual smoke checks that verify string formatting
+should usually become unit tests or be dropped.
 
 **Hermetic isolation.** Tests that share state, depend on execution order,
 or call real network endpoints are flaky by design. Each test should be

@@ -54,10 +54,11 @@ Every plan must include staffing concrete enough for @tech-lead to execute direc
    applicable), and lower-tier test lanes only where justified:
    `@coder --skills integration-test,testing-principles` for internal
    composition risks, `@coder --skills unit-test,testing-principles` for pure
-   logic and hard-to-smoke edge cases. Most phases should not need every
+   logic and risks that are hard to verify manually. Most phases should not need every
    lane. Include probe/diagnosis steps where behavior is unclear.
-2. **Final review loop** — reviewer focus areas (including structural focus on full change set), and `@smoke-tester` (end-to-end).
-3. **Escalation policy** — when findings require routing to `@smoke-tester` (behavioral), `@investigator` (root-cause), or redesign escalation to @product-lead.
+2. **Final review loop** — reviewer focus areas (including structural focus on full change set), and `@smoke-tester` (manual end-to-end runtime verification).
+3. **QA audit** — `@qa-lead` after implementation converges and before shipping, to prune low-value tests and add only high-leverage boundary coverage.
+4. **Escalation policy** — when findings require routing to `@smoke-tester` (behavioral), `@investigator` (root-cause), or redesign escalation to @product-lead.
 
 A plan without staffing drives execution toward coder-only behavior with weak review loops.
 

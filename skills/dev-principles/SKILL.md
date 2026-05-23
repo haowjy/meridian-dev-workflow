@@ -92,11 +92,19 @@ Name the problem, explain the risk, and propose a path.
 
 Verify changes by running the program and the project's existing checks.
 
-Add tests when they protect a durable boundary, contract, or hard-to-smoke
-edge case. Prefer smoke verification and focused integration tests when they
-answer the question with lower maintenance cost. Unit tests fit best where
-narrow logic, parsing edges, or similar cases give stronger signal than
-higher-tier checks.
+Add tests when they protect a durable boundary, contract, or risk that is hard
+to verify manually. Prefer manual smoke verification and focused integration
+tests when they answer the question with lower maintenance cost. Unit tests fit
+best where narrow logic, parsing edges, or similar cases give stronger signal
+than higher-tier checks.
+
+When tier choice is unclear, improve the manual smoke instructions first:
+capture the scenario, command, expected result, and edge/failure cases an agent
+should run against the real system.
+
+In final reports, separate manual smoke checks from automated checks/tests.
+Pytest, unit tests, integration tests, lint, and type checks are automated
+verification; they are not smoke testing.
 
 Test at module interfaces. Interface-focused tests make simplification safe:
 refactor freely, keep behavior stable, and let tests confirm the contract

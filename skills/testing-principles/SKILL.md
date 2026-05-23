@@ -24,7 +24,7 @@ does failure hurt most?
 
 - High-risk areas (data integrity, auth, payment, integration boundaries) →
   comprehensive coverage: happy path + edge cases + error conditions
-- Low-risk areas (formatting, simple CRUD) → smoke tests or nothing
+- Low-risk areas (formatting, simple CRUD) → manual smoke check or nothing
 
 ## Tier Selection
 
@@ -35,16 +35,23 @@ question, not stacking tiers for their own sake.
   boundaries to fake.
 - **Components composing, external systems fakeable?** → integration test.
   Medium speed, fakes at process/network boundaries.
-- **Real runtime behavior matters?** → smoke / e2e. Real processes, real APIs,
-  slower, closest to users.
+- **Real runtime behavior matters?** → manual smoke / e2e runtime check. Real
+  processes, real APIs, slower, closest to users.
 
 Modern practice leans integration-heavy (the "Testing Trophy" model): integration
 tests offer the best ROI because they test behavior the way users invoke it.
-Unit tests are for pure logic and algorithmic components. E2E tests are for
-critical user journeys only — they're expensive and brittle if overused.
+Unit tests are for pure logic and algorithmic components. Automated E2E tests
+are for critical user journeys only — they're expensive and brittle if overused.
+Manual smoke checks are runtime evidence, not permanent test-suite coverage.
 
 The guiding axiom: the more your tests resemble the way your software is used,
 the more confidence they give you.
+
+When tier choice is unclear, improve the manual smoke instructions first:
+record the real scenario, command, expected result, and edge/failure cases an
+agent should run. Promote that coverage to automated unit or integration tests
+only when the risk is hard to verify manually and the test protects a named
+contract cheaply.
 
 See `resources/tier-judgment.md` for the decision diagram and tradeoffs.
 
@@ -103,8 +110,9 @@ single-shot.
 - `@smoke-tester` — real runtime behavior against real interfaces. Two modes
   (probing vs verification) — see `/smoke-test`.
 
-Coders self-verify (tests pass, types check, lint clean) via `/reflection`
-before reporting — that's the floor, not a separate agent.
+Coders self-verify with the narrowest useful evidence for the change — often
+focused checks or manual smoke, plus automated checks where they buy
+confidence. `/reflection` makes that verification explicit before reporting.
 
 Pick the tier that matches the question. Stack tiers only when the question
 spans them.

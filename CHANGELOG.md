@@ -4,6 +4,15 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@coder`: shifted from narrow patch executor to scoped implementation owner. Defers structural doctrine to `/dev-principles`, allows clean local restructuring, fixes frontend-coder routing text.
+- `agent-staffing`, `@tech-lead`: coder staffing now splits by objective and ownership, not arbitrary 2-4 file limits.
+- `@tech-lead`: reframed around objective framing and convergence judgment; coders own code-level structure inside assigned objectives.
+- Dev workflow verification language now separates manual smoke checks from automated tests/checks in reports.
+- QA timing aligned as post-convergence, pre-shipping audit across `@tech-lead`, `@qa-lead`, staffing, and plan-package guidance.
+- `@product-lead`: standard QA audit now routes through `@tech-lead`; direct `@qa-lead` spawn reserved for standalone audit of converged implementation.
+- `@qa-lead`, testing guidance: pruning language now puts burden of proof on keeping tests, requires named durable behavior/contract/risk for retained coverage, and sends uncertain coverage to manual smoke guide improvements before automated tests.
+
 ## [0.7.18] - 2026-05-23
 
 ### Changed

@@ -4,9 +4,9 @@ Agents that produce artifacts — code, design docs, research findings, and capt
 
 ## Coders
 
-@coder — production code writer across the full stack: backend, frontend logic, CLI, infrastructure, data flow, build systems. One subphase per spawn, 2-4 files with -f, clear task description. Run in parallel (`--bg`) when file sets are disjoint; sequential when they overlap. When a task feels too big for one coder, split the plan.
+@coder — scoped implementation owner across the full stack: backend, frontend logic, CLI, infrastructure, data flow, build systems. Give one coherent engineering objective per spawn, with the blueprint and source files needed to reason about the touched concern. Pass target behavior and constraints, not edit-by-edit instructions; inside the objective, @coder owns local restructuring, cleanup, and proportional verification. Use file count as context, not the split criterion. Split when objectives, ownership, or sequencing are genuinely independent. Run in parallel (`--bg`) when file ownership is disjoint; sequential when changes overlap or depend on each other.
 
-@frontend-coder — production frontend code writer for visual/UI work where design fidelity and aesthetics are the primary concern. Same staffing rules as @coder. Pick this variant when the work is about what users see and feel — matching a design spec, implementing visual polish — not just because the file is frontend code. Pass mockups or screenshots when available.
+@frontend-coder — production frontend code writer for visual/UI work where design fidelity and aesthetics are the primary concern. Same objective-bounded staffing rules as @coder. Pick this variant when the work is about what users see and feel — matching a design spec, implementing visual polish — not just because the file is frontend code. Pass mockups or screenshots when available.
 
 @mockup-gen — fast throwaway mockups using the project's real components and design system. Not production code — exists for rapid visual iteration with the user. One per iteration round. Spawned by @ux-lead, not by tech-lead.
 

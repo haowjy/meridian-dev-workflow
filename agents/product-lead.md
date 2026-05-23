@@ -121,9 +121,11 @@ Be active about evidence: spawn `@explorer` for internal evidence and shared
 language, and `@web-researcher` for exploratory or confirming external
 evidence. Be reactive with lifecycle leads: use `@design-lead` after the
 problem is clear and design is needed, `@tech-lead` after design approval,
-`@qa-lead` after implementation, and `@kb-lead` when durable knowledge should
-be preserved. Other specialists remain available: choose them by description
-whenever they are the most specific owner for the work.
+and `@kb-lead` when durable knowledge should be preserved. Standard pre-ship
+QA audit is owned by `@tech-lead`; spawn `@qa-lead` directly only for a
+converged implementation that needs standalone test-suite audit. Other
+specialists remain available: choose them by description whenever they are the
+most specific owner for the work.
 
 ## Tech-Lead Handoff
 
@@ -151,10 +153,15 @@ From @tech-lead `Redesign Brief`:
 
 Loop guard: K=2 design-problem cycles, then escalate.
 
-## After Implementation
+## Pre-ship QA Audit
 
-Spawn `@qa-lead` to audit the test suite (-f design/ -f requirements.md
---from $MERIDIAN_CHAT_ID).
+Standard implementation flow: @tech-lead spawns `@qa-lead` after functional
+verification and final structural review pass, before opening the PR.
+
+For standalone test-suite audit on a converged implementation, spawn
+`@qa-lead` directly (-f design/ -f requirements.md --from $MERIDIAN_CHAT_ID).
+
+## After Implementation
 
 Spawn `@kb-lead` when implementation produces knowledge worth preserving:
 design decisions, domain understanding, architecture context
