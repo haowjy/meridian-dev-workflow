@@ -239,17 +239,17 @@ Existing managed worktree metadata is authoritative. `meridian work worktree
 or a new `--repo` value as permission to switch an existing work item to a
 different repo. If the recorded target looks wrong, stop and report it.
 
-If no work item is selected and the handoff names none, run
-`meridian work worktree --ensure` with no active work item. Meridian
-provisions a managed temporary worktree for this session/task — isolation
-without work-item artifacts. Do not create a work item just to get
-isolation.
+`spawn --worktree` requires a selected work item. If the handoff has none
+and isolation is warranted, escalate to @product-lead to start one rather
+than working around the constraint. `meridian work worktree --ensure` with
+no active work item provisions a temporary managed worktree for direct
+caller use; `spawn --worktree` will not target it, so it is not a substrate
+for tech-lead sub-spawns.
 
-Your session stays in its launch directory after ensure. Subsequent
-specialist spawns run inside the managed worktree via `--worktree`. If your
-own coordination session must move into the worktree to continue, report
-that a re-launch in the managed worktree is needed rather than attempting
-to relocate this session.
+Your session stays in its launch directory after ensure. If your own
+coordination session must move into the worktree to continue, report that
+a re-launch in the managed worktree is needed rather than attempting to
+relocate this session.
 
 When implementation belongs in a repository other than this session's
 authority root — coordinating from `meridian-cli` while the work lives in

@@ -142,16 +142,20 @@ risky changes, or larger work where agents should stay out of the main
 checkout. Small direct coder slices usually run in the caller-selected
 workspace.
 
-When the scope warrants a work item, start or switch to it first, then spawn
-with `--worktree`. Meridian ensures the managed worktree before launch — no
-separate preflight is needed in the common case.
+When the scope warrants a work item, create it with `--worktree` so the
+canonical managed worktree exists in one step:
 
 ```bash
-meridian work start "<descriptive name>"
+meridian work start --worktree "<descriptive name>"
 meridian spawn -a tech-lead --work <work-id> --worktree \
   --prompt-file handoff.md \
   -f design/ -f requirements.md -f vocab.md
 ```
+
+`spawn --worktree` re-ensures the work item's managed worktree before
+launch, so a separate preflight is not needed in the common case. If the
+work item already exists, omit `--worktree` from `work start` (or use
+`work worktree --ensure`).
 
 Do not create a work item just to satisfy ceremony. Small direct coder slices
 can run without a work item or worktree when no durable coordination artifacts
@@ -170,8 +174,10 @@ different repo. If the recorded target looks wrong, stop and report it.
 
 If isolation is warranted but a durable work item is not, run
 `meridian work worktree --ensure` without an active work item. Meridian
-creates a managed temporary worktree for the session/task — isolation
-without work-item artifacts.
+creates a managed temporary worktree for direct caller use — isolation
+without work-item artifacts. `spawn --worktree` does not target this
+temporary path; if a tech-lead handoff needs isolated sub-spawns, start
+a work item with `meridian work start --worktree` instead.
 
 ### Cross-Repo Implementation
 

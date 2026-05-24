@@ -5,6 +5,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- `@tech-lead`, `@product-lead`: worktree wording corrected to match shipped `spawn --worktree` behavior — requires a selected work item, will not target the temporary managed worktree from `meridian work worktree --ensure` (no active work item). Temp worktree is now described as a caller-facing isolation tool; tech-lead escalates to start a work item when sub-spawn isolation is needed.
+- `@product-lead`: tech-lead handoff example now uses `meridian work start --worktree "<name>"` as the canonical create+start path so the managed worktree exists in one step.
 - `@product-lead`, `@tech-lead`: worktree guidance now treats isolation as warranted for larger/risky work, not small direct coder slices; implementation owners use Meridian managed worktree ensure instead of manual `git worktree add` paths.
 - `@product-lead` tech-lead handoff: dropped redundant `work worktree --ensure` preflight in the common path — `spawn --worktree` ensures the managed worktree itself. Examples now use `<work-id>` consistently with `--work` and worktree commands. Adds temporary worktree path (`meridian work worktree --ensure` with no active work item) for isolation without a work item.
 - `@tech-lead` worktree section: operational specifics for mid-run ensure — session stays in its launch directory, subsequent specialist spawns run inside the managed worktree via `--worktree`, and a re-launch in the worktree is what tech-lead reports rather than attempting to relocate the current session. Adds temporary worktree mode for isolation without a work item.
