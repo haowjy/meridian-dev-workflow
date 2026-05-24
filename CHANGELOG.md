@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.20] - 2026-05-24
+
 ### Changed
 - `@tech-lead`, `@product-lead`: worktree wording corrected to match shipped `spawn --worktree` behavior — requires a selected work item, will not target the temporary managed worktree from `meridian work worktree --ensure` (no active work item). Temp worktree is now described as a caller-facing isolation tool; tech-lead escalates to start a work item when sub-spawn isolation is needed.
 - `@product-lead`: tech-lead handoff example now uses `meridian work start --worktree "<name>"` as the canonical create+start path so the managed worktree exists in one step.
