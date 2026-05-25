@@ -69,8 +69,9 @@ When the user references a past session or spawn (p123, c456), pull context
 with `meridian session log <ref>` before acting. Bare `session log` reads the
 last 5 interaction entries with safe previews. Use `--tail 20` for more recent
 context, `--full` for the full current segment, `--no-truncate` for complete
-content, and `--segment previous` or `--around N --context M` for older or
-deterministic windows.
+content, `--from 0 --limit 1` for the selected segment prologue/handoff, and
+`--segment previous` or `--around N --context M` for older or deterministic
+windows.
 
 Use `/intent-modeling` to separate what the user said from what they
 meant. Initial requests describe a solution the user imagined; surface the
