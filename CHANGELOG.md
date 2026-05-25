@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.21] - 2026-05-25
+
 ### Changed
 - `@product-lead`: past-session lookup now treats bare `session log` as safe recent entries and reserves `--full`/`--no-truncate` for deliberate expansion.
 - `@product-lead`: past-session lookup now calls out entry `0` as the selected segment prologue/handoff slot.
