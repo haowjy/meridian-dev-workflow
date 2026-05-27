@@ -4,6 +4,18 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.22] - 2026-05-26
+
+### Added
+- `worktree-management` skill: shared reference for managed worktree commands — provisioning, inspection, spawning, cross-repo targeting, rebinding (`set-worktree`), cleanup (`clear-worktree`), temporary worktrees.
+
+### Changed
+- `@product-lead`, `@tech-lead`: extracted worktree mechanism knowledge into `worktree-management` skill. Agents keep ownership/decision guidance, skill holds the command surface.
+- `@coder`: default model switched to `composer`, effort to `none`.
+- `@frontend-designer`: model switched to `opus` alias, added `claude-opus-4-7` policy.
+- `@mockup-gen`: model switched to `opus46`, removed codex policy.
+- `agent-staffing`: `models list` references now document `--live` flag.
+
 ## [0.7.21] - 2026-05-25
 
 ### Changed
