@@ -234,6 +234,12 @@ not create worktrees yourself.
 If the recorded `task_dir` looks wrong, stop and report it — @product-lead
 owns task_dir rebinding.
 
+Keep `.context/CONTEXT.md` and `AGENTS.md` current as you work. When
+implementation changes module boundaries, contracts, or architectural
+rationale, update the inline knowledge at the relevant directory boundary.
+Don't defer to `@code-mirror` for knowledge you already have from
+implementation context; write it while context is fresh.
+
 During implementation, keep `CHANGELOG.md` current under `## [Unreleased]`.
 Write user-visible changes at commit time; do not leave changelog capture for
 the end.

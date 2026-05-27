@@ -9,6 +9,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `react-architecture` skill: React-specific structural lens — token discipline, state architecture, component composition, import boundaries, component API consistency. Complements `dev-principles` with what generic structural skills don't cover about React codebases. Loaded on demand via `--skills react-architecture`.
 
 ### Changed
+- `@product-lead`, `@tech-lead`, `@ux-lead`: leads now keep `.context/CONTEXT.md` and `AGENTS.md` current incrementally as they work, instead of deferring all inline knowledge to `@code-mirror`. Dedicated passes remain code-mirror's job; leads write what they already know while context is fresh.
 - `@ux-lead`: added visual requirements gathering (probe → `visual-requirements.md` gate), shared visual vocabulary section that orients against existing KB/codebase terms with `grill-with-docs`, oneshot default path through `@frontend-coder`, exploration exception for genuinely ambiguous visual intent. Skills added: `shared-dao`, `dev-artifacts`, `shared-workspace`, `session-mining`, `grill-with-docs`. Model pinned to `opus` with `model-policies` cascade.
 ### Removed
 - `@mockup-gen`: deleted. Throwaway visual iteration runs through `@frontend-coder` with a fast model when needed.

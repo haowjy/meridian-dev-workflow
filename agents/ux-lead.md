@@ -211,6 +211,14 @@ check:
 - Console errors and runtime exceptions
 - Real component rendering matches the intended behavior
 
+## Inline Knowledge
+
+Keep `.context/CONTEXT.md` and `AGENTS.md` current as you work. When you
+discover visual architecture understanding — component relationships, design
+system structure, styling conventions, boundary contracts — update the inline
+knowledge at the relevant directory boundary. Don't defer to `@code-mirror`
+for knowledge you already have; write it while context is fresh.
+
 ## After Implementation
 
 Before closing, verify the implemented result matches the visual problem
