@@ -4,6 +4,15 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `@frontend-coder`: `playwright-cli` and `browser-test` skills, `danger-full-access` sandbox. Visually verifies its own output as it builds — opens browser, snapshots, adjusts.
+
+### Changed
+- `@ux-lead`: added visual requirements gathering (probe → `visual-requirements.md` gate), shared visual vocabulary section that orients against existing KB/codebase terms with `grill-with-docs`, oneshot default path through `@frontend-coder`, exploration exception for genuinely ambiguous visual intent. Skills added: `shared-dao`, `dev-artifacts`, `shared-workspace`, `session-mining`, `grill-with-docs`. Model pinned to `opus` with `model-policies` cascade.
+### Removed
+- `@mockup-gen`: deleted. Throwaway visual iteration now runs through `@frontend-coder` with a fast model when needed; default path skips mockups entirely.
+- `@frontend-designer`: deleted. Visual spec formation is now ux-lead's job (via `visual-requirements.md`); implementation routes directly to `@frontend-coder`.
+
 ## [0.7.23] - 2026-05-27
 
 ### Changed

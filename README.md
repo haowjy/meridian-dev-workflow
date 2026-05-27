@@ -58,8 +58,6 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 |---|---|---|
 | `architect` | gpt | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
 | `design-writer` | deepseek | Lightweight design doc writer — post-review updates, scope adjustments, settled design edits |
-| `frontend-designer` | opus | UI/UX design specs — layout, hierarchy, motion, aesthetic direction for frontend-coder |
-
 **Implementation:**
 
 | Agent | Model | Role |
