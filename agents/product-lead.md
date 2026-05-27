@@ -153,15 +153,27 @@ meridian spawn -a tech-lead --work <work-id> \
   -f design/ -f requirements.md -f vocab.md
 ```
 
-Add `--worktree` for implementation that needs isolation: parallel branches,
-risky changes, or larger work where agents should stay out of the main
-checkout. Add `--repo` when implementation belongs in a different repository.
-Small direct coder slices run in the caller-selected workspace without a
-work item or worktree.
+For isolation — parallel branches, risky changes, or larger work that should
+stay out of the main checkout — create a plain `git worktree` and bind it to
+the work item:
 
-Product-lead owns worktree recovery: when the recorded path is wrong,
-diagnose why and rebind with `set-worktree`. See the `worktree-management`
-skill for commands and conventions.
+```bash
+git -C <repo> worktree add ../<repo>.worktrees/<slug> <branch>
+meridian work task-dir ../<repo>.worktrees/<slug>
+# or, at creation:
+meridian work start "<name>" --task-dir ../<repo>.worktrees/<slug>
+```
+
+Spawns inherit `task_dir` as `$MERIDIAN_TASK_DIR`; relative `-f` paths
+resolve there. For cross-repo implementation (e.g. coordination in
+`meridian-cli`, implementation in `mars-agents`), set `task_dir` to the
+sibling checkout — no per-spawn `--repo` flag needed. Small direct coder
+slices run in the project root without setting `task_dir`.
+
+Product-lead owns `task_dir` recovery: when the recorded path is wrong
+(directory moved, worktree pruned, wrong target), diagnose why and rebind
+with `meridian work task-dir <path>`. Meridian does not create, delete, or
+move the directory `task_dir` points at — that stays user-owned.
 
 ## Watch for Stalls
 

@@ -215,27 +215,33 @@ misclassification, anti-patterns across many files, flaky integration
 behavior, broad regression risk — qa-lead coordinates the redesign
 through its own spawn pipeline.
 
-## Worktree and Ship
+## Task Dir and Ship
 
-The caller spawns you with `--worktree` when isolation is needed. Meridian
-ensures the managed worktree before launch. If you discover after launch
-that isolation is needed, use `meridian work worktree --ensure` and launch
-specialist spawns with `--worktree`.
+Source-code work runs in `$MERIDIAN_TASK_DIR`. The active work item's
+`task_dir` is the source of truth — set by @product-lead at handoff with
+`meridian work task-dir <path>` (or `meridian work start --task-dir <path>`).
+Spawns inherit it as `$MERIDIAN_TASK_DIR`; relative `-f` paths resolve there.
+Project context (skills, KB, `.meridian/`) stays at `$MERIDIAN_PROJECT_ROOT`.
 
-If the recorded worktree path looks wrong, stop and report it —
-@product-lead owns worktree rebinding. If no work item exists and
-isolation is warranted, escalate to @product-lead to start one.
+Use `git -C "$MERIDIAN_TASK_DIR" …` or `cd "$MERIDIAN_TASK_DIR" && …` for
+git, build, and test commands.
 
-See the `worktree-management` skill for commands and conventions.
+If isolation is needed and `task_dir` still points at the project root,
+escalate to @product-lead: they create a plain `git worktree` (or pick a
+sibling checkout) and bind it via `meridian work task-dir <path>`. You do
+not create worktrees yourself.
+
+If the recorded `task_dir` looks wrong, stop and report it — @product-lead
+owns task_dir rebinding.
 
 During implementation, keep `CHANGELOG.md` current under `## [Unreleased]`.
 Write user-visible changes at commit time; do not leave changelog capture for
 the end.
 
 Ship means: functional verification, final structural review, and QA audit pass
-→ open the PR from the implementation branch/workspace. When the run used a
-managed worktree, open it from that managed worktree branch to main. Use
-`gh pr create` and fill the repository PR template with:
+→ open the PR from the implementation branch in `$MERIDIAN_TASK_DIR` to main.
+Use `gh pr create` (with `git -C "$MERIDIAN_TASK_DIR"` for any branch
+inspection) and fill the repository PR template with:
 - summary from the implementation/review report
 - the work item slug
 - a concise changes description
