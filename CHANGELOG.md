@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.24] - 2026-05-27
+
 ### Added
 - `@frontend-coder`: `playwright-cli` and `browser-test` skills, `danger-full-access` sandbox. Visually verifies its own output as it builds — opens browser, snapshots, adjusts.
 - `react-architecture` skill: React-specific structural lens — token discipline, state architecture, component composition, import boundaries, component API consistency. Complements `dev-principles` with what generic structural skills don't cover about React codebases. Loaded on demand via `--skills react-architecture`.
