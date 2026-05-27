@@ -18,8 +18,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Removed
 - `@mockup-gen`: deleted. Throwaway visual iteration runs through `@frontend-coder` with a fast model when needed.
 - `@frontend-designer`: deleted. Visual spec formation is ux-lead's job (via `visual-requirements.md`); implementation routes directly to `@frontend-coder`.
+- `@planner`: deleted. Planning is deprecated; tech-lead decomposes work inline from the design package.
 - `ears-parsing` skill: deleted. Testers verify against requirements, not EARS.
 - `dev-artifacts/resources/plan-package.md`: deleted. Plan ceremony (phases, EARS claims, leaf-ownership) replaced by lightweight requirements-driven flow.
+- `README.md`: full refresh — all agents and skills now accurate with current models, roles, and deprecation status.
 
 ## [0.7.23] - 2026-05-27
 

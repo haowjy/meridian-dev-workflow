@@ -7,15 +7,15 @@ Writer/reader rules for work-dir artifacts, and the placement rules for docs tha
 | Artifact | Writer | Readers |
 |---|---|---|
 | `requirements.md` | @product-lead | @design-lead, @tech-lead |
+| `visual-requirements.md` | @ux-lead | @frontend-coder, @tech-lead |
 | `design/` | @design-lead | @tech-lead, @product-lead |
-| `plan/` | @tech-lead | @product-lead |
-| `plan/preservation-hint.md` | @product-lead | @tech-lead |
+| `plan/status.md` | @tech-lead | @product-lead |
 | kb (`meridian context kb`) | @kb-writer, @kb-maintainer | all agents |
 
 ## Redesign And Rejections
 
 - Redesign brief lives in @tech-lead terminal report.
-- Keep only approved state at `design/` and `plan/`.
+- Keep only approved state at `design/`.
 - Replace rejected drafts atomically. Use git history for prior versions.
 
 ## Documentation Layers
