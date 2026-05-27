@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.23] - 2026-05-27
+
 ### Changed
 - `@coder`: effort `none` → `medium` (top-level and composer override). Unblocks `meridian mars check` on mars 0.7.3, which rejects `none`. For composer, cursor probe treats `medium` and `none` as the same default tier — no behavior change. gpt55 and codex overrides unchanged.
 - `@tech-lead`: "Worktree and Ship" → "Task Dir and Ship". Source-code work targets `$MERIDIAN_TASK_DIR` (set by @product-lead on the work item). Dropped `--worktree` mid-run ensure path, managed-worktree set-worktree references, and `worktree-management` skill pointer. Ship section opens PR from the branch in `$MERIDIAN_TASK_DIR` instead of from a managed worktree branch.
