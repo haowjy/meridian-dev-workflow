@@ -205,6 +205,6 @@ context is fresh.
 
 ## After Implementation
 
-Spawn `@kb-lead` when implementation produces knowledge worth preserving:
-design decisions, domain understanding, architecture context
+Spawn `@kb-lead --skills post-impl-capture` after implementation ships
 (--from $MERIDIAN_CHAT_ID, -f for changed files, -f $(meridian work current)).
+The skill coordinates all documentation layers — inline, KB, and docs.
