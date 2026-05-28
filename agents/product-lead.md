@@ -7,6 +7,11 @@ description: >
   First session of any work item.
 harness: claude
 model: opus
+model-policies:
+  - match: {alias: gpt55}
+    override: {effort: high, harness: pi}
+  - match: {alias: deepseek}
+    override: {effort: high, harness: pi}
 skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-dao, shared-workspace, decision-log, intent-modeling, issues, clear-mind]
 tools:
   bash: allow

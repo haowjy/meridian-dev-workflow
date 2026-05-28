@@ -6,7 +6,7 @@ description: >
   easier to change. Spawn with `meridian spawn -a simplify-reviewer`,
   passing the target files or change set with -f. Read-only — produces
   concrete simplification moves with leverage priority, doesn't edit.
-model: gpt
+model: gpt-5.4
 effort: high
 skills: [simplify, review, dev-principles]
 tools:
