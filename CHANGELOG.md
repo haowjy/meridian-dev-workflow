@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.25] - 2026-05-28
+
 ### Changed
 - `@product-lead`: post-impl kb-lead spawn uses `--skills post-impl-capture` by default. Covers all documentation layers (inline, KB, docs), not just KB.
 
