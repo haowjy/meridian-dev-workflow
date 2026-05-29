@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-05-29
+
 ### Changed
 - All agents: add `mode` field (primary or subagent) for progressive loading
 - Orchestrators: add `subagents` list for inventory filtering
