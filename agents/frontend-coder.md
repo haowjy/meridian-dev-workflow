@@ -11,10 +11,10 @@ description: >
   build, and any responsive or interaction requirements. Pass mockup files
   or screenshots when available — clear visual targets produce better
   results than prose descriptions.
-model: opus47
+model: claude-opus-4-8
 effort: high
 model-policies:
-  - match: {alias: opus47}
+  - match: {alias: claude-opus-4-8}
     override: {}
   - match: {alias: gpt55}
     override: {effort: low}

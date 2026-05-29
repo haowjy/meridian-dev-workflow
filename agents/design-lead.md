@@ -31,7 +31,7 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
 sandbox: danger-full-access
-approval: auto
+approval: yolo
 ---
 
 # Design Lead
