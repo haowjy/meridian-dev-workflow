@@ -4,6 +4,15 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `@design-researcher`: pure research/challenge specialist — adversarial analysis, alternatives, tradeoff matrices. Fans out to explorers and web-researchers.
+
+### Changed
+- All agent descriptions papered to one-liners — no spawn syntax, portable.
+- Orchestrator skill lists: heavy reference skills replaced with thin principle shims (`delegation`, `decision-logging`, `work-tracking`, `knowledge-capture`). Reference skills remain on-demand via `/skill-name`.
+- 17 reference skills flipped to `model-invocable: true` — agents can discover them globally.
+- `@design-lead` subagents: added `design-researcher`.
+
 ## [0.8.1] - 2026-05-29
 
 ## [0.8.0] - 2026-05-29

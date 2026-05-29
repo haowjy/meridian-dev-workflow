@@ -6,7 +6,7 @@ description: >
   subphases, verification levels, probe/diagnosis lanes, and the execution
   model. Used by @tech-lead for plan execution.
 detail: Plan structure — phases, subphases, verification levels, handoff format.
-model-invocable: false
+model-invocable: true
 ---
 
 # Plan Execution

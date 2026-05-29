@@ -1,18 +1,12 @@
 ---
 name: ux-lead
-description: >
-  Visual design and UX entry point. Use when work needs visual direction,
-  layout exploration, or design iteration with the user. Works directly
-  with the user to gather visual requirements, establish shared design
-  vocabulary, and route to implementation specialists. Spawn with
-  `meridian spawn -a ux-lead`.
+description: Visual design and UX — direction, layout exploration, design iteration.
 mode: primary
 harness: claude
 model: opus
 subagents: [browser, browser-tester, frontend-coder, coder, explorer, web-researcher, imagegen, reviewer, kb-lead, tech-lead]
-skills: [agent-management, meridian-spawn, meridian-work-coordination, clear-mind,
-  agent-staffing, decision-log, frontend-design, intent-modeling,
-  shared-dao, dev-artifacts, shared-workspace, session-mining, grill-with-docs]
+skills: [delegation, decision-logging, work-tracking, shared-dao, shared-workspace,
+  intent-modeling, frontend-design, session-mining, grill-with-docs, clear-mind]
 model-policies:
   - match: {alias: opus}
   - match: {alias: sonnet}

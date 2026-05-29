@@ -1,20 +1,12 @@
 ---
 name: kb-lead
-description: >
-  Use when documentation needs coordinating — knowledge capture after
-  implementation, doc cleanup, term/vocabulary changes, restructuring,
-  coverage audits, or any goal that spans documentation layers. Routes
-  work to the right layer and agent, reviews coverage. Spawn with
-  `meridian spawn -a kb-lead`, passing relevant files with -f; add --from
-  when routing depends on decisions not captured in artifacts.
-  For post-implementation capture, add `--skills post-impl-capture`.
+description: Documentation coordination — knowledge capture, cleanup, restructuring, coverage.
 mode: subagent
 model: deepseek
 subagents: [code-mirror, kb-maintainer, kb-writer, tech-writer]
 effort: high
-skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination,
-  agent-staffing, qi-layer, shared-dao, shared-workspace, intent-modeling, issues,
-  clear-mind]
+skills: [delegation, work-tracking, knowledge-capture, shared-dao, shared-workspace,
+  intent-modeling, issues, session-mining, clear-mind]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

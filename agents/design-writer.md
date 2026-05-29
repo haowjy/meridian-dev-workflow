@@ -1,12 +1,6 @@
 ---
 name: design-writer
-description: >
-  Use when design documents need writing or updating — targeted design work,
-  post-review updates, scope adjustments, or producing docs from gathered
-  findings. Lighter than @design-lead: does the writing, not the
-  research or review coordination. Spawn with `meridian spawn -a design-writer`,
-  passing the briefing in the prompt and existing design docs with -f.
-  Writes to the work directory under `design/`.
+description: Write or update design documents from gathered findings and briefings.
 mode: subagent
 model: deepseek
 effort: medium

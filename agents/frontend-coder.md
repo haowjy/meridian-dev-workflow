@@ -1,16 +1,6 @@
 ---
 name: frontend-coder
-description: >
-  Use for frontend/UI implementation where visual quality, design fidelity,
-  and UX polish are the primary concern — component styling, layout
-  composition, interaction behavior, responsive states, motion. Pick over
-  @coder when the output is user-facing and aesthetics matter, not just
-  because the file is frontend code. Spawn with
-  `meridian spawn -a frontend-coder`, passing the design spec and phase
-  blueprint with -f. Tell it the visual direction, which components to
-  build, and any responsive or interaction requirements. Pass mockup files
-  or screenshots when available — clear visual targets produce better
-  results than prose descriptions.
+description: Frontend implementation where visual quality and design fidelity matter.
 mode: subagent
 model: claude-opus-4-8
 effort: high

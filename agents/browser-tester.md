@@ -1,11 +1,6 @@
 ---
 name: browser-tester
-description: >
-  Use when a change touches frontend behavior and verification requires a
-  real browser — visual rendering, user flows, form behavior, console
-  errors, or interactive annotation with the user. Spawn with
-  `meridian spawn -a browser-tester`, telling it what changed and what to
-  verify. Pass relevant source files with -f for context on what to expect.
+description: Browser-based verification of frontend changes — rendering, flows, console errors.
 mode: subagent
 model: gpt55
 effort: low

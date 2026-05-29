@@ -7,7 +7,7 @@ description: >
   Method for finding what to collapse, delete, inline, or deepen.
   Use with `/review` for adversarial structural analysis.
 detail: Structural friction audit — shallow modules, fragmentation, deletion targets.
-model-invocable: false
+model-invocable: true
 ---
 
 # Simplify

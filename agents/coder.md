@@ -1,12 +1,6 @@
 ---
 name: coder
-description: >
-  Use for implementation tasks — new features, structural refactors, backend,
-  frontend logic, CLI, infrastructure, data flow, build systems. Use
-  @frontend-coder instead when visual design fidelity, layout polish, or UX
-  aesthetics are the primary concern. Spawn with `meridian spawn -a coder`,
-  passing the objective, blueprint, and relevant source files with -f. For
-  refactors, state the intended behavior-preservation constraints.
+description: Implementation — features, refactors, backend, frontend, CLI, infrastructure.
 mode: subagent
 model: composer
 effort: medium

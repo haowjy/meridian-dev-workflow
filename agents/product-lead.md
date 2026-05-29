@@ -1,10 +1,6 @@
 ---
 name: product-lead
-description: >
-  Dev workflow entry point. Owns intent capture, scope sizing, design
-  approval, and implementation routing. Spawn with
-  `meridian spawn -a product-lead`, passing requirements or context.
-  First session of any work item.
+description: Intent capture, scope sizing, design approval, and implementation routing.
 mode: primary
 harness: claude
 model: opus
@@ -14,7 +10,7 @@ model-policies:
     override: {effort: high, harness: pi}
   - match: {alias: deepseek}
     override: {effort: high, harness: pi}
-skills: [agent-management, meridian-spawn, session-mining, meridian-work-coordination, dev-artifacts, shared-dao, shared-workspace, decision-log, intent-modeling, issues, clear-mind]
+skills: [delegation, decision-logging, work-tracking, knowledge-capture, shared-dao, shared-workspace, intent-modeling, issues, session-mining, clear-mind]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

@@ -1,12 +1,6 @@
 ---
 name: browser
-description: >
-  Use when a task requires interacting with a live browser — scraping
-  CSS/HTML from reference sites, extracting data, navigating web apps,
-  filling forms, taking screenshots, or interactive annotation with the
-  user. General-purpose browser agent; the prompt defines the purpose.
-  Spawn with `meridian spawn -a browser`, describing what to do in the
-  prompt. Pass URLs or context with -f.
+description: Live browser interaction — scraping, data extraction, form filling, screenshots.
 mode: subagent
 model: gpt55
 effort: low

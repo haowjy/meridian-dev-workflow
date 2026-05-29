@@ -1,10 +1,6 @@
 ---
 name: tech-writer
-description: >
-  Use when user-facing documentation needs writing or updating — getting
-  started guides, CLI reference, API docs, tutorials, integration guides.
-  Spawn with `meridian spawn -a tech-writer`, passing conversation context
-  with --from and relevant source files with -f.
+description: User-facing documentation — guides, CLI reference, API docs, tutorials.
 mode: subagent
 model: deepseek
 effort: medium

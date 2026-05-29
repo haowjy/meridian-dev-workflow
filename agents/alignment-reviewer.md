@@ -1,19 +1,6 @@
 ---
 name: alignment-reviewer
-description: >
-  Use when checking whether one artifact aligns with another — plan
-  against design, implementation against spec, code against architecture,
-  or work output against user intent. Spawn with
-  `meridian spawn -a alignment-reviewer`, passing reference material
-  (the source of truth) with -f. Optionally pass --from $MERIDIAN_CHAT_ID
-  or --from <spawn-id> when alignment should also account for decisions and
-  intent expressed in conversation history, not just formal artifacts.
-  Tell it in the prompt what is the source of truth and what is being
-  checked, e.g. "verify the plan in plan/ covers all requirements in
-  requirements.md" or "verify the implementation in src/core/ aligns
-  with the target architecture in design/architecture/target-architecture.md
-  and the user's stated priorities from the primary session." Read-only —
-  reports gaps and drift, doesn't edit.
+description: Verify alignment between artifacts — plan vs design, code vs spec, output vs intent.
 mode: subagent
 model: gpt
 effort: medium

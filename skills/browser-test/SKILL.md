@@ -7,7 +7,7 @@ description: >
   detection that only surfaces at runtime. Pair with `/playwright-cli` for
   browser mechanics.
 detail: Browser-based verification methodology for frontend changes.
-model-invocable: false
+model-invocable: true
 ---
 
 # Browser Testing

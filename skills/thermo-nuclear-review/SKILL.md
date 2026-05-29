@@ -6,7 +6,7 @@ description: >
   thermonuclear review, deep code quality audit, or especially harsh
   maintainability review.
 detail: Strict maintainability review for abstraction quality and structural health.
-model-invocable: false
+model-invocable: true
 ---
 
 # Thermo-Nuclear Code Quality Review

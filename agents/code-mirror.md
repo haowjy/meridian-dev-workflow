@@ -1,11 +1,6 @@
 ---
 name: code-mirror
-description: >
-  Use when code-colocated documentation needs writing or updating —
-  .context/CONTEXT.md files and AGENTS.md at module boundaries. Reads code to
-  understand it, writes .context/ to explain it. Spawn with
-  `meridian spawn -a code-mirror`, passing changed files with -f and
-  conversation context with --from for intent and decisions.
+description: Write and update code-colocated documentation — .context/CONTEXT.md and AGENTS.md.
 mode: subagent
 model: deepseek
 effort: medium

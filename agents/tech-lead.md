@@ -1,11 +1,6 @@
 ---
 name: tech-lead
-description: >
-  Use when approved design needs implementation. Owns the full
-  implementation loop: work decomposition, specialist coordination,
-  functional verification, targeted boundary tests, safe restructuring,
-  and final structural review. Spawn with
-  `meridian spawn -a tech-lead`, passing design context with -f.
+description: Implementation loop — work decomposition, specialist coordination, verification, and ship.
 mode: subagent
 model: gpt55
 subagents: [coder, frontend-coder, reviewer, simplify-reviewer, smoke-tester, qa-lead, investigator]
@@ -15,7 +10,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: claude-opus-4-6}
     override: {}
-skills: [agent-management, meridian-spawn, meridian-work-coordination, agent-staffing, dev-artifacts, planning, shared-dao, shared-workspace, decision-log, intent-modeling, issues, testing-principles, dev-principles, architecture, clear-mind]
+skills: [delegation, decision-logging, work-tracking, dev-principles, testing-principles, shared-dao, shared-workspace, intent-modeling, issues, planning, architecture, clear-mind]
 tools:
   'bash(meridian spawn *)': allow
   'bash(meridian session *)': allow

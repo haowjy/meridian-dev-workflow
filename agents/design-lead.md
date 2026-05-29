@@ -1,18 +1,13 @@
 ---
 name: design-lead
-description: >
-  Use when a work item needs design guidance — structural options,
-  key interfaces, boundaries, and tradeoffs. Lighter than a full
-  architecture phase; produces enough for tech-lead to implement
-  directly. Spawn with `meridian spawn -a design-lead`, passing
-  requirements and any relevant context.
+description: Design guidance — structural options, key interfaces, boundaries, and tradeoffs.
 mode: subagent
 model: claude-opus-4-6
-subagents: [architect, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, smoke-tester, kb-maintainer]
+subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, smoke-tester, kb-maintainer]
 effort: high
-skills: [agent-management, meridian-spawn, meridian-work-coordination,
-  architecture, agent-staffing, dev-artifacts, shared-dao, shared-workspace,
-  dev-principles, decision-log, tech-docs, llm-writing, intent-modeling, issues, clear-mind]
+skills: [delegation, decision-logging, work-tracking, knowledge-capture,
+  dev-principles, shared-dao, shared-workspace, llm-writing, intent-modeling,
+  issues, architecture, tech-docs, clear-mind]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

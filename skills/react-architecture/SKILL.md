@@ -8,7 +8,7 @@ description: >
   API consistency. Complements dev-principles with what generic structural
   skills don't cover about React codebases.
 detail: React component patterns, layout composition, and visual consistency.
-model-invocable: false
+model-invocable: true
 ---
 
 # React Architecture

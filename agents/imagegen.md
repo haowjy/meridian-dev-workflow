@@ -1,13 +1,6 @@
 ---
 name: imagegen
-description: >
-  Use when image generation is needed — UI concept mockups, visual
-  explorations, icons, reference imagery, or variations on existing visuals.
-  Be extremely specific about visual intent before spawning: style,
-  composition, mood, color direction, and what the image will be used for.
-  Vague prompts waste generation cycles. Pass reference images with -f
-  when matching an existing visual language. Spawn with
-  `meridian spawn -a imagegen`.
+description: Image generation — mockups, visual explorations, icons, reference imagery.
 mode: subagent
 model: gpt55
 effort: medium

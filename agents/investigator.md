@@ -1,6 +1,6 @@
 ---
 name: investigator
-description: Use when something is flagged as broken, suspicious, or not behaving as expected and needs root-cause diagnosis — including moving the problem forward by filing a GitHub issue when the work belongs elsewhere. Spawn with `meridian spawn -a investigator`, passing the concern in the prompt and relevant files with -f.
+description: Root-cause diagnosis for broken or suspicious behavior.
 mode: subagent
 model: gpt-5.4
 subagents: [explorer, smoke-tester, session-explorer, web-researcher, coder]

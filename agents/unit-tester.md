@@ -1,9 +1,6 @@
 ---
 name: unit-tester
-description: >
-  DEPRECATED — use `@coder --skills unit-test,testing-principles` instead.
-  Retained as a legacy artifact. The unit-test skill carries the methodology;
-  @coder provides the execution capability.
+description: Isolated logic testing and regression-critical edge cases.
 mode: subagent
 model: gpt-5.4
 model-invocable: false

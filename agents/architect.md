@@ -1,11 +1,6 @@
 ---
 name: architect
-description: >
-  Use when a design needs disciplined tradeoff comparison between competing
-  structural options, or when architectural decisions need hierarchical
-  documentation implementation can build from. Spawn with
-  `meridian spawn -a architect`, passing conversation context with --from and
-  relevant files with -f. Writes to the work directory.
+description: Disciplined tradeoff comparison between competing structural options.
 mode: subagent
 model: gpt-5.4
 effort: high

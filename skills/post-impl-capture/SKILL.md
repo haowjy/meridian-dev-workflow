@@ -8,7 +8,7 @@ description: >
   for mining implementation sessions, assessing scope, fanning out writers,
   and reviewing coverage.
 detail: Post-implementation documentation capture workflow.
-model-invocable: false
+model-invocable: true
 ---
 
 # Post-Implementation Capture

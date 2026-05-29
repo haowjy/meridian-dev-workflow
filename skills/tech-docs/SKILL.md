@@ -6,7 +6,7 @@ description: >
   component docs, feasibility reports. Covers structure and clarity for the
   artifacts under design/ in the work directory.
 detail: Design document writing conventions — specs, component docs, feasibility.
-model-invocable: false
+model-invocable: true
 ---
 
 # Tech Docs

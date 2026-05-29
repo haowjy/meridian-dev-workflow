@@ -1,13 +1,6 @@
 ---
 name: qa-lead
-description: >
-  Use after implementation converges and before shipping — shapes the test suite for a fast-moving
-  codebase. Prunes coder-generated tests unless they protect a named
-  durable behavior, contract, or hard-to-verify risk; keeps smoke guides
-  and well-scoped integration tests; adds unit tests only for critical
-  boundaries that are hard to verify manually. Spawn with `meridian spawn
-  -a qa-lead`, passing design context with -f and conversation context
-  with --from.
+description: Test suite shaping — prune, keep smoke guides, add targeted boundary tests.
 mode: subagent
 model: gpt55
 subagents: [coder, explorer, reviewer, session-explorer]

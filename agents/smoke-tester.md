@@ -1,11 +1,6 @@
 ---
 name: smoke-tester
-description: >
-  Use when you need to understand or verify runtime behavior against the real
-  system — CLI invocations, HTTP requests, real integration flows, and anything
-  that only surfaces at runtime. Probing mode maps existing behavior for design;
-  verification mode proves a change works. Mandatory for integration boundaries.
-  Spawn with `meridian spawn -a smoke-tester`, telling it what to probe or verify.
+description: Runtime verification — real commands, real requests, real workflows.
 mode: subagent
 model: gpt55
 subagents: [coder]
