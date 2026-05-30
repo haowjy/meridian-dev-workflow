@@ -6,7 +6,7 @@ model: gpt-5.4
 subagents: [explorer, probe, session-miner, web-researcher, coder]
 effort: medium
 skills:
-  load: [dev-principles]
+  load: [dev-principles, work-artifacts]
   available: [meridian-spawn, issues]
 tools:
   bash: allow

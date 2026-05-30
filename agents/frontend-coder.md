@@ -16,7 +16,7 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: low}
 skills:
-  load: [dev-principles, reflection, testing, frontend-design]
+  load: [dev-principles, reflection, testing, frontend-design, work-artifacts]
   available: [playwright-cli, issues]
 tools:
   bash: allow

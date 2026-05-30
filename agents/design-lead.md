@@ -15,7 +15,7 @@ model-policies:
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, probe]
 effort: high
 skills:
-  load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage]
+  load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
   available: [handoff, meridian-spawn, architecture, tech-docs, decision-log, knowledge-capture, intent-modeling, pre-dev, issues, zoom-out]
 tools:
   bash: allow

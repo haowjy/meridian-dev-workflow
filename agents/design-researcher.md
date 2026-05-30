@@ -10,7 +10,7 @@ model: gpt-5.4
 effort: high
 subagents: [explorer, web-researcher, session-miner]
 skills:
-  load: [dev-principles]
+  load: [dev-principles, work-artifacts]
   available: [architecture, shared-dao, intent-modeling, issues]
 tools:
   bash: allow

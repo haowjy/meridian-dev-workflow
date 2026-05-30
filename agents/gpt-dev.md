@@ -9,7 +9,7 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: high}
 skills:
-  load: [dev-principles, shared-dao, reflection, testing]
+  load: [dev-principles, shared-dao, reflection, testing, work-artifacts]
   available: [meridian-spawn, dev-workflow, review, improve-codebase-architecture, intent-modeling, post-dev, issues]
 tools:
   bash: allow

@@ -13,8 +13,8 @@ model-policies:
   - match: {alias: opus48}
     override: {}
 skills:
-  load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage]
-  available: [grill-with-docs, handoff, meridian-spawn, zoom-out, session-mining, meridian-work-coordination, knowledge-capture, intent-modeling, pre-dev, decision-log, issues]
+  load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
+  available: [grill-with-docs, handoff, meridian-spawn, zoom-out, session-mining, work-coordination, knowledge-capture, intent-modeling, pre-dev, decision-log, issues]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

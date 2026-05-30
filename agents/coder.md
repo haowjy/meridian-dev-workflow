@@ -14,7 +14,7 @@ model-policies:
   - match: {alias: deepseek}
     override: {}
 skills:
-  load: [dev-principles, reflection, testing]
+  load: [dev-principles, reflection, testing, work-artifacts]
   available: [issues]
 tools:
   bash: allow

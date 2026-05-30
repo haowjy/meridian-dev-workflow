@@ -10,7 +10,7 @@ model-policies:
   - match: {alias: sonnet}
     override: {}
 skills:
-  load: [shared-dao, llm-writing]
+  load: [shared-dao, llm-writing, work-artifacts]
   available: [architecture, tech-docs, md-validation]
 tools:
   'bash(git *)': allow
