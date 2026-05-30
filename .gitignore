@@ -3,6 +3,7 @@
 .claude/skills
 .claude/agents
 
+mars.lock
 .mars/
 .meridian/
 .opencode/

@@ -14,16 +14,22 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - All skill descriptions trimmed to one-line "when + what" format. Removed `detail` field from all skills.
 - `@tech-lead`: upgraded `mode: subagent` → `mode: primary`. Added `thermo-nuclear-review` to skills.available. Removed `bash(sed *)` allow (undermined `edit: deny` delegation). Model-policies: alias-based (`opus46`, `opus48`), not raw model IDs.
 - `@design-lead`: upgraded `mode: subagent` → `mode: primary`. Cold-start orientation. Removed stale model aliases, added gpt55/opus48. Removed `/dev-artifacts` references.
-- `@product-lead`: replaced hardcoded tech-lead handoff with `/handoff` skill and implementation lead routing. Removed lifecycle peers from `subagents:`. Model-policies: dropped harness overrides, added opus48.
-- `@ux-lead`: pinned default model to opus46 (interactive primary). Removed `harness: claude` (auto-resolves). Model-policies: opus46/47/48 + gpt55.
-- `@frontend-coder`: moved `frontend-design` from available to load. Model-policies: opus47/48/composer/deepseek/gpt55, removed stale `codex`.
+- `@product-lead`: replaced hardcoded tech-lead handoff with `/handoff` skill and implementation lead routing. Removed lifecycle peers from `subagents:`. Model-policies: dropped harness overrides, added opus48. Added `agent-staffing`, `prototype` to available.
+- `@ux-lead`: pinned default model to opus46 (interactive primary). Removed `harness: claude` (auto-resolves). Model-policies: opus46/47/48 + gpt55. Added `prototype` to available.
+- `@frontend-coder`: moved `frontend-design` from available to load. Model-policies: opus47/48/composer/deepseek/gpt55, removed stale `codex`. Added `react-architecture` to available.
 - `@coder`: model-policies cleaned — removed stale `codex`, added deepseek.
 - `@gpt-dev`: removed nonexistent `explorer` from subagents.
 - `@architect`, `@design-writer`: removed `/dev-artifacts` references.
-- `dev-principles`: added "Get it right the first time" — AI code is cheap to write, expensive to untangle.
-- `agent-staffing`: model selection section — profile defaults handle most roles, reviews fan out across models for perspective diversity.
+- `@reviewer`: added `read`, `rg`, `ls` tools for uncommitted file inspection. Added `improve-codebase-architecture`, `tech-docs`, `llm-writing` to available (leads invoke these via `--skills`). Added `react-architecture` to available.
+- `@kb-lead`: added `post-impl-capture` to available.
+- `dev-principles`: added "Get it right the first time" — AI code is cheap to write, expensive to untangle. `model-invocable: false` (loaded on 12 agents, never available).
+- `agent-staffing`: model selection section — profile defaults handle most roles, reviews fan out across models for perspective diversity. Placed on product-lead, design-lead, tech-lead available lists.
+- `tech-docs`: replaced inline validation commands with `/md-validation` reference.
+- `planning`: fixed malformed nested backtick formatting in verification levels.
 - All agents: `decision-logging` → `decision-log` (skill merged upstream).
+- All agents: `decision-log`, `knowledge-capture` removed from available lists (folded into `work-artifacts` upstream).
 - All agents: removed `delegation` from skills (merged into `clear-mind` upstream).
+- All agents with work-item responsibilities: load `work-artifacts` (new upstream skill).
 - Fixed corrupted body content in `issues` (stale `detail:` line leaked into body text).
 
 ### Removed
