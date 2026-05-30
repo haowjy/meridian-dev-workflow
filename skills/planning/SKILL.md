@@ -45,11 +45,11 @@ add checkpoint value.
   `/reflection`). No separate verifier or reviewer spawn. Quick feedback
   while context is still loaded.
 - **Phase exit gate — full verification.** `@probe` and `@reviewer`
-  are the default lanes. Add `@coder with `/testing` `resources/integration-patterns.md``
-  or `@coder with `/testing` `resources/unit-patterns.md`` only when the phase
-  introduces a durable boundary, composition risk, or narrow logic risk that
-  higher-tier verification cannot cover cheaply. All gate lanes run in
-  parallel (`--bg` + `spawn wait`).
+  are the default lanes. Add `@coder --skills testing` with
+  `resources/integration-patterns.md` or `resources/unit-patterns.md` only
+  when the phase introduces a durable boundary, composition risk, or narrow
+  logic risk that higher-tier verification cannot cover cheaply. All gate
+  lanes run in parallel (`--bg` + `spawn wait`).
 
 ## Probe and Diagnosis Lanes
 

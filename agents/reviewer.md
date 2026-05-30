@@ -11,7 +11,7 @@ model-policies:
     override: {}
 skills:
   load: [dev-principles, reflection, review]
-  available: [shared-dao, md-validation, react-architecture, thermo-nuclear-review]
+  available: [shared-dao, md-validation, react-architecture, thermo-nuclear-review, improve-codebase-architecture, tech-docs, llm-writing]
 tools:
   'bash(meridian spawn show *)': allow
   'bash(meridian session *)': allow
@@ -21,6 +21,9 @@ tools:
   'bash(git log *)': allow
   'bash(git show *)': allow
   'bash(git status *)': allow
+  'bash(rg *)': allow
+  'bash(ls *)': allow
+  read: allow
   agent: deny
   edit: deny
   write: deny
