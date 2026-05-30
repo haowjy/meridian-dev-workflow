@@ -14,7 +14,7 @@ model-policies:
 subagents: [code-mirror, kb-maintainer, kb-writer, tech-writer]
 skills:
   load: [shared-dao, clear-mind]
-  available: [meridian-spawn, intent-modeling, session-mining, shared-workspace, issues]
+  available: [meridian-spawn, intent-modeling, session-mining, shared-workspace, post-impl-capture, issues]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

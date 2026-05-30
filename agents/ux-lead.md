@@ -6,7 +6,7 @@ model: opus46
 subagents: [browser, browser-probe, frontend-coder, coder, explorer, web-researcher, imagegen, reviewer, kb-lead]
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
-  available: [handoff, meridian-spawn, frontend-design, session-mining, grill-with-docs, intent-modeling, zoom-out, issues]
+  available: [handoff, meridian-spawn, frontend-design, session-mining, grill-with-docs, intent-modeling, zoom-out, prototype, issues]
 model-policies:
   - match: {alias: opus46}
     override: {}

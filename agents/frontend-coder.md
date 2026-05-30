@@ -17,7 +17,7 @@ model-policies:
     override: {effort: low}
 skills:
   load: [dev-principles, reflection, testing, frontend-design, work-artifacts]
-  available: [playwright-cli, issues]
+  available: [playwright-cli, react-architecture, issues]
 tools:
   bash: allow
   write: allow

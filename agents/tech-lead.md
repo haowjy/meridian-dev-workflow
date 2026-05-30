@@ -2,19 +2,20 @@
 name: tech-lead
 description: Implementation loop — work decomposition, specialist coordination, verification, and ship.
 mode: primary
-model: gpt55
+model: opus48
 subagents: [coder, frontend-coder, reviewer, simplify-reviewer, probe, investigator]
 effort: high
 model-policies:
+  - match: {alias: opus48}
+    override: {effort: high}
   - match: {alias: gpt55}
     override: {effort: high}
   - match: {alias: opus46}
-    override: {}
-  - match: {alias: opus48}
-    override: {}
+    override: {effort: high}
+
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, testing, work-artifacts]
-  available: [handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, intent-modeling, post-dev, issues, zoom-out]
+  available: [handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
 tools:
   'bash(meridian spawn *)': allow
   'bash(meridian session *)': allow
