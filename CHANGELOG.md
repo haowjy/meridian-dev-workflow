@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-05-30
+
 ### Changed
 - Lead agents (product-lead, tech-lead, design-lead, ux-lead): `agent: deny` -> `agent: allow` for native subagent dispatch.
 
