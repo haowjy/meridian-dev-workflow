@@ -22,7 +22,7 @@ tools:
   'bash(meridian spawn *)': allow
   write: allow
   edit: allow
-  agent: deny
+  agent: allow
   notebook: deny
   cron: deny
   ask_user: deny

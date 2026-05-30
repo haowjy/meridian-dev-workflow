@@ -29,7 +29,7 @@ tools:
   'bash(rg *)': allow
   'bash(ls *)': allow
   'bash(pwd)': allow
-  agent: deny
+  agent: allow
   edit: deny
   write: deny
   notebook: deny
