@@ -11,7 +11,7 @@ model-policies:
     override: {}
 skills:
   load: [dev-principles, reflection, review]
-  available: [shared-dao, decision-log, md-validation, thermo-nuclear-review]
+  available: [shared-dao, md-validation, thermo-nuclear-review]
 tools:
   'bash(meridian spawn show *)': allow
   'bash(meridian session *)': allow

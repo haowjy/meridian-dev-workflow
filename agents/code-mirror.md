@@ -11,7 +11,7 @@ model-policies:
     override: {}
 skills:
   load: [shared-dao, llm-writing, intent-modeling, reflection]
-  available: [qi-layer, md-validation, decision-log]
+  available: [qi-layer, md-validation]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow

@@ -6,7 +6,7 @@ model: gpt-5.4
 effort: high
 skills:
   load: [dev-principles, llm-writing, work-artifacts]
-  available: [architecture, tech-docs, decision-log, md-validation]
+  available: [architecture, tech-docs, md-validation]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow
