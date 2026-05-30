@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-05-30
+
 ### Added
 - `@gpt-dev`: direct implementation lead for gpt55/codex — codes itself, spawns reviewers to verify. No coder delegation, minimal orchestration overhead.
 - `@probe`: runtime behavior verification agent.
