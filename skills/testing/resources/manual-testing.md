@@ -47,7 +47,10 @@ Report per-requirement outcomes with evidence.
 Run in `$MERIDIAN_TASK_DIR` — the work item's bound task dir, which may be
 the project root, a sibling worktree, or another sibling checkout. Use
 `cd "$MERIDIAN_TASK_DIR"` or `git -C "$MERIDIAN_TASK_DIR" …` for git, build,
-and runtime commands. Do not create, move, or switch worktrees; the caller
+and runtime commands. For nested Meridian commands, project-root resolution
+still prefers the inherited `MERIDIAN_PROJECT_DIR` over CWD; use
+`meridian -C "$MERIDIAN_TASK_DIR" …` when the command should operate on the
+task checkout. Do not create, move, or switch worktrees; the caller
 owns workspace placement. Inspect `git status` and the working tree before
 probing so you know what is already in flight. Use disposable environments
 (temp repo, throwaway config) only for destructive probes or clean-baseline

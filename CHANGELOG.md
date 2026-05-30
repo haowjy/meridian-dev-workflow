@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `testing`: manual probes now require `meridian -C "$MERIDIAN_TASK_DIR" ...` for Meridian commands inside inherited sessions.
+
 ## [0.11.2] - 2026-05-30
 
 - `@product-lead`: default dev handoff -> `@gpt-dev`
