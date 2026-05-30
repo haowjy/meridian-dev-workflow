@@ -56,5 +56,5 @@ Reference source locations rather than pasting code.
 
 ## Verification
 
-After writing or restructuring linked docs, run `meridian kg check` for broken
-links and `meridian mermaid check` for diagram validity.
+Use `/md-validation` for link checking and diagram validation after writing
+or restructuring linked docs.
