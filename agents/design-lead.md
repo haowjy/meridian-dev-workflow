@@ -16,7 +16,7 @@ subagents: [architect, design-researcher, explorer, web-researcher, reviewer, si
 effort: high
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
-  available: [handoff, meridian-spawn, architecture, tech-docs, intent-modeling, agent-staffing, pre-dev, issues, zoom-out]
+  available: [handoff, meridian-spawn, architecture, tech-docs, intent-modeling, agent-staffing, pre-dev, issues, zoom-out, source-context]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
