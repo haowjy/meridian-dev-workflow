@@ -27,16 +27,9 @@ tools:
   notifications: deny
   plan_mode: deny
   worktree: deny
-  'bash(git worktree add *)': deny
-  'bash(git branch -d:*)': deny
-  'bash(git branch -D:*)': deny
-  'bash(git branch -m:*)': deny
-  'bash(git branch -M:*)': deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
-  'bash(git merge:*)': deny
-  'bash(git rebase:*)': deny
   'bash(git stash:*)': deny
   'bash(git restore:*)': deny
   'bash(git reset --hard:*)': deny

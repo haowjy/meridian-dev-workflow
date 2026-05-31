@@ -3,8 +3,14 @@
 Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/). Versions before 0.0.14 in git history only.
 
 ## [Unreleased]
+### Changed
+- `post-impl-capture`: rewritten to the inline model — mine the impl session, diff intent (design artifacts) vs built (changed files), write every layer inline, hand structure to `@kb-maintainer`. No longer spawns `@code-mirror`/`@kb-writer`/`@tech-writer`. Retyped `reference` → `mode-shift` (it shifts `@kb-lead`'s capture mode, not plain reference material). Coverage-gap rescans inherit the base loop's three-wave cap instead of spawning open-endedly. `@kb-maintainer` handoff is now one-per-tree (one target per spawn).
+- `agent-staffing`: maintainers catalog now lists `@kb-lead` + `@kb-maintainer`; dropped `@kb-writer`/`@tech-writer`.
+- `@tech-lead`, `@gpt-dev`: destructive-git denylist trimmed to the house default — dropped `merge`/`rebase`/`worktree add`/`branch -d/-D/-m/-M` denies. Those are non-destructive forward/additive ops; the denylist now gates only branch-switching (`checkout`/`switch`) and uncommitted-work destruction (`reset --hard`/`restore`/`clean`/`stash`/`revert`).
 
-## [0.11.3] - 2026-05-30
+### Removed
+- `@kb-lead` moved to meridian-base — now a generic capture agent that writes `.context/`/KB/`docs/` inline. Dev callers pass dev specializations via `--skills`: `post-impl-capture`, `tech-docs`, `issues`.
+- `@code-mirror` and `@tech-writer` agents — folded into `@kb-lead`'s inline writing.
 
 ### Changed
 - `testing`: manual probes now require `meridian -C "$MERIDIAN_TASK_DIR" ...` for Meridian commands inside inherited sessions.

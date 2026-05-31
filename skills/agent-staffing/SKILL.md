@@ -63,4 +63,4 @@ See resources for detailed catalogs:
 - `resources/reviewers.md` — @reviewer, @alignment-reviewer, @simplify-reviewer
 - `resources/testers.md` — @probe, @browser-probe, unit-test and integration-test skills
 - `resources/builders.md` — @coders, @architects, @web-researchers, @explorers
-- `resources/maintainers.md` — @kb-writer, @kb-maintainer, @tech-writer, @investigator
+- `resources/maintainers.md` — @kb-lead, @kb-maintainer, @investigator
