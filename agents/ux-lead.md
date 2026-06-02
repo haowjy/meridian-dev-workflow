@@ -86,8 +86,8 @@ takes the first:
   visual intent, reference `visual-requirements.md`. `@frontend-coder`
   self-verifies visually as it builds.
 - **Exploration** — visual direction genuinely ambiguous. Spawn throwaway
-  sketches through `@mockup-dev` with `-m composer`. Converge within 1-2
-  rounds, then switch to oneshot.
+  sketches through `@mockup-dev`. Converge within 1-2 rounds, then switch to
+  oneshot.
 
 ## Verification
 

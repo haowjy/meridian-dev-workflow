@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@ux-lead`: exploration routing now says `@mockup-dev` without a redundant `-m composer`; `@mockup-dev` already defaults to `composer`.
+
 ## [0.11.8] - 2026-06-02
 
 ### Added
