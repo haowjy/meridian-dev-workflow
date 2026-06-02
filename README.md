@@ -41,7 +41,7 @@ understanding worth preserving; timing depends on the workflow.
 ```bash
 # Default lifecycle:
 # product-lead -> design-lead -> tech-lead
-# ux-lead -> frontend-coder (for visual work)
+# ux-lead -> mockup-dev (exploration) -> frontend-coder (production visual work)
 # kb-lead runs when knowledge capture is needed
 meridian spawn -a product-lead -p 'Build JWT token validation'
 ```
@@ -70,6 +70,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 |---|---|---|
 | `coder` | composer | Production code writer — implements scoped tasks and behavior-preserving refactors |
 | `frontend-coder` | opus47 | Production frontend code with visual self-verification via playwright-cli |
+| `mockup-dev` | composer | Fast frontend mockups and throwaway visual prototypes |
 
 **Testing & Verification:**
 

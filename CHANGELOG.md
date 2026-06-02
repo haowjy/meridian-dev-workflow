@@ -4,6 +4,13 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `@mockup-dev`: fast frontend mockups and throwaway visual prototypes. Defaults to `composer`, loads `frontend-design` + `playwright-cli`, reports route/screenshot, shortcuts, and visual direction.
+
+### Changed
+- `@frontend-coder`: keeps `opus47` default, fallback policies `composer` + `gpt55`; drops `deepseek`. `playwright-cli` moved to loaded skills and required for render/debug verification. `frontend-design` demoted to available so specs, mockups, screenshots, and design systems stay authoritative.
+- `@ux-lead`: stronger user-intent capture before routing. Exploration routes to `@mockup-dev -m composer`; production visual implementation routes to `@frontend-coder`. Direct edits allowed only on explicit user request or small coordination artifacts.
+
 ## [0.11.7] - 2026-06-02
 
 ### Removed
