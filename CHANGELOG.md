@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.9] - 2026-06-02
+
 ### Added
 - `@mockup-dev`: fast Cursor/composer frontend mockups for visual iteration before production work hardens.
 - `/impeccable`: Mars-compatible mirror of pbakaus/impeccable from the `.claude` skill, adapted to source `skills/impeccable` paths and kept human-invoked/non-model-invocable.
