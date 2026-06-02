@@ -8,7 +8,7 @@ Agents that produce artifacts — code, design docs, research findings, and capt
 
 @frontend-coder — production frontend code writer for visual/UI work where design fidelity and aesthetics are the primary concern. Same objective-bounded staffing rules as @coder. Pick this variant when the work is about what users see and feel — matching a design spec, implementing visual polish — not just because the file is frontend code. Pass mockups or screenshots when available.
 
-@mockup-dev — fast frontend mockups and throwaway visual prototypes. Pick this when the user needs to see options, compare directions, or react to a concrete rendered sketch before production implementation. Defaults to composer for speed. Pass visual intent, references, and the route/component to mock up. It may hardcode data and use temporary routes; switch to @frontend-coder once the direction is approved.
+@mockup-dev — fast frontend mockups and throwaway visual prototypes. Pick this when the user needs to see options, compare directions, or react to a concrete rendered sketch before production implementation. Defaults to composer/Cursor for speed. It may hardcode data and use temporary routes; UX Lead owns what gets kept, adapted, or deleted.
 
 @imagegen — native image generation. UI concept mockups, visual explorations, icons, reference imagery. Usually spawned on explicit user request — image generation is expensive. Spawned by @ux-lead.
 

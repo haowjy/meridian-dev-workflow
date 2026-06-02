@@ -4,17 +4,16 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### Changed
-- `@ux-lead`: exploration routing now says `@mockup-dev` without a redundant `-m composer`; `@mockup-dev` already defaults to `composer`.
-
-## [0.11.8] - 2026-06-02
-
 ### Added
-- `@mockup-dev`: fast frontend mockups and throwaway visual prototypes. Defaults to `composer`, loads `frontend-design` + `playwright-cli`, reports route/screenshot, shortcuts, and visual direction.
+- `@mockup-dev`: fast Cursor/composer frontend mockups for visual iteration before production work hardens.
+- `/impeccable`: Mars-compatible mirror of pbakaus/impeccable from the `.claude` skill, adapted to source `skills/impeccable` paths and kept human-invoked/non-model-invocable.
+- `/ui-craft-basics`: lightweight model-invocable UI craft guardrails for mockups and production frontend work.
+- `/ui-implementation`: explicit user-invocable production UI mode for settled visual direction. Not model-invocable.
 
 ### Changed
-- `@frontend-coder`: keeps `opus47` default, fallback policies `composer` + `gpt55`; drops `deepseek`. `playwright-cli` moved to loaded skills and required for render/debug verification. `frontend-design` demoted to available so specs, mockups, screenshots, and design systems stay authoritative.
-- `@ux-lead`: stronger user-intent capture before routing. Exploration routes to `@mockup-dev -m composer`; production visual implementation routes to `@frontend-coder`. Direct edits allowed only on explicit user request or small coordination artifacts.
+- `@ux-lead`: default model `opus46` → `opus47`; prompt trimmed around interactive user taste, design-system discovery, mockup iteration, and handoff to `/ui-implementation`.
+- `@mockup-dev`, `@frontend-coder`: load `/ui-craft-basics`; Impeccable stays human-invoked and not ambient.
+- Removed the `frontend-design` dependency and agent skill references.
 
 ## [0.11.7] - 2026-06-02
 

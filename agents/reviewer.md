@@ -5,7 +5,7 @@ mode: subagent
 model: gpt-5.4
 effort: high
 model-policies:
-  - match: {alias: gpt}
+  - match: {alias: gpt-5.4}
     override: {}
   - match: {alias: deepseek}
     override: {}

@@ -41,7 +41,7 @@ understanding worth preserving; timing depends on the workflow.
 ```bash
 # Default lifecycle:
 # product-lead -> design-lead -> tech-lead
-# ux-lead -> mockup-dev (exploration) -> frontend-coder (production visual work)
+# ux-lead -> mockup-dev (visual iteration) -> ui-implementation/coder
 # kb-lead runs when knowledge capture is needed
 meridian spawn -a product-lead -p 'Build JWT token validation'
 ```
@@ -133,7 +133,9 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | `issues` | GitHub Issues integration — labels, work-item linking, `gh` CLI patterns |
 | `react-architecture` | React-specific structural lens — tokens, state, composition, imports, component API consistency |
 | `tech-docs` | Technical writing craft — hierarchical docs, linking strategy, and progressive disclosure |
-| `frontend-design` | Distinctive, production-grade frontend interfaces — anti-generic-AI aesthetics |
+| `ui-craft-basics` | Lightweight UI craft guardrails — intent, design-system fit, real-render verification |
+| `impeccable` | Human-invoked heavy reference for high-craft UI critique, prototype shaping, and visual polish |
+| `ui-implementation` | Production UI follow-through after visual direction is settled |
 | `thermo-nuclear-review` | Extremely strict maintainability review — abstraction quality, code judo moves |
 | `post-impl-capture` | Post-implementation knowledge capture workflow for @kb-lead |
 
