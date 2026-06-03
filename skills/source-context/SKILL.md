@@ -33,11 +33,21 @@ active maintenance, real users, non-trivial scope.
 
 ```bash
 mkdir -p ~/.meridian/ref
-git clone --depth 1 <url> ~/.meridian/ref/<name>
+git clone <url> ~/.meridian/ref/<name>
 ```
 
-Shallow clone is enough for investigation. Repos persist across sessions
-— you only clone once.
+Full clone by default — explorers need `git log` and `git blame` to trace
+how designs evolved and why boundaries were drawn. Repos persist across
+sessions; you only clone once.
+
+For large repos (monorepos, multi-GB histories), clone shallow and deepen
+when explorers hit dead ends:
+
+```bash
+git clone --depth 50 <url> ~/.meridian/ref/<name>    # recent history
+git -C ~/.meridian/ref/<name> fetch --deepen=200      # extend window
+git -C ~/.meridian/ref/<name> fetch --unshallow        # full history
+```
 
 ### Investigate
 

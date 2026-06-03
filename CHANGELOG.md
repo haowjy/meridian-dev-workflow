@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/source-context`: full clone by default instead of `--depth 1`. Added progressive deepening commands for large repos.
+
 ## [0.11.9] - 2026-06-02
 
 ### Added
