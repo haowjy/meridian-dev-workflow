@@ -20,7 +20,6 @@ tools:
   'bash(meridian work *)': allow
   'bash(git push *)': allow
   'bash(gh pr *)': allow
-  agent: deny
   notebook: deny
   cron: deny
   ask_user: deny

@@ -17,10 +17,8 @@ tools:
   'bash(meridian *)': allow
   write: allow
   edit: allow
-  agent: deny
   notebook: deny
   cron: deny
-  task: deny
   ask_user: deny
   notifications: deny
   plan_mode: deny
