@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.12] - 2026-06-06
+
 ### Added
 - `/probe`: mode-shift skill for runtime verification — generic methodology (two modes: probing vs verification) that any agent can load. Extracted from `testing/resources/manual-testing.md` and `testing/resources/browser-testing.md`.
 - `/unravel-codebase`: human-invoked guided walkthrough of an unfamiliar codebase. Reads alongside the user, explains how it works today, and doubles as a cleanup pass on KB/vocab drift — fixes what's clear, flags what isn't. Not model-invocable.
