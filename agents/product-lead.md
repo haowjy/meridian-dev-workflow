@@ -4,7 +4,7 @@ description: Intent capture, scope sizing, design approval, and implementation r
 mode: primary
 harness: claude
 model: opus46
-subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober]
+subagents: [explorer, web-researcher, reviewer, simplify-reviewer, session-miner, kb-lead, prober, browser-prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator]
 model-policies:
   - match: {alias: gpt55}
     override: {effort: high}

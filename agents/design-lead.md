@@ -12,7 +12,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: sonnet}
     override: {}
-subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, prober]
+subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, prober, browser-prober, browser]
 effort: high
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]

@@ -3,7 +3,7 @@ name: tech-lead
 description: Implementation loop — work decomposition, specialist coordination, verification, and ship.
 mode: primary
 model: opus48
-subagents: [coder, frontend-coder, reviewer, simplify-reviewer, prober, investigator]
+subagents: [explorer, coder, frontend-coder, reviewer, simplify-reviewer, prober, investigator, web-researcher, browser-prober, gpt-dev, test-reviewer]
 effort: high
 model-policies:
   - match: {alias: opus48}
