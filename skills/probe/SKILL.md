@@ -44,6 +44,11 @@ Report per-requirement outcomes with evidence.
 
 ## Execution
 
+Run the built artifact, not the development toolchain. Start the server and
+hit the endpoint. Run the CLI and read the output. Open the UI and click the
+button. Never run test suites (`pytest`, `vitest`, `jest`, `cargo test`,
+`npm test`, etc.) — those verify developer assumptions, not user experience.
+
 Run actual commands and capture exact output. Go adversarial after the happy
 path: bad input, interruption, sequencing, boundary conditions, invalid state,
 fresh-state variants. Focus on user-visible behavior: exit codes, error

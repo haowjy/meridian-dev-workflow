@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@prober` and `/probe`: explicit prohibition against running test suites — prober exercises the built artifact (CLI, API, UI), not the development toolchain.
+
 ## [0.11.13] - 2026-06-06
 
 ### Changed

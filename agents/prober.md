@@ -47,6 +47,11 @@ need to care which. Use `cd "$MERIDIAN_TASK_DIR" && …` (or `git -C
 "$MERIDIAN_TASK_DIR" …`) for commands that need to run there. Your
 `worktree: deny` config keeps workspace placement with the caller.
 
+Run the built artifact — CLI commands, API requests, UI interactions — not
+test suites. Never run `pytest`, `vitest`, `jest`, `npm test`, or any test
+runner as your verification method. Those test developer assumptions; you
+test user experience.
+
 Run actual commands and capture exact output. Generate and exercise edge cases
 beyond what the @coder described. When something fails, record the exact
 command, the actual output, and what the correct behavior should be — this
