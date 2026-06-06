@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- All 21 agents: deny `Workflow`, `Skill(deep-research)`, and `Skill(init)` tools to prevent runaway multi-agent fan-out and accidental CLAUDE.md initialization.
+- All 20 agents that had `notebook: deny`: removed the denial — notebook editing is now allowed.
+
 ## [0.11.12] - 2026-06-06
 
 ### Added

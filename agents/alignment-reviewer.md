@@ -17,6 +17,9 @@ tools:
   'bash(cat *)': allow
   'bash(wc *)': allow
   'bash(meridian session *)': allow
+  workflow: deny
+  'skill(deep-research)': deny
+  'skill(init)': deny
 sandbox: read-only
 ---
 

@@ -11,8 +11,10 @@ tools:
   bash: allow
   write: allow
   edit: allow
-  notebook: deny
   cron: deny
+  workflow: deny
+  'skill(deep-research)': deny
+  'skill(init)': deny
   ask_user: deny
   notifications: deny
   plan_mode: deny

@@ -19,8 +19,10 @@ model-policies:
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
-  notebook: deny
   cron: deny
+  workflow: deny
+  'skill(deep-research)': deny
+  'skill(init)': deny
   notifications: deny
   plan_mode: deny
   worktree: deny

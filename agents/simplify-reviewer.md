@@ -18,8 +18,10 @@ tools:
   'bash(git status *)': allow
   edit: deny
   write: deny
-  notebook: deny
   cron: deny
+  workflow: deny
+  'skill(deep-research)': deny
+  'skill(init)': deny
   ask_user: deny
   notifications: deny
   plan_mode: deny
