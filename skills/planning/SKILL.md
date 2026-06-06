@@ -44,7 +44,7 @@ add checkpoint value.
   verification suite and reviews its own diff before reporting (see
   `/reflection`). No separate verifier or reviewer spawn. Quick feedback
   while context is still loaded.
-- **Phase exit gate — full verification.** `@probe` and `@reviewer`
+- **Phase exit gate — full verification.** `@prober` and `@reviewer`
   are the default lanes. Add `@coder --skills testing` with
   `resources/integration-patterns.md` or `resources/unit-patterns.md` only
   when the phase introduces a durable boundary, composition risk, or narrow
@@ -56,7 +56,7 @@ add checkpoint value.
 Not all work in a phase is implementation:
 
 - **Probe** — when a subphase depends on runtime behavior that isn't
-  well-understood, schedule a `@probe` probe before the coding step.
+  well-understood, schedule a `@prober` probe before the coding step.
 - **Diagnosis** — when a subphase addresses a failure with unclear root cause,
   schedule an `@investigator` step before the coding step.
 
@@ -65,5 +65,5 @@ Not all work in a phase is implementation:
 Route findings to the right specialist, not always back to @coder:
 
 - **Implementation bugs** → back to coder
-- **Unclear runtime behavior** → `@probe` probe
+- **Unclear runtime behavior** → `@prober` probe
 - **Root-cause uncertainty** → `@investigator`

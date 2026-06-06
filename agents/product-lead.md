@@ -4,7 +4,7 @@ description: Intent capture, scope sizing, design approval, and implementation r
 mode: primary
 harness: claude
 model: opus46
-subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, probe]
+subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober]
 model-policies:
   - match: {alias: gpt55}
     override: {effort: high}
@@ -65,7 +65,7 @@ specialist. When ownership is ambiguous, state the distinction before choosing.
 - `@reviewer` — challenge requirements, design, or framing
 - `@session-miner` — context from prior conversations
 - `@kb-lead` — durable knowledge capture
-- `@probe` — runtime behavior verification
+- `@prober` — runtime behavior verification
 
 Use `/handoff` at phase boundaries:
 - Requirements -> `@design-lead` when design is needed

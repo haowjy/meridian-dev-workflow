@@ -3,7 +3,7 @@ name: gpt-dev
 description: Direct implementation lead — codes, tests, spawns reviewers to verify.
 mode: primary
 model: gpt55
-subagents: [reviewer, probe]
+subagents: [reviewer, prober]
 effort: high
 model-policies:
   - match: {alias: gpt55}
@@ -68,7 +68,7 @@ the change and nothing else.
 After implementation is functionally verified:
 
 - `@reviewer` — correctness, regression risk, structural health
-- `@probe` — runtime evidence for spawn, launch, or harness changes
+- `@prober` — runtime evidence for spawn, launch, or harness changes
 
 Auto-fix safe findings. Return judgment-heavy findings to the caller when
 they change approved scope or architecture.

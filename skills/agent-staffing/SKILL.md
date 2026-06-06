@@ -26,7 +26,7 @@ findings), not a fixed number of passes. The lead can stop early but must log
 the reasoning.
 
 **Route by work type.** Not everything is a coding task. Probe unclear behavior
-with `@probe`, diagnose root causes with `@investigator`, implement with
+with `@prober`, diagnose root causes with `@investigator`, implement with
 coder variants. Plans that treat everything as coder work produce guesswork at
 boundaries.
 
@@ -53,7 +53,7 @@ Run `meridian mars models list` for configured families and strengths.
 
 When a phase talks to an external system:
 - Probe the real system before coding against assumed behavior
-- `@probe` is mandatory for every integration phase
+- `@prober` is mandatory for every integration phase
 - Per-target coverage: N targets means N tested, not one-of-three
 
 ## Agent Catalogs
@@ -61,6 +61,6 @@ When a phase talks to an external system:
 See resources for detailed catalogs:
 
 - `resources/reviewers.md` — @reviewer, @alignment-reviewer, @simplify-reviewer
-- `resources/testers.md` — @probe, @browser-probe, unit-test and integration-test skills
+- `resources/testers.md` — @prober, @browser-prober, unit-test and integration-test skills
 - `resources/builders.md` — @coders, @architects, @web-researchers, @explorers
 - `resources/maintainers.md` — @kb-lead, @kb-maintainer, @investigator

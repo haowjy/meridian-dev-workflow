@@ -76,8 +76,8 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Agent | Model | Role |
 |---|---|---|
-| `probe` | gpt-5.4 | Runtime verification — CLI flows, HTTP requests, race probes, integration boundaries |
-| `browser-probe` | gpt55 | Browser-based QA via Playwright — visual verification, user flows, console errors |
+| `prober` | gpt55 | Runtime verification — CLI flows, HTTP requests, race probes, integration boundaries |
+| `browser-prober` | gpt55 | Browser-based QA via Playwright — visual verification, user flows, console errors |
 
 **Review & Analysis:**
 
@@ -86,6 +86,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | `reviewer` | gpt-5.4 | Deep code review — specify a focus area (security, structural health, correctness) or leave broad |
 | `alignment-reviewer` | gpt | Coverage verification — does one artifact deliver what another promised? |
 | `simplify-reviewer` | gpt | Structural friction audit — shallow modules, fragmentation, deletion targets |
+| `test-reviewer` | gpt-5.4 | Test structure audit — implementation-pinned tests, mock sprawl, deletion targets, fixture architecture |
 | `investigator` | gpt-5.4 | Brief triage of flagged issues — quick-fixes trivial items, files GH issues for the rest |
 
 **Research & Documentation:**
@@ -122,7 +123,8 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | `planning` | Plan execution — phases, subphases, verification levels, probe/diagnosis lanes |
 | `agent-staffing` | Team composition — which agents to spawn, how many, what runs in parallel |
 | `dev-principles` | Simplicity, separation of concerns, structural judgment — the operating lens for code decisions |
-| `testing` | Restraint-first testing discipline — tier selection, when NOT to write tests, functional core patterns. Resources cover unit, integration, manual, and browser testing. |
+| `testing` | Restraint-first testing discipline — tier selection, when NOT to write tests, functional core patterns. Resources cover unit and integration patterns. |
+| `probe` | Runtime verification mode-shift — run real commands, exercise real workflows, report what breaks. Two modes: probing (exploratory) and verification (confirmatory). |
 
 **Agent methodology:**
 
@@ -135,8 +137,10 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | `tech-docs` | Technical writing craft — hierarchical docs, linking strategy, and progressive disclosure |
 | `ui-craft-basics` | Lightweight UI craft guardrails — intent, design-system fit, real-render verification |
 | `impeccable` | Human-invoked heavy reference for high-craft UI critique, prototype shaping, and visual polish |
+| `unravel-codebase` | Human-invoked guided walkthrough of unfamiliar code — reads alongside you, explains how it works, and doubles as a KB/vocab cleanup pass |
 | `ui-implementation` | Production UI follow-through after visual direction is settled |
 | `thermo-nuclear-review` | Extremely strict maintainability review — abstraction quality, code judo moves |
+| `test-architecture` | Strict test structure audit — fixture sprawl, implementation-pinned tests, deletion targets, test file boundaries |
 | `post-impl-capture` | Post-implementation knowledge capture workflow for @kb-lead |
 
 ## Cross-Source Dependencies

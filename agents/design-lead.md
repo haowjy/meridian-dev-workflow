@@ -12,7 +12,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: sonnet}
     override: {}
-subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, probe]
+subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, prober]
 effort: high
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
@@ -73,7 +73,7 @@ communication channel; prose supplements them.
 **Investigate** — fan out broadly in parallel:
 - `@web-researcher` — how others solve this, what works in production
 - `@architect` — competing structural options
-- `@probe` — existing runtime behavior, integration points
+- `@prober` — existing runtime behavior, integration points
 - `@explorer` — codebase patterns, technical debt, prior art
 - `@simplify-reviewer` — structural health of existing code
 

@@ -98,20 +98,15 @@ single-shot.
 
 ## When Each Tester Applies
 
-Load the relevant resource when the tier is justified by the risk and the
-question:
+Match the tier to the risk and the question:
 
-- `resources/unit-patterns.md` — pure logic, edge cases, regression guards on
-  the functional core.
-- `resources/integration-patterns.md` — composition across internal components
-  with fakes at external boundaries.
-- `resources/manual-testing.md` — real runtime behavior against real
-  interfaces. Two modes (probing vs verification).
-- `resources/browser-testing.md` — browser-based verification of frontend
-  changes.
-
-`@probe` is the runtime verification agent — see
-`resources/manual-testing.md`.
+- **Unit** — `resources/unit-patterns.md`. Pure logic, edge cases, regression
+  guards on the functional core.
+- **Integration** — `resources/integration-patterns.md`. Composition across
+  internal components with fakes at external boundaries.
+- **Runtime** — `/probe` skill. Real commands against the real system. Two
+  modes (probing vs verification). `@prober` is the dedicated agent;
+  `@browser-prober` adds browser-based verification via `playwright-cli`.
 
 Coders self-verify with the narrowest useful evidence for the change — often
 focused checks or manual smoke, plus automated checks where they buy

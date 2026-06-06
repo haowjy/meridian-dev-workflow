@@ -3,7 +3,7 @@ name: tech-lead
 description: Implementation loop — work decomposition, specialist coordination, verification, and ship.
 mode: primary
 model: opus48
-subagents: [coder, frontend-coder, reviewer, simplify-reviewer, probe, investigator]
+subagents: [coder, frontend-coder, reviewer, simplify-reviewer, prober, investigator]
 effort: high
 model-policies:
   - match: {alias: opus48}
@@ -15,7 +15,7 @@ model-policies:
 
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, testing, work-artifacts]
-  available: [handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
+  available: [handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
 tools:
   'bash(meridian spawn *)': allow
   'bash(meridian session *)': allow
@@ -80,7 +80,7 @@ Disjoint file/concern ownership → parallel `--bg` spawns. Overlapping
 ownership or sequencing dependencies → sequential. Route by type: `@coder`
 for feature work, `@frontend-coder` for visual design fidelity.
 
-Probe before coding when behavior is unclear: `@probe` for runtime behavior,
+Probe before coding when behavior is unclear: `@prober` for runtime behavior,
 `@investigator` for root-cause uncertainty.
 
 ## Verification
@@ -89,7 +89,7 @@ Lightweight, single-pass. After each significant step, one check that gives
 credible evidence:
 
 - `@reviewer` — single focused concern
-- `@probe` — runtime spot-check
+- `@prober` — runtime spot-check
 - `@coder --skills testing` — test when the seam justifies it
 
 Test judgment is yours. When tests fail, decide whether the failure indicates
@@ -107,7 +107,9 @@ a different focus:
   code-judo opportunities
 - `@reviewer --skills improve-codebase-architecture` — deep-module
   opportunities, inline targets
-- `@probe` (end-to-end) — runtime verification of shipped behavior
+- `@test-reviewer` — test structure audit: implementation-pinned tests,
+  mock sprawl, deletion targets, fixture architecture
+- `@prober` (end-to-end) — runtime verification of shipped behavior
 
 Fix findings through `@coder`, then respawn reviewers in fresh contexts
 until findings converge. You have authority to reject findings you disagree

@@ -3,7 +3,7 @@ name: ux-lead
 description: Visual design and UX — direction, layout exploration, design iteration.
 mode: primary
 model: opus47
-subagents: [browser, browser-probe, mockup-dev, coder, explorer, web-researcher, imagegen, reviewer, kb-lead]
+subagents: [browser, browser-prober, mockup-dev, coder, explorer, web-researcher, imagegen, reviewer, kb-lead]
 skills:
   load: [clear-mind, reflection, work-artifacts]
   available: [handoff, meridian-spawn, session-mining, grill-with-docs, intent-modeling, prototype, issues]

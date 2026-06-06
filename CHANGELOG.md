@@ -4,6 +4,20 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/probe`: mode-shift skill for runtime verification — generic methodology (two modes: probing vs verification) that any agent can load. Extracted from `testing/resources/manual-testing.md` and `testing/resources/browser-testing.md`.
+- `/unravel-codebase`: human-invoked guided walkthrough of an unfamiliar codebase. Reads alongside the user, explains how it works today, and doubles as a cleanup pass on KB/vocab drift — fixes what's clear, flags what isn't. Not model-invocable.
+- `/test-architecture`: strict test structure audit — hunts implementation-pinned tests, mock cascades, fixture sprawl, deletion targets, and file-size boundary violations. Loaded as an available skill by `reviewer` and `tech-lead`.
+- `@test-reviewer`: dedicated test structure auditor. Loads `test-architecture` and `testing`, read-only sandbox, reports findings without executing changes.
+
+### Changed
+- `@probe` → `@prober`, `@browser-probe` → `@browser-prober`: agents renamed to free the skill namespace. Both now load `/probe` instead of `/testing`. `@prober` no longer has `subagents: [coder]` — verifiers verify, they don't fix.
+- `/testing`: removed `resources/manual-testing.md` and `resources/browser-testing.md` (content moved to `/probe` skill and `@browser-prober` body). "When Each Tester Applies" restructured as tier-labeled list pointing to resources, `/probe` skill, and renamed agents.
+- `/test-architecture`: trimmed from 320 to 235 lines — merged vapid tests into deletion targets, removed flaky test remediation (coder's job), removed redundant review questions, removed fixture writing advice, reworked approval bar from hard rules to behavioral heuristics.
+- `@test-reviewer`: removed `shared-dao` from available, removed `bash(rg/ls)` permission cargo, removed competing priority ordering from body.
+- `/unravel-codebase`: explicit `@explorer` spawn reference, added exit condition.
+- `/pre-dev`, `/post-dev`: removed `user-invocable: false` (unnecessary, model-invocable is sufficient).
+
 ## [0.11.11] - 2026-06-05
 
 ## [0.11.10] - 2026-06-03
