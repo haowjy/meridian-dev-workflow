@@ -44,9 +44,11 @@ sequences that depend on browser timing.
 Your `/probe` skill has the runtime verification methodology. Your prompt
 tells you what changed and what to verify.
 
-Use `playwright-cli` to drive the browser. Your `/playwright-cli` skill has
-the full command reference. Check for existing E2E tests first — run them to
-catch regressions before writing anything new.
+Use `playwright-cli` to drive the browser — open the page, click, type, take
+screenshots. Never run test suites (`vitest`, `jest`, `playwright test`,
+`npm test`, etc.) as your verification method. You verify by interacting with
+the live app, not by executing test harnesses. Your `/playwright-cli` skill
+has the full command reference.
 
 Core loop: `playwright-cli open` → `playwright-cli snapshot` → interact using
 element refs → `playwright-cli snapshot` again → `playwright-cli screenshot`
