@@ -12,7 +12,6 @@ model-policies:
     override: {effort: high}
   - match: {alias: opus46}
     override: {effort: high}
-
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, testing, work-artifacts]
   available: [handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
@@ -29,8 +28,6 @@ tools:
   'bash(rg *)': allow
   'bash(ls *)': allow
   'bash(pwd)': allow
-  edit: deny
-  write: deny
   cron: deny
   workflow: deny
   'skill(deep-research)': deny
