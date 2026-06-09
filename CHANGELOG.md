@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `thermo-nuclear-review`: replace PR/diff/branch-specific language with target-agnostic "the change" — skill now works correctly when loaded via `--skills`, not just in PR review context.
+
 ## [0.11.19] - 2026-06-07
 
 ## [0.11.18] - 2026-06-06

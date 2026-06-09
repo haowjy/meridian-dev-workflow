@@ -15,8 +15,8 @@ Above all, this skill should push the reviewer to be **ambitious** about code st
 
 Start from this baseline:
 
-> Perform a deep code quality audit of the current branch's changes.
-> Rethink how to structure / implement the changes to meaningfully improve code quality without impacting behavior.
+> Perform a deep code quality audit of the changes under review.
+> Rethink how to structure / implement them to meaningfully improve code quality without impacting behavior.
 > Work to improve abstractions, modularity, reduce Spaghetti code, improve succinctness and legibility.
 > Be ambitious, if there is a clear path to improving the implementation that involves restructuring some of the codebase, go for it.
 > Be extremely thorough and rigorous. Measure twice, cut once.
@@ -32,10 +32,10 @@ Apply the baseline prompt above, plus these explicit review rules:
    - Assume there is often a "code judo" move available: a re-organization that uses the existing architecture more effectively and makes the change dramatically simpler and more elegant.
    - If you see a path to delete complexity rather than rearrange it, push hard for that path.
 
-1. **Do not let a PR push a file from under 1k lines to over 1k lines without a very strong reason.**
+1. **Do not let a change push a file from under 1k lines to over 1k lines without a very strong reason.**
    - Treat this as a strong code-quality smell by default.
    - Prefer extracting helpers, subcomponents, modules, or local abstractions instead of letting a file sprawl past 1000 lines.
-   - If the diff crosses that threshold, explicitly ask whether the code should be decomposed first.
+   - If the change crosses that threshold, explicitly ask whether the code should be decomposed first.
    - Only waive this if there is a compelling structural reason and the resulting file is still clearly organized.
 
 2. **Do not allow random spaghetti growth in existing code.**
@@ -76,15 +76,15 @@ For every meaningful change, ask:
 - Is there a "code judo" move that would make this dramatically simpler?
 - Can this change be reframed so fewer concepts, branches, or helper layers are needed?
 - Does this improve or worsen the local architecture?
-- Did the diff add branching complexity where a better abstraction should exist?
+- Did the change add branching complexity where a better abstraction should exist?
 - Did a previously cohesive module become more coupled, more stateful, or harder to scan?
 - Is this logic living in the right file and layer?
 - Did this change enlarge a file or component past a healthy size boundary?
 - Are there repeated conditionals that signal a missing model or missing helper?
 - Is the implementation direct and legible, or does it rely on special cases and incidental control flow?
 - Is this abstraction actually earning its keep, or is it just a wrapper?
-- Did the diff introduce casts, optionality, or ad-hoc object shapes that obscure the real invariant?
-- Is this logic living in the canonical layer, or did the diff leak details across a boundary?
+- Did the change introduce casts, optionality, or ad-hoc object shapes that obscure the real invariant?
+- Is this logic living in the canonical layer, or did the change leak details across a boundary?
 - Is this orchestration more sequential or less atomic than it needs to be?
 
 ## What to Flag Aggressively
@@ -93,7 +93,7 @@ Escalate findings when you see:
 
 - A complicated implementation where a cleaner reframing could delete whole categories of complexity.
 - Refactors that move code around but fail to reduce the number of concepts a reader must hold in their head.
-- A file crossing 1000 lines due to the PR, especially if the new code could be split out.
+- A file crossing 1000 lines due to the change, especially if the new code could be split out.
 - New conditionals bolted onto unrelated code paths.
 - One-off booleans, nullable modes, or flags that complicate existing control flow.
 - Feature-specific logic leaking into general-purpose modules.
@@ -167,10 +167,10 @@ Prioritize findings in this order:
 Do not flood the review with low-value nits if there are larger structural issues.
 Prefer a smaller number of high-conviction comments over a long list of cosmetic notes.
 
-## Approval Bar
+## Acceptance Bar
 
-Do not approve merely because behavior seems correct.
-The bar for approval is:
+Do not accept merely because behavior seems correct.
+The bar for acceptance is:
 
 - no clear structural regression
 - no obvious missed opportunity to make the implementation dramatically simpler when such a path is visible
@@ -183,11 +183,11 @@ The bar for approval is:
 
 Treat these as presumptive blockers unless the author can justify them clearly:
 
-- the PR preserves a lot of incidental complexity when there is a plausible code-judo move that would delete it
-- the PR pushes a file from below 1000 lines to above 1000 lines
-- the PR adds ad-hoc branching that makes an existing flow more tangled
-- the PR solves a local problem by scattering feature checks across shared code
-- the PR adds an unnecessary abstraction, wrapper, or cast-heavy contract that makes the design more indirect
-- the PR duplicates an existing helper or puts logic in the wrong layer when there is a clear canonical home
+- the change preserves a lot of incidental complexity when there is a plausible code-judo move that would delete it
+- the change pushes a file from below 1000 lines to above 1000 lines
+- the change adds ad-hoc branching that makes an existing flow more tangled
+- the change solves a local problem by scattering feature checks across shared code
+- the change adds an unnecessary abstraction, wrapper, or cast-heavy contract that makes the design more indirect
+- the change duplicates an existing helper or puts logic in the wrong layer when there is a clear canonical home
 
 If those conditions are not met, leave explicit, actionable feedback and push for a cleaner decomposition.
