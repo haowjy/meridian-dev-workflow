@@ -1,6 +1,6 @@
 [package]
 name = "meridian-dev-workflow"
-version = "0.11.20"
+version = "0.11.21"
 description = "Opinionated dev team for Meridian — architects, coders, reviewers, testers, and the skills that coordinate them."
 
 [dependencies.meridian-base]
