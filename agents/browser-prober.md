@@ -9,6 +9,8 @@ model-policies:
     override: {}
   - match: {alias: codex}
     override: {effort: high}
+  - match: {alias: opus}
+    override: {effort: high}
 skills:
   load: [probe]
   available: [playwright-cli]

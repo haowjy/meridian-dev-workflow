@@ -4,6 +4,11 @@ description: Runtime verification — real commands, real requests, real workflo
 mode: subagent
 model: gpt55
 effort: high
+model-policies:
+  - match: {alias: gpt55}
+    override: {effort: high}
+  - match: {alias: opus}
+    override: {effort: high}
 skills:
   load: [probe]
   available: [issues]
