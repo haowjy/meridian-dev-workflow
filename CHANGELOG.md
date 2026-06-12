@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.23] - 2026-06-12
+
 ### Added
 - `@source-researcher`: study open-source project source code — clones repos, fans out explorers, synthesizes findings.
 - `/uxdev`: mode-shift for visual design thinking — learn the design language, iterate with taste, verify what renders.
