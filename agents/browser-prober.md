@@ -7,10 +7,8 @@ effort: low
 model-policies:
   - match: {alias: gpt55}
     override: {}
-  - match: {alias: codex}
-    override: {effort: high}
   - match: {alias: opus}
-    override: {effort: high}
+    override: {effort: medium}
 skills:
   load: [probe]
   available: [playwright-cli]

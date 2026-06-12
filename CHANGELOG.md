@@ -4,6 +4,39 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `@source-researcher`: study open-source project source code — clones repos, fans out explorers, synthesizes findings.
+- `/uxdev`: mode-shift for visual design thinking — learn the design language, iterate with taste, verify what renders.
+- `/design-craft`: frontend craft methodology — color (OKLCH, contrast, strategy), typography, layout, motion, copy.
+- `/anti-slop`: guardrail against AI UI tells — cream bg, gradient text, glassmorphism, card grids, eyebrow kickers, copy patterns.
+- `/code`: mode-shift for implementation — read, edit, verify, report methodology extracted from `@coder`.
+- `/diagnose`: 6-phase bug diagnosis loop — feedback loop, reproduce, hypothesise, instrument, fix, regression-test. Adapted from mattpocock/skills (Apache 2.0).
+- `/research-web`: external evidence gathering — library docs, upstream issues, production patterns. Compile and report only.
+- `/design-analysis`: design synthesis — challenge assumptions, frame options, analyze impact, recommend.
+- `/review-alignment`: alignment verification — coverage, drift, gap classification. "Does this artifact deliver what that artifact promised?"
+- `/source-study`: renamed from `/source-context`. Build context by studying real source code.
+
+### Changed
+- `impeccable`: deleted. Replaced by `/uxdev` + `/design-craft` + `/anti-slop`.
+- `ui-craft-basics`: deleted. Content merged into `/anti-slop`.
+- `/source-context`: renamed to `/source-study`.
+- `@coder`: body thinned — methodology moved to `/code`. Loads `/code`.
+- `@ux-lead`: body thinned, loads `/uxdev` + `/design-craft` + `/anti-slop`, added `@frontend-coder` to subagents.
+- `@web-researcher`: body thinned — methodology moved to `/research-web`.
+- `@design-researcher`: body thinned — methodology moved to `/design-analysis`.
+- `@alignment-reviewer`: body thinned — methodology moved to `/review-alignment`.
+- `@investigator`: body thinned — methodology moved to `/diagnose`, removed `ask_user: deny`, restored coordination rules.
+- `@tech-lead`: added `write: allow`, `edit: allow`, added `@alignment-reviewer` to subagents, `/uxdev` and `/code` to available.
+- `@product-lead`: added `@alignment-reviewer`, `@source-researcher` to subagents, `/uxdev` and `/code` to available, `/source-study` replaces `/source-context`.
+- `@design-lead`: added `@source-researcher` to subagents, `/uxdev` to available, `/source-study` replaces `/source-context`.
+- `@frontend-coder`: `/uxdev` added to available, `/anti-slop` replaces `ui-craft-basics`.
+- `@mockup-dev`: loads `/uxdev` + `/design-craft` + `/anti-slop`.
+- `/code`: test guidance rephrased to positive framing, defers to `/testing`.
+- `/review-alignment`: added review procedure (source-of-truth-first, checklist), fixed Partial+Drift overlap rule, fixed `/review` contrast.
+- `/design-craft`: CSS/API implementation mechanics removed, kept design principles.
+- `/research-web`: scope tightened to gather+report only. `/research-design` renamed to `/design-analysis`.
+- `model-invocable`: set to `false` for load-only skills (`research-web`, `design-analysis`, `review-alignment`, `diagnose`).
+
 ## [0.11.22] - 2026-06-12
 
 ## [0.11.21] - 2026-06-09

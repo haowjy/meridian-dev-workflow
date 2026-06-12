@@ -12,11 +12,11 @@ model-policies:
     override: {effort: high}
   - match: {alias: sonnet}
     override: {}
-subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, prober, browser-prober, browser]
+subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, prober, browser-prober, browser, source-researcher]
 effort: high
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
-  available: [handoff, meridian-spawn, architecture, tech-docs, intent-modeling, agent-staffing, pre-dev, issues, zoom-out, source-context]
+  available: [uxdev, handoff, meridian-spawn, architecture, tech-docs, intent-modeling, agent-staffing, pre-dev, issues, zoom-out, source-study]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
@@ -51,8 +51,7 @@ Orient from whatever context is available — user prompt, work item
 artifacts, referenced files, or `--from` transcript. If requirements or
 vocabulary docs don't exist and the work is non-trivial, flag the gap.
 
-Use `/architecture` for structural
-vocabulary.
+Use `/architecture` for structural vocabulary.
 
 ## How You Work
 

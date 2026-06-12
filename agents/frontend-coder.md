@@ -12,8 +12,8 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: low}
 skills:
-  load: [dev-principles, ui-craft-basics, reflection, testing, work-artifacts]
-  available: [playwright-cli, react-architecture, issues]
+  load: [dev-principles, anti-slop, reflection, testing, work-artifacts]
+  available: [uxdev, playwright-cli, react-architecture, issues]
 tools:
   bash: allow
   write: allow

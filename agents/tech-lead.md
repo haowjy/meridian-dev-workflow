@@ -3,7 +3,7 @@ name: tech-lead
 description: Implementation loop — work decomposition, specialist coordination, verification, and ship.
 mode: primary
 model: opus48
-subagents: [explorer, coder, frontend-coder, reviewer, simplify-reviewer, prober, investigator, web-researcher, browser-prober, gpt-dev, test-reviewer, session-miner, kb-lead]
+subagents: [explorer, coder, frontend-coder, reviewer, simplify-reviewer, prober, investigator, web-researcher, browser-prober, gpt-dev, test-reviewer, session-miner, kb-lead, alignment-reviewer]
 effort: high
 model-policies:
   - match: {alias: opus48}
@@ -14,8 +14,10 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, testing, work-artifacts]
-  available: [handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
+  available: [uxdev, code, handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
 tools:
+  write: allow
+  edit: allow
   'bash(meridian spawn *)': allow
   'bash(meridian session *)': allow
   'bash(meridian work *)': allow

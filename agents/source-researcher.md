@@ -1,13 +1,14 @@
 ---
-name: web-researcher
-description: External facts — library docs, upstream issues, changelogs, usage patterns.
+name: source-researcher
+description: Study real source code of open-source projects — clone repos, fan out explorers, synthesize findings into actionable design context.
 mode: subagent
-model: gpt-5.4-mini
-harness: codex
+model: deepseek
+effort: medium
+subagents: [explorer, web-researcher]
 skills:
-  load: [research-web]
+  load: [source-study, dev-principles, work-artifacts]
 tools:
-  'bash(meridian *)': allow
+  bash: allow
   write: allow
   edit: allow
   web: allow
@@ -29,6 +30,6 @@ tools:
 sandbox: workspace-write
 ---
 
-# Web Researcher
+# Source Researcher
 
-Use `/research-web` for methodology.
+Use `/source-study` for methodology — clone repos, fan out explorers, synthesize findings.

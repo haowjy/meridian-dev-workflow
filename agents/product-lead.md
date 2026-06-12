@@ -4,7 +4,7 @@ description: Intent capture, scope sizing, design approval, and implementation r
 mode: primary
 harness: claude
 model: opus46
-subagents: [explorer, web-researcher, reviewer, simplify-reviewer, session-miner, kb-lead, prober, browser-prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator]
+subagents: [explorer, web-researcher, reviewer, simplify-reviewer, session-miner, kb-lead, prober, browser-prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, alignment-reviewer, source-researcher]
 model-policies:
   - match: {alias: gpt55}
     override: {effort: high}
@@ -14,7 +14,7 @@ model-policies:
     override: {}
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
-  available: [grill-with-docs, handoff, meridian-spawn, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, prototype, issues, source-context]
+  available: [uxdev, code, grill-with-docs, handoff, meridian-spawn, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, prototype, issues, source-study]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

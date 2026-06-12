@@ -12,7 +12,7 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: low}
 skills:
-  load: [dev-principles, ui-craft-basics, reflection, prototype, playwright-cli, work-artifacts]
+  load: [dev-principles, anti-slop, uxdev, design-craft, reflection, prototype, playwright-cli, work-artifacts]
   available: [react-architecture, issues]
 tools:
   bash: allow
