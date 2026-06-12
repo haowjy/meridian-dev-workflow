@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.24] - 2026-06-12
+
 ### Fixed
 - Add missing `approval: never` to 6 agent profiles with `sandbox: danger-full-access` (browser, browser-prober, coder, frontend-coder, investigator, mockup-dev). Headless spawns on harnesses like Cursor rejected all shell/git commands without an explicit approval mode.
 
