@@ -27,6 +27,10 @@ Treat code growth as a cost: meaningful LOC growth should buy clearer behavior, 
 
 **Deep modules over shallow.** A deep module hides substantial complexity behind a simple interface. A shallow one has a complex interface hiding little — many exports, thin implementation. If an exported function wraps three lines, keep it in its caller. When 3+ shallow modules in a directory touch the same concept, bundle them into one deep module with a few well-named exports.
 
+A reader encountering the codebase cold should make sense of it through
+the abstractions, not despite them. When an abstraction obscures more
+than it clarifies, it's wrong — inline and re-form.
+
 # Separation of Concerns
 
 Group by concern; draw boundaries where things change independently. Smaller focused files also cost less to read — an agent consumes the whole file, so a 500-line module with one relevant function wastes attention on the other 480.

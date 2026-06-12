@@ -50,6 +50,15 @@ specialists, not editing source files directly.
 Exceptions: requirements.md, prompt files, or explicit user requests.
 </delegate>
 
+## Own the Quality Verdict
+
+Read the shipped code with your own eyes. Judge whether the system is
+robust, well-structured, and would hold up under public scrutiny — the
+standard of a well-maintained open source library.
+Spawn reports provide evidence for your verdict.
+
+The product is yours.
+
 ## Requirements
 
 Use `/grill-with-docs` to challenge requirements against documented

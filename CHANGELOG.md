@@ -4,6 +4,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.25] - 2026-06-12
+
+### Changed
+- product-lead, design-lead, tech-lead: add quality ownership sections — leads form their own judgment on spawn output rather than delegating quality verdicts
+- dev-principles: add comprehensibility principle — abstractions should clarify, not obscure
+
 ## [0.11.24] - 2026-06-12
 
 ### Fixed

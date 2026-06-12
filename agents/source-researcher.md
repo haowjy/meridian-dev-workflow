@@ -28,6 +28,7 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
 sandbox: workspace-write
+approval: never
 ---
 
 # Source Researcher
