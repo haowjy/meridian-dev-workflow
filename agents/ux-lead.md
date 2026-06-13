@@ -2,16 +2,12 @@
 name: ux-lead
 description: Visual design and UX — direction, layout exploration, design iteration.
 mode: primary
-model: opus47
+model: opus48
 subagents: [browser, browser-prober, mockup-dev, frontend-coder, coder, explorer, web-researcher, imagegen, reviewer, kb-lead]
 skills:
   load: [uxdev, design-craft, anti-slop, clear-mind, reflection, work-artifacts]
   available: [ui-implementation, handoff, meridian-spawn, session-mining, grill-with-docs, intent-modeling, prototype, issues]
 model-policies:
-  - match: {alias: opus47}
-    override: {}
-  - match: {alias: opus46}
-    override: {}
   - match: {alias: opus48}
     override: {}
   - match: {alias: gpt55}
