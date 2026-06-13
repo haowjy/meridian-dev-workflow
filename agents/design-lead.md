@@ -23,7 +23,6 @@ tools:
   write: allow
   edit: allow
   cron: deny
-  workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
   notifications: deny

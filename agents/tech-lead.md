@@ -31,7 +31,6 @@ tools:
   'bash(ls *)': allow
   'bash(pwd)': allow
   cron: deny
-  workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
   ask_user: deny

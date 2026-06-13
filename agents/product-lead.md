@@ -19,7 +19,6 @@ tools:
   bash: allow
   'bash(meridian spawn *)': allow
   cron: deny
-  workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
   notifications: deny

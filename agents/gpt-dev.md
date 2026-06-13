@@ -21,7 +21,6 @@ tools:
   'bash(git push *)': allow
   'bash(gh pr *)': allow
   cron: deny
-  workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
   ask_user: deny
