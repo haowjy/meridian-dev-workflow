@@ -16,14 +16,10 @@ tools:
   bash: allow
   write: allow
   edit: allow
-  cron: deny
   workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
   ask_user: deny
-  notifications: deny
-  plan_mode: deny
-  worktree: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
@@ -49,8 +45,7 @@ already documented.
 Run in `$MERIDIAN_TASK_DIR` — the caller-selected source directory. That may
 be the project root, a plain `git worktree`, or a sibling checkout; you don't
 need to care which. Use `cd "$MERIDIAN_TASK_DIR" && …` (or `git -C
-"$MERIDIAN_TASK_DIR" …`) for commands that need to run there. Your
-`worktree: deny` config keeps workspace placement with the caller.
+"$MERIDIAN_TASK_DIR" …`) for commands that need to run there.
 
 Run the built artifact — CLI commands, API requests, UI interactions — not
 test suites. Never run `pytest`, `vitest`, `jest`, `npm test`, or any test

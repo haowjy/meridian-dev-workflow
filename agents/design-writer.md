@@ -17,14 +17,10 @@ tools:
   'bash(meridian *)': allow
   write: allow
   edit: allow
-  cron: deny
   workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
   ask_user: deny
-  notifications: deny
-  plan_mode: deny
-  worktree: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
