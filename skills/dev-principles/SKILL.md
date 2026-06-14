@@ -1,7 +1,7 @@
 ---
 name: dev-principles
 type: principle
-description: Core engineering values for all code decisions — simplicity, separation of concerns, structural judgment.
+description: Core engineering values for all code decisions. Load when implementing, reviewing, refactoring, or designing code changes. Be consistent with code.
 model-invocable: true
 ---
 
