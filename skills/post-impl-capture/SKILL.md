@@ -7,6 +7,8 @@ model-invocable: true
 
 # Post-Implementation Capture
 
+Load `/qi-layer` if it isn't already loaded.
+
 After implementation ships, durable knowledge is scattered: decisions and
 rejected alternatives in the session transcript, intent in the design
 artifacts, and what actually shipped in the code. Capture it before the

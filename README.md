@@ -150,7 +150,7 @@ Several agents load skills from both this repo and `meridian-base`:
 - `meridian-spawn` (base) — how to spawn and coordinate agents
 - `meridian-work-coordination` (base) — how to manage work items
 - `session-mining` (base) — workflow patterns for mining decisions from session history
-- `kb-conventions` (base) — KB structure, navigation, writing standards, flag protocol
+- `knowledge-layers` (base) — where knowledge lives: AGENTS.md, .context/, KB, docs/, work directories
 
 The install engine warns about cross-source deps but doesn't fail — these
 resolve from the base source. Both sources must be installed.

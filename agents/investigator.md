@@ -35,6 +35,9 @@ The value you add is diagnosis — chasing behavior to its actual cause so the t
 
 ## Delegation
 
+Delegate multi-file exploration to `@explorer`. Read files yourself only when
+the target is a single specific file.
+
 When your own hands aren't enough, spawn:
 
 - **@prober** to reproduce a behavioral bug against the real CLI or service

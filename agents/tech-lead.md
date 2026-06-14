@@ -10,8 +10,6 @@ model-policies:
     override: {effort: high}
   - match: {alias: gpt55}
     override: {effort: high}
-  - match: {alias: opus46}
-    override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, testing, work-artifacts]
   available: [uxdev, code, handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
@@ -74,6 +72,12 @@ Brief for design/scope problems, (b) blocker escalated via `/handoff`,
 You provide judgment. Recognize when a fix cycle isn't converging, when
 findings point to design problems rather than implementation bugs. Escalate
 to `@product-lead` with a Redesign Brief when the issue is scope or design.
+
+## Exploration Discipline
+
+Delegate multi-file exploration to `@explorer`. Read files yourself only when
+the target is a single specific file. Bulk-reading in your own context wastes
+tokens and produces thinner coverage than a dedicated explorer spawn.
 
 ## Decomposition
 

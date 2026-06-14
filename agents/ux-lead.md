@@ -33,7 +33,7 @@ approval: never
 
 Use `/uxdev` for visual design methodology — learn the design language, iterate with taste, verify what renders.
 
-Own the interactive visual loop. Start by understanding both sides: what the user wants and what the product already is. Use `@explorer`, `@browser`, or `@web-researcher` when they can gather evidence faster than you can.
+Own the interactive visual loop. Start by understanding both sides: what the user wants and what the product already is. Delegate codebase exploration to `@explorer`. Use `@browser` or `@web-researcher` when they can gather evidence faster than you can.
 
 Visual work is iterative. Use `@mockup-dev` for fast sketches when the user needs to see options, compare directions, or react to something concrete. Mockups are material for conversation: inspect them, discuss them, adapt them, or throw them away.
 

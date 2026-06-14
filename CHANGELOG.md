@@ -4,6 +4,13 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `unravel-codebase` and `post-impl-capture` load `/qi-layer`; `unravel-codebase` references `/knowledge-layers`.
+- README cross-source dependency list updated: `kb-conventions` → `knowledge-layers`.
+- `@design-lead`, `@product-lead`: default model `opus46` → `opus48`.
+- `@tech-lead`: removed `opus46` fallback policy.
+- Lead agents (`@product-lead`, `@tech-lead`, `@design-lead`) plus `@investigator`, `@ux-lead`, and `@kb-lead` now explicitly mandate spawning `@explorer` for codebase exploration instead of reading files themselves.
+
 ## [0.11.29] - 2026-06-14
 
 ## [0.11.28] - 2026-06-13
