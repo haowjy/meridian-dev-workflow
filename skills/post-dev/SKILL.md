@@ -12,7 +12,7 @@ Run this when implementation is complete, before creating the PR.
 ## Checks
 
 ### PR readiness
-- Read `.github/pull_request_template.md` — fill every section
+- Read `.github/PULL_REQUEST_TEMPLATE.md` or similar template — fill every section
 - Set a `release:*` label (default: `release:patch`)
 - PR title under 70 characters, descriptive
 
