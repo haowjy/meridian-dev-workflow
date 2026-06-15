@@ -14,7 +14,7 @@ model-policies:
     override: {}
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
-  available: [uxdev, code, grill-with-docs, handoff, meridian-spawn, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, prototype, issues, source-study]
+  available: [uxdev, code, grill-with-docs, handoff, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, prototype, issues, source-study]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Removed
+- Dropped `meridian-spawn` from `available:` across all agents that listed it (`@tech-lead`, `@product-lead`, `@design-lead`, `@gpt-dev`, `@investigator`, `@ux-lead`) and from the README cross-source dependency list. Spawn doctrine now lives in meridian — injected spawn contract + discovery pointers in the system prompt, with `meridian spawn -h` as the on-demand reference. Skill deleted in meridian-base.
+
 ## [0.11.31] - 2026-06-15
 
 ## [0.11.30] - 2026-06-14

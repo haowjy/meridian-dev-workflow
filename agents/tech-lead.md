@@ -12,7 +12,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, testing, work-artifacts]
-  available: [uxdev, code, handoff, meridian-spawn, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
+  available: [uxdev, code, handoff, explore-and-engage, dev-workflow, planning, architecture, review, improve-codebase-architecture, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out]
 tools:
   write: allow
   edit: allow

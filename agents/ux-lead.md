@@ -6,7 +6,7 @@ model: opus48
 subagents: [browser, browser-prober, mockup-dev, frontend-coder, coder, explorer, web-researcher, imagegen, reviewer, kb-lead]
 skills:
   load: [uxdev, design-craft, anti-slop, clear-mind, reflection, work-artifacts]
-  available: [ui-implementation, handoff, meridian-spawn, session-mining, grill-with-docs, intent-modeling, prototype, issues]
+  available: [ui-implementation, handoff, session-mining, grill-with-docs, intent-modeling, prototype, issues]
 model-policies:
   - match: {alias: opus48}
     override: {}

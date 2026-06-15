@@ -7,7 +7,7 @@ subagents: [explorer, prober, session-miner, web-researcher, coder]
 effort: medium
 skills:
   load: [diagnose, dev-principles, work-artifacts]
-  available: [meridian-spawn, issues]
+  available: [issues]
 tools:
   bash: allow
   write: allow

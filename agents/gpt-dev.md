@@ -10,7 +10,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, reflection, testing, work-artifacts]
-  available: [meridian-spawn, dev-workflow, review, improve-codebase-architecture, intent-modeling, post-dev, issues]
+  available: [dev-workflow, review, improve-codebase-architecture, intent-modeling, post-dev, issues]
 tools:
   bash: allow
   write: allow
