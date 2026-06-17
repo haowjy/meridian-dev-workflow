@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.32] - 2026-06-17
+
 ### Added
 - `/visualize-codebase` skill (renamed from `codebase-walkthrough`): user-invocable, builds an interactive artifact mapping a codebase's structure, behavior, relationships, and health. Loads `/interactive-artifact` for rendering mechanism.
 - `visualize-codebase/resources/db-schema.md`: DB schema introspection pipeline — `mermerd` for live database → Mermaid ER (subset with `--selectedTables`), plus layered data-flow annotations from code analysis.
