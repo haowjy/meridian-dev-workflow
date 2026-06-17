@@ -4,7 +4,18 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/visualize-codebase` skill (renamed from `codebase-walkthrough`): user-invocable, builds an interactive artifact mapping a codebase's structure, behavior, relationships, and health. Loads `/interactive-artifact` for rendering mechanism.
+- `visualize-codebase/resources/db-schema.md`: DB schema introspection pipeline — `mermerd` for live database → Mermaid ER (subset with `--selectedTables`), plus layered data-flow annotations from code analysis.
+- `visualize-codebase/resources/db-schema-alternatives.md`: fallbacks (`pg-mermaid`, raw SQL) when `mermerd` isn't available.
+
+### Changed
+- `unravel-codebase`: removed pointer to `/visualize-codebase` — reference is one-way only (visualize-codebase knows about unravel, not the other way around).
+- `visualize-codebase/SKILL.md`: `/llm-writing` pass — cut redundant dimension restatement, collapsed "Teach Progressively" into intro, added "Splitting the Artifact" guidance for progressive mobile-friendly consumption.
+
 ### Removed
+- `html-artifact` skill (directory deleted) — replaced by `/interactive-artifact` in meridian-base (generic mechanism) and `/visualize-codebase` (codebase methodology).
+- `codebase-walkthrough` skill — renamed to `visualize-codebase`.
 - Dropped `meridian-spawn` from `available:` across all agents that listed it (`@tech-lead`, `@product-lead`, `@design-lead`, `@gpt-dev`, `@investigator`, `@ux-lead`) and from the README cross-source dependency list. Spawn doctrine now lives in meridian — injected spawn contract + discovery pointers in the system prompt, with `meridian spawn -h` as the on-demand reference. Skill deleted in meridian-base.
 
 ## [0.11.31] - 2026-06-15

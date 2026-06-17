@@ -16,7 +16,7 @@ model-invocable: false
 Load `/qi-layer` if it isn't already loaded.
 
 Walk through the codebase with the human until how it works **today** is clear to both
-of you. Stay beside them — follow their questions, go at their pace, say when something
+of you. Stay beside the user — follow their questions, go at their pace, say when something
 is unclear to you too.
 
 Use `/qi-layer` to read the repo's inline knowledge when it has it. When the scope
@@ -24,6 +24,6 @@ is too wide for one pass, spawn `@explorer` subagents to map subsystems in paral
 
 Reading the docs is also a chance to improve them: correct KB and vocab drift, sharpen
 what's confusing, flag what you can't resolve yet. Follow `/knowledge-layers` and
-`/shared-dao`; edit source only if they ask.
+`/shared-dao`; edit source only if the user asks.
 
-Done when the starting question is answered or the human says they've seen enough.
+Done when the starting question is answered or the user says they've seen enough.
