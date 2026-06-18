@@ -3,14 +3,15 @@ name: product-lead
 description: Intent capture, scope sizing, design approval, and implementation routing.
 mode: primary
 harness: claude
-model: opus48
+model: opus46
 subagents: [explorer, web-researcher, reviewer, simplify-reviewer, session-miner, kb-lead, prober, browser-prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, alignment-reviewer, source-researcher]
 model-policies:
+  - match: {alias: opus46}
+  - match: {alias: opus48}
   - match: {alias: gpt55}
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
-  - match: {alias: opus48}
     override: {}
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]

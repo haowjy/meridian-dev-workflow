@@ -2,14 +2,13 @@
 name: design-lead
 description: Design guidance — structural options, key interfaces, boundaries, and tradeoffs.
 mode: primary
-model: opus48
+model: opus46
 model-policies:
+  - match: {alias: opus46}
   - match: {alias: opus48}
-    override: {}
   - match: {alias: gpt55}
     override: {effort: high}
   - match: {alias: sonnet}
-    override: {}
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, prober, browser-prober, browser, source-researcher]
 effort: high
 skills:
