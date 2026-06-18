@@ -12,7 +12,6 @@ model-policies:
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
-    override: {}
 skills:
   load: [dev-principles, shared-dao, clear-mind, llm-writing, reflection, explore-and-engage, work-artifacts]
   available: [uxdev, code, grill-with-docs, handoff, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, prototype, issues, source-study]
