@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.34] - 2026-06-19
+
 ### Changed
 - All 21 agent bodies trimmed: filler removal, em-dash → colon, natural sentence rewording. Net −400 lines.
 - All agents: dropped `reflection` from `skills.load` (12 agents). Verification stays with loaded methodology skills and external gates.
