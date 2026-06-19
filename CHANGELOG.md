@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.35] - 2026-06-19
+
 ### Fixed
 - All agents: deny `bash(tmux kill-server:*)` at the tool-policy layer to prevent global tmux server teardown.
 
