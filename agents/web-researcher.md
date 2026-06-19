@@ -1,6 +1,6 @@
 ---
 name: web-researcher
-description: External facts — library docs, upstream issues, changelogs, usage patterns.
+description: External facts from library docs, upstream issues, changelogs, and usage patterns.
 mode: subagent
 model: gpt-5.4-mini
 harness: codex

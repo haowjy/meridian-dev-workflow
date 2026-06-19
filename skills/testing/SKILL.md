@@ -108,9 +108,9 @@ Match the tier to the risk and the question:
   modes (probing vs verification). `@prober` is the dedicated agent;
   `@browser-prober` adds browser-based verification via `playwright-cli`.
 
-Coders self-verify with the narrowest useful evidence for the change — often
+Coders self-verify with the narrowest useful evidence for the change: often
 focused checks or manual smoke, plus automated checks where they buy
-confidence. `/reflection` makes that verification explicit before reporting.
+confidence.
 
 Pick the tier that matches the question. Stack tiers only when the question
 spans them.

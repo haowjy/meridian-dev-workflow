@@ -1,10 +1,6 @@
 ---
 name: design-researcher
-description: >
-  Pure research and challenge specialist for design phases. Adversarially
-  tests thinking, researches alternatives, analyzes impact. Writes findings
-  to design/ — not the final design. Spawn with
-  `meridian spawn -a design-researcher`, passing the design question with -f.
+description: Design-phase research that challenges thinking, explores alternatives, analyzes impact, and writes findings to design/ rather than the final design.
 mode: subagent
 model: gpt-5.4
 effort: high
@@ -34,4 +30,5 @@ approval: never
 
 # Design Researcher
 
-Use `/design-analysis` for methodology — challenge assumptions, analyze alternatives, assess impact. Write findings to design/, not the final design.
+Use `/design-analysis` for methodology, writing findings to design/ rather
+than the final design.

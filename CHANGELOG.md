@@ -4,6 +4,25 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- All 21 agent bodies trimmed: filler removal, em-dash → colon, natural sentence rewording. Net −400 lines.
+- All agents: dropped `reflection` from `skills.load` (12 agents). Verification stays with loaded methodology skills and external gates.
+- Primary leads (`@product-lead`, `@design-lead`, `@tech-lead`): exploration discipline condensed, routing lists tightened.
+- `@investigator`: thinned to wrapper; added `thermo-nuclear-review` to available for structural observations post-diagnosis.
+- `@prober`, `@browser-prober`: thinned to wrappers pointing at `/probe`.
+- `@simplify-reviewer`: fixed load list (`reflection` → `improve-codebase-architecture`).
+- `@product-lead`: post-impl spawn uses plain `@kb-lead` (was `--skills post-impl-capture`).
+- `@tech-lead`: removed `planning` from available.
+- `agent-staffing` skill: gutted from 67 to 23 lines (redundant principles already in lead bodies).
+- `testing` skill: removed stale `/reflection` reference.
+- `visualize-codebase`: fixed stale description.
+
+### Removed
+- `planning` skill deleted. Execution-model diagram moved to `agent-staffing/resources/`.
+- `post-impl-capture` skill deleted. Unique content absorbed into `@kb-lead` Orient step (meridian-base).
+- `@design-writer` agent deleted. Orphan; `@design-lead` + `@architect` cover design docs.
+- Stale README rows: `design-writer`, `post-impl-capture`, `planning`.
+
 ## [0.11.33] - 2026-06-18
 
 ## [0.11.32] - 2026-06-17

@@ -55,7 +55,7 @@ flowchart TB
 
 ## Why Two Levels
 
-- **Coder self-review between subphases** catches drift early while context is still loaded. All coders load `/reflection`.
+- **Coder self-review between subphases** catches drift early while context is still loaded. Coders run project verification per `/code`.
 - **Full gate at phase boundaries** enforces the real quality bar with fresh external perspective before the phase commits. Gate lanes run in parallel (`--bg` + `spawn wait`).
 - **Final gate after all phases** proves the whole change set hangs together and matches the design. Discovered gaps feed back as new phases.
 

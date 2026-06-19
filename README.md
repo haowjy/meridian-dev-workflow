@@ -62,7 +62,6 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | Agent | Model | Role |
 |---|---|---|
 | `architect` | gpt-5.4 | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
-| `design-writer` | deepseek | Lightweight design doc writer — post-review updates, scope adjustments, settled design edits |
 
 **Implementation:**
 
@@ -116,11 +115,8 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Skill | What it teaches |
 |---|---|
-| `decision-log` | Decision capture — reasoning, alternatives, constraints |
-| `dev-artifacts` | Shared artifact convention between leads — requirements, design, plan/status |
 | `session-mining` | Session-mining workflow patterns — recover parent-session decisions and delegate bulk transcript reads |
 | `architecture` | Problem framing, tradeoff analysis, approach evaluation |
-| `planning` | Plan execution — phases, subphases, verification levels, probe/diagnosis lanes |
 | `agent-staffing` | Team composition — which agents to spawn, how many, what runs in parallel |
 | `dev-principles` | Simplicity, separation of concerns, structural judgment — the operating lens for code decisions |
 | `testing` | Restraint-first testing discipline — tier selection, when NOT to write tests, functional core patterns. Resources cover unit and integration patterns. |
@@ -141,7 +137,6 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | `ui-implementation` | Production UI follow-through after visual direction is settled |
 | `thermo-nuclear-review` | Extremely strict maintainability review — abstraction quality, code judo moves |
 | `test-architecture` | Strict test structure audit — fixture sprawl, implementation-pinned tests, deletion targets, test file boundaries |
-| `post-impl-capture` | Post-implementation knowledge capture workflow for @kb-lead |
 
 ## Cross-Source Dependencies
 

@@ -1,10 +1,7 @@
 ---
 name: visualize-codebase
 type: reference
-description: |
-  Build an interactive artifact that maps a codebase — structure, data flow, connections,
-  and where something looks off. Invoke directly for the artifact; `/unravel-codebase`
-  loads this when a conversational walk needs a visual.
+description: Build an interactive artifact that maps a codebase — structure, data flow, connections, and where something looks off.
 user-invocable: true
 argument-hint: "Which area, flow, or question? (optional)"
 model-invocable: false

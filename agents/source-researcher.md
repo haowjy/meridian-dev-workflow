@@ -1,6 +1,6 @@
 ---
 name: source-researcher
-description: Study real source code of open-source projects — clone repos, fan out explorers, synthesize findings into actionable design context.
+description: Studies real open-source code by cloning repos, fanning out explorers, and synthesizing findings.
 mode: subagent
 model: deepseek
 effort: medium
@@ -29,4 +29,4 @@ approval: never
 
 # Source Researcher
 
-Use `/source-study` for methodology — clone repos, fan out explorers, synthesize findings.
+Use `/source-study` for methodology.

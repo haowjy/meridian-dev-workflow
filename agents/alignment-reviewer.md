@@ -1,6 +1,6 @@
 ---
 name: alignment-reviewer
-description: Verify alignment between artifacts — plan vs design, code vs spec, output vs intent.
+description: Verifies artifact alignment across plan vs design, code vs spec, and output vs intent.
 mode: subagent
 model: gpt
 effort: medium
@@ -26,4 +26,4 @@ sandbox: read-only
 
 # Alignment Reviewer
 
-Use `/review-alignment` for methodology — coverage verification, gap/drift classification, report format.
+Use `/review-alignment` for methodology.
