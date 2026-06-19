@@ -21,6 +21,7 @@ tools:
   workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
+  'bash(tmux kill-server:*)': deny
 sandbox: read-only
 ---
 

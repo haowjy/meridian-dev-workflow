@@ -35,6 +35,7 @@ tools:
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny
+  'bash(tmux kill-server:*)': deny
 sandbox: read-only
 ---
 

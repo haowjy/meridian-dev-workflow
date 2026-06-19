@@ -29,6 +29,7 @@ tools:
   'bash(git restore:*)': deny
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
+  'bash(tmux kill-server:*)': deny
 sandbox: danger-full-access
 approval: never
 ---
