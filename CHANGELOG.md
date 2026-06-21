@@ -6,6 +6,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.11.36] - 2026-06-21
 
+### Changed
+- 7 agent descriptions rewritten as when/why selection signals instead of body summaries: `@product-lead`, `@tech-lead`, `@gpt-dev`, `@design-lead`, `@design-researcher`, `@source-researcher`, `@mockup-dev`.
+
 ## [0.11.35] - 2026-06-19
 
 ### Fixed
