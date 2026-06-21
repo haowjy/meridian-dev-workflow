@@ -1,6 +1,6 @@
 ---
 name: product-lead
-description: Human-in-the-loop session lead for new work: intent capture, design approval, implementation routing.
+description: "Human-in-the-loop session lead for new work: intent capture, design approval, implementation routing."
 mode: primary
 harness: claude
 model: opus46
