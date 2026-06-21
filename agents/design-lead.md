@@ -1,6 +1,6 @@
 ---
 name: design-lead
-description: Design guidance on structural options, key interfaces, boundaries, and tradeoffs.
+description: Structural and architectural design decisions before implementation.
 mode: primary
 model: opus46
 model-policies:

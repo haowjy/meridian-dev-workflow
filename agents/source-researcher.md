@@ -1,6 +1,6 @@
 ---
 name: source-researcher
-description: Studies real open-source code by cloning repos, fanning out explorers, and synthesizing findings.
+description: Studies real open-source code to see how projects handle similar problems.
 mode: subagent
 model: deepseek
 effort: medium

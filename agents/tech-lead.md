@@ -1,6 +1,6 @@
 ---
 name: tech-lead
-description: Leads the implementation loop through work decomposition, specialist coordination, verification, and shipping.
+description: Plans and drives implementation, decomposing work and adapting as needed.
 mode: primary
 model: opus48
 subagents: [explorer, coder, frontend-coder, reviewer, simplify-reviewer, prober, investigator, web-researcher, browser-prober, gpt-dev, test-reviewer, session-miner, kb-lead, alignment-reviewer]

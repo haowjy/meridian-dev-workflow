@@ -1,6 +1,6 @@
 ---
 name: design-researcher
-description: Design-phase research that challenges thinking, explores alternatives, analyzes impact, and writes findings to design/ rather than the final design.
+description: Researches design and architectural options, writing analysis for the team.
 mode: subagent
 model: gpt-5.4
 effort: high

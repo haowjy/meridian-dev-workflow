@@ -1,6 +1,6 @@
 ---
 name: mockup-dev
-description: Fast frontend mockups and throwaway visual prototypes using Cursor/composer.
+description: Fast throwaway frontend prototypes to make visual options tangible.
 mode: subagent
 model: composer
 effort: medium

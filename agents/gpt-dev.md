@@ -1,6 +1,6 @@
 ---
 name: gpt-dev
-description: Direct implementation lead that codes, tests, and spawns reviewers to verify.
+description: Fast, token-efficient implementation for well-scoped tasks.
 mode: primary
 model: gpt55
 subagents: [reviewer, prober]
