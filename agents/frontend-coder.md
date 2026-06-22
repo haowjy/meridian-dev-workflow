@@ -13,7 +13,7 @@ model-policies:
     override: {effort: low}
 skills:
   load: [dev-principles, anti-slop, testing, work-artifacts]
-  available: [uxdev, playwright-cli, react-architecture, issues]
+  available: [uxdev, agent-browser, react-architecture, issues]
 tools:
   bash: allow
   write: allow
@@ -45,7 +45,7 @@ judgment call and document it.
 
 ## Visual Verification
 
-Verify your output as you build. Use `/playwright-cli` to snapshot what
+Verify your output as you build. Use `/agent-browser` to snapshot what
 renders and confirm it matches the intended result.
 
 Bugs or surprising behavior outside your task: mention in your report.

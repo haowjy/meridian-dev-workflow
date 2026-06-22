@@ -11,7 +11,7 @@ model-policies:
     override: {effort: medium}
 skills:
   load: [probe]
-  available: [playwright-cli]
+  available: [agent-browser]
 tools:
   bash: allow
   write: allow
@@ -34,10 +34,19 @@ approval: never
 
 # Browser Prober
 
-Use `/probe` and `/playwright-cli`.
+You verify frontend changes through `agent-browser` — rendering, flows, and
+console errors.
 
-Core loop: `playwright-cli open`, snapshot, interact, snapshot, screenshot.
-Screenshot anything wrong or surprising.
+Use `/probe` and `/agent-browser` (`agent-browser skills get dogfood` for
+exploratory bug hunts).
 
-`playwright-cli show --annotate` when the orchestrator wants the user to see
-the browser.
+Core loop: open, `snapshot -i`, interact, re-snapshot, screenshot. Refs
+(`@eN`) go stale on any page change — re-snapshot first. Read `agent-browser
+console` and `agent-browser errors` for console and runtime errors; screenshot
+anything wrong or surprising. For React apps, `agent-browser react
+tree|inspect|renders` and `agent-browser vitals` surface component and
+performance detail.
+
+When someone should watch the session live, `agent-browser dashboard start`
+serves a live viewport on `:4848` (expose it via `tailscale serve 4848` to
+view from another device).

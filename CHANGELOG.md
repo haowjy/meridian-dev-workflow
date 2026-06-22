@@ -4,6 +4,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Browser tooling swapped `playwright-cli` → `agent-browser` across `@browser`, `@browser-prober`, `@frontend-coder`, `@mockup-dev`. New self-authored `agent-browser` mechanism skill: stable core surface inline, `agent-browser skills get` as escape hatch for depth. Leaner always-loaded footprint, plus `console`/`errors`, React introspection (`react`, `vitals`), and the live observability dashboard.
+
+### Removed
+- `playwright-cli` dependency dropped from `mars.toml`. `show --annotate` (bidirectional draw-on-page review) has no agent-browser equivalent — handled out-of-band (Cursor); `agent-browser dashboard start`, optionally `tailscale serve 4848`, covers watch-live.
+
 ## [0.11.36] - 2026-06-21
 
 ### Changed

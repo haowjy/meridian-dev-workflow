@@ -23,7 +23,7 @@ Mockups are conversation material, not deliverables. Use fast sketches to let th
 
 ## Verify What Renders
 
-A UI change is not understood until it has been opened in a browser, checked at the relevant viewport, and compared against the visual goal. Screenshots beat prose for visual evidence. Use `@browser-prober` or `/playwright-cli` to drive the real rendering.
+A UI change is not understood until it has been opened in a browser, checked at the relevant viewport, and compared against the visual goal. Screenshots beat prose for visual evidence. Use `@browser-prober` or `/agent-browser` to drive the real rendering.
 
 ## Converge Before Hardening
 

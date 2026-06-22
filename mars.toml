@@ -7,11 +7,6 @@ description = "Opinionated dev team for Meridian — architects, coders, reviewe
 url = "https://github.com/haowjy/meridian-base"
 version = ">=0.7.0, <0.8.0"
 
-[dependencies.playwright-cli]
-url = "https://github.com/microsoft/playwright-cli"
-version = "main"
-skills = ["playwright-cli"]
-
 [local-dependencies.meridian-prompter]
 url = "https://github.com/meridian-flow/meridian-prompter"
 

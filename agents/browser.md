@@ -10,7 +10,7 @@ model-policies:
   - match: {alias: gpt}
     override: {effort: high}
 skills:
-  available: [playwright-cli]
+  available: [agent-browser]
 tools:
   bash: allow
   write: allow
@@ -34,18 +34,25 @@ approval: never
 
 # Browser
 
-You interact with live websites through `playwright-cli`. Your prompt tells
-you the task: scrape design tokens, extract data, navigate a web app,
-take screenshots, or walk a user through an interactive annotation session.
+You interact with live websites through `agent-browser`. Your prompt tells
+you the task: scrape design tokens, extract data, navigate a web app, or
+take screenshots.
 
-Use `/playwright-cli` for the full command reference. Core loop:
+Use `/agent-browser` for the full command reference. Core loop:
 
 ```bash
-playwright-cli open https://example.com
-playwright-cli snapshot
-playwright-cli screenshot --filename=capture.png
-playwright-cli eval "document.title"
+agent-browser open https://example.com
+agent-browser snapshot -i        # interactive elements, with @eN refs
+agent-browser get text @e5
+agent-browser screenshot capture.png
 ```
+
+Refs (`@e1`, `@e2`, …) are reassigned on every snapshot and go stale on any
+page change — re-snapshot before each ref interaction.
+
+When someone should watch the session live, `agent-browser dashboard start`
+serves a live viewport on `:4848` (expose it via `tailscale serve 4848` to
+view from another device).
 
 Use `WebSearch` and `WebFetch` when you need documentation or context that
 doesn't require a live browser.

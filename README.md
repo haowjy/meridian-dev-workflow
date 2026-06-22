@@ -68,7 +68,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | Agent | Model | Role |
 |---|---|---|
 | `coder` | composer | Production code writer — implements scoped tasks and behavior-preserving refactors |
-| `frontend-coder` | opus47 | Production frontend code with visual self-verification via playwright-cli |
+| `frontend-coder` | opus47 | Production frontend code with visual self-verification via agent-browser |
 | `mockup-dev` | composer | Fast frontend mockups and throwaway visual prototypes |
 
 **Testing & Verification:**
@@ -76,7 +76,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | Agent | Model | Role |
 |---|---|---|
 | `prober` | gpt55 | Runtime verification — CLI flows, HTTP requests, race probes, integration boundaries |
-| `browser-prober` | gpt55 | Browser-based QA via Playwright — visual verification, user flows, console errors |
+| `browser-prober` | gpt55 | Browser-based QA via agent-browser — visual verification, user flows, console errors |
 
 **Review & Analysis:**
 

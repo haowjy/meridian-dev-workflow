@@ -106,7 +106,7 @@ Match the tier to the risk and the question:
   internal components with fakes at external boundaries.
 - **Runtime** — `/probe` skill. Real commands against the real system. Two
   modes (probing vs verification). `@prober` is the dedicated agent;
-  `@browser-prober` adds browser-based verification via `playwright-cli`.
+  `@browser-prober` adds browser-based verification via `agent-browser`.
 
 Coders self-verify with the narrowest useful evidence for the change: often
 focused checks or manual smoke, plus automated checks where they buy

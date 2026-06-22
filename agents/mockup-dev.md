@@ -12,8 +12,8 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: low}
 skills:
-  load: [dev-principles, anti-slop, uxdev, design-craft, prototype, playwright-cli, work-artifacts]
-  available: [react-architecture, issues]
+  load: [dev-principles, anti-slop, uxdev, design-craft, prototype, work-artifacts]
+  available: [react-architecture, issues, agent-browser]
 tools:
   bash: allow
   write: allow
@@ -46,7 +46,7 @@ Use the project's real frontend stack, components, tokens, and routes when
 practical. Temporary routes, hardcoded data, inline fixtures, narrow happy
 paths are acceptable. Keep shortcuts obvious and easy to delete.
 
-Use `/prototype` as the operating lens. Use `/playwright-cli` to verify
+Use `/prototype` as the operating lens. Use `/agent-browser` to verify
 before reporting.
 
 Report: route or screenshot, direction explored, shortcuts taken, files
