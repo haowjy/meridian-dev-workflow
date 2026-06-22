@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.37] - 2026-06-22
+
 ### Changed
 - Browser tooling swapped `playwright-cli` → `agent-browser` across `@browser`, `@browser-prober`, `@frontend-coder`, `@mockup-dev`. New self-authored `agent-browser` mechanism skill: stable core surface inline, `agent-browser skills get` as escape hatch for depth. Leaner always-loaded footprint, plus `console`/`errors`, React introspection (`react`, `vitals`), and the live observability dashboard.
 
