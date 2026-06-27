@@ -20,6 +20,12 @@ Commit after each step that passes checks. Don't accumulate changes across multi
 
 Keep `CHANGELOG.md` current under `## [Unreleased]` — write entries at commit time, not retroactively.
 
+## Pushing and PRs
+
+When a feature branch (never `main`) is complete and passes the full gate, push
+it and open or update its PR without asking. Fill every PR-template section and
+set a `release:*` label.
+
 ## Do Not
 
 - Do not merge directly into `main` or `staging`; normal feature-branch merges are allowed
