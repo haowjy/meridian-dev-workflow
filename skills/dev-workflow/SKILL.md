@@ -22,6 +22,7 @@ Keep `CHANGELOG.md` current under `## [Unreleased]` — write entries at commit 
 
 ## Do Not
 
+- Do not merge directly into `main` or `staging`; normal feature-branch merges are allowed
 - Push directly to main for feature work (use PRs)
 - Create or push `v*` tags manually (CI owns tagging)
 - Use `--no-verify` on push without explicit user permission

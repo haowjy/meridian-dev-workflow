@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/dev-workflow` clarifies that direct integration into protected branches like `main` or `staging` is PR/human-owned while leaving normal feature-branch merges available.
+
 ## [0.11.37] - 2026-06-22
 
 ### Changed
