@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.39] - 2026-06-27
+
+### Changed
+- `/dev-workflow`: when a feature branch is complete and passes the full gate, push and open/update its PR without asking.
+
 ## [0.11.38] - 2026-06-27
 
 ### Changed
