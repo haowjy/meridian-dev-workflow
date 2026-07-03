@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/visualize-codebase` now loads `/information-hierarchy` and `/structured-artifact` (renamed from `/interactive-artifact` in meridian-base).
+
 ## [0.11.39] - 2026-06-27
 
 ### Changed

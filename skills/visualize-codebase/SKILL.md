@@ -1,7 +1,7 @@
 ---
 name: visualize-codebase
 type: reference
-description: Build an interactive artifact that maps a codebase — structure, data flow, connections, and where something looks off.
+description: Build a structured artifact that maps a codebase — structure, data flow, connections, and where something looks off.
 user-invocable: true
 argument-hint: "Which area, flow, or question? (optional)"
 model-invocable: false
@@ -9,7 +9,8 @@ model-invocable: false
 
 # Visualize Codebase
 
-Load `/qi-layer` and `/interactive-artifact` if they aren't already loaded.
+Load `/qi-layer`, `/information-hierarchy`, and `/structured-artifact` if they
+aren't already loaded.
 When invoked with `/unravel-codebase`, also load `resources/unravel-codebase.md`.
 
 Match what you show to what the human is trying to learn — a single flow needs Behavior,

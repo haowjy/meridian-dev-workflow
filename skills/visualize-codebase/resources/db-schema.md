@@ -23,7 +23,7 @@ Install globally if not present (`command -v mermerd`): download a prebuilt bina
 https://github.com/KarnerTh/mermerd/releases into a PATH directory (e.g. `/usr/local/bin`)
 — or `go install github.com/KarnerTh/mermerd@latest` if Go is available.
 
-The output is raw Mermaid — embed it directly in an `interactive-artifact` HTML file inside
+The output is raw Mermaid — embed it directly in a `structured-artifact` HTML file inside
 a `<pre class="mermaid">` block and wire click callbacks per `html-patterns.md`.
 
 If `mermerd` isn't available, see `resources/db-schema-alternatives.md`.
