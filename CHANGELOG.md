@@ -4,6 +4,19 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@design-lead`: overhaul. Load information-hierarchy and explore-and-engage. Route all subagents in body (architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev). Add prototype phase, structured-artifact via spawned subagent, audience-aware output.
+- `@tech-lead`: tighten body, collapse decomposition/verification into compact agent routing.
+- `@reviewer`: fix model alias to gpt54, add fable to model-policies.
+- `@investigator`: fix model alias to gpt54.
+- `@prober`: add diagnose to available skills.
+- `@browser`: description updated for design/behavior inspiration.
+- `@frontend-coder`: model changed to opus48, add fable and glm to model-policies.
+- `@mockup-dev`: fix model alias to opus46.
+- `/parallel-execution`: remove "default to parallel", add judgment-based parallelism, add final whole-change convergence gate.
+- `/agent-staffing` reviewers.md: add fan-out models section, remove @reviewer --skills probe row.
+- `/diagnose`: simplify description.
+
 ## [0.11.40] - 2026-07-04
 
 ### Changed
