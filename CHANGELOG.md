@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Remove em dashes across all skills and agents. Fix model aliases: architect/design-researcher to gpt54, web-researcher to gptmini.
+
 ## [0.11.41] - 2026-07-04
 
 ### Changed
