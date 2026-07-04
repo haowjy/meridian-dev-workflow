@@ -11,6 +11,8 @@ model-policies:
     override: {}
   - match: {alias: composer}
     override: {}
+  - match: {alias: glm}
+    override: {}
   - match: {alias: gpt55}
     override: {effort: low}
 skills:
