@@ -1,7 +1,7 @@
 ---
 name: dev-workflow
 type: reference
-description: Commit discipline during implementation — commit after each passing step, changelog at commit time.
+description: Commit discipline during implementation: commit after each passing step, changelog at commit time.
 model-invocable: true
 ---
 
@@ -18,7 +18,7 @@ Commit after each step that passes checks. Don't accumulate changes across multi
 3. Commit with a descriptive message
 4. Move to next step
 
-Keep `CHANGELOG.md` current under `## [Unreleased]` — write entries at commit time, not retroactively.
+Keep `CHANGELOG.md` current under `## [Unreleased]`: write entries at commit time, not retroactively.
 
 ## Pushing and PRs
 

@@ -1,7 +1,7 @@
 ---
 name: pre-dev
 type: checkpoint
-description: Pre-implementation readiness — worktree, branch, workspace state. Run before handing off to implementation.
+description: Pre-implementation readiness: worktree, branch, workspace state. Run before handing off to implementation.
 model-invocable: true
 ---
 
@@ -32,7 +32,7 @@ meridian work task-dir ../<repo>.worktrees/<slug>
 
 ### Workspace state
 - Working tree is clean (no uncommitted changes from other work)
-- If other agents' uncommitted work is present, stop and report — do not
+- If other agents' uncommitted work is present, stop and report: do not
   proceed over someone else's changes
 
 ### Cross-repo awareness

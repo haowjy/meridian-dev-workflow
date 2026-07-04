@@ -2,10 +2,10 @@
 name: agent-browser
 type: reference
 description: |
-  Drive a real browser from the CLI with agent-browser — navigate, snapshot the
+  Drive a real browser from the CLI with agent-browser: navigate, snapshot the
   accessibility tree with compact @eN refs, click/fill/extract, screenshot, read
   console and runtime errors, inspect network and React, and watch a session live
-  in the dashboard. Use when a task needs a live browser — scraping, data or
+  in the dashboard. Use when a task needs a live browser: scraping, data or
   design-token extraction, form filling, verifying frontend rendering and flows,
   capturing screenshots, or reproducing a UI bug. Body covers the stable core loop
   and the commands you reach for most; load specialized skills (dogfood, electron,
@@ -16,7 +16,7 @@ model-invocable: true
 # agent-browser
 
 Fast browser automation CLI. Chrome/Chromium over CDP, accessibility-tree
-snapshots with compact `@eN` refs — interact with a page in a few hundred
+snapshots with compact `@eN` refs: interact with a page in a few hundred
 tokens instead of parsing HTML.
 
 Install once if the command is missing:
@@ -36,7 +36,7 @@ agent-browser close
 ```
 
 Refs (`@e1`, `@e2`, …) are reassigned on every snapshot and go **stale the
-moment the page changes** — after navigation, submits, dynamic re-renders.
+moment the page changes**: after navigation, submits, dynamic re-renders.
 Always re-snapshot before the next ref interaction.
 
 ## Commands you reach for
@@ -90,7 +90,7 @@ tailscale serve 4848
 
 ## Going deeper
 
-The binary serves docs matched to its installed version — load them when the
+The binary serves docs matched to its installed version: load them when the
 core surface isn't enough or a command behaves unexpectedly:
 
 ```bash

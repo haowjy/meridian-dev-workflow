@@ -16,17 +16,17 @@ Data that crosses a trust boundary should be validated, sanitized, or escaped be
 
 ## Common Patterns to Look For
 
-**Input validation** — Is user input validated before use? Are there length limits, type checks, range constraints? What happens with unexpected unicode, null bytes, or extremely long strings?
+**Input validation**: Is user input validated before use? Are there length limits, type checks, range constraints? What happens with unexpected unicode, null bytes, or extremely long strings?
 
-**Injection** — SQL, command, template, path traversal. Any place where user input is interpolated into a query, command, or path without proper escaping.
+**Injection**: SQL, command, template, path traversal. Any place where user input is interpolated into a query, command, or path without proper escaping.
 
-**Authentication and authorization** — Are endpoints protected? Can a user access resources belonging to another user? Are there privilege escalation paths? Is session management sound?
+**Authentication and authorization**: Are endpoints protected? Can a user access resources belonging to another user? Are there privilege escalation paths? Is session management sound?
 
-**Secrets** — API keys, tokens, passwords in code, config, logs, or error messages. Check `.env` files, hardcoded credentials, secrets passed as URL parameters (which end up in logs).
+**Secrets**: API keys, tokens, passwords in code, config, logs, or error messages. Check `.env` files, hardcoded credentials, secrets passed as URL parameters (which end up in logs).
 
-**Rate limiting and resource exhaustion** — Can an attacker trigger expensive operations without limits? Upload large files? Create unbounded allocations? Open connections that never close?
+**Rate limiting and resource exhaustion**: Can an attacker trigger expensive operations without limits? Upload large files? Create unbounded allocations? Open connections that never close?
 
-**Error handling** — Do error messages leak internal state, stack traces, or file paths? Does the system fail open (granting access on error) or fail closed?
+**Error handling**: Do error messages leak internal state, stack traces, or file paths? Does the system fail open (granting access on error) or fail closed?
 
 ## What Good Looks Like
 

@@ -1,7 +1,7 @@
 ---
 name: post-dev
 type: checkpoint
-description: Ship readiness — PR template, changelog, release label, cleanup. Run when implementation is done.
+description: Ship readiness: PR template, changelog, release label, cleanup. Run when implementation is done.
 model-invocable: true
 ---
 
@@ -12,13 +12,13 @@ Run this when implementation is complete, before creating the PR.
 ## Checks
 
 ### PR readiness
-- Read `.github/PULL_REQUEST_TEMPLATE.md` or similar template — fill every section
+- Read `.github/PULL_REQUEST_TEMPLATE.md` or similar template: fill every section
 - Set a `release:*` label (default: `release:patch`)
 - PR title under 70 characters, descriptive
 
 ### Changelog
 - `CHANGELOG.md` has entries under `## [Unreleased]` for this work
-- Entries written in caveman style — terse, behavioral, filler-free
+- Entries written in caveman style: terse, behavioral, filler-free
 - Focus on what downstream users notice, not which lines moved
 
 ### Review

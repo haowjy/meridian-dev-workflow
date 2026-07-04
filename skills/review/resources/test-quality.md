@@ -1,18 +1,18 @@
 # Test Quality Review
 
 Evaluate whether tests earn their maintenance cost. The test writer already
-believes their tests are useful — your value comes from finding the ones that
+believes their tests are useful: your value comes from finding the ones that
 aren't.
 
 ## Are They Testing the Right Things?
 
-**Edge cases over happy paths.** The happy path usually works — that's what
+**Edge cases over happy paths.** The happy path usually works: that's what
 the coder verified during implementation. Tests earn their place by catching
 what's hard to see: boundary conditions, off-by-one errors, empty inputs,
 overflow, unexpected types, partial failure, ordering assumptions.
 
 A test suite that is all happy-path verification gives false confidence.
-Count the ratio — if most tests exercise the obvious success case, flag
+Count the ratio: if most tests exercise the obvious success case, flag
 the gap.
 
 **Behavior over implementation.** Tests that assert on return values, state
@@ -29,7 +29,7 @@ check. Flag over-testing of low-risk code and under-testing of high-risk code.
 ## Would They Catch a Real Bug?
 
 **Tautological assertions.** Tests that pass regardless of whether the code
-is correct — asserting a mock returns what it was configured to return,
+is correct: asserting a mock returns what it was configured to return,
 asserting that a function "returned something," or mirroring the
 implementation verbatim. Delete the code under test mentally: would this test
 still pass?
@@ -65,5 +65,5 @@ they cost maintenance, they protect nothing.
 ## Report Format
 
 For each finding: what test, what's wrong, why it matters, what to do about
-it. Group by severity — tests that give false confidence are more dangerous
+it. Group by severity: tests that give false confidence are more dangerous
 than tests that are merely wasteful.

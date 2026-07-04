@@ -11,7 +11,7 @@ PGPASSWORD="$PGPASSWORD" npx pg-mermaid --dbname myapp --username dev --excluded
 Supports `--schema` and `--excluded-tables` but not positive table selection. PostgreSQL
 only.
 
-## Raw SQL (works anywhere psql does — zero dependencies)
+## Raw SQL (works anywhere psql does: zero dependencies)
 
 ```sql
 SELECT 'erDiagram' UNION ALL

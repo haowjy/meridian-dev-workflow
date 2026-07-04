@@ -1,7 +1,7 @@
 ---
 name: design-craft
 type: reference
-description: Frontend craft methodology — color, typography, layout, motion, interaction. Load for production-grade visual decisions.
+description: Frontend craft methodology: color, typography, layout, motion, interaction. Load for production-grade visual decisions.
 model-invocable: true
 ---
 
@@ -11,11 +11,11 @@ model-invocable: true
 
 Use OKLCH for all colors.
 
-**Contrast.** Body text >= 4.5:1 against background. Large text (>=18px or bold >=14px) >= 3:1. Placeholder text needs the same 4.5:1. Muted gray body text on a tinted near-white is the most common failure — bump it toward the ink end of the ramp.
+**Contrast.** Body text >= 4.5:1 against background. Large text (>=18px or bold >=14px) >= 3:1. Placeholder text needs the same 4.5:1. Muted gray body text on a tinted near-white is the most common failure: bump it toward the ink end of the ramp.
 
 **Tinted neutrals** (backgrounds, surfaces): add 0.005-0.015 chroma toward the brand's hue. Don't default-tint toward warm or cool "because the brand feels that way."
 
-**Dark vs light.** Not a default. Write one sentence of physical scene — who uses this, where, under what ambient light, in what mood — and let the scene decide.
+**Dark vs light.** Not a default. Write one sentence of physical scene (who uses this, where, under what ambient light, in what mood) and let the scene decide.
 
 **Color strategy** (pick before picking colors):
 - **Restrained**: tinted neutrals + one accent <=10%. Product default.
@@ -37,13 +37,13 @@ Use `text-wrap: balance` on h1-h3, `text-wrap: pretty` on long prose.
 
 ## Layout
 
-Vary spacing for rhythm. Cards are the lazy answer — use them only when truly the best affordance. Nested cards are always wrong. Flexbox for 1D, Grid for 2D.
+Vary spacing for rhythm. Cards are the lazy answer: use them only when truly the best affordance. Nested cards are always wrong. Flexbox for 1D, Grid for 2D.
 
 For responsive grids, prefer auto-fitting column counts over manual breakpoints.
 
 Build a semantic z-index scale (dropdown -> sticky -> modal-backdrop -> modal -> toast -> tooltip). Never arbitrary values like 999 or 9999.
 
-Dropdowns must escape overflow containers — render outside the stacking context.
+Dropdowns must escape overflow containers: render outside the stacking context.
 
 ## Motion
 

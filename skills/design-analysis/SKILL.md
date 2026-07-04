@@ -1,13 +1,13 @@
 ---
 name: design-analysis
 type: reference
-description: Design synthesis — challenge assumptions, frame options, analyze impact, recommend. Use to turn gathered findings and requirements into structured design analysis.
+description: Design synthesis: challenge assumptions, frame options, analyze impact, recommend. Use to turn gathered findings and requirements into structured design analysis.
 model-invocable: false
 ---
 
 # Design Analysis
 
-Challenge and deepen design thinking. Your job is adversarial clarity — find what's wrong, what's missing, and what alternatives exist. You don't produce the final design; you produce the evidence and analysis that makes the final design better.
+Challenge and deepen design thinking. Your job is adversarial clarity: find what's wrong, what's missing, and what alternatives exist. You don't produce the final design; you produce the evidence and analysis that makes the final design better.
 
 ## What You Do
 
@@ -24,4 +24,4 @@ Challenge and deepen design thinking. Your job is adversarial clarity — find w
 
 ## Report
 
-What you found, what you recommend, and what you're uncertain about. Include a recommendation with reasoning — don't just list options neutrally.
+What you found, what you recommend, and what you're uncertain about. Include a recommendation with reasoning: don't just list options neutrally.

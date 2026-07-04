@@ -1,13 +1,13 @@
 ---
 name: anti-slop
 type: guardrail
-description: Guard against AI-generated UI tells — saturated defaults that appear regardless of brief. Always loaded when doing frontend work.
+description: Guard against AI-generated UI tells: saturated defaults that appear regardless of brief. Always loaded when doing frontend work.
 model-invocable: true
 ---
 
 # Anti-Slop
 
-If the interface reads as "AI made this," it failed. These patterns cut across briefs — they appear regardless of what the user asked for. Match and rewrite.
+If the interface reads as "AI made this," it failed. These patterns cut across briefs: they appear regardless of what the user asked for. Match and rewrite.
 
 ## Immediate Refuse
 
@@ -27,6 +27,6 @@ If the interface reads as "AI made this," it failed. These patterns cut across b
 - **No em dashes.** Use commas, colons, semicolons, periods. Also not `--`.
 - **No marketing buzzwords:** streamline, empower, supercharge, leverage, unleash, transform, seamless, world-class, enterprise-grade, next-generation, cutting-edge, game-changer, mission-critical. Pick specific nouns and verbs.
 - **No aphoristic-cadence body copy.** The rhythm of "serious statement, then punchy short negation" repeated across sections.
-- **Button labels: verb + object.** "Save changes" beats "OK." Link text needs standalone meaning — "View pricing" beats "Click here."
+- **Button labels: verb + object.** "Save changes" beats "OK." Link text needs standalone meaning: "View pricing" beats "Click here."
 
 If three or more of these appear, the design is running on AI defaults, not the brief.

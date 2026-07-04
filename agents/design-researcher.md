@@ -2,7 +2,7 @@
 name: design-researcher
 description: Researches design and architectural options, writing analysis for the team.
 mode: subagent
-model: gpt-5.4
+model: gpt54
 effort: high
 subagents: [explorer, web-researcher, session-miner]
 skills:

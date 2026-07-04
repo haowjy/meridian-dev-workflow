@@ -1,6 +1,6 @@
 # gh CLI Reference for Issue Tracking
 
-Detailed `gh` CLI usage for the issues skill. SKILL.md covers the when and why — this file covers the how.
+Detailed `gh` CLI usage for the issues skill. SKILL.md covers the when and why: this file covers the how.
 
 ## Availability Check
 
@@ -20,9 +20,9 @@ Wrap in a helper pattern:
 
 ```bash
 if gh auth status 2>/dev/null && gh repo view --json name 2>/dev/null; then
-  # gh is available — create the issue
+  # gh is available: create the issue
 else
-  # gh unavailable — log locally only, no error
+  # gh unavailable: log locally only, no error
 fi
 ```
 
@@ -49,7 +49,7 @@ Replace `<slug>` with the actual work item slug (e.g., `work:auth-refactor`).
 
 ### Label Creation
 
-Run these once per repository to set up the label taxonomy. Idempotent — `gh label create` will error if the label exists, which is fine.
+Run these once per repository to set up the label taxonomy. Idempotent: `gh label create` will error if the label exists, which is fine.
 
 ```bash
 gh label create "bug" --color "d73a4a" --description "Bug found during implementation" 2>/dev/null
@@ -81,10 +81,10 @@ Found during: [work item name], [phase or step]
 Found by: [agent role] ([spawn ID])
 
 ## Description
-[What was found — clear, specific, one to three paragraphs]
+[What was found: clear, specific, one to three paragraphs]
 
 ## Evidence
-[File paths, code snippets, log output, reproduction steps — whatever makes it concrete]
+[File paths, code snippets, log output, reproduction steps: whatever makes it concrete]
 
 ## Suggested Action
 [What should be done, or "needs investigation" if the right fix isn't clear]
@@ -96,7 +96,7 @@ Found by: [agent role] ([spawn ID])
 ### Filling in the template
 
 - **Context**: Use the active work item name and current phase. The spawn ID helps trace back to the agent session that found it.
-- **Description**: State what's wrong or surprising. Be specific — "token refresh fails" is less useful than "token refresh catches all exceptions and returns None, masking network errors."
+- **Description**: State what's wrong or surprising. Be specific: "token refresh fails" is less useful than "token refresh catches all exceptions and returns None, masking network errors."
 - **Evidence**: Include file paths with line numbers. Short code snippets are fine inline. For longer evidence, describe what to look for and where.
 - **Suggested Action**: If you know the fix, describe it. If not, say "needs investigation" and note what you've already ruled out.
 

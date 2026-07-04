@@ -2,9 +2,9 @@
 name: probe
 type: mode-shift
 description: |
-  Runtime verification — run real commands, exercise real workflows, report what
-  happens. Two modes: probing (exploratory — "how does this behave?") and
-  verification (confirmatory — "does this change work?"). Load when you need to
+  Runtime verification. Run real commands, exercise real workflows, report what
+  happens. Two modes: probing (exploratory, "how does this behave?") and
+  verification (confirmatory, "does this change work?"). Load when you need to
   shift from building or reviewing into actually running the thing.
 model-invocable: true
 ---
@@ -47,7 +47,7 @@ Report per-requirement outcomes with evidence.
 Run the built artifact, not the development toolchain. Start the server and
 hit the endpoint. Run the CLI and read the output. Open the UI and click the
 button. Never run test suites (`pytest`, `vitest`, `jest`, `cargo test`,
-`npm test`, etc.) — those verify developer assumptions, not user experience.
+`npm test`, etc.): those verify developer assumptions, not user experience.
 
 Run actual commands and capture exact output. Go adversarial after the happy
 path: bad input, interruption, sequencing, boundary conditions, invalid state,
