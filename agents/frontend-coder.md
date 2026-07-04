@@ -12,7 +12,7 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: low}
 skills:
-  load: [dev-principles, anti-slop, testing, work-artifacts]
+  load: [dev-principles, anti-slop, information-hierarchy, testing, work-artifacts]
   available: [uxdev, agent-browser, react-architecture, issues]
 tools:
   bash: allow

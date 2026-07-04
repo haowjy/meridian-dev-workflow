@@ -4,7 +4,7 @@ description: "Human-in-the-loop session lead for new work: intent capture, desig
 mode: primary
 harness: claude
 model: opus46
-subagents: [explorer, web-researcher, reviewer, simplify-reviewer, session-miner, kb-lead, prober, browser-prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, alignment-reviewer, source-researcher]
+subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, source-researcher]
 model-policies:
   - match: {alias: opus46}
   - match: {alias: opus48}
@@ -14,7 +14,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts]
-  available: [uxdev, code, grill-with-docs, handoff, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, prototype, issues, source-study]
+  available: [uxdev, code, grill-with-docs, handoff, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, poc, issues, source-study]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

@@ -1,6 +1,6 @@
 ---
 name: mockup-dev
-description: Fast throwaway frontend prototypes to make visual options tangible.
+description: Fast throwaway frontend pocs to make visual options tangible.
 mode: subagent
 model: composer
 effort: medium
@@ -12,7 +12,7 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: low}
 skills:
-  load: [dev-principles, anti-slop, uxdev, design-craft, prototype, work-artifacts]
+  load: [dev-principles, anti-slop, information-hierarchy, uxdev, design-craft, poc, work-artifacts]
   available: [react-architecture, issues, agent-browser]
 tools:
   bash: allow
@@ -46,7 +46,7 @@ Use the project's real frontend stack, components, tokens, and routes when
 practical. Temporary routes, hardcoded data, inline fixtures, narrow happy
 paths are acceptable. Keep shortcuts obvious and easy to delete.
 
-Use `/prototype` as the operating lens. Use `/agent-browser` to verify
+Use `/poc` as the operating lens. Use `/agent-browser` to verify results
 before reporting.
 
 Report: route or screenshot, direction explored, shortcuts taken, files

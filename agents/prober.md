@@ -1,6 +1,8 @@
 ---
 name: prober
-description: Runtime verification with real commands, requests, and workflows.
+description: >-
+  Spawn when you need runtime evidence: exercise workflows, reproduce bugs,
+  stress boundaries, build throwaway POCs. Skills: probe, poc, agent-browser.
 mode: subagent
 model: gpt55
 effort: high
@@ -11,7 +13,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [probe]
-  available: [issues]
+  available: [poc, agent-browser, issues]
 tools:
   bash: allow
   write: allow

@@ -12,7 +12,7 @@ flowchart TD
     Q2 -->|yes| INT["INTEGRATION<br/>@coder + integration-test"]
     Q2 -->|no| Q3{"Real runtime behavior<br/>with real systems?"}
     Q3 -->|yes| SMOKE["SMOKE / E2E<br/>@prober"]
-    Q3 -->|no| REFACTOR["Code is probably mixing<br/>decisions and I/O —<br/>consider refactoring first"]
+    Q3 -->|no| REFACTOR["Code is probably mixing<br/>decisions and I/O :<br/>consider refactoring first"]
 
     UNIT --- U_P["Fast (ms)<br/>Exhaustive edge cases<br/>No fakes needed"]
     INT --- I_P["Medium (100ms–1s)<br/>Fakes at external boundaries<br/>Tests composition"]
@@ -36,10 +36,10 @@ flowchart TD
 - **Move up a tier when the question is about collaboration or integration.** Unit tests cannot answer "do these modules agree on the contract."
 - **Move up a tier when mocking starts dominating.** A unit test with five mocks is usually an integration test wearing a disguise.
 - **Don't duplicate coverage across tiers.** If the smoke test proves a code path works, a unit test that reasserts the same thing adds maintenance without protection.
-- **Critical paths deserve redundancy.** Authentication, billing, data loss risks — test at multiple tiers because the cost of a false negative is high.
+- **Critical paths deserve redundancy.** Authentication, billing, data loss risks: test at multiple tiers because the cost of a false negative is high.
 
 ## Common Sizing Mistakes
 
-- **Unit tests that mock everything** — should probably be integration tests, or the code should be refactored to have a testable core.
-- **Integration tests that spin up real databases** — probably should be smoke tests, or the database client should be wrapped in a fake-able interface.
-- **Smoke tests that verify string formatting** — should be unit tests. Smoke tests are expensive; reserve them for behavior only visible end-to-end.
+- **Unit tests that mock everything**: should probably be integration tests, or the code should be refactored to have a testable core.
+- **Integration tests that spin up real databases**: probably should be smoke tests, or the database client should be wrapped in a fake-able interface.
+- **Smoke tests that verify string formatting**: should be unit tests. Smoke tests are expensive; reserve them for behavior only visible end-to-end.

@@ -6,6 +6,36 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 - `/visualize-codebase` now loads `/information-hierarchy` and `/structured-artifact` (renamed from `/interactive-artifact` in meridian-base).
+- `/parallel-execution`: rewritten around worktree isolation and DAG planning. Absorbed `execution-model.md` from agent-staffing (tech-lead pipeline, convergence gates, fix-cycle routing). Gates clarified as convergence loops. Added "Adapt the Plan" section.
+- `/agent-staffing`: removed execution-model (moved to parallel-execution). Now purely team composition.
+- `/react-architecture`: body tightened (133 to 36 lines). Stack-specific smell catalogs moved to `resources/smells.md`.
+- `/test-architecture`: body tightened (235 to 30 lines). Smell catalogs moved to `resources/smells.md`.
+- `/source-study`: body tightened (83 to 22 lines). Clone mechanics and example prompts moved to `resources/method.md`.
+- `/dev-principles`: tightened (61 to 42 lines). Cut rhetoric, merged overlapping sections.
+- `/tech-docs`: tightened (60 to 30 lines). Removed directory tree example.
+- `/architecture`: tightened (53 to 30 lines). Collapsed boundary types.
+- `/testing`: tightened (118 to 56 lines). Merged duplicate tier sections. Resources: em dash cleanup across all 4 resource files.
+- `/code`: simplified description and body.
+- `/poc`: body tightened. Description: "Proof of concept. Throwaway code that answers a feasibility question. Always deleted."
+- `/diagnose`: em dash cleanup.
+- `/uxdev`: em dash cleanup, description simplified.
+- `@coder`: body simplified to "Write clean, working code."
+- `@prober`: description rewritten with when-to-load signal.
+- `@reviewer`: description lists available skills including `information-hierarchy`. Body adds guidance to load `/information-hierarchy` for UI/frontend reviews. `information-hierarchy` added to available skills.
+- `@gpt-dev`: removed `parallel-execution` from available (not needed for single-objective work). Review section simplified.
+- `@frontend-coder`: `information-hierarchy` added to always-load.
+- `@mockup-dev`: `information-hierarchy` added to always-load.
+- `@design-lead`: removed `alignment-reviewer` from subagents, replaced with `@reviewer --skills review-alignment`.
+- `@tech-lead`: removed `test-reviewer` and `alignment-reviewer` from subagents.
+- `@product-lead`: removed `alignment-reviewer` from subagents.
+- `@browser`: em dash cleanup.
+- Em dashes replaced with proper punctuation across all touched agents, skills, and resources.
+
+### Removed
+- `@alignment-reviewer`: replaced by `@reviewer --skills review-alignment`.
+- `@test-reviewer`: replaced by `@reviewer --skills test-architecture,testing`.
+- `/improve-codebase-architecture`: subsumed by `/thermo-nuclear-review` + `/dev-principles`.
+- `/prototype`: replaced by `/poc`.
 
 ## [0.11.39] - 2026-06-27
 

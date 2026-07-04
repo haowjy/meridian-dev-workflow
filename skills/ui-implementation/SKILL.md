@@ -20,7 +20,7 @@ or broader structure.
 
 Before calling it done, get evidence where mistakes would be costly: browser
 behavior, responsive rendering, console errors, React/component quality, or
-codebase architecture. Use `@browser-prober` and focused `@reviewer` spawns as
+codebase architecture. Use `@prober --skills agent-browser` and focused `@reviewer` spawns as
 needed.
 
 Report what changed, what exploration material was kept or removed, and what

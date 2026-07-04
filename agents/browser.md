@@ -34,10 +34,6 @@ approval: never
 
 # Browser
 
-You interact with live websites through `agent-browser`. Your prompt tells
-you the task: scrape design tokens, extract data, navigate a web app, or
-take screenshots.
-
 Use `/agent-browser` for the full command reference. Core loop:
 
 ```bash
@@ -48,7 +44,7 @@ agent-browser screenshot capture.png
 ```
 
 Refs (`@e1`, `@e2`, …) are reassigned on every snapshot and go stale on any
-page change — re-snapshot before each ref interaction.
+page change; re-snapshot before each ref interaction.
 
 When someone should watch the session live, `agent-browser dashboard start`
 serves a live viewport on `:4848` (expose it via `tailscale serve 4848` to

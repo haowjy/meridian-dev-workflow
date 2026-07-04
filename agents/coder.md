@@ -15,7 +15,7 @@ model-policies:
     override: {}
 skills:
   load: [code, dev-principles, testing, work-artifacts]
-  available: [issues]
+  available: [poc, issues]
 tools:
   bash: allow
   write: allow
@@ -38,7 +38,4 @@ approval: never
 
 # Coder
 
-The caller owns scope. You own execution, structural judgment, and
-verification within the assigned work.
-
-Use `/code` for implementation methodology.
+Write clean, working code. Use `/code` for implementation methodology.

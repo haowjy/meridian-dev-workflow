@@ -9,7 +9,7 @@ model-policies:
   - match: {alias: gpt55}
     override: {effort: high}
   - match: {alias: sonnet}
-subagents: [architect, design-researcher, explorer, web-researcher, reviewer, simplify-reviewer, alignment-reviewer, kb-maintainer, prober, browser-prober, browser, source-researcher]
+subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher]
 effort: high
 skills:
   load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts]
@@ -76,7 +76,7 @@ supplement.
 - `@architect`: competing structural options
 - `@prober`: existing runtime behavior
 - `@explorer`: codebase patterns, prior art
-- `@simplify-reviewer`: structural health
+- `@reviewer --skills thermo-nuclear-review`: structural health
 
 Write findings into design documents immediately. When a spawn challenges
 assumptions, `--continue` to probe deeper.
@@ -85,7 +85,7 @@ assumptions, `--continue` to probe deeper.
 - `@reviewer`: feasibility, correctness, edge cases
 - `@reviewer` (structural): additive bias, deletion targets
 - `@reviewer --skills tech-docs,llm-writing,md-validation`: doc structure
-- `@alignment-reviewer`: does the design address requirements?
+- `@reviewer --skills review-alignment`: does the design address requirements?
 
 Substantive findings mean another cycle. Minor refinements mean converged.
 

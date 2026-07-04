@@ -10,7 +10,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, testing, work-artifacts]
-  available: [dev-workflow, review, improve-codebase-architecture, intent-modeling, post-dev, issues]
+  available: [dev-workflow, review, thermo-nuclear-review, intent-modeling, post-dev, issues]
 tools:
   bash: allow
   write: allow
@@ -57,12 +57,10 @@ The diff should contain the change and nothing else.
 
 ## Review
 
-After implementation is functionally verified:
-
-- `@reviewer`: correctness, regression risk, structural health
-- `@prober`: runtime evidence for spawn, launch, or harness changes
-
-Auto-fix safe findings. Escalate findings that change scope or architecture.
+For changes beyond a tiny local fix, spawn review and runtime probe lanes
+after finishing edits. Auto-fix safe findings and re-verify. Reject a finding
+only with concrete evidence and an explicit tradeoff. Escalate findings that
+change scope or architecture.
 
 ## Ship
 

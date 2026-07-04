@@ -1,28 +1,24 @@
 ---
 name: agent-staffing
 type: reference
-description: Use when composing a team — which agents, how many, parallel vs sequential, effort scaling.
+description: Load when composing a team for a work item. Which agents to spawn, how many, model selection.
 model-invocable: true
 ---
 
 # Agent Staffing
 
-If no team composition was provided by your caller, compose one yourself
-using the agent catalogs below.
+If no team composition was provided by your caller, compose one yourself using the catalogs below.
 
 ## Fan-Out vs Parallel Lanes
 
-- **Fan-out**: same prompt, same files, different models. Convergent signal
-  on a high-stakes call. Reserved for critical decisions.
-- **Parallel lanes**: different prompts (different focus areas), usually
-  default model each. Most review staffing uses parallel lanes.
+- **Fan-out**: same prompt, same files, different models. Convergent signal on a high-stakes call.
+- **Parallel lanes**: different prompts (different focus areas), default model each.
 
-Fan out reviewers across models for perspective diversity. Run
-`meridian mars models list` for configured families and strengths.
+Fan out reviewers across models for perspective diversity. `meridian mars models list` shows configured families and strengths.
 
 ## Agent Catalogs
 
-- `resources/reviewers.md`: @reviewer, @alignment-reviewer, @simplify-reviewer
-- `resources/testers.md`: @prober, @browser-prober, testing skills
-- `resources/builders.md`: @coders, @architects, @web-researchers, @explorers
+- `resources/reviewers.md`: which `--skills` to pass @reviewer by change risk
+- `resources/testers.md`: @prober modes, runtime verification, browser, POC
+- `resources/builders.md`: @coder, @architect, @web-researcher, @explorer, @session-miner
 - `resources/maintainers.md`: @kb-lead, @kb-maintainer, @investigator

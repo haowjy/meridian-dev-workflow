@@ -1,6 +1,6 @@
 # Integration Testing
 
-Test that components compose correctly with fakes at external boundaries — no
+Test that components compose correctly with fakes at external boundaries: no
 real process spawning, network, or disk I/O outside controlled temp space.
 
 Load `/testing` for tier selection.
@@ -10,8 +10,8 @@ Load `/testing` for tier selection.
 Fakes implement the same interface as the real collaborator and reproduce the
 behaviors the test relies on (success, failure, edge cases). Keep them
 deterministic, fast, and close to the tests that use them. When a fake drifts
-from the real system, add a contract test that pins the real behavior — but
-that's a manual test, not an integration test.
+from the real system, add a contract test that pins the real behavior, but
+that is a manual test, not an integration test.
 
 ## Acceptance Contract
 
@@ -24,7 +24,7 @@ that's a manual test, not an integration test.
 ## Execution
 
 Identify the composition under test and which boundaries are faked. Exercise
-the happy path, then failure modes that composition reveals — partial failure,
+the happy path, then failure modes that composition reveals: partial failure,
 retry behavior, ordering, error propagation. Confirm observable outcomes.
 
 ## Reporting

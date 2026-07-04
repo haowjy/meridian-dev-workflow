@@ -5,21 +5,21 @@ Gary Bernhardt's pattern: decisions live in pure functions, I/O lives in a thin 
 ## The Shape
 
 ```
-[ Imperative Shell ]  — reads input, writes output, performs I/O
+[ Imperative Shell ]  reads input, writes output, performs I/O
         │
         ▼
-[ Functional Core ]   — pure functions: inputs → decisions → outputs
+[ Functional Core ]   pure functions: inputs → decisions → outputs
         │
         ▼
-[ Imperative Shell ]  — applies the decisions
+[ Imperative Shell ]  applies the decisions
 ```
 
-The core has no side effects. The shell has no logic to speak of — it orchestrates.
+The core has no side effects. The shell has no logic to speak of; it orchestrates.
 
 ## Why It Matters for Testing
 
-- **The core is trivially testable.** Pure functions take inputs and return outputs. No fixtures, no setup, no teardown, no mocks. You can run thousands of cases per second.
-- **The shell is barely worth unit testing.** It has no branches, no decisions. You test it at a higher tier (integration or smoke) where real I/O is the point.
+- **The core is trivially testable.** Pure functions take inputs and return outputs. No fixtures, no setup, no teardown, no mocks.
+- **The shell is barely worth unit testing.** No branches, no decisions. Test it at a higher tier where real I/O is the point.
 - **Mocks disappear.** When decisions are pure and I/O is isolated, there is nothing left to mock except the I/O boundary itself.
 
 ## How to Recognize the Pattern
@@ -34,7 +34,7 @@ Imperative shell:
 - reads from the world (stdin, files, HTTP, DB)
 - writes to the world (stdout, files, HTTP, DB)
 - holds the decisions the core produced and applies them
-- thin — mostly just plumbing
+- thin: mostly plumbing
 
 ## When It Breaks Down
 
