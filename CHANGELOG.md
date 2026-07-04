@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.40] - 2026-07-04
+
 ### Changed
 - `/visualize-codebase` now loads `/information-hierarchy` and `/structured-artifact` (renamed from `/interactive-artifact` in meridian-base).
 - `/parallel-execution`: rewritten around worktree isolation and DAG planning. Absorbed `execution-model.md` from agent-staffing (tech-lead pipeline, convergence gates, fix-cycle routing). Gates clarified as convergence loops. Added "Adapt the Plan" section.
