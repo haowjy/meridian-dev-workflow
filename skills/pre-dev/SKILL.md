@@ -1,7 +1,7 @@
 ---
 name: pre-dev
 type: checkpoint
-description: Pre-implementation readiness: worktree, branch, workspace state. Run before handing off to implementation.
+description: "Pre-implementation readiness: worktree, branch, workspace state. Run before handing off to implementation."
 model-invocable: true
 ---
 

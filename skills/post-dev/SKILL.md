@@ -1,7 +1,7 @@
 ---
 name: post-dev
 type: checkpoint
-description: Ship readiness: PR template, changelog, release label, cleanup. Run when implementation is done.
+description: "Ship readiness: PR template, changelog, release label, cleanup. Run when implementation is done."
 model-invocable: true
 ---
 

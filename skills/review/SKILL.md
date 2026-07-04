@@ -1,7 +1,7 @@
 ---
 name: review
 type: reference
-description: Use when reviewing code, designs, or plans: adversarial mindset, severity handling, structured reporting.
+description: "Use when reviewing code, designs, or plans: adversarial mindset, severity handling, structured reporting."
 model-invocable: true
 ---
 # Review

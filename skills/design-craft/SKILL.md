@@ -1,7 +1,7 @@
 ---
 name: design-craft
 type: reference
-description: Frontend craft methodology: color, typography, layout, motion, interaction. Load for production-grade visual decisions.
+description: "Frontend craft methodology: color, typography, layout, motion, interaction. Load for production-grade visual decisions."
 model-invocable: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: thermo-nuclear-review
 type: reference
-description: Use for extremely strict maintainability review: abstraction quality, giant files, spaghetti-condition growth.
+description: "Use for extremely strict maintainability review: abstraction quality, giant files, spaghetti-condition growth."
 model-invocable: true
 ---
 

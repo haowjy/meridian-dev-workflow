@@ -1,7 +1,7 @@
 ---
 name: design-analysis
 type: reference
-description: Design synthesis: challenge assumptions, frame options, analyze impact, recommend. Use to turn gathered findings and requirements into structured design analysis.
+description: "Design synthesis: challenge assumptions, frame options, analyze impact, recommend. Use to turn gathered findings and requirements into structured design analysis."
 model-invocable: false
 ---
 

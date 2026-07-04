@@ -1,7 +1,7 @@
 ---
 name: anti-slop
 type: guardrail
-description: Guard against AI-generated UI tells: saturated defaults that appear regardless of brief. Always loaded when doing frontend work.
+description: "Guard against AI-generated UI tells: saturated defaults that appear regardless of brief. Always loaded when doing frontend work."
 model-invocable: true
 ---
 

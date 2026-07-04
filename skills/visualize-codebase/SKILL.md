@@ -1,7 +1,7 @@
 ---
 name: visualize-codebase
 type: reference
-description: Build a structured artifact that maps a codebase: structure, data flow, connections, and where something looks off.
+description: "Build a structured artifact that maps a codebase: structure, data flow, connections, and where something looks off."
 user-invocable: true
 argument-hint: "Which area, flow, or question? (optional)"
 model-invocable: false
