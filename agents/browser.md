@@ -1,6 +1,6 @@
 ---
 name: browser
-description: Live browser interaction for scraping, data extraction, form filling, and screenshots.
+description: Live browser for design/behavior inspiration, scraping, data extraction, and screenshots. Use when pages need rendering or interaction.
 mode: subagent
 model: gpt55
 effort: low

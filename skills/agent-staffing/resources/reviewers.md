@@ -9,7 +9,6 @@ coverage of the same concern.
 | Review kind | Spawn | When |
 |-------------|-------|------|
 | Default static review | `@reviewer` | Always for code changes: correctness, contracts, security |
-| Runtime evidence | `@reviewer --skills probe` | Suspected behavioral bug that static analysis can't confirm |
 | Strict maintainability | `@reviewer --skills thermo-nuclear-review` | Structure/branching changes, spaghetti growth |
 | Architecture / seams | `@reviewer --skills thermo-nuclear-review` | Cross-module boundary changes, dependency direction |
 | Test structure | `@reviewer --skills test-architecture` | Test suite changes |
@@ -19,6 +18,16 @@ coverage of the same concern.
 
 Stack multiple: `@reviewer --skills review,thermo-nuclear-review`.
 The change itself tells you which perspectives matter.
+
+## Fan-Out Models
+
+Fan out reviewers across models for perspective diversity. Use `-m` to override the default:
+
+- `gpt54`: thorough, finds subtle issues
+- `fable`: strongest reasoning, catches complex interactions
+- `opus`: best long-context judgment
+
+Three reviewers with different models on the same prompt surface more than three of the same model.
 
 ## When to Review
 
@@ -38,8 +47,8 @@ a concrete issue the coder cannot resolve:
 ## Synthesizing Findings
 
 Fix valid findings by default. Defer only with explicit rationale in the
-decision log. When reviewers disagree, the orchestrator makes the call;
-it has the full design and prior context they don't.
+decision log. When reviewers disagree, you make the call;
+you have the full design and prior context they don't.
 
 If reviews aren't converging after multiple iterations, that's usually a
 signal the design has a structural problem; investigate or escalate.

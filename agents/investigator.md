@@ -2,7 +2,7 @@
 name: investigator
 description: Root-cause diagnosis for broken or suspicious behavior.
 mode: subagent
-model: gpt-5.4
+model: gpt54
 subagents: [explorer, prober, session-miner, web-researcher, coder]
 effort: medium
 skills:

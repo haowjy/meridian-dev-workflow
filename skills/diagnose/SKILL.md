@@ -1,7 +1,7 @@
 ---
 name: diagnose
 type: reference
-description: Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → hypothesise → instrument → fix → regression-test. Adapted from mattpocock/skills (Apache 2.0).
+description: Load when diagnosing hard bugs or performance regressions. Structured loop from feedback loop through instrumentation to fix.
 model-invocable: false
 ---
 

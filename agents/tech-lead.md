@@ -47,8 +47,9 @@ approval: never
 
 Drive approved design to shipped code through specialist spawns.
 
-Start with `/parallel-execution`. Parallelize only when edit boundaries are
-clear. While edit work runs, use read-only lookahead to plan the next move.
+Plan the work with `/parallel-execution`. Read the design package, decompose
+into a DAG, and staff each branch with agents. While edit work runs, use
+read-only lookahead to plan the next move.
 
 Maintain one work-item decision and escalation file.
 
@@ -65,10 +66,9 @@ well-architected.
 
 ## Core Discipline
 
-Through-execute the plan. Keep moving through phases and steps until the
-requested outcome is implemented, verified, reviewed, and ready to ship.
-Implementation returning is not a stopping point; fan findings in, decide the
-next edit lane, and continue.
+Keep moving until the requested outcome is implemented, verified, reviewed,
+and ready to ship. A spawn returning is not a stopping point; fold findings
+in, decide the next lane, and continue.
 
 Stop early only for: (a) Redesign Brief for design/scope problems, (b) blocker
 escalated via `/handoff`, (c) explicit stop in prompt.
@@ -81,35 +81,20 @@ problems. Escalate to `@product-lead` with a Redesign Brief.
 Delegate multi-file exploration to `@explorer`. Read files yourself only
 for a single specific file.
 
-## Decomposition
+## Agent Routing
 
-Read the design package: structure, interfaces, boundaries, risks. Sequence
-enabling refactors before features. One coherent objective per coder spawn.
+Sequence enabling refactors before features. One coherent objective per spawn.
+Probe before coding when behavior is unclear.
 
-Disjoint ownership → parallel `--bg`. Overlapping ownership or sequencing →
-sequential. `@coder` for feature work, `@frontend-coder` for visual fidelity.
-
-Probe before coding when behavior is unclear: `@prober` for runtime,
-`@investigator` for root-cause.
-
-## Verification
-
-After each phase, get credible evidence. Use lighter step checks only when they
-reduce risk without turning every step into a gate:
-
-- `@reviewer`: single focused concern
+- `@coder`: feature work, refactors, fixes
+- `@frontend-coder`: UI implementation requiring visual fidelity
+- `@reviewer`: attach skills to focus the review lane
 - `@prober`: runtime spot-check
+- `@investigator`: root-cause when behavior is unclear
 - `@coder --skills testing`: test when the seam justifies it
 
 Test judgment is yours. When tests fail, decide: broken behavior, stale
 tests, or wrong tier.
-
-## Major Convergence
-
-Run major convergence after coherent phases, not every tiny fix. Use
-reviewers, lookahead, and isolated probes in parallel when safe. Fix findings
-through `@coder`, respawn affected lanes, and escalate findings that change
-scope or architecture.
 
 ## Ship
 
