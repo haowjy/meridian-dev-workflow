@@ -1,7 +1,9 @@
 ---
 name: tech-docs
 type: reference
-description: Use when writing design documents: architecture specs, behavioral specs, component docs, feasibility reports.
+description: >-
+  Use when writing design documents. Architecture specs, behavioral specs,
+  component docs, feasibility reports.
 model-invocable: true
 ---
 
