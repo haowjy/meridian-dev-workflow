@@ -9,9 +9,17 @@ model-invocable: true
 
 ## Core Beliefs
 
-1. **Code is cheap; bad code is expensive.** The real cost is code that's hard to change: inconsistent, bloated, entangled. Optimize for the cost that's real.
-2. **Consistency beats cleverness.** Consistent patterns lower reasoning cost for every human and agent that follows. Match what's there before inventing something new.
-3. **Code is fluid.** Optimize for change: clear seams, good boundaries, minimal coupling. The next change should be easy to make.
+1. **Code is cheap; bad code is expensive.**  
+   The real cost isn't writing code — it's the drag on every later change when code is inconsistent, bloated, or entangled. Spend the effort to keep code easy to change and delete; don't let "plausible now" become expensive later.
+
+2. **Consistency beats cleverness.**  
+   Every novel pattern forces the next reader to learn a new dialect. Consistent patterns lower reasoning cost for humans and agents. Match what's there before inventing something new; a new idiom must be clearly worth its learning cost.
+
+3. **Code is fluid.**  
+   Requirements change; systems that resist change rot or get bypassed. Design clear seams, good boundaries, and minimal coupling so the next change is small and safe.
+
+4. **Simplicity of the system, not of the change.**  
+   Picking the smaller diff today accretes parallel mechanisms, ghost states, and compatibility layers — complexity compounds inside the system. Refactor and delete to reduce concepts, states, and moving parts, even when the diff is larger.
 
 ## Get It Right the First Time
 
@@ -19,7 +27,7 @@ The default agent failure is producing something plausible and moving on. The co
 
 ## Simplicity
 
-Every boundary, type, and layer must earn its place by making future changes smaller and safer. The default failure mode is over-engineering.
+Every boundary, type, and layer must earn its place by making future changes smaller and safer. The default failure mode is over-engineering: adding moving parts that don't create real independence.
 
 Before adding structure: is this a separate concern, or one thing wearing two names? Things that always change together are one thing. Independence justifies a split; partitioning alone doesn't.
 
