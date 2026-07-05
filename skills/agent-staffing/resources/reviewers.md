@@ -23,7 +23,7 @@ The change itself tells you which perspectives matter.
 
 Fan out reviewers across models for perspective diversity. Use `-m` to override the default:
 
-- `gpt54`: thorough, finds subtle issues
+- `gpt55`: thorough, finds subtle issues
 - `fable`: strongest reasoning, catches complex interactions
 - `opus`: best long-context judgment
 

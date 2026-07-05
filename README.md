@@ -61,7 +61,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Agent | Model | Role |
 |---|---|---|
-| `architect` | gpt-5.4 | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
+| `architect` | gpt55 | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
 
 **Implementation:**
 
@@ -76,13 +76,13 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | Agent | Model | Role |
 |---|---|---|
 | `prober` | gpt55 | Runtime verifier. Skills: probe, poc, agent-browser |
-| `reviewer` | gpt-5.4 | Code reviewer: static and runtime. Skills: review, probe, thermo-nuclear-review, test-architecture, review-alignment |
+| `reviewer` | gpt55 | Code reviewer: static and runtime. Skills: review, probe, thermo-nuclear-review, test-architecture, review-alignment |
 
 **Review & Analysis:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `investigator` | gpt-5.4 | Brief triage of flagged issues: quick-fixes trivial items, files GH issues for the rest |
+| `investigator` | gpt55 | Brief triage of flagged issues: quick-fixes trivial items, files GH issues for the rest |
 
 **Research & Documentation:**
 
@@ -103,7 +103,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Agent | Model | Status |
 |---|---|---|
-| `integration-tester` | gpt-5.4 | Use `@coder` with `/testing` `resources/integration-patterns.md` instead |
+| `integration-tester` | gpt55 | Use `@coder` with `/testing` `resources/integration-patterns.md` instead |
 
 ## Skills
 

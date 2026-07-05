@@ -2,7 +2,7 @@
 name: architect
 description: Disciplined tradeoff comparison between competing structural options.
 mode: subagent
-model: gpt54
+model: gpt55
 effort: high
 skills:
   load: [dev-principles, llm-writing, work-artifacts]
