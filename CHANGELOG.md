@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.44] - 2026-07-05
+
 ### Changed
 - `/dev-principles`: rewrite Core Beliefs as explicit principle/why/action chains; add system-level simplicity as the fourth belief. Tighten Simplicity section to call out over-engineering as adding moving parts.
 
