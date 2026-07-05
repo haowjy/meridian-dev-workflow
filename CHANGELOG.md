@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.43] - 2026-07-05
+
 ### Changed
 - Replaced `gpt54` with `gpt55`.
 
