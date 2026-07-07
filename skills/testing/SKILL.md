@@ -29,6 +29,12 @@ See `resources/tier-judgment.md` for the decision diagram.
 
 Assert on outcomes (return values, state changes, side effects), not implementation paths. Tests that verify private state or mock call counts break on correct refactoring. If tests break on a refactor that doesn't change behavior, they're testing the wrong thing.
 
+A regression test must construct the pre-fix failing shape. Verify it would fail against the old code, by running it or reasoning through the exact structure. Tests that byte-copy rows, clone fresh clients, or manually inject the value under test are decorative. For every new conditional, ask whether the predicate can ever fire, then build that shape.
+
+For features entered through `orchestrator → tool → domain`, keep one fixture that drives that real entry point with a mock model and real DB. Domain-facade tests cannot catch wiring bugs.
+
+Mocks honor provider identity contracts. Tool calls, response ids, and similar provider ids should be unique and scoped like the real provider; test collision shapes deliberately instead of relying on unrealistic mock accidents.
+
 ## Architecture Enables Testing
 
 Functional core / imperative shell: push decisions into pure functions, push I/O to the edges, test the core exhaustively and the shell shallowly. Code that's hard to test usually has a structural problem. Heavy mocking is a smell about the architecture, not about testing.

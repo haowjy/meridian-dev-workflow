@@ -19,11 +19,17 @@ Decompose work into a dependency graph before spawning:
 
 Test each dependency: "could this start from the spec alone, or does it need actual code from the other branch?" If it needs actual code, it's sequential. Use your judgment on how much parallelism the work warrants.
 
+Keep coder charters to 2–3 objectives. Verification artifacts (tests, fixtures, journey scripts) get dedicated lanes; if a deliverable is dropped twice, shrink it into its own spawn instead of expanding the charter.
+
+Check repeatable gate journeys in as code. Dogfood/probe scripts are artifacts, not per-round improvisations; a journey command collapses gate-round latency.
+
 Write the DAG into the work directory and execute from it.
 
 ## Adapt the Plan
 
 The DAG is a living document. Add phases, split subphases, insert verification gates, or restructure agent teams as you learn more during execution. Findings from convergence gates, failed merges, or unexpected complexity are all signals to revise the plan. Update the written DAG when the shape changes.
+
+At convergence gates, use the escalation ladder: finding → fix pass → if the same runtime symptom survives, runtime investigator with a labeled falsifiable hypothesis → next fix pass. Never run two consecutive static fixes on one runtime symptom.
 
 If a convergence gate is not converging (review-fix cycles are looping, findings keep expanding, or fixes introduce new issues), you have authority to stop the loop and escalate: bring the problem back to the human, spawn design research to explore alternative approaches, or restructure the plan around the obstacle. Do not keep cycling a gate that is not making progress.
 

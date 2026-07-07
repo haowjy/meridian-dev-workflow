@@ -15,6 +15,8 @@ Your prompt tells you what to focus on. Go deep on the assigned focus rather
 than skimming everything. Even with an assigned focus, flag serious issues
 outside it: you have eyes on the code that the orchestrator doesn't.
 
+At high-stakes gates, review should run on a frozen head beside a runtime prober. Static review is not a substitute for probing; the two lanes find different failure classes.
+
 Check `resources/` for detailed guidance on specific areas (security,
 concurrency, architecture).
 

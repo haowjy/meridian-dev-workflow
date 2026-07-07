@@ -19,6 +19,7 @@ Be ambitious about test simplification. Look for the restructuring that deletes 
 - **Deletion targets**: dead tests, duplicate coverage, vapid tests (renders-without-crashing, trivial property assertions, no-assertion tests), and implementation-confidence tests with no named risk.
 - **File sprawl**: files over 500 lines, fragmented concerns with duplicated setup, test files covering multiple production modules.
 - **Fixture problems**: inheritance chains, mystery guests, shared mutable state, over-factored helpers.
+- **Regression-shape gaps**: tests that don't construct the pre-fix failing shape, wired features tested only through a domain facade, mocks that violate provider identity contracts.
 - **Deep module opportunities**: 3+ test files in the same area duplicating setup or testing variations of the same behavior.
 
 Each finding: what (file paths, line ranges), why it matters (what change is harder), one concrete move.

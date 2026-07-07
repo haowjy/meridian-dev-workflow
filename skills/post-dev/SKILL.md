@@ -11,6 +11,12 @@ Run this when implementation is complete, before creating the PR.
 
 ## Checks
 
+### Base sync
+- Has the base branch moved since you branched? (`git log --oneline --first-parent
+  $(git merge-base origin/<base> HEAD)..origin/<base>`)
+- If yes, or the PR reports CONFLICTING: run `/branch-sync` before anything else —
+  intent-aware merge of the base, semantic-conflict sweep, full gate on the result.
+
 ### PR readiness
 - Read `.github/PULL_REQUEST_TEMPLATE.md` or similar template: fill every section
 - Set a `release:*` label (default: `release:patch`)
@@ -30,5 +36,5 @@ Run this when implementation is complete, before creating the PR.
 - No TODO comments added without corresponding issue
 
 ### After merge
-- Prune worktrees: `scripts/prune-worktrees.sh`
+- Prune merged worktrees (use the project's prune script; dry-run first)
 - Verify CI passed on main

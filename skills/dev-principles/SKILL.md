@@ -25,6 +25,10 @@ model-invocable: true
 
 The default agent failure is producing something plausible and moving on. The cost of wrong isn't one more generation; it's the mess every later agent inherits. Read the code before changing it. Follow the existing pattern before inventing one. Handle edge cases now. Investigate when unclear instead of guessing.
 
+Evidence carries the fact, or the mechanism is wrong. Any mechanism that infers X from evidence Y must name the inference and prove Y distinguishes X before implementation. Substrate artifacts (CRDT updates, wire encodings, bytes) usually prove propagation, not intent or authorship.
+
+Success must be loud or durable, never neither. If an operation reports success, it must create a durable effect or expose why it did not. Model lifecycle as explicit states (`open | committed | rolledBack`), not booleans that let "already done" and "never happened" share a return value.
+
 ## Simplicity
 
 Every boundary, type, and layer must earn its place by making future changes smaller and safer. The default failure mode is over-engineering: adding moving parts that don't create real independence.
@@ -39,9 +43,13 @@ Group by concern; draw boundaries where things change independently. Smaller foc
 
 When you see duplication across boundaries, suspect the boundaries before patching with extraction.
 
+One concept, one module. Never fork a predicate or policy into a second implementation site; extend the canonical one. Forks are either wrong at birth or diverge by the next pass.
+
 ## Deletion
 
 LLMs default to preserving code. Fight that. Dead code, stale imports, orphaned files: delete in the same change. Obvious duplication: collapse it. Structural problems (circular dependencies, god modules, leaky abstractions): fix on sight. Rot compounds at agent speed.
+
+A cache is a second source of truth. Before keeping a cache or denormalization, benchmark the cold path. If cold wins, delete the cache and keep only tests that guard real behavior.
 
 ## Testing
 

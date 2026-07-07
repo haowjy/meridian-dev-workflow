@@ -39,6 +39,11 @@ meridian work task-dir ../<repo>.worktrees/<slug>
 - Does this work span multiple repos? If so, set up task-dirs for each.
 - Are there dependency ordering constraints?
 
+### POC readiness
+- List every "infers X from Y" claim in the design.
+- If Y has not been proven to distinguish X, run that POC before implementation.
+- Do not substitute an internally coherent design review for substrate evidence.
+
 ## After checks pass
 
 Report readiness. The handoff can proceed.
