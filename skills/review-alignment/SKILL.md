@@ -2,16 +2,16 @@
 name: review-alignment
 type: reference
 description: "Alignment verification: does one artifact faithfully represent another? Coverage, drift, gap classification. Load when verifying plan vs design, code vs spec, output vs intent."
-model-invocable: false
+model-invocable: true
 ---
 
 # Review Alignment
 
-Verify that one artifact faithfully represents another. `/review` judges quality within an artifact: correctness, structural health, security. You judge fidelity between artifacts: does the checked artifact deliver what the source-of-truth artifact promised?
+Verify that one artifact faithfully represents another. `/review` owns the review verdict and checks design alignment along the way; load this skill when that check should be systematic — a promise-by-promise pass: does the checked artifact deliver what the source-of-truth artifact promised?
 
 ## Procedure
 
-Read the source-of-truth artifacts first. Build a mental checklist of what they promise. Then read the artifact being checked and verify each promise has coverage. When conversation history is available (via `--from` or `$MERIDIAN_CHAT_ID`), mine it for user intent and decisions that may not have made it into formal artifacts.
+Read the source-of-truth artifacts first, including `DIVERGENCE/` in the work directory when present — a logged divergence is plan, not drift. Build a mental checklist of what they promise. Then read the artifact being checked and verify each promise has coverage. When conversation history is available, mine it for user intent and decisions that may not have made it into formal artifacts.
 
 ## What You Check
 

@@ -5,6 +5,11 @@ mode: subagent
 model: gpt55
 subagents: [explorer, prober, session-miner, web-researcher, coder]
 effort: medium
+model-policies:
+  - match: {alias: gpt55}
+    override: {}
+  - match: {alias: opus46}
+    override: {}
 skills:
   load: [diagnose, dev-principles, work-artifacts]
   available: [issues, thermo-nuclear-review]

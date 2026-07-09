@@ -9,7 +9,7 @@ effort: high
 model-policies:
   - match: {alias: gpt55}
     override: {effort: high}
-  - match: {alias: opus}
+  - match: {alias: sonnet}
     override: {effort: high}
 skills:
   load: [probe]

@@ -7,7 +7,7 @@ effort: medium
 model-policies:
   - match: {alias: composer}
     override: {}
-  - match: {alias: opus46}
+  - match: {alias: sonnet}
     override: {}
   - match: {alias: gpt55}
     override: {effort: low}

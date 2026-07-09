@@ -4,6 +4,11 @@ description: External facts from library docs, upstream issues, changelogs, and 
 mode: subagent
 model: gptmini
 harness: codex
+model-policies:
+  - match: {alias: gptmini}
+    override: {}
+  - match: {alias: sonnet5}
+    override: {}
 skills:
   load: [research-web]
 tools:

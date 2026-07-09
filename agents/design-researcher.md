@@ -4,6 +4,11 @@ description: Researches design and architectural options, writing analysis for t
 mode: subagent
 model: gpt55
 effort: high
+model-policies:
+  - match: {alias: gpt55}
+    override: {}
+  - match: {alias: opus46}
+    override: {}
 subagents: [explorer, web-researcher, session-miner]
 skills:
   load: [design-analysis, dev-principles, work-artifacts]

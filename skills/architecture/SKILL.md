@@ -7,6 +7,17 @@ model-invocable: true
 
 # Architecture
 
+## Entanglement
+
+The objective design test: which concerns are braided together that could be
+independent — state with value, what with how, policy with mechanism? Simple
+means untangled, and you can point at it in the code. Familiar is relative to
+the reader; never defend or reject a design on familiarity.
+
+Simplicity is not counting. More parts hanging straight beat fewer parts
+tied in a knot — don't merge components to lower the count if merging
+entangles their concerns.
+
 ## Boundaries
 
 A good boundary has high cohesion within and loose coupling between. Types: module (code organization, import direction), process (separate runtime, IPC/network), trust (authenticated vs unauthenticated, internal vs external), API/contract (versioned interface callers depend on).

@@ -56,3 +56,9 @@ At each convergence point:
 You own the merge. If integration fails, isolate which branch interaction caused it before re-spawning.
 
 After the last phase, run one final whole-change convergence gate. If it finds gaps, append new phases to the DAG.
+
+## Long-Running Lanes
+
+For mining and multi-file audit lanes, have the spawn write partial
+findings to disk as it works, so truncation or credit exhaustion cannot
+zero the work.

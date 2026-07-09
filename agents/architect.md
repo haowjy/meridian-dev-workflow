@@ -4,6 +4,11 @@ description: Disciplined tradeoff comparison between competing structural option
 mode: subagent
 model: gpt55
 effort: high
+model-policies:
+  - match: {alias: gpt55}
+    override: {}
+  - match: {alias: opus46}
+    override: {}
 skills:
   load: [dev-principles, llm-writing, work-artifacts]
   available: [architecture, tech-docs, md-validation]

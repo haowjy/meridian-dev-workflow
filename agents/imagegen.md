@@ -4,6 +4,11 @@ description: Image generation for mockups, visual explorations, icons, and refer
 mode: subagent
 model: gpt55
 effort: medium
+model-policies:
+  - match: {alias: gpt55}
+    override: {}
+  - match: {alias: sonnet5}
+    override: {}
 skills:
   load: [intent-modeling]
 tools:

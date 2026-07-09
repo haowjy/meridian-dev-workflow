@@ -8,9 +8,11 @@ effort: high
 model-policies:
   - match: {alias: gpt55}
     override: {effort: high}
+  - match: {alias: opus46}
+    override: {}
 skills:
   load: [dev-principles, shared-dao, testing, work-artifacts]
-  available: [dev-workflow, review, thermo-nuclear-review, intent-modeling, post-dev, issues]
+  available: [dev-workflow, review, thermo-nuclear-review, intent-modeling, post-dev, issues, architecture, review-alignment]
 tools:
   bash: allow
   write: allow

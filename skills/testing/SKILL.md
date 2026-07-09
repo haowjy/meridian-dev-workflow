@@ -9,6 +9,11 @@ model-invocable: true
 
 Testing buys confidence that a change does what it claims and does not break what it didn't touch. Coverage percentages, mock counts, and test totals are instruments, not goals.
 
+Tests are guardrails, not steering: every bug found in the field passed the
+tests. No suite makes tangled code easier to change — being able to reason
+about the code is primary. If your only confidence in a change is that the
+suite stayed green, that's a simplicity problem, not a coverage gap.
+
 ## Test for Risk, Not Completeness
 
 Match test effort to risk, not coverage targets. High-risk areas (data integrity, auth, payment, integration boundaries): comprehensive coverage with edge cases and error conditions. Low-risk areas (formatting, simple CRUD): manual smoke check or nothing.
@@ -42,6 +47,27 @@ No external network calls, no shared state between tests, deterministic inputs. 
 ## DAMP Over DRY
 
 Test code should be descriptive and readable in isolation, not aggressively DRY. Shared setup code becomes a hidden dependency that breaks tests in unexpected ways.
+
+## Pre-Fix-Failing Contract
+
+When writing a regression test for a bug fix: run the test *before* the fix
+and confirm it fails. Paste the red output. A test that passes pre-fix proves
+nothing about the fix. If you cannot demonstrate pre-fix failure, say so
+explicitly — don't claim coverage you haven't shown.
+
+## No Test-Specific Branches in Production Code
+
+Never add logic that exists solely to make a specific test pass — e.g.,
+checking for a fixture-specific string, special-casing a test token, or
+branching on a value that only appears in test data. If the test needs
+special behavior, the production code needs a real abstraction for it.
+
+## Tests as Scaffolding
+
+Unit tests written to understand behavior during development are scaffolding.
+Once the behavior is understood and covered by integration tests or the
+implementation itself makes the risk obvious, delete the scaffolding. Tests
+that no longer protect a live risk are maintenance cost, not safety.
 
 ## LLM-Generated Test Caveats
 

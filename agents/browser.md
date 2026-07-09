@@ -9,6 +9,8 @@ model-policies:
     override: {}
   - match: {alias: gpt}
     override: {effort: high}
+  - match: {alias: sonnet5}
+    override: {}
 skills:
   available: [agent-browser]
 tools:

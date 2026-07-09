@@ -68,7 +68,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 | Agent | Model | Role |
 |---|---|---|
 | `coder` | composer | Production code writer: implements scoped tasks and behavior-preserving refactors |
-| `frontend-coder` | opus47 | Production frontend code with visual self-verification via agent-browser |
+| `frontend-coder` | opus48 | Production frontend code with visual self-verification via agent-browser |
 | `mockup-dev` | composer | Fast frontend mockups and throwaway POCs |
 
 **Testing & Verification:**
@@ -82,7 +82,7 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Agent | Model | Role |
 |---|---|---|
-| `investigator` | gpt55 | Brief triage of flagged issues: quick-fixes trivial items, files GH issues for the rest |
+| `investigator` | gpt55 | Root-cause diagnosis for broken or suspicious behavior |
 
 **Research & Documentation:**
 
@@ -124,12 +124,12 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Skill | What it teaches |
 |---|---|
-| `review` | Adversarial code review: severity thinking, structured reporting |
+| `review` | Constructive code review: judge the code as it stands, standards and design axes, quality as ease of change, redesign escalation |
+| `review-alignment` | Alignment verification: does one artifact faithfully represent another? |
+| `divergence` | Track plan divergence during multi-phase work in a `DIVERGENCE/` folder |
 | `issues` | GitHub Issues integration: labels, work-item linking, `gh` CLI patterns |
 | `react-architecture` | React-specific structural lens: tokens, state, composition, imports, component API consistency |
 | `tech-docs` | Technical writing craft: hierarchical docs, linking strategy, and progressive disclosure |
-| `ui-craft-basics` | Lightweight UI craft guardrails: intent, design-system fit, real-render verification |
-| `impeccable` | Human-invoked heavy reference for high-craft UI critique, prototype shaping, and visual polish |
 | `unravel-codebase` | Human-invoked guided walkthrough of unfamiliar code: reads alongside you, explains how it works, and doubles as a KB/vocab cleanup pass |
 | `ui-implementation` | Production UI follow-through after visual direction is settled |
 | `thermo-nuclear-review` | Extremely strict maintainability review: abstraction quality, code judo moves |

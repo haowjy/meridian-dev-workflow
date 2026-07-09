@@ -7,8 +7,6 @@ effort: high
 model-policies:
   - match: {alias: opus48}
     override: {}
-  - match: {alias: fable}
-    override: {}
   - match: {alias: composer}
     override: {}
   - match: {alias: glm}

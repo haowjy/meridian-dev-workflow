@@ -2,7 +2,7 @@
 name: ui-implementation
 type: mode-shift
 description: Use after visual direction is settled and UX Lead needs to turn mockups or requirements into production UI changes.
-model-invocable: false
+model-invocable: true
 user-invocable: true
 ---
 

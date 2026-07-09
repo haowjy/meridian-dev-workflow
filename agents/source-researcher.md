@@ -4,6 +4,11 @@ description: Studies real open-source code to see how projects handle similar pr
 mode: subagent
 model: deepseek
 effort: medium
+model-policies:
+  - match: {alias: deepseek}
+    override: {}
+  - match: {alias: sonnet5}
+    override: {}
 subagents: [explorer, web-researcher]
 skills:
   load: [source-study, dev-principles, work-artifacts]

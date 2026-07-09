@@ -24,11 +24,15 @@ Run this when implementation is complete, before creating the PR.
 ### Review
 - Has structural review passed? If not, spawn a reviewer first.
 - Any review findings addressed or explicitly accepted?
+- If the plan shifted during implementation, `DIVERGENCE/` in the work
+  directory reflects it — reviewers and knowledge capture read from it
 
 ### Cleanup
 - No stale files, dead code, or debug artifacts left behind
+- Scaffolding tests deleted: tests written to understand behavior that no
+  longer protect a live risk (see `/testing`)
 - No TODO comments added without corresponding issue
 
 ### After merge
-- Prune worktrees: `scripts/prune-worktrees.sh`
+- Prune merged worktrees (project script if one exists, else `git worktree remove`)
 - Verify CI passed on main

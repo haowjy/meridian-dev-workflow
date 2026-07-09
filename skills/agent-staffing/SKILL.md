@@ -9,6 +9,12 @@ model-invocable: true
 
 If no team composition was provided by your caller, compose one yourself using the catalogs below.
 
+## Model Override
+
+Agent defaults are usually correct. Pass `-m` on the spawn when the lane
+needs a capability the default lacks — in particular, vision-dependent lanes
+(screenshots, rendered output, UI verification) need vision-capable models.
+
 ## Fan-Out vs Parallel Lanes
 
 - **Fan-out**: same prompt, same files, different models. Convergent signal on a high-stakes call.

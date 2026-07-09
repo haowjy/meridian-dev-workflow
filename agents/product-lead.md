@@ -7,14 +7,13 @@ model: opus46
 subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, source-researcher]
 model-policies:
   - match: {alias: opus46}
-  - match: {alias: opus48}
   - match: {alias: gpt55}
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts]
-  available: [uxdev, code, grill-with-docs, handoff, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, poc, issues, source-study]
+  available: [uxdev, code, grill-with-docs, handoff, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, poc, issues, source-study, divergence]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
@@ -80,19 +79,23 @@ The handoff describes what is observably true when the work succeeds.
 
 ## Task Dir
 
-You own `task_dir`. Implementation agents work there. Rebind with
-`meridian work task-dir <path>` when wrong or missing.
+You own `task_dir`. Implementation agents work there. Rebind it when wrong
+or missing (`/work-artifacts` has the mechanics).
 
 ## Redesign Loop
 
-From an implementation lead's Redesign Brief:
-- **design-problem:** `/handoff` to `@design-lead`, back to impl lead
+From an implementation lead's Redesign Brief (the brief classifies itself):
+- **design-problem:** spawn `@design-lead` with the brief, then hand the
+  revised design back to the impl lead. This loop runs without the human.
 - **scope-problem:** impl lead continues (adjusted scope)
 
-K=2 design-problem cycles, then surface the impasse to the user.
+When redesign cycles stop converging, surface the impasse to the user
+instead of spinning another cycle.
 
-## After Implementation
+## Knowledge Capture
 
-Spawn `@kb-lead` after implementation ships. Pass `--from $MERIDIAN_CHAT_ID`,
-`-f` for changed files, `-f` for design artifacts, and
-`-f $(meridian work current)` for work context.
+Spawn `@kb-lead` after settled phases — not just after final shipping.
+Design decisions and rejected alternatives go stale fast; capture them
+once a phase lands, while the context is still live. Give the spawn this
+conversation, the changed files, the design artifacts, and the work
+directory as context.

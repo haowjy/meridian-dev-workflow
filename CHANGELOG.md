@@ -4,6 +4,21 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/divergence` skill: `DIVERGENCE/` folder protocol for tracking plan shifts during multi-phase work (one file per entry; reviewers and knowledge capture consume it).
+- `/review` `resources/redesign-escalation.md`: non-convergence signals and the canonical four-part Redesign Brief (classification, structural problem, evidence, direction, what survives) used by both reviewer frame-rot verdicts and implementation-lead step-back escalation.
+
+### Changed
+- `/review` rewritten constructive: judge code as it stands now (a diff only locates), standards + design axes, quality as ease of change with entanglement as the objective test (canonical in `/architecture`), findings must carry a fix direction, frame-rot verdict is always blocking and always constructive.
+- Escalation topology: tech-lead escalates redesign directly to `@design-lead` and surfaces non-converging cycles to its caller; product-lead remains sole HITL and dispatches self-classifying Redesign Briefs; fixed K=2 cycle count replaced with convergence judgment; `/handoff` reserved for human session boundaries (programmed through omission).
+- Harness-agnostic sweep per new `/prompt-principles` section: agent bodies state intent; CLI mechanics (`--from`, `--continue`, `--task-dir`, wait commands) defer to the environment. `@agent` references and `--skills` attachment remain as composition vocabulary.
+- `reviewer`: body slimmed against loaded `/review`; gains `@web-researcher` (background fact-checking) and `@investigator` (diagnosis only — causal chain, not fixes) subagents.
+- `/architecture` leads with entanglement as the quality test; `/testing` opens with tests-as-guardrails; `/review-alignment` is model-invocable, treats logged divergence as plan, and defers the verdict boundary to `/review`.
+- `kb`-capture guidance in leads: capture after settled phases with conversation, changed files, and work directory as context.
+- Agent roster updates: new and retuned subagent profiles (architect, browser, design-researcher, imagegen, mockup-dev, prober, source-researcher, web-researcher, investigator, frontend-coder, gpt-dev).
+- `ui-implementation` is model-invocable so ux-lead can self-load it as instructed.
+- README refreshed: constructive review row, divergence/review-alignment listed, ghost skill rows removed, agent roles and models corrected.
+
 ## [0.11.44] - 2026-07-05
 
 ### Changed
