@@ -5,7 +5,7 @@ description = "Opinionated dev team for Meridian — architects, coders, reviewe
 
 [dependencies.meridian-base]
 url = "https://github.com/haowjy/meridian-base"
-version = ">=0.7.0, <0.8.0"
+version = ">=0.8.0, <0.9.0"
 
 [local-dependencies.meridian-prompter]
 url = "https://github.com/meridian-flow/meridian-prompter"

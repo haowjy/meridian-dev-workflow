@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Bump meridian-base dependency to `>=0.8.0, <0.9.0` (DIVERGENCE convention, layer-wide current-truth rule).
+
 ## [0.12.0] - 2026-07-09
 
 ### Added
