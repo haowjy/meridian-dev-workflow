@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.12.2] - 2026-07-09
+
 ### Changed
 - `@browser` and `@architect` now default to `sol`, preserving their existing effort and fallback policies.
 - `@coder` now defaults to `sol` at `medium` effort, with Composer retained as a fallback.
