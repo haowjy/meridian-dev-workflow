@@ -7,6 +7,8 @@ effort: medium
 model-policies:
   - match: {alias: deepseek}
     override: {}
+  - match: {alias: terra}
+    override: {effort: medium}
   - match: {alias: sonnet5}
     override: {}
 subagents: [explorer, web-researcher]

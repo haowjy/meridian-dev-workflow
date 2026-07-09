@@ -2,17 +2,17 @@
 name: frontend-coder
 description: Frontend implementation where visual quality and design fidelity matter.
 mode: subagent
-model: opus48
-effort: high
+model: sol
+effort: xhigh
 model-policies:
+  - match: {alias: sol}
+    override: {effort: xhigh}
   - match: {alias: opus48}
     override: {}
   - match: {alias: composer}
     override: {}
   - match: {alias: glm}
     override: {}
-  - match: {alias: gpt55}
-    override: {effort: low}
 skills:
   load: [dev-principles, anti-slop, information-hierarchy, testing, work-artifacts]
   available: [uxdev, agent-browser, react-architecture, issues]

@@ -7,8 +7,8 @@ model: opus46
 subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, source-researcher]
 model-policies:
   - match: {alias: opus46}
-  - match: {alias: gpt55}
-    override: {effort: high}
+  - match: {alias: sol}
+    override: {effort: xhigh}
   - match: {alias: deepseek}
     override: {effort: high}
 skills:

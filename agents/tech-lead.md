@@ -4,12 +4,12 @@ description: Plans and drives implementation, decomposing work and adapting as n
 mode: primary
 model: opus48
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead]
-effort: high
+effort: xhigh
 model-policies:
   - match: {alias: opus48}
-    override: {effort: high}
-  - match: {alias: gpt55}
-    override: {effort: high}
+    override: {effort: xhigh}
+  - match: {alias: sol}
+    override: {effort: xhigh}
 skills:
   load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts]
   available: [uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence]

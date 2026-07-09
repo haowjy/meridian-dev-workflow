@@ -5,8 +5,8 @@ mode: primary
 model: opus46
 model-policies:
   - match: {alias: opus46}
-  - match: {alias: gpt55}
-    override: {effort: high}
+  - match: {alias: sol}
+    override: {effort: xhigh}
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev]
 effort: high
 skills:

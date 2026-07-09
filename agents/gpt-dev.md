@@ -2,12 +2,12 @@
 name: gpt-dev
 description: Fast, token-efficient implementation for well-scoped tasks.
 mode: primary
-model: gpt55
+model: sol
 subagents: [reviewer, prober]
-effort: high
+effort: xhigh
 model-policies:
-  - match: {alias: gpt55}
-    override: {effort: high}
+  - match: {alias: sol}
+    override: {effort: xhigh}
   - match: {alias: opus46}
     override: {}
 skills:

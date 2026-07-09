@@ -10,8 +10,8 @@ skills:
 model-policies:
   - match: {alias: opus48}
     override: {}
-  - match: {alias: gpt55}
-    override: {effort: low}
+  - match: {alias: sol}
+    override: {effort: xhigh}
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

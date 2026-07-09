@@ -4,6 +4,20 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@browser` and `@architect` now default to `sol`, preserving their existing effort and fallback policies.
+- `@coder` now defaults to `sol` at `medium` effort, with Composer retained as a fallback.
+- `@design-lead` retains Opus 4.6 as its default and replaces the GPT-5.5 fallback with `sol` at `xhigh` effort.
+- `@design-researcher` now defaults to `sol` at `medium` effort, with `terra` and Opus 4.6 as fallbacks.
+- `@frontend-coder` and `@gpt-dev` now default to `sol` at `xhigh` effort.
+- `@imagegen` now defaults to `sol` at `xhigh` effort, with only `terra` as fallback.
+- `@investigator` now defaults to `sol` at `xhigh`, with `terra` at `xhigh` and Opus 4.6 as fallbacks; duplicate-effort Sol fallbacks are unsupported.
+- `@mockup-dev` now defaults to `terra` at `xhigh`, with Composer, Sonnet, and `sol` at `medium` as ordered fallbacks.
+- `@prober` now defaults to `sol` at `xhigh`, retaining Sonnet as fallback.
+- `@reviewer` now defaults to `sol` at `xhigh` effort.
+- Product Lead, Tech Lead, and UX Lead retain their Opus defaults and replace GPT-5.5 fallbacks with `sol` at `xhigh`.
+- `@source-researcher` retains DeepSeek as its default and adds `terra` at `medium` as the first fallback, before Sonnet.
+
 ## [0.12.1] - 2026-07-09
 
 ### Changed

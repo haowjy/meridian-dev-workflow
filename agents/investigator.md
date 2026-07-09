@@ -2,12 +2,14 @@
 name: investigator
 description: Root-cause diagnosis for broken or suspicious behavior.
 mode: subagent
-model: gpt55
+model: sol
 subagents: [explorer, prober, session-miner, web-researcher, coder]
-effort: medium
+effort: xhigh
 model-policies:
-  - match: {alias: gpt55}
-    override: {}
+  - match: {alias: sol}
+    override: {effort: xhigh}
+  - match: {alias: terra}
+    override: {effort: xhigh}
   - match: {alias: opus46}
     override: {}
 skills:

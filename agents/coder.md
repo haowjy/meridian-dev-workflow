@@ -2,13 +2,13 @@
 name: coder
 description: General purpose implementation of code.
 mode: subagent
-model: composer
+model: sol
 effort: medium
 model-policies:
+  - match: {alias: sol}
+    override: {effort: medium}
   - match: {alias: composer}
     override: {}
-  - match: {alias: gpt55}
-    override: {effort: medium}
   - match: {alias: sonnet}
     override: {}
   - match: {alias: deepseek}

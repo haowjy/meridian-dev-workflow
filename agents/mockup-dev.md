@@ -2,15 +2,17 @@
 name: mockup-dev
 description: Fast throwaway frontend pocs to make visual options tangible.
 mode: subagent
-model: composer
-effort: medium
+model: terra
+effort: xhigh
 model-policies:
+  - match: {alias: terra}
+    override: {effort: xhigh}
   - match: {alias: composer}
     override: {}
   - match: {alias: sonnet}
     override: {}
-  - match: {alias: gpt55}
-    override: {effort: low}
+  - match: {alias: sol}
+    override: {effort: medium}
 skills:
   load: [dev-principles, anti-slop, information-hierarchy, uxdev, design-craft, poc, work-artifacts]
   available: [react-architecture, issues, agent-browser]

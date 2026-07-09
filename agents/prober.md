@@ -4,11 +4,11 @@ description: >-
   Spawn when you need runtime evidence: exercise workflows, reproduce bugs,
   stress boundaries, build throwaway POCs. Skills: probe, poc, agent-browser.
 mode: subagent
-model: gpt55
-effort: high
+model: sol
+effort: xhigh
 model-policies:
-  - match: {alias: gpt55}
-    override: {effort: high}
+  - match: {alias: sol}
+    override: {effort: xhigh}
   - match: {alias: sonnet}
     override: {effort: high}
 skills:

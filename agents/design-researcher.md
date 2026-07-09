@@ -2,10 +2,12 @@
 name: design-researcher
 description: Researches design and architectural options, writing analysis for the team.
 mode: subagent
-model: gpt55
-effort: high
+model: sol
+effort: medium
 model-policies:
-  - match: {alias: gpt55}
+  - match: {alias: sol}
+    override: {effort: medium}
+  - match: {alias: terra}
     override: {}
   - match: {alias: opus46}
     override: {}

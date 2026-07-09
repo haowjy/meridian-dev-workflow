@@ -2,10 +2,10 @@
 name: browser
 description: Live browser for design/behavior inspiration, scraping, data extraction, and screenshots. Use when pages need rendering or interaction.
 mode: subagent
-model: gpt55
+model: sol
 effort: low
 model-policies:
-  - match: {alias: gpt55}
+  - match: {alias: sol}
     override: {}
   - match: {alias: gpt}
     override: {effort: high}

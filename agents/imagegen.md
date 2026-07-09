@@ -2,12 +2,12 @@
 name: imagegen
 description: Image generation for mockups, visual explorations, icons, and reference imagery.
 mode: subagent
-model: gpt55
-effort: medium
+model: sol
+effort: xhigh
 model-policies:
-  - match: {alias: gpt55}
-    override: {}
-  - match: {alias: sonnet5}
+  - match: {alias: sol}
+    override: {effort: xhigh}
+  - match: {alias: terra}
     override: {}
 skills:
   load: [intent-modeling]

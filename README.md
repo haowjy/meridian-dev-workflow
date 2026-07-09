@@ -52,58 +52,61 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 | Agent | Model | Role |
 |---|---|---|
-| `product-lead` | opus | Primary developer: requirements gathering, routing, design approval |
-| `ux-lead` | opus | Visual design entry point: visual requirements, design vocabulary, frontend routing |
-| `design-lead` | claude-opus-4-6 | Technical design: structural options, interfaces, boundaries, tradeoffs |
-| `tech-lead` | gpt55 | Implementation owner: decomposition, coordination, verification, structural review |
+| `product-lead` | opus46 | Primary developer: requirements gathering, routing, design approval |
+| `ux-lead` | opus48 | Visual design entry point: visual requirements, design vocabulary, frontend routing |
+| `design-lead` | opus46 | Technical design: structural options, interfaces, boundaries, tradeoffs |
+| `tech-lead` | opus48 | Implementation owner: decomposition, coordination, verification, structural review |
 
 **Design:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `architect` | gpt55 | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
+| `architect` | sol | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
+| `design-researcher` | sol | Researches structural options and writes analysis for the design team |
 
 **Implementation:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `coder` | composer | Production code writer: implements scoped tasks and behavior-preserving refactors |
-| `frontend-coder` | opus48 | Production frontend code with visual self-verification via agent-browser |
-| `mockup-dev` | composer | Fast frontend mockups and throwaway POCs |
+| `coder` | sol | Production code writer: implements scoped tasks and behavior-preserving refactors |
+| `frontend-coder` | sol | Production frontend code with visual self-verification via agent-browser |
+| `gpt-dev` | sol | Direct implementation lead for well-scoped work |
+| `mockup-dev` | terra | Fast frontend mockups and throwaway POCs |
 
 **Testing & Verification:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `prober` | gpt55 | Runtime verifier. Skills: probe, poc, agent-browser |
-| `reviewer` | gpt55 | Code reviewer: static and runtime. Skills: review, probe, thermo-nuclear-review, test-architecture, review-alignment |
+| `prober` | sol | Runtime verifier. Skills: probe, poc, agent-browser |
+| `reviewer` | sol | Code reviewer: static and runtime. Skills: review, probe, thermo-nuclear-review, test-architecture, review-alignment |
 
 **Review & Analysis:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `investigator` | gpt55 | Root-cause diagnosis for broken or suspicious behavior |
+| `investigator` | sol | Root-cause diagnosis for broken or suspicious behavior |
 
 **Research & Documentation:**
 
 | Agent | Model | Role |
 |---|---|---|
 | `web-researcher` | gpt-5.4-mini | External evidence: library docs, upstream issues, architecture patterns via web search |
-| `explorer` | gpt-5.4-mini | Fast, cheap codebase explorer: reads files, searches code, mines past sessions |
+| `explorer` | luna | Fast, cheap codebase explorer: reads files, searches code, mines past sessions |
+| `source-researcher` | deepseek | Studies real open-source implementations for relevant patterns |
 | `kb-lead` | deepseek | Captures durable knowledge: mines the work, writes .context/, KB, and docs/ inline, fans out @explorer/@session-miner to read |
 
 **Visual:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `browser` | gpt55 | General-purpose browser interaction: scraping, navigation, screenshots |
-| `imagegen` | gpt55 | Image generation: UI concept mockups, visual explorations, icons |
+| `browser` | sol | General-purpose browser interaction: scraping, navigation, screenshots |
+| `imagegen` | sol | Image generation: UI concept mockups, visual explorations, icons |
 
 **Deprecated** (retained as legacy artifacts):
 
 | Agent | Model | Status |
 |---|---|---|
-| `integration-tester` | gpt55 | Use `@coder` with `/testing` `resources/integration-patterns.md` instead |
+| `integration-tester` | — | Use `@coder` with `/testing` `resources/integration-patterns.md` instead |
 
 ## Skills
 
