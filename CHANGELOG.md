@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-07-09
+
 ### Added
 - `/divergence` skill: `DIVERGENCE/` folder protocol for tracking plan shifts during multi-phase work (one file per entry; reviewers and knowledge capture consume it).
 - `/review` `resources/redesign-escalation.md`: non-convergence signals and the canonical four-part Redesign Brief (classification, structural problem, evidence, direction, what survives) used by both reviewer frame-rot verdicts and implementation-lead step-back escalation.
