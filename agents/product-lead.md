@@ -8,7 +8,7 @@ subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober, 
 model-policies:
   - match: {alias: opus46}
   - match: {alias: sol}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
 skills:

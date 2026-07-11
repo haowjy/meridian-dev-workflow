@@ -3,10 +3,10 @@ name: frontend-coder
 description: Frontend implementation where visual quality and design fidelity matter.
 mode: subagent
 model: sol
-effort: xhigh
+effort: high
 model-policies:
   - match: {alias: sol}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: opus48}
     override: {}
   - match: {alias: composer}

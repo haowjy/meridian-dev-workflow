@@ -2,10 +2,11 @@
 name: web-researcher
 description: External facts from library docs, upstream issues, changelogs, and usage patterns.
 mode: subagent
-model: gptmini
+model: luna
+effort: high
 harness: codex
 model-policies:
-  - match: {alias: gptmini}
+  - match: {alias: luna}
     override: {}
   - match: {alias: sonnet5}
     override: {}

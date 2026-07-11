@@ -5,10 +5,10 @@ description: >-
   stress boundaries, build throwaway POCs. Skills: probe, poc, agent-browser.
 mode: subagent
 model: sol
-effort: xhigh
+effort: high
 model-policies:
   - match: {alias: sol}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: sonnet}
     override: {effort: high}
 skills:

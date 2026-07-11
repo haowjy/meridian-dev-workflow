@@ -4,12 +4,12 @@ description: Root-cause diagnosis for broken or suspicious behavior.
 mode: subagent
 model: sol
 subagents: [explorer, prober, session-miner, web-researcher, coder]
-effort: xhigh
+effort: high
 model-policies:
   - match: {alias: sol}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: terra}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: opus46}
     override: {}
 skills:

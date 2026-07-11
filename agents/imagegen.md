@@ -3,10 +3,10 @@ name: imagegen
 description: Image generation for mockups, visual explorations, icons, and reference imagery.
 mode: subagent
 model: sol
-effort: xhigh
+effort: high
 model-policies:
   - match: {alias: sol}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: terra}
     override: {}
 skills:

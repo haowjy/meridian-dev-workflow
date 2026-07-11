@@ -2,13 +2,14 @@
 name: design-lead
 description: Structural and architectural design decisions before implementation.
 mode: primary
-model: opus46
-model-policies:
-  - match: {alias: opus46}
-  - match: {alias: sol}
-    override: {effort: xhigh}
-subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev]
+model: sol
 effort: high
+model-policies:
+  - match: {alias: sol}
+    override: {}
+  - match: {alias: opus46}
+    override: {}
+subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev]
 skills:
   load: [shared-dao, llm-writing, information-hierarchy, explore-and-engage, work-artifacts]
   available: [dev-principles, uxdev, handoff, architecture, tech-docs, intent-modeling, agent-staffing, pre-dev, issues, zoom-out, source-study]

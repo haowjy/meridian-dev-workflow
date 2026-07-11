@@ -2,11 +2,9 @@
 name: design-researcher
 description: Researches design and architectural options, writing analysis for the team.
 mode: subagent
-model: sol
-effort: medium
+model: terra
+effort: high
 model-policies:
-  - match: {alias: sol}
-    override: {effort: medium}
   - match: {alias: terra}
     override: {}
   - match: {alias: opus46}

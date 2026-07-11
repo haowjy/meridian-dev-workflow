@@ -3,6 +3,7 @@ name: ux-lead
 description: Visual design and UX covering direction, layout exploration, and design iteration.
 mode: primary
 model: opus48
+effort: high
 subagents: [browser, mockup-dev, frontend-coder, coder, explorer, web-researcher, imagegen, reviewer, prober, kb-lead]
 skills:
   load: [uxdev, design-craft, anti-slop, work-artifacts]
@@ -11,7 +12,7 @@ model-policies:
   - match: {alias: opus48}
     override: {}
   - match: {alias: sol}
-    override: {effort: xhigh}
+    override: {effort: high}
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

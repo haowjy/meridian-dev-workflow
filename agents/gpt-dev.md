@@ -4,10 +4,10 @@ description: Fast, token-efficient implementation for well-scoped tasks.
 mode: primary
 model: sol
 subagents: [reviewer, prober]
-effort: xhigh
+effort: high
 model-policies:
   - match: {alias: sol}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: opus46}
     override: {}
 skills:

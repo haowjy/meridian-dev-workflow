@@ -3,12 +3,11 @@ name: browser
 description: Live browser for design/behavior inspiration, scraping, data extraction, and screenshots. Use when pages need rendering or interaction.
 mode: subagent
 model: sol
-effort: low
+effort: medium
 model-policies:
   - match: {alias: sol}
     override: {}
-  - match: {alias: gpt}
-    override: {effort: high}
+  - match: {alias: terra}
   - match: {alias: sonnet5}
     override: {}
 skills:
