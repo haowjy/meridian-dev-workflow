@@ -12,8 +12,8 @@ model-policies:
   - match: {alias: deepseek}
     override: {effort: high}
 skills:
-  load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts]
-  available: [uxdev, code, grill-with-docs, handoff, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, poc, issues, source-study, divergence]
+  load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts, qi-maintenance]
+  available: [uxdev, code, grill-with-docs, handoff, zoom-out, session-mining, intent-modeling, pre-dev, agent-staffing, poc, issues, source-study, divergence, qi-layer, knowledge-layers]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

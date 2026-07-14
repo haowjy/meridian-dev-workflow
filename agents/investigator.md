@@ -13,8 +13,8 @@ model-policies:
   - match: {alias: opus46}
     override: {}
 skills:
-  load: [diagnose, dev-principles, work-artifacts]
-  available: [issues, thermo-nuclear-review]
+  load: [diagnose, dev-principles, work-artifacts, qi-maintenance]
+  available: [issues, thermo-nuclear-review, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow

@@ -11,8 +11,8 @@ model-policies:
   - match: {alias: sol}
     override: {effort: xhigh}
 skills:
-  load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts]
-  available: [uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence]
+  load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance]
+  available: [uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
 tools:
   write: allow
   edit: allow

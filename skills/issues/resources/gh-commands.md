@@ -4,7 +4,9 @@ Detailed `gh` CLI usage for the issues skill. SKILL.md covers the when and why: 
 
 ## Availability Check
 
-Run both checks before any issue operation. If either fails, skip silently.
+Run both checks before any issue operation. If either fails, preserve the
+issue draft in the active work directory when one exists; otherwise include
+the complete draft in the final report. Always report that filing was skipped.
 
 ```bash
 # Check authentication
@@ -22,7 +24,7 @@ Wrap in a helper pattern:
 if gh auth status 2>/dev/null && gh repo view --json name 2>/dev/null; then
   # gh is available: create the issue
 else
-  # gh unavailable: log locally only, no error
+  # gh unavailable: preserve the draft and report that filing was skipped
 fi
 ```
 
@@ -43,9 +45,10 @@ fi
 
 | Label | Color (hex) | Description |
 |-------|-------------|-------------|
-| `work:<slug>` | `c5def5` | Links issue to its meridian work item |
+| `work:<slug>` | `c5def5` | Links issue to its Meridian work item when one exists |
 
-Replace `<slug>` with the actual work item slug (e.g., `work:auth-refactor`).
+When an active work item exists, replace `<slug>` with its actual slug (e.g.,
+`work:auth-refactor`). Otherwise omit the work label and work-item references.
 
 ### Label Creation
 
@@ -77,7 +80,7 @@ Use this structure for all issues. It gives enough context for someone to pick u
 
 ```markdown
 ## Context
-Found during: [work item name], [phase or step]
+Found during: [work item and phase when available; otherwise standalone task]
 Found by: [agent role] ([spawn ID])
 
 ## Description
@@ -89,20 +92,21 @@ Found by: [agent role] ([spawn ID])
 ## Suggested Action
 [What should be done, or "needs investigation" if the right fix isn't clear]
 
----
-*Created by meridian agent during `work:<slug>` implementation*
+[When tied to a work item only: Created during `work:<slug>` implementation]
 ```
 
 ### Filling in the template
 
-- **Context**: Use the active work item name and current phase. The spawn ID helps trace back to the agent session that found it.
+- **Context**: Use the active work item name and current phase when one exists;
+  otherwise name the standalone task. The spawn ID helps trace back to the
+  agent session that found it.
 - **Description**: State what's wrong or surprising. Be specific: "token refresh fails" is less useful than "token refresh catches all exceptions and returns None, masking network errors."
 - **Evidence**: Include file paths with line numbers. Short code snippets are fine inline. For longer evidence, describe what to look for and where.
 - **Suggested Action**: If you know the fix, describe it. If not, say "needs investigation" and note what you've already ruled out.
 
 ## Creating Issues
 
-### Standard issue with labels
+### Issue tied to an active work item
 
 ```bash
 gh issue create \
@@ -144,9 +148,14 @@ Prefix the title with the category for scannability:
 Comma-separate labels in a single `--label` flag:
 
 ```bash
+--label "bug"
 --label "bug,work:auth-refactor"
 --label "review-finding,deferred,work:auth-refactor"
 ```
+
+Use the `work:<slug>` variants only when the issue was discovered under that
+active work item. Otherwise use category labels alone and omit work-item text
+from the body and footer.
 
 ## Querying Issues
 

@@ -6,8 +6,8 @@ model: opus48
 effort: high
 subagents: [browser, mockup-dev, frontend-coder, coder, explorer, web-researcher, imagegen, reviewer, prober, kb-lead]
 skills:
-  load: [uxdev, design-craft, anti-slop, work-artifacts]
-  available: [ui-implementation, handoff, session-mining, grill-with-docs, intent-modeling, poc, issues]
+  load: [uxdev, design-craft, anti-slop, work-artifacts, qi-maintenance]
+  available: [ui-implementation, handoff, session-mining, grill-with-docs, intent-modeling, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
 model-policies:
   - match: {alias: opus48}
     override: {}
@@ -42,3 +42,8 @@ Visual work is iterative. Use `@mockup-dev` for fast sketches when the user need
 Use `/grill-with-docs` when the request needs to be challenged against existing decisions.
 
 When the direction is clear, use `/ui-implementation` to turn it into durable UI changes. Stay hands-on when conversation context and visual judgment matter; spawn implementation or review help when the remaining work is better isolated.
+
+## Ship
+
+For durable UI changes, use `/dev-workflow` for commit discipline and complete
+`/post-dev` before creating the PR.

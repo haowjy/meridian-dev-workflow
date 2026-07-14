@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Durable source editors and leads with explicit direct-edit exceptions always load `/qi-maintenance`; `/qi-layer` and `/knowledge-layers` stay available for substantial edits without consuming every run's context.
+- `/dev-workflow`, `/issues`, and `/post-dev`: deferred work routes by scope to `.context/TODO`, `.context/FUTURE`, or GitHub; post-dev requires a completed final-path `@kb-lead` reconciliation and same-branch colocated truth while cross-cutting KB capture may land independently.
+- Require `meridian-base >=0.8.7` for `/qi-maintenance`.
+
 ## [0.12.3] - 2026-07-11
 
 ## [0.12.2] - 2026-07-09

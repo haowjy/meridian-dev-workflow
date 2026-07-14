@@ -20,6 +20,12 @@ Commit after each step that passes checks. Don't accumulate changes across multi
 
 Keep `CHANGELOG.md` current under `## [Unreleased]`: write entries at commit time, not retroactively.
 
+## Deferrals
+
+When you skip something during implementation — a cleanup, an edge case, a
+better approach — route it immediately through `/issues`. Don't rely on
+catching it at post-dev.
+
 ## Pushing and PRs
 
 When a feature branch (never `main`) is complete and passes the full gate, push

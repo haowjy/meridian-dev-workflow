@@ -14,8 +14,8 @@ model-policies:
   - match: {alias: deepseek}
     override: {}
 skills:
-  load: [code, dev-principles, testing, work-artifacts]
-  available: [poc, issues]
+  load: [code, dev-principles, testing, work-artifacts, qi-maintenance]
+  available: [poc, issues, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow

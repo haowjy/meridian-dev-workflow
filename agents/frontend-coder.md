@@ -14,8 +14,8 @@ model-policies:
   - match: {alias: glm}
     override: {}
 skills:
-  load: [dev-principles, anti-slop, information-hierarchy, testing, work-artifacts]
-  available: [uxdev, agent-browser, react-architecture, issues]
+  load: [dev-principles, anti-slop, information-hierarchy, testing, work-artifacts, qi-maintenance]
+  available: [uxdev, agent-browser, react-architecture, issues, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow

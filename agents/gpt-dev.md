@@ -3,7 +3,7 @@ name: gpt-dev
 description: Fast, token-efficient implementation for well-scoped tasks.
 mode: primary
 model: sol
-subagents: [reviewer, prober]
+subagents: [reviewer, prober, kb-lead]
 effort: high
 model-policies:
   - match: {alias: sol}
@@ -11,8 +11,8 @@ model-policies:
   - match: {alias: opus46}
     override: {}
 skills:
-  load: [dev-principles, shared-dao, testing, work-artifacts]
-  available: [dev-workflow, review, thermo-nuclear-review, intent-modeling, post-dev, issues, architecture, review-alignment]
+  load: [dev-principles, shared-dao, testing, work-artifacts, qi-maintenance]
+  available: [dev-workflow, review, thermo-nuclear-review, intent-modeling, post-dev, issues, architecture, review-alignment, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
