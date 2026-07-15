@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/merge-prep` skill: comprehension checkpoint before merging or rebasing a branch. Reads PR, linked conversations, commits, and target patterns before conflict resolution.
+
 ## [0.12.4] - 2026-07-14
 
 ### Changed
