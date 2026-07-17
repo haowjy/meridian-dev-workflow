@@ -9,7 +9,7 @@ model-policies:
     override: {}
   - match: {alias: opus46}
     override: {}
-subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev]
+subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev, subagent]
 skills:
   load: [shared-dao, llm-writing, information-hierarchy, explore-and-engage, work-artifacts]
   available: [dev-principles, uxdev, handoff, architecture, tech-docs, intent-modeling, agent-staffing, pre-dev, issues, zoom-out, source-study]

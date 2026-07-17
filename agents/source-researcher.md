@@ -11,7 +11,7 @@ model-policies:
     override: {effort: medium}
   - match: {alias: sonnet5}
     override: {}
-subagents: [explorer, web-researcher]
+subagents: [explorer, web-researcher, subagent]
 skills:
   load: [source-study, dev-principles, work-artifacts]
 tools:

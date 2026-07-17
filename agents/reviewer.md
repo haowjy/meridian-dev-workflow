@@ -6,7 +6,7 @@ description: >-
   thermo-nuclear-review, react-architecture, information-hierarchy.
 mode: subagent
 model: sol
-subagents: [web-researcher, investigator]
+subagents: [web-researcher, investigator, subagent]
 effort: high
 model-policies:
   - match: {alias: sol}

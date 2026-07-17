@@ -9,7 +9,7 @@ model-policies:
     override: {}
   - match: {alias: opus46}
     override: {}
-subagents: [explorer, web-researcher, session-miner]
+subagents: [explorer, web-researcher, session-miner, subagent]
 skills:
   load: [design-analysis, dev-principles, work-artifacts]
   available: [architecture, shared-dao, intent-modeling, issues]

@@ -3,7 +3,7 @@ name: investigator
 description: Root-cause diagnosis for broken or suspicious behavior.
 mode: subagent
 model: sol
-subagents: [explorer, prober, session-miner, web-researcher, coder]
+subagents: [explorer, prober, session-miner, web-researcher, coder, subagent]
 effort: high
 model-policies:
   - match: {alias: sol}
