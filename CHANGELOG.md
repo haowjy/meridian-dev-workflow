@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.12.6] - 2026-07-17
+
 ### Fixed
 - `/post-dev`: after-merge cleanup names the exact command to close the work item (`meridian work done <slug>`) instead of a vague pointer, so merged PRs stop leaving work items open indefinitely.
 
