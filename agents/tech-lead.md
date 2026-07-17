@@ -3,7 +3,7 @@ name: tech-lead
 description: Plans and drives implementation, decomposing work and adapting as needed.
 mode: primary
 model: opus48
-subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead]
+subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead, subagent]
 effort: xhigh
 model-policies:
   - match: {alias: opus48}

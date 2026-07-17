@@ -4,7 +4,7 @@ description: "Human-in-the-loop session lead for new work: intent capture, desig
 mode: primary
 harness: claude
 model: opus46
-subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, source-researcher]
+subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, source-researcher, subagent]
 model-policies:
   - match: {alias: opus46}
   - match: {alias: sol}
