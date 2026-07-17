@@ -62,5 +62,5 @@ merge section applies once the PR lands.
 - Verify CI passed on main
 - Clean up worktree artifacts: remove merged worktrees, delete their
   local branches
-- Complete or archive the work item per `/work-artifacts` and confirm attached
-  spawns are terminal
+- Mark the work item done: `meridian work done <slug>` (see `/work-artifacts`) —
+  archives the work dir; confirm attached spawns are terminal first
