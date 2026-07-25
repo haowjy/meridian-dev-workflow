@@ -60,7 +60,11 @@ merge section applies once the PR lands.
 
 ### After merge
 - Verify CI passed on main
-- Clean up worktree artifacts: remove merged worktrees, delete their
-  local branches
+- Clean up what the work left behind: worktree, branch, scoped databases, dev
+  processes and routes, work item. These are linked, so deleting one by hand
+  orphans the rest — find the project's cleanup tooling (package scripts,
+  `tools/`, AGENTS.md) and follow its policy on what gets removed and how.
+  Branch deletion needs merge evidence git can't supply alone: `-d` is blind to
+  squash merges, `-D` discards unmerged commits.
 - Mark the work item done: `meridian work done <slug>` (see `/work-artifacts`) —
   archives the work dir; confirm attached spawns are terminal first
