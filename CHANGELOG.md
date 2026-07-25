@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-07-25
+
 ### Added
 - `/pre-dev`: PR body draft check — copy the repo PR template into the work
   dir as `pr-body-<slug>.md` before code changes and capture before-state
