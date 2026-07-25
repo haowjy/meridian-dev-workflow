@@ -30,12 +30,17 @@ catching it at post-dev.
 
 When a feature branch (never `main`) is complete and passes the full gate, push
 it and open or update its PR without asking. Pass the PR body draft from
-`/pre-dev` (`pr-body-<slug>.md`) as `--body-file` — GitHub's template
-auto-fill doesn't apply to `--body-file`, so that draft, filled in as the
-work proceeded, is the only source for the body. Fill in whatever it's
+`/pre-dev` (`pr-body-<slug>.md`) as `--body-file` — the `gh` CLI's template
+prompting doesn't apply once `--body-file` is passed, so that draft, filled
+in as the work proceeded, is the source for the body. Fill in whatever it's
 still missing before creating, and if the repo ships a body checker such as
 `tools/ci/check-pr-body.mjs`, run it on the draft first. Set a `release:*`
 label.
+
+If `pr-body-<slug>.md` doesn't exist (pre-dev was skipped, or the work dir
+was cleared), fall back to `.github/PULL_REQUEST_TEMPLATE.md` (or similar)
+directly, fill it from the current diff and conversation, and note in your
+report that before-state evidence was not captured.
 
 ## Do Not
 

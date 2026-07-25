@@ -13,7 +13,9 @@ merge section applies once the PR lands.
 ## Checks
 
 ### PR readiness
-- Read `.github/PULL_REQUEST_TEMPLATE.md` or similar template: fill every section
+- `pr-body-<slug>.md` (from `/pre-dev`) has every template section filled,
+  including the before-state evidence captured at kickoff — top up whatever
+  implementation added, don't restart from the raw template
 - Set a `release:*` label (default: `release:patch`)
 - PR title under 70 characters, descriptive
 

@@ -1,7 +1,7 @@
 ---
 name: pre-dev
 type: checkpoint
-description: "Pre-implementation readiness: worktree, branch, workspace state. Run before handing off to implementation."
+description: "Pre-implementation readiness: worktree, branch, workspace state, and the PR body draft with before-state evidence — the only point where 'before' still exists. Run before handing off to implementation."
 model-invocable: true
 ---
 
@@ -25,6 +25,33 @@ git -C <repo> worktree add ../<repo>.worktrees/<slug> -b <branch>
 meridian work task-dir ../<repo>.worktrees/<slug>
 ```
 
+### PR body draft
+Copy the repo's PR template into the work dir now, before any code changes
+land, if `pr-body-<slug>.md` doesn't already exist there — whether or not
+the worktree itself was newly created this pass:
+
+```bash
+cp <repo>/.github/PULL_REQUEST_TEMPLATE.md \
+   "$MERIDIAN_ACTIVE_WORK_DIR/pr-body-<slug>.md"
+```
+
+Use the nearest match if that exact path doesn't exist
+(`.github/pull_request_template.md`, repo root, `docs/`); if the repo has no
+template, start the draft blank instead of skipping the step.
+
+This draft is the acceptance frame the implementation handoff targets —
+sections fill in as work proceeds — and it's the only path by which the
+template reaches an agent-created PR: the `gh` CLI's template prompting
+doesn't apply once `--body-file` is passed, so nothing else populates the
+body.
+
+Capture before-state evidence into the draft now, while it still exists —
+screenshots of the current rendering for user-facing work, current outputs,
+failure text, timings. Delegate the capture (e.g. to a browser/probe agent)
+if you can't take it yourself, but don't defer the capture itself: once the
+change lands, "before" costs a stack swap and a reconstructed fixture to
+recover.
+
 ### Branch readiness
 - Feature branch exists and is tracking remote
 - Branch is up to date with main (or rebased)
@@ -38,26 +65,6 @@ meridian work task-dir ../<repo>.worktrees/<slug>
 ### Cross-repo awareness
 - Does this work span multiple repos? If so, set up task-dirs for each.
 - Are there dependency ordering constraints?
-
-### PR body draft
-Copy the repo's PR template into the work dir when the worktree is created,
-before the "before" state is gone:
-
-```bash
-cp <repo>/.github/PULL_REQUEST_TEMPLATE.md \
-   "$MERIDIAN_ACTIVE_WORK_DIR/pr-body-<slug>.md"
-```
-
-This draft is the acceptance frame the implementation handoff targets —
-sections fill in as work proceeds — and it's the only path by which the
-template reaches an agent-created PR: `gh pr create --body-file` bypasses
-GitHub's template auto-fill, so nothing else populates the body.
-
-Capture before-state evidence into the draft now, while it still exists —
-screenshots of the current rendering for user-facing work, current outputs,
-failure text, timings. Delegate the capture if someone else has to take it,
-but don't defer the decision: once the change lands, "before" costs a stack
-swap and a reconstructed fixture to recover.
 
 ## After checks pass
 
