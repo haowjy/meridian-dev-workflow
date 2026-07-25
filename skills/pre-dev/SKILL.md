@@ -40,26 +40,24 @@ meridian work task-dir ../<repo>.worktrees/<slug>
 - Are there dependency ordering constraints?
 
 ### PR body draft
-Pre-fill the PR body when the worktree is created, so the work targets the
-PR from the start:
+Copy the repo's PR template into the work dir when the worktree is created,
+before the "before" state is gone:
 
 ```bash
 cp <repo>/.github/PULL_REQUEST_TEMPLATE.md \
    "$MERIDIAN_ACTIVE_WORK_DIR/pr-body-<slug>.md"
 ```
 
-The draft is the acceptance frame for the implementation handoff: sections
-fill in as the work proceeds (Resulting Behavior as slices land,
-Verification as gates run), and `gh pr create --body-file` takes it at the
-end — GitHub's template auto-fill does not apply to `--body-file`, so this
-draft is the only path by which the template reaches an agent-created PR.
+This draft is the acceptance frame the implementation handoff targets —
+sections fill in as work proceeds — and it's the only path by which the
+template reaches an agent-created PR: `gh pr create --body-file` bypasses
+GitHub's template auto-fill, so nothing else populates the body.
 
-Part of the template's evidence only exists right now: before/after means
-the before-state must be captured (or its capture delegated) while it still
-runs — screenshots of the current rendering for user-facing work, current
-outputs, failure text, timings — and dropped into the draft. Once the
-change lands, "before" costs a stack swap and a reconstructed fixture to
-recover.
+Capture before-state evidence into the draft now, while it still exists —
+screenshots of the current rendering for user-facing work, current outputs,
+failure text, timings. Delegate the capture if someone else has to take it,
+but don't defer the decision: once the change lands, "before" costs a stack
+swap and a reconstructed fixture to recover.
 
 ## After checks pass
 
