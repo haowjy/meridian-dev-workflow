@@ -4,6 +4,18 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/pre-dev`: PR body draft check — copy the repo PR template into the work
+  dir as `pr-body-<slug>.md` before code changes and capture before-state
+  evidence into it while "before" still exists.
+
+### Changed
+- `/dev-workflow`: push step passes the pre-dev draft as `--body-file`, runs
+  a repo body checker when one exists, and falls back to the raw template
+  when the draft is missing.
+- `/post-dev`: PR readiness tops up the pre-dev draft instead of filling the
+  raw template from scratch.
+
 ## [0.12.8] - 2026-07-17
 
 ## [0.12.7] - 2026-07-17
