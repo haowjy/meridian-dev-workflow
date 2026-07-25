@@ -15,6 +15,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   when the draft is missing.
 - `/post-dev`: PR readiness tops up the pre-dev draft instead of filling the
   raw template from scratch.
+- **Breaking:** requires `meridian-base >=0.10.0, <0.11.0`, which authors hooks
+  as per-target native fragments and needs mars-agents >= 0.12.0. The previous
+  constraint (`<0.9.0`) resolved a meridian-base that mars 0.12.0 rejects
+  outright, so `mars sync` failed with exit 2 on any project using this package.
 
 ## [0.12.8] - 2026-07-17
 
