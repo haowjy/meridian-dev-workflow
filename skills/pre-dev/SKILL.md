@@ -39,15 +39,27 @@ meridian work task-dir ../<repo>.worktrees/<slug>
 - Does this work span multiple repos? If so, set up task-dirs for each.
 - Are there dependency ordering constraints?
 
-### Evidence baseline
-Read the repo's PR template (`.github/PULL_REQUEST_TEMPLATE.md` or similar)
-now, before any code changes: it is the shape of evidence the finished PR
-must carry, and part of that evidence only exists right now. A template that
-wants before/after means the before-state must be captured while it still
+### PR body draft
+Pre-fill the PR body when the worktree is created, so the work targets the
+PR from the start:
+
+```bash
+cp <repo>/.github/PULL_REQUEST_TEMPLATE.md \
+   "$MERIDIAN_ACTIVE_WORK_DIR/pr-body-<slug>.md"
+```
+
+The draft is the acceptance frame for the implementation handoff: sections
+fill in as the work proceeds (Resulting Behavior as slices land,
+Verification as gates run), and `gh pr create --body-file` takes it at the
+end — GitHub's template auto-fill does not apply to `--body-file`, so this
+draft is the only path by which the template reaches an agent-created PR.
+
+Part of the template's evidence only exists right now: before/after means
+the before-state must be captured (or its capture delegated) while it still
 runs — screenshots of the current rendering for user-facing work, current
-outputs, failure text, timings. Once the change lands, "before" costs a
-stack swap and a reconstructed fixture to recover. Plan evidence collection
-into the work; don't leave it for the PR write-up.
+outputs, failure text, timings — and dropped into the draft. Once the
+change lands, "before" costs a stack swap and a reconstructed fixture to
+recover.
 
 ## After checks pass
 
