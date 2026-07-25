@@ -29,8 +29,12 @@ catching it at post-dev.
 ## Pushing and PRs
 
 When a feature branch (never `main`) is complete and passes the full gate, push
-it and open or update its PR without asking. Fill every PR-template section and
-set a `release:*` label.
+it and open or update its PR without asking. Fill every PR-template section —
+`gh pr create --body-file` bypasses GitHub's template auto-fill, so copy the
+template's sections into the body yourself (the before-state evidence was
+captured at `/pre-dev`; if the repo ships a body checker such as
+`tools/ci/check-pr-body.mjs`, run it on the draft before creating). Set a
+`release:*` label.
 
 ## Do Not
 
