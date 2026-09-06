@@ -5,7 +5,7 @@ mode: primary
 model: sol
 effort: high
 model-policies:
-  - match: {alias: sol}
+  - match: {alias: gpt}
     override: {}
   - match: {alias: opus46}
     override: {}

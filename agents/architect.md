@@ -5,8 +5,8 @@ mode: subagent
 model: sol
 effort: high
 model-policies:
-  - match: {alias: sol}
-    override: {}
+  - match: {alias: gpt}
+    override: {effort: high}
   - match: {alias: opus46}
     override: {}
 skills:

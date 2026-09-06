@@ -8,7 +8,7 @@ effort: xhigh
 model-policies:
   - match: {alias: opus48}
     override: {effort: xhigh}
-  - match: {alias: sol}
+  - match: {alias: gpt}
     override: {effort: xhigh}
 skills:
   load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance]

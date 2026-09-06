@@ -11,7 +11,7 @@ skills:
 model-policies:
   - match: {alias: opus48}
     override: {}
-  - match: {alias: sol}
+  - match: {alias: gpt}
     override: {effort: high}
 tools:
   bash: allow

@@ -5,7 +5,7 @@ mode: subagent
 model: terra
 effort: high
 model-policies:
-  - match: {alias: terra}
+  - match: {alias: gpt}
     override: {}
   - match: {alias: opus46}
     override: {}

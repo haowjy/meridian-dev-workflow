@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Updated only model policies: product, technical, UX, architectural, and design
+  agents now select generic `gpt` instead of specialized GPT-family aliases.
+  Their default `model` fields are unchanged.
+
 ## [0.13.0] - 2026-07-25
 
 ### Added

@@ -6,7 +6,7 @@ model: sol
 subagents: [reviewer, prober, kb-lead, subagent]
 effort: high
 model-policies:
-  - match: {alias: sol}
+  - match: {alias: gpt}
     override: {effort: high}
   - match: {alias: opus46}
     override: {}
