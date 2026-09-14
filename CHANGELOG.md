@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.2] - 2026-09-14
+
 ### Changed
 - `@architect` defaults to `gpt` at `medium`; `sol` at `high` is the first fallback.
 - `@design-lead` and `@gpt-dev` default to `gpt`.
