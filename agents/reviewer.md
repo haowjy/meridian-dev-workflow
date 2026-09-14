@@ -5,13 +5,13 @@ description: >-
   security. Attach skills for focus: review-alignment, test-architecture,
   thermo-nuclear-review, react-architecture, information-hierarchy.
 mode: subagent
-model: sol
+model: gpt
 subagents: [web-researcher, investigator, subagent]
 effort: high
 model-policies:
-  - match: {alias: sol}
+  - match: {alias: gpt}
     override: {effort: high}
-  - match: {alias: opus46}
+  - match: {alias: fable}
     override: {}
   - match: {alias: deepseek}
     override: {}

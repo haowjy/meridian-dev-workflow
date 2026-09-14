@@ -2,14 +2,16 @@
 name: source-researcher
 description: Studies real open-source code to see how projects handle similar problems.
 mode: subagent
-model: deepseek
+model: sol
 effort: medium
 model-policies:
-  - match: {alias: deepseek}
+  - match: {alias: sol}
     override: {}
   - match: {alias: terra}
     override: {effort: medium}
   - match: {alias: sonnet5}
+    override: {}
+  - match: {alias: deepseek}
     override: {}
 subagents: [explorer, web-researcher, subagent]
 skills:

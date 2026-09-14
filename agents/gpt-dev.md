@@ -2,7 +2,7 @@
 name: gpt-dev
 description: Fast, token-efficient implementation for well-scoped tasks.
 mode: primary
-model: sol
+model: gpt
 subagents: [reviewer, prober, kb-lead, subagent]
 effort: high
 model-policies:

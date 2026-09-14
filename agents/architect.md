@@ -2,10 +2,10 @@
 name: architect
 description: Disciplined tradeoff comparison between competing structural options.
 mode: subagent
-model: sol
-effort: high
+model: gpt
+effort: medium
 model-policies:
-  - match: {alias: gpt}
+  - match: {alias: sol}
     override: {effort: high}
   - match: {alias: opus46}
     override: {}

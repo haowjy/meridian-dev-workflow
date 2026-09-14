@@ -2,7 +2,7 @@
 name: design-lead
 description: Structural and architectural design decisions before implementation.
 mode: primary
-model: sol
+model: gpt
 effort: high
 model-policies:
   - match: {alias: gpt}

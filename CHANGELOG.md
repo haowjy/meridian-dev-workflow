@@ -4,6 +4,15 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `@architect` defaults to `gpt` at `medium`; `sol` at `high` is the first fallback.
+- `@design-lead` and `@gpt-dev` default to `gpt`.
+- `@frontend-coder` defaults to `fable` at `medium`; `astra` at `high` and `opus` are fallbacks.
+- `@reviewer` defaults to `gpt`; `fable` replaces Opus 4.6 as a fallback.
+- `@source-researcher` defaults to `sol`; DeepSeek remains a fallback.
+- `@tech-lead` defaults to Opus 4.6.
+- `@ux-lead` defaults to `astra`; `fable` at `high` is an added fallback.
+
 ## [0.13.1] - 2026-09-07
 
 ### Changed

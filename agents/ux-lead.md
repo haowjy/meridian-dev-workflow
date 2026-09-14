@@ -2,16 +2,18 @@
 name: ux-lead
 description: Visual design and UX covering direction, layout exploration, and design iteration.
 mode: primary
-model: opus48
+model: astra
 effort: high
 subagents: [browser, mockup-dev, frontend-coder, coder, explorer, web-researcher, imagegen, reviewer, prober, kb-lead, subagent]
 skills:
   load: [uxdev, design-craft, anti-slop, work-artifacts, qi-maintenance]
   available: [ui-implementation, handoff, session-mining, grill-with-docs, intent-modeling, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
 model-policies:
-  - match: {alias: opus48}
+  - match: {alias: astra}
     override: {}
   - match: {alias: gpt}
+    override: {effort: high}
+  - match: {alias: fable}
     override: {effort: high}
 tools:
   bash: allow
