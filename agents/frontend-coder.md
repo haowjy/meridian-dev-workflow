@@ -6,7 +6,7 @@ model: fable
 effort: medium
 model-policies:
   - match: {alias: astra}
-    override: {effort: high}
+    override: {effort: medium}
   - match: {alias: opus}
     override: {}
   - match: {alias: composer}

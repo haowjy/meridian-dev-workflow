@@ -11,8 +11,6 @@ skills:
 model-policies:
   - match: {alias: astra}
     override: {}
-  - match: {alias: gpt}
-    override: {effort: high}
   - match: {alias: fable}
     override: {effort: high}
 tools:

@@ -8,8 +8,10 @@ effort: xhigh
 model-policies:
   - match: {alias: opus46}
     override: {effort: xhigh}
-  - match: {alias: gpt}
-    override: {effort: xhigh}
+  - match: {alias: astra}
+    override: {effort: high}
+  - match: {alias: grok}
+    override: {effort: high}
 skills:
   load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance]
   available: [uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]

@@ -2,12 +2,12 @@
 name: source-researcher
 description: Studies real open-source code to see how projects handle similar problems.
 mode: subagent
-model: sol
+model: terra
 effort: medium
 model-policies:
-  - match: {alias: sol}
-    override: {}
   - match: {alias: terra}
+    override: {effort: medium}
+  - match: {alias: sol}
     override: {effort: medium}
   - match: {alias: sonnet5}
     override: {}

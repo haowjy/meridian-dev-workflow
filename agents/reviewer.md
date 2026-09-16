@@ -5,12 +5,12 @@ description: >-
   security. Attach skills for focus: review-alignment, test-architecture,
   thermo-nuclear-review, react-architecture, information-hierarchy.
 mode: subagent
-model: gpt
+model: astra
 subagents: [web-researcher, investigator, subagent]
-effort: high
+effort: medium
 model-policies:
-  - match: {alias: gpt}
-    override: {effort: high}
+  - match: {alias: astra}
+    override: {effort: medium}
   - match: {alias: fable}
     override: {}
   - match: {alias: deepseek}

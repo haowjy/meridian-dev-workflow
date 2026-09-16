@@ -2,10 +2,10 @@
 name: design-lead
 description: Structural and architectural design decisions before implementation.
 mode: primary
-model: gpt
+model: astra
 effort: high
 model-policies:
-  - match: {alias: gpt}
+  - match: {alias: astra}
     override: {}
   - match: {alias: opus46}
     override: {}
