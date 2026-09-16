@@ -11,7 +11,7 @@ model-policies:
     override: {effort: medium}
   - match: {alias: sonnet5}
     override: {}
-  - match: {alias: deepseek}
+  - match: {alias: deepseekpro}
     override: {}
 subagents: [explorer, web-researcher, subagent]
 skills:

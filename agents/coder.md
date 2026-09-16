@@ -11,7 +11,7 @@ model-policies:
     override: {}
   - match: {alias: sonnet}
     override: {}
-  - match: {alias: deepseek}
+  - match: {alias: deepseekpro}
     override: {}
 skills:
   load: [code, dev-principles, testing, work-artifacts, qi-maintenance]

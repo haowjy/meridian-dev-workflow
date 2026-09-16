@@ -9,7 +9,7 @@ model-policies:
   - match: {alias: opus46}
   - match: {alias: astra}
     override: {effort: high}
-  - match: {alias: deepseek}
+  - match: {alias: deepseekpro}
     override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts, qi-maintenance]

@@ -13,7 +13,7 @@ model-policies:
     override: {effort: medium}
   - match: {alias: fable}
     override: {}
-  - match: {alias: deepseek}
+  - match: {alias: deepseekpro}
     override: {}
 skills:
   load: [dev-principles, review]

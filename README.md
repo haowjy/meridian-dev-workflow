@@ -92,8 +92,8 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 |---|---|---|
 | `web-researcher` | gpt-5.4-mini | External evidence: library docs, upstream issues, architecture patterns via web search |
 | `explorer` | luna | Fast, cheap codebase explorer: reads files, searches code, mines past sessions |
-| `source-researcher` | deepseek | Studies real open-source implementations for relevant patterns |
-| `kb-lead` | deepseek | Captures durable knowledge: mines the work, writes .context/, KB, and docs/ inline, fans out @explorer/@session-miner to read |
+| `source-researcher` | deepseekpro | Studies real open-source implementations for relevant patterns |
+| `kb-lead` | deepseekpro | Captures durable knowledge: mines the work, writes .context/, KB, and docs/ inline, fans out @explorer/@session-miner to read |
 
 **Visual:**
 
