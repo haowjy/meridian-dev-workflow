@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.3] - 2026-09-16
+
 ### Changed
 - `@gpt-dev` verifies itself (project checks + self-probe); independent review at objective-complete, not per commit. Dropped smallest-diff instruction that fought `/dev-principles`.
 
