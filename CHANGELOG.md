@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.6] - 2026-09-22
+
 ### Changed
 - Investigator: Luna default; DeepSeek, Sol, Sonnet, Opus fallbacks.
 - Design researcher: Sol default; Sonnet, Opus, DeepSeek Pro fallbacks.
