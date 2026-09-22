@@ -6,7 +6,7 @@ model: sol
 effort: high
 model-policies:
   - match: {alias: sol}
-    override: {effort: high}
+    override: {}
   - match: {alias: sonnet}
     override: {}
   - match: {alias: opus}

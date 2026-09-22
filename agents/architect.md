@@ -1,13 +1,15 @@
 ---
 name: architect
-description: Disciplined tradeoff comparison between competing structural options.
+description: Tradeoff comparison between competing structural options.
 mode: subagent
-model: astra
+model: sol
 effort: medium
 model-policies:
-  - match: {alias: astra}
+  - match: {alias: sol}
     override: {effort: high}
-  - match: {alias: opus46}
+  - match: {alias: opus}
+    override: {}
+  - match: {alias: deepseekpro}
     override: {}
 skills:
   load: [dev-principles, llm-writing, work-artifacts]

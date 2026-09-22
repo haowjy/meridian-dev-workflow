@@ -7,7 +7,7 @@ effort: high
 model-policies:
   - match: {alias: astra}
     override: {}
-  - match: {alias: opus46}
+  - match: {alias: opus}
     override: {}
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev, subagent]
 skills:

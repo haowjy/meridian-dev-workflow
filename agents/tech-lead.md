@@ -2,16 +2,18 @@
 name: tech-lead
 description: Plans and drives implementation, decomposing work and adapting as needed.
 mode: primary
-model: opus46
+model: fable
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead, subagent]
 effort: xhigh
 model-policies:
-  - match: {alias: opus46}
+  - match: {alias: fable}
     override: {effort: xhigh}
   - match: {alias: astra}
     override: {effort: high}
+  - match: {alias: opus}
+    override: {effort: xhigh}    
   - match: {alias: grok}
-    override: {effort: high}
+    override: {effort: xhigh}
 skills:
   load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance]
   available: [uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]

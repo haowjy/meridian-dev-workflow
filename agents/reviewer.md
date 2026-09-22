@@ -18,11 +18,9 @@ model-policies:
   - match: {alias: opus}
     override: {}
   - match: {alias: deepseek}
-    no-fallback: true
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: luna}
-    no-fallback: true
-    override: {effort: medium}
+    override: {effort: high}
 skills:
   load: [dev-principles, review]
   available: [shared-dao, md-validation, information-hierarchy, react-architecture, thermo-nuclear-review, test-architecture, review-alignment, architecture, tech-docs, llm-writing, probe]

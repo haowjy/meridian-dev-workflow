@@ -6,16 +6,16 @@ description: >-
   for judging the rendered result.
 mode: subagent
 model: luna
-effort: medium
+effort: high
 model-policies:
   - match: {alias: luna}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: deepseek}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: sonnet}
     override: {}
   - match: {alias: sol}
-    override: {effort: medium}
+    override: {effort: low}
 skills:
   load: [dev-principles, anti-slop, information-hierarchy, uxdev, design-craft, poc, work-artifacts]
   available: [react-architecture, issues, agent-browser]

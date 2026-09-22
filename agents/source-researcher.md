@@ -3,12 +3,12 @@ name: source-researcher
 description: Studies real open-source code to see how projects handle similar problems.
 mode: subagent
 model: luna
-effort: medium
+effort: high
 model-policies:
   - match: {alias: luna}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: deepseek}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: sol}
     override: {effort: medium}
   - match: {alias: sonnet}

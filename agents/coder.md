@@ -6,15 +6,15 @@ description: >-
   verification expectations.
 mode: subagent
 model: deepseek
-effort: medium
+effort: high
 model-policies:
   - match: {alias: deepseek}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: luna}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: sonnet}
     override: {}
-  - match: {alias: opus46}
+  - match: {alias: opus}
     override: {}
 skills:
   load: [code, dev-principles, testing, work-artifacts, qi-maintenance]

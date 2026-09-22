@@ -13,6 +13,8 @@ model-policies:
     override: {}
   - match: {alias: fable}
     override: {effort: high}
+  - match: {alias: opus}
+    override: {effort: high}
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
