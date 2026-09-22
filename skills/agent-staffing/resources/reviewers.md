@@ -19,14 +19,18 @@ coverage of the same concern.
 Stack multiple: `@reviewer --skills review,thermo-nuclear-review`.
 The change itself tells you which perspectives matter.
 
-## Fan-Out Models
+## Model Selection
 
-Fan out reviewers across models for perspective diversity. Use `-m` to override the default:
+Use the reviewer's profile order for normal reviews. Prefer a model different
+from the actual implementer, not merely the model originally requested. If
+fallback selected the same model, choose another suitable reviewer when available.
 
-- `sol`: thorough, finds subtle issues
-- `opus`: best long-context judgment
+DeepSeek and Luna are explicit options for quick, low-risk checks, not automatic
+fallbacks for normal or high-risk reviews. Choose the model before spawning;
+the reviewer cannot change the model already running it.
 
-Three reviewers with different models on the same prompt surface more than three of the same model.
+Fan out when the cost of a missed issue warrants multiple independent
+perspectives. Model diversity does not replace grounding findings in evidence.
 
 ## When to Review
 

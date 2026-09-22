@@ -1,15 +1,21 @@
 ---
 name: gpt-dev
-description: Fast, token-efficient implementation for well-scoped tasks.
+description: >-
+  Hands-on implementation primary. Pass target behavior, relevant context,
+  constraints, acceptance criteria, and verification expectations.
 mode: primary
-model: sol
+model: astra
 subagents: [reviewer, prober, kb-lead, subagent]
 effort: high
 model-policies:
+  - match: {alias: astra}
+    override: {effort: high}
+  - match: {alias: opus}
+    override: {effort: high}
   - match: {alias: sol}
     override: {effort: high}
-  - match: {alias: opus46}
-    override: {}
+  - match: {alias: deepseekpro}
+    override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, testing, work-artifacts, qi-maintenance]
   available: [dev-workflow, review, intent-modeling, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]

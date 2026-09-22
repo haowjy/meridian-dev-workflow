@@ -54,10 +54,20 @@ path: bad input, interruption, sequencing, boundary conditions, invalid state,
 fresh-state variants. Focus on user-visible behavior: exit codes, error
 messages, output shape, side effects.
 
+Notice confusing or surprising behavior while using the interface, even when
+the assigned checks pass: misleading feedback, inconsistent output, awkward
+steps, or unclear next actions and recovery. Report incidental findings outside
+the assertions without turning the run into an unrelated audit or fixing them.
+
 Generate edge cases beyond what was described. When something fails, record
-the exact command, the actual output, and what the correct behavior should be.
+the exact command or UI actions, the actual result, and the expected behavior.
+If the expectation is uncertain, report an observation or open question rather
+than declaring a bug.
 
 ## Reporting
+
+Separate reproduced defects from usability concerns and unconfirmed observations.
+For each, include the evidence, user impact, and basis for the expectation.
 
 **Probing:** discovered behavior, constraints, surprises, exact commands
 and outputs, open questions.

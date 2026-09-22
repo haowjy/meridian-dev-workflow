@@ -30,10 +30,6 @@ and tradeoffs.
 coordinates specialists, verifies functionality, owns targeted boundary tests,
 safely restructures, and runs a final structural review before shipping.
 
-**** (autonomous): designs the permanent test suite from the design
-package and shared understanding. Also handles structural test-suite work when
-needed.
-
 **kb-lead** (autonomous, conditional): coordinates knowledge capture across
 .context/, KB, and docs/ layers. Spawned when implementation produces
 understanding worth preserving; timing depends on the workflow.
@@ -48,65 +44,62 @@ meridian spawn -a product-lead -p 'Build JWT token validation'
 
 ## Agents
 
+Models below are profile defaults; ordered alternatives live in each agent's
+`model-policies`. See `skills/agent-staffing/` for task-based selection.
+
 **Leads:**
 
 | Agent | Model | Role |
 |---|---|---|
 | `product-lead` | opus46 | Primary developer: requirements gathering, routing, design approval |
-| `ux-lead` | opus48 | Visual design entry point: visual requirements, design vocabulary, frontend routing |
-| `design-lead` | opus46 | Technical design: structural options, interfaces, boundaries, tradeoffs |
-| `tech-lead` | opus48 | Implementation owner: decomposition, coordination, verification, structural review |
+| `ux-lead` | astra | Visual design entry point: visual requirements, design vocabulary, frontend routing |
+| `design-lead` | astra | Technical design: structural options, interfaces, boundaries, tradeoffs |
+| `tech-lead` | opus46 | Implementation owner: decomposition, coordination, verification, structural review |
 
 **Design:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `architect` | sol | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
+| `architect` | astra | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
 | `design-researcher` | sol | Researches structural options and writes analysis for the design team |
 
 **Implementation:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `coder` | sol | Production code writer: implements scoped tasks and behavior-preserving refactors |
-| `frontend-coder` | sol | Production frontend code with visual self-verification via agent-browser |
-| `gpt-dev` | sol | Direct implementation lead for well-scoped work |
-| `mockup-dev` | terra | Fast frontend mockups and throwaway POCs |
+| `coder` | deepseek | Production code writer: implements scoped tasks and behavior-preserving refactors |
+| `frontend-coder` | deepseek | Production frontend code with visual self-verification via agent-browser |
+| `gpt-dev` | astra | Direct implementation lead for well-scoped work |
+| `mockup-dev` | luna | Fast frontend mockups and throwaway POCs |
 
 **Testing & Verification:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `prober` | sol | Runtime verifier. Skills: probe, poc, agent-browser |
-| `reviewer` | sol | Code reviewer: static and runtime. Skills: review, probe, thermo-nuclear-review, test-architecture, review-alignment |
+| `prober` | deepseek | Runtime verifier. Skills: probe, poc, agent-browser |
+| `reviewer` | astra | Code reviewer: static and runtime. Skills: review, probe, thermo-nuclear-review, test-architecture, review-alignment |
 
 **Review & Analysis:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `investigator` | sol | Root-cause diagnosis for broken or suspicious behavior |
+| `investigator` | luna | Root-cause diagnosis for broken or suspicious behavior |
 
 **Research & Documentation:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `web-researcher` | gpt-5.4-mini | External evidence: library docs, upstream issues, architecture patterns via web search |
-| `explorer` | luna | Fast, cheap codebase explorer: reads files, searches code, mines past sessions |
-| `source-researcher` | deepseekpro | Studies real open-source implementations for relevant patterns |
-| `kb-lead` | deepseekpro | Captures durable knowledge: mines the work, writes .context/, KB, and docs/ inline, fans out @explorer/@session-miner to read |
+| `web-researcher` | luna | External evidence: library docs, upstream issues, architecture patterns via web search |
+| `explorer` | luna | Fast, cheap codebase explorer: reads files, searches code, traces git history |
+| `source-researcher` | luna | Studies real open-source implementations for relevant patterns |
+| `kb-lead` | sol | Captures durable knowledge: mines the work, writes .context/, KB, and docs/ inline, fans out @explorer/@session-miner to read |
 
 **Visual:**
 
 | Agent | Model | Role |
 |---|---|---|
-| `browser` | sol | General-purpose browser interaction: scraping, navigation, screenshots |
+| `browser` | muse-contributor | Browser interaction: scraping, navigation, screenshots. Training-eligible endpoint; select an approved alternative for sensitive context. |
 | `imagegen` | sol | Image generation: UI concept mockups, visual explorations, icons |
-
-**Deprecated** (retained as legacy artifacts):
-
-| Agent | Model | Status |
-|---|---|---|
-| `integration-tester` | — | Use `@coder` with `/testing` `resources/integration-patterns.md` instead |
 
 ## Skills
 

@@ -1,14 +1,17 @@
 ---
 name: mockup-dev
-description: Fast throwaway frontend pocs to make visual options tangible.
+description: >-
+  Fast throwaway frontend POCs to make visual options tangible. Pass the visual
+  question, relevant design references, target stack, constraints, and criteria
+  for judging the rendered result.
 mode: subagent
-model: terra
-effort: xhigh
+model: luna
+effort: medium
 model-policies:
-  - match: {alias: terra}
-    override: {effort: xhigh}
-  - match: {alias: composer}
-    override: {}
+  - match: {alias: luna}
+    override: {effort: medium}
+  - match: {alias: deepseek}
+    override: {effort: medium}
   - match: {alias: sonnet}
     override: {}
   - match: {alias: sol}

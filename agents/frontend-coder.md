@@ -1,17 +1,20 @@
 ---
 name: frontend-coder
-description: Frontend implementation where visual quality and design fidelity matter.
+description: >-
+  Frontend implementation where visual quality and design fidelity matter.
+  Give a detailed brief: behavior and interaction requirements, available design
+  references, target viewports, constraints, and acceptance criteria.
 mode: subagent
-model: fable
+model: deepseek
 effort: medium
 model-policies:
-  - match: {alias: astra}
+  - match: {alias: deepseek}
     override: {effort: medium}
+  - match: {alias: luna}
+    override: {effort: medium}
+  - match: {alias: sonnet}
+    override: {}
   - match: {alias: opus}
-    override: {}
-  - match: {alias: composer}
-    override: {}
-  - match: {alias: glm}
     override: {}
 skills:
   load: [dev-principles, anti-slop, information-hierarchy, testing, work-artifacts, qi-maintenance]

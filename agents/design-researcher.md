@@ -2,12 +2,16 @@
 name: design-researcher
 description: Researches design and architectural options, writing analysis for the team.
 mode: subagent
-model: terra
+model: sol
 effort: high
 model-policies:
-  - match: {alias: gpt}
+  - match: {alias: sol}
+    override: {effort: high}
+  - match: {alias: sonnet}
     override: {}
-  - match: {alias: opus46}
+  - match: {alias: opus}
+    override: {}
+  - match: {alias: deepseekpro}
     override: {}
 subagents: [explorer, web-researcher, session-miner, subagent]
 skills:

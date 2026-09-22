@@ -9,18 +9,24 @@ model-invocable: true
 
 If no team composition was provided by your caller, compose one yourself using the catalogs below.
 
-## Model Override
+## Model Selection
 
-Agent defaults are usually correct. Pass `-m` on the spawn when the lane
-needs a capability the default lacks — in particular, vision-dependent lanes
-(screenshots, rendered output, UI verification) need vision-capable models.
+Keep explicit caller choices and role-specific policies. Otherwise, prefer
+capable, inexpensive workers for implementation and execution; larger models
+must earn their cost through technical depth, decision quality, or writing.
+Read `resources/model-selection.md` when choosing a model or departing from a
+profile default. It covers the general preference order, local-model options,
+writing-heavy work, and capability checks.
 
 ## Fan-Out vs Parallel Lanes
 
 - **Fan-out**: same prompt, same files, different models. Convergent signal on a high-stakes call.
 - **Parallel lanes**: different prompts (different focus areas), default model each.
 
-Fan out reviewers across models for perspective diversity. `meridian mars models list` shows configured families and strengths.
+Prefer a reviewer model different from the model that actually implemented the
+change, including after fallback. Fan out across models when the risk warrants
+multiple perspectives; a different model still needs an independent review
+context.
 
 ## Agent Catalogs
 

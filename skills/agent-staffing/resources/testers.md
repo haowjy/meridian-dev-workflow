@@ -17,6 +17,21 @@ verification kind.
 Testers generate independent edge cases; don't only verify the requirements
 handed over by the caller.
 
+## Model and Context Selection
+
+Use the prober's inexpensive default for CLI and process checks. For browser/UI
+verification, attach `agent-browser` and select a route that supports the inputs
+and tools the task needs; screenshot checks require image understanding.
+
+Muse Contributor is an option for inexpensive visual probing when all submitted
+context is approved for training. Make that decision before sending the brief,
+screenshots, or tool output. Otherwise choose an approved alternative route;
+do not let price or a profile default override the data-use constraint.
+
+Use `@browser` for general website interaction or design research; use `@prober`
+for independent verification against requirements. Both can use the same browser
+tools without having the same assignment.
+
 ## Regression vs Acceptance
 
 Use separate prober prompts for major runtime changes:

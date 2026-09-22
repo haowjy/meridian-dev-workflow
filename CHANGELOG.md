@@ -4,6 +4,22 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Investigator: Luna default; DeepSeek, Sol, Sonnet, Opus fallbacks.
+- Design researcher: Sol default; Sonnet, Opus, DeepSeek Pro fallbacks.
+- Source researcher: Luna default; DeepSeek, Sol, Sonnet fallbacks.
+- Removed Composer fallbacks from coder, frontend-coder, and mockup-dev; dropped stale Composer/Cursor staffing guidance. Base alias retained for a later release.
+- Mockup dev: Luna default; DeepSeek, Sonnet, Sol fallbacks at medium effort. Description asks for a detailed visual brief.
+- Staffing: cheap-first implementation, task-specific larger-model selection, separate writing judgment, detailed briefs, and reviewer-model independence. Model-selection depth lives in a dedicated resource.
+- Coder and frontend-coder default to DeepSeek, followed by Luna and Sonnet; final alternatives are Opus46 and generic Opus respectively. Caller descriptions request detailed briefs.
+- Prober defaults to DeepSeek; browser defaults to training-eligible Muse Contributor, with caller-side data-use checks and no implicit Contributor fallback after a primary override.
+- Reviewer policy: Astra, Sol, Grok, Opus. DeepSeek/Luna are explicit quick-review choices, not automatic fallbacks.
+- GPT Dev: Astra, Opus, Sol, DeepSeek Pro. Web researcher: Luna, DeepSeek, Sonnet; removed its fixed harness to allow model-specific routing.
+- Probe reports incidental confusing user-visible behavior, separating defects from usability concerns and uncertain observations.
+- Reconciled README defaults and staffing guidance with the updated profiles.
+- Requires Mars >=0.14.0 for explicit-only `no-fallback` policy entries.
+- Requires meridian-base >=0.10.11 for Muse aliases and refreshed base staffing.
+
 ## [0.13.5] - 2026-09-16
 
 ### Changed

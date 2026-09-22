@@ -1,14 +1,22 @@
 ---
 name: browser
-description: Live browser for design/behavior inspiration, scraping, data extraction, and screenshots. Use when pages need rendering or interaction.
+description: >-
+  Live browser for design inspiration, scraping, data extraction, and screenshots.
+  Pass the task, entrypoints, constraints, and evidence needed. Defaults to Muse
+  Contributor, which permits training on submitted context; choose another model
+  before passing context not approved for training. Skills: agent-browser.
 mode: subagent
-model: sol
+model: muse-contributor
 effort: medium
 model-policies:
-  - match: {alias: sol}
-    override: {}
-  - match: {alias: terra}
-  - match: {alias: sonnet5}
+  - match: {alias: muse-contributor}
+    no-fallback: true
+    override: {effort: medium}
+  - match: {alias: luna}
+    override: {effort: medium}
+  - match: {alias: deepseek}
+    override: {effort: medium}
+  - match: {alias: sonnet}
     override: {}
 skills:
   available: [agent-browser]

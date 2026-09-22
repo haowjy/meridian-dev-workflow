@@ -11,10 +11,18 @@ effort: medium
 model-policies:
   - match: {alias: astra}
     override: {effort: medium}
-  - match: {alias: fable}
+  - match: {alias: sol}
+    override: {effort: medium}
+  - match: {alias: grok}
+    override: {effort: medium}
+  - match: {alias: opus}
     override: {}
-  - match: {alias: deepseekpro}
-    override: {}
+  - match: {alias: deepseek}
+    no-fallback: true
+    override: {effort: medium}
+  - match: {alias: luna}
+    no-fallback: true
+    override: {effort: medium}
 skills:
   load: [dev-principles, review]
   available: [shared-dao, md-validation, information-hierarchy, react-architecture, thermo-nuclear-review, test-architecture, review-alignment, architecture, tech-docs, llm-writing, probe]

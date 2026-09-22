@@ -2,14 +2,19 @@
 name: prober
 description: >-
   Spawn when you need runtime evidence: exercise workflows, reproduce bugs,
-  stress boundaries, build throwaway POCs. Skills: probe, poc, agent-browser.
+  stress boundaries, build throwaway POCs. Pass entrypoints, expected behavior,
+  constraints, and evidence needed. Skills: probe, poc, agent-browser.
 mode: subagent
-model: sol
+model: deepseek
 effort: high
 model-policies:
-  - match: {alias: sol}
+  - match: {alias: deepseek}
+    override: {effort: high}
+  - match: {alias: luna}
     override: {effort: high}
   - match: {alias: sonnet}
+    override: {effort: high}
+  - match: {alias: sol}
     override: {effort: high}
 skills:
   load: [probe]

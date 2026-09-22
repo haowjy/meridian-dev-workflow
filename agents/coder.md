@@ -1,17 +1,20 @@
 ---
 name: coder
-description: General purpose implementation of code.
+description: >-
+  General-purpose implementation owner. Give a detailed brief: target behavior,
+  relevant source and design context, constraints, acceptance criteria, and
+  verification expectations.
 mode: subagent
-model: sol
+model: deepseek
 effort: medium
 model-policies:
-  - match: {alias: sol}
+  - match: {alias: deepseek}
     override: {effort: medium}
-  - match: {alias: composer}
-    override: {}
+  - match: {alias: luna}
+    override: {effort: medium}
   - match: {alias: sonnet}
     override: {}
-  - match: {alias: deepseekpro}
+  - match: {alias: opus46}
     override: {}
 skills:
   load: [code, dev-principles, testing, work-artifacts, qi-maintenance]

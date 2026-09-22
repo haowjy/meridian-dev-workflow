@@ -4,12 +4,13 @@ description: External facts from library docs, upstream issues, changelogs, and 
 mode: subagent
 model: luna
 effort: high
-harness: codex
 model-policies:
   - match: {alias: luna}
-    override: {}
-  - match: {alias: sonnet5}
-    override: {}
+    override: {effort: high}
+  - match: {alias: deepseek}
+    override: {effort: high}
+  - match: {alias: sonnet}
+    override: {effort: high}
 skills:
   load: [research-web]
 tools:

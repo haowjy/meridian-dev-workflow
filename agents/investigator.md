@@ -2,15 +2,19 @@
 name: investigator
 description: Root-cause diagnosis for broken or suspicious behavior.
 mode: subagent
-model: sol
+model: luna
 subagents: [explorer, prober, session-miner, web-researcher, coder, subagent]
 effort: high
 model-policies:
+  - match: {alias: luna}
+    override: {effort: high}
+  - match: {alias: deepseek}
+    override: {effort: high}
   - match: {alias: sol}
     override: {effort: high}
-  - match: {alias: terra}
-    override: {effort: high}
-  - match: {alias: opus46}
+  - match: {alias: sonnet}
+    override: {}
+  - match: {alias: opus}
     override: {}
 skills:
   load: [diagnose, dev-principles, work-artifacts, qi-maintenance]
