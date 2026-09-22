@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.7] - 2026-09-22
+
 ### Changed
 - Staffing catalogs: shorter role briefs; review fan-out follows risk, not phase gates. Fresh review context no longer requires a different model.
 
