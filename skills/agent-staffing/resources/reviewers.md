@@ -1,14 +1,12 @@
 # Reviewers
 
-Spawn `@reviewer` with `--skills` matched to the change's risk areas.
-Different focuses and different models give you breadth, not redundant
-coverage of the same concern.
+Spawn `@reviewer` with skills matched to the change's risks.
 
 ## Skill Picker
 
 | Review kind | Spawn | When |
 |-------------|-------|------|
-| Default static review | `@reviewer` | Always for code changes: correctness, contracts, security |
+| Default static review | `@reviewer` | Code review gates: correctness, contracts, security |
 | Strict maintainability | `@reviewer --skills thermo-nuclear-review` | Structure/branching changes, spaghetti growth |
 | Architecture / seams | `@reviewer --skills thermo-nuclear-review` | Cross-module boundary changes, dependency direction |
 | Test structure | `@reviewer --skills test-architecture` | Test suite changes |
@@ -16,42 +14,24 @@ coverage of the same concern.
 | Frontend structural | `@reviewer --skills react-architecture` | React component boundaries, state, tokens |
 | Doc structure | `@reviewer --skills tech-docs,llm-writing,md-validation` | Doc-heavy changes |
 
-Stack multiple: `@reviewer --skills review,thermo-nuclear-review`.
-The change itself tells you which perspectives matter.
-
 ## Model Selection
 
-Use the reviewer's profile order for normal reviews. Prefer a model different
-from the actual implementer, not merely the model originally requested. If
-fallback selected the same model, choose another suitable reviewer when available.
-
-DeepSeek and Luna are explicit options for quick, low-risk checks, not automatic
-fallbacks for normal or high-risk reviews. Choose the model before spawning;
-the reviewer cannot change the model already running it.
-
-Fan out when the cost of a missed issue warrants multiple independent
-perspectives. Model diversity does not replace grounding findings in evidence.
+DeepSeek and Luna are options for quick, low-risk checks, not automatic
+fallbacks.
 
 ## When to Review
 
-Use reviewer fan-out at three points: design review, major implementation
-convergence after a coherent batch, and the final end-to-end review. Tiny
-intermediate fixes are tester-driven; reviewers are escalation-only there.
+Review designs, coherent implementation batches, and final end-to-end behavior.
+Use multiple reviewers only when the risk warrants it.
 
 ## Between Convergence Points
 
-Involve reviewers between convergence points only when testers surface
-a concrete issue the coder cannot resolve:
-
-- One reviewer on the specific unresolved concern.
-- A second only if the issue spans multiple risk dimensions.
-- Feed findings back into coder + tester loops, then continue.
+For small intermediate fixes, escalate to a reviewer only when verification
+finds an issue the coder cannot resolve. Scope the review to that issue; add
+another reviewer only for a separate risk.
 
 ## Synthesizing Findings
 
-Fix valid findings by default. Defer only with explicit rationale in the
-decision log. When reviewers disagree, you make the call;
-you have the full design and prior context they don't.
-
-If reviews aren't converging after multiple iterations, that's usually a
-signal the design has a structural problem; investigate or escalate.
+Fix valid findings; record reasons for deferrals in the decision log. Resolve
+conflicting findings using the design and evidence. If reviews repeatedly fail
+to converge, investigate the design or escalate rather than cycling reviewers.
