@@ -11,12 +11,12 @@ Commit discipline during implementation.
 
 ## Commit Discipline
 
-Commit after each step that passes checks. Don't accumulate changes across multiple steps.
-
-1. Implement the change
-2. Verify (lint, type-check, tests)
+1. Implement a self-contained change
+2. Run focused checks that cover its risks
 3. Commit with a descriptive message
-4. Move to next step
+4. Move to the next step
+
+Run the full project gate at ship readiness, not after every implementation step, unless the repo's policy or a specific risk requires it earlier.
 
 Keep `CHANGELOG.md` current under `## [Unreleased]`: write entries at commit time, not retroactively.
 

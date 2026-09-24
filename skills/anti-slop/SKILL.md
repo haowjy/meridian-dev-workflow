@@ -7,26 +7,25 @@ model-invocable: true
 
 # Anti-Slop
 
-If the interface reads as "AI made this," it failed. These patterns cut across briefs: they appear regardless of what the user asked for. Match and rewrite.
+If the interface reads as "AI made this," compare its choices with the brief.
 
-## Immediate Refuse
+## Defaults to Challenge
 
-- **Cream / sand / beige body background.** The warm-neutral band (near-white, tinted warm, reads as cream/sand/parchment/paper) is the saturated AI default of 2026. Use a saturated brand color, true off-white at chroma 0, or a darker mid-tone instead.
-- **Gray body text on tinted background.** Washed out, low contrast. Darker shade of the background's hue, or transparency of the text color.
-- **Side-stripe borders.** >1px colored accent on cards, list items, callouts. Rewrite with full borders, background tints, or nothing.
-- **Gradient text.** `background-clip: text` with a gradient. Use a single solid color.
-- **Unmotivated purple gradients.** The default AI palette. If purple isn't in the brand, it shouldn't be in the background.
-- **Glassmorphism.** Blur + glass cards used decoratively.
-- **Hero-metric template.** Big number, small label, supporting stats, gradient accent.
-- **Identical card grids.** Same-sized cards with icon + heading + text, repeated.
-- **Tiny uppercase tracked eyebrow above every section.** The 2023-era kicker. One deliberate kicker is voice; on every section it's AI grammar.
-- **Numbered section markers** (01 / 02 / 03) above every section. Same reflex. Numbers earn their place when the section IS a sequence and order carries information.
+These patterns often appear without regard to the brief. Treat them as warning signs, not bans: follow the user's direction and established product identity. When neither calls for a pattern, choose a more specific alternative. If a requested choice may harm accessibility or usability, explain the tradeoff and offer a compliant option instead of silently overriding it.
+
+- **Cream / sand / beige body backgrounds.** Often an unconsidered warm-neutral default. Choose them when they fit the brand and content; otherwise use a deliberate brand color, neutral, or darker surface.
+- **Gray body text on tinted backgrounds.** Check actual contrast, not color names. If readability fails, adjust the text or surface to meet the project's accessibility standard.
+- **Side-stripe borders** and **gradient text.** Often decorative defaults. Keep them when they communicate hierarchy or fit the visual language; otherwise try a quieter treatment.
+- **Purple gradients** and **glassmorphism.** Use when they serve the brand or interaction, not as automatic signs of polish.
+- **Hero-metric templates** and **identical card grids.** Use when the data or content benefits from those structures; avoid applying them as generic page scaffolding.
+- **Tiny uppercase tracked eyebrows** and **numbered section markers.** Use when they help orientation or communicate a real sequence, not as decoration on every section.
 
 ## Copy Tells
 
-- **No em dashes.** Use commas, colons, semicolons, periods. Also not `--`.
-- **No marketing buzzwords:** streamline, empower, supercharge, leverage, unleash, transform, seamless, world-class, enterprise-grade, next-generation, cutting-edge, game-changer, mission-critical. Pick specific nouns and verbs.
-- **No aphoristic-cadence body copy.** The rhythm of "serious statement, then punchy short negation" repeated across sections.
-- **Button labels: verb + object.** "Save changes" beats "OK." Link text needs standalone meaning: "View pricing" beats "Click here."
+These are editing cues, not voice bans. Follow the product's established language and the user's brief; prefer specific, useful copy over generic filler.
 
-If three or more of these appear, the design is running on AI defaults, not the brief.
+- Em dashes, repeated aphoristic cadence, and marketing buzzwords ("streamline," "empower," "seamless," "world-class") can make copy sound generic. Keep them only when they fit the voice or convey something precise.
+- Button labels should say what the action does ("Save changes" rather than "OK"); links should make sense out of context ("View pricing" rather than "Click here").
+- Don't use `•` as a decorative separator between labels or metadata. Separate them with layout and spacing instead; this doesn't apply to semantic bulleted lists.
+
+Several tells together are a reason to compare the design with the brief, not proof that it is wrong.

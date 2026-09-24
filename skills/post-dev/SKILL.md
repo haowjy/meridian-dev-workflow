@@ -25,7 +25,7 @@ merge section applies once the PR lands.
 - Focus on what downstream users notice, not which lines moved
 
 ### Review
-- Has structural review passed? If not, spawn a reviewer first.
+- Does the change's scope or risk, or repo policy, require an independent structural review? If so, confirm it passed; otherwise record why it is not needed.
 - Any review findings addressed or explicitly accepted?
 - If the plan shifted during implementation, `DIVERGENCE/` in the work
   directory reflects it — reviewers and knowledge capture read from it
