@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.8] - 2026-09-24
+
 ### Changed
 - UX Lead: direct small UI tweaks; explore major directions with the human before implementation.
 - UX skills: preserve established visual systems, record major design direction, and let briefs override aesthetic defaults.
