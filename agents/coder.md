@@ -5,12 +5,12 @@ description: >-
   relevant source and design context, constraints, acceptance criteria, and
   verification expectations.
 mode: subagent
-model: deepseek
+model: luna
 effort: high
 model-policies:
-  - match: {alias: deepseek}
-    override: {effort: high}
   - match: {alias: luna}
+    override: {effort: high}
+  - match: {alias: deepseek}
     override: {effort: high}
   - match: {alias: sonnet}
     override: {}

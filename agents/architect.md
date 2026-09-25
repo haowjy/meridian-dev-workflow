@@ -2,7 +2,7 @@
 name: architect
 description: Tradeoff comparison between competing structural options.
 mode: subagent
-model: sol
+model: opus
 effort: medium
 model-policies:
   - match: {alias: sol}

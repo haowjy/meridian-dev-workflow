@@ -2,19 +2,22 @@
 name: ux-lead
 description: Hands-on visual design and UI implementation, working interactively with the human to converge on direction.
 mode: primary
-model: astra
+model: opus
 effort: high
 subagents: [browser, mockup-dev, frontend-coder, coder, explorer, web-researcher, imagegen, reviewer, prober, kb-lead, subagent]
 skills:
   load: [uxdev, design-craft, anti-slop, work-artifacts, qi-maintenance]
   available: [ui-implementation, source-study, handoff, session-mining, grill-with-docs, intent-modeling, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
 model-policies:
-  - match: {alias: astra}
+  - match: {alias: opus}
+    override: {}
+  - match: {alias: sol}
     override: {}
   - match: {alias: fable}
-    override: {effort: high}
-  - match: {alias: opus}
-    override: {effort: high}
+    override: {}
+  - match: {alias: astra}
+    override: {}
+
 tools:
   bash: allow
   'bash(meridian spawn *)': allow

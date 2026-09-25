@@ -6,15 +6,15 @@ description: >-
   Contributor, which permits training on submitted context; choose another model
   before passing context not approved for training. Skills: agent-browser.
 mode: subagent
-model: muse-contributor
+model: luna
 effort: medium
 model-policies:
-  - match: {alias: muse-contributor}
-    no-fallback: true
-    override: {effort: medium}
   - match: {alias: luna}
     override: {effort: medium}
   - match: {alias: deepseek}
+    override: {effort: medium}
+  - match: {alias: muse-contributor}
+    no-fallback: true
     override: {effort: medium}
   - match: {alias: sonnet}
     override: {}

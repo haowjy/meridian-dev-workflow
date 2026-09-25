@@ -5,18 +5,18 @@ description: >-
   security. Attach skills for focus: review-alignment, test-architecture,
   thermo-nuclear-review, react-architecture, information-hierarchy.
 mode: subagent
-model: astra
-subagents: [web-researcher, investigator, subagent]
+model: opus
 effort: medium
+subagents: [web-researcher, investigator, subagent]
 model-policies:
-  - match: {alias: astra}
-    override: {effort: medium}
-  - match: {alias: sol}
-    override: {effort: medium}
-  - match: {alias: grok}
-    override: {effort: medium}
   - match: {alias: opus}
     override: {}
+  - match: {alias: astra}
+    override: {}
+  - match: {alias: sol}
+    override: {}
+  - match: {alias: grok}
+    override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
   - match: {alias: luna}

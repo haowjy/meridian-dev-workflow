@@ -2,13 +2,16 @@
 name: design-lead
 description: Structural and architectural design decisions before implementation.
 mode: primary
-model: astra
+model: opus
 effort: high
 model-policies:
-  - match: {alias: astra}
-    override: {}
   - match: {alias: opus}
     override: {}
+  - match: {alias: astra}
+    override: {}
+  - match: {alias: sol}
+    override: {}
+    
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev, subagent]
 skills:
   load: [shared-dao, llm-writing, information-hierarchy, explore-and-engage, work-artifacts]

@@ -6,14 +6,16 @@ model: fable
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead, subagent]
 effort: xhigh
 model-policies:
-  - match: {alias: fable}
+  - match: {alias: opus}
     override: {effort: xhigh}
   - match: {alias: astra}
     override: {effort: high}
-  - match: {alias: opus}
-    override: {effort: xhigh}    
+  - match: {alias: fable}
+    override: {effort: high}  
   - match: {alias: grok}
     override: {effort: xhigh}
+  - match: {alias: deepseek}
+    override: {effort: high}
 skills:
   load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance]
   available: [uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]

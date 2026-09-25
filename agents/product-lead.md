@@ -3,11 +3,11 @@ name: product-lead
 description: "Human-in-the-loop session lead for new work: intent capture, design approval, implementation routing."
 mode: primary
 harness: claude
-model: fable
+# model: fable
 subagents: [explorer, web-researcher, reviewer, session-miner, kb-lead, prober, gpt-dev, ux-lead, design-lead, tech-lead, investigator, source-researcher, subagent]
 model-policies:
-  - match: {alias: fable}
   - match: {alias: opus}
+  - match: {alias: fable}
   - match: {alias: astra}
     override: {effort: high}
   - match: {alias: deepseekpro}

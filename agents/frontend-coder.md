@@ -5,12 +5,12 @@ description: >-
   Give a detailed brief: behavior and interaction requirements, available design
   references, target viewports, constraints, and acceptance criteria.
 mode: subagent
-model: deepseek
+model: luna
 effort: high
 model-policies:
-  - match: {alias: deepseek}
-    override: {effort: high}
   - match: {alias: luna}
+    override: {effort: high}
+  - match: {alias: deepseek}
     override: {effort: high}
   - match: {alias: sonnet}
     override: {}
