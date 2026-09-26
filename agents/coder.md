@@ -6,7 +6,7 @@ description: >-
   verification expectations.
 mode: subagent
 model: luna
-effort: high
+effort: max
 model-policies:
   - match: {alias: luna}
     override: {effort: high}

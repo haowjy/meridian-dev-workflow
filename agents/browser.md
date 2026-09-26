@@ -7,15 +7,15 @@ description: >-
   before passing context not approved for training. Skills: agent-browser.
 mode: subagent
 model: luna
-effort: medium
+effort: high
 model-policies:
   - match: {alias: luna}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: deepseek}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: muse-contributor}
     no-fallback: true
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: sonnet}
     override: {}
 skills:
