@@ -42,6 +42,19 @@ was cleared), fall back to `.github/PULL_REQUEST_TEMPLATE.md` (or similar)
 directly, fill it from the current diff and conversation, and note in your
 report that before-state evidence was not captured.
 
+## Worktree Cleanup
+
+Prune a worktree the moment its branch's work is merged anywhere — into its
+parent integration branch, staging, or main — not after. Find the project's
+cleanup tooling (package scripts, `tools/`, `AGENTS.md`) and run it per
+branch as each one lands, rather than batching cleanup for later.
+
+Waiting is risky, not just untidy: many integration strategies collapse
+history. A side-lane branch merged into an integration branch that is later
+squash-merged leaves no provable trace of ever having merged — not a
+matching PR, not ancestry. What would have been a one-line command becomes
+manual, evidence-by-hand archaeology once that happens.
+
 ## Do Not
 
 - Do not merge directly into `main` or `staging`; normal feature-branch merges are allowed
