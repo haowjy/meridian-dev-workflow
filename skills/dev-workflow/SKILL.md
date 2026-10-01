@@ -7,14 +7,11 @@ model-invocable: true
 
 # Dev Workflow
 
-Commit discipline during implementation.
-
 ## Commit Discipline
 
 1. Implement a self-contained change
 2. Run focused checks that cover its risks
 3. Commit with a descriptive message
-4. Move to the next step
 
 Run the full project gate at ship readiness, not after every implementation step, unless the repo's policy or a specific risk requires it earlier.
 
@@ -45,11 +42,11 @@ report that before-state evidence was not captured.
 ## Branch Cleanup
 
 Clean up everything a branch's work claimed the moment it merges anywhere —
-into its parent integration branch, staging, or main — not after: the
-worktree and branch, but also any scoped databases, dev processes, ports, or
-other resources it held. Find the project's cleanup tooling (package
-scripts, `tools/`, `AGENTS.md`) and run it per branch as each one lands,
-rather than batching cleanup for later.
+into its parent integration branch, staging, or main: the worktree and
+branch, but also any scoped databases, dev processes, ports, or other
+resources it held. Find the project's cleanup tooling (package scripts,
+`tools/`, `AGENTS.md`) and use it immediately, branch by branch, rather than
+batching cleanup for later.
 
 Waiting is risky, not just untidy: many integration strategies collapse
 history. A side-lane branch merged into an integration branch that is later
@@ -57,10 +54,13 @@ squash-merged leaves no provable trace of ever having merged — not a
 matching PR, not ancestry. What would have been a one-line command becomes
 manual, evidence-by-hand archaeology once that happens.
 
+When the cleanup tool can't verify eligibility this way, check for a manual
+verification guide near the tool (or write one) instead of guessing or
+skipping cleanup.
+
 ## Do Not
 
-- Do not merge directly into `main` or `staging`; normal feature-branch merges are allowed
-- Push directly to main for feature work (use PRs)
+- Don't land feature work on `main` or `staging` directly, by merge or by push — use a PR. Merges between other working branches need no gate.
 - Create or push `v*` tags manually (CI owns tagging)
 - Use `--no-verify` on push without explicit user permission
 - Delete untracked files without asking (may be someone else's work)
