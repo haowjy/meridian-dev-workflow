@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Dev workflow: widen the new cleanup rule from "prune the worktree" to "clean up everything the branch claimed" (worktree, branch, databases, dev processes, ports), per user feedback.
+
 ## [0.13.11] - 2026-10-01
 
 ### Changed

@@ -42,12 +42,14 @@ was cleared), fall back to `.github/PULL_REQUEST_TEMPLATE.md` (or similar)
 directly, fill it from the current diff and conversation, and note in your
 report that before-state evidence was not captured.
 
-## Worktree Cleanup
+## Branch Cleanup
 
-Prune a worktree the moment its branch's work is merged anywhere — into its
-parent integration branch, staging, or main — not after. Find the project's
-cleanup tooling (package scripts, `tools/`, `AGENTS.md`) and run it per
-branch as each one lands, rather than batching cleanup for later.
+Clean up everything a branch's work claimed the moment it merges anywhere —
+into its parent integration branch, staging, or main — not after: the
+worktree and branch, but also any scoped databases, dev processes, ports, or
+other resources it held. Find the project's cleanup tooling (package
+scripts, `tools/`, `AGENTS.md`) and run it per branch as each one lands,
+rather than batching cleanup for later.
 
 Waiting is risky, not just untidy: many integration strategies collapse
 history. A side-lane branch merged into an integration branch that is later
