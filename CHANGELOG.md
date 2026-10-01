@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.11] - 2026-10-01
+
 ### Changed
 - Dev workflow: prune a worktree as soon as its branch merges, not after — squash-merging the integration branch later erases both the PR-match and ancestry proof the cleanup tool needs.
 
