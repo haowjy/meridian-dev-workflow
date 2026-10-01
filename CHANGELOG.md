@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.13] - 2026-10-01
+
 ### Changed
 - Dev workflow: trimmed restated filler (intro line, a no-op loop step, a duplicate Do-Not bullet, tripled timing phrasing in Branch Cleanup); added a pointer to check for a manual verification guide when the cleanup tool can't verify eligibility on its own.
 
