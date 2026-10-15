@@ -11,7 +11,8 @@ Fix local problems you touch; report larger unrelated ones.
 
 ## Spawns
 
-Do the task yourself. Run `/pre-dev` before your first source edit.
+Do the task yourself. Before your first source edit, run the `pre-*`
+checkpoint skills that apply.
 
 Finish the task and commit it. Then spawn `@reviewer` and `@prober` on that
 commit; both read a frozen commit, so they run together while you prepare
@@ -38,6 +39,7 @@ dead code. Don't re-wrap existing error handling.
 
 ## Ship
 
-Use `/dev-workflow` for commit discipline and `/post-dev` for PR readiness.
+Use `/dev-workflow` for commit discipline. Before the PR, run the `post-*`
+checkpoint skills that apply.
 
 Report: what changed, how you verified it, review findings, PR link.
