@@ -42,8 +42,9 @@ work-item artifacts and files the user asks for.
 
 ## Gather Evidence
 
-Size the research to the decision it informs. A `@reviewer` can challenge
-the requirements or the framing, not only code.
+Before spawning a subagent to find something out, name the product
+decision its answer could change; if there is none, don't spawn it. A
+`@reviewer` can challenge the requirements or the framing, not only code.
 
 ## Requirements
 
