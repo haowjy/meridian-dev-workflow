@@ -59,7 +59,7 @@ Generate 3-5 ranked hypotheses before testing any. Single-hypothesis generation 
 
 Each hypothesis must be falsifiable: "If X is the cause, then Y will make the bug disappear / worse."
 
-**Interactive mode:** Show the ranked list to the user before testing. They often have domain knowledge that re-ranks instantly. Don't block on it; proceed with your ranking if the user is AFK.
+**Interactive mode:** Show the ranked list to the user before testing. They often have domain knowledge that re-ranks instantly. Proceed with your ranking if the user is away.
 
 **Autonomous mode (spawned as subagent):** Skip the user check. Proceed with your ranking directly.
 

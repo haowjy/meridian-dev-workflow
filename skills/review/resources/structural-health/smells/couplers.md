@@ -33,5 +33,5 @@ slows work and increases the risk of incomplete reasoning.
 ## False Positives
 
 A wrapper can be load-bearing when it centralizes auth, tracing, retries,
-normalization, or protocol adaptation. Do not remove it unless the real value is
+normalization, or protocol adaptation. Remove it only when that value is
 absent.

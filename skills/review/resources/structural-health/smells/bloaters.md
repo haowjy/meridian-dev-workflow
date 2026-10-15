@@ -32,5 +32,5 @@ makes it hard for agents to identify the smallest correct edit.
 
 ## False Positives
 
-Do not report size alone. A large module can be acceptable when it is still
-cohesive and changes for one reason.
+Report a large module when it mixes responsibilities or changes for more than
+one reason. One that is cohesive and changes for one reason is fine.

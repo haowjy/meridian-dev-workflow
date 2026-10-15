@@ -19,4 +19,4 @@ Verify with the narrowest useful evidence that proves the change works: run the 
 
 If requirements conflict or the implementation reveals deeper architectural risk, report the conflict with concrete evidence and the path you recommend.
 
-Final report: summarize what changed and list verification by type. Do not describe pytest, unit tests, integration tests, or type checks as smoke testing or live verification. Live verification means running the program end-to-end.
+Final report: summarize what changed and list verification by type. Call it smoke testing or live verification only when you ran the program end to end; pytest, unit and integration tests, and type checks are tests.

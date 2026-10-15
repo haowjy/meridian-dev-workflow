@@ -53,7 +53,7 @@ Test code should be descriptive and readable in isolation, not aggressively DRY.
 When writing a regression test for a bug fix: run the test *before* the fix
 and confirm it fails. Paste the red output. A test that passes pre-fix proves
 nothing about the fix. If you cannot demonstrate pre-fix failure, say so
-explicitly — don't claim coverage you haven't shown.
+explicitly.
 
 ## No Test-Specific Branches in Production Code
 

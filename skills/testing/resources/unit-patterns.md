@@ -26,7 +26,7 @@ edge-case tests where logic risk is high.
 - module contract boundaries
 - failure and boundary inputs
 
-Avoid low-value tests that mirror implementation details or duplicate equivalent coverage. See `/testing` `resources/common-mistakes.md` for recurring anti-patterns.
+Test behavior callers rely on, and cover it once; tests that mirror implementation details break on refactors without catching bugs. See `/testing` `resources/common-mistakes.md` for recurring anti-patterns.
 
 ## Authoring Craft
 

@@ -12,11 +12,11 @@ model-invocable: true
 The objective design test: which concerns are braided together that could be
 independent — state with value, what with how, policy with mechanism? Simple
 means untangled, and you can point at it in the code. Familiar is relative to
-the reader; never defend or reject a design on familiarity.
+the reader; judge a design on what it entangles.
 
 Simplicity is not counting. More parts hanging straight beat fewer parts
-tied in a knot — don't merge components to lower the count if merging
-entangles their concerns.
+tied in a knot: merge components only when their concerns stay
+untangled.
 
 ## Boundaries
 

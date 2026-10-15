@@ -26,6 +26,6 @@ These are editing cues, not voice bans. Follow the product's established languag
 
 - Em dashes, repeated aphoristic cadence, and marketing buzzwords ("streamline," "empower," "seamless," "world-class") can make copy sound generic. Keep them only when they fit the voice or convey something precise.
 - Button labels should say what the action does ("Save changes" rather than "OK"); links should make sense out of context ("View pricing" rather than "Click here").
-- Don't use `•` as a decorative separator between labels or metadata. Separate them with layout and spacing instead; this doesn't apply to semantic bulleted lists.
+- Separate labels and metadata with layout and spacing, not a decorative `•`. Semantic bulleted lists are fine.
 
 Several tells together are a reason to compare the design with the brief, not proof that it is wrong.

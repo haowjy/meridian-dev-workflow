@@ -6,8 +6,8 @@ the least expensive available option that meets the task's requirements.
 ## Implementation and Execution
 
 Prefer **Luna → DeepSeek → Sonnet** for general implementation and execution.
-Luna and DeepSeek can own substantial, coherent engineering objectives; do not
-restrict them to mechanical edits or fragment the work to justify using them.
+Luna and DeepSeek can own substantial, coherent engineering objectives; hand them
+whole ones rather than mechanical fragments.
 
 Give workers the outcome, relevant context, constraints, and acceptance checks,
 not an edit script.

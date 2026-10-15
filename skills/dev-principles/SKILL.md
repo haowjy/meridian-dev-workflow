@@ -40,9 +40,8 @@ Before adding structure: is this a separate concern, or one thing wearing two na
 Large efficiency bugs are rarely slow lines. They are a cost paid on every
 event, or one that grows with accumulated state. On a hot path (per chunk,
 per turn, per poll, per invocation), keep each run's cost proportional to
-the work in front of it: don't rewrite a whole file for a small change,
-poll with an expensive probe, scan all history per event, or load
-everything on every invocation.
+the work in front of it: write only what changed, poll with a cheap
+check, read only new events, and load only what this run uses.
 
 A measured number is a claim. Before you report or act on one, name what
 limits it and rule out errors, skipped work, and noise, per `/probe`'s

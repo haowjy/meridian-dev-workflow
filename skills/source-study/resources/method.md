@@ -17,7 +17,7 @@ git -C ~/.meridian/ref/<name> fetch --deepen=200      # extend window
 git -C ~/.meridian/ref/<name> fetch --unshallow        # full history
 ```
 
-Don't delete after investigation. `~/.meridian/ref/` accumulates over time. A repo studied once may be relevant again.
+Keep clones in `~/.meridian/ref/` after the investigation; a repo studied once may be relevant again.
 
 ## Explorer Prompt Examples
 

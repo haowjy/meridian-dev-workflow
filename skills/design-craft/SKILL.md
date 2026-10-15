@@ -15,7 +15,7 @@ For new color decisions, prefer OKLCH when the project supports it. When extendi
 
 **Contrast.** Body text needs at least 4.5:1 against its background. Large text (at least 18pt / 24 CSS px, or 14pt / about 18.67 CSS px when bold) needs at least 3:1. Placeholder text needs the same 4.5:1. Muted gray body text on a tinted near-white is a common contrast failure; check actual contrast and adjust when needed.
 
-**Tinted neutrals** (backgrounds, surfaces): when developing a palette, subtle chroma toward the brand's hue can add depth. Don't add warmth or coolness without a reason.
+**Tinted neutrals** (backgrounds, surfaces): when developing a palette, subtle chroma toward the brand's hue can add depth. Add warmth or coolness only for a reason.
 
 **Dark vs light.** For a new visual identity, describe who uses it, where, under what ambient light, and in what mood. For an existing product, follow its established system unless the brief calls for a change.
 
@@ -29,13 +29,13 @@ For new color decisions, prefer OKLCH when the project supports it. When extendi
 
 For a new type system, aim for body line lengths of 65-75ch, clear scale and weight contrast, and a small number of font families. For existing products, follow the established type scale.
 
-Avoid pairing similar fonts without a clear reason; contrast or one family in multiple weights is often more cohesive. Use all-caps body copy, very large headings, or tight tracking only when they serve the brief and remain readable.
+Pair fonts that contrast, or use one family in multiple weights; either is usually more cohesive than two similar fonts. Use all-caps body copy, very large headings, or tight tracking only when they serve the brief and remain readable.
 
 Use `text-wrap: balance` on h1-h3 and `text-wrap: pretty` on long prose where supported.
 
 ## Layout
 
-Vary spacing for rhythm. Don't default to cards; use them when they make the content or interaction clearer. Nested card surfaces often add visual depth without useful hierarchy; use them when the relationship needs it. Flexbox is a good default for one-dimensional layouts, Grid for two-dimensional ones.
+Vary spacing for rhythm. Use cards when they make the content or interaction clearer. Nested card surfaces often add visual depth without useful hierarchy; use them when the relationship needs it. Flexbox is a good default for one-dimensional layouts, Grid for two-dimensional ones.
 
 For responsive grids, auto-fitting columns often need fewer breakpoints.
 
@@ -49,7 +49,7 @@ Prefer animating transform and opacity over layout properties. Ease-out curves a
 
 Respect reduced-motion preferences with a crossfade or instant alternative.
 
-Reveal animations must enhance an already-visible default. Don't gate content visibility on a transition trigger; hidden tabs and headless renderers won't fire it.
+Reveal animations must enhance an already-visible default, since hidden tabs and headless renderers never fire the transition trigger.
 
 ## Copy
 

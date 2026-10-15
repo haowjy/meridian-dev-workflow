@@ -20,8 +20,7 @@ Keep `CHANGELOG.md` current under `## [Unreleased]`: write entries at commit tim
 ## Deferrals
 
 When you skip something during implementation — a cleanup, an edge case, a
-better approach — route it immediately through `/issues`. Don't rely on
-catching it at post-dev.
+better approach — route it immediately through `/issues`.
 
 ## Pushing and PRs
 

@@ -44,4 +44,4 @@ Prefer concrete structural moves:
 - inline or split a bad abstraction
 - replace repeated branching with a better boundary
 
-Avoid redesign slogans such as "clean this up" or "use better architecture."
+Name the concrete move; "clean this up" or "use better architecture" gives the author nothing to act on.

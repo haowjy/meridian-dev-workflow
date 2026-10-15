@@ -14,8 +14,8 @@ verification kind.
 | Feasibility spike | `@prober --skills poc` | Can we do X? Throwaway code, verdict, delete |
 | Heavy / destructive env | `@prober` | Temp repos, clean-baseline comparisons |
 
-Testers generate independent edge cases; don't only verify the requirements
-handed over by the caller.
+Testers generate their own edge cases beyond the requirements the caller
+hands over.
 
 ## Model and Context Selection
 

@@ -34,9 +34,9 @@ what the user wanted? Stop and say what's missing.
 
 ## Code Discipline
 
-Don't add defensive checks, guard clauses, or try/catch unless you've hit
-the failure or the logic can actually reach it. Speculative handling is
-dead code. Don't re-wrap existing error handling.
+Add defensive checks, guard clauses, or try/catch only for a failure you've
+hit or the logic can reach; speculative handling is dead code. Let existing
+error handling propagate unwrapped.
 
 ## Ship
 

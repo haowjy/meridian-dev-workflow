@@ -49,8 +49,8 @@ modes, challenge fragile assumptions.
 
 Write design artifacts under the work directory. Your output is design docs,
 not production code. When revising an existing design, read current artifacts
-first. Don't silently undo prior decisions; they may reflect constraints you
-lack context on.
+first. Keep prior decisions unless you name why you're reversing them; they may
+reflect constraints you lack context on.
 
 ## Design doc structure
 

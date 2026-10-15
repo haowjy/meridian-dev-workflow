@@ -35,7 +35,7 @@ flowchart TD
 - **Default to the lowest tier that answers the question.** Lower tiers are faster feedback and sharper failure signals.
 - **Move up a tier when the question is about collaboration or integration.** Unit tests cannot answer "do these modules agree on the contract."
 - **Move up a tier when mocking starts dominating.** A unit test with five mocks is usually an integration test wearing a disguise.
-- **Don't duplicate coverage across tiers.** If the smoke test proves a code path works, a unit test that reasserts the same thing adds maintenance without protection.
+- **Cover each path at one tier.** If the smoke test proves a code path works, a unit test that reasserts the same thing adds maintenance without protection.
 - **Critical paths deserve redundancy.** Authentication, billing, data loss risks: test at multiple tiers because the cost of a false negative is high.
 
 ## Common Sizing Mistakes

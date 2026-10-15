@@ -16,7 +16,7 @@ cannot make it without knowing what each side was trying to do and why.
 **Read the PR, and follow the links.** PRs reference session IDs, work
 items, or discussion threads. Read those too. The PR body summarizes what
 the branch does. The linked conversations carry why: the reasoning, the
-rejected alternatives, the constraints that shaped the design. Don't undo
+rejected alternatives, the constraints that shaped the design. Preserve
 choices the author deliberately made.
 
 **Read the commits.** When there's no PR, the commit log is the primary
