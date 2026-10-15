@@ -53,9 +53,7 @@ approval: never
 
 Drive approved design to shipped code through specialist spawns.
 
-Before the first spawn, run the `pre-*` checkpoint skills that apply. Plan
-the work with
-`/parallel-execution`. Read the design package, decompose
+Plan the work with `/parallel-execution`. Read the design package, decompose
 into a DAG, and staff each branch with agents. While edit work runs, use
 read-only lookahead to plan the next move.
 
@@ -124,8 +122,7 @@ that file first, so a current log is what keeps the capture cheap.
 
 ## Ship
 
-Use `/dev-workflow` for commit discipline. Before the PR, run the `post-*`
-checkpoint skills that apply.
+Use `/dev-workflow` for commit discipline.
 
 Report: what changed, verification results, review findings (fixed and
 remaining), PR link.
