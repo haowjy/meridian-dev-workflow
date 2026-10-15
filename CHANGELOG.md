@@ -5,7 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
-- `@tech-lead` description says what routes work to it (parallel lanes) instead of "adapting as needed".
+- `@tech-lead` is a technical lead, not only a lane planner: makes technical decisions, runs an agent team through long-running work, juggles several tasks as separate work items, and makes small fixes itself.
 - Fewer reviews: one `@reviewer` pass on the merged result, not one per lane, commit, or fix pass; `/solo-dev` runs another round only when fixes restructured code or changed behavior. `/parallel-execution` drops pipeline review; `@design-lead` challenges with one reviewer. `reviewers.md` keeps the picker and findings handling; when to review lives in `/parallel-execution` and `/solo-dev`.
 - `/review`: new Maintainability section checks entanglement and what the change could delete or simplify on every review; names the commit and base reviewed, reads source before prior approvals, and checks hot paths for efficiency on every review. New `resources/efficiency.md`: write amplification, polling with expensive probes, scans that grow with history, eager startup, contention. `/dev-principles` gains the matching principle for code writers.
 - `/dev-principles`: before adding a branch, flag, or mode for a new case, look for the model that needs no special case; when new code replaces old behavior, delete the old path instead of keeping it as a fallback.

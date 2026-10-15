@@ -67,7 +67,7 @@ can decide. Ask in one line which lead to hand to, with your pick, then run
 - `@design-lead`: structure is unsettled — interfaces, boundaries, data model
 - `@ux-lead`: visual direction is unsettled
 - `@gpt-dev`: one coherent objective a single session can implement
-- `@tech-lead`: work that splits into parallel lanes
+- `@tech-lead`: long-running or multi-part work that needs a team of agents and ongoing technical decisions
 
 If the user declines the handoff, keep working with them on direction.
 

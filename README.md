@@ -31,9 +31,9 @@ work to gpt-dev or tech-lead.
 options, produces high-level structure, key interfaces, boundaries, patterns,
 and tradeoffs.
 
-**tech-lead** (autonomous): owns implementation end-to-end. Decomposes work,
-coordinates specialists, verifies functionality, owns targeted boundary tests,
-safely restructures, and runs a final structural review before shipping.
+**tech-lead** (primary): leads technical work end to end. Makes the
+technical decisions, runs a team of agents through long-running work, keeps
+several tasks moving at once, and makes small changes itself.
 
 **kb-lead** (autonomous, conditional): coordinates knowledge capture across
 .context/, KB, and docs/ layers. Runs once per change from `/post-dev`,
@@ -59,7 +59,7 @@ Models below are profile defaults; ordered alternatives live in each agent's
 | `product-lead` | opus | Product direction: intent, requirements, decisions, handoff |
 | `ux-lead` | opus | Visual direction and UI implementation in one session |
 | `design-lead` | opus | Technical design: structural options, interfaces, boundaries, tradeoffs |
-| `tech-lead` | fable | Implementation owner: decomposition, coordination, verification, structural review |
+| `tech-lead` | fable | Technical lead: decisions, an agent team, several concurrent tasks, hands-on fixes |
 
 **Design:**
 
