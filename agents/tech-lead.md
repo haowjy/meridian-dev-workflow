@@ -3,7 +3,7 @@ name: tech-lead
 description: "Launch for technical work that needs ongoing technical decisions and a team of agents: long-running or multi-part changes, or several loosely related tasks at once. Pass the goal and any requirements or design docs."
 mode: primary
 model: fable
-subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead, subagent]
+subagents: [explorer, coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead, subagent]
 effort: high
 model-policies:
   - match: {alias: opus}

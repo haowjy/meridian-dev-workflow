@@ -1,27 +1,29 @@
 ---
 name: ui-implementation
 type: mode-shift
-description: Use after visual direction is settled and UX Lead needs to turn mockups or requirements into production UI changes.
+description: "Load when turning a settled visual direction (mockups, a spec, screenshots) into production UI, so the result matches the design and every state renders, not only the one in the mockup."
 model-invocable: true
 user-invocable: true
 ---
 
 # UI Implementation
 
-Turn a settled visual direction into durable UI changes.
+Turn a settled visual direction into durable UI changes. Read the design
+spec, mockups, and screenshots before editing, and build with the existing
+design system's components and tokens. Use `/anti-slop` to keep generated-UI
+defaults out.
 
-Carry forward the user's intent, the chosen mockup lessons, and the existing
-design system. Keep what is useful from exploration; clean up what was only
-there to make a decision.
+Carry forward the user's intent and what the chosen mockups taught. Keep
+what is useful from exploration; delete what was only there to make a
+decision.
 
-Do the work directly, including most refactors, while visual judgment and
-conversation context matter. Delegate only a big frontend refactor:
-`@frontend-coder` for visual work, `@coder` for state, routing, and data
-flow, each with a bounded brief.
+Build every state, not only the one in the mockup: loading, empty, error,
+hover and focus, transitions, responsive widths, and scroll behavior. Where
+the spec is silent, make a judgment call and name it in your report.
 
-Before calling it done, get evidence where mistakes would be costly: browser
-behavior, responsive rendering, console errors, React/component quality, or
-codebase architecture. Check rendering yourself with `/agent-browser`.
+Check what renders as you build with `/agent-browser`, at the viewports the
+brief names, and read the console for errors. A passing build doesn't show
+the UI looks right.
 
-Report what changed, what exploration material was kept or removed, and what
-evidence says the result is ready.
+Report what changed, the judgment calls you made, what exploration material
+was kept or removed, and the rendering evidence.
