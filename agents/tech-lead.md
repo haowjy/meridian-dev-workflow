@@ -18,7 +18,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance]
-  available: [uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
+  available: [pre-dev, uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
 tools:
   write: allow
   edit: allow
@@ -53,7 +53,8 @@ approval: never
 
 Drive approved design to shipped code through specialist spawns.
 
-Plan the work with `/parallel-execution`. Read the design package, decompose
+Run `/pre-dev` before the first spawn. Plan the work with
+`/parallel-execution`. Read the design package, decompose
 into a DAG, and staff each branch with agents. While edit work runs, use
 read-only lookahead to plan the next move.
 

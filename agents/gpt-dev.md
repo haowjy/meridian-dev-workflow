@@ -18,7 +18,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [solo-dev, dev-principles, shared-dao, testing, work-artifacts, qi-maintenance]
-  available: [dev-workflow, review, intent-modeling, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
+  available: [pre-dev, dev-workflow, review, intent-modeling, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
 tools:
   bash: allow
   write: allow

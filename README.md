@@ -43,7 +43,7 @@ reading the work directory's decision and divergence logs first.
 # Default lifecycle:
 # product-lead --handoff--> design-lead --handoff--> tech-lead | gpt-dev
 # ux-lead (one session: mockup-dev variants -> ui-implementation)
-# kb-lead runs when knowledge capture is needed
+# kb-lead runs once per change, from /post-dev
 meridian -a product-lead
 ```
 

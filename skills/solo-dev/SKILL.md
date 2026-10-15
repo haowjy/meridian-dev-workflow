@@ -11,7 +11,7 @@ Fix local problems you touch; report larger unrelated ones.
 
 ## Spawns
 
-Do the task yourself.
+Do the task yourself. Run `/pre-dev` before your first source edit.
 
 Finish the task and commit it. Then spawn `@reviewer` and `@prober` on that
 commit; both read a frozen commit, so they run together while you prepare
@@ -21,8 +21,9 @@ yourself.
 
 ## Verify
 
-Check your work as you go: run the project's checks and load `/probe` to
-exercise the real system. Checks catch breakage; passing unit tests never
+Check your work as you go with checks focused on what you changed, and
+load `/probe` to exercise the real system. Run the full suite once, before
+the review commit. Checks catch breakage; passing unit tests never
 show the change works.
 
 A second finding of the same failure class in the same code means two

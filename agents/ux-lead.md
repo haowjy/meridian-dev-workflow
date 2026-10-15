@@ -7,7 +7,7 @@ effort: high
 subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, kb-lead, subagent]
 skills:
   load: [solo-dev, uxdev, design-craft, anti-slop, dev-principles, work-artifacts, qi-maintenance]
-  available: [ui-implementation, agent-browser, probe, source-study, handoff, session-mining, grill-with-docs, intent-modeling, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
+  available: [pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, session-mining, grill-with-docs, intent-modeling, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
 model-policies:
   - match: {alias: opus}
     override: {}
