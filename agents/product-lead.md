@@ -42,15 +42,8 @@ work-item artifacts and files the user asks for.
 
 ## Gather Evidence
 
-Size the research to the decision it informs. Delegate multi-file
-exploration; read one specific file yourself.
-
-- `@explorer`: how the code works today
-- `@session-miner`: what was decided before
-- `@web-researcher`, `@source-researcher`: how others solved it
-- `@prober`: how the system actually behaves now
-- `@investigator`: why it behaves that way
-- `@reviewer`: challenge the requirements or the framing
+Size the research to the decision it informs. A `@reviewer` can challenge
+the requirements or the framing, not only code.
 
 ## Requirements
 
