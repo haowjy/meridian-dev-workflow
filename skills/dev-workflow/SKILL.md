@@ -60,7 +60,6 @@ skipping cleanup.
 ## Do Not
 
 - Land feature work on `main` or `staging` directly, by merge or by push — use a PR. Merges between other working branches need no gate.
-- Merge a PR into `main` or `staging` without the human's approval in the current conversation; approval for one PR doesn't carry to the next.
 - Create or push `v*` tags manually (CI owns tagging)
 - Use `--no-verify` on push without explicit user permission
 - Delete untracked files without asking (may be someone else's work)
