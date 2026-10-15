@@ -11,6 +11,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `@reviewer`: settles findings by probing the real system, not the test suite.
 - New `/solo-dev` for a primary that implements and verifies in one session: no helpers until the task is done, then `@reviewer` and `@prober` on the final commit; no parallel lanes. `@gpt-dev` reduces to it.
 - `@ux-lead`: same shape plus UI specifics. Does incremental changes and most refactors itself; `@frontend-coder`/`@coder` only for a big frontend refactor; parallel `@mockup-dev` variants for comparing directions; checks rendering with `/agent-browser`. `/ui-implementation` and `/uxdev` match.
+- `@product-lead`: product direction only. Gathers evidence, writes requirements and decisions, proposes `/handoff` once direction settles. No longer spawns builders, design leads, or `@kb-lead`.
+- `@design-lead`: builds a browsable artifact only when asked, and builds it itself with `/structured-artifact`, `/design-craft`, `/anti-slop`.
 
 ## [0.13.13] - 2026-10-01
 

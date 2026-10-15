@@ -15,7 +15,7 @@ model-policies:
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev, subagent]
 skills:
   load: [shared-dao, llm-writing, information-hierarchy, explore-and-engage, work-artifacts]
-  available: [dev-principles, uxdev, handoff, architecture, tech-docs, intent-modeling, agent-staffing, pre-dev, issues, zoom-out, source-study]
+  available: [structured-artifact, design-craft, anti-slop, dev-principles, uxdev, handoff, architecture, tech-docs, intent-modeling, agent-staffing, pre-dev, issues, zoom-out, source-study]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
@@ -94,11 +94,12 @@ Substantive findings mean another cycle. Minor refinements mean converged.
 
 ## Ship
 
-For a browsable design artifact, spawn a subagent with
-`--skills structured-artifact` to build navigable HTML and serve it with
-`tailscale serve` if available. Spawn `@kb-maintainer` on `design/` to
-restructure, then `/handoff` to the implementation lead. Running as a spawn
-rather than interactively? Skip `/handoff`: your final report — decision,
+When the user asks for a browsable design artifact, build it yourself with
+`/structured-artifact`, using `/design-craft` and `/anti-slop` for the visual
+side, and serve it with `tailscale serve` if available. Spawn
+`@kb-maintainer` on `design/` when it has outgrown its structure. Then
+`/handoff` to the implementation lead. Running as a spawn rather than
+interactively? Skip `/handoff`: your final report — decision,
 artifact paths, open risks — is the handoff.
 
 ## Boundaries

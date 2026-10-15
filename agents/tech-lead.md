@@ -124,7 +124,7 @@ conversation, the changed files, and the work directory as context.
 
 Source-code work runs in `$MERIDIAN_TASK_DIR`. Use `/dev-workflow` for
 commit discipline, `/post-dev` for PR readiness. If task-dir is wrong,
-escalate to `@product-lead`.
+stop and tell the user.
 
 Report: what changed, verification results, review findings (fixed and
 remaining), PR link.

@@ -14,13 +14,18 @@ be installed.
 
 The dev lifecycle splits across leads with distinct ownership:
 
-**product-lead** (interactive): the primary developer. Translates between
-user and technical teams. Requirements gathering, scope sizing, design
-approval, implementation routing. Spawns everything downstream.
+**product-lead** (interactive): settles product direction with the user:
+intent, requirements, decisions. Gathers evidence through cheap research
+spawns, then hands off to the next lead as a new session the user launches.
+It does not spawn builders.
 
-**ux-lead** (interactive): visual design and UX entry point. Gathers visual
-requirements, establishes shared design vocabulary, routes to implementation
-specialists. Gates on `visual-requirements.md`.
+**gpt-dev** (interactive): one session that implements and verifies a single
+objective itself, spawning a reviewer and prober only at the end (`/solo-dev`).
+
+**ux-lead** (interactive): the same single-session shape for UI work. Converges
+on visual direction with the user, then implements and checks the rendering
+itself, spawning coders only for big frontend refactors. Hands non-frontend
+work to gpt-dev or tech-lead.
 
 **design-lead** (autonomous): owns the technical design. Explores structural
 options, produces high-level structure, key interfaces, boundaries, patterns,
@@ -31,15 +36,15 @@ coordinates specialists, verifies functionality, owns targeted boundary tests,
 safely restructures, and runs a final structural review before shipping.
 
 **kb-lead** (autonomous, conditional): coordinates knowledge capture across
-.context/, KB, and docs/ layers. Spawned when implementation produces
-understanding worth preserving; timing depends on the workflow.
+.context/, KB, and docs/ layers. Runs once per change from `/post-dev`,
+reading the work directory's decision and divergence logs first.
 
 ```bash
 # Default lifecycle:
-# product-lead -> design-lead -> tech-lead
-# ux-lead -> mockup-dev (visual iteration) -> ui-implementation/coder
+# product-lead --handoff--> design-lead --handoff--> tech-lead | gpt-dev
+# ux-lead (one session: mockup-dev variants -> ui-implementation)
 # kb-lead runs when knowledge capture is needed
-meridian spawn -a product-lead -p 'Build JWT token validation'
+meridian -a product-lead
 ```
 
 ## Agents
@@ -51,10 +56,10 @@ Models below are profile defaults; ordered alternatives live in each agent's
 
 | Agent | Model | Role |
 |---|---|---|
-| `product-lead` | opus46 | Primary developer: requirements gathering, routing, design approval |
-| `ux-lead` | astra | Visual design entry point: visual requirements, design vocabulary, frontend routing |
-| `design-lead` | astra | Technical design: structural options, interfaces, boundaries, tradeoffs |
-| `tech-lead` | opus46 | Implementation owner: decomposition, coordination, verification, structural review |
+| `product-lead` | opus | Product direction: intent, requirements, decisions, handoff |
+| `ux-lead` | opus | Visual direction and UI implementation in one session |
+| `design-lead` | opus | Technical design: structural options, interfaces, boundaries, tradeoffs |
+| `tech-lead` | fable | Implementation owner: decomposition, coordination, verification, structural review |
 
 **Design:**
 
@@ -92,7 +97,7 @@ Models below are profile defaults; ordered alternatives live in each agent's
 | `web-researcher` | luna | External evidence: library docs, upstream issues, architecture patterns via web search |
 | `explorer` | luna | Fast, cheap codebase explorer: reads files, searches code, traces git history |
 | `source-researcher` | luna | Studies real open-source implementations for relevant patterns |
-| `kb-lead` | sol | Captures durable knowledge: mines the work, writes .context/, KB, and docs/ inline, fans out @explorer/@session-miner to read |
+| `kb-lead` | opus | Captures durable knowledge: mines the work, writes .context/, KB, and docs/ inline, fans out @explorer/@session-miner to read |
 
 **Visual:**
 
