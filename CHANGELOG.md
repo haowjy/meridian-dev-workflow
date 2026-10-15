@@ -16,6 +16,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `/probe`: anything abnormal is reported as a likely UX bug; visual results get screenshots, looked at before reporting and saved in the work dir.
 - `/code`: focused checks on what changed; the full suite runs at the merge or ship gate (76% of coder briefs had demanded it per lane). `@coder`/`@frontend-coder` commit on their branch and never push or merge.
 - `/parallel-execution`: focused checks per branch; after merge, the full suite once plus a real-system probe. `/pre-dev` builds generated artifacts once per worktree.
+- Knowledge capture runs once per change from `/post-dev`, reading the decision file and `DIVERGENCE/` first. `@tech-lead` keeps the decision file current instead of spawning `@kb-lead` per phase.
 
 ## [0.13.13] - 2026-10-01
 

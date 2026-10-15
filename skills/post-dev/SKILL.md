@@ -42,15 +42,16 @@ merge section applies once the PR lands.
   entry in `.context/TODO` or a GitHub issue — no orphan TODOs
 
 ### Knowledge capture
-- A completed `@kb-lead` reconciliation covers the final changed source
-  paths. If source changed after an earlier capture, run reconciliation again.
+- Spawn `@kb-lead` once, after review fixes have landed, covering the whole
+  change.
+- Pass the conversation, changed files, and work directory. Point it at the
+  decision file and any `DIVERGENCE/` logs first; they are the cheapest
+  record of what was decided and why.
+- If an earlier capture ran mid-work, scope this one to paths that changed
+  since.
 - Colocated guidance needs an update only when it — or the absence of needed
   guidance — would cause a cold agent to make a wrong decision. A changed path
   or missing `.context/` file is not itself a gap.
-- Decisions, rejected alternatives, and design rationale go stale fast —
-  capture them while context is live
-- Pass the conversation, changed files, work directory, and any
-  `DIVERGENCE/` logs as context
 - Before this checkpoint passes, verify any colocated doc updates
   (`.context/`, `AGENTS.md`) are present on the feature branch. Separate KB
   repository updates may land independently.

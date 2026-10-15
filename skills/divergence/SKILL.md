@@ -33,5 +33,5 @@ and coder reports, not the divergence log.
 ## Downstream
 
 Reviewers check `DIVERGENCE/` for alignment between the plan and the code.
-`@kb-lead` uses it as source material after the phase settles — the
+`@kb-lead` reads it at ship time, from `/post-dev` — the
 divergences are often the most durable lessons.

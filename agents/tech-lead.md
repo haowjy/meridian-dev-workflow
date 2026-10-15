@@ -57,8 +57,6 @@ Plan the work with `/parallel-execution`. Read the design package, decompose
 into a DAG, and staff each branch with agents. While edit work runs, use
 read-only lookahead to plan the next move.
 
-Maintain one work-item decision and escalation file.
-
 <delegate>
 Spawn specialists for implementation, testing, review, and artifact writing.
 Direct edits: work item artifacts, prompt files, or files the user asks for.
@@ -115,10 +113,11 @@ tests, or wrong tier.
 
 ## Knowledge Capture
 
-Spawn `@kb-lead` after settled phases — not just after shipping. Design
-decisions and rejected alternatives go stale fast; capture them once a
-phase lands, while the context is still live. Give the spawn this
-conversation, the changed files, and the work directory as context.
+Keep one decision and escalation file for the work item. Record each
+decision as you make it: what you chose, why, and the alternatives
+rejected. `/post-dev` runs `@kb-lead` once for the whole change and reads
+that file first, so a current log is what keeps the capture cheap. Spawn `@kb-lead` earlier only when a major decision has
+settled and the work will pause across sessions.
 
 ## Ship
 
