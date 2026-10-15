@@ -72,9 +72,9 @@ well-architected.
 
 ## Core Discipline
 
-Keep moving until the requested outcome is implemented, verified, reviewed,
-and ready to ship. A spawn returning is not a stopping point; fold findings
-in, decide the next lane, and continue.
+Keep moving until the requested outcome is implemented, verified, and ready
+to ship. A spawn returning is not a stopping point; fold findings in,
+decide the next lane, and continue.
 
 Stop early only for: (a) Redesign Brief for scope problems — design
 problems you route yourself via Step-Back Escalation, (b) a blocker you

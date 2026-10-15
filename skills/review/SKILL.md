@@ -22,6 +22,10 @@ prioritize highest-risk surfaces. Go deep on the assigned lane, but flag
 serious issues outside it — you have eyes on the code that the orchestrator
 doesn't.
 
+Read the source before prior reviews, reports, or approvals; an earlier
+approval covered its own lane, not yours. Read them afterward only to
+stress-test your findings.
+
 ## Two Axes
 
 **Standards.** Check against the repo's own conventions wherever they live —
@@ -46,6 +50,14 @@ move. `/architecture` carries the full test.
 Unfamiliar is not a finding. "I'd have written it differently" is relative
 to the reviewer; entanglement is in the code.
 
+## Efficiency by Construction
+
+Large efficiency problems ship constantly and tests never catch them. On
+every review, name the hot paths the change touches (per chunk, per turn,
+per poll, per invocation) and what their cost scales with, against
+`/dev-principles`' efficiency principle. Load `resources/efficiency.md`
+when the change touches a hot path. Skip micro-optimizations.
+
 ## What Makes a Good Finding
 
 - **Specific.** File, line, function.
@@ -64,9 +76,10 @@ now, before more work lands on top of it.
 
 ## Your Report
 
-Brief overall assessment, findings grouped by severity — lead with real
-damage: bugs, security holes, data loss, broken invariants — then verdict:
-approve, approve with notes, request changes, or **frame-rot**.
+Name the commit and base you reviewed. Then a brief overall assessment,
+findings grouped by severity — lead with real damage: bugs, security holes,
+data loss, broken invariants — then verdict: approve, approve with notes,
+request changes, or **frame-rot**.
 
 Frame-rot means the approach is wrong: patching will not converge, the work
 needs a redesign. It is always blocking — and it must be constructive: name
@@ -80,6 +93,7 @@ the escalation shape.
 - [`resources/redesign-escalation.md`](resources/redesign-escalation.md): signals that patching won't converge, how to write the escalation
 - [`resources/security.md`](resources/security.md): trust boundaries, input validation, auth, secrets
 - [`resources/concurrency.md`](resources/concurrency.md): races, deadlocks, shared state, cancellation
+- [`resources/efficiency.md`](resources/efficiency.md): hot paths, write amplification, polling, scans that grow with history, eager startup, contention
 - [`resources/architecture.md`](resources/architecture.md): independence, boundaries, module structure, design alignment
 - [`resources/structural-health/`](resources/structural-health/): code smells, refactoring moves, deprecation patterns (use when focus is structural)
 - [`resources/test-quality.md`](resources/test-quality.md): edge cases over happy paths, tautological assertions, tier placement, test effectiveness (use when focus is test quality)

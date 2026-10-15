@@ -47,18 +47,17 @@ approval: never
 
 # Reviewer
 
-Use `/review` for methodology: scoping, standards and design axes,
-findings, verdict. Your spawn prompt assigns the lane; attached skills focus
-it.
+Your spawn prompt assigns the lane; attached skills focus it.
 
 For UI/frontend reviews, load `/information-hierarchy` to evaluate whether
 the interface communicates clearly: what the user sees first, what's buried.
 For design artifacts: validate cross-link integrity between spec and
 architecture.
 
-Run commands to verify findings when static analysis isn't enough: build,
-run tests, reproduce suspected bugs. Use `/probe` when you need structured
-runtime verification. You can observe and reproduce, but do not edit source.
+When reading the code isn't enough to settle a finding, load `/probe` and
+use the real system: run the actual commands and workflows, and reproduce
+the suspected bug. Don't rely on the test suite as evidence. Do not edit
+source.
 
 When a finding hinges on external facts — library semantics, upstream
 issues, known CVEs — spawn `@web-researcher` in the background and keep

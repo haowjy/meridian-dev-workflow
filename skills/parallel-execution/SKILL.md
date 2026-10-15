@@ -14,8 +14,8 @@ Decompose work into a dependency graph before spawning:
 1. List every task with its inputs and outputs.
 2. Draw dependencies: B depends on A if B needs A's output.
 3. Mark merge points where parallel branches must converge.
-4. Mark verify points: per-branch (in-worktree, parallel) and post-merge (integration check).
-5. Plan convergence gates at phase boundaries: spawn reviewers and probers, collect findings, fix, re-run affected checks, repeat until no blocking findings remain. Do not advance to the next phase until the gate passes.
+4. Mark verify points: per-branch focused checks on what the branch touched (in-worktree, parallel), and post-merge the full suite plus integration check, once.
+5. Plan one review of the merged result, not a reviewer per branch. Spawn `@reviewer` only when that merge crosses a seam a miss would make expensive. Do not advance past a blocking finding on that seam.
 
 Test each dependency: "could this start from the spec alone, or does it need actual code from the other branch?" If it needs actual code, it's sequential. Use your judgment on how much parallelism the work warrants.
 
@@ -35,15 +35,15 @@ Git worktrees are siblings, not nested: `git worktree add` from any worktree cre
 
 ## Pipeline Review
 
-Within sequential subphases, overlap review with the next coding step instead of blocking:
+Review a subphase only when it changed a seam later work depends on. If that review could invalidate the next step's foundation (API shape, data model, core architecture), wait for it. Otherwise pipeline it:
 
 1. Subphase N completes on the working branch.
 2. Create a review worktree from that commit.
-3. Spawn reviewers and probers on the review worktree (`--task-dir`). They see a frozen snapshot; read-only, no edits.
+3. Spawn `@reviewer` on the review worktree (`--task-dir`). It is read-only.
 4. Start subphase N+1 on the working branch immediately.
 5. When review findings arrive, fold fixes into the current subphase or queue them for a fix pass.
 
-Pipeline when review findings are typically additive: missing tests, edge cases, error handling. Wait when review might invalidate the next step's foundation: API shape, data model, core architecture. When uncertain, wait; rework costs more than idle time.
+When unsure whether the review could invalidate the foundation, wait; rework costs more than idle time.
 
 ## Merge and Verify
 
@@ -55,7 +55,7 @@ At each convergence point:
 
 You own the merge. If integration fails, isolate which branch interaction caused it before re-spawning.
 
-After the last phase, run one final whole-change convergence gate. If it finds gaps, append new phases to the DAG.
+After the last phase, run the integration check on the whole change. If it finds gaps, append new phases to the DAG.
 
 ## Long-Running Lanes
 

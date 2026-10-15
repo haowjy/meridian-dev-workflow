@@ -33,6 +33,15 @@ Before adding structure: is this a separate concern, or one thing wearing two na
 
 **Deep modules over shallow.** A deep module hides substantial complexity behind a simple interface. If an exported function wraps three lines, keep it in its caller. When 3+ shallow modules touch the same concept, bundle them into one deep module.
 
+## Efficiency by Construction
+
+Large efficiency bugs are rarely slow lines. They are a cost paid on every
+event, or one that grows with accumulated state. On a hot path (per chunk,
+per turn, per poll, per invocation), keep each run's cost proportional to
+the work in front of it: don't rewrite a whole file for a small change,
+poll with an expensive probe, scan all history per event, or load
+everything on every invocation.
+
 ## Separation of Concerns
 
 Group by concern; draw boundaries where things change independently. Smaller focused files cost less to read: an agent consumes the whole file, so a 500-line module with one relevant function wastes attention on the other 480.
