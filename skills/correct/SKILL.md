@@ -19,8 +19,8 @@ a change that looks right from one file is right for the whole system.
 ## Find the Classes
 
 Start from the KB corrections register (`/knowledge-layers`
-`resources/corrections.md`) and any correction the human just gave. Add what
-the register missed: mine recent sessions with `@session-miner`, and read
+`resources/corrections/`; `code.md` says how to record enforcement) and any
+correction the human just gave. Add what the register missed: mine recent sessions with `@session-miner`, and read
 recent reverts and review findings. A class counts once it has happened
 twice; record a single occurrence as a candidate.
 
