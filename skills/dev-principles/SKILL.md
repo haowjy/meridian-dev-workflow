@@ -44,6 +44,10 @@ the work in front of it: don't rewrite a whole file for a small change,
 poll with an expensive probe, scan all history per event, or load
 everything on every invocation.
 
+A measured number is a claim. Before you report or act on one, name what
+limits it and rule out errors, skipped work, and noise, per `/probe`'s
+`resources/measurement.md`.
+
 ## Separation of Concerns
 
 Group by concern; draw boundaries where things change independently. Smaller focused files cost less to read: an agent consumes the whole file, so a 500-line module with one relevant function wastes attention on the other 480.

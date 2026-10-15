@@ -67,6 +67,11 @@ the exact command or UI actions, the actual result, and the expected behavior.
 If the expectation is uncertain, report an observation or open question rather
 than declaring a bug.
 
+## Measurements
+
+Vet every number you report (timings, throughput, counts) with
+`resources/measurement.md` before it goes in your report.
+
 ## Reporting
 
 Separate reproduced defects from usability concerns and unconfirmed observations.

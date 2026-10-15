@@ -71,7 +71,7 @@ Tool preference: debugger / REPL > targeted logs > "log everything and grep."
 
 Tag every debug log with a unique prefix (e.g. `[DEBUG-a4f2]`). Cleanup is a single grep.
 
-For performance regressions, logs are usually wrong. Establish a baseline measurement first, then bisect.
+For performance regressions, logs are usually wrong. Establish a baseline measurement first, vetted per `/probe`'s `resources/measurement.md`, then bisect.
 
 ## Phase 5: Fix + Regression Test
 
