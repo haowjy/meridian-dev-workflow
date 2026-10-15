@@ -40,5 +40,6 @@ approval: never
 
 Write clean, working code. Use `/code` for implementation methodology.
 
-Commit on the branch you were given. Do not push or merge; your lead
+Commit on the branch you were given, with a `CHANGELOG.md` entry under
+`## [Unreleased]` when the repo keeps one. Do not push or merge; your lead
 integrates.

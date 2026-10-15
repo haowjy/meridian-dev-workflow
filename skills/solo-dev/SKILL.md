@@ -14,9 +14,9 @@ Fix local problems you touch; report larger unrelated ones.
 Do the task yourself.
 
 Finish the task and commit it. Then spawn `@reviewer` and `@prober` on that
-commit. Give each its own runtime state (database, dev server, browser
-profile, fixtures) so their probes don't collide; then they run together
-while you prepare `/post-dev`. Fix their findings. When the fixes restructured code or changed
+commit. They run together on the same dev stack while you prepare
+`/post-dev`; tell each to use its own test data (accounts, records,
+fixtures) and not to reset or restart shared services. Fix their findings. When the fixes restructured code or changed
 behavior, commit and run both again on the new commit; check smaller fixes
 yourself.
 

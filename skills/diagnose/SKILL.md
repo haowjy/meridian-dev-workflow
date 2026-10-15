@@ -2,7 +2,7 @@
 name: diagnose
 type: reference
 description: Load when diagnosing hard bugs or performance regressions. Structured loop from feedback loop through instrumentation to fix.
-model-invocable: false
+model-invocable: true
 ---
 
 # Diagnose
