@@ -1,15 +1,15 @@
 ---
 name: thermo-nuclear-review
 type: reference
-description: "Use for extremely strict structural review: find the simpler shape of a change and the system around it, and block structural regressions."
+description: "Use for extremely strict maintainability review: find the code-judo move that makes a change and the system around it dramatically simpler, and block structural regressions."
 model-invocable: true
 ---
 
 # Thermo-Nuclear Review
 
-Find the simpler shape, not cleaner lines. Behavior stays the same; the
-structure should get dramatically smaller and more direct. A review that only
-confirms the code works has failed this lane.
+Find the code-judo move: a restructuring that keeps behavior the same and
+makes the code dramatically smaller and more direct. Cleaner lines are not
+the goal. A review that only confirms the code works has failed this lane.
 
 ## Scope: the Change and the System It Lives In
 

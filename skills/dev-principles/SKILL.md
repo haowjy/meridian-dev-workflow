@@ -29,6 +29,8 @@ The default agent failure is producing something plausible and moving on. The co
 
 Every boundary, type, and layer must earn its place by making future changes smaller and safer. The default failure mode is over-engineering: adding moving parts that don't create real independence.
 
+Before adding a branch, flag, or mode for a new case, look for the model under which the case needs no special handling: a different owner, state model, or shared path.
+
 Before adding structure: is this a separate concern, or one thing wearing two names? Things that always change together are one thing. Independence justifies a split; partitioning alone doesn't.
 
 **Deep modules over shallow.** A deep module hides substantial complexity behind a simple interface. If an exported function wraps three lines, keep it in its caller. When 3+ shallow modules touch the same concept, bundle them into one deep module.
@@ -50,7 +52,7 @@ When you see duplication across boundaries, suspect the boundaries before patchi
 
 ## Deletion
 
-LLMs default to preserving code. Fight that. Dead code, stale imports, orphaned files: delete in the same change. Obvious duplication: collapse it. Structural problems (circular dependencies, god modules, leaky abstractions): fix on sight. Rot compounds at agent speed.
+LLMs default to preserving code. Fight that. Dead code, stale imports, orphaned files: delete in the same change. When new code replaces old behavior, delete the old path in the same change instead of keeping it beside the new one as a fallback or compatibility layer, unless the repo's policy requires one. Obvious duplication: collapse it. Structural problems (circular dependencies, god modules, leaky abstractions): fix on sight. Rot compounds at agent speed.
 
 ## Testing
 
