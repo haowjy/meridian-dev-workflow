@@ -13,6 +13,7 @@ model-policies:
   - match: {alias: fable}
     override: {effort: high}  
   - match: {alias: grok}
+    no-fallback: true
     override: {effort: xhigh}
   - match: {alias: deepseek}
     override: {effort: high}

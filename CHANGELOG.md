@@ -5,6 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- `@reviewer` and `@tech-lead` keep Grok as an explicit option but never fall back to it.
 - `@tech-lead` is the default primary (README install). It owns technical decisions, runs an agent team through long-running work, keeps several tasks moving as separate work items, and makes small fixes itself with `/code`. Effort xhigh → high.
 - `@product-lead` settles product direction only: evidence, requirements, decisions, then a `/handoff` to the lead you launch. It no longer spawns builders, design leads, or `@kb-lead`.
 - New `/solo-dev`: a lead implements and verifies in one session, then runs `@reviewer` and `@prober` on the finished commit, and again only when fixes restructured code or changed behavior. `@gpt-dev` reduces to it.

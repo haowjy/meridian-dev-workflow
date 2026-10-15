@@ -13,6 +13,7 @@ model-policies:
   - match: {alias: sol}
     override: {}
   - match: {alias: grok}
+    no-fallback: true
     override: {effort: high}
   - match: {alias: deepseek}
     no-fallback: true
