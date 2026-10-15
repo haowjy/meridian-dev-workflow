@@ -11,4 +11,4 @@
 @investigator:
 
 - **Proactive**: find deferred work, latent bugs, TODOs, and unresolved questions in conversations, code, and spawn reports at phase boundaries.
-- **Reactive**: find the cause of unexpected test failures, ambiguous review findings, or surprising spawn results. Provide the failure evidence and relevant context; require a fix, a tracked issue, or evidence that no issue exists.
+- **Reactive**: find the cause of unexpected test failures, ambiguous review findings, or surprising spawn results. Provide the failure evidence and relevant context, and say whether it should fix the cause or stop at the causal chain.

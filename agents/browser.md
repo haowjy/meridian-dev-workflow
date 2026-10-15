@@ -1,6 +1,6 @@
 ---
 name: browser
-description: "Spawn to work a live website: design inspiration, scraping, data extraction, screenshots. Pass the task, entrypoints, constraints, and evidence needed. Muse Contributor is among its fallback models and permits training on submitted context; pin another model before passing context not approved for training. Skills: agent-browser."
+description: "Spawn to work a live website: design inspiration, scraping, data extraction, screenshots. Pass the task, entrypoints, constraints, and evidence needed. Skills: agent-browser."
 mode: subagent
 model: luna
 effort: high

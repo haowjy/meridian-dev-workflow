@@ -26,6 +26,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `@coder`/`@frontend-coder` commit on their branch with a changelog entry and never push or merge.
 - `/parallel-execution` gives each change to shared code one owner. `/source-study` runs one or two explorers per source. `/diagnose` is model-invocable.
 - Agent and skill descriptions say when and why to use them; the README tables say what each agent does.
+- README describes the current system: the leads, the lifecycle of a change, review coverage, and every agent and skill with its actual default model.
+- `@browser` and the staffing guide no longer call Muse Contributor a default or fallback; it is an explicit option. The investigator brief says whether to fix or stop at the cause.
 
 ## [0.13.13] - 2026-10-01
 

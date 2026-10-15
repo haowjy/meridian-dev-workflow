@@ -6,7 +6,7 @@ Spawn `@reviewer` with skills matched to the change's risks.
 
 | Review kind | Spawn | When |
 |-------------|-------|------|
-| Default static review | `@reviewer` | Code review gates: correctness, contracts, security |
+| Default review | `@reviewer` | Every review gate: correctness, maintainability, efficiency, security |
 | Strict maintainability | `@reviewer --skills thermo-nuclear-review` | Structure/branching changes, spaghetti growth |
 | Efficiency | `@reviewer` with the efficiency lane named in the prompt | Runtime paths, polling, persistence, scans, startup |
 | Architecture / seams | `@reviewer --skills thermo-nuclear-review` | Cross-module boundary changes, dependency direction |
