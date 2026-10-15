@@ -1,6 +1,6 @@
 ---
 name: design-lead
-description: Structural and architectural design decisions before implementation.
+description: "Launch or spawn when the structure is unsettled: interfaces, boundaries, data model, or an implementation lead's Redesign Brief. Pass the problem statement and requirements; returns design docs and a recommendation."
 mode: primary
 model: opus
 effort: high

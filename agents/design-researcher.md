@@ -1,6 +1,6 @@
 ---
 name: design-researcher
-description: Researches design and architectural options, writing analysis for the team.
+description: "Spawn when a design decision needs a structured analysis of alternatives. Pass the question and constraints; returns written analysis, not the final design."
 mode: subagent
 model: sol
 effort: high

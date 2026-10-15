@@ -1,6 +1,6 @@
 ---
 name: imagegen
-description: Image generation for mockups, visual explorations, icons, and reference imagery.
+description: "Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images."
 mode: subagent
 model: sol
 effort: high

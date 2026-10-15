@@ -1,6 +1,6 @@
 ---
 name: product-lead
-description: "Interactive lead for product direction: captures intent, settles requirements and decisions with the user, then hands off to the design or implementation primary the user launches."
+description: "Launch first for new work whose product direction is open: what to build and why. Settles requirements and decisions with you, then proposes which lead to launch next."
 mode: primary
 harness: claude
 # model: fable

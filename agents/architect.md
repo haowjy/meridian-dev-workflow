@@ -1,6 +1,6 @@
 ---
 name: architect
-description: Tradeoff comparison between competing structural options.
+description: "Spawn when a design decision has competing structural options to compare. Pass the options, constraints, and requirements; returns design docs with the tradeoffs."
 mode: subagent
 model: opus
 effort: medium

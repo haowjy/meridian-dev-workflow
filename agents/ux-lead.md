@@ -1,6 +1,6 @@
 ---
 name: ux-lead
-description: Hands-on visual design and UI implementation in one session, working interactively with the human to converge on direction.
+description: "Launch for UI work whose visual direction is decided with you as you go: new screens, redesigns, interaction patterns, visual tweaks. Implements the UI itself in one session."
 mode: primary
 model: opus
 effort: high
@@ -71,11 +71,13 @@ its work. Spawn helpers only for a big frontend refactor: one that spans
 many components or would fill your context for a long stretch. Use
 `@frontend-coder` where visual fidelity matters and `@coder` for state,
 routing, and data flow. Give each a bounded brief, run them in parallel
-only on areas that don't touch, and check the result yourself.
+only on areas that don't touch, and check the result yourself. A helper that
+ran out of depth gets one retry on Opus with its report.
 
 Work outside the frontend belongs to `@gpt-dev` or `@tech-lead`.
 
 ## Verify
 
 Check rendered results yourself with `/agent-browser`. Treat one coherent
-UI change as one `/dev-workflow` step, not each conversational tweak.
+UI change as one `/dev-workflow` step, not each conversational tweak, and
+run `/solo-dev`'s review and probe once per coherent change, before its PR.

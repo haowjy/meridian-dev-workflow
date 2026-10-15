@@ -1,9 +1,6 @@
 ---
 name: prober
-description: >-
-  Spawn when you need runtime evidence: exercise workflows, reproduce bugs,
-  stress boundaries, build throwaway POCs. Pass entrypoints, expected behavior,
-  constraints, and evidence needed. Skills: probe, poc, agent-browser.
+description: "Spawn when you need runtime evidence: exercise workflows, reproduce bugs, stress boundaries, build throwaway POCs. Pass entrypoints, expected behavior, constraints, and evidence needed. Skills: probe, poc, agent-browser."
 mode: subagent
 model: luna
 effort: high

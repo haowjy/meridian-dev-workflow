@@ -1,7 +1,7 @@
 ---
 name: solo-dev
 type: reference
-description: "Working discipline for a primary that implements and verifies the change itself in one session: spawn limits, checkpoint review, runtime verification, ship."
+description: "Load when you implement and verify a change yourself in one session: when to spawn review and probe, how to verify, when to stop patching, how to ship."
 model-invocable: false
 ---
 
@@ -14,8 +14,9 @@ Fix local problems you touch; report larger unrelated ones.
 Do the task yourself.
 
 Finish the task and commit it. Then spawn `@reviewer` and `@prober` on that
-commit; both read a frozen commit, so they run together while you prepare
-`/post-dev`. Fix their findings. When the fixes restructured code or changed
+commit. Give each its own runtime state (database, dev server, browser
+profile, fixtures) so their probes don't collide; then they run together
+while you prepare `/post-dev`. Fix their findings. When the fixes restructured code or changed
 behavior, commit and run both again on the new commit; check smaller fixes
 yourself.
 
@@ -26,8 +27,9 @@ load `/probe` to exercise the real system. Run the full suite once, before
 the review commit. Checks catch breakage; passing unit tests never
 show the change works.
 
-A second finding of the same failure class in the same code means two
-places own one invariant: stop patching and change the approach. Stuck on
+A second finding of the same failure class in the same code: stop patching
+and find the shared cause. Two places owning one invariant is the usual
+one; a wrong algorithm or a misread requirement are others. Stuck on
 what the user wanted? Stop and say what's missing.
 
 ## Code Discipline

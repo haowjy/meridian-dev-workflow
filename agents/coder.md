@@ -1,9 +1,6 @@
 ---
 name: coder
-description: >-
-  General-purpose implementation owner. Give a detailed brief: target behavior,
-  relevant source and design context, constraints, acceptance criteria, and
-  verification expectations.
+description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations."
 mode: subagent
 model: luna
 effort: max

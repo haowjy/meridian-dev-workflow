@@ -32,22 +32,28 @@ options, produces high-level structure, key interfaces, boundaries, patterns,
 and tradeoffs.
 
 **tech-lead** (primary): leads technical work end to end. Makes the
-technical decisions, runs a team of agents through long-running work, keeps
-several tasks moving at once, and makes small changes itself.
+technical decisions (approach, structure, tradeoffs, what to cut), runs a
+team of agents through long-running work, keeps several tasks moving at once
+as separate work items, and makes small fixes and glue changes itself.
 
 **kb-lead** (autonomous, conditional): coordinates knowledge capture across
 .context/, KB, and docs/ layers. Runs once per change from `/post-dev`,
 reading the work directory's decision and divergence logs first.
 
 ```bash
-# Default lifecycle:
+# Default: tech-lead. Start elsewhere when direction is open:
 # product-lead --handoff--> design-lead --handoff--> tech-lead | gpt-dev
 # ux-lead (one session: mockup-dev variants -> ui-implementation)
 # kb-lead runs once per change, from /post-dev
-meridian -a product-lead
+meridian -a tech-lead
 ```
 
 ## Agents
+
+Each agent's `description` says when to launch or spawn it, what to pass,
+and what comes back; callers read it when choosing. What the agent does lives
+in its body and in the tables below, so keep summaries here, not in the
+description.
 
 Models below are profile defaults; ordered alternatives live in each agent's
 `model-policies`. See `skills/agent-staffing/` for task-based selection.
@@ -152,7 +158,7 @@ resolve from the base source. Both sources must be installed.
 ```bash
 meridian mars add meridian-flow/meridian-base
 meridian mars add meridian-flow/meridian-dev-workflow
-meridian config set primary.agent product-lead
+meridian config set primary.agent tech-lead
 ```
 
 ## Layout

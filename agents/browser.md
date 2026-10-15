@@ -1,10 +1,6 @@
 ---
 name: browser
-description: >-
-  Live browser for design inspiration, scraping, data extraction, and screenshots.
-  Pass the task, entrypoints, constraints, and evidence needed. Defaults to Muse
-  Contributor, which permits training on submitted context; choose another model
-  before passing context not approved for training. Skills: agent-browser.
+description: "Spawn to work a live website: design inspiration, scraping, data extraction, screenshots. Pass the task, entrypoints, constraints, and evidence needed. Defaults to Muse Contributor, which permits training on submitted context; choose another model before passing context not approved for training. Skills: agent-browser."
 mode: subagent
 model: luna
 effort: high

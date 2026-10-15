@@ -5,6 +5,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- Agent descriptions say when to launch or spawn, what to pass, and what comes back; the README carries what each agent does. README installs `@tech-lead` as the default primary.
+- `@tech-lead` owns technical decisions (approach, structure, tradeoffs, what to cut), records resume state before switching tasks, edits with `/code`, and can run commands for its own fixes.
+- `/parallel-execution`: the last phase's review covers the whole change with `thermo-nuclear-review`; the full suite runs once on the final merged change; each lane's worktree builds its own generated artifacts.
+- `/solo-dev`: reviewer and prober get separate runtime state before running together. Repeated same-class findings mean find the shared cause, not assume split ownership.
+- `@investigator` stops at the root cause unless the brief assigns the fix. `@ux-lead` retries a helper that ran out of depth on Opus. `/pre-dev` checks a reused worktree belongs to the work item. `/post-dev` checks the final commit's review passed.
 - `@tech-lead` is a technical lead, not only a lane planner: makes technical decisions, runs an agent team through long-running work, juggles several tasks as separate work items, and makes small fixes itself.
 - Fewer reviews: one `@reviewer` pass on the merged result, not one per lane, commit, or fix pass; `/solo-dev` runs another round only when fixes restructured code or changed behavior. `/parallel-execution` drops pipeline review; `@design-lead` challenges with one reviewer. `reviewers.md` keeps the picker and findings handling; when to review lives in `/parallel-execution` and `/solo-dev`.
 - `/review`: new Maintainability section checks entanglement and what the change could delete or simplify on every review; names the commit and base reviewed, reads source before prior approvals, and checks hot paths for efficiency on every review. New `resources/efficiency.md`: write amplification, polling with expensive probes, scans that grow with history, eager startup, contention. `/dev-principles` gains the matching principle for code writers.

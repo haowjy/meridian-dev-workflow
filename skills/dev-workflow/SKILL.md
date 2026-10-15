@@ -1,7 +1,7 @@
 ---
 name: dev-workflow
 type: reference
-description: "Commit discipline during implementation (commit after each passing step, changelog at commit time), pushing and opening the PR, and branch cleanup after merge."
+description: "Load when committing during implementation, pushing and opening a PR, or cleaning up a branch after merge."
 model-invocable: true
 ---
 

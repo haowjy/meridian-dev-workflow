@@ -1,8 +1,6 @@
 ---
 name: gpt-dev
-description: >-
-  Hands-on implementation primary. Pass target behavior, relevant context,
-  constraints, acceptance criteria, and verification expectations.
+description: "Launch or spawn for one coherent objective a single session can implement and verify itself. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
 mode: primary
 model: astra
 subagents: [reviewer, prober, kb-lead, subagent]

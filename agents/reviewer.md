@@ -1,9 +1,6 @@
 ---
 name: reviewer
-description: >-
-  Spawn to find risks before shipping: correctness, regression, structural,
-  security. Attach skills for focus: review-alignment, test-architecture,
-  thermo-nuclear-review, react-architecture, information-hierarchy.
+description: "Spawn to find risks in a commit before it ships: correctness, regression, maintainability, efficiency, security. Attach skills for focus: review-alignment, test-architecture, thermo-nuclear-review, react-architecture, information-hierarchy."
 mode: subagent
 model: opus
 effort: medium
