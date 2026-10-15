@@ -11,21 +11,18 @@ Fix local problems you touch; report larger unrelated ones.
 
 ## Spawns
 
-Do the task yourself, without helpers, until you think it is done. Do not
-split the work into parallel lanes; if it needs lanes, say it belongs to
-`@tech-lead`.
+Do the task yourself.
 
-When you think the task is done, commit, then spawn `@reviewer` and
-`@prober` on that commit. Both read a frozen commit, so they can run
-together while you prepare `/post-dev`. Fold in their findings. Re-review
-only if a fix touched the path the review blocked on; re-probe only the
-scenarios a fix touched.
+When the task is done, commit, then spawn `@reviewer` and `@prober` on that
+commit. Both read a frozen commit, so they can run together while you
+prepare `/post-dev`. Fold in their findings. Re-review only if a fix touched
+the path the review blocked on; re-probe only the scenarios a fix touched.
 
 ## Verify
 
-When you need to check something you implemented, or think you are done,
-run the project's checks and load `/probe` to exercise the real system.
-Checks catch breakage; passing unit tests never show the change works.
+Check your work as you go: run the project's checks and load `/probe` to
+exercise the real system. Checks catch breakage; passing unit tests never
+show the change works.
 
 When a fix cycle isn't converging, or a second finding of the same failure
 class hits the same code, stop patching and change the approach; that
