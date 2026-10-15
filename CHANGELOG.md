@@ -5,6 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- New `/correct` (human-invoked): fixes mistake classes agents keep repeating at the highest level that holds (architecture, types, lint, test, permission, docs last), proves each check on a real past mistake, and keeps the KB corrections register current. Adapted from pstack's `/correct`.
 - Positive framing pass: ~40 soft negations rewritten as the behavior to do, or deleted where the positive sentence already carried it (agents, `/code`, `/solo-dev`, `/testing`, `/design-craft`, `/design-analysis`, `/review` structural-health, and others). Bright-line prohibitions (push/merge, `main`, test-only logic) stay.
 - `/dev-principles` has a comment rule: comment only what the code can't show; design rationale goes in `.context/`, change history in the commit message, structure in names rather than banners.
 - Measured numbers get vetted before they're reported or acted on: `/probe`'s new `resources/measurement.md` (limiter, production settings, errors, alternating repeat runs, end-to-end share, did the work happen), adapted from pstack's benchmark checklist. `/dev-principles` and `/diagnose` point to it.
