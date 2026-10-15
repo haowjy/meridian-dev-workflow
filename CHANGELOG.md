@@ -5,6 +5,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- Measured numbers get vetted before they're reported or acted on: `/probe`'s new `resources/measurement.md` (limiter, production settings, errors, alternating repeat runs, end-to-end share, did the work happen), adapted from pstack's benchmark checklist. `/dev-principles` and `/diagnose` point to it.
+- Reviews run on a model family other than the one that wrote the work (`/agent-staffing`, `/solo-dev`, `@design-lead`).
 - `/ui-implementation` carries the production-UI method for any implementer: read the design first, build every state, check rendering in a browser. `@frontend-coder` loads it and defaults to Sonnet, separate from `@coder`'s Luna.
 - `@reviewer` and `@tech-lead` keep Grok as an explicit option but never fall back to it.
 - `@tech-lead` is the default primary (README install). It owns technical decisions, runs an agent team through long-running work, keeps several tasks moving as separate work items, and makes small fixes itself with `/code`. Effort xhigh → high.

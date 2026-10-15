@@ -15,8 +15,9 @@ writing, or data-use requirements.
 ## Parallel Work and Review
 
 Use parallel lanes for independent tasks. Use cross-model fan-out when the
-decision needs independent model perspectives. Reviews need a fresh context,
-not necessarily a different model.
+decision needs independent model perspectives. Run reviews in a fresh context, on a
+model family other than the one that wrote the work. Findings two model
+families raise independently are the strongest signal.
 
 ## Agent Catalogs
 

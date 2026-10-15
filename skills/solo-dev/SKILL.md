@@ -14,7 +14,7 @@ Fix local problems you touch; report larger unrelated ones.
 Do the task yourself. Run `/pre-dev` before your first source edit.
 
 Finish the task and commit it. Then spawn `@reviewer` and `@prober` on that
-commit. They run together on the same dev stack while you prepare
+commit, with the reviewer on a model family other than yours. They run together on the same dev stack while you prepare
 `/post-dev`; tell each to use its own test data (accounts, records,
 fixtures) and not to reset or restart shared services. Fix their findings. When the fixes restructured code or changed
 behavior, commit and run both again on the new commit; check smaller fixes
