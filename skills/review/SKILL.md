@@ -40,12 +40,18 @@ coverage and drift checking, load `/review-alignment`.
 Attached skills deepen a lane: `/thermo-nuclear-review`,
 `/test-architecture`, `/react-architecture`.
 
-## The Quality Bar
+## Maintainability
 
-Judge quality as ease of change. The objective test is entanglement: are
-concerns braided together that could be independent? A quality finding
-points at the interleaving, and the fix direction is the disentangling
-move. `/architecture` carries the full test.
+Judge quality as ease of change: how few concepts a reader must hold to
+change the code safely. Check both on every review:
+
+- **Entanglement.** Concerns braided together that could be independent. The
+  finding points at the interleaving; the fix direction is the disentangling
+  move. `/architecture` carries the full test.
+- **Deletion.** LLM-written code keeps what it should delete. Name what the
+  change could delete or simplify: dead paths, a mechanism it duplicates
+  instead of replacing, wrappers, branches a simpler model would remove. A
+  new path beside an old one it should replace is a finding.
 
 Unfamiliar is not a finding. "I'd have written it differently" is relative
 to the reviewer; entanglement is in the code.

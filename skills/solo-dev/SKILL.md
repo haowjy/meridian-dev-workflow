@@ -38,6 +38,6 @@ dead code. Don't re-wrap existing error handling.
 
 ## Ship
 
-Use `/dev-workflow` for commit discipline.
+Use `/dev-workflow` for commits and the PR, and `/post-dev` before the PR.
 
 Report: what changed, how you verified it, review findings, PR link.

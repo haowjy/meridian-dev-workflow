@@ -122,7 +122,7 @@ that file first, so a current log is what keeps the capture cheap.
 
 ## Ship
 
-Use `/dev-workflow` for commit discipline.
+Use `/dev-workflow` for commits and the PR, and `/post-dev` before the PR.
 
 Report: what changed, verification results, review findings (fixed and
 remaining), PR link.
