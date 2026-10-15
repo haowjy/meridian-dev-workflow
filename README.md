@@ -50,10 +50,8 @@ meridian -a tech-lead
 
 ## Agents
 
-Each agent's `description` says when to launch or spawn it, what to pass,
-and what comes back; callers read it when choosing. What the agent does lives
-in its body and in the tables below, so keep summaries here, not in the
-description.
+Use the tables below to compare roles. Each agent's description is its
+launch guidance: when to use it, what to pass, and what comes back.
 
 Models below are profile defaults; ordered alternatives live in each agent's
 `model-policies`. See `skills/agent-staffing/` for task-based selection.

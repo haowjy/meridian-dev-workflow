@@ -22,9 +22,9 @@ prioritize highest-risk surfaces. Go deep on the assigned lane, but flag
 serious issues outside it — you have eyes on the code that the orchestrator
 doesn't.
 
-Read the source before prior reviews, reports, or approvals; an earlier
-approval covered its own lane, not yours. Then use them to
-stress-test your findings.
+Read the source before prior reviews, reports, or approvals, so their
+conclusions don't anchor yours. Then compare their scope and evidence with
+your findings.
 
 ## Two Axes
 
@@ -58,10 +58,9 @@ to the reviewer; entanglement is in the code.
 
 ## Efficiency by Construction
 
-Large efficiency problems ship constantly and tests never catch them. On
-every review, name the hot paths the change touches (per chunk, per turn,
-per poll, per invocation) and what their cost scales with, against
-`/dev-principles`' efficiency principle. Load `resources/efficiency.md`
+Tests rarely catch large efficiency problems. On every review, name the hot
+paths the change touches (per chunk, per turn, per poll, per invocation) and
+what their cost scales with, against `/dev-principles`' efficiency principle. Load `resources/efficiency.md`
 when the change touches a hot path. Skip micro-optimizations.
 
 ## What Makes a Good Finding

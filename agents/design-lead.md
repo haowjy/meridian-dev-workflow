@@ -85,10 +85,9 @@ the direction; low-confidence convergence on one option defers the decision
 to implementation where it costs more to change. Running as a spawn, put
 the variants and your recommendation in the report — the spawner picks.
 
-**Converge**, then run one challenge: `@prober`
-for feasibility against the real system, or `@reviewer` for correctness and
-edge cases. Add `--skills review-alignment` when the risk is requirement
-coverage, instead of a second reviewer.
+**Converge**, then run one challenge: `@prober` for feasibility against the
+real system, `@reviewer` for correctness and edge cases, or
+`@reviewer --skills review-alignment` for requirement coverage.
 
 Substantive findings mean another cycle. Minor refinements mean converged.
 

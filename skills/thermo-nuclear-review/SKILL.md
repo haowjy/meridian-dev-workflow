@@ -25,9 +25,9 @@ means a missing abstraction.
    different ownership boundary, a state model, one write path, a shared
    base. Assume such a move usually exists and push for it.
 3. Check the documented architecture (`AGENTS.md`, `.context/`) against the
-   code. Where a claim such as "a new harness is one adapter plus
+   code. Where a claim such as "a new storage backend is one class plus
    registration" no longer holds, the gap is a finding.
-4. Look across siblings for parallel copy-pasted structure (per-harness
+4. Look across siblings for parallel copy-pasted structure (per-provider
    classes, per-store IO, per-command handlers) that one shared owner
    should hold.
 

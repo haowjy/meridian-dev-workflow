@@ -1,7 +1,7 @@
 ---
 name: testing
 type: principle
-description: "Load when deciding whether and how to test a change: a test earns its place by protecting a durable risk, so most changes need fewer tests than the default."
+description: "Load when deciding whether and how to test a change: match tests to durable risks, and skip tests that add maintenance without protecting anything."
 model-invocable: true
 ---
 

@@ -9,7 +9,7 @@ verification kind.
 | Verification kind | Spawn | When |
 |-------------------|-------|------|
 | Quick manual smoke | `@prober` | CLI, process, non-UI behavior checks |
-| Structured manual QA | `@prober` (its `/probe` covers charters) | Convergence: regression + acceptance charters |
+| Structured manual QA | `@prober` | Verify affected existing behavior and new requirements; pass scenarios and expected outcomes |
 | Frontend / UI | `@prober --skills agent-browser` | Rendering, flows, console errors in a real browser |
 | Feasibility spike | `@prober --skills poc` | Can we do X? Throwaway code, verdict, delete |
 | Heavy / destructive env | `@prober` | Temp repos, clean-baseline comparisons |

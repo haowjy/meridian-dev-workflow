@@ -5,33 +5,25 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
-- Skill descriptions say when and why to load, not what the skill contains (20 skills). `agent-browser`'s pointer to specialized skills moves into its body.
-- Agent descriptions say when to launch or spawn, what to pass, and what comes back; the README carries what each agent does. README installs `@tech-lead` as the default primary.
-- `@tech-lead` owns technical decisions (approach, structure, tradeoffs, what to cut), records resume state before switching tasks, edits with `/code`, and can run commands for its own fixes.
-- `/parallel-execution`: the last phase's review covers the whole change with `thermo-nuclear-review`; the full suite runs once on the final merged change; each lane's worktree builds its own generated artifacts.
-- `/solo-dev`: reviewer and prober share one dev stack, each with its own test data, never resetting shared services. `@coder`/`@frontend-coder` add a changelog entry with each commit. `/diagnose` is model-invocable, so `@prober` can load it. Repeated same-class findings mean find the shared cause, not assume split ownership.
-- `@investigator` stops at the root cause unless the brief assigns the fix. `@ux-lead` retries a helper that ran out of depth on Opus. `/pre-dev` checks a reused worktree belongs to the work item. `/post-dev` checks the final commit's review passed.
-- `@tech-lead` is a technical lead, not only a lane planner: makes technical decisions, runs an agent team through long-running work, juggles several tasks as separate work items, and makes small fixes itself.
-- Fewer reviews: one `@reviewer` pass on the merged result, not one per lane, commit, or fix pass; `/solo-dev` runs another round only when fixes restructured code or changed behavior. `/parallel-execution` drops pipeline review; `@design-lead` challenges with one reviewer. `reviewers.md` keeps the picker and findings handling; when to review lives in `/parallel-execution` and `/solo-dev`.
-- `/review`: new Maintainability section checks entanglement and what the change could delete or simplify on every review; names the commit and base reviewed, reads source before prior approvals, and checks hot paths for efficiency on every review. New `resources/efficiency.md`: write amplification, polling with expensive probes, scans that grow with history, eager startup, contention. `/dev-principles` gains the matching principle for code writers.
-- `/dev-principles`: before adding a branch, flag, or mode for a new case, look for the model that needs no special case; when new code replaces old behavior, delete the old path instead of keeping it as a fallback.
-- `/thermo-nuclear-review` rewritten (keeps the "code judo" framing), 193 → ~70 lines, from the instructions leads kept adding: review the surrounding system, find the model that deletes groups of edge cases, check documented architecture against code, find copy-pasted sibling structure, verdict on structure. One blocker list replaces five restated lists.
-- `@reviewer`: settles findings by probing the real system, not the test suite.
-- `/dev-workflow` description names pushing, the PR, and post-merge cleanup.
-- `/pre-dev` description covers a directly launched lead (before the first source edit), not only handoffs. `pre-dev` is available to `@tech-lead`, `@gpt-dev`, and `@ux-lead`.
-- New `/solo-dev` for a primary that implements and verifies in one session: does the task itself, then `@reviewer` and `@prober` on the final commit. `@gpt-dev` reduces to it.
-- `@ux-lead`: same shape plus UI specifics. Does incremental changes and most refactors itself; `@frontend-coder`/`@coder` only for a big frontend refactor; parallel `@mockup-dev` variants for comparing directions; checks rendering with `/agent-browser`. `/ui-implementation` and `/uxdev` match.
-- `@product-lead`: product direction only. Gathers evidence, writes requirements and decisions, proposes `/handoff` once direction settles. No longer spawns builders, design leads, or `@kb-lead`.
-- `@design-lead`: builds a browsable artifact only when asked, and builds it itself with `/structured-artifact`, `/design-craft`, `/anti-slop`.
-- `/probe`: anything abnormal is reported as a likely UX bug; visual results get screenshots, looked at before reporting and saved in the work dir.
-- `/code`: focused checks on what changed; the full suite runs at the merge or ship gate (76% of coder briefs had demanded it per lane). `@coder`/`@frontend-coder` commit on their branch and never push or merge.
-- `/parallel-execution`: focused checks per branch; after merge, the full suite once plus a real-system probe. `/pre-dev` builds generated artifacts once per worktree.
-- Knowledge capture runs once per change from `/post-dev`, reading the decision file and `DIVERGENCE/` first. `@tech-lead` keeps the decision file current instead of spawning `@kb-lead` per phase.
-- Stop patching on the second same-class finding on a seam (`@tech-lead`, `/solo-dev`).
-- Escalation: a failed coder fix gets one retry on Opus with the failed report (Sol if Opus is unavailable), per `agent-staffing/resources/model-selection.md`. A spawn that fails before doing work gets its cause fixed or its model changed, never the same brief resent.
-- `/parallel-execution`: one review per phase, before the next phase builds on it; review again only when fixes restructured code or changed behavior. Each change to shared code gets one owner.
-- Instructions stated flat: hedged conditions cut across leads and skills (decline-handoff fallback, mid-work `@kb-lead`, task-dir notes the harness gives, `@tech-lead` routing list).
-- `/source-study`: one or two explorers per source. `@tech-lead` effort xhigh → high.
+- `@tech-lead` is the default primary (README install). It owns technical decisions, runs an agent team through long-running work, keeps several tasks moving as separate work items, and makes small fixes itself with `/code`. Effort xhigh → high.
+- `@product-lead` settles product direction only: evidence, requirements, decisions, then a `/handoff` to the lead you launch. It no longer spawns builders, design leads, or `@kb-lead`.
+- New `/solo-dev`: a lead implements and verifies in one session, then runs `@reviewer` and `@prober` on the finished commit, and again only when fixes restructured code or changed behavior. `@gpt-dev` reduces to it.
+- `@ux-lead` loads `/solo-dev` plus UI specifics: incremental changes and most refactors itself, two or three parallel `@mockup-dev` variants to compare directions, `@frontend-coder`/`@coder` only for a big frontend refactor. `/ui-implementation` and `/uxdev` match.
+- `@design-lead` runs one challenge after converging, and builds a browsable artifact itself, only when asked.
+- Fewer reviews: `/parallel-execution` reviews once per phase, never per branch, and finishes each phase's review before the next phase builds on it. The last phase's review covers the whole change with `thermo-nuclear-review`.
+- `/review` checks maintainability (entanglement, what the change could delete) and hot-path efficiency on every review, with new `resources/efficiency.md`. It reads source before prior approvals and names the commit and base reviewed.
+- `/thermo-nuclear-review` rewritten, 193 → ~70 lines: finds the code-judo move that deletes groups of edge cases, checks documented architecture against code, finds copy-pasted siblings, one blocker list.
+- `@reviewer` settles behavioral findings on the real system with `/probe`, not the test suite.
+- `/dev-principles`: look for the model with no special case before adding a branch or flag; delete the replaced path instead of keeping it as a fallback; efficiency by construction.
+- `/probe` screenshots visual results, looks at them before reporting, and reports anything abnormal as a likely UX bug.
+- Focused checks per change; the full suite runs once at the merge or ship gate (`/code`, `/solo-dev`, `/parallel-execution`). Reviewer and prober share one dev stack, each with its own test data.
+- Escalation: a worker that ran out of depth retries once on Opus with its report (`agent-staffing/resources/model-selection.md`); a bad brief gets a better brief. A second same-class finding on one seam stops patching. A spawn that fails before doing work gets its cause fixed or its model changed.
+- `@investigator` stops at the root cause unless the brief assigns the fix.
+- Knowledge capture runs once per change from `/post-dev`, reading the decision file and `DIVERGENCE/` first.
+- `/pre-dev` also runs before a lead's first source edit, checks a reused worktree belongs to the work item, and builds generated artifacts per worktree. `/post-dev` checks the final commit's review passed.
+- `@coder`/`@frontend-coder` commit on their branch with a changelog entry and never push or merge.
+- `/parallel-execution` gives each change to shared code one owner. `/source-study` runs one or two explorers per source. `/diagnose` is model-invocable.
+- Agent and skill descriptions say when and why to use them; the README tables say what each agent does.
 
 ## [0.13.13] - 2026-10-01
 
