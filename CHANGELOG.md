@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/probe`: share the host. Reuse the stack and browser serving the task dir; name what you create with your spawn id; stop and delete it before reporting, keeping cited evidence; keep raw captures out of the work dir. `@prober` description: callers remove a failed run's leftovers by its id. `/post-dev`: stop dev stacks, browsers, scratch worktrees, and temp dirs before the PR.
+
 ## [0.14.0] - 2026-10-15
 
 ### Changed

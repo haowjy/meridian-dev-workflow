@@ -55,6 +55,9 @@ merge section applies once the PR lands.
 
 ### Cleanup
 - No stale files, dead code, or debug artifacts left behind
+- Dev stacks, browsers, scratch worktrees, and temp dirs that you or your
+  spawns started are stopped and deleted; restart a stack when a fix cycle
+  needs it. Keep one running only when the human asked to use it.
 - Scaffolding tests deleted: tests written to understand behavior that no
   longer protect a live risk (see `/testing`)
 

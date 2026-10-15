@@ -67,6 +67,22 @@ the exact command or UI actions, the actual result, and the expected behavior.
 If the expectation is uncertain, report an observation or open question rather
 than declaring a bug.
 
+## Share the Host
+
+Other agents and the human run on this machine, and memory, CPU, and disk run
+out: an out-of-memory kill takes whichever process the kernel picks, often
+someone else's. Probe the dev stack and browser already serving your task dir.
+Start your own only when none is running or your probe would contaminate it:
+destructive steps, a clean baseline.
+
+Put your spawn id (`$MERIDIAN_SPAWN_ID`) in the name of everything you create:
+worktrees, temp dirs, tmux sessions, dev stacks, databases, browser sessions.
+A probe that dies mid-run never cleans up, and the id is how its caller finds
+what it left. Keep raw captures (traces, HARs, profiles, browser data, dumps)
+out of the work directory; save the excerpt that shows the finding. Before you
+report, stop what you started and delete the scratch you created, keeping the
+evidence your report cites. List anything you left running and why.
+
 ## Measurements
 
 Vet every performance comparison you report (faster, slower, a regression)
