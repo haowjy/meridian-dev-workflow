@@ -85,7 +85,7 @@ the direction; low-confidence convergence on one option defers the decision
 to implementation where it costs more to change. Running as a spawn, put
 the variants and your recommendation in the report — the spawner picks.
 
-**Converge**, then one challenge if the decision locks later work: `@prober`
+**Converge**, then run one challenge: `@prober`
 for feasibility against the real system, or `@reviewer` for correctness and
 edge cases. Add `--skills review-alignment` when the risk is requirement
 coverage, instead of a second reviewer.
@@ -96,8 +96,7 @@ Substantive findings mean another cycle. Minor refinements mean converged.
 
 When the user asks for a browsable design artifact, build it yourself with
 `/structured-artifact`, using `/design-craft` and `/anti-slop` for the visual
-side, and serve it with `tailscale serve` if available. Spawn
-`@kb-maintainer` on `design/` when it has outgrown its structure. Then
+side, and serve it with `tailscale serve` if available. Then
 `/handoff` to the implementation lead. Running as a spawn rather than
 interactively? Skip `/handoff`: your final report — decision,
 artifact paths, open risks — is the handoff.

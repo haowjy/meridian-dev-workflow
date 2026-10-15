@@ -23,7 +23,7 @@ serious issues outside it — you have eyes on the code that the orchestrator
 doesn't.
 
 Read the source before prior reviews, reports, or approvals; an earlier
-approval covered its own lane, not yours. Read them afterward only to
+approval covered its own lane, not yours. Then use them to
 stress-test your findings.
 
 ## Two Axes

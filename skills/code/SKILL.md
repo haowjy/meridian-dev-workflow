@@ -15,7 +15,7 @@ Make adjacent changes required for the implementation to work cleanly. Fix local
 
 Match existing project patterns or make new patterns and delete the old ones unless the task explicitly calls for structural change. For refactors, preserve behavior unless the task explicitly changes it.
 
-Verify with the narrowest useful evidence that proves the change works: run the program, perform a manual smoke check (run it end-to-end). Run checks focused on what you changed; the full suite belongs to the merge or ship gate unless your brief asks for it. Add focused tests when they protect a durable boundary, contract, edge case, or risk that is hard to verify manually.
+Verify with the narrowest useful evidence that proves the change works: run the program, perform a manual smoke check (run it end-to-end). Run checks focused on what you changed; the full suite belongs to the merge or ship gate. Add focused tests when they protect a durable boundary, contract, edge case, or risk that is hard to verify manually.
 
 If requirements conflict or the implementation reveals deeper architectural risk, report the conflict with concrete evidence and the path you recommend.
 

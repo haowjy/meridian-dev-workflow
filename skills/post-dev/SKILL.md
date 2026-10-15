@@ -47,8 +47,6 @@ merge section applies once the PR lands.
 - Pass the conversation, changed files, and work directory. Point it at the
   decision file and any `DIVERGENCE/` logs first; they are the cheapest
   record of what was decided and why.
-- If an earlier capture ran mid-work, scope this one to paths that changed
-  since.
 - Colocated guidance needs an update only when it — or the absence of needed
   guidance — would cause a cold agent to make a wrong decision. A changed path
   or missing `.context/` file is not itself a gap.

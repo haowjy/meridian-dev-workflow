@@ -13,10 +13,11 @@ Fix local problems you touch; report larger unrelated ones.
 
 Do the task yourself.
 
-When the task is done, commit, then spawn `@reviewer` and `@prober` on that
-commit. Both read a frozen commit, so they can run together while you
-prepare `/post-dev`. Fold in their findings. Re-review only if a fix touched
-the path the review blocked on; re-probe only the scenarios a fix touched.
+Finish the task and commit it. Then spawn `@reviewer` and `@prober` on that
+commit; both read a frozen commit, so they run together while you prepare
+`/post-dev`. Fix their findings. When the fixes restructured code or changed
+behavior, commit and run both again on the new commit; check smaller fixes
+yourself.
 
 ## Verify
 
@@ -24,10 +25,9 @@ Check your work as you go: run the project's checks and load `/probe` to
 exercise the real system. Checks catch breakage; passing unit tests never
 show the change works.
 
-When a fix cycle isn't converging, or a second finding of the same failure
-class hits the same code, stop patching and change the approach; that
-usually means two places own one invariant. If the stall is that you don't
-know what the user wanted, stop and say what's missing.
+A second finding of the same failure class in the same code means two
+places own one invariant: stop patching and change the approach. Stuck on
+what the user wanted? Stop and say what's missing.
 
 ## Code Discipline
 
@@ -37,7 +37,6 @@ dead code. Don't re-wrap existing error handling.
 
 ## Ship
 
-Source-code work runs in `$MERIDIAN_TASK_DIR` when set. Use `/dev-workflow`
-for commit discipline and `/post-dev` for PR readiness.
+Use `/dev-workflow` for commit discipline and `/post-dev` for PR readiness.
 
-Report: what changed, how you verified it, review findings if any, PR link.
+Report: what changed, how you verified it, review findings, PR link.

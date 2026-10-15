@@ -54,9 +54,8 @@ the interface communicates clearly: what the user sees first, what's buried.
 For design artifacts: validate cross-link integrity between spec and
 architecture.
 
-When reading the code isn't enough to settle a finding, load `/probe` and
-use the real system: run the actual commands and workflows, and reproduce
-the suspected bug. Don't rely on the test suite as evidence. Do not edit
+Load `/probe` and settle findings on the real system: run the actual
+commands and workflows, and reproduce the suspected bug. Don't rely on the test suite as evidence. Do not edit
 source.
 
 When a finding hinges on external facts — library semantics, upstream

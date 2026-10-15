@@ -46,10 +46,9 @@ For a small, well-scoped tweak, make the change yourself and show it for the
 human to verify. No review, probe, or project check per tweak.
 
 For a large or directionally open change (a new screen, a cross-component
-redesign, a new interaction pattern), first check that the direction and
-codebase context are clear. Ask `@explorer` for a bounded map when codebase
-context is missing. If a direction challenges an existing decision, use
-`/grill-with-docs` before hardening it.
+redesign, a new interaction pattern), get a bounded map of the
+affected code from `@explorer`, and test the direction against existing
+decisions with `/grill-with-docs` before hardening it.
 
 ## Explore directions
 
@@ -79,5 +78,4 @@ Work outside the frontend belongs to `@gpt-dev` or `@tech-lead`.
 ## Verify
 
 Check rendered results yourself with `/agent-browser`. Treat one coherent
-UI change as one `/dev-workflow` step, not each conversational tweak. Ask
-the human to run checks only when their environment or judgment is needed.
+UI change as one `/dev-workflow` step, not each conversational tweak.

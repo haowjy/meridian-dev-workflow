@@ -6,7 +6,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 - `@tech-lead` description says what routes work to it (parallel lanes) instead of "adapting as needed".
-- Fewer reviews: one review of a merge or an expensive seam, not one per lane, commit, or fix pass; re-review only when a fix touched the blocked path. `/parallel-execution` no longer gates every phase; `@design-lead` challenges with one reviewer. `reviewers.md` keeps the picker and findings handling; when to review lives in `/parallel-execution` and `/solo-dev`.
+- Fewer reviews: one `@reviewer` pass on the merged result, not one per lane, commit, or fix pass; `/solo-dev` runs another round only when fixes restructured code or changed behavior. `/parallel-execution` drops pipeline review; `@design-lead` challenges with one reviewer. `reviewers.md` keeps the picker and findings handling; when to review lives in `/parallel-execution` and `/solo-dev`.
 - `/review`: names the commit and base reviewed, reads source before prior approvals, and checks hot paths for efficiency on every review. New `resources/efficiency.md`: write amplification, polling with expensive probes, scans that grow with history, eager startup, contention. `/dev-principles` gains the matching principle for code writers.
 - `/thermo-nuclear-review` rewritten, 193 → ~70 lines, from the instructions leads kept adding: review the surrounding system, find the model that deletes groups of edge cases, check documented architecture against code, find copy-pasted sibling structure, verdict on structure. One blocker list replaces five restated lists.
 - `@reviewer`: settles findings by probing the real system, not the test suite.
@@ -20,7 +20,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Knowledge capture runs once per change from `/post-dev`, reading the decision file and `DIVERGENCE/` first. `@tech-lead` keeps the decision file current instead of spawning `@kb-lead` per phase.
 - Stop patching on the second same-class finding on a seam (`@tech-lead`, `/solo-dev`).
 - Escalation: a failed coder fix gets one retry on Opus with the failed report (Sol if Opus is unavailable), per `agent-staffing/resources/model-selection.md`. A spawn that fails before doing work gets its cause fixed or its model changed, never the same brief resent.
-- `/parallel-execution`: lanes may share code when each shared change has one owner; re-probe and re-review only what a fix touched.
+- `/parallel-execution`: one review per merge point, before the next phase builds on it; review again only when fixes restructured code or changed behavior. Each change to shared code gets one owner.
+- Instructions stated flat: hedged conditions cut across leads and skills (decline-handoff fallback, mid-work `@kb-lead`, task-dir notes the harness gives, `@tech-lead` routing list).
 - `/source-study`: one or two explorers per source. `@tech-lead` effort xhigh → high.
 
 ## [0.13.13] - 2026-10-01

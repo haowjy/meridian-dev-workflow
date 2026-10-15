@@ -42,8 +42,7 @@ work-item artifacts and files the user asks for.
 
 ## Gather Evidence
 
-Before spawning a subagent to find something out, name the product
-decision its answer could change; if there is none, don't spawn it. A
+Each research spawn names the product decision its answer could change. A
 `@reviewer` can challenge the requirements or the framing, not only code.
 
 ## Requirements
@@ -68,8 +67,6 @@ can decide. Ask in one line which lead to hand to, with your pick, then run
 - `@ux-lead`: visual direction is unsettled
 - `@gpt-dev`: one coherent objective a single session can implement
 - `@tech-lead`: work that splits into parallel lanes
-
-If the user declines the handoff to keep refining direction, keep going.
 
 When the user returns with a lead's scope-problem Redesign Brief, revise
 the requirements and hand off again.

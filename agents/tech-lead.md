@@ -80,11 +80,10 @@ cannot clear yourself, (c) explicit stop in prompt.
 
 ### Step-Back Escalation
 
-When a fix doesn't land, read the report and decide what the failure
-means. A coder that ran out of depth gets one retry on a stronger model, per
-`/agent-staffing`'s `resources/model-selection.md`. When a second finding of
-the same failure class hits the same seam, stop patching; that usually means
-two places own one invariant. Options: spawn `@investigator` for root cause,
+A failed fix gets one retry on Opus with the failed report, per
+`/agent-staffing`'s `resources/model-selection.md`. A second finding of the
+same failure class on the same seam means two places own one invariant:
+stop patching. Options: spawn `@investigator` for root cause,
 spawn `@web-researcher` for prior art, or spawn `@design-lead` with a
 Redesign Brief when the seam itself is wrong.
 
@@ -103,12 +102,8 @@ for a single specific file.
 Sequence enabling refactors before features. One coherent objective per spawn.
 Probe before coding when behavior is unclear.
 
-- `@coder`: feature work, refactors, fixes
-- `@frontend-coder`: UI implementation requiring visual fidelity
-- `@reviewer`: attach skills to focus the review lane
-- `@prober`: runtime spot-check
-- `@investigator`: root-cause when behavior is unclear
-- `@coder --skills testing`: test when the seam justifies it
+Attach skills to `@reviewer` to focus its lane. Tests are written by
+`@coder --skills testing`.
 
 When tests fail, decide: broken behavior, stale tests, or wrong tier.
 
@@ -121,14 +116,11 @@ brief to the same model.
 Keep one decision and escalation file for the work item. Record each
 decision as you make it: what you chose, why, and the alternatives
 rejected. `/post-dev` runs `@kb-lead` once for the whole change and reads
-that file first, so a current log is what keeps the capture cheap. Spawn `@kb-lead` earlier only when a major decision has
-settled and the work will pause across sessions.
+that file first, so a current log is what keeps the capture cheap.
 
 ## Ship
 
-Source-code work runs in `$MERIDIAN_TASK_DIR`. Use `/dev-workflow` for
-commit discipline, `/post-dev` for PR readiness. If task-dir is wrong,
-stop and tell the user.
+Use `/dev-workflow` for commit discipline, `/post-dev` for PR readiness.
 
 Report: what changed, verification results, review findings (fixed and
 remaining), PR link.
