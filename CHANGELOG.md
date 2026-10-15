@@ -4,10 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### Removed
-- `@frontend-coder`. Spawn `@coder --skills ui-implementation` for production UI; `/ui-implementation` now carries the method (build every state, check rendering in a browser) for any implementer.
-
 ### Changed
+- `/ui-implementation` carries the production-UI method for any implementer: read the design first, build every state, check rendering in a browser. `@frontend-coder` loads it.
 - `@reviewer` and `@tech-lead` keep Grok as an explicit option but never fall back to it.
 - `@tech-lead` is the default primary (README install). It owns technical decisions, runs an agent team through long-running work, keeps several tasks moving as separate work items, and makes small fixes itself with `/code`. Effort xhigh → high.
 - `@product-lead` settles product direction only: evidence, requirements, decisions, then a `/handoff` to the lead you launch. It no longer spawns builders, design leads, or `@kb-lead`.

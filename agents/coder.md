@@ -1,6 +1,6 @@
 ---
 name: coder
-description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. For production UI, attach ui-implementation and pass the mockups or screenshots."
+description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations."
 mode: subagent
 model: luna
 effort: max

@@ -4,7 +4,7 @@ description: "Launch for UI work whose visual direction is decided with you as y
 mode: primary
 model: opus
 effort: high
-subagents: [mockup-dev, browser, imagegen, coder, explorer, web-researcher, reviewer, prober, kb-lead, subagent]
+subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, kb-lead, subagent]
 skills:
   load: [solo-dev, uxdev, design-craft, anti-slop, dev-principles, work-artifacts, qi-maintenance]
   available: [pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, session-mining, grill-with-docs, intent-modeling, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
@@ -68,9 +68,9 @@ implement the durable UI change with `/ui-implementation`.
 Do incremental changes and most refactors yourself. That keeps your visual
 judgment in the loop and costs less than briefing a helper and checking
 its work. Spawn helpers only for a big frontend refactor: one that spans
-many components or would fill your context for a long stretch. Spawn
-`@coder`, attaching `/ui-implementation` for visual work. Give each a
-bounded brief, run them in parallel
+many components or would fill your context for a long stretch. Use
+`@frontend-coder` where visual fidelity matters and `@coder` for state,
+routing, and data flow. Give each a bounded brief, run them in parallel
 only on areas that don't touch, and check the result yourself. A helper that
 ran out of depth gets one retry on Opus with its report.
 

@@ -4,7 +4,7 @@
 
 @coder: full-stack implementation. Give one coherent objective, relevant design and source files, constraints, acceptance criteria, and verification requirements. The coder owns local restructuring, cleanup, and verification. Split by independent objectives or ownership, not file count. Parallelize disjoint work; sequence overlapping or dependent changes.
 
-For production UI where design fidelity matters, spawn `@coder --skills ui-implementation` and pass mockups or screenshots and the target viewports.
+@frontend-coder: production UI work where design fidelity matters, not merely work in a frontend file. Use the same objective boundaries as @coder; pass mockups or screenshots when available.
 
 @mockup-dev: disposable visual prototypes for comparing directions before production. Hardcoded data and temporary routes are acceptable; @ux-lead decides what to keep, adapt, or delete.
 

@@ -64,8 +64,8 @@ Every implementation lead runs the same lifecycle:
    before-state evidence while it still exists.
 2. **Implement.** tech-lead plans any task that needs more than one spawn as a
    DAG with `/parallel-execution`, using a worktree per parallel lane and one
-   owner for each change to shared code. It delegates to `coder`.
-   gpt-dev and ux-lead implement the change themselves.
+   owner for each change to shared code. It delegates to `coder` and
+   `frontend-coder`. gpt-dev and ux-lead implement the change themselves.
    Each commit carries a `CHANGELOG.md` entry.
 3. **Verify.** Leads run focused checks and `/probe` against the real system
    while working, and the full suite once on the finished change.
@@ -127,7 +127,8 @@ task.
 
 | Agent | Model | Role |
 |---|---|---|
-| `coder` | luna | Implements a scoped objective, commits with a changelog entry. Attach `ui-implementation` for production UI |
+| `coder` | luna | Implements a scoped objective, commits with a changelog entry |
+| `frontend-coder` | luna | Production UI with visual self-checks in a browser |
 | `mockup-dev` | luna | Throwaway frontend mockups for comparing directions |
 | `imagegen` | sol | Generated images: concepts, icons, reference imagery |
 
@@ -196,7 +197,7 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | Skill | What it covers |
 |---|---|
 | `uxdev` | Visual thinking grounded in the brief and the existing design language |
-| `ui-implementation` | Turning a settled direction into production UI: every state, checked in a browser |
+| `ui-implementation` | Turning a settled direction into production UI |
 | `design-craft` | Deliberate color, typography, layout, motion, interaction |
 | `anti-slop` | AI-generated UI tells to avoid |
 | `agent-browser` | Driving a live browser: snapshots, interaction, screenshots |
