@@ -25,6 +25,9 @@ git -C <repo> worktree add ../<repo>.worktrees/<slug> -b <branch>
 meridian work task-dir ../<repo>.worktrees/<slug>
 ```
 
+Then build any generated artifacts the project's checks need, once, so
+each lane doesn't rediscover the missing build.
+
 ### PR body draft
 Copy the repo's PR template into the work dir now, before any code changes
 land, if `pr-body-<slug>.md` doesn't already exist there — whether or not

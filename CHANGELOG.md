@@ -13,6 +13,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `@ux-lead`: same shape plus UI specifics. Does incremental changes and most refactors itself; `@frontend-coder`/`@coder` only for a big frontend refactor; parallel `@mockup-dev` variants for comparing directions; checks rendering with `/agent-browser`. `/ui-implementation` and `/uxdev` match.
 - `@product-lead`: product direction only. Gathers evidence, writes requirements and decisions, proposes `/handoff` once direction settles. No longer spawns builders, design leads, or `@kb-lead`.
 - `@design-lead`: builds a browsable artifact only when asked, and builds it itself with `/structured-artifact`, `/design-craft`, `/anti-slop`.
+- `/probe`: anything abnormal is reported as a likely UX bug; visual results get screenshots, looked at before reporting and saved in the work dir.
+- `/code`: focused checks on what changed; the full suite runs at the merge or ship gate (76% of coder briefs had demanded it per lane). `@coder`/`@frontend-coder` commit on their branch and never push or merge.
+- `/parallel-execution`: focused checks per branch; after merge, the full suite once plus a real-system probe. `/pre-dev` builds generated artifacts once per worktree.
 
 ## [0.13.13] - 2026-10-01
 

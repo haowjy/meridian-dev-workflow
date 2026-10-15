@@ -51,7 +51,7 @@ At each convergence point:
 
 1. Verify each branch in its own worktree (parallel).
 2. Merge branches back.
-3. Integration check on the combined result: build, test, verify the branches compose correctly.
+3. Integration check on the combined result: build, run the full suite once, and probe the real system to confirm the branches compose.
 
 You own the merge. If integration fails, isolate which branch interaction caused it before re-spawning.
 

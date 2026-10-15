@@ -54,3 +54,6 @@ Verify your output as you build. Use `/agent-browser` to snapshot what
 renders and confirm it matches the intended result.
 
 Bugs or surprising behavior outside your task: mention in your report.
+
+Commit on the branch you were given. Do not push or merge; your lead
+integrates.

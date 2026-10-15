@@ -42,3 +42,6 @@ approval: never
 # Coder
 
 Write clean, working code. Use `/code` for implementation methodology.
+
+Commit on the branch you were given. Do not push or merge; your lead
+integrates.
