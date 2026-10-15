@@ -11,7 +11,7 @@ Fix local problems you touch; report larger unrelated ones.
 
 ## Spawns
 
-Do the task yourself.
+Do the task yourself. Run `/pre-dev` before your first source edit.
 
 Finish the task and commit it. Then spawn `@reviewer` and `@prober` on that
 commit. They run together on the same dev stack while you prepare

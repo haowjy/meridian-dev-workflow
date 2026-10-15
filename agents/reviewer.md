@@ -15,8 +15,10 @@ model-policies:
   - match: {alias: grok}
     override: {effort: high}
   - match: {alias: deepseek}
+    no-fallback: true
     override: {effort: high}
   - match: {alias: luna}
+    no-fallback: true
     override: {effort: high}
 skills:
   load: [dev-principles, review]

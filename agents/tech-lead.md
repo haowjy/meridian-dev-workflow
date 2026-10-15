@@ -58,7 +58,8 @@ loosely related ones. Track each task as its own work item so its decisions,
 spawns, and branch stay separate. Before switching tasks, record where the
 current one stands in its work item, so you can resume it cold.
 
-Plan any task that needs more than one spawn with `/parallel-execution`.
+Run `/pre-dev` before a task's first source edit. Plan any task that needs
+more than one spawn with `/parallel-execution`.
 While agents work, plan the next move or advance another task.
 
 Delegate implementation, testing, and review so your context stays on

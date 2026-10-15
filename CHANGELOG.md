@@ -19,8 +19,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Focused checks per change; the full suite runs once at the merge or ship gate (`/code`, `/solo-dev`, `/parallel-execution`). Reviewer and prober share one dev stack, each with its own test data.
 - Escalation: a worker that ran out of depth retries once on Opus with its report (`agent-staffing/resources/model-selection.md`); a bad brief gets a better brief. A second same-class finding on one seam stops patching. A spawn that fails before doing work gets its cause fixed or its model changed.
 - `@investigator` stops at the root cause unless the brief assigns the fix.
+- `@reviewer` keeps DeepSeek and Luna as explicit options for low-risk checks but never falls back to them.
 - Knowledge capture runs once per change from `/post-dev`, reading the decision file and `DIVERGENCE/` first.
-- `/pre-dev` also runs before a lead's first source edit, checks a reused worktree belongs to the work item, and builds generated artifacts per worktree. `/post-dev` checks the final commit's review passed.
+- `@tech-lead` and `/solo-dev` run `/pre-dev` before the first source edit, so a directly launched lead still captures before-state evidence. `/pre-dev` checks a reused worktree belongs to the work item, and builds generated artifacts per worktree. `/post-dev` checks the final commit's review passed.
 - `@coder`/`@frontend-coder` commit on their branch with a changelog entry and never push or merge.
 - `/parallel-execution` gives each change to shared code one owner. `/source-study` runs one or two explorers per source. `/diagnose` is model-invocable.
 - Agent and skill descriptions say when and why to use them; the README tables say what each agent does.
