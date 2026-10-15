@@ -19,6 +19,8 @@ Decompose work into a dependency graph before spawning:
 
 Test each dependency: "could this start from the spec alone, or does it need actual code from the other branch?" If it needs actual code, it's sequential. Give each change to shared code one owner: land it first as an enabling step, or assign it to one lane and have the others build against its contract. Two lanes independently changing the same shared behavior merge cleanly and still break together; plan that out or run them in order.
 
+Run a wide mechanical change (a rename or signature change across many callers) as expand, migrate, contract: land the new form beside the old as the enabling step, migrate callers in batches as parallel lanes, and delete the old form as the last phase of the same change.
+
 Write the DAG into the work directory and execute from it.
 
 ## Adapt the Plan

@@ -5,6 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- `/parallel-execution` runs wide mechanical changes as expand, migrate, contract: new form beside the old, callers migrated in parallel batches, old form deleted as the last phase.
 - `/correct` moved to meridian-base; its code levels are a resource there.
 - Positive framing pass: ~40 soft negations rewritten as the behavior to do, or deleted where the positive sentence already carried it (agents, `/code`, `/solo-dev`, `/testing`, `/design-craft`, `/design-analysis`, `/review` structural-health, and others). Bright-line prohibitions (push/merge, `main`, test-only logic) stay.
 - `/dev-principles` has a comment rule: comment only what the code can't show; design rationale goes in `.context/`, change history in the commit message, structure in names rather than banners.
