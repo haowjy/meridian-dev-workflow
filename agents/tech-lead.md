@@ -80,8 +80,10 @@ cannot clear yourself, (c) explicit stop in prompt.
 
 ### Step-Back Escalation
 
-A failed fix gets one retry on Opus with the failed report, per
-`/agent-staffing`'s `resources/model-selection.md`. A second finding of the
+Read a failed fix's report first. A coder that ran out of depth gets one
+retry on Opus with that report, per `/agent-staffing`'s
+`resources/model-selection.md`; a fix that failed on a bad brief gets a
+better brief. A second finding of the
 same failure class on the same seam means two places own one invariant:
 stop patching. Options: spawn `@investigator` for root cause,
 spawn `@web-researcher` for prior art, or spawn `@design-lead` with a

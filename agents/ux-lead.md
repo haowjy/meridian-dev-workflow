@@ -46,9 +46,9 @@ For a small, well-scoped tweak, make the change yourself and show it for the
 human to verify. No review, probe, or project check per tweak.
 
 For a large or directionally open change (a new screen, a cross-component
-redesign, a new interaction pattern), get a bounded map of the
-affected code from `@explorer`, and test the direction against existing
-decisions with `/grill-with-docs` before hardening it.
+redesign, a new interaction pattern), delegate multi-file exploration to
+`@explorer` instead of reading broadly. Before hardening a direction that
+contradicts a documented decision, run `/grill-with-docs`.
 
 ## Explore directions
 

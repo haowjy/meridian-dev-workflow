@@ -54,9 +54,9 @@ the interface communicates clearly: what the user sees first, what's buried.
 For design artifacts: validate cross-link integrity between spec and
 architecture.
 
-Load `/probe` and settle findings on the real system: run the actual
-commands and workflows, and reproduce the suspected bug. Don't rely on the test suite as evidence. Do not edit
-source.
+Settle behavioral findings on the real system with `/probe`: run the
+actual commands and workflows, and reproduce the suspected bug. Don't rely
+on the test suite as evidence. Do not edit source.
 
 When a finding hinges on external facts — library semantics, upstream
 issues, known CVEs — spawn `@web-researcher` in the background and keep

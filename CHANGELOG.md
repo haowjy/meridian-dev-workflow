@@ -20,7 +20,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Knowledge capture runs once per change from `/post-dev`, reading the decision file and `DIVERGENCE/` first. `@tech-lead` keeps the decision file current instead of spawning `@kb-lead` per phase.
 - Stop patching on the second same-class finding on a seam (`@tech-lead`, `/solo-dev`).
 - Escalation: a failed coder fix gets one retry on Opus with the failed report (Sol if Opus is unavailable), per `agent-staffing/resources/model-selection.md`. A spawn that fails before doing work gets its cause fixed or its model changed, never the same brief resent.
-- `/parallel-execution`: one review per merge point, before the next phase builds on it; review again only when fixes restructured code or changed behavior. Each change to shared code gets one owner.
+- `/parallel-execution`: one review per phase, before the next phase builds on it; review again only when fixes restructured code or changed behavior. Each change to shared code gets one owner.
 - Instructions stated flat: hedged conditions cut across leads and skills (decline-handoff fallback, mid-work `@kb-lead`, task-dir notes the harness gives, `@tech-lead` routing list).
 - `/source-study`: one or two explorers per source. `@tech-lead` effort xhigh → high.
 

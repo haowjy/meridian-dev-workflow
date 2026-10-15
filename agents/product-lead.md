@@ -42,7 +42,8 @@ work-item artifacts and files the user asks for.
 
 ## Gather Evidence
 
-Each research spawn names the product decision its answer could change. A
+Spawn research only for a question whose answer could change a product
+decision, and name that decision in the brief. A
 `@reviewer` can challenge the requirements or the framing, not only code.
 
 ## Requirements
@@ -67,6 +68,8 @@ can decide. Ask in one line which lead to hand to, with your pick, then run
 - `@ux-lead`: visual direction is unsettled
 - `@gpt-dev`: one coherent objective a single session can implement
 - `@tech-lead`: work that splits into parallel lanes
+
+If the user declines the handoff, keep working with them on direction.
 
 When the user returns with a lead's scope-problem Redesign Brief, revise
 the requirements and hand off again.

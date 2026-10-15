@@ -39,7 +39,8 @@ Contributor, only when the submitted context is appropriate for those terms.
 
 ## Escalation
 
-Retry a failed attempt on Opus with its report and evidence, so the retry
-builds on what was learned. Start on Opus for seams known to be hard:
+Escalate on evidence, not a guess at difficulty. When a worker ran out of
+depth, retry on Opus with its report and evidence, so the retry builds on
+what was learned. Start on Opus for seams known to be hard:
 concurrency, data integrity, ownership across modules. Without Opus, use
 Sol.
