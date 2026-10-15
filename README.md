@@ -1,155 +1,13 @@
 # meridian-dev-workflow
 
-An opinionated multi-agent dev team for structured software development,
-built on [Meridian](https://github.com/haowjy/meridian-cli)'s coordination
-primitives. Install this and your orchestrator gets a full squad: architects,
-coders, reviewers, testers, web-researchers, and documenters: plus workflow
-skills that teach it how to run a structured development lifecycle.
+A multi-agent development team for [Meridian](https://github.com/meridian-flow/meridian-cli):
+leads you work with in a session, the specialists they spawn, and the skills
+that carry a change from first edit to merged PR.
 
-Built on [meridian-base](https://github.com/haowjy/meridian-base). Both must
-be installed.
-
-
-## Orchestrator Topology
-
-The dev lifecycle splits across leads with distinct ownership:
-
-**product-lead** (interactive): settles product direction with the user:
-intent, requirements, decisions. Gathers evidence through cheap research
-spawns, then hands off to the next lead as a new session the user launches.
-It does not spawn builders.
-
-**gpt-dev** (interactive): one session that implements and verifies a single
-objective itself, spawning a reviewer and prober only at the end (`/solo-dev`).
-
-**ux-lead** (interactive): the same single-session shape for UI work. Converges
-on visual direction with the user, then implements and checks the rendering
-itself, spawning coders only for big frontend refactors. Hands non-frontend
-work to gpt-dev or tech-lead.
-
-**design-lead** (autonomous): owns the technical design. Explores structural
-options, produces high-level structure, key interfaces, boundaries, patterns,
-and tradeoffs.
-
-**tech-lead** (primary): leads technical work end to end. Makes the
-technical decisions (approach, structure, tradeoffs, what to cut), runs a
-team of agents through long-running work, keeps several tasks moving at once
-as separate work items, and makes small fixes and glue changes itself.
-
-**kb-lead** (autonomous, conditional): coordinates knowledge capture across
-.context/, KB, and docs/ layers. Runs once per change from `/post-dev`,
-reading the work directory's decision and divergence logs first.
-
-```bash
-# Default: tech-lead. Start elsewhere when direction is open:
-# product-lead --handoff--> design-lead --handoff--> tech-lead | gpt-dev
-# ux-lead (one session: mockup-dev variants -> ui-implementation)
-# kb-lead runs once per change, from /post-dev
-meridian -a tech-lead
-```
-
-## Agents
-
-Use the tables below to compare roles. Each agent's description is its
-launch guidance: when to use it, what to pass, and what comes back.
-
-Models below are profile defaults; ordered alternatives live in each agent's
-`model-policies`. See `skills/agent-staffing/` for task-based selection.
-
-**Leads:**
-
-| Agent | Model | Role |
-|---|---|---|
-| `product-lead` | opus | Product direction: intent, requirements, decisions, handoff |
-| `ux-lead` | opus | Visual direction and UI implementation in one session |
-| `design-lead` | opus | Technical design: structural options, interfaces, boundaries, tradeoffs |
-| `tech-lead` | fable | Technical lead: decisions, an agent team, several concurrent tasks, hands-on fixes |
-
-**Design:**
-
-| Agent | Model | Role |
-|---|---|---|
-| `architect` | astra | Explores tradeoffs and produces hierarchical design docs with spec/architecture trees |
-| `design-researcher` | sol | Researches structural options and writes analysis for the design team |
-
-**Implementation:**
-
-| Agent | Model | Role |
-|---|---|---|
-| `coder` | deepseek | Production code writer: implements scoped tasks and behavior-preserving refactors |
-| `frontend-coder` | deepseek | Production frontend code with visual self-verification via agent-browser |
-| `gpt-dev` | astra | Direct implementation lead for well-scoped work |
-| `mockup-dev` | luna | Fast frontend mockups and throwaway POCs |
-
-**Testing & Verification:**
-
-| Agent | Model | Role |
-|---|---|---|
-| `prober` | deepseek | Runtime verifier. Skills: probe, poc, agent-browser |
-| `reviewer` | astra | Code reviewer: static and runtime. Skills: review, probe, thermo-nuclear-review, test-architecture, review-alignment |
-
-**Review & Analysis:**
-
-| Agent | Model | Role |
-|---|---|---|
-| `investigator` | luna | Root-cause diagnosis for broken or suspicious behavior |
-
-**Research & Documentation:**
-
-| Agent | Model | Role |
-|---|---|---|
-| `web-researcher` | luna | External evidence: library docs, upstream issues, architecture patterns via web search |
-| `explorer` | luna | Fast, cheap codebase explorer: reads files, searches code, traces git history |
-| `source-researcher` | luna | Studies real open-source implementations for relevant patterns |
-| `kb-lead` | opus | Captures durable knowledge: mines the work, writes .context/, KB, and docs/ inline, fans out @explorer/@session-miner to read |
-
-**Visual:**
-
-| Agent | Model | Role |
-|---|---|---|
-| `browser` | muse-contributor | Browser interaction: scraping, navigation, screenshots. Training-eligible endpoint; select an approved alternative for sensitive context. |
-| `imagegen` | sol | Image generation: UI concept mockups, visual explorations, icons |
-
-## Skills
-
-**Workflow orchestration:**
-
-| Skill | What it teaches |
-|---|---|
-| `session-mining` | Session-mining workflow patterns: recover parent-session decisions and delegate bulk transcript reads |
-| `architecture` | Problem framing, tradeoff analysis, approach evaluation |
-| `agent-staffing` | Team composition: which agents to spawn, how many, what runs in parallel |
-| `parallel-execution` | Coordinate parallel spawns so edit lanes do not collide; fan in before dependent edits |
-| `dev-principles` | Simplicity, separation of concerns, structural judgment: the operating lens for code decisions |
-| `testing` | Restraint-first testing discipline: tier selection, when NOT to write tests, functional core patterns. Resources cover unit and integration patterns. |
-| `probe` | Runtime verification mode-shift: run real commands, exercise real workflows, report what breaks. Two modes: probing (exploratory) and verification (confirmatory). |
-| `poc` | Throwaway code that answers a feasibility question: logic spikes or UI exploration. Always deleted. |
-
-**Agent methodology:**
-
-| Skill | What it teaches |
-|---|---|
-| `review` | Constructive code review: judge the code as it stands, standards and design axes, quality as ease of change, redesign escalation |
-| `review-alignment` | Alignment verification: does one artifact faithfully represent another? |
-| `divergence` | Track plan divergence during multi-phase work in a `DIVERGENCE/` folder |
-| `issues` | GitHub Issues integration: labels, work-item linking, `gh` CLI patterns |
-| `react-architecture` | React-specific structural lens: tokens, state, composition, imports, component API consistency |
-| `tech-docs` | Technical writing craft: hierarchical docs, linking strategy, and progressive disclosure |
-| `unravel-codebase` | Human-invoked guided walkthrough of unfamiliar code: reads alongside you, explains how it works, and doubles as a KB/vocab cleanup pass |
-| `ui-implementation` | Production UI follow-through after visual direction is settled |
-| `thermo-nuclear-review` | Extremely strict maintainability review: abstraction quality, code judo moves |
-| `test-architecture` | Strict test structure audit: fixture sprawl, implementation-pinned tests, deletion targets, test file boundaries |
-
-## Cross-Source Dependencies
-
-Several agents load skills from both this repo and `meridian-base`:
-
-- `meridian-work-coordination` (base): how to manage work items
-- `session-mining` (base): workflow patterns for mining decisions from session history
-- `knowledge-layers` (base): where knowledge lives: AGENTS.md, .context/, KB, docs/, work directories
-
-The install engine warns about cross-source deps but doesn't fail: these
-resolve from the base source. Both sources must be installed.
+Built on [meridian-base](https://github.com/meridian-flow/meridian-base),
+which supplies the shared workers (`explorer`, `session-miner`, `subagent`,
+`kb-lead`, `kb-maintainer`) and the coordination skills. Both must be
+installed.
 
 ## Install
 
@@ -158,6 +16,207 @@ meridian mars add meridian-flow/meridian-base
 meridian mars add meridian-flow/meridian-dev-workflow
 meridian config set primary.agent tech-lead
 ```
+
+## How It Works
+
+### Leads
+
+Each session runs one lead, and each lead owns a different kind of decision.
+
+**tech-lead** (the default) leads technical work. It makes the technical
+decisions (approach, structure, tradeoffs, what to cut) and records them in a
+decision file per work item. It runs a team of agents through long-running or
+multi-part work, keeps several loosely related tasks moving as separate work
+items, and makes small fixes and glue changes itself.
+
+**product-lead** settles what to build and why: the problem statement,
+requirements, and product decisions. It spawns only research, then proposes
+which lead comes next and writes the handoff. You launch that lead as its own
+session so you can steer it directly.
+
+**design-lead** settles structure when it is open: interfaces, boundaries,
+the data model. It also takes a Redesign Brief from an implementation lead.
+It investigates in parallel, converges, runs one challenge (prober, reviewer,
+or an alignment review), and returns design docs with a recommendation. Run
+it as a session or spawn it.
+
+**gpt-dev** implements and verifies one coherent objective in a single
+session (`/solo-dev`).
+
+**ux-lead** works the same way for UI, with you steering visual direction.
+It makes small tweaks directly for you to check. For a large change it
+explores first, running mockups in parallel when you want to compare
+directions, then builds the UI itself. It spawns coders only for a big
+frontend refactor.
+
+```text
+Default: tech-lead.
+When direction is open:  product-lead ─handoff→ design-lead | ux-lead | gpt-dev | tech-lead
+When structure is open:  design-lead ─handoff→ tech-lead | gpt-dev
+```
+
+### A Change, End to End
+
+Every implementation lead runs the same lifecycle:
+
+1. **`/pre-dev`** runs before the first source edit. It sets up a worktree
+   for the work item, drafts the PR body from the repo template, and captures
+   before-state evidence while it still exists.
+2. **Implement.** tech-lead plans any task that needs more than one spawn as a
+   DAG with `/parallel-execution`, using a worktree per parallel lane and one
+   owner for each change to shared code. It delegates to `coder` and
+   `frontend-coder`. gpt-dev and ux-lead implement the change themselves.
+   Each commit carries a `CHANGELOG.md` entry.
+3. **Verify.** Leads run focused checks and `/probe` against the real system
+   while working, and the full suite once on the finished change.
+4. **Review.** `reviewer` and `prober` run on a committed state. Parallel
+   work gets one review per phase, and the last phase's review covers the
+   whole change with `thermo-nuclear-review`. A single-session lead runs both
+   once at the end, on the same dev stack, each with its own test data.
+   Review runs again only when fixes restructured code or changed behavior.
+5. **`/post-dev`** runs before the PR. It checks the PR body, the changelog,
+   the review sign-off, and deferred work (routed to `.context/` or issues).
+   It also runs `kb-lead` once for the whole change.
+6. **Ship** with `/dev-workflow`. The lead pushes the feature branch and
+   opens the PR with the drafted body and a `release:*` label. Merging to
+   `main` waits for a human.
+
+### When Fixes Don't Converge
+
+On a second finding of the same failure class in the same code, the lead
+stops patching and looks for the shared cause, often two places owning one
+invariant. A worker that ran out of depth gets one retry on Opus with its
+report. When the structure itself is wrong, the lead writes a Redesign Brief:
+design problems go to design-lead, scope problems go back to you and
+product-lead.
+
+### Review
+
+`reviewer` judges the code as it stands, not only the diff. Every review
+covers:
+
+- correctness and regressions
+- maintainability: entanglement, and what the change could delete
+- efficiency on hot paths
+- security
+
+It settles behavioral findings by running the system. Attach skills to focus
+it; `skills/agent-staffing/resources/reviewers.md` maps change risks to
+review skills.
+
+## Agents
+
+Use the tables below to compare roles. Each agent's description is its
+launch guidance: when to use it, what to pass, and what comes back.
+
+Models are profile defaults. Fallbacks and explicit-only options live in each
+agent's `model-policies`. `skills/agent-staffing/` covers model choice by
+task.
+
+**Leads**
+
+| Agent | Model | Role |
+|---|---|---|
+| `tech-lead` | fable | Technical decisions, an agent team, several concurrent tasks, hands-on fixes |
+| `product-lead` | opus | Product direction: intent, requirements, decisions, handoff |
+| `design-lead` | opus | Technical design: structural options, interfaces, boundaries, tradeoffs |
+| `gpt-dev` | astra | Implements and verifies one objective in a single session |
+| `ux-lead` | opus | Visual direction and UI implementation in one session |
+
+**Implementation**
+
+| Agent | Model | Role |
+|---|---|---|
+| `coder` | luna | Implements a scoped objective, commits with a changelog entry |
+| `frontend-coder` | luna | Production UI with visual self-checks in a browser |
+| `mockup-dev` | luna | Throwaway frontend mockups for comparing directions |
+| `imagegen` | sol | Generated images: concepts, icons, reference imagery |
+
+**Verification**
+
+| Agent | Model | Role |
+|---|---|---|
+| `reviewer` | opus | Finds risks in a commit: correctness, maintainability, efficiency, security. Read-only |
+| `prober` | luna | Runtime evidence: exercises workflows, reproduces bugs, runs feasibility spikes |
+| `investigator` | luna | Root cause of broken behavior; fixes only when the brief assigns it |
+
+**Design and research**
+
+| Agent | Model | Role |
+|---|---|---|
+| `architect` | opus | Compares structural options and writes design docs |
+| `design-researcher` | sol | Structured analysis of design alternatives |
+| `web-researcher` | luna | External facts: library docs, upstream issues, changelogs |
+| `source-researcher` | luna | How real open-source projects solve a similar problem |
+| `browser` | luna | Live websites: design references, scraping, screenshots |
+
+From meridian-base: `explorer` (codebase facts), `session-miner` (past
+decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
+`subagent` (general tasks).
+
+## Skills
+
+**Workflow**
+
+| Skill | What it covers |
+|---|---|
+| `pre-dev` | Before the first edit: worktree, PR body draft, before-state evidence |
+| `solo-dev` | Single-session implementation: when to review and probe, verification, when to stop patching |
+| `parallel-execution` | DAG planning, worktree lanes, merge and verify, review per phase |
+| `dev-workflow` | Commits, changelog, pushing and opening PRs, branch cleanup |
+| `post-dev` | Before the PR: PR body, changelog, review sign-off, deferred work, knowledge capture |
+| `divergence` | Logging plan shifts during multi-phase work in `DIVERGENCE/` |
+| `merge-prep` | Understanding both sides' intent before merging or rebasing |
+| `issues` | Routing deferred work to `.context/` or GitHub issues |
+| `agent-staffing` | Which agents and models to use, review and test coverage by risk |
+
+**Engineering**
+
+| Skill | What it covers |
+|---|---|
+| `dev-principles` | The engineering values code decisions are judged against |
+| `code` | Changing code yourself: follow project patterns, delete what you replace, verify for real |
+| `architecture` | Boundaries, dependencies, structural risk |
+| `testing` | Whether and how to test: tests earn their place by protecting a durable risk |
+| `probe` | Runtime verification against the real system |
+| `poc` | Throwaway code that answers a feasibility question |
+| `diagnose` | Diagnosis loop for hard bugs and performance regressions |
+
+**Review**
+
+| Skill | What it covers |
+|---|---|
+| `review` | Base review method: code as it stands, standards and design, maintainability, efficiency, redesign escalation |
+| `thermo-nuclear-review` | Strict maintainability: the code-judo move that makes the system dramatically simpler |
+| `test-architecture` | Tests that pin implementation, mock rot, sprawl worth deleting |
+| `review-alignment` | Systematic check that one artifact matches another |
+| `react-architecture` | React composition, state architecture, token discipline |
+
+**UI and visual**
+
+| Skill | What it covers |
+|---|---|
+| `uxdev` | Visual thinking grounded in the brief and the existing design language |
+| `ui-implementation` | Turning a settled direction into production UI |
+| `design-craft` | Deliberate color, typography, layout, motion, interaction |
+| `anti-slop` | AI-generated UI tells to avoid |
+| `agent-browser` | Driving a live browser: snapshots, interaction, screenshots |
+
+**Research and docs**
+
+| Skill | What it covers |
+|---|---|
+| `research-web` | Gathering external facts that may postdate training data |
+| `source-study` | Evidence from real codebases before designing |
+| `design-analysis` | Turning findings into a design analysis with compared options |
+| `tech-docs` | Writing design documents |
+| `unravel-codebase` | Human-paced walkthrough of how a codebase works (human-invoked) |
+| `visualize-codebase` | Browsable visual map of a codebase (human-invoked) |
+
+Agents here also load meridian-base skills, including `work-artifacts`,
+`shared-dao`, `llm-writing`, `information-hierarchy`, `intent-modeling`,
+`explore-and-engage`, `handoff`, `grill-with-docs`, `zoom-out`,
+`qi-maintenance`, `qi-layer`, `knowledge-layers`, and `session-mining`.
 
 ## Layout
 
@@ -169,4 +228,4 @@ skills/*/SKILL.md        # Skills (with optional resources/ subdirectory)
 ## See Also
 
 - [meridian-cli](https://github.com/meridian-flow/meridian-cli): the Meridian coordination engine
-- [meridian-base](https://github.com/meridian-flow/meridian-base): core coordination layer this builds on
+- [meridian-base](https://github.com/meridian-flow/meridian-base): the coordination layer this builds on
