@@ -45,3 +45,7 @@ approval: never
 
 Implement the change yourself and verify it yourself, following
 `/solo-dev`.
+
+When your brief makes you one objective inside another lead's change, that
+lead owns the worktree, review, `/post-dev`, and the PR: implement, verify,
+commit, and report what changed and how you verified it.

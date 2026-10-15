@@ -9,6 +9,8 @@ model-invocable: true
 
 A discipline for hard bugs. Skip phases only when explicitly justified.
 
+Phases 1–4 find the root cause. Go on to the fix (phases 5–6) only when your brief assigns it; otherwise stop and report the root cause with its evidence.
+
 When exploring the codebase, check the project's KB vocabulary and context docs for a clear mental model of the relevant modules.
 
 ## Phase 1: Build a Feedback Loop
@@ -59,7 +61,7 @@ Generate 3-5 ranked hypotheses before testing any. Single-hypothesis generation 
 
 Each hypothesis must be falsifiable: "If X is the cause, then Y will make the bug disappear / worse."
 
-**Interactive mode:** Show the ranked list to the user before testing. They often have domain knowledge that re-ranks instantly. Proceed with your ranking if the user is away.
+**Interactive mode:** Show the ranked list to the user, then start testing in that order. They often have domain knowledge that re-ranks instantly; fold it in when it arrives.
 
 **Autonomous mode (spawned as subagent):** Skip the user check. Proceed with your ranking directly.
 

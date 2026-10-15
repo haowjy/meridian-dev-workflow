@@ -52,8 +52,8 @@ body.
 
 Capture before-state evidence into the draft now, while it still exists —
 screenshots of the current rendering for user-facing work, current outputs,
-failure text, timings. Capture it now, delegating to a browser or probe
-agent if you can't take it yourself: once the change lands, "before" costs a
+failure text, timings. Delegate to a browser or probe agent if you can't
+take it yourself: once the change lands, "before" costs a
 stack swap and a reconstructed fixture to recover.
 
 ### Branch readiness

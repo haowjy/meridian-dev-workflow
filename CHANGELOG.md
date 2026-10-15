@@ -5,6 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- Review fixes: reviews run on a model family other than every model that wrote the change, stated at each gate (`/solo-dev`, `/parallel-execution`). `/solo-dev` confirms the stack was built from the reviewed commit and runs review and probe one after the other when they would share state. `@gpt-dev` spawned for one objective inside another lead's change reports back; that lead reviews and ships. `/dev-workflow` requires the human's approval to merge into `main`/`staging`. `/diagnose` stops at root cause unless the brief assigns the fix. `/post-dev` review sign-off names which later changes it covers. Measurement vetting applies to performance numbers, not every count. `@ux-lead` and `@design-lead` can spawn `@session-miner`. Positive-framing fixes: `/design-analysis` keeps its no-implementation line; tests consolidate equivalent coverage rather than one tier per path; `/diagnose` doesn't wait on the user.
 - Interactive leads (`@tech-lead`, `@gpt-dev`, `@ux-lead`, `@design-lead`) load `explore-and-engage` and `intent-modeling`, so the evidence and fix-the-class rules reach them when they talk to the human.
 - `/parallel-execution` runs wide mechanical changes as expand, migrate, contract: new form beside the old, callers migrated in parallel batches, old form deleted as the last phase.
 - `/correct` moved to meridian-base; its code levels are a resource there.

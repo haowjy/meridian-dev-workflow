@@ -25,7 +25,7 @@ merge section applies once the PR lands.
 - Focus on what downstream users notice, not which lines moved
 
 ### Review
-- The review of the final commit passed, and each finding is fixed or explicitly accepted.
+- The review passed on the commit it named, and each finding is fixed or explicitly accepted. Changes after that commit are small fixes you read yourself, doc updates, or scaffolding-test deletions; anything that restructured code or changed behavior got its own review.
 - If the plan shifted during implementation, `DIVERGENCE/` in the work
   directory reflects it — reviewers and knowledge capture read from it
 

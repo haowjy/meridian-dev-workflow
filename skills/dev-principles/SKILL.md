@@ -10,7 +10,7 @@ model-invocable: true
 ## Core Beliefs
 
 1. **Code is cheap; bad code is expensive.**  
-   The real cost isn't writing code — it's the drag on every later change when code is inconsistent, bloated, or entangled. Spend the effort to keep code easy to change and delete; don't let "plausible now" become expensive later.
+   The real cost isn't writing code — it's the drag on every later change when code is inconsistent, bloated, or entangled. Spend the effort to keep code easy to change and delete.
 
 2. **Consistency beats cleverness.**  
    Every novel pattern forces the next reader to learn a new dialect. Consistent patterns lower reasoning cost for humans and agents. Match what's there before inventing something new; a new idiom must be clearly worth its learning cost.
@@ -41,9 +41,9 @@ Large efficiency bugs are rarely slow lines. They are a cost paid on every
 event, or one that grows with accumulated state. On a hot path (per chunk,
 per turn, per poll, per invocation), keep each run's cost proportional to
 the work in front of it: write only what changed, poll with a cheap
-check, read only new events, and load only what this run uses.
+check, process new events with only the prior state they need, and load only what this run uses.
 
-A measured number is a claim. Before you report or act on one, name what
+A performance number is a claim. Before you report or act on one, name what
 limits it and rule out errors, skipped work, and noise, per `/probe`'s
 `resources/measurement.md`.
 

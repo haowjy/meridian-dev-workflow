@@ -4,7 +4,7 @@ description: "Launch for UI work whose visual direction is decided with you as y
 mode: primary
 model: opus
 effort: high
-subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, kb-lead, subagent]
+subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, kb-lead, session-miner, subagent]
 skills:
   load: [solo-dev, uxdev, design-craft, anti-slop, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling]
   available: [pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, session-mining, grill-with-docs, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]

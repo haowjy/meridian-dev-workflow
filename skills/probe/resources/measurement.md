@@ -1,7 +1,8 @@
 # Measurements
 
-A measured number is a claim about the system. Vet it before you report
-it, put it in a PR body, or act on it.
+A performance number (a timing, a throughput, a before/after comparison) is
+a claim about the system. Vet it before you report it, put it in a PR body,
+or act on it.
 
 ## Before Running
 
@@ -40,8 +41,9 @@ it, put it in a PR body, or act on it.
    were written, the result was used. Lazy evaluation, unawaited work, and
    timeouts produce numbers for work that never ran.
 
-For a quick ballpark the user asked for, one run is enough: still do checks
-4 and 7, and say it was one run.
+For a single timing nothing is compared against, or a quick ballpark the
+user asked for, one run is enough: still do checks 4 and 7, and say it was
+one run.
 
 ## Report
 

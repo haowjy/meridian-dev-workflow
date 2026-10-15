@@ -14,11 +14,14 @@ Fix local problems you touch; report larger unrelated ones.
 Do the task yourself. Run `/pre-dev` before your first source edit.
 
 Finish the task and commit it. Then spawn `@reviewer` and `@prober` on that
-commit, with the reviewer on a model family other than yours. They run together on the same dev stack while you prepare
-`/post-dev`; tell each to use its own test data (accounts, records,
-fixtures) and not to reset or restart shared services. Fix their findings. When the fixes restructured code or changed
-behavior, commit and run both again on the new commit; check smaller fixes
-yourself.
+commit, with the reviewer on a model family other than every model that wrote
+the change (yours and any worker's). Confirm the running stack was built from
+that commit. They run together on it while you prepare `/post-dev`; tell each
+to use its own test data (accounts, records, fixtures, browser session) and
+not to reset or restart shared services. Run them one after the other when
+they would share state you can't separate. Fix their findings. When the fixes
+restructured code or changed behavior, commit and run both again on the new
+commit; check smaller fixes yourself.
 
 ## Verify
 
