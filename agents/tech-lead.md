@@ -18,8 +18,8 @@ model-policies:
   - match: {alias: deepseek}
     override: {effort: high}
 skills:
-  load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance]
-  available: [pre-dev, uxdev, code, handoff, explore-and-engage, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, intent-modeling, agent-staffing, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
+  load: [parallel-execution, dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling]
+  available: [pre-dev, uxdev, code, handoff, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, agent-staffing, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
