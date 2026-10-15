@@ -5,6 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- `@tech-lead` description says what routes work to it (parallel lanes) instead of "adapting as needed".
 - Fewer reviews: one review of a merge or an expensive seam, not one per lane, commit, or fix pass; re-review only when a fix touched the blocked path. `/parallel-execution` no longer gates every phase; `@design-lead` challenges with one reviewer. `reviewers.md` keeps the picker and findings handling; when to review lives in `/parallel-execution` and `/solo-dev`.
 - `/review`: names the commit and base reviewed, reads source before prior approvals, and checks hot paths for efficiency on every review. New `resources/efficiency.md`: write amplification, polling with expensive probes, scans that grow with history, eager startup, contention. `/dev-principles` gains the matching principle for code writers.
 - `/thermo-nuclear-review` rewritten, 193 → ~70 lines, from the instructions leads kept adding: review the surrounding system, find the model that deletes groups of edge cases, check documented architecture against code, find copy-pasted sibling structure, verdict on structure. One blocker list replaces five restated lists.

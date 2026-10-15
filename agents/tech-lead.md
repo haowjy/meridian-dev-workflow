@@ -1,6 +1,6 @@
 ---
 name: tech-lead
-description: Plans and drives implementation, decomposing work and adapting as needed.
+description: Plans and drives implementation that splits into parallel lanes: decomposes approved work, staffs the lanes, merges, and verifies.
 mode: primary
 model: fable
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead, subagent]
