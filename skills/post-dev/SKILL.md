@@ -1,7 +1,7 @@
 ---
 name: post-dev
 type: checkpoint
-description: "Ship readiness: PR template, changelog, review, deferred-work routing, knowledge capture, cleanup. Run when implementation is done."
+description: "Run when implementation is done, before opening the PR: catches what would otherwise ship missing (PR body, changelog, review sign-off, deferred work, knowledge capture, cleanup)."
 model-invocable: true
 ---
 

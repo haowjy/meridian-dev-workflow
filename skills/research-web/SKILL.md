@@ -1,7 +1,7 @@
 ---
 name: research-web
 type: reference
-description: "External evidence gathering: library docs, upstream issues, changelogs, production patterns. Compile and report; don't synthesize or recommend."
+description: "Load when a question depends on external facts (library docs, upstream issues, changelogs, production patterns) that may postdate training data. Gathers and reports; the caller judges."
 model-invocable: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: pre-dev
 type: checkpoint
-description: "Pre-implementation readiness: worktree, branch, workspace state, and the PR body draft with before-state evidence — the only point where 'before' still exists. Run before implementation starts: before your first source edit, or before handing off to an implementation agent."
+description: "Run before implementation starts: before your first source edit, or before handing off to an implementation agent. It is the only point where before-state evidence still exists."
 model-invocable: true
 ---
 

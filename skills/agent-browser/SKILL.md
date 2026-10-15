@@ -1,15 +1,7 @@
 ---
 name: agent-browser
 type: reference
-description: |
-  Drive a real browser from the CLI with agent-browser: navigate, snapshot the
-  accessibility tree with compact @eN refs, click/fill/extract, screenshot, read
-  console and runtime errors, inspect network and React, and watch a session live
-  in the dashboard. Use when a task needs a live browser: scraping, data or
-  design-token extraction, form filling, verifying frontend rendering and flows,
-  capturing screenshots, or reproducing a UI bug. Body covers the stable core loop
-  and the commands you reach for most; load specialized skills (dogfood, electron,
-  slack, cloud sandboxes) on demand via `agent-browser skills get`.
+description: "Use when a task needs a live browser: scraping, extracting data or design tokens, filling forms, verifying frontend rendering and flows, capturing screenshots, or reproducing a UI bug. Accessibility-tree snapshots let you act on a page in a few hundred tokens instead of parsing HTML."
 model-invocable: true
 ---
 
@@ -18,6 +10,9 @@ model-invocable: true
 Fast browser automation CLI. Chrome/Chromium over CDP, accessibility-tree
 snapshots with compact `@eN` refs: interact with a page in a few hundred
 tokens instead of parsing HTML.
+
+For specialized flows (dogfood, electron, slack, cloud sandboxes), load the
+matching skill with `agent-browser skills get`.
 
 Install once if the command is missing:
 

@@ -5,6 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- Skill descriptions say when and why to load, not what the skill contains (20 skills). `agent-browser`'s pointer to specialized skills moves into its body.
 - Agent descriptions say when to launch or spawn, what to pass, and what comes back; the README carries what each agent does. README installs `@tech-lead` as the default primary.
 - `@tech-lead` owns technical decisions (approach, structure, tradeoffs, what to cut), records resume state before switching tasks, edits with `/code`, and can run commands for its own fixes.
 - `/parallel-execution`: the last phase's review covers the whole change with `thermo-nuclear-review`; the full suite runs once on the final merged change; each lane's worktree builds its own generated artifacts.

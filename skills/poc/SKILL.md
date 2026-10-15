@@ -1,7 +1,7 @@
 ---
 name: poc
 type: mode-shift
-description: Proof of concept. Throwaway code that answers a feasibility question. Always deleted.
+description: "Load when a feasibility question needs an answer from running code: throwaway code that answers it, then is deleted."
 model-invocable: true
 user-invocable: true
 argument-hint: "What question should the POC answer?"

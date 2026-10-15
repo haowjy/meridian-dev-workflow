@@ -1,11 +1,7 @@
 ---
 name: unravel-codebase
 type: mode-shift
-description: |
-  Walk through a codebase together: a companion reads alongside you, explains how
-  things work and connect, and says when something is murky to it too. Doubles as a
-  cleanup pass on the docs you read: fix KB/vocab drift, clear up confusing spots, and
-  flag what to fix later. Human-paced; source stays read-only unless you ask.
+description: "Use when the human wants to understand how a codebase works today by walking through it together. Human-paced; source stays read-only unless asked; fixes the docs it reads along the way."
 user-invocable: true
 argument-hint: "Which area or question? (optional)"
 model-invocable: false

@@ -1,7 +1,7 @@
 ---
 name: uxdev
 type: mode-shift
-description: Shift into visual design mode. Load when you need to think visually about what the user sees.
+description: "Load when the work needs visual thinking about what the user sees, so design choices come from the brief and the existing design language, not defaults."
 model-invocable: true
 ---
 

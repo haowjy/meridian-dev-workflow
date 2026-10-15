@@ -1,7 +1,7 @@
 ---
 name: divergence
 type: reference
-description: Track plan divergence during multi-phase work. Load when redesign or plan shifts are likely.
+description: "Load when the design or plan may shift during multi-phase work: a logged shift lets reviewers tell planned change from drift."
 model-invocable: true
 ---
 

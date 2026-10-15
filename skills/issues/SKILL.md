@@ -1,7 +1,7 @@
 ---
 name: issues
 type: reference
-description: "Route deferred work: colocated .context/ files for directory-scoped items, GitHub issues for cross-cutting or externally visible work."
+description: "Load when you defer work, so each item lands where it will be found: a colocated .context/ file or a GitHub issue."
 ---
 
 # Issue Tracking

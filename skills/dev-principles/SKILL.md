@@ -1,7 +1,7 @@
 ---
 name: dev-principles
 type: principle
-description: Core engineering values for all code decisions. Load when implementing, reviewing, refactoring, or designing code changes.
+description: "Load when implementing, reviewing, refactoring, or designing code: the engineering values every code decision is judged against."
 model-invocable: true
 ---
 

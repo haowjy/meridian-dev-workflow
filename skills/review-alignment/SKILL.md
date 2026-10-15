@@ -1,7 +1,7 @@
 ---
 name: review-alignment
 type: reference
-description: "Alignment verification: does one artifact faithfully represent another? Coverage, drift, gap classification. Load when verifying plan vs design, code vs spec, output vs intent."
+description: "Load when one artifact must faithfully match another (plan vs design, code vs spec, output vs intent) and the check needs to be systematic, not a skim."
 model-invocable: true
 ---
 

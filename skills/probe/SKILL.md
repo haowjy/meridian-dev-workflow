@@ -1,11 +1,7 @@
 ---
 name: probe
 type: mode-shift
-description: |
-  Runtime verification. Run real commands, exercise real workflows, report what
-  happens. Two modes: probing (exploratory, "how does this behave?") and
-  verification (confirmatory, "does this change work?"). Load when you need to
-  shift from building or reviewing into actually running the thing.
+description: "Load when you need to know what the system actually does: run it, exercise workflows, reproduce bugs. Reading code and passing tests don't show that."
 model-invocable: true
 ---
 

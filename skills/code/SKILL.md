@@ -1,7 +1,7 @@
 ---
 name: code
 type: mode-shift
-description: Shift into implementation mode. Load when you need to switch from coordination into hands-on code changes.
+description: "Load when you switch from coordinating or designing to changing code yourself, so the change follows the project's patterns, deletes what it replaces, and is verified on the real system."
 model-invocable: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: testing
 type: principle
-description: Restraint-first testing discipline. Tier selection, when NOT to write tests, functional core patterns.
+description: "Load when deciding whether and how to test a change: a test earns its place by protecting a durable risk, so most changes need fewer tests than the default."
 model-invocable: true
 ---
 
