@@ -5,6 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- `/dev-principles` has a comment rule: comment only what the code can't show; design rationale goes in `.context/`, change history in the commit message, structure in names rather than banners.
 - Measured numbers get vetted before they're reported or acted on: `/probe`'s new `resources/measurement.md` (limiter, production settings, errors, alternating repeat runs, end-to-end share, did the work happen), adapted from pstack's benchmark checklist. `/dev-principles` and `/diagnose` point to it.
 - Reviews run on a model family other than the one that wrote the work (`/agent-staffing`, `/solo-dev`, `@design-lead`).
 - `/ui-implementation` carries the production-UI method for any implementer: read the design first, build every state, check rendering in a browser. `@frontend-coder` loads it and defaults to Sonnet, separate from `@coder`'s Luna.

@@ -58,6 +58,10 @@ When you see duplication across boundaries, suspect the boundaries before patchi
 
 LLMs default to preserving code. Fight that. Dead code, stale imports, orphaned files: delete in the same change. When new code replaces old behavior, delete the old path in the same change instead of keeping it beside the new one as a fallback or compatibility layer, unless the repo's policy requires one. Obvious duplication: collapse it. Structural problems (circular dependencies, god modules, leaky abstractions): fix on sight. Rot compounds at agent speed.
 
+## Comments
+
+Comment what the code can't show: a hidden constraint, a surprising invariant, an external quirk, a race the code avoids. Put design rationale longer than a few lines in the directory's `.context/`, and the story of a change in its commit message. Let names and module boundaries carry structure, in place of section banners and comments that narrate the next line.
+
 ## Testing
 
 Verify by running the program and the project's checks. Automated tests earn their place by protecting a durable boundary, contract, or risk that's hard to verify by running the system. See `/testing` for tier judgment.
