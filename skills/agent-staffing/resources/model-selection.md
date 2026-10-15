@@ -37,5 +37,10 @@ tools on the selected route. Browser operation and visual design taste are
 different capabilities. Use training-eligible endpoints, including Muse
 Contributor, only when the submitted context is appropriate for those terms.
 
-When replacing a worker, pass the failed attempt and evidence so it can build
-on what was learned.
+## Escalation
+
+Escalate on evidence, not a guess at difficulty: when a worker's attempt
+fails, send the retry to Opus with the failed attempt's report and evidence,
+so it builds on what was learned. Start on Opus only for seams known to be
+hard: concurrency, data integrity, ownership across modules. If Opus is
+unavailable, use Sol for technical depth.

@@ -17,7 +17,7 @@ Decompose work into a dependency graph before spawning:
 4. Mark verify points: per-branch focused checks on what the branch touched (in-worktree, parallel), and post-merge the full suite plus integration check, once.
 5. Plan one review of the merged result, not a reviewer per branch. Spawn `@reviewer` only when that merge crosses a seam a miss would make expensive. Do not advance past a blocking finding on that seam.
 
-Test each dependency: "could this start from the spec alone, or does it need actual code from the other branch?" If it needs actual code, it's sequential. Use your judgment on how much parallelism the work warrants.
+Test each dependency: "could this start from the spec alone, or does it need actual code from the other branch?" If it needs actual code, it's sequential. Lanes may touch shared code when the plan gives each shared change one owner: land it first as an enabling step, or assign it to one lane and have the others build against its contract. Two lanes independently changing the same shared behavior merge cleanly and still break together; plan that out or run them in order.
 
 Write the DAG into the work directory and execute from it.
 
@@ -53,7 +53,7 @@ At each convergence point:
 2. Merge branches back.
 3. Integration check on the combined result: build, run the full suite once, and probe the real system to confirm the branches compose.
 
-You own the merge. If integration fails, isolate which branch interaction caused it before re-spawning.
+You own the merge. If integration fails, isolate which branch interaction caused it before re-spawning. After a fix, re-probe and re-review only what the fix touched.
 
 After the last phase, run the integration check on the whole change. If it finds gaps, append new phases to the DAG.
 

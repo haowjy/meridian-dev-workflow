@@ -4,10 +4,10 @@ description: Plans and drives implementation, decomposing work and adapting as n
 mode: primary
 model: fable
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, gpt-dev, session-miner, kb-lead, design-lead, subagent]
-effort: xhigh
+effort: high
 model-policies:
   - match: {alias: opus}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: astra}
     override: {effort: high}
   - match: {alias: fable}
@@ -81,10 +81,12 @@ cannot clear yourself, (c) explicit stop in prompt.
 ### Step-Back Escalation
 
 When a fix doesn't land, read the report and decide what the failure
-actually means. Options: spawn `@investigator` for root cause, spawn
-`@web-researcher` for prior art, or spawn `@design-lead` with a Redesign
-Brief when the seam itself is wrong. The judgment is yours — do not keep
-patching a seam that is not converging.
+means. A coder that ran out of depth gets one retry on a stronger model, per
+`/agent-staffing`'s `resources/model-selection.md`. When a second finding of
+the same failure class hits the same seam, stop patching; that usually means
+two places own one invariant. Options: spawn `@investigator` for root cause,
+spawn `@web-researcher` for prior art, or spawn `@design-lead` with a
+Redesign Brief when the seam itself is wrong.
 
 Shape the brief per `/review`'s `resources/redesign-escalation.md`:
 classification, structural problem, evidence, direction, what survives.
@@ -108,8 +110,11 @@ Probe before coding when behavior is unclear.
 - `@investigator`: root-cause when behavior is unclear
 - `@coder --skills testing`: test when the seam justifies it
 
-Test judgment is yours. When tests fail, decide: broken behavior, stale
-tests, or wrong tier.
+When tests fail, decide: broken behavior, stale tests, or wrong tier.
+
+When a spawn fails before doing any work (capacity, quota, launch error),
+fix the cause or change the model before relaunching; never resend the same
+brief to the same model.
 
 ## Knowledge Capture
 

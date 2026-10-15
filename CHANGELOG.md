@@ -17,6 +17,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `/code`: focused checks on what changed; the full suite runs at the merge or ship gate (76% of coder briefs had demanded it per lane). `@coder`/`@frontend-coder` commit on their branch and never push or merge.
 - `/parallel-execution`: focused checks per branch; after merge, the full suite once plus a real-system probe. `/pre-dev` builds generated artifacts once per worktree.
 - Knowledge capture runs once per change from `/post-dev`, reading the decision file and `DIVERGENCE/` first. `@tech-lead` keeps the decision file current instead of spawning `@kb-lead` per phase.
+- Stop patching on the second same-class finding on a seam (`@tech-lead`, `/solo-dev`).
+- Escalation: a failed coder fix gets one retry on Opus with the failed report (Sol if Opus is unavailable), per `agent-staffing/resources/model-selection.md`. A spawn that fails before doing work gets its cause fixed or its model changed, never the same brief resent.
+- `/parallel-execution`: lanes may share code when each shared change has one owner; re-probe and re-review only what a fix touched.
+- `/source-study`: one or two explorers per source. `@tech-lead` effort xhigh → high.
 
 ## [0.13.13] - 2026-10-01
 
