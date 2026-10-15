@@ -25,7 +25,7 @@ For a new surface or broad redesign, keep a compact direction brief in the work 
 
 ## Verify What Renders
 
-Use browser evidence to judge a settled, coherent UI change against its visual goal; exercise the primary task and check relevant viewports. Repeat the check when a later fix changes the rendered result. During exploration, inspect a temporary result only when it helps make the next design decision or show the human what changed. A browser check is not a gate for every small visual tweak. Screenshots beat prose for visual evidence. Use `@prober --skills agent-browser` or `/agent-browser` to drive the real rendering.
+Use browser evidence to judge a settled, coherent UI change against its visual goal; exercise the primary task and check relevant viewports. Repeat the check when a later fix changes the rendered result. During exploration, inspect a temporary result only when it helps make the next design decision or show the human what changed. A browser check is not a gate for every small visual tweak. Screenshots beat prose for visual evidence. Drive the real rendering with `/agent-browser`; spawn `@prober --skills agent-browser` only when you can't run it yourself.
 
 ## Converge Before Hardening
 

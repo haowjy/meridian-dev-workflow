@@ -9,6 +9,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `/review`: names the commit and base reviewed, reads source before prior approvals, and checks hot paths for efficiency on every review. New `resources/efficiency.md`: write amplification, polling with expensive probes, scans that grow with history, eager startup, contention. `/dev-principles` gains the matching principle for code writers.
 - `/thermo-nuclear-review` rewritten, 193 → ~70 lines, from the instructions leads kept adding: review the surrounding system, find the model that deletes groups of edge cases, check documented architecture against code, find copy-pasted sibling structure, verdict on structure. One blocker list replaces five restated lists.
 - `@reviewer`: settles findings by probing the real system, not the test suite.
+- New `/solo-dev` for a primary that implements and verifies in one session: no helpers until the task is done, then `@reviewer` and `@prober` on the final commit; no parallel lanes. `@gpt-dev` reduces to it.
+- `@ux-lead`: same shape plus UI specifics. Does incremental changes and most refactors itself; `@frontend-coder`/`@coder` only for a big frontend refactor; parallel `@mockup-dev` variants for comparing directions; checks rendering with `/agent-browser`. `/ui-implementation` and `/uxdev` match.
 
 ## [0.13.13] - 2026-10-01
 

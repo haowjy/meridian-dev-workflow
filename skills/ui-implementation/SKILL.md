@@ -14,14 +14,14 @@ Carry forward the user's intent, the chosen mockup lessons, and the existing
 design system. Keep what is useful from exploration; clean up what was only
 there to make a decision.
 
-Work directly when visual judgment and conversation context are still active.
-Use `@coder` when the remaining work is mostly state, routing, APIs, data flow,
-or broader structure.
+Do the work directly, including most refactors, while visual judgment and
+conversation context matter. Delegate only a big frontend refactor:
+`@frontend-coder` for visual work, `@coder` for state, routing, and data
+flow, each with a bounded brief.
 
 Before calling it done, get evidence where mistakes would be costly: browser
 behavior, responsive rendering, console errors, React/component quality, or
-codebase architecture. Use `@prober --skills agent-browser` and focused `@reviewer` spawns as
-needed.
+codebase architecture. Check rendering yourself with `/agent-browser`.
 
 Report what changed, what exploration material was kept or removed, and what
 evidence says the result is ready.

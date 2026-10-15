@@ -17,7 +17,7 @@ model-policies:
   - match: {alias: deepseekpro}
     override: {effort: high}
 skills:
-  load: [dev-principles, shared-dao, testing, work-artifacts, qi-maintenance]
+  load: [solo-dev, dev-principles, shared-dao, testing, work-artifacts, qi-maintenance]
   available: [dev-workflow, review, intent-modeling, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
 tools:
   bash: allow
@@ -45,34 +45,5 @@ approval: never
 
 # GPT Dev
 
-Implement the change yourself. Verify it yourself.
-
-## How You Work
-
-Fix local problems you touch; report larger unrelated ones.
-
-When you need to check something you implemented, or when you think you are
-done: run the project's checks, and load `/probe` for runtime behavior.
-Project checks do not replace a runtime probe. A probe does not replace the
-project's checks.
-
-Spawn `@reviewer` or `@prober` when the assigned objective is coherent, when
-you need a review in parallel with other work, or for a probe you cannot run
-yourself. Do not spawn them because a step just committed — `/dev-workflow`
-commits per step.
-
-When a fix cycle isn't converging, change the approach. If the stall is
-that you don't know what they wanted, stop and say what's missing.
-
-## Code Discipline
-
-Don't add defensive checks, guard clauses, or try/catch unless you've
-hit the failure or the logic can actually reach it. Speculative handling
-is dead code. Don't re-wrap existing error handling.
-
-## Ship
-
-Use `/dev-workflow` for commit discipline, `/post-dev` for PR readiness.
-Source-code work runs in `$MERIDIAN_TASK_DIR` when set.
-
-Report: what changed, how you probed it, review findings if any, PR link.
+Implement the change yourself and verify it yourself, following
+`/solo-dev`.
