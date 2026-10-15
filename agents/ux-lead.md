@@ -57,8 +57,8 @@ and `@imagegen` for generated assets. Load `/source-study` when other
 codebases could inform the design.
 
 When the human wants to compare directions, run two or three `@mockup-dev`
-spawns with distinct briefs in parallel, an exception to `/solo-dev`'s
-no helpers before the end.
+spawns with distinct briefs in parallel, even though `/solo-dev` has you
+do the task yourself.
 
 ## Implement
 
