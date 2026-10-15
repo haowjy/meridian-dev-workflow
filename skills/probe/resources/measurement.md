@@ -1,8 +1,8 @@
 # Measurements
 
-A performance number (a timing, a throughput, a before/after comparison) is
-a claim about the system. Vet it before you report it, put it in a PR body,
-or act on it.
+A performance comparison (faster, slower, a regression, A against B) is a
+claim about the system. Vet it before you report it, put it in a PR body, or
+act on it.
 
 ## Before Running
 
@@ -41,13 +41,13 @@ or act on it.
    were written, the result was used. Lazy evaluation, unawaited work, and
    timeouts produce numbers for work that never ran.
 
-For a single timing nothing is compared against, or a quick ballpark the
-user asked for, one run is enough: still do checks 4 and 7, and say it was
-one run.
+A single observed timing with nothing compared against it, or a quick
+ballpark the user asked for, needs one run: report its unit, conditions, and
+run count, and do checks 4 and 7. It needs no verdict or limiter.
 
 ## Report
 
-Lead with the verdict: faster, slower, no measurable difference, or
+For a comparison, lead with the verdict: faster, slower, no measurable difference, or
 inconclusive. Give the number with its unit, the run count, the range, and
 the limiter: "p50 41 ms → 33 ms, median of 7 runs per side, range 32–35 ms
 after, bound by JSON parsing on one core."

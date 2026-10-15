@@ -9,7 +9,7 @@ model-invocable: true
 
 A discipline for hard bugs. Skip phases only when explicitly justified.
 
-Phases 1–4 find the root cause. Go on to the fix (phases 5–6) only when your brief assigns it; otherwise stop and report the root cause with its evidence.
+Phases 1–4 find the root cause. Go on to the fix (phases 5–6) only when your brief assigns it; otherwise stop, remove your instrumentation and throwaway code, and report the root cause with its evidence.
 
 When exploring the codebase, check the project's KB vocabulary and context docs for a clear mental model of the relevant modules.
 

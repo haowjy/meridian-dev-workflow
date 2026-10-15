@@ -43,7 +43,7 @@ per turn, per poll, per invocation), keep each run's cost proportional to
 the work in front of it: write only what changed, poll with a cheap
 check, process new events with only the prior state they need, and load only what this run uses.
 
-A performance number is a claim. Before you report or act on one, name what
+A performance comparison is a claim. Before you report or act on one, name what
 limits it and rule out errors, skipped work, and noise, per `/probe`'s
 `resources/measurement.md`.
 

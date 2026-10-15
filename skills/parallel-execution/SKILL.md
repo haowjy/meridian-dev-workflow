@@ -15,7 +15,7 @@ Decompose work into a dependency graph before spawning:
 2. Draw dependencies: B depends on A if B needs A's output.
 3. Mark merge points where parallel branches must converge.
 4. Mark verify points: per-branch focused checks on what the branch touched (in-worktree, parallel); at each merge, build and probe the combined result; the full suite once, on the final merged change.
-5. Mark review points: one `@reviewer` pass at the end of each phase, on its final commit, never one per branch, on a model family other than the phase's implementers. The last phase's review covers the whole change against the original base, with `--skills thermo-nuclear-review`.
+5. Mark review points: one `@reviewer` pass at the end of each phase, on its final commit, never one per branch, on a model family other than every model that wrote what it reviews. For the last phase's whole-change review, that is every phase's implementers and your own integration edits; when no one family is free of all of them, split the review by surface. The last phase's review covers the whole change against the original base, with `--skills thermo-nuclear-review`.
 
 Test each dependency: "could this start from the spec alone, or does it need actual code from the other branch?" If it needs actual code, it's sequential. Give each change to shared code one owner: land it first as an enabling step, or assign it to one lane and have the others build against its contract. Two lanes independently changing the same shared behavior merge cleanly and still break together; plan that out or run them in order.
 

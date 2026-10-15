@@ -15,7 +15,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [probe]
-  available: [diagnose, poc, agent-browser, issues]
+  available: [poc, agent-browser, issues]
 tools:
   bash: allow
   write: allow

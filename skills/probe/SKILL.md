@@ -69,9 +69,9 @@ than declaring a bug.
 
 ## Measurements
 
-Vet every performance number you report (a timing, a throughput, a
-before/after comparison) with `resources/measurement.md` before it goes in
-your report. For any other count, say what you counted and how.
+Vet every performance comparison you report (faster, slower, a regression)
+with `resources/measurement.md` before it goes in your report. For a single
+timing or any other count, give its unit, conditions, and how you got it.
 
 ## Reporting
 
