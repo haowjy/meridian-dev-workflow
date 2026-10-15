@@ -169,7 +169,6 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | `merge-prep` | Understanding both sides' intent before merging or rebasing |
 | `issues` | Routing deferred work to `.context/` or GitHub issues |
 | `agent-staffing` | Which agents and models to use, review and test coverage by risk |
-| `correct` | Fixing mistakes agents keep repeating at the highest level that holds, from the KB corrections register (human-invoked) |
 
 **Engineering**
 
