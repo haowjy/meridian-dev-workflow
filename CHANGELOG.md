@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-10-15
+
 ### Changed
 - Requires meridian-base 0.11 (`/correct`, the corrections register, generic base wording).
 - Second review round: the whole-change review runs on a family other than every phase's implementers (split by surface when none is free of all). `@prober` no longer loads `/diagnose` (`@investigator` owns diagnosis), and `/diagnose` removes its instrumentation at whatever phase it stops. Measurement vetting covers performance comparisons; a single timing reports unit, conditions, and run count.
