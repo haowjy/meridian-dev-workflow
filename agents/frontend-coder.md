@@ -2,15 +2,15 @@
 name: frontend-coder
 description: "Spawn for frontend implementation where visual quality and design fidelity matter. Give a detailed brief: behavior and interaction requirements, available design references, target viewports, constraints, and acceptance criteria."
 mode: subagent
-model: luna
+model: sonnet
 effort: high
 model-policies:
+  - match: {alias: sonnet}
+    override: {}
   - match: {alias: luna}
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
-  - match: {alias: sonnet}
-    override: {}
   - match: {alias: opus}
     override: {}
 skills:

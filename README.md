@@ -128,7 +128,7 @@ task.
 | Agent | Model | Role |
 |---|---|---|
 | `coder` | luna | Implements a scoped objective, commits with a changelog entry |
-| `frontend-coder` | luna | Production UI with visual self-checks in a browser |
+| `frontend-coder` | sonnet | Production UI with visual self-checks in a browser |
 | `mockup-dev` | luna | Throwaway frontend mockups for comparing directions |
 | `imagegen` | sol | Generated images: concepts, icons, reference imagery |
 
