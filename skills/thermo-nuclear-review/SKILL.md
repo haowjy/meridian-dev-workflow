@@ -11,6 +11,8 @@ Find the code-judo move: a restructuring that keeps behavior the same and
 makes the code dramatically smaller and more direct. Cleaner lines are not
 the goal. A review that only confirms the code works has failed this lane.
 
+Hold the code to `/dev-principles`; this lane enforces them strictly.
+
 ## Scope: the Change and the System It Lives In
 
 Read whole cohesive seams, not only changed lines: the modules the change

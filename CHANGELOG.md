@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/thermo-nuclear-review`: holds the code to `/dev-principles` and enforces them strictly.
+
 ## [0.14.8] - 2026-10-16
 
 ### Changed
