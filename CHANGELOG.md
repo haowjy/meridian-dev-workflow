@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/solo-dev`, `/parallel-execution`: gate wording states what lanes do; drops negated contrasts.
+
 ## [0.14.12] - 2026-10-16
 
 ### Changed

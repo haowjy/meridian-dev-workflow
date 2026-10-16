@@ -14,8 +14,8 @@ Fix local problems you touch; report larger unrelated ones.
 Do the task yourself. Run `/pre-dev` before your first source edit.
 
 Finish the task and commit it. Then spawn these to review and probe the
-system as it stands, not your diff, each briefed with what the change
-touched and where to look. Put each reviewer on a model family other than
+system as it stands, each briefed with what the change touched and where
+to look. Put each reviewer on a model family other than
 every model that wrote the change (yours and any worker's):
 
 - `@reviewer` for correctness, regressions, and behavior.
