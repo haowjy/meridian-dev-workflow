@@ -13,12 +13,12 @@ the goal. A review that only confirms the code works has failed this lane.
 
 Hold the code to `/dev-principles`; this lane enforces them strictly.
 
-## Scope: the Change and the System It Lives In
+## Scope: the System, Focused Where the Brief Points
 
-Read whole cohesive seams, not only changed lines: the modules the change
-touches, their siblings, and the paths that call into them. Start with giant
-files and the files that churn most; churn concentrated in one place usually
-means a missing abstraction.
+Review the system as it stands, starting from the focus your brief names.
+Read whole cohesive seams: the modules in focus, their siblings, and the
+paths that call into them. Start with giant files and the files that churn
+most; churn concentrated in one place usually means a missing abstraction.
 
 ## Find the Shape
 
@@ -49,9 +49,8 @@ Block unless the author justifies it:
 - Logic in the wrong layer, feature logic leaking into a shared path, or a
   bespoke helper where a canonical one exists.
 - Dead code: a function, branch, flag, config key, or module that nothing
-  reaches or whose result nothing uses, including what the change left
-  without a caller. A diff hides what it orphaned; search for references
-  to what the change touched and removed.
+  reaches or whose result nothing uses, including what recent work left
+  without a caller. Search for references to what it touched and removed.
 - Shallow modules, wrappers, pass-through helpers, or generic "magic" that
   add indirection without clarity.
 - Casts, `any`/`unknown`, needless optionality, or silent fallbacks hiding an
