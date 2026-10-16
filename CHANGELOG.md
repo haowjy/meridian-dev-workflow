@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/solo-dev`: the review spawn attaches `/thermo-nuclear-review`, matching the final whole-change review in `/parallel-execution`.
+
 ## [0.14.5] - 2026-10-16
 
 ### Changed
