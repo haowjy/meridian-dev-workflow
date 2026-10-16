@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.14.12] - 2026-10-16
+
 ### Changed
 - `/thermo-nuclear-review`: reviews the system as it stands from the brief's focus; no diff framing.
 
