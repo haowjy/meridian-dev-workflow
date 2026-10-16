@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/post-dev`: evidence images in the PR body link to the commit that last touched them, not `main`; archiving a work item moves it and breaks `main` links.
+
 ## [0.14.1] - 2026-10-15
 
 ### Changed
