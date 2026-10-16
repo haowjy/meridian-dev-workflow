@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.14.4] - 2026-10-16
+
 ### Changed
 - `/thermo-nuclear-review`: dead code is a presumptive blocker: unreachable, unreferenced, or result unused, including what the change orphaned (search references; the diff hides it). Wrapper blocker covers modules too thin to stand apart from their caller.
 
