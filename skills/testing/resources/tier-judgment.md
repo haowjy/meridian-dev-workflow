@@ -36,10 +36,10 @@ flowchart TD
 - **Move up a tier when the question is about collaboration or integration.** Unit tests cannot answer "do these modules agree on the contract."
 - **Move up a tier when mocking starts dominating.** A unit test with five mocks is usually an integration test wearing a disguise.
 - **Give each test a distinct risk to protect.** If the smoke test proves a code path works, a unit test that reasserts the same thing adds maintenance without protection; consolidate equivalent coverage.
-- **Critical paths deserve redundancy.** Authentication, billing, data loss risks: test at multiple tiers because the cost of a false negative is high.
+- **Critical paths get one test at the tier that reaches the failure.** Authentication, billing, data loss: pair that test with a probe recipe for the whole journey.
 
 ## Common Sizing Mistakes
 
 - **Unit tests that mock everything**: should probably be integration tests, or the code should be refactored to have a testable core.
 - **Integration tests that spin up real databases**: probably should be smoke tests, or the database client should be wrapped in a fake-able interface.
-- **Smoke tests that verify string formatting**: should be unit tests. Smoke tests are expensive; reserve them for behavior only visible end-to-end.
+- **Smoke tests that verify exact string formatting**: check the behavior boundary (exit code, error class) and leave the wording unpinned. Smoke tests are expensive; reserve them for behavior only visible end-to-end.

@@ -38,10 +38,11 @@ yourself.
 
 ## Verify
 
-Check your work as you go with checks focused on what you changed, and
-load `/probe` to exercise the real system. Run the full suite once, before
-the review commit. Checks catch breakage; passing unit tests never
-show the change works.
+List the ways the change could fail and load `/probe` to exercise each on
+the real system. As you go, run the existing tests that cover what you
+changed. Write a new test only for a case `/testing` admits. Run the full
+suite once, before the review commit. Checks catch breakage; passing unit
+tests never show the change works.
 
 A second finding of the same failure class in the same code: stop patching
 and find the shared cause. Two places owning one invariant is the usual

@@ -45,7 +45,7 @@ Use `/diagnose` for the diagnosis loop.
 
 Delegate: `@explorer` for codebase, `@prober` for reproduction,
 `@session-miner` for history, `@web-researcher` for external context,
-`@coder --skills testing` to pin bugs with a failing test. Use direct
+`@coder` to build a repro loop. Use direct
 network access (WebSearch, WebFetch, `curl`) for quick lookups.
 
 Stop at the root cause and evidence unless the brief assigns the fix. When

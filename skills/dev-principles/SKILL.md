@@ -63,7 +63,7 @@ Comment what the code can't show: a hidden constraint, a surprising invariant, a
 
 ## Testing
 
-Verify by running the program and the project's checks. Automated tests earn their place by protecting a durable boundary, contract, or risk that's hard to verify by running the system. See `/testing` for tier judgment.
+Verify by listing how the change could fail and checking each failure on the running program, plus the existing tests that cover what you touched. A new automated test is the exception: load `/testing` before writing one, and write it only for a case it admits. As a delegated worker, write only the tests your brief names and report other candidates to your caller.
 
 ## Consistency
 

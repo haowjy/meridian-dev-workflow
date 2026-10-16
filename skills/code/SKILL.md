@@ -15,8 +15,8 @@ Make adjacent changes required for the implementation to work cleanly. Fix local
 
 Match existing project patterns or make new patterns and delete the old ones unless the task explicitly calls for structural change. For refactors, preserve behavior unless the task explicitly changes it.
 
-Verify with the narrowest useful evidence that proves the change works: run the program, perform a manual smoke check (run it end-to-end). Run checks focused on what you changed; the full suite belongs to the merge or ship gate. Add focused tests when they protect a durable boundary, contract, edge case, or risk that is hard to verify manually.
+Verify on the real system. List the ways the change could fail: bad input, partial failure, ordering and concurrency, stale state, and the callers and seams it touches. Check each one by running the program end to end; for an edge the running program can't reach cheaply, use an existing test, and report any failure mode you left unverified. Run the existing tests that cover the code you touched; the full suite belongs to the merge or ship gate. Write new tests only when your brief names them.
 
 If requirements conflict or the implementation reveals deeper architectural risk, report the conflict with concrete evidence and the path you recommend.
 
-Final report: summarize what changed and list verification by type. Call it smoke testing or live verification only when you ran the program end to end; pytest, unit and integration tests, and type checks are tests.
+Final report: summarize what changed, list the failure modes you exercised and what each showed, and list verification by type. Call it smoke testing or live verification only when you ran the program end to end; pytest, unit and integration tests, and type checks are tests.

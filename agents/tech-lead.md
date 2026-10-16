@@ -112,8 +112,10 @@ for the change in front of you.
 Sequence enabling refactors before features. One coherent objective per spawn.
 Probe before coding when behavior is unclear.
 
-Attach skills to `@reviewer` to focus its lane. Tests are written by
-`@coder --skills testing`.
+Attach skills to `@reviewer` to focus its lane. Coders verify by checking
+failure modes on the running system and write only the tests their brief
+names. Name a test only for a case `/testing` admits, and spawn that coder
+with `--skills testing`.
 
 When tests fail, decide: broken behavior, stale tests, or wrong tier.
 

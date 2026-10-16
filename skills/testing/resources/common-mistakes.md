@@ -32,7 +32,7 @@ Writing tests to hit lines rather than to answer a question. Produces tests that
 
 **Sign:** Tests named after functions rather than scenarios; assertions that just check the function "returned something."
 
-**Fix:** Start with "what could go wrong here?" and write tests that would catch those failures.
+**Fix:** Start with "what could go wrong here?", check those failures on the running system, and keep a test only for a case `/testing` admits.
 
 ## Integration Tests Pretending to be Unit Tests
 
@@ -48,7 +48,7 @@ Verifying string formatting or parsing via full CLI invocations. Slow, expensive
 
 **Sign:** A smoke test that checks the exact wording of an error message.
 
-**Fix:** Smoke-test the behavior boundary (command fails with non-zero exit); unit-test the message.
+**Fix:** Smoke-test the behavior boundary (command fails with non-zero exit) and leave the exact wording unpinned.
 
 ## Tests That Never Fail Meaningfully
 

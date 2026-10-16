@@ -1,22 +1,27 @@
 ---
 name: testing
 type: principle
-description: "Load when deciding whether and how to test a change: match tests to durable risks, and skip tests that add maintenance without protecting anything."
+description: "Load when deciding whether a change needs a new test and at which tier: the default is none, and it names the few cases that earn one."
 model-invocable: true
 ---
 
 # Testing Principles
 
-Testing buys confidence that a change does what it claims and does not break what it didn't touch. Coverage percentages, mock counts, and test totals are instruments, not goals.
+Retained tests add run time to every full-suite gate and upkeep to every refactor, and a slow suite stalls every agent waiting on it. Verify a change by listing how it could fail and checking each failure on the running system, plus the existing tests that cover the code you touched. Report any failure mode you left unverified.
 
-Tests are guardrails, not steering: every bug found in the field passed the
-tests. No suite makes tangled code easier to change — being able to reason
-about the code is primary. If your only confidence in a change is that the
-suite stayed green, that's a simplicity problem, not a coverage gap.
+Tests are guardrails: every bug found in the field passed the tests. No suite makes tangled code easier to change; being able to reason about the code is primary. If your only confidence in a change is that the suite stayed green, the code needs simplifying.
 
-## Test for Risk, Not Completeness
+## When a New Test Earns Its Place
 
-Match test effort to risk, not coverage targets. High-risk areas (data integrity, auth, payment, integration boundaries): comprehensive coverage with edge cases and error conditions. Low-risk areas (formatting, simple CRUD): manual smoke check or nothing.
+A new test is admitted for one of these cases. A new parameterized case or an extension of an existing test counts as a new test.
+
+- A pure core whose edges the running system can't reach without building a harness: parsing, policy, state transitions, concurrency decisions.
+- A regression the brief names, at a seam that reproduces the real bug.
+- A contract with a consumer outside this repository: a published API shape, a file format, a wire protocol.
+
+Name the admitted case and the failure the test guards in the commit message. Before adding one, extend or replace the existing test of the same behavior, and prune a weaker duplicate in the same change. Aim each test at the failure it guards: a boundary, an error path, an adversarial input.
+
+Leave a repository's test-count or suite-time baseline unchanged unless your brief approves the growth; a top-level session asks the human.
 
 ## Tier Selection
 
@@ -24,7 +29,7 @@ Match test effort to risk, not coverage targets. High-risk areas (data integrity
 - **Components composing, external systems fakeable?** Integration test. Medium speed, fakes at process/network boundaries.
 - **Real runtime behavior matters?** Manual smoke / e2e. Real processes, real APIs, closest to users.
 
-Modern practice leans integration-heavy ("Testing Trophy"): integration tests offer the best ROI because they test behavior the way users invoke it. Unit tests are for pure logic. Automated E2E is for critical user journeys only.
+Cost rises with the tier. A pure-logic unit test runs in milliseconds; an integration test that touches the filesystem, subprocesses, or a database costs orders of magnitude more on every run. Write the cheapest test that reaches the failure, and leave whole workflows to probes and smoke scripts. Automated E2E is for critical user journeys only.
 
 When tier choice is unclear, improve the manual smoke instructions first. Promote to automated tests only when the risk is hard to verify manually and the test protects a named contract cheaply.
 
@@ -36,7 +41,7 @@ Assert on outcomes (return values, state changes, side effects), not implementat
 
 ## Architecture Enables Testing
 
-Functional core / imperative shell: push decisions into pure functions, push I/O to the edges, test the core exhaustively and the shell shallowly. Code that's hard to test usually has a structural problem. Heavy mocking is a smell about the architecture, not about testing.
+Functional core / imperative shell: push decisions into pure functions, push I/O to the edges, test the core's edge cases and leave the shell to probes. Code that's hard to test usually has a structural problem. Heavy mocking is a smell about the architecture, not about testing.
 
 See `resources/functional-core.md`.
 
@@ -68,10 +73,6 @@ Unit tests written to understand behavior during development are scaffolding.
 Once the behavior is understood and covered by integration tests or the
 implementation itself makes the risk obvious, delete the scaffolding. Tests
 that no longer protect a live risk are maintenance cost, not safety.
-
-## LLM-Generated Test Caveats
-
-LLM-generated tests tend to verify what's already working rather than probe failure modes. Explicitly target: boundary conditions, error paths, adversarial inputs. Generate, execute, analyze gaps, regenerate iteratively.
 
 ## Tier Resources
 

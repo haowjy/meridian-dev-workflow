@@ -42,4 +42,4 @@ Not every problem factors this cleanly. Streaming systems, highly concurrent sys
 
 ## What This Changes About Testing
 
-If your unit tests require heavy mocking, the code is probably mixing decisions with I/O. The fix is usually refactoring the code, not writing more elaborate mocks. Push the decision into a pure function. Test that. The shell becomes uninteresting, which is the goal.
+If your unit tests require heavy mocking, the code is probably mixing decisions with I/O. The fix is usually refactoring the code, not writing more elaborate mocks. Push the decision into a pure function; its edges are now testable without mocks. The shell becomes uninteresting, which is the goal.

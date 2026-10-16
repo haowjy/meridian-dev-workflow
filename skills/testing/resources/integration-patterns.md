@@ -13,13 +13,11 @@ deterministic, fast, and close to the tests that use them. When a fake drifts
 from the real system, add a contract test that pins the real behavior, but
 that is a manual test, not an integration test.
 
-## Acceptance Contract
+## Scope
 
-- Read the requirements passed by the caller (`requirements.md`, design
-  specs, or behavioral descriptions in the prompt)
-- Treat each stated requirement as mandatory baseline coverage
-- Add compositional tests beyond stated requirements where coordination
-  risk is high
+Write the tests your brief names. This resource shapes how to write them;
+`/testing` decides which tests exist. Requirements are verified by checking
+the running system.
 
 ## Execution
 

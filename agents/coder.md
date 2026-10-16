@@ -14,8 +14,8 @@ model-policies:
   - match: {alias: opus}
     override: {}
 skills:
-  load: [code, dev-principles, testing, work-artifacts, qi-maintenance]
-  available: [poc, issues, qi-layer, knowledge-layers]
+  load: [code, dev-principles, work-artifacts, qi-maintenance]
+  available: [poc, testing, issues, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
