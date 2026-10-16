@@ -51,7 +51,9 @@ change the code safely. Check both on every review:
 - **Deletion.** LLM-written code keeps what it should delete. Name what the
   change could delete or simplify: dead paths, a mechanism it duplicates
   instead of replacing, wrappers, branches a simpler model would remove. A
-  new path beside an old one it should replace is a finding.
+  new path beside an old one it should replace is a finding. A diff hides
+  what the change left without a caller: search for remaining references to
+  what it removed.
 
 Unfamiliar is not a finding. "I'd have written it differently" is relative
 to the reviewer; entanglement is in the code.
