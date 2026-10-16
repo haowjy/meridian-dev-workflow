@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.14.5] - 2026-10-16
+
 ### Changed
 - `/review`: Deletion check searches references to what the change removed; the diff hides code it orphaned.
 
