@@ -50,9 +50,8 @@ Block unless the author justifies it:
   reaches or whose result nothing uses, including what the change left
   without a caller. A diff hides what it orphaned; search for references
   to what the change touched and removed.
-- Wrappers, pass-through helpers, modules that do too little to stand
-  apart from their caller, or generic "magic" that add indirection without
-  clarity.
+- Shallow modules, wrappers, pass-through helpers, or generic "magic" that
+  add indirection without clarity.
 - Casts, `any`/`unknown`, needless optionality, or silent fallbacks hiding an
   unclear invariant.
 - Related updates that can leave state half-applied.

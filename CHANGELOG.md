@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/solo-dev`: review fans out on the commit: a default `@reviewer`, a separate `@reviewer` with `/thermo-nuclear-review` on structure alone, one more per risk (tests, design alignment, React, efficiency), plus `@prober`. Replaces attaching thermo-nuclear to the single reviewer.
+- `/parallel-execution`: final whole-change review runs a default reviewer and a separate thermo-nuclear reviewer. `/agent-staffing` reviewer picker matches.
+- `/thermo-nuclear-review`: thin-module blocker uses `/dev-principles`' term, shallow modules.
+
 ## [0.14.6] - 2026-10-16
 
 ### Changed

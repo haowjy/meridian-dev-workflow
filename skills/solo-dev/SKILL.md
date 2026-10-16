@@ -13,16 +13,27 @@ Fix local problems you touch; report larger unrelated ones.
 
 Do the task yourself. Run `/pre-dev` before your first source edit.
 
-Finish the task and commit it. Then spawn `@reviewer` with
-`/thermo-nuclear-review` attached and `@prober` on that commit, with the
+Finish the task and commit it. Then spawn these on that commit, each
 reviewer on a model family other than every model that wrote the change
-(yours and any worker's). Confirm the running stack was built from
-that commit. They run together on it while you prepare `/post-dev`; tell each
-to use its own test data (accounts, records, fixtures, browser session) and
-not to reset or restart shared services. Run them one after the other when
-they would share state you can't separate. Fix their findings. When the fixes
-restructured code or changed behavior, commit and run both again on the new
-commit; check smaller fixes yourself.
+(yours and any worker's):
+
+- `@reviewer` for correctness, regressions, and behavior.
+- `@reviewer` with `/thermo-nuclear-review`, on structure alone. Code drifts
+  from `/dev-principles` even when its writer loaded them; a reviewer with
+  no other job catches what a general pass skims.
+- One more `@reviewer` for each risk the change carries:
+  `/test-architecture` for test changes, `/review-alignment` against a
+  design or requirements, `/react-architecture` for React, the efficiency
+  lane named in the brief for hot paths.
+- `@prober` to exercise the real system.
+
+Confirm the running stack was built from that commit. They run together on
+it while you prepare `/post-dev`; tell each to use its own test data
+(accounts, records, fixtures, browser session) and not to reset or restart
+shared services. Run them one after the other when they would share state
+you can't separate. Fix their findings. When the fixes restructured code or
+changed behavior, commit and run them all again on the new commit; check
+smaller fixes yourself.
 
 ## Verify
 
