@@ -49,7 +49,8 @@ When the result is visual (a web UI, a TUI, rendered output), take
 screenshots at the states that matter: before and after the action, each
 error, each viewport you check. Load `/agent-browser` for web UIs. Look at
 each screenshot yourself before you report it. Save them in the active work
-directory and cite their paths.
+directory and cite their paths. Keep raw captures (traces, HARs, profiles,
+browser data, dumps) out of the work directory; save the excerpt that shows the finding.
 
 Run actual commands and capture exact output. Go adversarial after the happy
 path: bad input, interruption, sequencing, boundary conditions, invalid state,
@@ -69,19 +70,18 @@ than declaring a bug.
 
 ## Share the Host
 
-Other agents and the human run on this machine, and memory, CPU, and disk run
-out: an out-of-memory kill takes whichever process the kernel picks, often
-someone else's. Probe the dev stack and browser already serving your task dir.
-Start your own only when none is running or your probe would contaminate it:
+Other agents and the human share this machine's memory, CPU, and disk. When
+memory runs out, the kernel kills whichever process it picks, often someone
+else's. Probe the dev stack and browser already serving your task dir. Start
+your own only when none is running or your probe would contaminate it:
 destructive steps, a clean baseline.
 
-Put your spawn id (`$MERIDIAN_SPAWN_ID`) in the name of everything you create:
-worktrees, temp dirs, tmux sessions, dev stacks, databases, browser sessions.
-A probe that dies mid-run never cleans up, and the id is how its caller finds
-what it left. Keep raw captures (traces, HARs, profiles, browser data, dumps)
-out of the work directory; save the excerpt that shows the finding. Before you
-report, stop what you started and delete the scratch you created, keeping the
-evidence your report cites. List anything you left running and why.
+Put your spawn id (`$MERIDIAN_SPAWN_ID`) in the names you choose: worktrees,
+temp dirs, tmux sessions, databases, browser sessions. A probe that dies
+mid-run never cleans up, and the id is how its caller finds what it left.
+Before you report, stop what you started and delete the scratch you created,
+keeping the evidence your report cites. List anything you left running and
+why.
 
 ## Measurements
 

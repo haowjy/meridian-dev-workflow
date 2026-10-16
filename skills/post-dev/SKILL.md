@@ -16,10 +16,10 @@ merge section applies once the PR lands.
 - `pr-body-<slug>.md` (from `/pre-dev`) has every template section filled,
   including the before-state evidence captured at kickoff — top up whatever
   implementation added
-- Evidence images link to the commit that last touched them
-  (`git log -1 --format=%H -- <file>` in the repo that holds them, once
-  pushed), not to `main`: work moves to the archive when done, which breaks
-  every `main` link into it
+- Evidence images link to the commit that last touched them, taken after
+  the file is pushed (`git log -1 --format=%H -- <file>` in the repo that
+  holds it), not to `main`: finished work is moved and later pruned, which
+  breaks every `main` link into it
 - Set a `release:*` label (default: `release:patch`)
 - PR title under 70 characters, descriptive
 
