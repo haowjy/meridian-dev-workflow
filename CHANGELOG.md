@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.14.14] - 2026-10-16
+
 ### Changed
 - Fewer tests. Default verification: list failure modes, check each on running system, run existing tests covering touched code. New test only for case `/testing` admits (pure core, named regression, external contract); delegated workers write only tests brief names.
 - `/testing` no longer loaded by `@coder`, `@frontend-coder`, `@gpt-dev`; available instead. Test-count/suite-time baseline growth needs brief or human approval.
