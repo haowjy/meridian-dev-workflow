@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.14.10] - 2026-10-16
+
 ### Changed
 - `/parallel-execution`: every phase ends with a phase gate: default `@reviewer`, thermo-nuclear `@reviewer` focused on structure, `@prober`. Next phase waits for it. Final gate fans out wider: those three on the whole change, one reviewer per risk (tests, alignment, React, efficiency), end-to-end probe, full suite. Re-run the whole gate when fixes restructure code or change behavior.
 
