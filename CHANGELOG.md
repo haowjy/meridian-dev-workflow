@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/probe`: spawn-id naming covers names the probe chooses (project tooling names dev stacks); the raw-captures rule sits beside the screenshot rule. `/post-dev`: the commit-link reason covers pruning as well as the archive move.
+
 ## [0.14.2] - 2026-10-16
 
 ### Changed
