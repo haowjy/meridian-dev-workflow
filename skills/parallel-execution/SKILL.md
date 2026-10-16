@@ -14,8 +14,8 @@ Decompose work into a dependency graph before spawning:
 1. List every task with its inputs and outputs.
 2. Draw dependencies: B depends on A if B needs A's output.
 3. Mark merge points where parallel branches must converge.
-4. Mark verify points: per-branch focused checks on what the branch touched (in-worktree, parallel); at each merge, build and probe the combined result; the full suite once, on the final merged change.
-5. Mark review points: one `@reviewer` pass at the end of each phase, on its final commit, never one per branch, on a model family other than every model that wrote what it reviews. For the last phase's whole-change review, that is every phase's implementers and your own integration edits; when no one family is free of all of them, split the review by surface. The last phase's review covers the whole change against the original base with at least two reviewers: a default `@reviewer`, and one with `/thermo-nuclear-review` focused on structure.
+4. Mark verify points: per-branch focused checks on what the branch touched (in-worktree, parallel); at each merge, build the combined result.
+5. Mark gates: a phase gate at the end of every phase, and the final gate on the last one (see Gates). Gate phases, never subphases or single branches.
 
 Test each dependency: "could this start from the spec alone, or does it need actual code from the other branch?" If it needs actual code, it's sequential. Give each change to shared code one owner: land it first as an enabling step, or assign it to one lane and have the others build against its contract. Two lanes independently changing the same shared behavior merge cleanly and still break together; plan that out or run them in order.
 
@@ -41,12 +41,27 @@ At each convergence point:
 
 1. Verify each branch in its own worktree (parallel).
 2. Merge branches back.
-3. Integration check on the combined result: build and probe the real system to confirm the branches compose.
+3. Integration check on the combined result: build it and run focused checks on where the branches meet.
 You own the merge. If integration fails, isolate which branch interaction caused it before re-spawning.
 
-End every phase, sequential or merged, with a `@reviewer` pass on its final commit. Fix blocking findings before the next phase builds on it. When fixes restructured code or changed behavior, run the integration check and the review again on the new commit; read smaller fixes yourself.
+## Gates
 
-After the last phase, run the full suite once on the whole change. If it finds gaps, append new phases to the DAG.
+A gate runs on a phase's final commit, after its branches merge, and the next phase starts only once it passes. A problem found at a phase gate costs one phase of rework; found at the end, every later phase is built on it. Spawn the gate's lanes together, each reviewer on a model family other than every model that wrote what it reviews. Confirm the stack the prober runs was built from that commit, and tell each lane to use its own test data and not to reset or restart shared services.
+
+**Phase gate**, at the end of every phase, sequential or merged:
+- `@reviewer` across everything the phase changed: correctness, regressions, behavior.
+- `@reviewer` with `/thermo-nuclear-review`, focused on structure. Code drifts from `/dev-principles` even when its writer loaded them; a reviewer focused there catches what a general pass skims.
+- `@prober` exercising what the phase built on the real system.
+
+**Final gate**, on the last phase, covers the whole change against the original base and fans out wider:
+- The three phase-gate lanes, on the whole change.
+- One more `@reviewer` for each risk the change carries: `/test-architecture` for test changes, `/review-alignment` against the design or requirements, `/react-architecture` for React, the efficiency lane named in the brief for hot paths.
+- The `@prober` runs the user-facing workflows end to end, not only what the last phase built.
+- The full suite, once.
+
+Final-gate reviewers must use a model family free of every phase's implementers and your own integration edits; when no one family is, split the review by surface. Gaps the final gate finds become new phases in the DAG.
+
+Fix blocking findings before the gate passes. When the fixes restructured code or changed behavior, run the whole gate again on the new commit; check smaller fixes yourself.
 
 ## Long-Running Lanes
 
