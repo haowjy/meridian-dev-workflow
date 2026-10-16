@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.14.8] - 2026-10-16
+
 ### Changed
 - `/solo-dev`, `/parallel-execution`: thermo-nuclear reviewer is focused on structure, not limited to it; it still flags serious issues outside its lane, per `/review`.
 
