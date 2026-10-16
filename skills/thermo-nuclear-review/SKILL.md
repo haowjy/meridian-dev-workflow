@@ -46,8 +46,13 @@ Block unless the author justifies it:
   existing flow, or feature checks scattered across shared code.
 - Logic in the wrong layer, feature logic leaking into a shared path, or a
   bespoke helper where a canonical one exists.
-- Wrappers, pass-through helpers, or generic "magic" that add indirection
-  without clarity.
+- Dead code: a function, branch, flag, config key, or module that nothing
+  reaches or whose result nothing uses, including what the change left
+  without a caller. A diff hides what it orphaned; search for references
+  to what the change touched and removed.
+- Wrappers, pass-through helpers, modules that do too little to stand
+  apart from their caller, or generic "magic" that add indirection without
+  clarity.
 - Casts, `any`/`unknown`, needless optionality, or silent fallbacks hiding an
   unclear invariant.
 - Related updates that can leave state half-applied.
