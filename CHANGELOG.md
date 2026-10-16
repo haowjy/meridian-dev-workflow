@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/parallel-execution` gates, `/solo-dev` review: lanes review and probe the system as it stands, briefed with focus areas (what changed, seams touched, risks), not a commit's diff. A phase can span many commits; the gate runs once its work merges.
+
 ## [0.14.10] - 2026-10-16
 
 ### Changed

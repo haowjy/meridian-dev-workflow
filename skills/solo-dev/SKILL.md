@@ -13,9 +13,10 @@ Fix local problems you touch; report larger unrelated ones.
 
 Do the task yourself. Run `/pre-dev` before your first source edit.
 
-Finish the task and commit it. Then spawn these on that commit, each
-reviewer on a model family other than every model that wrote the change
-(yours and any worker's):
+Finish the task and commit it. Then spawn these to review and probe the
+system as it stands, not your diff, each briefed with what the change
+touched and where to look. Put each reviewer on a model family other than
+every model that wrote the change (yours and any worker's):
 
 - `@reviewer` for correctness, regressions, and behavior.
 - `@reviewer` with `/thermo-nuclear-review`, focused on structure. Code
@@ -27,13 +28,13 @@ reviewer on a model family other than every model that wrote the change
   lane named in the brief for hot paths.
 - `@prober` to exercise the real system.
 
-Confirm the running stack was built from that commit. They run together on
-it while you prepare `/post-dev`; tell each to use its own test data
+Confirm the running stack was built from your latest commit. They run
+together while you prepare `/post-dev`; tell each to use its own test data
 (accounts, records, fixtures, browser session) and not to reset or restart
 shared services. Run them one after the other when they would share state
 you can't separate. Fix their findings. When the fixes restructured code or
-changed behavior, commit and run them all again on the new commit; check
-smaller fixes yourself.
+changed behavior, commit and run them all again; check smaller fixes
+yourself.
 
 ## Verify
 
