@@ -18,9 +18,9 @@ reviewer on a model family other than every model that wrote the change
 (yours and any worker's):
 
 - `@reviewer` for correctness, regressions, and behavior.
-- `@reviewer` with `/thermo-nuclear-review`, on structure alone. Code drifts
-  from `/dev-principles` even when its writer loaded them; a reviewer with
-  no other job catches what a general pass skims.
+- `@reviewer` with `/thermo-nuclear-review`, focused on structure. Code
+  drifts from `/dev-principles` even when its writer loaded them; a
+  reviewer focused there catches what a general pass skims.
 - One more `@reviewer` for each risk the change carries:
   `/test-architecture` for test changes, `/review-alignment` against a
   design or requirements, `/react-architecture` for React, the efficiency
