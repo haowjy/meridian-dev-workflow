@@ -22,12 +22,9 @@ change; check smaller fixes yourself.
 
 ## Verify
 
-List the ways the change could fail and load `/probe` to exercise each on
-the real system. As you go, run the existing tests that cover what you
-changed. Keep no new test the user didn't ask for, and delete tests you wrote to
-check your work. Run the full
-suite once, before the review commit. Checks catch breakage; passing unit
-tests never show the change works.
+Exercise each way the change could fail on the real system (`/probe`).
+Run the full suite once, before the review commit; passing unit tests
+never show the change works.
 
 When a concern (the code behind one responsibility) would need a third
 round of fixes or a second redesign, or a fourth review round, open

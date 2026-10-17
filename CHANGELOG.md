@@ -5,6 +5,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- Leaner loaded context. tech-lead loads `testing` and `shared-dao` only on demand; solo-dev `shared-dao`. `dev-principles` drops what models already do (core-belief preambles, separate Consistency and Separation of Concerns sections) and keeps the steering. solo-dev and tech-lead no longer repeat the no-new-tests rule or the record-each-decision rule that their loaded skills carry. Tech-lead spawn prompt -33%, solo-dev -30%, coder -33%.
+- Primary profiles (tech-lead, solo-dev, ux-lead, product-lead, design-lead) load `/notify`. `pre-dev` finds the work directory with `meridian work current`.
 - `/diagnose`: rank competing explanations instead of a fixed 3-5 hypotheses; with no loop possible, work from a captured artifact and report the cause unconfirmed, instead of stopping.
 
 ## [0.15.0] - 2026-10-17

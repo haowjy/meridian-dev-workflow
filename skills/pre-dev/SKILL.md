@@ -37,7 +37,7 @@ the worktree itself was newly created this pass:
 
 ```bash
 cp <repo>/.github/PULL_REQUEST_TEMPLATE.md \
-   "$MERIDIAN_ACTIVE_WORK_DIR/pr-body-<slug>.md"
+   "$(meridian work current)/pr-body-<slug>.md"
 ```
 
 Use the nearest match if that exact path doesn't exist

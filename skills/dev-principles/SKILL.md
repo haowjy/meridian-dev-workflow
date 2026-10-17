@@ -7,60 +7,59 @@ model-invocable: true
 
 # Dev Principles
 
-## Core Beliefs
+Judge each code decision by what it does to the next change.
 
-1. **Code is cheap; bad code is expensive.**  
-   The real cost isn't writing code — it's the drag on every later change when code is inconsistent, bloated, or entangled. Spend the effort to keep code easy to change and delete.
-
-2. **Consistency beats cleverness.**  
-   Every novel pattern forces the next reader to learn a new dialect. Consistent patterns lower reasoning cost for humans and agents. Match what's there before inventing something new; a new idiom must be clearly worth its learning cost.
-
-3. **Code is fluid.**  
-   Requirements change; systems that resist change rot or get bypassed. Design clear seams, good boundaries, and minimal coupling so the next change is small and safe.
-
-4. **Simplicity of the system, not of the change.**  
-   Picking the smaller diff today accretes parallel mechanisms, ghost states, and compatibility layers — complexity compounds inside the system. Refactor and delete to reduce concepts, states, and moving parts, even when the diff is larger.
+- **Simplicity of the system, not of the change.** The smaller diff today
+  accretes parallel mechanisms, ghost states, and compatibility layers.
+  Refactor and delete to reduce concepts, states, and moving parts, even
+  when the diff is larger.
+- **Consistency beats cleverness.** Read the surrounding code first and use
+  the project's patterns; a new idiom must be worth what every later reader
+  pays to learn it. A good dependency deletes more code than it adds.
+- **Boundaries where things change independently.** Things that always
+  change together are one thing; partitioning alone doesn't justify a
+  split. Prefer deep modules: an exported function that wraps three lines
+  belongs in its caller. When duplication crosses a boundary, suspect the
+  boundary before extracting a helper. Keep files focused: an agent reads
+  the whole file.
 
 ## Simplicity
 
-Every boundary, type, and layer must earn its place by making future changes smaller and safer. The default failure mode is over-engineering: adding moving parts that don't create real independence.
+Over-engineering is the default failure: moving parts that buy no real
+independence. Before adding a branch, flag, or mode for a new case, look
+for the model under which the case needs no special handling: a different
+owner, state model, or shared path.
 
-Before adding a branch, flag, or mode for a new case, look for the model under which the case needs no special handling: a different owner, state model, or shared path.
+## Deletion
 
-Before adding structure: is this a separate concern, or one thing wearing two names? Things that always change together are one thing. Independence justifies a split; partitioning alone doesn't.
-
-**Deep modules over shallow.** A deep module hides substantial complexity behind a simple interface. If an exported function wraps three lines, keep it in its caller. When 3+ shallow modules touch the same concept, bundle them into one deep module.
+LLMs default to preserving code; fight that. Delete dead code, stale
+imports, and orphaned files in the same change, and collapse obvious
+duplication. When new code replaces old
+behavior, delete the old path instead of keeping it as a fallback or
+compatibility layer, unless the project's policy requires one. Fix the
+structural problems you touch: circular dependencies, god modules, leaky
+abstractions.
 
 ## Efficiency by Construction
 
 Large efficiency bugs are rarely slow lines. They are a cost paid on every
 event, or one that grows with accumulated state. On a hot path (per chunk,
 per turn, per poll, per invocation), keep each run's cost proportional to
-the work in front of it: write only what changed, poll with a cheap
-check, process new events with only the prior state they need, and load only what this run uses.
-
-A performance comparison is a claim. Before you report or act on one, name what
-limits it and rule out errors, skipped work, and noise, per `/probe`'s
+the work in front of it: write only what changed, poll with a cheap check,
+and load only what this run uses. Before you report or act on a performance
+comparison, rule out errors, skipped work, and noise, per `/probe`'s
 `resources/measurement.md`.
-
-## Separation of Concerns
-
-Group by concern; draw boundaries where things change independently. Smaller focused files cost less to read: an agent consumes the whole file, so a 500-line module with one relevant function wastes attention on the other 480.
-
-When you see duplication across boundaries, suspect the boundaries before patching with extraction.
-
-## Deletion
-
-LLMs default to preserving code. Fight that. Dead code, stale imports, orphaned files: delete in the same change. When new code replaces old behavior, delete the old path in the same change instead of keeping it beside the new one as a fallback or compatibility layer, unless the project's policy requires one. Obvious duplication: collapse it. Structural problems (circular dependencies, god modules, leaky abstractions): fix on sight. Rot compounds at agent speed.
 
 ## Comments
 
-Comment what the code can't show: a hidden constraint, a surprising invariant, an external quirk, a race the code avoids. Put design rationale longer than a few lines in the directory's `.context/`, and the story of a change in its commit message. Let names and module boundaries carry structure, in place of section banners and comments that narrate the next line.
+Comment what the code can't show: a hidden constraint, a surprising
+invariant, an external quirk, a race it avoids. Design rationale goes in
+the directory's `.context/`; the story of a change goes in its commit
+message.
 
 ## Testing
 
-Verify by listing how the change could fail and checking each failure on the running program, plus the existing tests that cover what you touched. Keep no new automated test the user didn't ask for, and delete tests you wrote to check your work (`/testing`). Propose a test you think would earn a permanent place to whoever you report to.
-
-## Consistency
-
-Read surrounding code first. Does the project already solve this? Prefer its patterns over introducing new ones. A good dependency deletes more code than it adds.
+Verify by listing how the change could fail and checking each failure on
+the running program, plus the existing tests that cover what you touched.
+Keep no new test the user didn't ask for (`/testing`); propose one you
+think would earn a permanent place to whoever you report to.

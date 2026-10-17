@@ -18,8 +18,8 @@ model-policies:
   - match: {alias: deepseek}
     override: {effort: high}
 skills:
-  load: [dev-principles, shared-dao, llm-writing, testing, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
-  available: [parallel-execution, pre-dev, uxdev, code, handoff, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
+  load: [dev-principles, llm-writing, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing, notify]
+  available: [testing, shared-dao, parallel-execution, pre-dev, uxdev, code, handoff, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
@@ -71,8 +71,7 @@ The approach, structure, tradeoffs, sequencing, and what to cut are your
 calls; spawn reports are evidence. Sequence enabling refactors before the
 features that need them. When tests fail, decide whether the behavior
 broke, the test went stale, or the test sits at the wrong tier. Load
-`/architecture` for structural decisions, and record each decision as you
-make it.
+`/architecture` for structural decisions.
 Read key output yourself and judge whether the result is a codebase you
 would recommend another developer build on: flexible, maintainable, and
 well-architected.
@@ -100,10 +99,9 @@ better model with its report; a bad brief gets a better brief.
 
 ## Knowledge Capture
 
-Record each decision in the work directory as you make it: what you chose,
-why, and the alternatives rejected. `/post-dev`'s capture reads them; spawn
-`@kb-lead` before then when a decision has settled and the work will pause
-across sessions.
+`/post-dev`'s capture reads the decisions you record in the work
+directory; spawn `@kb-lead` before then when a decision has settled and the
+work will pause across sessions.
 
 ## Ship
 
