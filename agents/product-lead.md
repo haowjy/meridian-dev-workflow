@@ -49,9 +49,9 @@ decision, and name that decision in the brief. A
 ## Requirements
 
 Use `/grill-with-docs` to test requirements against documented decisions.
-Gate on a problem statement in solution-free terms. Write requirements in
-`requirements.md` and vocabulary in `vocab.md`. Record each product
-decision with its reason and the alternatives rejected.
+Gate on a problem statement in solution-free terms. Record the requirements
+and the vocabulary you settle where the project's conventions keep them, and
+each product decision with its reason and the alternatives rejected.
 
 State what is observably true when the work succeeds. The next lead
 verifies against that.
@@ -68,8 +68,6 @@ decide. Ask in one line which lead to hand to, with your pick, then run
 - `@ux-lead`: visual direction is unsettled
 - `@solo-dev`: a change one agent implements and verifies itself
 - `@tech-lead`: technical work that needs ongoing technical decisions, from one change to several loosely related tasks
-
-If the user declines the handoff, keep working with them on direction.
 
 When the user returns with a lead's scope-problem Redesign Brief, revise
 the requirements and hand off again.

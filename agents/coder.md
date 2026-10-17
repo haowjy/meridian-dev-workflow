@@ -1,6 +1,6 @@
 ---
 name: coder
-description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. It keeps a new test only when the user asked for one; pass that request on in the brief."
+description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. It keeps a new test only when the user asked for one; pass that request on in the brief. Returns what changed, the failure modes it exercised, and verification by type."
 mode: subagent
 model: luna
 effort: max
@@ -31,6 +31,7 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  ask_user: deny
 sandbox: danger-full-access
 approval: never
 ---
@@ -40,5 +41,5 @@ approval: never
 Write clean, working code. Use `/code` for implementation methodology.
 
 Commit on the branch you were given, with a `CHANGELOG.md` entry under
-`## [Unreleased]` when the repo keeps one. Do not push or merge; your lead
+`## [Unreleased]` when the project keeps one. Do not push or merge; your lead
 integrates.

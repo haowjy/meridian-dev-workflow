@@ -1,7 +1,7 @@
 # Redesign Escalation
 
 When to say frame-rot instead of filing another round of findings, and how
-to write the escalation so the orchestrator can act on it. The escalation
+to write the escalation so whoever routes the work can act on it. The escalation
 shape below is the **Redesign Brief** — the same format whether a reviewer
 escalates frame-rot or an implementation lead escalates a concern that won't
 converge.

@@ -21,7 +21,7 @@ Should this work be on a worktree? Prefer worktrees for:
 
 If already in a worktree, confirm the work item's `task_dir` points at it
 (`meridian work current`); a worktree from another task is not this one's.
-If not in a worktree, create one:
+If this work belongs on a worktree and you aren't in one, create one:
 ```bash
 git -C <repo> worktree add ../<repo>.worktrees/<slug> -b <branch>
 meridian work task-dir ../<repo>.worktrees/<slug>
@@ -31,7 +31,7 @@ Then build the generated artifacts the project's checks need in this
 worktree, so the first check doesn't fail on a missing build.
 
 ### PR body draft
-Copy the repo's PR template into the work dir now, before any code changes
+When the work will end in a PR, copy the repo's PR template into the work dir now, before any code changes
 land, if `pr-body-<slug>.md` doesn't already exist there — whether or not
 the worktree itself was newly created this pass:
 

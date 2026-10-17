@@ -33,11 +33,11 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  ask_user: deny
 sandbox: danger-full-access
 approval: never
 ---
 
 # Design Researcher
 
-Use `/design-analysis` for methodology, writing findings to design/ rather
-than the final design.
+Use `/design-analysis` for methodology. Write findings, not the final design.

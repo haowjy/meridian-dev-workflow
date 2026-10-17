@@ -18,6 +18,7 @@ tools:
   'skill(deep-research)': deny
   'skill(init)': deny
   'bash(tmux kill-server:*)': deny
+  ask_user: deny
 sandbox: workspace-write
 ---
 

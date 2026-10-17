@@ -3,7 +3,7 @@ name: solo-dev
 description: "Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
 mode: primary
 model: astra
-subagents: [reviewer, prober, kb-lead, subagent]
+subagents: [reviewer, prober, investigator, kb-lead, cold-reader, subagent]
 effort: high
 model-policies:
   - match: {alias: astra}
@@ -16,7 +16,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [solo-dev, dev-principles, shared-dao, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling]
-  available: [pre-dev, testing, dev-workflow, review, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
+  available: [agent-staffing, pre-dev, testing, dev-workflow, review, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
 tools:
   bash: allow
   write: allow

@@ -4,10 +4,10 @@ description: "Launch for UI work whose visual direction is decided with you as y
 mode: primary
 model: opus
 effort: high
-subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, kb-lead, session-miner, subagent]
+subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, investigator, kb-lead, cold-reader, session-miner, subagent]
 skills:
   load: [solo-dev, uxdev, design-craft, anti-slop, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling]
-  available: [pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, session-mining, grill-with-docs, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
+  available: [agent-staffing, pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, session-mining, grill-with-docs, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
 model-policies:
   - match: {alias: opus}
     override: {}
@@ -56,8 +56,8 @@ Use `@mockup-dev` for prototypes, `@browser` for live design references,
 and `@imagegen` for generated assets. Load `/source-study` when other
 codebases could inform the design.
 
-When the human wants to compare directions, run two or three `@mockup-dev`
-spawns with distinct briefs in parallel, even though `/solo-dev` has you
+When the human wants to compare directions, run one `@mockup-dev`
+spawn per direction, with distinct briefs, in parallel, even though `/solo-dev` has you
 do the task yourself.
 
 ## Implement
@@ -72,9 +72,7 @@ many components or would fill your context for a long stretch. Use
 `@frontend-coder` where visual fidelity matters and `@coder` for state,
 routing, and data flow. Give each a bounded brief, run them in parallel
 only on areas that don't touch, and check the result yourself. A helper that
-ran out of depth gets one retry on Opus with its report.
-
-Work outside the frontend belongs to `@solo-dev` or `@tech-lead`.
+ran out of depth gets one retry on a better model with its report.
 
 ## Verify
 

@@ -32,30 +32,17 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  ask_user: deny
 sandbox: danger-full-access
 approval: never
 ---
 
 # Browser
 
-Use `/agent-browser` for the full command reference. Core loop:
-
-```bash
-agent-browser open https://example.com
-agent-browser snapshot -i        # interactive elements, with @eN refs
-agent-browser get text @e5
-agent-browser screenshot capture.png
-```
-
-Refs (`@e1`, `@e2`, …) are reassigned on every snapshot and go stale on any
-page change; re-snapshot before each ref interaction.
-
-When someone should watch the session live, `agent-browser dashboard start`
-serves a live viewport on `:4848` (expose it via `tailscale serve 4848` to
-view from another device).
+Use `/agent-browser`.
 
 Use `WebSearch` and `WebFetch` when you need documentation or context that
 doesn't require a live browser.
 
 Write output to the work directory.
-Your final message: what you did, what you found, and where the artifacts are.
+Report what you did, what you found, and where the artifacts are.

@@ -43,6 +43,7 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  ask_user: deny
 sandbox: danger-full-access
 approval: never
 ---
@@ -65,7 +66,5 @@ issues, known CVEs — spawn `@web-researcher` in the background and keep
 reviewing; collect the result before writing your verdict. Spawn
 `@investigator` when a suspected bug needs root-cause work deeper than the
 review lane can give it — ask for the causal chain, not the fix. Routing
-the fix is the orchestrator's call, and code that changes under you
+the fix is your caller's call, and code that changes under you
 invalidates your findings.
-
-Your final message is your report.

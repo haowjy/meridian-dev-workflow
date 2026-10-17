@@ -12,10 +12,6 @@ whole ones rather than mechanical fragments.
 Give workers the outcome, relevant context, constraints, and acceptance checks,
 not an edit script.
 
-Qwen is another option when a suitable local model is actually available. Check
-the specific model's capabilities and route rather than assuming a Qwen alias
-or local endpoint exists.
-
 ## When a Larger Model Earns Its Cost
 
 | Need | Preferred model |

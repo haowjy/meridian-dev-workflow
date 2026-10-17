@@ -30,7 +30,8 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
-sandbox: danger-full-access
+  ask_user: deny
+sandbox: workspace-write
 ---
 
 # System Architect

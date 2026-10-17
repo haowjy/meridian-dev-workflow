@@ -20,11 +20,13 @@ merge section applies once the PR lands.
   the file is pushed (`git log -1 --format=%H -- <file>` in the repo that
   holds it), not to `main`: finished work is moved and later pruned, which
   breaks every `main` link into it
-- Set a `release:*` label (default: `release:patch`)
-- PR title under 70 characters, descriptive
+- The PR follows the project's release conventions, wherever its AGENTS.md or
+  docs keep them: its labels and title rules
+- `@cold-reader` has read the PR body as its reader, someone reviewing the PR
+  without the work's context, and its valid findings are fixed
 
 ### Changelog
-- `CHANGELOG.md` has entries under `## [Unreleased]` for this work
+- Where the project keeps a `CHANGELOG.md`, it has entries under `## [Unreleased]` for this work
 - Entries written in caveman style: terse, behavioral, filler-free
 - Focus on what downstream users notice, not which lines moved
 
@@ -45,8 +47,8 @@ merge section applies once the PR lands.
   entry in `.context/TODO` or a GitHub issue — no orphan TODOs
 
 ### Knowledge capture
-- Spawn `@kb-lead` once, after review fixes have landed, covering the whole
-  change.
+- Spawn `@kb-lead` after review fixes have landed, covering the whole
+  change and anything an earlier capture left out.
 - Pass the conversation, changed files, and work directory. Point it at the
   decision records and any `DIVERGENCE/` logs first; they are the cheapest
   record of what was decided and why.

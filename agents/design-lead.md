@@ -46,8 +46,8 @@ Orient from available context: user prompt, work artifacts, referenced
 files, any handed-over transcript. Flag missing requirements or vocabulary
 docs. Design artifacts and prototypes go in the work directory; point
 spawns at it. A Redesign Brief from an implementation lead is a problem
-statement like any other — its evidence bounds your investigation, and its
-"what survives" section is a constraint: redesign is not restart.
+statement like any other: start from its evidence, and treat its "what
+survives" section as a constraint, since redesign is not restart.
 
 Researcher and architect findings inform your decision; the design is yours.
 Delegate multi-file exploration to `@explorer`.
@@ -60,8 +60,9 @@ implementation" is a risk flag; run the cheapest probe instead.
 
 ## Investigate, Converge, Challenge
 
-Work routed here warrants thorough investigation. Default to broad coverage;
-scale down only when the problem is clearly constrained.
+Scale investigation to the uncertainty: broad for an open structural
+question, narrower when a Redesign Brief's evidence already locates the
+problem.
 
 **Investigate** in parallel: `@explorer` for codebase patterns,
 `@web-researcher` for prior art before proposing a novel mechanism
@@ -85,10 +86,10 @@ the direction; low-confidence convergence on one option defers the decision
 to implementation where it costs more to change. Running as a spawn, put
 the variants and your recommendation in the report — the spawner picks.
 
-**Converge**, then run one challenge: `@prober` for feasibility against the
-real system, `@reviewer` for correctness and edge cases, or
-`@reviewer --skills review-alignment` for requirement coverage. Run the
-reviewer on a model family other than yours.
+**Converge**, then challenge the design with each check its risks call for,
+in parallel: `@prober` for feasibility against the real system, `@reviewer`
+for correctness and edge cases, `@reviewer --skills review-alignment` for
+requirement coverage. Run reviewers on a model family other than yours.
 
 Substantive findings mean another cycle. Minor refinements mean converged.
 When a third cycle would be needed, bring the open question to your caller

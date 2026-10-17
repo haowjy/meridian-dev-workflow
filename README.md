@@ -35,8 +35,8 @@ session so you can steer it directly.
 
 **design-lead** settles structure when it is open: interfaces, boundaries,
 the data model. It also takes a Redesign Brief from an implementation lead.
-It investigates in parallel, converges, runs one challenge (prober, reviewer,
-or an alignment review), and returns design docs with a recommendation. Run
+It investigates in parallel, converges, challenges the design with the checks its risks
+call for (prober, reviewer, alignment review), and returns design docs with a recommendation. Run
 it as a session or spawn it.
 
 **solo-dev** implements and verifies a change itself, without a team of
@@ -61,24 +61,26 @@ Every implementation lead runs the same lifecycle:
 1. **`/pre-dev`** runs before the first source edit. It sets up a worktree
    for the work item, drafts the PR body from the repo template, and captures
    before-state evidence while it still exists.
-2. **Implement.** tech-lead plans any task that needs more than one spawn as a
-   DAG with `/parallel-execution`, using a worktree per parallel lane and one
+2. **Implement.** tech-lead plans work that splits into parallel lanes or
+   dependent phases as a DAG with `/parallel-execution`, using a worktree per parallel lane and one
    owner for each change to shared code. It delegates to `coder` and
    `frontend-coder`. solo-dev and ux-lead implement the change themselves.
    Each commit carries a `CHANGELOG.md` entry.
 3. **Verify.** Leads run focused checks and `/probe` against the real system
    while working, and the full suite once on the finished change.
-4. **Review.** `reviewer` and `prober` run on a committed state. Parallel
-   work gets one review per phase, and the last phase's review covers the
-   whole change with `thermo-nuclear-review`. A single-session lead runs both
-   once at the end, on the same dev stack, each with its own test data.
-   Review runs again only when fixes restructured code or changed behavior.
+4. **Review.** `reviewer` and `prober` run on a committed state, with the
+   lanes the change needs (`agent-staffing` `resources/reviewers.md`): a
+   cross-family reviewer always, `thermo-nuclear-review` when code is added
+   or restructured, a reviewer per risk, a prober when runtime behavior
+   changes. Phased work gets a gate where later phases build on a phase, and
+   a final gate over the whole change. Review runs again only for the lanes
+   a restructuring or behavior-changing fix could affect.
    Reviewers judge the code as it stands, never only the diff, and get the
    earlier rounds' findings on that code, so they can say whether a bug is
    a one-off or part of a pattern.
 5. **`/post-dev`** runs before the PR. It checks the PR body, the changelog,
    the review sign-off, and deferred work (routed to `.context/` or issues).
-   It also runs `kb-lead` once for the whole change.
+   It also runs `kb-lead` for the whole change.
 6. **Ship** with `/dev-workflow`. The lead pushes the feature branch and
    opens the PR with the drafted body and a `release:*` label. Merging to
    `main` waits for a human.
@@ -167,7 +169,7 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 |---|---|
 | `pre-dev` | Before the first edit: worktree, PR body draft, before-state evidence |
 | `solo-dev` | Single-session implementation: when to review and probe, verification, when to stop patching |
-| `parallel-execution` | DAG planning, worktree lanes, merge and verify, review per phase |
+| `parallel-execution` | DAG planning, worktree lanes, merge and verify, phase gates |
 | `dev-workflow` | Commits, changelog, pushing and opening PRs, branch cleanup |
 | `post-dev` | Before the PR: PR body, changelog, review sign-off, deferred work, knowledge capture |
 | `divergence` | Logging plan shifts during multi-phase work in `DIVERGENCE/` |

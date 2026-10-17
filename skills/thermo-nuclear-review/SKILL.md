@@ -66,8 +66,5 @@ deletes, and what survives unchanged. Then blockers, then lesser structural
 findings. A few high-conviction findings beat a long list; skip renames and
 cosmetics when the problem is structural.
 
-Be direct. When the change makes the codebase messier or misses a
-dramatic simplification, say so plainly.
-
 End with a verdict on the structure, not the behavior: approve, or request
 changes naming the simplification.

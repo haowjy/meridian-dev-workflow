@@ -30,7 +30,7 @@ Each spawn gets one focus area:
 
 ## Synthesis
 
-The synthesis explorer merges individual reports into:
+The synthesis merges the reports into:
 
 - Patterns that appear across projects (convergent design)
 - Tradeoffs different projects made (divergent design)

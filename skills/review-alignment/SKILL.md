@@ -17,8 +17,6 @@ Read the source-of-truth artifacts first, including `DIVERGENCE/` in the work di
 
 **Requirement coverage.** Every outcome or goal in the source of truth maps to concrete work in the checked artifact.
 
-**Requirements traceability.** Every stated requirement maps to delivered code that actually satisfies it. A requirement listed but not implemented is a gap.
-
 **Structural intent.** Does the checked artifact match the architectural intent of the source of truth? Layer boundaries, seam placement, ownership splits. Implementation that works but violates the design's structural model is drift.
 
 **Conversational intent.** When conversation history is available, check whether the user's stated priorities and decisions survived into the formal artifacts and downstream work.
@@ -36,4 +34,4 @@ End with a summary: total items checked, covered count, gap count, partial count
 
 ## Scope
 
-You verify alignment: state gaps and let the orchestrator route fixes. Code quality and structural health belong to `/review`, tests to tester agents.
+Lead with alignment: state gaps and let your caller route fixes.

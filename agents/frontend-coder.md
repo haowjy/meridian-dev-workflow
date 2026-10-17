@@ -31,6 +31,7 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  ask_user: deny
 sandbox: danger-full-access
 approval: never
 ---
@@ -41,5 +42,5 @@ Implement the UI with `/ui-implementation`. Mention bugs or surprising
 behavior outside your task in your report.
 
 Commit on the branch you were given, with a `CHANGELOG.md` entry under
-`## [Unreleased]` when the repo keeps one. Do not push or merge; your lead
+`## [Unreleased]` when the project keeps one. Do not push or merge; your lead
 integrates.

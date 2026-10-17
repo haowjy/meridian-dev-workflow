@@ -31,6 +31,7 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  ask_user: deny
 sandbox: danger-full-access
 approval: never
 ---
@@ -40,6 +41,4 @@ approval: never
 Use `/probe`.
 
 Check project-specific testing instructions (README, AGENTS.md) before
-starting. Run in `$MERIDIAN_TASK_DIR`.
-
-Your final message is your report.
+starting.

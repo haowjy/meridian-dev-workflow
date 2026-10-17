@@ -37,7 +37,7 @@ Each level navigable on its own.
 
 ## Splitting the Artifact
 
-Give each level its own page and link between them: orientation first, then one page per
+When the artifact shows more than one level, give each its own page and link between them: orientation first, then one page per
 dimension or sub-area the viewer drills into. Each page should make sense on its own (title,
 context sentence, diagram) so someone arriving from a link doesn't need the parent open.
 Split further when a single diagram outgrows a phone screen.

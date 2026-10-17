@@ -66,14 +66,6 @@ Tests for code paths that no longer exist, behaviors no longer required, or edge
 
 **Fix:** Prune actively. A deleted test that was not earning its keep is a win.
 
-## Test Names That Don't Explain Failures
-
-`test_foo_1`, `test_it_works`, `test_edge_case`. When these fail, the output doesn't tell you what broke.
-
-**Sign:** You have to read the test body to understand the failure.
-
-**Fix:** Name tests after the behavior being verified. `test_returns_empty_list_when_input_is_empty` beats `test_edge_case`.
-
 ## Conflating Pytest Counts With Smoke/Regression Testing
 
 Reporting pytest unit/integration test counts as "regression tests" or "e2e coverage" when the project's actual smoke tests are manual execution guides (markdown in `tests/e2e/` or `tests/smoke/`).

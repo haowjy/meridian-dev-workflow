@@ -13,9 +13,9 @@ model-invocable: true
 2. Run focused checks that cover its risks
 3. Commit with a descriptive message
 
-Run the full project gate at ship readiness, not after every implementation step, unless the repo's policy or a specific risk requires it earlier.
+Run the full project gate at ship readiness, not after every implementation step, unless the project's policy or a specific risk requires it earlier.
 
-Keep `CHANGELOG.md` current under `## [Unreleased]`: write entries at commit time, not retroactively.
+Where the project keeps a `CHANGELOG.md`, write its `## [Unreleased]` entries at commit time, not retroactively.
 
 ## Deferrals
 
@@ -30,8 +30,8 @@ it and open or update its PR without asking. Pass the PR body draft from
 prompting doesn't apply once `--body-file` is passed, so that draft, filled
 in as the work proceeded, is the source for the body. Fill in whatever it's
 still missing before creating, and if the repo ships a body checker such as
-`tools/ci/check-pr-body.mjs`, run it on the draft first. Set a `release:*`
-label.
+`tools/ci/check-pr-body.mjs`, run it on the draft first. Follow the project's release
+conventions for labels.
 
 If `pr-body-<slug>.md` doesn't exist (pre-dev was skipped, or the work dir
 was cleared), fall back to `.github/PULL_REQUEST_TEMPLATE.md` (or similar)

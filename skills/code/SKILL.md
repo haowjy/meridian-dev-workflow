@@ -7,8 +7,6 @@ model-invocable: true
 
 # Code
 
-Read referenced artifacts and the task context before editing.
-
 Use `/dev-principles` as the controlling engineering lens. Make the structural changes needed for a clean implementation: create, move, merge, split, or delete code when that makes the result simpler, clearer, safer, or easier to change.
 
 Make adjacent changes required for the implementation to work cleanly. Fix local dead code, duplication, and structural problems you touch. Report unrelated larger problems instead of turning them into a second project.

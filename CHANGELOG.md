@@ -8,18 +8,29 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `/agent-browser` ships a Linux wrapper that runs Chrome in its own memory-capped systemd scope, with direct-exec fallback when the user manager is unavailable.
 
 ### Changed
+- Convergence limits live once in `agent-staffing/resources/reviewers.md`: rounds counted per review target (a gate, else the change); a concern needing a third round of fixes gets a root cause and a whole-system review; a second redesign goes to the caller; a fourth review round means investigating the design. tech-lead, solo-dev and parallel-execution point there. Lane briefs carry earlier review reports.
+- tech-lead restores the Redesign Brief pointer and counts fixes, not coders. solo-dev and ux-lead can spawn `@investigator` and `@cold-reader`; tech-lead `@cold-reader`; post-dev has the PR body cold-read.
+- Subagent profiles deny `ask_user` again.
+- Review no longer required on every change: tech-lead, solo-dev and `reviewers.md` staff the lanes a change needs, so a lead can ship a small fix unreviewed. Pointers to `reviewers.md` say to open it before staffing a review.
+- Fixed names and repo conventions out: product-lead records requirements and vocabulary where the project's conventions keep them, not in fixed `requirements.md`/`vocab.md`; no `design/` path, no one-decision-per-file or one-file-per-divergence rule; post-dev and dev-workflow follow the project's release conventions instead of `release:patch` and 70-char titles, CHANGELOG only where kept; react-architecture states import direction without one layout; ux-lead retries on a better model.
+- Fewer always-run steps: pre-dev makes a worktree when the work belongs on one and a PR body when the work ends in a PR; source-study spawns an explorer per area worth studying and synthesizes itself; visualize-codebase splits pages only for more than one level.
+- Skills and reviewer say "your caller" instead of "the orchestrator". `@coder` and tech-lead descriptions say what comes back.
+- Cut text that changed nothing: browser's copy of `/agent-browser`, dev-principles' Get It Right the First Time, source-study's When list, test-naming advice, divergence's Downstream, review-alignment's duplicate traceability check, pep talk and restated reasons in thermo-nuclear, research-web, code, post-dev, model-selection, prober, product-lead.
+- Scope fences out. `review-alignment`: drops the line handing code quality and tests to other lanes; `/review`'s out-of-lane findings rule applies. `research-web`: say which source is current or authoritative, and how strong each approach's evidence is. design-lead: investigation scales to uncertainty; challenge with every check the design's risks call for, not one. ux-lead: no longer routes work outside the frontend to other leads. `/agent-staffing`: reviewer covers code, designs, requirements.
+- Knowledge capture: one `@kb-lead` run per change stays the default, stated once in `/post-dev` with its reason (cost; decision records make late capture cheap). Other sites point there. tech-lead regains early capture when a decision settled and work pauses across sessions.
+- Review lanes a change needs live once, in `/agent-staffing` `resources/reviewers.md`; `/solo-dev` and `/parallel-execution` point there (solo-dev and ux-lead can now load `agent-staffing`). Thermo-nuclear reviewer when code is added or restructured, not every gate.
+- `/parallel-execution` available to tech-lead, not loaded every run. Phase gate only where later phases build on the phase; review-fix loops stop at the `reviewers.md` limits.
 - **Breaking:** `@gpt-dev` renamed `@solo-dev`; `meridian -a gpt-dev` stops working. Out of tech-lead's subagents; a session you launch, not a worker.
 - tech-lead defined by its decisions, one task or several; one work item can hold several tasks; no delegate-everything rule; `/parallel-execution` when work splits into parallel lanes or dependent phases. Briefing guidance moved to meridian's spawn prompting (needs meridian-cli with it).
 - Non-convergence: reviewers get earlier reports; findings grouped by concern (code behind one responsibility), not symptom. Third round of coders on one concern → step back: `@investigator` first, then review of the whole system. Second redesign or fourth review round → caller or design. design-lead: third cycle → caller.
 - `/review`: serious issue outside lane or diff is a finding, not a side note. New "Look Past This Round": one-off or class, class-ending move, earlier findings cited.
 - Tests: keep none unless the user asked (directly or through a brief); delete tests written to check work. Across `/testing`, `/code`, `/dev-principles`, `/solo-dev`, `@coder`, testers, `/post-dev`, `/diagnose`.
-- `/solo-dev` review scales with change: cross-family reviewer always, thermo-nuclear when code added or restructured, one per risk, prober when runtime behavior changes. After structural fixes, rerun only lanes the fix could change (also `/parallel-execution`).
+- `/solo-dev` review scales with change: cross-family reviewer, thermo-nuclear when code added or restructured, one per risk, prober when runtime behavior changes. After structural fixes, rerun only lanes the fix could change (also `/parallel-execution`).
 - `/agent-staffing`: Standard Team list, loaded by tech-lead. Architecture / boundaries row covers repeat findings on Fable, beside the cross-family default review.
 - "Seam" for an area becomes "concern"; seam means a boundary.
 - `@reviewer`, `@coder` descriptions carry briefing rules (changes and risks, not a commit range; tests only on request).
-- `@web-researcher`, `@source-researcher`, `@architect`: full bash and full access, so `wsearch`, `wfetch`, `git clone` run. Prior art: web-researcher finds and saves docs, source-researcher studies source; `/source-study` starts from the caller's prior art.
+- `@web-researcher`, `@architect`: full bash (for shell search tools on harnesses without built-in web tools), workspace sandbox; Codex uses its built-in search. `@source-researcher`: full access, since `git clone` needs the network. `/research-web` prefers the harness's built-in web tools. Prior art: web-researcher finds and saves docs, source-researcher studies source; `/source-study` starts from the caller's prior art.
 - Retry after running out of depth goes to "a better model", per model selection. Decision records can span files.
-- Agent profiles drop `ask_user: deny`.
 
 ## [0.14.14] - 2026-10-16
 

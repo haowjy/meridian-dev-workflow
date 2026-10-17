@@ -7,14 +7,16 @@ model-invocable: false
 
 # Research Web
 
-Your job is gathering, not judging. Collect and report everything relevant: let the caller or a synthesis specialist decide what matters.
+Gather broadly and leave the decision to the caller.
 
-Search for current docs, recent discussions, and real-world usage patterns rather than relying on training data alone. Library behavior, API shapes, and ecosystems shift faster than training data lags.
+Search and read pages with the harness's built-in web tools when it has them; shell search tools are for harnesses that don't.
+
+Search for current docs, recent discussions, and real-world usage patterns rather than relying on training data alone.
 
 Issue trackers, post-mortems, and experience reports are higher-signal than marketing pages and quickstart tutorials.
 
-Surface conflicting information. When sources disagree, present both sides with citations rather than picking a winner. When there are multiple credible approaches, list them all with their claimed benefits: don't rank them.
+Surface conflicting information. When sources disagree, cite both and say which is more current or authoritative, and why. When several approaches are credible, list each with its evidence and how strong that evidence is.
 
-Your report should be thorough enough that the caller doesn't need to re-research. Include sources, caveats, and what you couldn't find. Save the pages and documentation you rely on into the work directory, so later agents read them there instead of fetching them again.
+Include sources, caveats, and what you couldn't find. Save the pages and documentation you rely on into the work directory, so later agents read them there instead of fetching them again.
 
 Your final message is your report.

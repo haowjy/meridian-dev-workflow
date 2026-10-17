@@ -21,10 +21,6 @@ model-invocable: true
 4. **Simplicity of the system, not of the change.**  
    Picking the smaller diff today accretes parallel mechanisms, ghost states, and compatibility layers — complexity compounds inside the system. Refactor and delete to reduce concepts, states, and moving parts, even when the diff is larger.
 
-## Get It Right the First Time
-
-The default agent failure is producing something plausible and moving on. The cost of wrong isn't one more generation; it's the mess every later agent inherits. Read the code before changing it. Follow the existing pattern before inventing one. Handle edge cases now. Investigate when unclear instead of guessing.
-
 ## Simplicity
 
 Every boundary, type, and layer must earn its place by making future changes smaller and safer. The default failure mode is over-engineering: adding moving parts that don't create real independence.
@@ -55,7 +51,7 @@ When you see duplication across boundaries, suspect the boundaries before patchi
 
 ## Deletion
 
-LLMs default to preserving code. Fight that. Dead code, stale imports, orphaned files: delete in the same change. When new code replaces old behavior, delete the old path in the same change instead of keeping it beside the new one as a fallback or compatibility layer, unless the repo's policy requires one. Obvious duplication: collapse it. Structural problems (circular dependencies, god modules, leaky abstractions): fix on sight. Rot compounds at agent speed.
+LLMs default to preserving code. Fight that. Dead code, stale imports, orphaned files: delete in the same change. When new code replaces old behavior, delete the old path in the same change instead of keeping it beside the new one as a fallback or compatibility layer, unless the project's policy requires one. Obvious duplication: collapse it. Structural problems (circular dependencies, god modules, leaky abstractions): fix on sight. Rot compounds at agent speed.
 
 ## Comments
 

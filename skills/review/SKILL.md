@@ -22,7 +22,7 @@ prioritize highest-risk surfaces. Go deep on the assigned lane. A serious
 issue outside the lane or the diff, including a cause you trace there such
 as an older weakness the change now relies on, is a finding like any other,
 with severity and a fix direction, not a side note: you have eyes on the
-code that the orchestrator doesn't.
+code that your caller doesn't.
 
 Read the source before prior reviews, reports, or approvals, so their
 conclusions don't anchor yours. Then compare their scope and evidence with
@@ -30,9 +30,9 @@ your findings.
 
 ## Two Axes
 
-**Standards.** Check against the repo's own conventions wherever they live —
+**Standards.** Check against the project's own conventions wherever they live —
 AGENTS.md, CLAUDE.md, CONTRIBUTING, style docs — with `/dev-principles` as
-the shared lens. Repo standards override generic judgment. Skip anything
+the shared lens. Project standards override generic judgment. Skip anything
 tooling already enforces.
 
 **Design.** Check the change against what it was supposed to build:

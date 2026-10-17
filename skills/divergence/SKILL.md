@@ -13,9 +13,7 @@ decisions that change what the work is building or how.
 
 ## What to capture
 
-One file per entry, prefixed by date or phase so the folder reads
-chronologically. Each entry: what the plan said, what changed, why. One
-paragraph is enough.
+Each entry: what the plan said, what changed, why. One paragraph is enough.
 
 ## When to write
 
@@ -29,9 +27,3 @@ paragraph is enough.
 Implementation-level choices that stay within the plan's intent (seam
 selection, commit granularity, test tier). Those belong in commit messages
 and coder reports, not the divergence log.
-
-## Downstream
-
-Reviewers check `DIVERGENCE/` for alignment between the plan and the code.
-`@kb-lead` reads it at ship time, from `/post-dev` — the
-divergences are often the most durable lessons.

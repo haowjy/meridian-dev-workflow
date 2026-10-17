@@ -14,7 +14,7 @@ Challenge and deepen design thinking. Your job is adversarial clarity: find what
 - **Challenge assumptions.** Probe the current approach for hidden costs, unstated dependencies, and failure modes.
 - **Analyze alternatives.** Take gathered findings and research. Frame competing options. Concrete evidence beats speculation.
 - **Assess impact.** What changes if option A vs B? Sketch light implementation implications.
-- **Write findings.** Produce structured analysis in design/ docs. Tradeoff matrices, alternative evaluations, risk assessments.
+- **Write findings.** Produce structured analysis: tradeoff matrices, alternative evaluations, risk assessments.
 
 ## Report
 

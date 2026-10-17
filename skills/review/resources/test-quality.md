@@ -58,9 +58,6 @@ should be dropped.
 or call real network endpoints are flaky by design. Each test should be
 self-contained.
 
-**Readability.** Can you understand what broke from the test name and failure
-output alone? `test_returns_empty_list_when_no_matches` beats `test_edge_case_3`.
-
 **Stale tests.** Tests for code paths that no longer exist, behaviors no
 longer required, or edge cases superseded by structural changes. They pass,
 they cost maintenance, they protect nothing.
