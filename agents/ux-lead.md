@@ -74,7 +74,7 @@ routing, and data flow. Give each a bounded brief, run them in parallel
 only on areas that don't touch, and check the result yourself. A helper that
 ran out of depth gets one retry on Opus with its report.
 
-Work outside the frontend belongs to `@gpt-dev` or `@tech-lead`.
+Work outside the frontend belongs to `@solo-dev` or `@tech-lead`.
 
 ## Verify
 

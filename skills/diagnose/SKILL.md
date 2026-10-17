@@ -79,7 +79,7 @@ For performance regressions, logs are usually wrong. Establish a baseline measur
 
 With the loop failing, apply the fix and watch the loop pass, then re-run it against the original scenario. Put the repro in the commit message, self-contained: the command and the inputs it needs, so anyone can rerun it after the harness is gone.
 
-Commit the loop as a regression test only when the brief names one, at a seam that exercises the real bug pattern as it occurs at the call site, with its red output from before the fix. Otherwise delete it with the other throwaway code.
+Commit the loop as a regression test only when the user asked for one, at a seam that exercises the real bug pattern as it occurs at the call site, with its red output from before the fix. Otherwise delete it with the other throwaway code.
 
 If no seam reproduces the bug cheaply, that is a finding: the architecture is keeping the bug from being locked down. Note it.
 

@@ -1,6 +1,6 @@
 ---
 name: coder
-description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations."
+description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. It keeps a new test only when the user asked for one; pass that request on in the brief."
 mode: subagent
 model: luna
 effort: max
@@ -23,7 +23,6 @@ tools:
   workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
-  ask_user: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny

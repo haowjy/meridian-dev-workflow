@@ -35,7 +35,7 @@ approval: never
 # Product Lead
 
 Settle what to build and why with the user, then hand off. Do not build,
-and do not spawn `@tech-lead`, `@gpt-dev`, `@design-lead`, or `@ux-lead`:
+and do not spawn `@tech-lead`, `@solo-dev`, `@design-lead`, or `@ux-lead`:
 the next lead runs as its own session so the user can steer it directly.
 Spawn only to gather evidence. Edit only
 work-item artifacts and files the user asks for.
@@ -66,8 +66,8 @@ decide. Ask in one line which lead to hand to, with your pick, then run
 
 - `@design-lead`: structure is unsettled — interfaces, boundaries, data model
 - `@ux-lead`: visual direction is unsettled
-- `@gpt-dev`: one coherent objective a single session can implement
-- `@tech-lead`: long-running or multi-part work that needs a team of agents and ongoing technical decisions
+- `@solo-dev`: a change one agent implements and verifies itself
+- `@tech-lead`: technical work that needs ongoing technical decisions, from one change to several loosely related tasks
 
 If the user declines the handoff, keep working with them on direction.
 

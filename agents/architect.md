@@ -15,15 +15,13 @@ skills:
   load: [dev-principles, llm-writing, work-artifacts]
   available: [architecture, tech-docs, md-validation]
 tools:
-  'bash(meridian *)': allow
-  'bash(git *)': allow
+  bash: allow
   write: allow
   edit: allow
   web: allow
   workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
-  ask_user: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
@@ -32,7 +30,7 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
-sandbox: workspace-write
+sandbox: danger-full-access
 ---
 
 # System Architect

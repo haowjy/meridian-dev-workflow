@@ -7,6 +7,20 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 - `/agent-browser` ships a Linux wrapper that runs Chrome in its own memory-capped systemd scope, with direct-exec fallback when the user manager is unavailable.
 
+### Changed
+- **Breaking:** `@gpt-dev` renamed `@solo-dev`; `meridian -a gpt-dev` stops working. Out of tech-lead's subagents; a session you launch, not a worker.
+- tech-lead defined by its decisions, one task or several; one work item can hold several tasks; no delegate-everything rule; `/parallel-execution` when work splits into parallel lanes or dependent phases. Briefing guidance moved to meridian's spawn prompting (needs meridian-cli with it).
+- Non-convergence: reviewers get earlier reports; findings grouped by concern (code behind one responsibility), not symptom. Third round of coders on one concern → step back: `@investigator` first, then review of the whole system. Second redesign or fourth review round → caller or design. design-lead: third cycle → caller.
+- `/review`: serious issue outside lane or diff is a finding, not a side note. New "Look Past This Round": one-off or class, class-ending move, earlier findings cited.
+- Tests: keep none unless the user asked (directly or through a brief); delete tests written to check work. Across `/testing`, `/code`, `/dev-principles`, `/solo-dev`, `@coder`, testers, `/post-dev`, `/diagnose`.
+- `/solo-dev` review scales with change: cross-family reviewer always, thermo-nuclear when code added or restructured, one per risk, prober when runtime behavior changes. After structural fixes, rerun only lanes the fix could change (also `/parallel-execution`).
+- `/agent-staffing`: Standard Team list, loaded by tech-lead. Architecture / boundaries row covers repeat findings on Fable, beside the cross-family default review.
+- "Seam" for an area becomes "concern"; seam means a boundary.
+- `@reviewer`, `@coder` descriptions carry briefing rules (changes and risks, not a commit range; tests only on request).
+- `@web-researcher`, `@source-researcher`, `@architect`: full bash and full access, so `wsearch`, `wfetch`, `git clone` run. Prior art: web-researcher finds and saves docs, source-researcher studies source; `/source-study` starts from the caller's prior art.
+- Retry after running out of depth goes to "a better model", per model selection. Decision records can span files.
+- Agent profiles drop `ask_user: deny`.
+
 ## [0.14.14] - 2026-10-16
 
 ### Changed

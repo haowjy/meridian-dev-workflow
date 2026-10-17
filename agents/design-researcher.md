@@ -25,7 +25,6 @@ tools:
   workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
-  ask_user: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny

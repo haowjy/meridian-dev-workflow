@@ -48,7 +48,7 @@ could interfere, give each prober a separate temp project or run sequentially.
 
 Automated gates (typecheck, lint, `pnpm test`) stay on `@coder`, not prober.
 
-Spawn a test-writing coder only for tests `/testing` admits, and name each
+Spawn a test-writing coder only for tests the user asked for, and name each
 test in the brief.
 
 `@coder` with `/testing` `resources/unit-patterns.md`: pure-core edges and
@@ -59,7 +59,7 @@ boundaries, coordination logic, contracts between collaborators.
 
 ## Test Retention
 
-Disposable probes and one-off verification fixtures: removed after verification
-passes. Tests that guard a case `/testing` admits: stay.
-Tech-lead judges which tests earn their place. Uncertain coverage becomes a
-better manual smoke guide before it becomes a permanent automated test.
+Disposable probes, one-off fixtures, and tests written to check the work:
+removed once verification passes. Tests the user asked for: stay. Uncertain
+coverage becomes a better manual smoke guide, or a test you propose to the
+user.

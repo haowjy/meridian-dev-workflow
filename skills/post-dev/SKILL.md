@@ -48,7 +48,7 @@ merge section applies once the PR lands.
 - Spawn `@kb-lead` once, after review fixes have landed, covering the whole
   change.
 - Pass the conversation, changed files, and work directory. Point it at the
-  decision file and any `DIVERGENCE/` logs first; they are the cheapest
+  decision records and any `DIVERGENCE/` logs first; they are the cheapest
   record of what was decided and why.
 - Colocated guidance needs an update only when it — or the absence of needed
   guidance — would cause a cold agent to make a wrong decision. A changed path
@@ -62,8 +62,7 @@ merge section applies once the PR lands.
 - Dev stacks, browsers, scratch worktrees, and temp dirs that you or your
   spawns started are stopped and deleted; restart a stack when a fix cycle
   needs it. Keep one running only when the human asked to use it.
-- Scaffolding tests deleted: tests written to understand behavior that no
-  longer protect a live risk (see `/testing`)
+- New tests the user didn't ask for are deleted (`/testing`)
 
 ### After merge
 - Verify CI passed on main

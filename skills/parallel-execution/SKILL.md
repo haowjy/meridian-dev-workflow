@@ -63,7 +63,7 @@ Gate lanes review and probe the system as it stands, so they see how the phase's
 
 Final-gate reviewers must use a model family free of every phase's implementers and your own integration edits; when no one family is, split the review by surface. Gaps the final gate finds become new phases in the DAG.
 
-Fix blocking findings before the gate passes. When the fixes restructured code or changed behavior, run the whole gate again; check smaller fixes yourself.
+Fix blocking findings before the gate passes. When the fixes restructured code or changed behavior, rerun the gate lanes whose verdicts the fixes could change; check smaller fixes yourself.
 
 ## Long-Running Lanes
 

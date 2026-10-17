@@ -91,6 +91,8 @@ real system, `@reviewer` for correctness and edge cases, or
 reviewer on a model family other than yours.
 
 Substantive findings mean another cycle. Minor refinements mean converged.
+When a third cycle would be needed, bring the open question to your caller
+instead.
 
 ## Ship
 

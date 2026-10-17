@@ -16,7 +16,7 @@ Hold the code to `/dev-principles`; this lane enforces them strictly.
 ## Scope: the System, Focused Where the Brief Points
 
 Review the system as it stands, starting from the focus your brief names.
-Read whole cohesive seams: the modules in focus, their siblings, and the
+Read whole concerns: the modules in focus, their siblings, and the
 paths that call into them. Start with giant files and the files that churn
 most; churn concentrated in one place usually means a missing abstraction.
 

@@ -24,10 +24,9 @@ meridian config set primary.agent tech-lead
 Each session runs one lead, and each lead owns a different kind of decision.
 
 **tech-lead** (the default) leads technical work. It makes the technical
-decisions (approach, structure, tradeoffs, what to cut) and records them in a
-decision file per work item. It runs a team of agents through long-running or
-multi-part work, keeps several loosely related tasks moving as separate work
-items, and makes small fixes and glue changes itself.
+decisions (approach, structure, tradeoffs, what to cut) and records them in
+the work item. It carries one task or several loosely related ones to a
+shipped change, tracked in work items.
 
 **product-lead** settles what to build and why: the problem statement,
 requirements, and product decisions. It spawns only research, then proposes
@@ -40,8 +39,8 @@ It investigates in parallel, converges, runs one challenge (prober, reviewer,
 or an alignment review), and returns design docs with a recommendation. Run
 it as a session or spawn it.
 
-**gpt-dev** implements and verifies one coherent objective in a single
-session (`/solo-dev`).
+**solo-dev** implements and verifies a change itself, without a team of
+implementers (`/solo-dev`).
 
 **ux-lead** works the same way for UI, with you steering visual direction.
 It makes small tweaks directly for you to check. For a large change it
@@ -51,8 +50,8 @@ frontend refactor.
 
 ```text
 Default: tech-lead.
-When direction is open:  product-lead ─handoff→ design-lead | ux-lead | gpt-dev | tech-lead
-When structure is open:  design-lead ─handoff→ tech-lead | gpt-dev
+When direction is open:  product-lead ─handoff→ design-lead | ux-lead | solo-dev | tech-lead
+When structure is open:  design-lead ─handoff→ tech-lead | solo-dev
 ```
 
 ### A Change, End to End
@@ -65,7 +64,7 @@ Every implementation lead runs the same lifecycle:
 2. **Implement.** tech-lead plans any task that needs more than one spawn as a
    DAG with `/parallel-execution`, using a worktree per parallel lane and one
    owner for each change to shared code. It delegates to `coder` and
-   `frontend-coder`. gpt-dev and ux-lead implement the change themselves.
+   `frontend-coder`. solo-dev and ux-lead implement the change themselves.
    Each commit carries a `CHANGELOG.md` entry.
 3. **Verify.** Leads run focused checks and `/probe` against the real system
    while working, and the full suite once on the finished change.
@@ -74,6 +73,9 @@ Every implementation lead runs the same lifecycle:
    whole change with `thermo-nuclear-review`. A single-session lead runs both
    once at the end, on the same dev stack, each with its own test data.
    Review runs again only when fixes restructured code or changed behavior.
+   Reviewers judge the code as it stands, never only the diff, and get the
+   earlier rounds' findings on that code, so they can say whether a bug is
+   a one-off or part of a pattern.
 5. **`/post-dev`** runs before the PR. It checks the PR body, the changelog,
    the review sign-off, and deferred work (routed to `.context/` or issues).
    It also runs `kb-lead` once for the whole change.
@@ -83,11 +85,14 @@ Every implementation lead runs the same lifecycle:
 
 ### When Fixes Don't Converge
 
-On a second finding of the same failure class in the same code, the lead
-stops patching and looks for the shared cause, often two places owning one
-invariant. A worker that ran out of depth gets one retry on Opus with its
-report. When the structure itself is wrong, the lead writes a Redesign Brief:
-design problems go to design-lead, scope problems go back to you and
+The lead groups review findings by concern, the code behind one
+responsibility, however many files that spans. When one concern would need
+a third round of coders, the lead steps back, has an investigator
+trace the root cause, then has the system reviewed as a whole with every
+earlier report; the cause often sits where two parts own one invariant. A
+worker that ran out of depth gets one retry on a better model with its
+report. When the structure itself is wrong, the lead writes a Redesign
+Brief: design problems go to design-lead, scope problems go back to you and
 product-lead.
 
 ### Review
@@ -117,10 +122,10 @@ task.
 
 | Agent | Model | Role |
 |---|---|---|
-| `tech-lead` | fable | Technical decisions, an agent team, several concurrent tasks, hands-on fixes |
+| `tech-lead` | fable | Technical decisions for one task or several, delegation, hands-on fixes |
 | `product-lead` | opus | Product direction: intent, requirements, decisions, handoff |
 | `design-lead` | opus | Technical design: structural options, interfaces, boundaries, tradeoffs |
-| `gpt-dev` | astra | Implements and verifies one objective in a single session |
+| `solo-dev` | astra | Implements and verifies a change itself, without a team of implementers |
 | `ux-lead` | opus | Visual direction and UI implementation in one session |
 
 **Implementation**

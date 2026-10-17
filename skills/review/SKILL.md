@@ -13,14 +13,16 @@ is a complaint.
 
 Judge the code as it stands now, not the delta. A branch or diff tells you
 *where* to look — pin it (`git diff <base>...HEAD`) to locate the touched
-surface — but then read that surface whole: the full file, the seam it lives
-in, how it composes with its neighbors. A change can be clean line by line
+surface — but then read that surface whole: the full file, the concern it belongs
+to, how it composes with its neighbors. A change can be clean line by line
 and still leave the component incoherent.
 
 With no diff given, review the assigned surface; if none assigned,
-prioritize highest-risk surfaces. Go deep on the assigned lane, but flag
-serious issues outside it — you have eyes on the code that the orchestrator
-doesn't.
+prioritize highest-risk surfaces. Go deep on the assigned lane. A serious
+issue outside the lane or the diff, including a cause you trace there such
+as an older weakness the change now relies on, is a finding like any other,
+with severity and a fix direction, not a side note: you have eyes on the
+code that the orchestrator doesn't.
 
 Read the source before prior reviews, reports, or approvals, so their
 conclusions don't anchor yours. Then compare their scope and evidence with
@@ -80,6 +82,15 @@ genuinely good, say so — but earn that by looking.
 **Suggest refactors.** When structure is the problem, propose the move
 (`resources/structural-health/` has the catalog). Code is cheapest to change
 now, before more work lands on top of it.
+
+## Look Past This Round
+
+A blocking finding is a one-off or one instance of a class; say which. For
+a class, name the move that would end it, and whether your fix direction
+makes that move or patches this instance. Earlier review reports on the
+same surface, when your brief passes them, are your evidence: cite each
+earlier finding that lands on the same concern as one of yours. Recurrence across rounds is evidence for the
+signals in `resources/redesign-escalation.md`.
 
 ## Your Report
 

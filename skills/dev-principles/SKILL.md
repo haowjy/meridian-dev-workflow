@@ -63,7 +63,7 @@ Comment what the code can't show: a hidden constraint, a surprising invariant, a
 
 ## Testing
 
-Verify by listing how the change could fail and checking each failure on the running program, plus the existing tests that cover what you touched. A new automated test is the exception: load `/testing` before writing one, and write it only for a case it admits. As a delegated worker, write only the tests your brief names and report other candidates to your caller.
+Verify by listing how the change could fail and checking each failure on the running program, plus the existing tests that cover what you touched. Keep no new automated test the user didn't ask for, and delete tests you wrote to check your work (`/testing`). Propose a test you think would earn a permanent place to whoever you report to.
 
 ## Consistency
 

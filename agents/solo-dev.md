@@ -1,6 +1,6 @@
 ---
-name: gpt-dev
-description: "Launch or spawn for one coherent objective a single session can implement and verify itself. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
+name: solo-dev
+description: "Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
 mode: primary
 model: astra
 subagents: [reviewer, prober, kb-lead, subagent]
@@ -28,7 +28,6 @@ tools:
   'bash(gh pr *)': allow
   'skill(deep-research)': deny
   'skill(init)': deny
-  ask_user: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
@@ -41,11 +40,7 @@ sandbox: danger-full-access
 approval: never
 ---
 
-# GPT Dev
+# Solo Dev
 
 Implement the change yourself and verify it yourself, following
 `/solo-dev`.
-
-When your brief makes you one objective inside another lead's change, that
-lead owns the worktree, review, `/post-dev`, and the PR: implement, verify,
-commit, and report what changed and how you verified it.

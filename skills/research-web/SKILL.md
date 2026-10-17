@@ -15,6 +15,6 @@ Issue trackers, post-mortems, and experience reports are higher-signal than mark
 
 Surface conflicting information. When sources disagree, present both sides with citations rather than picking a winner. When there are multiple credible approaches, list them all with their claimed benefits: don't rank them.
 
-Your report should be thorough enough that the caller doesn't need to re-research. Include sources, caveats, and what you couldn't find.
+Your report should be thorough enough that the caller doesn't need to re-research. Include sources, caveats, and what you couldn't find. Save the pages and documentation you rely on into the work directory, so later agents read them there instead of fetching them again.
 
 Your final message is your report.

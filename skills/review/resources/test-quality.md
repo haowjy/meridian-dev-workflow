@@ -22,7 +22,7 @@ break the test, it's testing the wrong thing.
 
 **Earned place.** High-risk paths (data integrity, auth, integration
 boundaries, state machines) need their edge cases checked: by a probe, or by
-a test where `/testing` lists the case.
+a test the user asked for.
 Low-risk paths (formatting, simple getters) deserve nothing or a manual smoke
 check. Flag tests with no named continuing risk, and weaker duplicates of tests
 that stay. A passing probe does not retire a test kept for a named

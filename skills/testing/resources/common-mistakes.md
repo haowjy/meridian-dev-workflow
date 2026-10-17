@@ -32,7 +32,7 @@ Writing tests to hit lines rather than to answer a question. Produces tests that
 
 **Sign:** Tests named after functions rather than scenarios; assertions that just check the function "returned something."
 
-**Fix:** Start with "what could go wrong here?", check those failures on the running system, and keep a test only for a case `/testing` admits.
+**Fix:** Start with "what could go wrong here?", check those failures on the running system, and keep a test only when the user asked for it.
 
 ## Integration Tests Pretending to be Unit Tests
 

@@ -3,17 +3,17 @@
 When to say frame-rot instead of filing another round of findings, and how
 to write the escalation so the orchestrator can act on it. The escalation
 shape below is the **Redesign Brief** — the same format whether a reviewer
-escalates frame-rot or an implementation lead escalates a seam that won't
+escalates frame-rot or an implementation lead escalates a concern that won't
 converge.
 
 ## Signals That Patching Won't Converge
 
-One of these is a smell; several pointing at the same seam is frame-rot.
+One of these is a smell; several pointing at the same concern is frame-rot.
 
 - **Fixes accumulate special cases.** Each fix adds a branch, flag, or
   exception at the same boundary instead of simplifying it.
 - **Findings regenerate.** New findings appear at the same rate fixes close
-  them, and they cluster around one component or seam.
+  them, and they cluster around one concern.
 - **Shotgun fixes.** A conceptually small fix keeps touching many files —
   the responsibility lives in the wrong place.
 - **The invariant can't be stated.** Nobody can say in one sentence what the

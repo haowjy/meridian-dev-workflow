@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: "Spawn to find risks in a commit, or in a requirements or design artifact, before it is acted on: correctness, regression, maintainability, efficiency, security. Attach skills for focus: review-alignment, test-architecture, thermo-nuclear-review, react-architecture, information-hierarchy."
+description: "Spawn to find risks in a commit, or in a requirements or design artifact, before it is acted on: correctness, regression, maintainability, efficiency, security. Attach skills for focus: review-alignment, test-architecture, thermo-nuclear-review, react-architecture, information-hierarchy. Pass what changed and the risks to check; it reviews the code as it stands, not a commit range."
 mode: subagent
 model: opus
 effort: medium
@@ -12,6 +12,9 @@ model-policies:
     override: {}
   - match: {alias: sol}
     override: {}
+  - match: {alias: fable}
+    no-fallback: true
+    override: {effort: high}
   - match: {alias: grok}
     no-fallback: true
     override: {effort: high}
@@ -32,7 +35,6 @@ tools:
   workflow: deny
   'skill(deep-research)': deny
   'skill(init)': deny
-  ask_user: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny

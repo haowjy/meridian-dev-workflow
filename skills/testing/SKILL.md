@@ -1,7 +1,7 @@
 ---
 name: testing
 type: principle
-description: "Load when deciding whether a change needs a new test and at which tier: the default is none, and it names the few cases that earn one."
+description: "Load when deciding whether to write a test, and at which tier: keep none the user didn't ask for, and delete tests you wrote to check your work."
 model-invocable: true
 ---
 
@@ -11,17 +11,18 @@ Retained tests add run time to every full-suite gate and upkeep to every refacto
 
 Tests are guardrails: every bug found in the field passed the tests. No suite makes tangled code easier to change; being able to reason about the code is primary. If your only confidence in a change is that the suite stayed green, the code needs simplifying.
 
-## When a New Test Earns Its Place
+## New Tests
 
-A new test is admitted for one of these cases. A new parameterized case or an extension of an existing test counts as a new test.
+Keep no new test unless the user asked for it, directly or through your
+brief. A test you write to understand or check behavior while you work is
+scaffolding: delete it before you finish. A new parameterized case or an
+extension of an existing test counts as a new test. When you think a test
+would earn a permanent place, propose it with the failure it would guard;
+the user decides.
 
-- A pure core whose edges the running system can't reach without building a harness: parsing, policy, state transitions, concurrency decisions.
-- A regression the brief names, at a seam that reproduces the real bug.
-- A contract with a consumer outside this repository: a published API shape, a file format, a wire protocol.
-
-Name the admitted case and the failure the test guards in the commit message. Before adding one, extend or replace the existing test of the same behavior, and prune a weaker duplicate in the same change. Aim each test at the failure it guards: a boundary, an error path, an adversarial input.
-
-Leave a repository's test-count or suite-time baseline unchanged unless your brief approves the growth; a top-level session asks the human.
+For a test the user asked for, aim it at the failure it guards (a
+boundary, an error path, an adversarial input), and extend or replace the
+existing test of the same behavior rather than adding a duplicate.
 
 ## Tier Selection
 
@@ -66,13 +67,6 @@ Never add logic that exists solely to make a specific test pass — e.g.,
 checking for a fixture-specific string, special-casing a test token, or
 branching on a value that only appears in test data. If the test needs
 special behavior, the production code needs a real abstraction for it.
-
-## Tests as Scaffolding
-
-Unit tests written to understand behavior during development are scaffolding.
-Once the behavior is understood and covered by integration tests or the
-implementation itself makes the risk obvious, delete the scaffolding. Tests
-that no longer protect a live risk are maintenance cost, not safety.
 
 ## Tier Resources
 
