@@ -20,6 +20,18 @@ Install once if the command is missing:
 npm i -g agent-browser && agent-browser install   # add --with-deps on Linux
 ```
 
+## Memory cap (Linux)
+
+Run Chrome in its own capped scope so browser memory pressure cannot take down the agent.
+One-time setup (replace `<agent-browser-skill>` with this skill’s installed path):
+
+```bash
+install -Dm755 <agent-browser-skill>/resources/capped-browser "$HOME/.local/bin/agent-browser-capped-browser"
+# ~/.agent-browser/config.json — use your absolute home path, not `~`
+{"executablePath":"/home/YOU/.local/bin/agent-browser-capped-browser"}
+systemctl --user list-units 'agent-browser-*.scope'   # check while Chrome is open
+```
+
 ## Core loop
 
 ```bash

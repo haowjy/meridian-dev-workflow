@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/agent-browser` ships a Linux wrapper that runs Chrome in its own memory-capped systemd scope, with direct-exec fallback when the user manager is unavailable.
+
 ## [0.14.14] - 2026-10-16
 
 ### Changed
