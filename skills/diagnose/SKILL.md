@@ -46,7 +46,7 @@ The goal is a higher reproduction rate. Loop the trigger 100x, parallelize, add 
 
 ### When you genuinely cannot build a loop
 
-Stop and say so explicitly. List what you tried. Ask for: (a) access to the reproducing environment, (b) a captured artifact (HAR file, log dump, core dump, screen recording), or (c) permission to add temporary instrumentation. Do not proceed to hypothesize without a loop.
+Stop and say so explicitly. List what you tried. Ask for: (a) access to the reproducing environment, (b) a captured artifact (HAR file, log dump, core dump, screen recording), or (c) permission to add temporary instrumentation. When a captured artifact is all you can get, work from it: each hypothesis must predict something the artifact shows, and report the cause as unconfirmed until a loop reproduces it.
 
 ## Phase 2: Reproduce
 
@@ -57,7 +57,7 @@ Run the loop. Watch the bug appear. Confirm:
 
 ## Phase 3: Hypothesise
 
-Generate 3-5 ranked hypotheses before testing any. Single-hypothesis generation anchors on the first plausible idea.
+Rank the competing explanations before testing any. Testing the first plausible idea alone anchors on it.
 
 Each hypothesis must be falsifiable: "If X is the cause, then Y will make the bug disappear / worse."
 

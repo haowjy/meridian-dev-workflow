@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/diagnose`: rank competing explanations instead of a fixed 3-5 hypotheses; with no loop possible, work from a captured artifact and report the cause unconfirmed, instead of stopping.
+
 ## [0.15.0] - 2026-10-17
 
 ### Added
