@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.3] - 2026-10-18
+
 ### Changed
 - Reviewer lanes run on the model whose description (`meridian mars models aliases`) names what the lane judges. Staffing guidance names no models; strengths live in the catalog descriptions. `resources/model-selection.md` deleted: its pointer and escalation rule moved into agent-staffing's body; the rest repeated the descriptions or Meridian's subagent-prompting guidance.
 - tech-lead, product-lead and ux-lead never fall back to Fable (`no-fallback: true`); Fable is escalation only.
