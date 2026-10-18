@@ -4,7 +4,7 @@ description: "Spawn to find risks in a commit, or in a requirements or design ar
 mode: subagent
 model: opus
 effort: medium
-subagents: [web-researcher, investigator, subagent]
+subagents: [explorer, web-researcher, investigator, subagent]
 model-policies:
   - match: {alias: opus}
     override: {}

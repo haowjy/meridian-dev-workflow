@@ -85,18 +85,21 @@ why.
 
 ## Measurements
 
-Vet every performance comparison you report (faster, slower, a regression)
-with `resources/measurement.md` before it goes in your report. For a single
-timing or any other count, give its unit, conditions, and how you got it.
+Record the numbers the brief names, plus the few this task makes useful, so
+the next run has something to compare against: wall-clock time, latency
+(p50/p95), peak memory, CPU time, steps or clicks to finish a workflow,
+retries, items processed, payload sizes, error counts, or others. Give each its unit, conditions, and how you got it. Vet every performance
+comparison you report (faster, slower, a regression) with
+`resources/measurement.md` before it goes in your report.
 
 ## Reporting
 
 Separate reproduced defects from usability concerns and unconfirmed observations.
 For each, include the evidence, user impact, and basis for the expectation.
 
-**Probing:** discovered behavior, constraints, surprises, exact commands
-and outputs, screenshot paths, open questions.
+**Probing:** discovered behavior, constraints, surprises, numbers, exact
+commands and outputs, screenshot paths, open questions.
 
-**Verification:** per-requirement outcomes with runtime evidence, exact
-commands and outputs, screenshot paths, exploratory findings beyond stated
+**Verification:** per-requirement outcomes with runtime evidence, numbers,
+exact commands and outputs, screenshot paths, exploratory findings beyond stated
 requirements, coverage gaps.

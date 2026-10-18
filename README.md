@@ -58,8 +58,11 @@ When structure is open:  design-lead ─handoff→ tech-lead | solo-dev
 
 Every implementation lead runs the same lifecycle:
 
-1. **`/pre-dev`** runs before the first source edit. It sets up a worktree
-   for the work item, drafts the PR body from the repo template, and captures
+1. **`/pre-dev`** runs once the plan exists, before the first source edit.
+   When the change adds or restructures code, a `thermo-nuclear-review`
+   reviewer reads the plan and any design doc against the code, so a simpler
+   structure becomes an enabling refactor. It also sets up a worktree for the
+   work item, drafts the PR body from the repo template, and captures
    before-state evidence while it still exists.
 2. **Implement.** tech-lead plans work that splits into parallel lanes or
    dependent phases as a DAG with `/parallel-execution`, using a worktree per parallel lane and one
@@ -70,11 +73,13 @@ Every implementation lead runs the same lifecycle:
    while working, and the full suite once on the finished change.
 4. **Review.** `reviewer` and `prober` run on a committed state, with the
    lanes the change needs (`agent-staffing` `resources/reviewers.md`): a
-   cross-family reviewer always, `thermo-nuclear-review` when code is added
+   correctness reviewer always, `thermo-nuclear-review` when code is added
    or restructured, a reviewer per risk, a prober when runtime behavior
-   changes. Phased work gets a gate where later phases build on a phase, and
-   a final gate over the whole change. Review runs again only for the lanes
-   a restructuring or behavior-changing fix could affect.
+   changes. The thermo lane runs once the other lanes' fixes land, to fold
+   those patches into the code instead of leaving them bolted on. Phased
+   work gets a gate where later phases build on a phase, and a final gate
+   over the whole change. A fix that restructures code or changes behavior
+   goes back to the lanes whose verdicts it could change.
    Reviewers judge the code as it stands, never only the diff, and get the
    earlier rounds' findings on that code, so they can say whether a bug is
    a one-off or part of a pattern.
@@ -124,7 +129,7 @@ task.
 
 | Agent | Model | Role |
 |---|---|---|
-| `tech-lead` | fable | Technical decisions for one task or several, delegation, hands-on fixes |
+| `tech-lead` | opus | Technical decisions for one task or several, delegation, hands-on fixes |
 | `product-lead` | opus | Product direction: intent, requirements, decisions, handoff |
 | `design-lead` | opus | Technical design: structural options, interfaces, boundaries, tradeoffs |
 | `solo-dev` | astra | Implements and verifies a change itself, without a team of implementers |
@@ -167,7 +172,7 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 
 | Skill | What it covers |
 |---|---|
-| `pre-dev` | Before the first edit: worktree, PR body draft, before-state evidence |
+| `pre-dev` | Before the first edit: thermo review of the plan, worktree, PR body draft, before-state evidence |
 | `solo-dev` | Single-session implementation: when to review and probe, verification, when to stop patching |
 | `parallel-execution` | DAG planning, worktree lanes, merge and verify, phase gates |
 | `dev-workflow` | Commits, changelog, pushing and opening PRs, branch cleanup |
@@ -194,7 +199,7 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | Skill | What it covers |
 |---|---|
 | `review` | Base review method: code as it stands, standards and design, maintainability, efficiency, redesign escalation |
-| `thermo-nuclear-review` | Strict maintainability: the code-judo move that makes the system dramatically simpler |
+| `thermo-nuclear-review` | Strict maintainability: the code-judo move that makes a change, a plan, or the system around it dramatically simpler |
 | `test-architecture` | Tests that pin implementation, mock rot, sprawl worth deleting |
 | `review-alignment` | Systematic check that one artifact matches another |
 | `react-architecture` | React composition, state architecture, token discipline |

@@ -18,7 +18,6 @@ not an edit script.
 |---|---|
 | Difficult technical analysis or technically demanding work | Sol |
 | Consequential decisions and important communication | Astra |
-| Consequential decisions and communication requiring particularly strong judgment and writing quality | Fable |
 | Deep, sustained implementation work | Opus |
 
 Assess writing quality separately from coding ability. A focused writing pass

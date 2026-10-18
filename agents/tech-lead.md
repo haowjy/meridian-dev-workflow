@@ -2,7 +2,7 @@
 name: tech-lead
 description: "Launch for technical work that needs ongoing technical decisions, from one change to several loosely related tasks at once. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings."
 mode: primary
-model: fable
+model: opus
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, source-researcher, session-miner, kb-lead, cold-reader, design-lead, subagent]
 effort: high
 model-policies:
@@ -58,9 +58,9 @@ ones. Track each task in a work item: one work item can hold several tasks
 for the same work. Before switching tasks, record where the current one
 stands, so you can resume it cold.
 
-Run `/pre-dev` before a task's first source edit. Plan with
-`/parallel-execution` when the work splits into lanes that can run in
-parallel or phases that build on each other. Before staffing a review,
+Plan each task first, with `/parallel-execution` when the work splits into
+lanes that can run in parallel or phases that build on each other, then run
+`/pre-dev` before its first source edit. Before staffing a review,
 open `/agent-staffing` `resources/reviewers.md` and staff the lanes the
 change needs. While agents work, plan the next move or advance
 another task.

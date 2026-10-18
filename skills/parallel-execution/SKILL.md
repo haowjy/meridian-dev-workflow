@@ -54,9 +54,9 @@ Before staffing a gate, open `/agent-staffing` `resources/reviewers.md` and staf
 
 **Final gate**, on the last phase: lanes focused on everything the change touched since the original base, the `@prober` running the user-facing workflows end to end when the change alters them, and the full suite, once.
 
-Final-gate reviewers must use a model family free of every phase's implementers and your own integration edits; when no one family is, split the review by surface. Gaps the final gate finds become new phases in the DAG.
+Gaps the final gate finds become new phases in the DAG.
 
-Fix blocking findings before the gate passes. When the fixes restructured code or changed behavior, rerun the gate lanes whose verdicts the fixes could change; check smaller fixes yourself.
+Fix blocking findings before the gate passes; `reviewers.md` says which lanes rerun after a fix.
 
 ## Long-Running Lanes
 

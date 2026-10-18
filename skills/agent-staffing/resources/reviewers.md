@@ -7,20 +7,22 @@ Spawn `@reviewer` with skills matched to the change's risks.
 Review and probe the system as it stands, so each lane sees how the change
 fits the code around it and what it left without a caller. Brief each lane
 with where the change landed, the risks to check, and the earlier review
-reports on the same code, so it can tell a recurring concern from a new one. Put
-each reviewer on a model family other than every model that wrote the work.
+reports on the same code, so it can tell a recurring concern from a new one.
 
 - `@reviewer` for correctness, regressions, and behavior.
 - `@reviewer` with `/thermo-nuclear-review` when the change adds or
   restructures code. Code drifts from `/dev-principles` even when its
   writer loaded them; a reviewer focused there catches what a general pass
-  skims.
+  skims. Before it, have `@explorer` list what the change and its fixes
+  left without a caller, given the change's base. Delete what is clearly
+  dead, and pass the rest to the thermo lane.
 - One more `@reviewer` for each risk the change carries, from the picker
   below.
 - `@prober` when the change alters what the running system does
   (`testers.md`).
 
-Spawn the lanes together. Confirm the stack the prober runs was built from
+Spawn the other lanes together, and the thermo lane after their fixes land,
+so it folds those patches into the code's structure. Confirm the stack the prober runs was built from
 the code under review, and tell each lane to use its own test data
 (accounts, records, fixtures, browser session) and not to reset or restart
 shared services; run lanes one after the other when they would share state
@@ -31,7 +33,7 @@ you can't separate.
 | Review kind | Spawn | When |
 |-------------|-------|------|
 | Default review | `@reviewer` | Correctness, maintainability, efficiency, security |
-| Strict maintainability | `@reviewer --skills thermo-nuclear-review` | Changes that add or restructure code, beside the default reviewer; spaghetti growth |
+| Strict maintainability | `@reviewer --skills thermo-nuclear-review` | Changes that add or restructure code; plans before implementation; spaghetti growth |
 | Efficiency | `@reviewer` with the efficiency lane named in the prompt | Runtime paths, polling, persistence, scans, startup |
 | Architecture / boundaries | `@reviewer --skills thermo-nuclear-review,architecture` | Cross-module boundary changes, dependency direction; repeat findings on one concern (Synthesizing Findings) |
 | Test structure | `@reviewer --skills test-architecture` | Test suite changes |
@@ -41,12 +43,8 @@ you can't separate.
 
 ## Model Selection
 
-An architecture review triggered by repeat findings runs on Fable, even
-when the coder or lead is a Claude model: it judges the system's shape across
-rounds, where depth of judgment matters more than a second family's eye.
-That makes it a supplement. Before acting on its remedy, have a reviewer on
-a family other than the coder's check it; the default reviewer still runs
-beside it.
+An architecture review triggered by repeat findings runs on Opus: it judges
+the system's shape across rounds, where depth of judgment matters most.
 
 DeepSeek and Luna are options for quick, low-risk checks, not automatic
 fallbacks.
@@ -54,7 +52,11 @@ fallbacks.
 ## Synthesizing Findings
 
 Fix valid findings; record reasons for deferrals with the work item's
-decisions. Resolve conflicting findings using the design and evidence. Read
+decisions. Commit a fix that restructures code or changes behavior, rerun
+the suite, and rerun the lanes whose verdicts it could change; read smaller
+fixes yourself.
+
+Resolve conflicting findings using the design and evidence. Read
 findings by concern, the code behind one responsibility, not by symptom or
 file.
 

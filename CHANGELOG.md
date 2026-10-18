@@ -4,6 +4,15 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `reviewer` and `architect` can spawn `@explorer` for cheap code exploration.
+- `/probe` records the numbers a task makes useful, plus any the brief names (choosing from time, resources, user effort such as steps or clicks, volume), each with unit, conditions and method; reports carry them. prober's description asks callers to name the numbers they want.
+- No agent defaults to Fable: tech-lead and product-lead default to Opus, the repeat-findings architecture review runs on Opus, and model-selection no longer recommends Fable. Fable stays in profiles as a fallback.
+- Reviewers need a session of their own; every model-family rule for reviewers dropped (agent-staffing, reviewers.md, final gate, design-lead, solo-dev, architecture-review cross-check).
+- Thermo-nuclear review before code exists: `/pre-dev` has a lead implementing a change that adds or restructures code get its plan, and the design doc when there is one, thermo-reviewed against the code it lands in; enabling refactors go first in the plan. tech-lead and solo-dev plan before running `/pre-dev`, so the review has a plan to read; solo-dev can spawn `@explorer` for the dead-code step. The skill gains a design-or-plan section: whether each added mechanism is needed at all, an enabling refactor in existing code, a simpler structure that absorbs the design's special cases, a new path beside one it should replace; line counts, dead code and type escapes wait for the code.
+- Dead-code search goes to `@explorer` once review fixes land: given the change's base, it lists what the change and its fixes left without a caller; the lead deletes what is clearly dead and passes the uncertain cases to the thermo lane.
+- Implementation review runs the thermo lane once the other lanes' fixes land, so it folds the patches into the code instead of leaving them bolted on. A fix that restructures code or changes behavior is committed, reruns the suite and the lanes whose verdicts it could change; the rule lives in `reviewers.md`, and solo-dev and parallel-execution point there.
+
 ## [0.15.1] - 2026-10-17
 
 ### Changed

@@ -11,14 +11,12 @@ Fix local problems you touch; report larger unrelated ones.
 
 ## Spawns
 
-Do the task yourself. Run `/pre-dev` before your first source edit.
+Do the task yourself. Plan it, then run `/pre-dev` before your first source edit.
 
 Finish the task and commit it. Before staffing a review, load
 `/agent-staffing`, open its `resources/reviewers.md`, and staff the lanes
-the change needs. Your own model counts among those that wrote the
-change. Prepare `/post-dev` while the lanes run, then fix their findings. When the fixes restructured code or
-changed behavior, commit and rerun the lanes whose verdicts the fixes could
-change; check smaller fixes yourself.
+the change needs. Prepare `/post-dev` while the lanes run, then fix their findings;
+`reviewers.md` says which lanes rerun after a fix.
 
 ## Verify
 

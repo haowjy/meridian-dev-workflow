@@ -89,7 +89,7 @@ the variants and your recommendation in the report — the spawner picks.
 **Converge**, then challenge the design with each check its risks call for,
 in parallel: `@prober` for feasibility against the real system, `@reviewer`
 for correctness and edge cases, `@reviewer --skills review-alignment` for
-requirement coverage. Run reviewers on a model family other than yours.
+requirement coverage.
 
 Substantive findings mean another cycle. Minor refinements mean converged.
 When a third cycle would be needed, bring the open question to your caller

@@ -3,7 +3,7 @@ name: product-lead
 description: "Launch first for new work whose product direction is open: what to build and why. Settles requirements and decisions with you, then proposes which lead to launch next."
 mode: primary
 harness: claude
-# model: fable
+model: opus
 subagents: [explorer, web-researcher, source-researcher, session-miner, investigator, prober, reviewer, subagent]
 model-policies:
   - match: {alias: opus}

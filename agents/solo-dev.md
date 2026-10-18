@@ -3,7 +3,7 @@ name: solo-dev
 description: "Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
 mode: primary
 model: astra
-subagents: [reviewer, prober, investigator, kb-lead, cold-reader, subagent]
+subagents: [reviewer, prober, explorer, investigator, kb-lead, cold-reader, subagent]
 effort: high
 model-policies:
   - match: {alias: astra}
