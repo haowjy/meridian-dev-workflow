@@ -23,8 +23,9 @@ Use the prober's inexpensive default for CLI and process checks. For browser/UI
 verification, attach `agent-browser` and select a route that supports the inputs
 and tools the task needs; screenshot checks require image understanding.
 
-Muse Contributor is an option for inexpensive visual probing when all submitted
-context is approved for training. Make that decision before sending the brief,
+A free endpoint whose description says it may train on submitted context is
+an option for inexpensive visual probing when all submitted context is
+approved for training. Make that decision before sending the brief,
 screenshots, or tool output. Otherwise choose an approved alternative route;
 do not let price or a profile default override the data-use constraint.
 

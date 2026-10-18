@@ -8,6 +8,7 @@ subagents: [explorer, web-researcher, source-researcher, session-miner, investig
 model-policies:
   - match: {alias: opus}
   - match: {alias: fable}
+    no-fallback: true
   - match: {alias: astra}
     override: {effort: high}
   - match: {alias: deepseekpro}

@@ -14,6 +14,7 @@ model-policies:
   - match: {alias: sol}
     override: {}
   - match: {alias: fable}
+    no-fallback: true
     override: {}
   - match: {alias: astra}
     override: {}

@@ -23,8 +23,12 @@ Most changes are staffed from these; the catalogs below cover the rest.
 
 ## Model Selection
 
-Read `resources/model-selection.md` when choosing models or checking visual,
-writing, or data-use requirements.
+Choose the least expensive model whose description
+(`meridian mars models aliases`) fits the work. Escalate on evidence, not a
+guess at difficulty: when a worker runs out of depth, retry on a stronger
+model with its report, so the retry builds on what it learned. Start
+stronger for concerns known to be hard: concurrency, data integrity,
+ownership across modules.
 
 ## Parallel Work and Review
 

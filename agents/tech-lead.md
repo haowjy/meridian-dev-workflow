@@ -11,6 +11,7 @@ model-policies:
   - match: {alias: astra}
     override: {effort: high}
   - match: {alias: fable}
+    no-fallback: true
     override: {effort: high}  
   - match: {alias: grok}
     no-fallback: true

@@ -1,6 +1,8 @@
 # Reviewers
 
-Spawn `@reviewer` with skills matched to the change's risks.
+Spawn `@reviewer` with skills matched to the change's risks, each lane on
+the model whose description (`meridian mars models aliases`) names what that
+lane judges.
 
 ## Lanes a Change Needs
 
@@ -40,14 +42,6 @@ you can't separate.
 | Design alignment | `@reviewer --skills review-alignment` | Cross-artifact fidelity vs design/requirements |
 | Frontend structural | `@reviewer --skills react-architecture` | React component boundaries, state, tokens |
 | Doc structure | `@reviewer --skills tech-docs,llm-writing,md-validation` | Doc-heavy changes |
-
-## Model Selection
-
-An architecture review triggered by repeat findings runs on Opus: it judges
-the system's shape across rounds, where depth of judgment matters most.
-
-DeepSeek and Luna are options for quick, low-risk checks, not automatic
-fallbacks.
 
 ## Synthesizing Findings
 
