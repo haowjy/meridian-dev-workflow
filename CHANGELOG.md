@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.2] - 2026-10-18
+
 ### Changed
 - `reviewer` and `architect` can spawn `@explorer` for cheap code exploration.
 - `/probe` records the numbers a task makes useful, plus any the brief names (choosing from time, resources, user effort such as steps or clicks, volume), each with unit, conditions and method; reports carry them. prober's description asks callers to name the numbers they want.
