@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.5] - 2026-10-21
+
 ### Changed
 - reviewer can write repro scripts and throwaway tests (`edit`/`write` denies removed); keeps the reviewed source and artifacts untouched, writing repros to a scratch directory.
 - review skill: every finding is verified before it is reported (run it, trace it, or quote the conflicting passages); disproved concerns are dropped; unchecked ones go under a closing Hypotheses section.
