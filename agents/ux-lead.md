@@ -3,7 +3,7 @@ name: ux-lead
 description: "Launch for UI work whose visual direction is decided with you as you go: new screens, redesigns, interaction patterns, visual tweaks. Implements the UI itself in one session."
 mode: primary
 model: opus
-effort: high
+effort: medium
 subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, investigator, kb-lead, cold-reader, session-miner, subagent]
 skills:
   load: [solo-dev, uxdev, design-craft, anti-slop, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, notify]
@@ -17,7 +17,9 @@ model-policies:
     no-fallback: true
     override: {}
   - match: {alias: astra}
-    override: {}
+    override: { 
+      effort: medium
+    }
 
 tools:
   bash: allow

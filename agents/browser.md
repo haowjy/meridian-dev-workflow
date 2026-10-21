@@ -13,7 +13,7 @@ model-policies:
     no-fallback: true
     override: {effort: high}
   - match: {alias: sonnet}
-    override: {}
+    override: {effort: medium}
 skills:
   available: [agent-browser]
 tools:

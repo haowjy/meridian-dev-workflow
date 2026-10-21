@@ -9,10 +9,12 @@ model-policies:
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
+  - match {alias: sol}
+    override: {effort: medium}
   - match: {alias: sonnet}
-    override: {}
+    override: {effort: medium}
   - match: {alias: opus}
-    override: {}
+    override: {effort: medium}
 skills:
   load: [code, dev-principles, work-artifacts, qi-maintenance]
   available: [poc, testing, issues, qi-layer, knowledge-layers]

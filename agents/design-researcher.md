@@ -10,7 +10,7 @@ model-policies:
   - match: {alias: sonnet}
     override: {}
   - match: {alias: opus}
-    override: {}
+    override: {effort: medium}
   - match: {alias: deepseekpro}
     override: {}
 subagents: [explorer, web-researcher, session-miner, subagent]

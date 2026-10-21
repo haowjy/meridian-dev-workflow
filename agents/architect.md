@@ -9,8 +9,8 @@ model-policies:
   - match: {alias: sol}
     override: {effort: high}
   - match: {alias: opus}
-    override: {}
-  - match: {alias: deepseekpro}
+    override: {effort: medium}
+  - match: {alias: deepseek}
     override: {}
 skills:
   load: [dev-principles, llm-writing, work-artifacts]

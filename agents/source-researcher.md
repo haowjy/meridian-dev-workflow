@@ -12,7 +12,7 @@ model-policies:
   - match: {alias: sol}
     override: {effort: medium}
   - match: {alias: sonnet}
-    override: {}
+    override: {effort: medium}
 subagents: [explorer, web-researcher, subagent]
 skills:
   load: [source-study, dev-principles, work-artifacts]

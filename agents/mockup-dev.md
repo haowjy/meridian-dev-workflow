@@ -10,7 +10,7 @@ model-policies:
   - match: {alias: deepseek}
     override: {effort: high}
   - match: {alias: sonnet}
-    override: {}
+    override: {effort: low}
   - match: {alias: sol}
     override: {effort: low}
 skills:

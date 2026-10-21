@@ -9,7 +9,7 @@ model-policies:
   - match: {alias: astra}
     override: {effort: high}
   - match: {alias: opus}
-    override: {effort: high}
+    override: {effort: medium}
   - match: {alias: sol}
     override: {effort: high}
   - match: {alias: deepseekpro}

@@ -9,7 +9,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
-  - match: {alias: sonnet}
+  - match: {alias: haiku}
     override: {effort: high}
 skills:
   load: [research-web]

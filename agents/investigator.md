@@ -13,9 +13,9 @@ model-policies:
   - match: {alias: sol}
     override: {effort: high}
   - match: {alias: sonnet}
-    override: {}
+    override: {effort: medium}
   - match: {alias: opus}
-    override: {}
+    override: {effort: medium}
 skills:
   load: [diagnose, dev-principles, work-artifacts, qi-maintenance]
   available: [issues, thermo-nuclear-review, qi-layer, knowledge-layers]

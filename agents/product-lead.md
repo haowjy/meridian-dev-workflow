@@ -4,6 +4,7 @@ description: "Launch first for new work whose product direction is open: what to
 mode: primary
 harness: claude
 model: opus
+effort: medium
 subagents: [explorer, web-researcher, source-researcher, session-miner, investigator, prober, reviewer, subagent]
 model-policies:
   - match: {alias: opus}

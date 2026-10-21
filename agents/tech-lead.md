@@ -4,15 +4,15 @@ description: "Launch for technical work that needs ongoing technical decisions, 
 mode: primary
 model: opus
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, source-researcher, session-miner, kb-lead, cold-reader, design-lead, subagent]
-effort: high
+effort: medium
 model-policies:
   - match: {alias: opus}
-    override: {effort: high}
+    override: {effort: medium}
   - match: {alias: astra}
     override: {effort: high}
   - match: {alias: fable}
     no-fallback: true
-    override: {effort: high}  
+    override: {effort: medium}  
   - match: {alias: grok}
     no-fallback: true
     override: {effort: xhigh}

@@ -3,14 +3,16 @@ name: design-lead
 description: "Launch or spawn when the structure is unsettled: interfaces, boundaries, data model, or an implementation lead's Redesign Brief. Pass the problem statement and requirements; returns design docs and a recommendation."
 mode: primary
 model: opus
-effort: high
+effort: medium
 model-policies:
   - match: {alias: opus}
     override: {}
   - match: {alias: astra}
     override: {}
   - match: {alias: sol}
-    override: {}
+    override: {effort: high}
+  - match: {alias: fable}
+    override: medium
     
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev, session-miner, subagent]
 skills:

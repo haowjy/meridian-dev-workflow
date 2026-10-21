@@ -14,7 +14,7 @@ model-policies:
     override: {}
   - match: {alias: fable}
     no-fallback: true
-    override: {effort: high}
+    override: {}
   - match: {alias: grok}
     no-fallback: true
     override: {effort: high}
