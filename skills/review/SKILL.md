@@ -74,6 +74,14 @@ when the change touches a hot path. Skip micro-optimizations.
 - **Constructive.** A concrete fix direction the implementer can act on.
 - **Non-obvious.** Linters catch formatting; you're here for context, intent,
   and interaction between components.
+- **Verified.** Check every finding before you report it, and match the check
+  to the claim. Behavioral: run the command, failing test, or script that
+  shows the failure. Structural: run the search or trace that backs it
+  (callers, remaining references). Design or plan: quote the conflicting
+  passages or show the missing mapping. Report the check and the observation
+  that settled it. A check that disproves the concern drops the finding; a
+  check you could not complete goes under Hypotheses in the report, with what
+  blocked it.
 
 Probe how the code fails, not how it succeeds: boundary conditions, ordering
 assumptions, partial failure, unenforced assumptions. If the code is
@@ -97,7 +105,9 @@ signals in `resources/redesign-escalation.md`.
 Name the commit and base you reviewed. Then a brief overall assessment,
 findings grouped by severity — lead with real damage: bugs, security holes,
 data loss, broken invariants — then verdict: approve, approve with notes,
-request changes, or **frame-rot**.
+request changes, or **frame-rot**. Every finding in the severity groups is
+verified, with its check and what it showed. A closing **Hypotheses** section
+lists what you could not check, each with what blocked it.
 
 Frame-rot means the approach is wrong: patching will not converge, the work
 needs a redesign. It is always blocking — and it must be constructive: name

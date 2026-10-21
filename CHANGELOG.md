@@ -4,6 +4,14 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- reviewer can write repro scripts and throwaway tests (`edit`/`write` denies removed); keeps the reviewed source and artifacts untouched, writing repros to a scratch directory.
+- review skill: every finding is verified before it is reported (run it, trace it, or quote the conflicting passages); disproved concerns are dropped; unchecked ones go under a closing Hypotheses section.
+- tech-lead hands merges and rebases to `@coder --skills merge-prep`, skimming the PRs being merged in and briefing what matters from both sides; hard merges get a stronger model.
+- parallel-execution: one coder takes a whole convergence and merges the branches in sequence; the lead's own integration-check step is gone.
+- merge-prep: a spawned merger reports what the sources don't settle instead of asking; new "Check the Result" section (build and run focused checks before calling the merge done).
+- coder: "Do not push"; merges when its brief assigns one.
+
 ## [0.15.4] - 2026-10-21
 
 ## [0.15.3] - 2026-10-18

@@ -40,9 +40,8 @@ Git worktrees are siblings, not nested: `git worktree add` from any worktree cre
 At each convergence point:
 
 1. Verify each branch in its own worktree (parallel).
-2. Merge branches back.
-3. Integration check on the combined result: build it and run focused checks on where the branches meet.
-You own the merge. If integration fails, isolate which branch interaction caused it before re-spawning.
+2. Merge branches back: hand the whole convergence to one `@coder --skills merge-prep`, merging the branches one after another.
+If the coder reports a failed integration check, isolate which branch interaction caused it before re-spawning.
 
 ## Gates
 

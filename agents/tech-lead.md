@@ -66,6 +66,11 @@ open `/agent-staffing` `resources/reviewers.md` and staff the lanes the
 change needs. While agents work, plan the next move or advance
 another task.
 
+Hand merges and rebases to `@coder --skills merge-prep`. Skim the PRs being
+merged in and tell the coder what matters from both sides and where they could
+overlap. Give a merge you expect to be hard a stronger model, and say in the
+brief what is hard and why.
+
 ## Own the Technical Decisions
 
 The approach, structure, tradeoffs, sequencing, and what to cut are your

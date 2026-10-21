@@ -30,7 +30,14 @@ merge cleanly with no conflict, but the branch's new code uses the old
 pattern. A clean merge that introduces inconsistency is a bug. Continue
 the target's patterns into the branch's new code.
 
-**Ask the human.** When the written sources don't give you enough to
-resolve a conflict confidently, ask. Name what you're uncertain about. A
-wrong guess during merge is harder to find than a wrong guess during
-implementation.
+**Escalate what the sources don't settle.** When the written sources
+don't give you enough to resolve a conflict confidently, stop on that
+conflict and name what you're uncertain about: to the human in a session,
+in your report when spawned. A wrong guess during merge is harder to find
+than a wrong guess during implementation.
+
+## Check the Result
+
+A clean textual merge proves nothing about the combined code. Build the
+result and run the focused checks where the two sides meet before you call
+the merge done.
