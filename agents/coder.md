@@ -9,7 +9,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
-  - match {alias: sol}
+  - match: {alias: sol}
     override: {effort: medium}
   - match: {alias: sonnet}
     override: {effort: medium}

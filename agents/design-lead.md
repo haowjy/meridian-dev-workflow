@@ -12,7 +12,7 @@ model-policies:
   - match: {alias: sol}
     override: {effort: high}
   - match: {alias: fable}
-    override: medium
+    override: {effort: medium}
     
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev, session-miner, subagent]
 skills:
