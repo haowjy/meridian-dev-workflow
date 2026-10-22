@@ -17,7 +17,7 @@ model-policies:
   - match: {alias: opus}
     override: {effort: medium}
 skills:
-  load: [diagnose, dev-principles, work-artifacts, qi-maintenance]
+  load: [diagnose, dev-principles, work-artifacts, qi-maintenance, agent-staffing]
   available: [issues, thermo-nuclear-review, qi-layer, knowledge-layers]
 tools:
   bash: allow

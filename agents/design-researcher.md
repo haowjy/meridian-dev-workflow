@@ -15,7 +15,7 @@ model-policies:
     override: {}
 subagents: [explorer, web-researcher, session-miner, subagent]
 skills:
-  load: [design-analysis, dev-principles, work-artifacts]
+  load: [design-analysis, dev-principles, work-artifacts, agent-staffing]
   available: [architecture, shared-dao, intent-modeling, issues]
 tools:
   bash: allow

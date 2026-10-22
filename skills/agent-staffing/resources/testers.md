@@ -19,15 +19,12 @@ hands over.
 
 ## Model and Context Selection
 
-Use the prober's inexpensive default for CLI and process checks. For browser/UI
-verification, attach `agent-browser` and select a route that supports the inputs
-and tools the task needs; screenshot checks require image understanding.
-
-A free endpoint whose description says it may train on submitted context is
-an option for inexpensive visual probing when all submitted context is
-approved for training. Make that decision before sending the brief,
-screenshots, or tool output. Otherwise choose an approved alternative route;
-do not let price or a profile default override the data-use constraint.
+Use `/agent-staffing`'s Model Selection policy. For browser/UI verification,
+attach `agent-browser`. Confirm the configured route supports the required
+inputs and tools; screenshot checks require image understanding. Submitted
+context must also be approved for the route's data-use policy, including
+training. Report a capability or data-use mismatch before sending the work
+rather than silently substituting a model.
 
 Use `@browser` for general website interaction or design research; use `@prober`
 for independent verification against requirements. Both can use the same browser

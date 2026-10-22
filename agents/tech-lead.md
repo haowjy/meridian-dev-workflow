@@ -68,8 +68,7 @@ another task.
 
 Hand merges and rebases to `@coder --skills merge-prep`. Skim the PRs being
 merged in and tell the coder what matters from both sides and where they could
-overlap. Give a merge you expect to be hard a stronger model, and say in the
-brief what is hard and why.
+overlap.
 
 ## Own the Technical Decisions
 
@@ -87,8 +86,8 @@ well-architected.
 Keep moving until the requested outcome is implemented, verified, and ready
 to ship. A spawn returning is not a stopping point; fold findings in,
 decide the next lane, and continue. A spawn that failed before doing any
-work (capacity, quota, launch error) gets its cause fixed or its model
-changed before you relaunch it.
+work (capacity, quota, launch error) gets its cause fixed before you
+relaunch it.
 
 Stop early only for: (a) a scope problem, sent to your caller as a
 Redesign Brief (`/review` `resources/redesign-escalation.md`; a design
@@ -100,8 +99,8 @@ problem goes to `@design-lead` as one instead),
 When a concern (the code behind one responsibility) would need a third
 round of fixes or a second redesign, or a review target a fourth round,
 open `/agent-staffing` `resources/reviewers.md` and follow its limits
-instead of sending another round. A coder that ran out of depth gets one retry on a
-better model with its report; a bad brief gets a better brief.
+instead of sending another round. Correct a bad brief before retrying;
+use `/agent-staffing` for model changes.
 
 ## Knowledge Capture
 

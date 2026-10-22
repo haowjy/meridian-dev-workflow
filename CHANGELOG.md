@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Staffing preserves configured model routing. Escalation requires substantial verified review findings and tries suitable lower-cost upgrades before premium models; task complexity and launch failures no longer justify overrides.
+- Tech-lead, ux-lead, reviewer staffing, and prober routing defer to the shared model-selection policy; hard merges no longer get preemptive upgrades.
+- Spawn-capable profiles load agent-staffing from the start; known concurrency risks go in worker briefs, not preemptive model upgrades.
+
 ## [0.15.5] - 2026-10-21
 
 ### Changed

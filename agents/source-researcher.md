@@ -15,7 +15,7 @@ model-policies:
     override: {effort: medium}
 subagents: [explorer, web-researcher, subagent]
 skills:
-  load: [source-study, dev-principles, work-artifacts]
+  load: [source-study, dev-principles, work-artifacts, agent-staffing]
 tools:
   bash: allow
   write: allow

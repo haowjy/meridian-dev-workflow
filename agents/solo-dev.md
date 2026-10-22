@@ -15,8 +15,8 @@ model-policies:
   - match: {alias: deepseekpro}
     override: {effort: high}
 skills:
-  load: [solo-dev, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, notify]
-  available: [shared-dao, agent-staffing, pre-dev, testing, dev-workflow, review, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
+  load: [solo-dev, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, notify, agent-staffing]
+  available: [shared-dao, pre-dev, testing, dev-workflow, review, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
 tools:
   bash: allow
   write: allow

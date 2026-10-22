@@ -1,8 +1,7 @@
 # Reviewers
 
-Spawn `@reviewer` with skills matched to the change's risks, each lane on
-the model whose description (`meridian mars models aliases`) names what that
-lane judges.
+Spawn `@reviewer` with skills matched to the change's risks. Use
+`/agent-staffing`'s Model Selection policy for routing and escalation.
 
 ## Lanes a Change Needs
 

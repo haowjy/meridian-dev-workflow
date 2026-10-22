@@ -13,7 +13,7 @@ model-policies:
   - match: {alias: deepseek}
     override: {}
 skills:
-  load: [dev-principles, llm-writing, work-artifacts]
+  load: [dev-principles, llm-writing, work-artifacts, agent-staffing]
   available: [architecture, tech-docs, md-validation]
 tools:
   bash: allow

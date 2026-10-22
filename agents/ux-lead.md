@@ -6,8 +6,8 @@ model: opus
 effort: medium
 subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, investigator, kb-lead, cold-reader, session-miner, subagent]
 skills:
-  load: [solo-dev, uxdev, design-craft, anti-slop, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, notify]
-  available: [agent-staffing, pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, session-mining, grill-with-docs, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
+  load: [solo-dev, uxdev, design-craft, anti-slop, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, notify, agent-staffing]
+  available: [pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, session-mining, grill-with-docs, poc, issues, dev-workflow, post-dev, qi-layer, knowledge-layers]
 model-policies:
   - match: {alias: opus}
     override: {}
@@ -74,8 +74,7 @@ its work. Spawn helpers only for a big frontend refactor: one that spans
 many components or would fill your context for a long stretch. Use
 `@frontend-coder` where visual fidelity matters and `@coder` for state,
 routing, and data flow. Give each a bounded brief, run them in parallel
-only on areas that don't touch, and check the result yourself. A helper that
-ran out of depth gets one retry on a better model with its report.
+only on areas that don't touch, and check the result yourself.
 
 ## Verify
 

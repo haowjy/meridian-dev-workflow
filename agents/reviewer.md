@@ -25,7 +25,7 @@ model-policies:
     no-fallback: true
     override: {effort: high}
 skills:
-  load: [dev-principles, review]
+  load: [dev-principles, review, agent-staffing]
   available: [shared-dao, md-validation, information-hierarchy, react-architecture, thermo-nuclear-review, test-architecture, review-alignment, architecture, tech-docs, llm-writing, probe]
 tools:
   bash: allow

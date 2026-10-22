@@ -97,8 +97,8 @@ responsibility, however many files that spans. When one concern would need
 a third round of coders, the lead steps back, has an investigator
 trace the root cause, then has the system reviewed as a whole with every
 earlier report; the cause often sits where two parts own one invariant. A
-worker that ran out of depth gets one retry on a better model with its
-report. When the structure itself is wrong, the lead writes a Redesign
+model change follows `/agent-staffing`'s review-evidence and cost-tier
+policy. When the structure itself is wrong, the lead writes a Redesign
 Brief: design problems go to design-lead, scope problems go back to you and
 product-lead.
 
@@ -122,8 +122,8 @@ Use the tables below to compare roles. Each agent's description is its
 launch guidance: when to use it, what to pass, and what comes back.
 
 Models are profile defaults. Fallbacks and explicit-only options live in each
-agent's `model-policies`. `skills/agent-staffing/` covers model choice by
-task.
+agent's `model-policies`. `skills/agent-staffing/` covers configured routing
+and review-backed escalation.
 
 **Leads**
 

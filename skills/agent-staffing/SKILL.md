@@ -23,17 +23,30 @@ Most changes are staffed from these; the catalogs below cover the rest.
 
 ## Model Selection
 
-Choose the least expensive model whose description
-(`meridian mars models aliases`) fits the work. Escalate on evidence, not a
-guess at difficulty: when a worker runs out of depth, retry on a stronger
-model with its report, so the retry builds on what it learned. Start
-stronger for concerns known to be hard: concurrency, data integrity,
-ownership across modules.
+Honor explicit user model instructions. Otherwise launch each role through
+its configured routing, including user overrides and automatic fallback
+policy, rather than selecting a model for anticipated difficulty. Brief
+the configured worker on concurrency hazards and other known risks, the
+invariants to preserve, and how to verify them. This applies to reviewers
+as well as implementers.
+
+Escalate only after independent review verifies a substantial pattern of
+defects in that agent's work. Attribute the findings to the role whose work
+failed: defects a reviewer finds in code are not a reason to upgrade the
+reviewer. Task complexity, a worker saying it is stuck, and launch or
+availability failures are not that evidence; fix the brief or runtime
+problem instead of buying a stronger model.
+
+Choose the least-cost upgrade whose strengths in the current model catalog
+address the demonstrated failure. Try suitable intermediate options before
+the premium tier; move higher only when review of the attempted fix still
+shows substantial defects. Pass the findings and prior work to the next
+worker. Model changes do not reset the review and redesign limits in
+`resources/reviewers.md`.
 
 ## Parallel Work and Review
 
-Use parallel lanes for independent tasks. Use cross-model fan-out when the
-decision needs independent model perspectives. Run reviews in a session of their own,
+Use parallel lanes for independent tasks. Run reviews in a session of their own,
 apart from the writer's.
 
 ## Agent Catalogs
