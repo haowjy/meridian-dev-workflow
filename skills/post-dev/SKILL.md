@@ -49,9 +49,8 @@ merge section applies once the PR lands.
 ### Knowledge capture
 - Spawn `@kb-lead` after review fixes have landed, covering the whole
   change and anything an earlier capture left out.
-- Pass the conversation, changed files, and work directory. Point it at the
-  decision records and any `DIVERGENCE/` logs first; they are the cheapest
-  record of what was decided and why.
+- Brief it as its description asks, and pass any `DIVERGENCE/` logs with
+  the decision records.
 - Colocated guidance needs an update only when it — or the absence of needed
   guidance — would cause a cold agent to make a wrong decision. A changed path
   or missing `.context/` file is not itself a gap.
