@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.7] - 2026-10-23
+
 ### Changed
 - architect, web-researcher: `sandbox: danger-full-access` until Meridian grants sandboxed spawns network and its own state paths. Under `workspace-write`, Claude (since meridian 0.12.0) and Codex cut their shell off from the internet, host services and child spawns.
 
