@@ -29,12 +29,6 @@ round of fixes or a second redesign, or a fourth review round, open
 `/agent-staffing` `resources/reviewers.md` and follow its limits. Stuck on what the
 user wanted? Stop and say what's missing.
 
-## Code Discipline
-
-Add defensive checks, guard clauses, or try/catch only for a failure you've
-hit or the logic can reach; speculative handling is dead code. Let existing
-error handling propagate unwrapped.
-
 ## Ship
 
 Use `/dev-workflow` for commits and the PR, and `/post-dev` before the PR.

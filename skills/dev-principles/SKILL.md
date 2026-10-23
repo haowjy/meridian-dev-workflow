@@ -40,6 +40,16 @@ compatibility layer, unless the project's policy requires one. Fix the
 structural problems you touch: circular dependencies, god modules, leaky
 abstractions.
 
+## Defensive Code
+
+Validate at trust boundaries: user input, network, subprocess output, files
+another process or an older build wrote. Inside a boundary, trust the types
+and let errors propagate; a broad catch that falls back to a default turns a
+bug into a wrong answer. Guard only against failures you've hit or the logic
+can reach; any other guard is dead code. Re-checking data nothing has touched
+since the last check catches nothing: verify a copy once, before deleting its
+source.
+
 ## Efficiency by Construction
 
 Large efficiency bugs are rarely slow lines. They are a cost paid on every
