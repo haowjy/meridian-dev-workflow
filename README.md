@@ -59,8 +59,8 @@ When structure is open:  design-lead ─handoff→ tech-lead | solo-dev
 Every implementation lead runs the same lifecycle:
 
 1. **`/pre-dev`** runs once the plan exists, before the first source edit.
-   When the change adds or restructures code, a `thermo-nuclear-review`
-   reviewer reads the plan and any design doc against the code, so a simpler
+   When the change adds structure or grows code beyond a local edit, a
+   `thermo-nuclear-review` reviewer reads the plan and any design doc against the code, so a simpler
    structure becomes an enabling refactor. It also sets up a worktree for the
    work item, drafts the PR body from the repo template, and captures
    before-state evidence while it still exists.
@@ -73,8 +73,8 @@ Every implementation lead runs the same lifecycle:
    while working, and the full suite once on the finished change.
 4. **Review.** `reviewer` and `prober` run on a committed state, with the
    lanes the change needs (`agent-staffing` `resources/reviewers.md`): a
-   correctness reviewer always, `thermo-nuclear-review` when code is added
-   or restructured, a reviewer per risk, a prober when runtime behavior
+   correctness reviewer always, `thermo-nuclear-review` when the change adds
+   structure or grows code beyond a local edit, a reviewer per risk, a prober when runtime behavior
    changes. The thermo lane runs once the other lanes' fixes land, to fold
    those patches into the code instead of leaving them bolted on. Phased
    work gets a gate where later phases build on a phase, and a final gate
