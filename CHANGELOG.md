@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.10] - 2026-10-23
+
 ### Changed
 - dev-principles: Defensive Code section (moved from solo-dev, now reaches coder/reviewer).
 
