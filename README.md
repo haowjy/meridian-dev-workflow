@@ -6,7 +6,7 @@ that carry a change from first edit to merged PR.
 
 Built on [meridian-base](https://github.com/meridian-flow/meridian-base),
 which supplies the shared workers (`explorer`, `session-miner`, `subagent`,
-`kb-lead`, `kb-maintainer`) and the coordination skills. Both must be
+`kb-lead`, `kb-maintainer`, `cold-reader`) and the coordination skills. Both must be
 installed.
 
 ## Install
