@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.9] - 2026-10-23
+
 ### Changed
 - post-dev and agent-staffing brief `@kb-lead` as its description asks, instead of keeping their own lists of what to pass.
 
