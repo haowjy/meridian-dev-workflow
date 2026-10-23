@@ -30,7 +30,7 @@ tools:
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
   ask_user: deny
-sandbox: workspace-write
+sandbox: danger-full-access
 ---
 
 # Web Researcher
