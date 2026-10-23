@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- pre-dev plan review and the thermo lane fire on new modules, abstractions, or seams, moved responsibility, or growth beyond a local edit, not on any added code. The dead-code scan runs before the thermo lane or when a change deletes or replaces code.
+
 ## [0.15.7] - 2026-10-23
 
 ### Changed

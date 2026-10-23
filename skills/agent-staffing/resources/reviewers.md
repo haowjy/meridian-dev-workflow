@@ -11,12 +11,15 @@ with where the change landed, the risks to check, and the earlier review
 reports on the same code, so it can tell a recurring concern from a new one.
 
 - `@reviewer` for correctness, regressions, and behavior.
-- `@reviewer` with `/thermo-nuclear-review` when the change adds or
-  restructures code. Code drifts from `/dev-principles` even when its
-  writer loaded them; a reviewer focused there catches what a general pass
-  skims. Before it, have `@explorer` list what the change and its fixes
-  left without a caller, given the change's base. Delete what is clearly
-  dead, and pass the rest to the thermo lane.
+- `@reviewer` with `/thermo-nuclear-review` when the change adds a module,
+  abstraction, or seam, moves responsibility between them, or grows
+  existing code beyond a local edit. Code drifts from `/dev-principles`
+  even when its writer loaded them; a reviewer focused there catches what
+  a general pass skims.
+- `@explorer` when the change deletes or replaces code, and before the
+  thermo lane: it lists what the change and its fixes left without a
+  caller, given the change's base. Delete what is clearly dead, and pass
+  the rest to the reviewers.
 - One more `@reviewer` for each risk the change carries, from the picker
   below.
 - `@prober` when the change alters what the running system does
@@ -34,7 +37,7 @@ you can't separate.
 | Review kind | Spawn | When |
 |-------------|-------|------|
 | Default review | `@reviewer` | Correctness, maintainability, efficiency, security |
-| Strict maintainability | `@reviewer --skills thermo-nuclear-review` | Changes that add or restructure code; plans before implementation; spaghetti growth |
+| Strict maintainability | `@reviewer --skills thermo-nuclear-review` | New modules, abstractions, or seams; moved responsibility; growth beyond a local edit |
 | Efficiency | `@reviewer` with the efficiency lane named in the prompt | Runtime paths, polling, persistence, scans, startup |
 | Architecture / boundaries | `@reviewer --skills thermo-nuclear-review,architecture` | Cross-module boundary changes, dependency direction; repeat findings on one concern (Synthesizing Findings) |
 | Test structure | `@reviewer --skills test-architecture` | Test suite changes |

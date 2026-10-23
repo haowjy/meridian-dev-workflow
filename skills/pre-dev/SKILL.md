@@ -31,11 +31,12 @@ Then build the generated artifacts the project's checks need in this
 worktree, so the first check doesn't fail on a missing build.
 
 ### Structure review
-When you lead the implementation and the change adds or restructures code,
-have `@reviewer --skills thermo-nuclear-review` review your plan and any
-design doc against the code it lands in. Put the enabling refactors it finds
-first in the plan: found now, a simpler structure is a refactor; after the
-code exists, a rewrite.
+When you lead the implementation and the change adds a module, abstraction,
+or seam, moves responsibility between them, or grows existing code beyond a
+local edit, have `@reviewer --skills thermo-nuclear-review` review your plan
+and any design doc against the code it lands in. Put the enabling refactors
+it finds first in the plan: found now, a simpler structure is a refactor;
+after the code exists, a rewrite.
 
 ### PR body draft
 When the work will end in a PR, copy the repo's PR template into the work dir now, before any code changes
