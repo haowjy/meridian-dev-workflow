@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- design-craft Copy: cut taglines; text explaining how the screen works → name outcome on control, rewrite title, or fix layout. Keep what the screen can't show (format, consequence, recovery).
+- ui-implementation: write on-screen text by design-craft Copy; report lists hint/subtitle/helper text kept on changed screens and what each tells the user, or none.
+- frontend-coder: loads design-craft.
+
 ## [0.15.11] - 2026-10-24
 
 ### Changed

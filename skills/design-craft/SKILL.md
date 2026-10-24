@@ -53,4 +53,6 @@ Reveal animations must enhance an already-visible default, since hidden tabs and
 
 ## Copy
 
-Every word earns its place. No restated headings, no intros that repeat the title.
+Every word earns its place. Cut taglines, restated headings, and intros that repeat the title.
+
+A hint, subtitle, or helper text that explains how the screen works means the layout is wrong: name the outcome on the control, rewrite the title, or fix the layout. Keep text that tells the user something the screen can't show: a required format, a consequence, how to recover.

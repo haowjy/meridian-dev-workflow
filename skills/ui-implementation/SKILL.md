@@ -11,7 +11,7 @@ user-invocable: true
 Turn a settled visual direction into durable UI changes. Read the design
 spec, mockups, and screenshots before editing, and build with the existing
 design system's components and tokens. Use `/anti-slop` to keep generated-UI
-defaults out.
+defaults out, and write on-screen text by `/design-craft`'s Copy section.
 
 Carry forward the user's intent and what the chosen mockups taught. Keep
 what is useful from exploration; delete what was only there to make a
@@ -26,4 +26,6 @@ brief names, and read the console for errors. A passing build doesn't show
 the UI looks right.
 
 Report what changed, the judgment calls you made, what exploration material
-was kept or removed, and the rendering evidence.
+was kept or removed, and the rendering evidence. List each hint,
+subtitle, or helper text kept on the screens you changed, with what it tells
+the user that the screen can't show, or say there are none.
