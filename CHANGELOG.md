@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- agent-browser: drop `close --all` from the command list; name a session per agent and close only it.
+- prober, browser, mockup-dev, ux-lead, frontend-coder: deny `agent-browser close|quit|exit --all`, which ends other agents' browsers.
+
 ## [0.15.10] - 2026-10-23
 
 ### Changed

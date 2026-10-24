@@ -70,10 +70,17 @@ agent-browser network requests      # also: network har
 agent-browser react tree|inspect|renders   # React component detail
 agent-browser vitals                # performance
 
-# wait / sessions
+# wait
 agent-browser wait --load networkidle
-agent-browser close --all
 ```
+
+## Sessions are shared
+
+Other agents on the machine drive their own browser sessions through the same
+daemon. Name yours (`--session <spawn-id>-<task>` on every command, or
+`AGENT_BROWSER_SESSION`), and close only that one:
+`agent-browser --session <name> close`. Never `close --all`: it ends every
+other agent's browser mid-run.
 
 Add `--json` for structured output to pipe elsewhere.
 
