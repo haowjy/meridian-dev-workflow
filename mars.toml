@@ -3,11 +3,11 @@ name = "meridian-dev-workflow"
 version = "0.15.14"
 description = "Opinionated dev team for Meridian — architects, coders, reviewers, testers, and the skills that coordinate them."
 requires-mars = ">=0.18.0"
-requires-meridian = ">=0.14.0"
+requires-meridian = ">=0.14.5"
 
 [dependencies.meridian-base]
 url = "https://github.com/haowjy/meridian-base"
-version = ">=0.11.4, <0.12.0"
+version = ">=0.11.4, <0.13.0"
 
 [local-dependencies.meridian-prompter]
 url = "https://github.com/meridian-flow/meridian-prompter"
