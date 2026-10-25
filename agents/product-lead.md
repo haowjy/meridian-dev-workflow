@@ -16,7 +16,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts, qi-maintenance, intent-modeling, agent-staffing]
-  available: [grill-with-docs, uxdev, zoom-out, pre-dev, poc, issues, source-study, qi-layer, knowledge-layers]
+  available: [handoff, grill-with-docs, uxdev, zoom-out, pre-dev, poc, issues, source-study, qi-layer, knowledge-layers]
 tools:
   bash: allow
   'skill(deep-research)': deny

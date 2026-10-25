@@ -20,7 +20,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-principles, llm-writing, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
-  available: [testing, shared-dao, parallel-execution, pre-dev, uxdev, code, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
+  available: [testing, shared-dao, parallel-execution, pre-dev, uxdev, code, handoff, dev-workflow, architecture, review, thermo-nuclear-review, test-architecture, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
