@@ -77,8 +77,9 @@ agent-browser wait --load networkidle
 ## Sessions are shared
 
 Other agents on the machine drive their own browser sessions through the same
-daemon. Name yours (`--session <unique-prefix>-<task>` on every command, or
-`AGENT_BROWSER_SESSION`), and close only that one:
+daemon. Name yours with your run ID (the one your caller holds): use
+`--session <run-id>-<task>` on every command, or set
+`AGENT_BROWSER_SESSION`. Close only that one:
 `agent-browser --session <name> close`. Never `close --all`: it ends every
 other agent's browser mid-run.
 

@@ -1,6 +1,6 @@
 ---
 name: coder
-description: "Use for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. It keeps a new test only when the user asked for one; pass that request on in the brief. Returns what changed, the failure modes it exercised, and verification by type."
+description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. It keeps a new test only when the user asked for one; pass that request on in the brief. Returns what changed, the failure modes it exercised, and verification by type."
 mode: subagent
 model: luna
 effort: max

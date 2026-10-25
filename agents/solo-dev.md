@@ -1,6 +1,6 @@
 ---
 name: solo-dev
-description: "Use for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
+description: "Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
 mode: primary
 model: astra
 subagents: [reviewer, prober, explorer, investigator, kb-lead, cold-reader, subagent]

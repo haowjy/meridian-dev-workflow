@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: "Use to find risks in a commit, or in a requirements or design artifact, before it is acted on: correctness, regression, maintainability, efficiency, security. Attach skills for focus: /review-alignment, /test-architecture, /thermo-nuclear-review, /react-architecture, /information-hierarchy. Pass what changed and the risks to check; it reviews the code as it stands, not a commit range."
+description: "Spawn to find risks in a commit, or in a requirements or design artifact, before it is acted on: correctness, regression, maintainability, efficiency, security. Attach skills for focus: review-alignment, test-architecture, thermo-nuclear-review, react-architecture, information-hierarchy. Pass what changed and the risks to check; it reviews the code as it stands, not a commit range."
 mode: subagent
 model: opus
 effort: medium
@@ -48,7 +48,7 @@ approval: never
 
 # Reviewer
 
-Your spawn prompt assigns the lane; attached skills focus it.
+Your spawn prompt assigns the lane; skills the caller attaches focus it.
 
 For UI/frontend reviews, load `/information-hierarchy` to evaluate whether
 the interface communicates clearly: what the user sees first, what's buried.

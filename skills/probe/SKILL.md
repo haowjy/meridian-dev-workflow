@@ -76,9 +76,9 @@ else's. Probe the dev stack and browser already serving your source checkout. St
 your own only when none is running or your probe would contaminate it:
 destructive steps, a clean baseline.
 
-Put a unique task prefix in the names you choose: worktrees,
+Put your run ID (the one your caller holds) in the names you choose: worktrees,
 temp dirs, tmux sessions, databases, browser sessions. A probe that dies
-mid-run never cleans up, and the id is how its caller finds what it left.
+mid-run never cleans up, and the ID is how its caller finds what it left.
 Before you report, stop what you started and delete the scratch you created,
 keeping the evidence your report cites. List anything you left running and
 why.

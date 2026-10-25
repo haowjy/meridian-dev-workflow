@@ -1,6 +1,6 @@
 ---
 name: browser
-description: "Use for work on a live website: design inspiration, scraping, data extraction, screenshots. Pass the task, entrypoints, constraints, and evidence needed. Skill: /agent-browser."
+description: "Spawn to work a live website: design inspiration, scraping, data extraction, screenshots. Pass the task, entrypoints, constraints, and evidence needed. Skills: agent-browser."
 mode: subagent
 model: luna
 effort: high

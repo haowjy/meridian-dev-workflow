@@ -1,6 +1,6 @@
 ---
 name: frontend-coder
-description: "Use for frontend implementation where visual quality and design fidelity matter. Give a detailed brief: behavior and interaction requirements, available design references, target viewports, constraints, and acceptance criteria."
+description: "Spawn for frontend implementation where visual quality and design fidelity matter. Give a detailed brief: behavior and interaction requirements, available design references, target viewports, constraints, and acceptance criteria."
 mode: subagent
 model: sonnet
 effort: medium

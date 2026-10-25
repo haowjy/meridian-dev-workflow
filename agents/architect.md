@@ -1,6 +1,6 @@
 ---
 name: architect
-description: "Use when a design decision has competing structural options to compare. Pass the options, constraints, and requirements; returns design docs with the tradeoffs."
+description: "Spawn when a design decision has competing structural options to compare. Pass the options, constraints, and requirements; returns design docs with the tradeoffs."
 mode: subagent
 model: opus
 subagents: [explorer]

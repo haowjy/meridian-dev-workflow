@@ -1,8 +1,8 @@
 # Testers
 
 Match testing to what the phase touches. Coders self-verify with the narrowest
-useful evidence. Beyond that, delegate to `@prober` with the skill for the
-verification kind attached.
+useful evidence. Beyond that, delegate to `@prober` and attach the skill for the
+verification kind.
 
 ## Skill Picker
 
@@ -10,8 +10,8 @@ verification kind attached.
 |-------------------|-------|------|
 | Quick manual smoke | `@prober` | CLI, process, non-UI behavior checks |
 | Structured manual QA | `@prober` | Verify affected existing behavior and new requirements; pass scenarios and expected outcomes |
-| Frontend / UI | `@prober` with `/agent-browser` | Rendering, flows, console errors in a real browser |
-| Feasibility spike | `@prober` with `/poc` | Can we do X? Throwaway code, verdict, delete |
+| Frontend / UI | `@prober`; attach `/agent-browser` | Rendering, flows, console errors in a real browser |
+| Feasibility spike | `@prober`; attach `/poc` | Can we do X? Throwaway code, verdict, delete |
 | Heavy / destructive env | `@prober` | Temp repos, clean-baseline comparisons |
 
 Testers generate their own edge cases beyond the requirements the caller
@@ -20,7 +20,7 @@ hands over.
 ## Model and Context Selection
 
 Use `/agent-staffing`'s Model Selection policy. For browser/UI verification,
-attach `agent-browser`. Confirm the configured route supports the required
+attach `/agent-browser`. Confirm the configured route supports the required
 inputs and tools; screenshot checks require image understanding. Submitted
 context must also be approved for the route's data-use policy, including
 training. Report a capability or data-use mismatch before sending the work

@@ -19,14 +19,14 @@ Should this work be on a worktree? Prefer worktrees for:
 - Parallel work alongside other agents
 - Changes spanning multiple files or subsystems
 
-If already in a worktree, confirm this effort's source checkout points at it;
+If already in a worktree, confirm the work item's source checkout points at it;
 a worktree from another task is not this one's. If this work belongs on a
 worktree and you aren't in one, create one:
 ```bash
 git -C <repo> worktree add ../<repo>.worktrees/<slug> -b <branch>
 ```
 
-Then point this effort's source checkout at the new worktree.
+Then point the work item's source checkout at the new worktree.
 
 Then build the generated artifacts the project's checks need in this
 worktree, so the first check doesn't fail on a missing build.
@@ -34,7 +34,7 @@ worktree, so the first check doesn't fail on a missing build.
 ### Structure review
 When you lead the implementation and the change adds a module, abstraction,
 or seam, moves responsibility between them, or grows existing code beyond a
-local edit, have `@reviewer` with `/thermo-nuclear-review` attached review your plan
+local edit, attach `/thermo-nuclear-review` to `@reviewer` and have it review your plan
 and any design doc against the code it lands in. Put the enabling refactors
 it finds first in the plan: found now, a simpler structure is a refactor;
 after the code exists, a rewrite.

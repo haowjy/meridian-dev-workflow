@@ -10,7 +10,7 @@ Route deferred work by scope. Directory-scoped deferrals go to colocated
 `.context/TODO` or `.context/FUTURE`. Cross-cutting items or anything
 requiring external visibility gets a GitHub issue.
 
-GitHub Issues are a visibility layer on top of run reports and work-scoped
+GitHub Issues are a visibility layer on top of agent reports and work-scoped
 notes. If `gh` is unavailable, report that issue filing was skipped and log
 the draft locally.
 

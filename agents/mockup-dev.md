@@ -1,6 +1,6 @@
 ---
 name: mockup-dev
-description: "Use to make visual options tangible with fast throwaway frontend POCs. Pass the visual question, relevant design references, target stack, constraints, and criteria for judging the rendered result."
+description: "Spawn to make visual options tangible with fast throwaway frontend POCs. Pass the visual question, relevant design references, target stack, constraints, and criteria for judging the rendered result."
 mode: subagent
 model: luna
 effort: high

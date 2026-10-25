@@ -81,7 +81,7 @@ Use this structure for all issues. It gives enough context for someone to pick u
 ```markdown
 ## Context
 Found during: [work item and phase when available; otherwise standalone task]
-Found by: [agent role] ([past session reference])
+Found by: [agent role] ([run ID])
 
 ## Description
 [What was found: clear, specific, one to three paragraphs]
@@ -98,8 +98,8 @@ Found by: [agent role] ([past session reference])
 ### Filling in the template
 
 - **Context**: Use the active work item name and current phase when one exists;
-  otherwise name the standalone task. The past session reference helps trace
-  back to the agent session that found it.
+  otherwise name the standalone task. The run ID helps trace back to the
+  agent session that found it.
 - **Description**: State what's wrong or surprising. Be specific: "token refresh fails" is less useful than "token refresh catches all exceptions and returns None, masking network errors."
 - **Evidence**: Include file paths with line numbers. Short code snippets are fine inline. For longer evidence, describe what to look for and where.
 - **Suggested Action**: If you know the fix, describe it. If not, say "needs investigation" and note what you've already ruled out.
@@ -115,7 +115,7 @@ gh issue create \
   --body "$(cat <<'EOF'
 ## Context
 Found during: auth-refactor, step 3 (token validation)
-Found by: implementer (session-107)
+Found by: implementer (p107)
 
 ## Description
 Token refresh catches all exceptions and returns None.

@@ -1,6 +1,6 @@
 ---
 name: imagegen
-description: "Use when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images."
+description: "Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images."
 mode: subagent
 model: sol
 effort: high
@@ -32,7 +32,7 @@ underspecified. When vague on style, composition, or mood, infer from
 reference images and context. When you can't infer, make a deliberate
 choice and state it in your report.
 
-When reference images are provided, study them first. Match the
+When reference images are passed, study them first. Match the
 existing visual language, palette, and style unless the prompt asks for
 something different.
 

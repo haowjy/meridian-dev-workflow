@@ -37,13 +37,13 @@ you can't separate.
 | Review kind | Spawn | When |
 |-------------|-------|------|
 | Default review | `@reviewer` | Correctness, maintainability, efficiency, security |
-| Strict maintainability | `@reviewer` with `/thermo-nuclear-review` | New modules, abstractions, or seams; moved responsibility; growth beyond a local edit |
+| Strict maintainability | `@reviewer`; attach `/thermo-nuclear-review` | New modules, abstractions, or seams; moved responsibility; growth beyond a local edit |
 | Efficiency | `@reviewer` with the efficiency lane named in the prompt | Runtime paths, polling, persistence, scans, startup |
-| Architecture / boundaries | `@reviewer` with `/thermo-nuclear-review` and `/architecture` | Cross-module boundary changes, dependency direction; repeat findings on one concern (Synthesizing Findings) |
-| Test structure | `@reviewer` with `/test-architecture` | Test suite changes |
-| Design alignment | `@reviewer` with `/review-alignment` | Cross-artifact fidelity vs design/requirements |
-| Frontend structural | `@reviewer` with `/react-architecture` | React component boundaries, state, tokens |
-| Doc structure | `@reviewer` with `/tech-docs`, `/llm-writing`, and `/md-validation` | Doc-heavy changes |
+| Architecture / boundaries | `@reviewer`; attach `/thermo-nuclear-review` and `/architecture` | Cross-module boundary changes, dependency direction; repeat findings on one concern (Synthesizing Findings) |
+| Test structure | `@reviewer`; attach `/test-architecture` | Test suite changes |
+| Design alignment | `@reviewer`; attach `/review-alignment` | Cross-artifact fidelity vs design/requirements |
+| Frontend structural | `@reviewer`; attach `/react-architecture` | React component boundaries, state, tokens |
+| Doc structure | `@reviewer`; attach `/tech-docs`, `/llm-writing`, and `/md-validation` | Doc-heavy changes |
 
 ## Synthesizing Findings
 
@@ -61,7 +61,7 @@ change. A round is one review and the fixes it calls for. At each limit,
 stop sending rounds:
 - **A concern that would need a third round of fixes:** trace the root
   cause, yourself or with `@investigator`, then have the system reviewed as
-  a whole (`@reviewer` with `/thermo-nuclear-review` and `/architecture`) with
+  a whole (`@reviewer`; attach `/thermo-nuclear-review` and `/architecture`) with
   every earlier report. Ask whether the findings share a cause, and for
   either the move that ends it or a frame-rot verdict. The cause often sits
   where two parts own one invariant.
