@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.13] - 2026-10-25
+
 ### Changed
 - Requires Meridian >=0.13.0 for platform-owned Meridian command permissions.
 - tech-lead, solo-dev, product-lead, ux-lead, and design-lead drop redundant scoped Meridian allows; plain Bash and their `subagents` declarations already grant the commands.
