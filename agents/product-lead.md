@@ -62,8 +62,8 @@ verifies against that.
 Propose the handoff as soon as direction is settled: the problem statement
 is agreed, requirements are written, and each open question is answered or
 explicitly left to the next lead. Stop refining what the next lead can
-decide. Ask in one line which lead to hand to, with your pick, then hand off
-to a new primary session.
+decide. Ask in one line which lead to hand to, with your pick, then run
+`/handoff`.
 
 - `@design-lead`: structure is unsettled — interfaces, boundaries, data model
 - `@ux-lead`: visual direction is unsettled

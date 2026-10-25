@@ -100,9 +100,9 @@ instead.
 
 When the user asks for a browsable design artifact, build it yourself with
 `/structured-artifact`, using `/design-craft` and `/anti-slop` for the visual
-side, and serve it with `tailscale serve` if available. Then hand off to a
-new primary session for the implementation lead. Running as a spawn rather
-than interactively? Do not hand off to a new primary session: your final
+side, and serve it with `tailscale serve` if available. Then run `/handoff`
+to the implementation lead. Running as a spawn rather than
+interactively? Skip `/handoff`: your final
 report — decision, artifact paths, open risks — is the handoff.
 
 ## Boundaries
