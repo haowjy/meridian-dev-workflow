@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Requires Meridian >=0.13.0 for platform-owned Meridian command permissions.
+
 ## [0.15.12] - 2026-10-24
 
 ### Changed
