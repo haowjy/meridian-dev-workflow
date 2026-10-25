@@ -25,9 +25,6 @@ tools:
   bash: allow
   write: allow
   edit: allow
-  'bash(meridian spawn *)': allow
-  'bash(meridian session *)': allow
-  'bash(meridian work *)': allow
   'bash(git status *)': allow
   'bash(git branch --list *)': allow
   'bash(git branch --show-current)': allow

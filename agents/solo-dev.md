@@ -21,9 +21,6 @@ tools:
   bash: allow
   write: allow
   edit: allow
-  'bash(meridian spawn *)': allow
-  'bash(meridian session *)': allow
-  'bash(meridian work *)': allow
   'bash(git push *)': allow
   'bash(gh pr *)': allow
   'skill(deep-research)': deny

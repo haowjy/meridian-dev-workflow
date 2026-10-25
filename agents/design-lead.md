@@ -20,7 +20,6 @@ skills:
   available: [structured-artifact, design-craft, anti-slop, dev-principles, uxdev, handoff, architecture, tech-docs, pre-dev, issues, zoom-out, source-study]
 tools:
   bash: allow
-  'bash(meridian spawn *)': allow
   write: allow
   edit: allow
   'skill(deep-research)': deny
