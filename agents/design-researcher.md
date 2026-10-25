@@ -1,6 +1,6 @@
 ---
 name: design-researcher
-description: "Spawn when a design decision needs a structured analysis of alternatives. Pass the question and constraints; returns written analysis, not the final design."
+description: "Use when a design decision needs a structured analysis of alternatives. Pass the question and constraints; returns written analysis, not the final design."
 mode: subagent
 model: sol
 effort: high

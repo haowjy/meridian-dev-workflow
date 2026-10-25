@@ -1,6 +1,6 @@
 ---
 name: ux-lead
-description: "Launch for UI work whose visual direction is decided with you as you go: new screens, redesigns, interaction patterns, visual tweaks. Implements the UI itself in one session."
+description: "Use for UI work whose visual direction is decided with you as you go: new screens, redesigns, interaction patterns, visual tweaks. Implements the UI itself in one session."
 mode: primary
 model: opus
 effort: medium

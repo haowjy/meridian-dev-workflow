@@ -81,6 +81,6 @@ Automated pytest tests verify internal logic. Manual smoke tests verify user-fac
 
 **The difference:**
 - Pytest: `assert parse_config(data) == expected`: tests logic in isolation
-- Smoke: `meridian spawn -a coder -p "test"` then verify it actually ran: tests real behavior
+- Smoke: `mycli process sample.json` then verify its output and side effects: tests real behavior
 
 Both are necessary. Neither substitutes for the other.

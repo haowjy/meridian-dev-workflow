@@ -72,11 +72,11 @@ than declaring a bug.
 
 Other agents and the human share this machine's memory, CPU, and disk. When
 memory runs out, the kernel kills whichever process it picks, often someone
-else's. Probe the dev stack and browser already serving your task dir. Start
+else's. Probe the dev stack and browser already serving your source checkout. Start
 your own only when none is running or your probe would contaminate it:
 destructive steps, a clean baseline.
 
-Put your spawn id (`$MERIDIAN_SPAWN_ID`) in the names you choose: worktrees,
+Put a unique task prefix in the names you choose: worktrees,
 temp dirs, tmux sessions, databases, browser sessions. A probe that dies
 mid-run never cleans up, and the id is how its caller finds what it left.
 Before you report, stop what you started and delete the scratch you created,

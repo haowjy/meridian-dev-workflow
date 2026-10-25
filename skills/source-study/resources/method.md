@@ -2,9 +2,11 @@
 
 ## Cloning
 
+Choose a durable local cache directory outside the source checkout, then clone
+the project beneath it:
+
 ```bash
-mkdir -p ~/.meridian/ref
-git clone <url> ~/.meridian/ref/<name>
+git clone <url> <reference-cache>/<name>
 ```
 
 Full clone by default: explorers need `git log` and `git blame` to trace how designs evolved and why boundaries were drawn.
@@ -12,12 +14,13 @@ Full clone by default: explorers need `git log` and `git blame` to trace how des
 For large repos (monorepos, multi-GB histories), clone shallow and deepen as needed:
 
 ```bash
-git clone --depth 50 <url> ~/.meridian/ref/<name>    # recent history
-git -C ~/.meridian/ref/<name> fetch --deepen=200      # extend window
-git -C ~/.meridian/ref/<name> fetch --unshallow        # full history
+git clone --depth 50 <url> <reference-cache>/<name>    # recent history
+git -C <reference-cache>/<name> fetch --deepen=200     # extend window
+git -C <reference-cache>/<name> fetch --unshallow      # full history
 ```
 
-Keep clones in `~/.meridian/ref/` after the investigation; a repo studied once may be relevant again.
+Keep clones in the cache after the investigation; a repo studied once may be
+relevant again.
 
 ## Explorer Prompt Examples
 

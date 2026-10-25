@@ -1,6 +1,6 @@
 ---
 name: product-lead
-description: "Launch first for new work whose product direction is open: what to build and why. Settles requirements and decisions with you, then proposes which lead to launch next."
+description: "Use first for new work whose product direction is open: what to build and why. Settles requirements and decisions with you, then proposes which lead to use next."
 mode: primary
 harness: claude
 model: opus

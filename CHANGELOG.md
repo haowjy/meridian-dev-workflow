@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Agent descriptions and workflow guidance name portable capabilities such as source checkouts, work directories, skill attachment, past sessions, and diagram validation instead of Meridian commands, flags, and environment variables.
+
 ## [0.15.14] - 2026-10-25
 
 ### Changed

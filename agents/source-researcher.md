@@ -1,6 +1,6 @@
 ---
 name: source-researcher
-description: "Spawn to see how real open-source projects handle a similar problem. Pass the problem and any candidate projects."
+description: "Use to see how real open-source projects handle a similar problem. Pass the problem and any candidate projects."
 mode: subagent
 model: luna
 effort: high

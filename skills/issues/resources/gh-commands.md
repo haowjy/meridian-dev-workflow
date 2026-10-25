@@ -45,7 +45,7 @@ fi
 
 | Label | Color (hex) | Description |
 |-------|-------------|-------------|
-| `work:<slug>` | `c5def5` | Links issue to its Meridian work item when one exists |
+| `work:<slug>` | `c5def5` | Links issue to its work item when one exists |
 
 When an active work item exists, replace `<slug>` with its actual slug (e.g.,
 `work:auth-refactor`). Otherwise omit the work label and work-item references.
@@ -71,7 +71,7 @@ gh label create "good-first-task" --color "7057FF" --description "Good for a new
 Create work item labels as needed:
 
 ```bash
-gh label create "work:auth-refactor" --color "c5def5" --description "Meridian work item: auth-refactor" 2>/dev/null
+gh label create "work:auth-refactor" --color "c5def5" --description "Work item: auth-refactor" 2>/dev/null
 ```
 
 ## Issue Body Template
@@ -81,7 +81,7 @@ Use this structure for all issues. It gives enough context for someone to pick u
 ```markdown
 ## Context
 Found during: [work item and phase when available; otherwise standalone task]
-Found by: [agent role] ([spawn ID])
+Found by: [agent role] ([past session reference])
 
 ## Description
 [What was found: clear, specific, one to three paragraphs]
@@ -98,8 +98,8 @@ Found by: [agent role] ([spawn ID])
 ### Filling in the template
 
 - **Context**: Use the active work item name and current phase when one exists;
-  otherwise name the standalone task. The spawn ID helps trace back to the
-  agent session that found it.
+  otherwise name the standalone task. The past session reference helps trace
+  back to the agent session that found it.
 - **Description**: State what's wrong or surprising. Be specific: "token refresh fails" is less useful than "token refresh catches all exceptions and returns None, masking network errors."
 - **Evidence**: Include file paths with line numbers. Short code snippets are fine inline. For longer evidence, describe what to look for and where.
 - **Suggested Action**: If you know the fix, describe it. If not, say "needs investigation" and note what you've already ruled out.
@@ -115,7 +115,7 @@ gh issue create \
   --body "$(cat <<'EOF'
 ## Context
 Found during: auth-refactor, step 3 (token validation)
-Found by: implementer (p107)
+Found by: implementer (session-107)
 
 ## Description
 Token refresh catches all exceptions and returns None.
@@ -127,7 +127,7 @@ Token refresh catches all exceptions and returns None.
 Add specific exception handling.
 
 ---
-*Created by meridian agent during `work:auth-refactor` implementation*
+*Created during `work:auth-refactor` implementation*
 EOF
 )"
 ```

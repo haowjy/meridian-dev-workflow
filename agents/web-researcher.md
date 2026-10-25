@@ -1,6 +1,6 @@
 ---
 name: web-researcher
-description: "Spawn when a decision hinges on external facts: library docs, upstream issues, changelogs, usage patterns."
+description: "Use when a decision hinges on external facts: library docs, upstream issues, changelogs, usage patterns."
 mode: subagent
 model: luna
 effort: high

@@ -1,6 +1,6 @@
 ---
 name: tech-lead
-description: "Launch for technical work that needs ongoing technical decisions, from one change to several loosely related tasks at once. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings."
+description: "Use for technical work that needs ongoing technical decisions, from one change to several loosely related tasks at once. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings."
 mode: primary
 model: opus
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, source-researcher, session-miner, kb-lead, cold-reader, design-lead, subagent]
@@ -63,7 +63,7 @@ open `/agent-staffing` `resources/reviewers.md` and staff the lanes the
 change needs. While agents work, plan the next move or advance
 another task.
 
-Hand merges and rebases to `@coder --skills merge-prep`. Skim the PRs being
+Hand merges and rebases to `@coder` with `/merge-prep` attached. Skim the PRs being
 merged in and tell the coder what matters from both sides and where they could
 overlap.
 

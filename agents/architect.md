@@ -1,6 +1,6 @@
 ---
 name: architect
-description: "Spawn when a design decision has competing structural options to compare. Pass the options, constraints, and requirements; returns design docs with the tradeoffs."
+description: "Use when a design decision has competing structural options to compare. Pass the options, constraints, and requirements; returns design docs with the tradeoffs."
 mode: subagent
 model: opus
 subagents: [explorer]
@@ -56,7 +56,7 @@ reflect constraints you lack context on.
 ## Design doc structure
 
 Prefer mermaid diagrams for component relationships, data flows, state
-machines, and sequences; check them with `meridian mermaid check`. Use tree
+machines, and sequences; validate the diagrams before reporting. Use tree
 structures for hierarchical relationships (module decomposition, type
 hierarchies, configuration layering). How components connect: draw it. What
 a component contains: outline it.

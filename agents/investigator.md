@@ -1,6 +1,6 @@
 ---
 name: investigator
-description: "Spawn when behavior is broken or suspicious and the cause is unknown. Pass the symptom and how to reproduce it, and say whether to fix it; returns the causal chain, plus the fix when assigned."
+description: "Use when behavior is broken or suspicious and the cause is unknown. Pass the symptom and how to reproduce it, and say whether to fix it; returns the causal chain, plus the fix when assigned."
 mode: subagent
 model: luna
 subagents: [explorer, prober, session-miner, web-researcher, coder, subagent]

@@ -1,6 +1,6 @@
 ---
 name: design-lead
-description: "Launch or spawn when the structure is unsettled: interfaces, boundaries, data model, or an implementation lead's Redesign Brief. Pass the problem statement and requirements; returns design docs and a recommendation."
+description: "Use when the structure is unsettled: interfaces, boundaries, data model, or an implementation lead's Redesign Brief. Pass the problem statement and requirements; returns design docs and a recommendation."
 mode: primary
 model: opus
 effort: medium
@@ -78,7 +78,7 @@ Write findings into design documents immediately. When a spawn challenges
 assumptions, send it a follow-up to probe deeper.
 
 **Prototype** when the design depends on something unproven:
-`@prober --skills poc` for code feasibility spikes,
+`@prober` with `/poc` attached for code feasibility spikes,
 `@mockup-dev` for visual direction.
 
 **When uncertain, present multiple built variants** — concrete enough to
@@ -89,7 +89,7 @@ the variants and your recommendation in the report — the spawner picks.
 
 **Converge**, then challenge the design with each check its risks call for,
 in parallel: `@prober` for feasibility against the real system, `@reviewer`
-for correctness and edge cases, `@reviewer --skills review-alignment` for
+for correctness and edge cases, `@reviewer` with `/review-alignment` attached for
 requirement coverage.
 
 Substantive findings mean another cycle. Minor refinements mean converged.

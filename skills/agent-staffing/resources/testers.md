@@ -1,8 +1,8 @@
 # Testers
 
 Match testing to what the phase touches. Coders self-verify with the narrowest
-useful evidence. Beyond that, spawn `@prober` with `--skills` for the
-verification kind.
+useful evidence. Beyond that, delegate to `@prober` with the skill for the
+verification kind attached.
 
 ## Skill Picker
 
@@ -10,8 +10,8 @@ verification kind.
 |-------------------|-------|------|
 | Quick manual smoke | `@prober` | CLI, process, non-UI behavior checks |
 | Structured manual QA | `@prober` | Verify affected existing behavior and new requirements; pass scenarios and expected outcomes |
-| Frontend / UI | `@prober --skills agent-browser` | Rendering, flows, console errors in a real browser |
-| Feasibility spike | `@prober --skills poc` | Can we do X? Throwaway code, verdict, delete |
+| Frontend / UI | `@prober` with `/agent-browser` | Rendering, flows, console errors in a real browser |
+| Feasibility spike | `@prober` with `/poc` | Can we do X? Throwaway code, verdict, delete |
 | Heavy / destructive env | `@prober` | Temp repos, clean-baseline comparisons |
 
 Testers generate their own edge cases beyond the requirements the caller

@@ -33,14 +33,15 @@ Before another review-fix cycle at a gate, check the limits in `/agent-staffing`
 
 Each parallel branch gets its own worktree and dev stack (server, database, etc.). No shared mutable state.
 
-Git worktrees are siblings, not nested: `git worktree add` from any worktree creates a peer. The current worktree may itself be a worktree. Sequential phases run on the current worktree; parallel groups branch off into new worktrees. When you create a lane's worktree, build the generated artifacts its checks need there; ignored build outputs don't carry across worktrees. Point each spawn at its worktree with `--task-dir <worktree-path>`. Track which worktree serves which DAG branch. Remove worktrees after their branch is merged and verified.
+Git worktrees are siblings, not nested: `git worktree add` from any worktree creates a peer. The current worktree may itself be a worktree. Sequential phases run on the current worktree; parallel groups branch off into new worktrees. When you create a lane's worktree, build the generated artifacts its checks need there; ignored build outputs don't carry across worktrees. Point each delegated lane's source checkout at its worktree. Track which worktree serves which DAG branch. Remove worktrees after their branch is merged and verified.
 
 ## Merge and Verify
 
 At each convergence point:
 
 1. Verify each branch in its own worktree (parallel).
-2. Merge branches back: hand the whole convergence to one `@coder --skills merge-prep`, merging the branches one after another.
+2. Merge branches back: hand the whole convergence to one `@coder` with
+   `/merge-prep` attached, merging the branches one after another.
 If the coder reports a failed integration check, isolate which branch interaction caused it before re-spawning.
 
 ## Gates
