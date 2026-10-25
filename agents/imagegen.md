@@ -20,6 +20,7 @@ tools:
   'bash(tmux kill-server:*)': deny
   ask_user: deny
 sandbox: workspace-write
+network: allow
 ---
 
 # Image Generator
