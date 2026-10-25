@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.15] - 2026-10-25
+
 ### Changed
 - Requires Meridian >=0.14.5 and accepts meridian-base 0.12, which moved Meridian's own skills into Meridian.
 - Agent profiles rely on runtime-supplied capabilities to notify the human and
