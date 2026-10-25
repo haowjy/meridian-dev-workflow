@@ -73,5 +73,5 @@ merge section applies once the PR lands.
   `tools/`, AGENTS.md) and follow its policy on what gets removed and how.
   Branch deletion needs merge evidence git can't supply alone: `-d` is blind to
   squash merges, `-D` discards unmerged commits.
-- Close and archive the work item (see `/work-artifacts`); confirm its delegated
-  agents are terminal first
+- Close and archive the work item; confirm its delegated agents are terminal
+  first

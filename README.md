@@ -227,8 +227,9 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 
 Agents here also load meridian-base skills, including `work-artifacts`,
 `shared-dao`, `llm-writing`, `information-hierarchy`, `intent-modeling`,
-`explore-and-engage`, `handoff`, `grill-with-docs`, `zoom-out`,
-`qi-maintenance`, `qi-layer`, `knowledge-layers`, and `session-mining`.
+`explore-and-engage`, `grill-with-docs`, `zoom-out`, `qi-maintenance`,
+`qi-layer`, and `knowledge-layers`. Runtime-supplied capabilities let them
+hand off to a new primary session and read past sessions.
 
 ## Layout
 

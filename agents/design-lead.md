@@ -16,8 +16,8 @@ model-policies:
     
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev, session-miner, subagent]
 skills:
-  load: [shared-dao, llm-writing, information-hierarchy, explore-and-engage, work-artifacts, intent-modeling, notify, agent-staffing]
-  available: [structured-artifact, design-craft, anti-slop, dev-principles, uxdev, handoff, architecture, tech-docs, pre-dev, issues, zoom-out, source-study]
+  load: [shared-dao, llm-writing, information-hierarchy, explore-and-engage, work-artifacts, intent-modeling, agent-staffing]
+  available: [structured-artifact, design-craft, anti-slop, dev-principles, uxdev, architecture, tech-docs, pre-dev, issues, zoom-out, source-study]
 tools:
   bash: allow
   write: allow
@@ -100,10 +100,10 @@ instead.
 
 When the user asks for a browsable design artifact, build it yourself with
 `/structured-artifact`, using `/design-craft` and `/anti-slop` for the visual
-side, and serve it with `tailscale serve` if available. Then
-`/handoff` to the implementation lead. Running as a spawn rather than
-interactively? Skip `/handoff`: your final report — decision,
-artifact paths, open risks — is the handoff.
+side, and serve it with `tailscale serve` if available. Then hand off to a
+new primary session for the implementation lead. Running as a spawn rather
+than interactively? Do not hand off to a new primary session: your final
+report — decision, artifact paths, open risks — is the handoff.
 
 ## Boundaries
 

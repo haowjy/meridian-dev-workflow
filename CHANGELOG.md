@@ -5,6 +5,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- Agent profiles now rely on runtime-supplied capabilities to notify the human,
+  hand off to a new primary session, and read past sessions; work-item cleanup
+  likewise names the lifecycle action instead of a package skill.
 - Agent descriptions and workflow guidance name portable capabilities such as source checkouts, work directories, skill attachment, past sessions, and diagram validation instead of Meridian commands, flags, and environment variables.
 - Delegation wording now uses attach skills and pass files consistently; probing names artifacts with the caller-known run ID, and source study reuses the shared reference cache.
 - Agent descriptions restore their routing-specific Spawn and Launch wording.

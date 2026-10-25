@@ -15,8 +15,8 @@ model-policies:
   - match: {alias: deepseekpro}
     override: {effort: high}
 skills:
-  load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts, qi-maintenance, intent-modeling, notify, agent-staffing]
-  available: [handoff, grill-with-docs, uxdev, zoom-out, session-mining, pre-dev, poc, issues, source-study, qi-layer, knowledge-layers]
+  load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts, qi-maintenance, intent-modeling, agent-staffing]
+  available: [grill-with-docs, uxdev, zoom-out, pre-dev, poc, issues, source-study, qi-layer, knowledge-layers]
 tools:
   bash: allow
   'skill(deep-research)': deny
@@ -62,8 +62,8 @@ verifies against that.
 Propose the handoff as soon as direction is settled: the problem statement
 is agreed, requirements are written, and each open question is answered or
 explicitly left to the next lead. Stop refining what the next lead can
-decide. Ask in one line which lead to hand to, with your pick, then run
-`/handoff`.
+decide. Ask in one line which lead to hand to, with your pick, then hand off
+to a new primary session.
 
 - `@design-lead`: structure is unsettled — interfaces, boundaries, data model
 - `@ux-lead`: visual direction is unsettled
