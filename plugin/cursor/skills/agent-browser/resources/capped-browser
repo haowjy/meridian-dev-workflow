@@ -1,0 +1,78 @@
+#!/bin/sh
+
+version_is_newer() {
+    awk -v candidate="$1" -v current="$2" 'BEGIN {
+        candidate_count = split(candidate, candidate_parts, ".")
+        current_count = split(current, current_parts, ".")
+        count = candidate_count > current_count ? candidate_count : current_count
+        for (i = 1; i <= count; i++) {
+            candidate_part = i <= candidate_count ? candidate_parts[i] + 0 : 0
+            current_part = i <= current_count ? current_parts[i] + 0 : 0
+            if (candidate_part > current_part) exit 0
+            if (candidate_part < current_part) exit 1
+        }
+        exit 1
+    }'
+}
+
+if [ "${AGENT_BROWSER_REAL_EXECUTABLE+x}" = x ]; then
+    real=$AGENT_BROWSER_REAL_EXECUTABLE
+else
+    if [ -z "${HOME:-}" ]; then
+        echo "capped-browser: HOME is unset; cannot find an agent-browser Chrome" >&2
+        exit 127
+    fi
+
+    real=
+    newest_version=
+    for browser_dir in "$HOME"/.agent-browser/browsers/chrome-*; do
+        [ -d "$browser_dir" ] || continue
+        candidate=
+        for browser_path in \
+            "$browser_dir/chrome" \
+            "$browser_dir/chrome-linux64/chrome" \
+            "$browser_dir/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing" \
+            "$browser_dir/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing" \
+            "$browser_dir/chrome-mac-x64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"; do
+            if [ -x "$browser_path" ]; then
+                candidate=$browser_path
+                break
+            fi
+        done
+        [ -n "$candidate" ] || continue
+        version=${browser_dir##*/chrome-}
+        if [ -z "$real" ] || version_is_newer "$version" "$newest_version"; then
+            real=$candidate
+            newest_version=$version
+        fi
+    done
+fi
+
+if [ -z "$real" ] || [ ! -x "$real" ]; then
+    echo "capped-browser: browser is not executable: ${real:-not found}" >&2
+    echo "Run 'agent-browser install' or set AGENT_BROWSER_REAL_EXECUTABLE." >&2
+    exit 127
+fi
+
+if command -v systemd-run >/dev/null 2>&1 \
+    && command -v systemctl >/dev/null 2>&1 \
+    && systemctl --user show-environment >/dev/null 2>&1; then
+    random=$(od -An -N4 -tu4 /dev/urandom 2>/dev/null | tr -d ' \n')
+    random=${random:-$(date +%s)}
+    # Scope units have no execution context, so systemd-run cannot apply OOMScoreAdjust.
+    printf '%s\n' 500 2>/dev/null > "/proc/$$/oom_score_adj" || :
+    # Chromium otherwise moves its browser PID to a separate, uncapped portal scope.
+    if [ "${FLATPAK_SANDBOX_DIR+x}" != x ]; then
+        FLATPAK_SANDBOX_DIR=/nonexistent
+        export FLATPAK_SANDBOX_DIR
+    fi
+    exec systemd-run --user --scope --quiet --collect \
+        --unit="agent-browser-$$-$random.scope" \
+        -p "MemoryHigh=${AGENT_BROWSER_MEMORY_HIGH:-3G}" \
+        -p "MemoryMax=${AGENT_BROWSER_MEMORY_MAX:-5G}" \
+        -p "MemorySwapMax=${AGENT_BROWSER_MEMORY_SWAP_MAX:-2G}" \
+        -p OOMPolicy=continue \
+        -- "$real" "$@"
+fi
+
+exec "$real" "$@"

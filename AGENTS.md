@@ -11,7 +11,7 @@ meridian mars version patch --push       # bump, commit, tag, push
 meridian mars version minor --push       # minor bump when scope warrants it
 ```
 
-This bumps `mars.toml`, promotes CHANGELOG.md `[Unreleased]` to the new version, commits, tags, and optionally pushes. Write changelog entries under `[Unreleased]` as you work — `meridian mars version` handles the rest.
+This bumps `mars.toml`, rebuilds the committed `plugin/` tree and its marketplace catalogs (`.claude-plugin/`, `.cursor-plugin/`, `package.json`) at the new version, promotes CHANGELOG.md `[Unreleased]` to the new version, commits, tags, and optionally pushes. Never edit `plugin/` or the catalogs by hand; run `meridian mars build plugin` after changing a source file if you want the tree current before a release. Write changelog entries under `[Unreleased]` as you work — `meridian mars version` handles the rest.
 
 **Meridian session roots:** Meridian spawns resolve `MERIDIAN_TASK_DIR` for the
 checkout where source work happens, but `MERIDIAN_PROJECT_DIR` stays anchored to

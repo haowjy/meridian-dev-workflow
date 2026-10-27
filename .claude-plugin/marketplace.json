@@ -1,0 +1,13 @@
+{
+  "name": "meridian-dev-workflow",
+  "owner": {
+    "name": "meridian-dev-workflow"
+  },
+  "plugins": [
+    {
+      "name": "meridian-dev-workflow",
+      "source": "./plugin/claude",
+      "description": "A multi-agent development team: leads you work with in a session, the specialists they delegate to, and the skills that carry a change from first edit to merged PR."
+    }
+  ]
+}

@@ -17,6 +17,21 @@ meridian mars add meridian-flow/meridian-dev-workflow
 meridian config set primary.agent tech-lead
 ```
 
+### As a plugin, without meridian-cli
+
+The package also ships as a plugin built by Mars, with meridian-base's workers and skills
+included, so one install is enough:
+
+| Harness | Install | What loads |
+|---|---|---|
+| Claude Code | `/plugin marketplace add haowjy/meridian-dev-workflow`, then `/plugin install meridian-dev-workflow@meridian-dev-workflow` | Agents and skills; start a lead with `claude --agent meridian-dev-workflow:tech-lead` |
+| Codex | `codex plugin marketplace add haowjy/meridian-dev-workflow`, then `codex plugin add meridian-dev-workflow@meridian-dev-workflow` | Skills only: Codex plugins don't load agents |
+| Cursor | `agent plugin marketplace add https://github.com/haowjy/meridian-dev-workflow.git`, then install from Customize | Agents and skills |
+| OpenCode | `opencode plugin add git+https://github.com/haowjy/meridian-dev-workflow.git` | Skills only |
+
+The prompts are written for any harness, but meridian-cli adds what a plugin can't:
+per-Agent model routing, spawns that run in the background, work items, and session history.
+
 ## How It Works
 
 ### Leads

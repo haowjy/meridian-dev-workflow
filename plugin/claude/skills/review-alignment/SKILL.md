@@ -1,0 +1,37 @@
+---
+name: review-alignment
+description: Load when one artifact must faithfully match another (plan vs design, code vs spec, output vs intent) and the check needs to be systematic, not a skim.
+metadata:
+  type: reference
+---
+
+# Review Alignment
+
+Verify that one artifact faithfully represents another. `/meridian-dev-workflow:review` owns the review verdict and checks design alignment along the way; load this skill when that check should be systematic — a promise-by-promise pass: does the checked artifact deliver what the source-of-truth artifact promised?
+
+## Procedure
+
+Read the source-of-truth artifacts first, including `DIVERGENCE/` in the work directory when present — a logged divergence is plan, not drift. Build a mental checklist of what they promise. Then read the artifact being checked and verify each promise has coverage. When conversation history is available, mine it for user intent and decisions that may not have made it into formal artifacts.
+
+## What You Check
+
+**Requirement coverage.** Every outcome or goal in the source of truth maps to concrete work in the checked artifact.
+
+**Structural intent.** Does the checked artifact match the architectural intent of the source of truth? Layer boundaries, seam placement, ownership splits. Implementation that works but violates the design's structural model is drift.
+
+**Conversational intent.** When conversation history is available, check whether the user's stated priorities and decisions survived into the formal artifacts and downstream work.
+
+## Report Format
+
+For each source-of-truth item checked:
+
+- **Covered**: the checked artifact delivers this. One sentence of evidence.
+- **Gap**: the checked artifact does not deliver this. State what's missing and where coverage was expected.
+- **Partial**: partially delivered. State what's covered and what's missing.
+- **Drift**: the checked artifact delivers something, but it doesn't match the intent. State the divergence. If the item is both incomplete and divergent, classify as Drift and note the remaining gap.
+
+End with a summary: total items checked, covered count, gap count, partial count, drift count.
+
+## Scope
+
+Lead with alignment: state gaps and let your caller route fixes.
