@@ -11,7 +11,7 @@ description = "A multi-agent development team: leads you work with in a session,
 
 [dependencies.meridian-base]
 url = "https://github.com/haowjy/meridian-base"
-version = ">=0.11.4, <0.13.0"
+version = ">=0.13.0, <0.14.0"
 
 [local-dependencies.meridian-prompter]
 url = "https://github.com/meridian-flow/meridian-prompter"
