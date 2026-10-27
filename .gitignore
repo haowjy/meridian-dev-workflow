@@ -2,6 +2,7 @@
 .agents/agents
 .claude/skills
 .claude/agents
+.claude/hooks
 
 mars.lock
 .mars/
