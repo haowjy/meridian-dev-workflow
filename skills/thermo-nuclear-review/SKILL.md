@@ -1,8 +1,9 @@
 ---
 name: thermo-nuclear-review
-type: reference
 description: "Use for extremely strict maintainability review: find the code-judo move that makes a change or a design, and the system around it, dramatically simpler. Blocks structural regressions."
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Thermo-Nuclear Review

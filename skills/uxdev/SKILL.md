@@ -1,8 +1,9 @@
 ---
 name: uxdev
-type: mode-shift
 description: "Load when the work needs visual thinking about what the user sees, so design choices come from the brief and the existing design language, not defaults."
 model-invocable: true
+metadata:
+  type: mode-shift
 ---
 
 # UX Dev

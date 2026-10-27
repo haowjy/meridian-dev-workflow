@@ -1,8 +1,9 @@
 ---
 name: solo-dev
-type: reference
 description: "Load when you implement and verify a change yourself in one session: when to spawn review and probe, how to verify, when to stop patching, how to ship."
 model-invocable: false
+metadata:
+  type: reference
 ---
 
 # Solo Dev

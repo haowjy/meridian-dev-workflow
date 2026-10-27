@@ -1,8 +1,9 @@
 ---
 name: probe
-type: mode-shift
 description: "Load when you need to know what the system actually does: run it, exercise workflows, reproduce bugs. Reading code and passing tests don't show that."
 model-invocable: true
+metadata:
+  type: mode-shift
 ---
 
 # Probe

@@ -1,9 +1,10 @@
 ---
 name: ui-implementation
-type: mode-shift
 description: "Load when turning a settled visual direction (mockups, a spec, screenshots) into production UI, so the result matches the design and every state renders, not only the one in the mockup."
 model-invocable: true
 user-invocable: true
+metadata:
+  type: mode-shift
 ---
 
 # UI Implementation

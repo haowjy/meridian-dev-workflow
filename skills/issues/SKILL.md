@@ -1,7 +1,8 @@
 ---
 name: issues
-type: reference
 description: "Load when you defer work, so each item lands where it will be found: a colocated .context/ file or a GitHub issue."
+metadata:
+  type: reference
 ---
 
 # Issue Tracking

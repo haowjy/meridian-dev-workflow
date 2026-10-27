@@ -1,8 +1,9 @@
 ---
 name: review-alignment
-type: reference
 description: "Load when one artifact must faithfully match another (plan vs design, code vs spec, output vs intent) and the check needs to be systematic, not a skim."
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Review Alignment

@@ -1,8 +1,9 @@
 ---
 name: post-dev
-type: checkpoint
 description: "Run when implementation is done, before opening the PR: catches what would otherwise ship missing (PR body, changelog, review sign-off, deferred work, knowledge capture, cleanup)."
 model-invocable: true
+metadata:
+  type: checkpoint
 ---
 
 # Post-Dev Checkpoint

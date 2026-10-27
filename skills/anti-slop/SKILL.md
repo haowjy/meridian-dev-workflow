@@ -1,8 +1,9 @@
 ---
 name: anti-slop
-type: guardrail
 description: "Load for any frontend work: catches AI-generated UI tells, the defaults that show up regardless of the brief."
 model-invocable: true
+metadata:
+  type: guardrail
 ---
 
 # Anti-Slop

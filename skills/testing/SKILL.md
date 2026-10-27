@@ -1,8 +1,9 @@
 ---
 name: testing
-type: principle
 description: "Load when deciding whether to write a test, and at which tier: keep none the user didn't ask for, and delete tests you wrote to check your work."
 model-invocable: true
+metadata:
+  type: principle
 ---
 
 # Testing Principles

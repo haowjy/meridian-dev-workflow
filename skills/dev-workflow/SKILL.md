@@ -1,8 +1,9 @@
 ---
 name: dev-workflow
-type: reference
 description: "Load when committing during implementation, pushing and opening a PR, or cleaning up a branch after merge."
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Dev Workflow

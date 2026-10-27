@@ -1,8 +1,9 @@
 ---
 name: test-architecture
-type: reference
 description: "Load when test code is making the codebase harder to change, to find tests that pin implementation, mock rot, and sprawl worth deleting."
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Test Architecture Review

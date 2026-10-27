@@ -1,8 +1,9 @@
 ---
 name: review
-type: reference
 description: "Use when reviewing code, designs, or plans: review the code as it stands, check standards and design alignment, report constructive findings with severity."
 model-invocable: true
+metadata:
+  type: reference
 ---
 # Review
 

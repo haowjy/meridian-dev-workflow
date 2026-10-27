@@ -1,10 +1,13 @@
 ---
 name: unravel-codebase
-type: mode-shift
 description: "Use when the human wants to understand how a codebase works today by walking through it together. Human-paced; source stays read-only unless asked; fixes the docs it reads along the way."
 user-invocable: true
-argument-hint: "Which area or question? (optional)"
 model-invocable: false
+metadata:
+  type: mode-shift
+harness-overrides:
+  claude:
+    argument-hint: Which area or question? (optional)
 ---
 
 # Unravel Codebase

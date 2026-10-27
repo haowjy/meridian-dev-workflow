@@ -2,8 +2,9 @@
 name = "meridian-dev-workflow"
 version = "0.15.17"
 description = "Opinionated dev team for Meridian — architects, coders, reviewers, testers, and the skills that coordinate them."
-requires-mars = ">=0.18.0"
+requires-mars = ">=0.20.0"
 requires-meridian = ">=0.14.5"
+schema = 1
 
 [dependencies.meridian-base]
 url = "https://github.com/haowjy/meridian-base"

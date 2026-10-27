@@ -1,8 +1,9 @@
 ---
 name: pre-dev
-type: checkpoint
 description: "Run before implementation starts: before your first source edit, or before handing off to an implementation agent. It is the only point where before-state evidence still exists."
 model-invocable: true
+metadata:
+  type: checkpoint
 ---
 
 # Pre-Dev Checkpoint

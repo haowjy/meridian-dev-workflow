@@ -1,10 +1,13 @@
 ---
 name: visualize-codebase
-type: reference
 description: "Load when the human wants a browsable visual map of a codebase: structure, data flow, connections, and where something looks off."
 user-invocable: true
-argument-hint: "Which area, flow, or question? (optional)"
 model-invocable: false
+metadata:
+  type: reference
+harness-overrides:
+  claude:
+    argument-hint: Which area, flow, or question? (optional)
 ---
 
 # Visualize Codebase

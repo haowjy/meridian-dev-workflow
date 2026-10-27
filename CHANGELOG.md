@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Agent and skill definitions use Mars schema 1; requires Mars >=0.20.0 (meridian-cli with Mars 0.20).
+
 ## [0.15.17] - 2026-10-27
 
 ### Changed

@@ -1,8 +1,9 @@
 ---
 name: source-study
 description: Load when you need evidence from real codebases before designing, scoping, or choosing an approach.
-type: reference
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Source Study

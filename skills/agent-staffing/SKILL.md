@@ -1,8 +1,9 @@
 ---
 name: agent-staffing
-type: reference
 description: Load when composing a team or choosing review and verification coverage.
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Agent Staffing

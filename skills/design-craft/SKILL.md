@@ -1,8 +1,9 @@
 ---
 name: design-craft
-type: reference
 description: "Load when making production visual decisions (color, typography, layout, motion, interaction), so each choice is deliberate rather than a default."
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Design Craft

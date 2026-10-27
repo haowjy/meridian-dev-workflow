@@ -1,8 +1,9 @@
 ---
 name: architecture
-type: reference
 description: Use when designing or reasoning about system boundaries, dependencies, and structural risk.
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Architecture

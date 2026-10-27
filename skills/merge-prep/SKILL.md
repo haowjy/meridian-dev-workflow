@@ -1,8 +1,9 @@
 ---
 name: merge-prep
-type: checkpoint
 description: "Load before merging or rebasing a branch. Build comprehension of what each side intended so conflict resolution serves the work, not the text."
 model-invocable: true
+metadata:
+  type: checkpoint
 ---
 
 # Merge Prep

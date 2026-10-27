@@ -1,8 +1,9 @@
 ---
 name: code
-type: mode-shift
 description: "Load when you switch from coordinating or designing to changing code yourself, so the change follows the project's patterns, deletes what it replaces, and is verified on the real system."
 model-invocable: true
+metadata:
+  type: mode-shift
 ---
 
 # Code

@@ -1,8 +1,9 @@
 ---
 name: design-analysis
-type: reference
 description: "Load when gathered findings and requirements need turning into a design analysis, so the decision rests on challenged assumptions and compared options rather than the first idea."
 model-invocable: false
+metadata:
+  type: reference
 ---
 
 # Design Analysis

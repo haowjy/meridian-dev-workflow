@@ -1,8 +1,9 @@
 ---
 name: parallel-execution
-type: reference
 description: Load when work splits into lanes that can run in parallel or phases that build on each other. DAG planning, worktrees, merging, gates.
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Parallel Execution

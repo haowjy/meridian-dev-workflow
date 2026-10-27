@@ -1,8 +1,9 @@
 ---
 name: dev-principles
-type: principle
 description: "Load when implementing, reviewing, refactoring, or designing code: the engineering values every code decision is judged against."
 model-invocable: true
+metadata:
+  type: principle
 ---
 
 # Dev Principles

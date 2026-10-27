@@ -1,8 +1,9 @@
 ---
 name: research-web
-type: reference
 description: "Load when a question depends on external facts (library docs, upstream issues, changelogs, production patterns) that may postdate training data. Gathers and reports; the caller judges."
 model-invocable: false
+metadata:
+  type: reference
 ---
 
 # Research Web

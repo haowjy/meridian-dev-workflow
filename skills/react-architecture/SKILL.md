@@ -1,8 +1,9 @@
 ---
 name: react-architecture
-type: reference
 description: "Load when building or reviewing React code, where component composition, state architecture, and token discipline decide whether the UI stays easy to change."
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # React Architecture

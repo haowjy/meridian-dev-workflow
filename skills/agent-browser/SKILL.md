@@ -1,8 +1,9 @@
 ---
 name: agent-browser
-type: reference
 description: "Use when a task needs a live browser: scraping, extracting data or design tokens, filling forms, verifying frontend rendering and flows, capturing screenshots, or reproducing a UI bug. Accessibility-tree snapshots let you act on a page in a few hundred tokens instead of parsing HTML."
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # agent-browser

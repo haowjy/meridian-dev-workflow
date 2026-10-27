@@ -1,8 +1,9 @@
 ---
 name: divergence
-type: reference
 description: "Load when the design or plan may shift during multi-phase work: a logged shift lets reviewers tell planned change from drift."
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Divergence Tracking
