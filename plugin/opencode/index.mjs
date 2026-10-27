@@ -13,7 +13,7 @@ const DATA = {
     {
       "directory": "agent-staffing",
       "name": "agent-staffing",
-      "description": "Load when composing a team or choosing review and verification coverage."
+      "description": "Load before you spawn a worker or a reviewer: which agent for which work, the review lanes a change needs, and when a model change is justified."
     },
     {
       "directory": "anti-slop",
@@ -23,7 +23,7 @@ const DATA = {
     {
       "directory": "architecture",
       "name": "architecture",
-      "description": "Use when designing or reasoning about system boundaries, dependencies, and structural risk."
+      "description": "Load when a decision places a boundary, a dependency direction, or a data model, or when a design needs settling: entanglement, tradeoff dimensions, structural risk."
     },
     {
       "directory": "code",
@@ -53,7 +53,7 @@ const DATA = {
     {
       "directory": "dev-workflow",
       "name": "dev-workflow",
-      "description": "Load when committing during implementation, pushing and opening a PR, or cleaning up a branch after merge."
+      "description": "Load for the lifecycle of a code change, from the plan to the merged PR: keep going and when to stop, verify, failing tests, review rounds, merges and rebases, early knowledge capture, commits, the PR, and branch cleanup."
     },
     {
       "directory": "diagnose",
@@ -68,7 +68,7 @@ const DATA = {
     {
       "directory": "explore-and-engage",
       "name": "explore-and-engage",
-      "description": "Load on interactive leads, so you share your read while investigating instead of going silent until the evidence is complete."
+      "description": "Load when you investigate with a human waiting: share your read and ask the next question while the evidence comes in, instead of going silent until it is complete."
     },
     {
       "directory": "goal-writing",
@@ -98,7 +98,7 @@ const DATA = {
     {
       "directory": "information-hierarchy",
       "name": "information-hierarchy",
-      "description": "Load for large human-facing outputs: reports, docs, multi-section\nexplanations, artifacts. Choose the right form for each beat (prose, diagram,\ntable, mockup) and put the answer first, depth behind it. If the medium allows, use progressive disclosure.\n"
+      "description": "Load when a report, doc, or explanation runs past one screen, or will be browsed rather than read: choose the form for each beat (prose, diagram, table, mockup), put the answer first and depth behind it."
     },
     {
       "directory": "intent-modeling",
@@ -118,12 +118,12 @@ const DATA = {
     {
       "directory": "llm-writing",
       "name": "llm-writing",
-      "description": "Load before writing or revising human-facing text. Choose words deliberately, ground the piece in the reader's context, and remove default LLM phrasing before the final draft."
+      "description": "Load before you write a commit message, PR body, changelog entry, issue, report to the user, doc, README, AGENTS.md or .context/ page, KB page, or prompt: choose plain words, write for the reader's context, and strip default LLM phrasing."
     },
     {
       "directory": "md-validation",
       "name": "md-validation",
-      "description": "Use when validating markdown links or Mermaid diagrams."
+      "description": "Load after writing, moving, or linking markdown pages or Mermaid diagrams, before committing them: validates links, the KB link graph, and diagram syntax."
     },
     {
       "directory": "merge-prep",
@@ -193,7 +193,7 @@ const DATA = {
     {
       "directory": "shared-dao",
       "name": "shared-dao",
-      "description": "Use when establishing shared vocabulary: resolve terminology early, one name per concept, vocab files as record."
+      "description": "Load when a concept has two names, a name has two meanings, or you are about to coin a term: resolve it early, one name per concept, in the project's vocab files."
     },
     {
       "directory": "shared-workspace",
@@ -203,7 +203,7 @@ const DATA = {
     {
       "directory": "solo-dev",
       "name": "solo-dev",
-      "description": "Load when you implement and verify a change yourself in one session: when to spawn review and probe, how to verify, when to stop patching, how to ship."
+      "description": "Load when you implement and verify a change yourself, in one session, instead of delegating it: what you do yourself and what still goes to a spawn."
     },
     {
       "directory": "source-study",
@@ -213,7 +213,7 @@ const DATA = {
     {
       "directory": "structured-artifact",
       "name": "structured-artifact",
-      "description": "Load when creating structured HTML artifacts to explain and present information.\n"
+      "description": "Load when the human wants something to browse rather than read: an HTML page that explains or presents information, with its delivery."
     },
     {
       "directory": "tech-docs",

@@ -1,7 +1,7 @@
 ---
 name: browser
 description: 'Spawn to work a live website: design inspiration, scraping, data extraction, screenshots. Pass the task, entrypoints, constraints, and evidence needed. Skills: agent-browser.'
-effort: high
+effort: medium
 disallowedTools:
 - Workflow
 - Skill(deep-research)
@@ -24,7 +24,7 @@ disallowedTools:
 
 Use `/meridian-dev-workflow:agent-browser`.
 
-Use `WebSearch` and `WebFetch` when you need documentation or context that
+Use web search and fetch when you need documentation or context that
 doesn't require a live browser.
 
 Write output to the work directory.

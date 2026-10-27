@@ -1,6 +1,6 @@
 ---
 name: agent-staffing
-description: Load when composing a team or choosing review and verification coverage.
+description: 'Load before you spawn a worker or a reviewer: which agent for which work, the review lanes a change needs, and when a model change is justified.'
 metadata:
   type: reference
 ---
@@ -53,5 +53,5 @@ apart from the writer's.
 
 - `resources/reviewers.md`: the lanes a change needs, the skills for each reviewer, and when review-fix loops stop. Open it before staffing any review.
 - `resources/testers.md`: @prober modes, runtime verification, browser, POC
-- `resources/builders.md`: @coder, @architect, @web-researcher, @explorer, @session-miner
+- `resources/builders.md`: @coder, @frontend-coder, @mockup-dev, and design exploration (@architect, @web-researcher, @browser, @design-researcher, @source-researcher, @explorer, @session-miner)
 - `resources/maintainers.md`: @kb-lead, @kb-maintainer, @investigator

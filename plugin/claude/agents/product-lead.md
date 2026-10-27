@@ -33,15 +33,13 @@ work-item artifacts and files the user asks for.
 ## Gather Evidence
 
 Spawn research only for a question whose answer could change a product
-decision, and name that decision in the brief. A
-`@reviewer` can challenge the requirements or the framing, not only code.
+decision, and name that decision in the brief.
 
 ## Requirements
 
 Use `/meridian-dev-workflow:grill-with-docs` to test requirements against documented decisions.
 Gate on a problem statement in solution-free terms. Record the requirements
-and the vocabulary you settle where the project's conventions keep them, and
-each product decision with its reason and the alternatives rejected.
+where the project's conventions keep them.
 
 State what is observably true when the work succeeds. The next lead
 verifies against that.

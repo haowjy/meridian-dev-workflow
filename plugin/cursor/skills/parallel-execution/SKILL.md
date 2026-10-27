@@ -24,25 +24,20 @@ Run a wide mechanical change (a rename or signature change across many callers) 
 
 Write the DAG into the work directory and execute from it.
 
-## Adapt the Plan
-
-The DAG is a living document. Add phases, split subphases, insert verification gates, or restructure agent teams as you learn more during execution. Review findings, failed merges, and unexpected complexity are signals to revise the plan. Update the written DAG when the shape changes.
-
-Before another review-fix cycle at a gate, check the limits in `/meridian-dev-workflow:agent-staffing` `resources/reviewers.md`.
+Update the written DAG when the shape changes: review findings, failed merges, and unexpected complexity revise the plan.
 
 ## Execute with Worktrees
 
-Each parallel branch gets its own worktree and dev stack (server, database, etc.). No shared mutable state.
-
-Git worktrees are siblings, not nested: `git worktree add` from any worktree creates a peer. The current worktree may itself be a worktree. Sequential phases run on the current worktree; parallel groups branch off into new worktrees. When you create a lane's worktree, build the generated artifacts its checks need there; ignored build outputs don't carry across worktrees. Point each delegated lane's source checkout at its worktree. Track which worktree serves which DAG branch. Remove worktrees after their branch is merged and verified.
+Each parallel branch gets its own worktree and dev stack; sequential phases run on the current worktree. Set them up per `resources/worktrees.md`, which also covers lanes that run long.
 
 ## Merge and Verify
 
 At each convergence point:
 
 1. Verify each branch in its own worktree (parallel).
-2. Merge branches back: hand the whole convergence to one `@coder`, attach
-   `/meridian-dev-workflow:merge-prep`, and have it merge the branches one after another.
+2. Merge branches back: hand the whole convergence to one `@coder`, briefed
+   per `/meridian-dev-workflow:dev-workflow`'s merge hand-off, and have it merge the branches one
+   after another.
 If the coder reports a failed integration check, isolate which branch interaction caused it before re-spawning.
 
 ## Gates
@@ -58,9 +53,3 @@ Before staffing a gate, open `/meridian-dev-workflow:agent-staffing` `resources/
 Gaps the final gate finds become new phases in the DAG.
 
 Fix blocking findings before the gate passes; `reviewers.md` says which lanes rerun after a fix.
-
-## Long-Running Lanes
-
-For mining and multi-file audit lanes, have the spawn write partial
-findings to disk as it works, so truncation or credit exhaustion cannot
-zero the work.

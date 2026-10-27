@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.16.1] - 2026-10-27
+
 ### Changed
 - Requires meridian-base >=0.13.1, which ships `llm-writing/resources/cold-read.md` and the capture loop `/post-dev` points at.
 - Agent bodies keep the job, boundaries, engagement, and report; method moved into the skills each agent loads, so each rule has one owner.

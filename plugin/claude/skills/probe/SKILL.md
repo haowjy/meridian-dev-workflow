@@ -8,7 +8,8 @@ metadata:
 # Probe
 
 Run the real system and observe what happens. Real commands, real filesystem,
-real network. Exercise the thing the way a user would.
+real network. Exercise the thing the way a user would. Read the project's
+testing instructions (README, AGENTS.md) before starting.
 
 ## Two Modes
 

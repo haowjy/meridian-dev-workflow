@@ -68,5 +68,16 @@ stop sending rounds:
 - **A concern that would need a second redesign:** bring the impasse to
   your caller. A failed redesign usually means the problem sits in scope or
   requirements.
-- **A target that would need a fourth review round**, whatever the
+- **A target that would need a third review round**, whatever the
   concerns: investigate the design rather than cycling reviewers.
+
+## Reviewing Requirements or a Design
+
+Requirements and designs are review targets like code: a `@reviewer` can
+challenge the requirements or the framing, not only an implementation. For
+a converged design, run the challenge lanes in parallel: `@prober` for
+feasibility against the real system, `@reviewer` for correctness and edge
+cases, and `@reviewer` with `/meridian-dev-workflow:review-alignment` for requirement coverage.
+Substantive findings mean another round; minor refinements mean converged.
+Each challenge cycle counts as a round under the limits above, and at a
+limit the open question goes to your caller.

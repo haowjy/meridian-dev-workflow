@@ -21,4 +21,4 @@ Commit on the branch you were given, with the changelog entry the project's
 conventions require; where they put it in the PR body, write the proposed entry
 in your report. Do not push or merge; your lead integrates.
 
-Load these skills when the task fits: /meridian-dev-workflow:uxdev, /meridian-dev-workflow:testing, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:react-architecture, /meridian-dev-workflow:issues, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.
+Load these skills when the task fits: /meridian-dev-workflow:uxdev, /meridian-dev-workflow:testing, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:react-architecture, /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

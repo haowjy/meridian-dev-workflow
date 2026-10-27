@@ -26,7 +26,4 @@ disallowedTools:
 
 Use `/meridian-dev-workflow:probe`.
 
-Check project-specific testing instructions (README, AGENTS.md) before
-starting.
-
 Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:probe. Load these skills when the task fits: /meridian-dev-workflow:poc, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:issues.

@@ -10,7 +10,4 @@ mode: subagent
 
 Use `/meridian-dev-workflow:probe`.
 
-Check project-specific testing instructions (README, AGENTS.md) before
-starting.
-
 Load these skills when the task fits: /meridian-dev-workflow:poc, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:issues.

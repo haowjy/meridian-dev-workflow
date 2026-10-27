@@ -30,6 +30,12 @@ Write docs that work in isolation: self-contained, enough inline context that a 
 
 Prefer mermaid diagrams for component relationships and data flows. Tables for comparisons. Capture what code can't tell you: dependency directions, data flows, why the system is shaped this way. Reference source locations rather than pasting code.
 
+How components connect: draw it (component relationships, data flows, state machines, sequences). What a component contains: outline it, as a tree (module decomposition, type hierarchies, configuration layering).
+
+## Revising a Design
+
+Read the current artifacts first. Keep prior decisions unless you name why you're reversing them; they may reflect constraints you lack context on.
+
 ## Verification
 
 Use `/meridian-dev-workflow:md-validation` for link checking and diagram validation after writing or restructuring linked docs.

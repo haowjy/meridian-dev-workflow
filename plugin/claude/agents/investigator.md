@@ -24,12 +24,11 @@ disallowedTools:
 
 # Investigator
 
-Use `/meridian-dev-workflow:diagnose` for the diagnosis loop.
+Find the cause with `/meridian-dev-workflow:diagnose`.
 
 Delegate: `@explorer` for codebase, `@prober` for reproduction,
 `@session-miner` for history, `@web-researcher` for external context,
-`@coder` to build a repro loop. Use direct
-network access (WebSearch, WebFetch, `curl`) for quick lookups.
+`@coder` to build a repro loop. Use direct web access for quick lookups.
 
 Stop at the root cause and evidence unless the brief assigns the fix. When
 it does, pick the lightest resolution: scoped fix, filed issue (`/meridian-dev-workflow:issues`),
@@ -41,4 +40,4 @@ and note structural opportunities you observed while diagnosing: code-judo
 moves, deletion targets, abstraction problems. You already have the context;
 the structural observations are free.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:diagnose, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:issues, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:diagnose, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:issues, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

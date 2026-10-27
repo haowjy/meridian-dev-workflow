@@ -23,8 +23,9 @@ merge section applies once the PR lands.
   breaks every `main` link into it
 - The PR follows the project's release conventions, wherever its AGENTS.md or
   docs keep them: its labels and title rules
-- `@cold-reader` has read the PR body as its reader, someone reviewing the PR
-  without the work's context, and its valid findings are fixed
+- `@cold-reader` has read the PR body, commissioned per `/meridian-dev-workflow:llm-writing`
+  `resources/cold-read.md` with the PR's reviewer as its reader, and its
+  valid findings are fixed
 
 ### Changelog
 - The changelog is updated the way the project's conventions say
@@ -39,11 +40,7 @@ merge section applies once the PR lands.
 ### Deferred work
 - Mine conversation history, touched files, and review findings for anything
   deferred: TODOs, skipped improvements, known limitations, future ideas
-- Record each deferral in the nearest `.context/TODO` (must-do) or
-  `.context/FUTURE` (nice-to-have) to the code it affects — each entry
-  names the affected path and concrete follow-up
-- Cross-cutting items or items needing external visibility: file a
-  GitHub issue (see `/meridian-dev-workflow:issues`)
+- Record each deferral per `/meridian-dev-workflow:issues`
 - Every `TODO` comment added or touched in this work must have a matching
   entry in `.context/TODO` or a GitHub issue — no orphan TODOs
 
@@ -52,9 +49,8 @@ merge section applies once the PR lands.
   change and anything an earlier capture left out.
 - Brief it as its description asks, and pass any `DIVERGENCE/` logs with
   the decision records.
-- Colocated guidance needs an update only when it — or the absence of needed
-  guidance — would cause a cold agent to make a wrong decision. A changed path
-  or missing `.context/` file is not itself a gap.
+- Colocated guidance (`.context/`, `AGENTS.md`) passes `/meridian-dev-workflow:qi-maintenance`'s
+  gap test.
 - Before this checkpoint passes, verify any colocated doc updates
   (`.context/`, `AGENTS.md`) are present on the feature branch. Separate KB
   repository updates may land independently.
@@ -68,11 +64,9 @@ merge section applies once the PR lands.
 
 ### After merge
 - Verify CI passed on main
-- Clean up what the work left behind: worktree, branch, scoped databases, dev
-  processes and routes, work item. These are linked, so deleting one by hand
-  orphans the rest — find the project's cleanup tooling (package scripts,
-  `tools/`, AGENTS.md) and follow its policy on what gets removed and how.
-  Branch deletion needs merge evidence git can't supply alone: `-d` is blind to
+- Clean up what the work left behind (worktree, branch, scoped databases,
+  dev processes and routes) per `/meridian-dev-workflow:dev-workflow` `resources/ship.md`; branch
+  deletion needs merge evidence git can't supply alone: `-d` is blind to
   squash merges, `-D` discards unmerged commits.
 - Close and archive the work item; confirm its delegated agents are terminal
   first

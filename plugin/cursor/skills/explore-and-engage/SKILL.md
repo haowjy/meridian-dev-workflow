@@ -1,6 +1,6 @@
 ---
 name: explore-and-engage
-description: Load on interactive leads, so you share your read while investigating instead of going silent until the evidence is complete.
+description: 'Load when you investigate with a human waiting: share your read and ask the next question while the evidence comes in, instead of going silent until it is complete.'
 metadata:
   type: principle
 alwaysApply: false

@@ -20,12 +20,7 @@ Understand the visual question before editing: what option, direction, layout,
 or interaction should this mockup help judge. If intent is thin, state your
 assumption.
 
-Use the project's real frontend stack, components, tokens, and routes when
-practical. Temporary routes, hardcoded data, inline fixtures, narrow happy
-paths are acceptable. Keep shortcuts obvious and easy to delete.
-
-Use `/meridian-dev-workflow:poc` as the operating lens. Use `/meridian-dev-workflow:agent-browser` to verify results
-before reporting.
+Use `/meridian-dev-workflow:agent-browser` to verify results before reporting.
 
 Report: route or screenshot, direction explored, shortcuts taken, files
 created, what the user should judge next.

@@ -1,6 +1,6 @@
 ---
 name: dev-workflow
-description: Load when committing during implementation, pushing and opening a PR, or cleaning up a branch after merge.
+description: 'Load for the lifecycle of a code change, from the plan to the merged PR: keep going and when to stop, verify, failing tests, review rounds, merges and rebases, early knowledge capture, commits, the PR, and branch cleanup.'
 metadata:
   type: reference
 alwaysApply: false
@@ -8,13 +8,54 @@ alwaysApply: false
 
 # Dev Workflow
 
+Plan the change, then run `/meridian-dev-workflow:pre-dev` before its first source edit.
+
+## Keep Going
+
+Keep moving until the requested outcome is implemented, verified, and ready
+to ship. A spawn returning is not a stopping point: fold its findings in,
+decide the next step, and continue. Where the brief leaves something
+unclear, write the question in the work directory with the call you made,
+keep going, and put the open questions to the user at the end.
+
+Stop early only for: (a) a critical product decision only the user can
+make, (b) a scope problem, sent to your caller as a Redesign Brief
+(`/meridian-dev-workflow:review` `resources/redesign-escalation.md`), (c) a blocker you cannot
+clear yourself.
+
+## Verify
+
+Exercise each way the change could fail on the real system (`/meridian-dev-workflow:probe`). Run
+the full suite once, on the commit you send to review; passing unit tests
+never show the change works.
+
+When tests fail, decide whether the behavior broke, the test went stale, or
+the test sits at the wrong tier (`/meridian-dev-workflow:testing`) before changing either the
+code or the test.
+
+## Review
+
+Staff the review lanes the change needs (`/meridian-dev-workflow:agent-staffing`
+`resources/reviewers.md`), once per coherent change rather than per edit.
+Prepare `/meridian-dev-workflow:post-dev` while the lanes run, then fix their findings as
+`reviewers.md` says, up to its round limits.
+
+## Merges and Rebases
+
+Hand every merge and rebase to `@coder` with `/meridian-dev-workflow:merge-prep` attached. Skim
+the PRs being merged in and tell the coder what matters from each side and
+where they could overlap: `/meridian-dev-workflow:merge-prep` has it read the sources, and your
+brief tells it what to look for.
+
+## Knowledge Capture
+
+`/meridian-dev-workflow:post-dev` captures knowledge when the change settles. Spawn `@kb-lead`
+earlier when a decision has settled and the work will pause across
+sessions.
+
 ## Commit Discipline
 
-1. Implement a self-contained change
-2. Run focused checks that cover its risks
-3. Commit with a descriptive message
-
-Run the full project gate at ship readiness, not after every implementation step, unless the project's policy or a specific risk requires it earlier.
+Commit each self-contained change after the focused checks that cover its risks. Run the full project gate at ship readiness, not after every implementation step, unless the project's policy or a specific risk requires it earlier.
 
 Update the changelog according to the project's conventions, at commit time rather
 than retroactively.
@@ -24,40 +65,11 @@ than retroactively.
 When you skip something during implementation — a cleanup, an edge case, a
 better approach — route it immediately through `/meridian-dev-workflow:issues`.
 
-## Pushing and PRs
+## Ship
 
-When a feature branch (never `main`) is complete and passes the full gate, push
-it and open or update its PR without asking. Pass the PR body draft from
-`/meridian-dev-workflow:pre-dev` (`pr-body-<slug>.md`) as `--body-file` — the `gh` CLI's template
-prompting doesn't apply once `--body-file` is passed, so that draft, filled
-in as the work proceeded, is the source for the body. Fill in whatever it's
-still missing before creating, and if the repo ships a body checker such as
-`tools/ci/check-pr-body.mjs`, run it on the draft first. Follow the project's release
-conventions for labels.
-
-If `pr-body-<slug>.md` doesn't exist (pre-dev was skipped, or the work directory
-was cleared), fall back to `.github/PULL_REQUEST_TEMPLATE.md` (or similar)
-directly, fill it from the current diff and conversation, and note in your
-report that before-state evidence was not captured.
-
-## Branch Cleanup
-
-Clean up everything a branch's work claimed the moment it merges anywhere —
-into its parent integration branch, staging, or main: the worktree and
-branch, but also any scoped databases, dev processes, ports, or other
-resources it held. Find the project's cleanup tooling (package scripts,
-`tools/`, `AGENTS.md`) and use it immediately, branch by branch, rather than
-batching cleanup for later.
-
-Waiting is risky, not just untidy: many integration strategies collapse
-history. A side-lane branch merged into an integration branch that is later
-squash-merged leaves no provable trace of ever having merged — not a
-matching PR, not ancestry. What would have been a one-line command becomes
-manual, evidence-by-hand archaeology once that happens.
-
-When the cleanup tool can't verify eligibility this way, check for a manual
-verification guide near the tool (or write one) instead of guessing or
-skipping cleanup.
+Run `/meridian-dev-workflow:post-dev` before opening the PR. When the branch passes the full
+gate, push it and open or update its PR without asking, and clean up what
+the branch claimed the moment it merges, both per `resources/ship.md`.
 
 ## Do Not
 

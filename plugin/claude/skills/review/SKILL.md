@@ -37,10 +37,14 @@ tooling already enforces.
 
 **Design.** Check the change against what it was supposed to build:
 requirements, design docs, `DIVERGENCE/` in the work directory. For systematic
-coverage and drift checking, load `/meridian-dev-workflow:review-alignment`.
+coverage and drift checking, load `/meridian-dev-workflow:review-alignment`. When the target is
+a design artifact, check that its spec and architecture cross-link each
+other and that each link lands.
 
 Attached skills deepen a lane: `/meridian-dev-workflow:thermo-nuclear-review`,
-`/meridian-dev-workflow:test-architecture`, `/meridian-dev-workflow:react-architecture`.
+`/meridian-dev-workflow:test-architecture`, `/meridian-dev-workflow:react-architecture`. For a UI or frontend change,
+load `/meridian-dev-workflow:information-hierarchy` to judge whether the interface communicates
+clearly: what the user sees first, what's buried.
 
 ## Maintainability
 
@@ -76,7 +80,7 @@ when the change touches a hot path. Skip micro-optimizations.
   and interaction between components.
 - **Verified.** Check every finding before you report it, and match the check
   to the claim. Behavioral: run the command, failing test, or script that
-  shows the failure. Structural: run the search or trace that backs it
+  shows the failure on the real system (`/meridian-dev-workflow:probe`). Structural: run the search or trace that backs it
   (callers, remaining references). Design or plan: quote the conflicting
   passages or show the missing mapping. Report the check and the observation
   that settled it. A check that disproves the concern drops the finding; a
@@ -86,6 +90,12 @@ when the change touches a hot path. Skip micro-optimizations.
 Probe how the code fails, not how it succeeds: boundary conditions, ordering
 assumptions, partial failure, unenforced assumptions. If the code is
 genuinely good, say so — but earn that by looking.
+
+When a finding hinges on external facts (library semantics, upstream
+issues, known CVEs), spawn `@web-researcher` in the background and keep
+reviewing; collect the result before writing your verdict. When a suspected
+bug needs root-cause work deeper than the review lane can give it, spawn
+`@investigator` and ask for the causal chain, not the fix.
 
 **Suggest refactors.** When structure is the problem, propose the move
 (`resources/structural-health/` has the catalog). Code is cheapest to change

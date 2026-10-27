@@ -1,6 +1,6 @@
 ---
 name: architecture
-description: Use when designing or reasoning about system boundaries, dependencies, and structural risk.
+description: 'Load when a decision places a boundary, a dependency direction, or a data model, or when a design needs settling: entanglement, tradeoff dimensions, structural risk.'
 metadata:
   type: reference
 ---
@@ -46,3 +46,19 @@ Pick the ones that match what could actually go wrong:
 Wrong calls are expensive in proportion to how much code builds on top. Highest risk: component boundaries, data model shape, trust boundaries, API contracts. Lower risk: internal implementation within a well-bounded module.
 
 Match scrutiny to risk.
+
+## Settling a Design
+
+Treat requirements as hypotheses. Edge cases, failures, and boundaries are
+first-class requirements: enumerate them before committing. "Find out
+during implementation" is a risk flag; run the cheapest probe instead.
+
+Explore the solution space before committing: consider alternatives, think
+through failure modes, challenge fragile assumptions. Before proposing a
+novel mechanism, look for prior art, and look again when convergence
+stalls. When evidence challenges an assumption, dig further before
+converging.
+
+When uncertain, present several built variants, concrete enough to choose
+between. Low-confidence convergence on one option defers the decision to
+implementation, where it costs more to change.
