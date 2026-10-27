@@ -57,3 +57,31 @@ overwritten. If a generated `.mars/` file looks wrong, fix the corresponding
 source file instead, then regenerate/sync.
 
 After editing, test locally by running `meridian mars sync` in a downstream repo that imports this package.
+
+## Watching
+
+Behavior a released change expects but no real run has shown yet. Check it on
+the next runs that exercise it, then delete the entry, fixing the prompt first
+if the runs show otherwise.
+
+- **Leads run the lifecycle from `/dev-workflow`, not their bodies.** On the
+  next tech-lead and solo-dev runs: a returning spawn is not a stopping
+  point; an unclear point is written to the work directory with the call
+  made, and the questions come to the user at the end; a failing test is
+  triaged before either side is changed; review lanes are staffed from
+  `reviewers.md` and stop at its limits.
+- **tech-lead with `/parallel-execution` loaded on every run.** A single
+  change that doesn't split gets one lane, not a DAG.
+- **tech-lead without `/dev-principles` loaded.** It still holds the
+  structural bar when reading spawn output and plans (entanglement,
+  deletion, enabling refactors first); if its judgments go soft, the skill
+  goes back on `load:`.
+- **coder, frontend-coder and investigator with `/llm-writing` available.**
+  They load it before a commit message, changelog entry or report; if they
+  never do, the description still isn't firing.
+- **ux-lead's body overrides keep-going.** It still shows each change and
+  waits for the human, and runs review and probe once per coherent change.
+- **design-lead reaches its loop through `/architecture` and
+  `reviewers.md`.** It enumerates edge cases before committing, offers built
+  variants when uncertain, challenges the converged design with the three
+  lanes, and brings the impasse to its caller at the round limit.

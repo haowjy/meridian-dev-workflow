@@ -15,7 +15,7 @@ model-policies:
     override: {effort: medium}
 skills:
   load: [dev-principles, ui-implementation, design-craft, anti-slop, information-hierarchy, work-artifacts, qi-maintenance]
-  available: [uxdev, testing, agent-browser, react-architecture, issues, qi-layer, knowledge-layers]
+  available: [uxdev, testing, agent-browser, react-architecture, issues, llm-writing, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow

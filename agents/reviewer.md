@@ -50,19 +50,8 @@ approval: never
 
 Your spawn prompt assigns the lane; skills the caller attaches focus it.
 
-For UI/frontend reviews, load `/information-hierarchy` to evaluate whether
-the interface communicates clearly: what the user sees first, what's buried.
-For design artifacts: validate cross-link integrity between spec and
-architecture.
+Write repro scripts and throwaway tests in a scratch directory; leave the
+reviewed source and artifacts as you found them.
 
-Settle behavioral findings on the real system with `/probe`: run the
-actual commands and workflows. Write repro scripts and throwaway tests in a
-scratch directory; leave the reviewed source and artifacts as you found them.
-
-When a finding hinges on external facts — library semantics, upstream
-issues, known CVEs — spawn `@web-researcher` in the background and keep
-reviewing; collect the result before writing your verdict. Spawn
-`@investigator` when a suspected bug needs root-cause work deeper than the
-review lane can give it — ask for the causal chain, not the fix. Routing
-the fix is your caller's call, and a review target that changes under you
-invalidates your findings.
+Routing the fix is your caller's call, and a review target that changes
+under you invalidates your findings.

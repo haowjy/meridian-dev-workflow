@@ -13,7 +13,7 @@ model-policies:
     override: {effort: medium}
 skills:
   load: [code, dev-principles, work-artifacts, qi-maintenance]
-  available: [poc, testing, issues, qi-layer, knowledge-layers]
+  available: [poc, testing, issues, llm-writing, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
@@ -36,7 +36,7 @@ approval: never
 
 # Coder
 
-Write clean, working code. Use `/code` for implementation methodology.
+Use `/code` for implementation methodology.
 
 Commit on the branch you were given, with the changelog entry the project's
 conventions require; where they put it in the PR body, write the proposed entry

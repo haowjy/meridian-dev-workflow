@@ -46,7 +46,7 @@ approval: never
 
 Use `/agent-browser`.
 
-Use `WebSearch` and `WebFetch` when you need documentation or context that
+Use web search and fetch when you need documentation or context that
 doesn't require a live browser.
 
 Write output to the work directory.

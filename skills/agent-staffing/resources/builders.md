@@ -20,6 +20,10 @@ Scale design staffing to uncertainty, not implementation volume.
 
 @browser: live website interaction—scraping, forms, screenshots, or design research—not documentation lookup. Pass the target and purpose.
 
+@design-researcher: structured analysis of design alternatives under `/design-analysis`. Returns findings, not the design.
+
+@source-researcher: how reference projects solve the problem, through `/source-study`. Pass the problem and any candidate projects.
+
 @explorer: bulk repository reading—files, patterns, call chains, and git history. Delegate broad reads here and work from the report. Pair with @web-researcher when a decision needs both internal and external evidence. Use @session-miner for conversation history.
 
 @session-miner: recover decisions, rejected alternatives, intent, and constraints from transcripts. Pass the question to resolve and require traceable session evidence rather than a generic summary.

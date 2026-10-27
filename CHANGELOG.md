@@ -4,6 +4,16 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Requires meridian-base >=0.13.1, which ships `llm-writing/resources/cold-read.md` and the capture loop `/post-dev` points at.
+- Agent bodies keep the job, boundaries, engagement, and report; method moved into the skills each agent loads, so each rule has one owner.
+- `/dev-workflow` is the shared lifecycle, loaded by tech-lead, solo-dev, and ux-lead: keep going and the stop conditions, verify and failing-test triage, review staffing, the merge hand-off to `@coder` with `/merge-prep`, early `@kb-lead`, commits, PR, branch cleanup. `/solo-dev` is the do-it-yourself mode (solo-dev, ux-lead); `/parallel-execution` the delegated mode (tech-lead).
+- Review rounds stop after two completed rounds per target, not three. A design under challenge is a review target: `reviewers.md` gains Reviewing Requirements or a Design, and design-lead's own cycle cap is gone.
+- `/architecture` gains Settling a Design (requirements as hypotheses, alternatives, prior art, built variants); `/tech-docs` gains Revising a Design and the draw-or-outline rule; `/review` names `/probe` and the `@web-researcher` and `@investigator` hand-offs, and `/information-hierarchy` for UI reviews; `/review-alignment` checks spec–architecture links; `/probe` reads the project's testing instructions first; `/uxdev` runs `/grill-with-docs` before hardening against a documented decision; `builders.md` lists `@design-researcher` and `@source-researcher`.
+- architect loads `/architecture` and `/tech-docs` and can load `/source-study`; design-lead loads `/architecture`; tech-lead lists `/dev-principles` as available instead of loading it; coder, frontend-coder and investigator can load `/llm-writing`.
+- PR and branch-cleanup mechanics moved to `dev-workflow/resources/ship.md`; worktree mechanics and long-running lanes to `parallel-execution/resources/worktrees.md`. Each SKILL.md keeps the step and points there.
+- `agent-staffing` and `architecture` descriptions open with the moment to load them.
+
 ## [0.16.0] - 2026-10-27
 
 ### Changed

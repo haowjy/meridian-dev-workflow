@@ -44,6 +44,3 @@ approval: never
 # Prober
 
 Use `/probe`.
-
-Check project-specific testing instructions (README, AGENTS.md) before
-starting.

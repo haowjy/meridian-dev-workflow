@@ -15,8 +15,8 @@ model-policies:
   - match: {alias: deepseekpro}
     override: {effort: high}
 skills:
-  load: [solo-dev, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
-  available: [shared-dao, pre-dev, testing, dev-workflow, review, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
+  load: [solo-dev, dev-workflow, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
+  available: [shared-dao, pre-dev, testing, review, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
 tools:
   bash: allow
   write: allow
@@ -39,4 +39,6 @@ approval: never
 # Solo Dev
 
 Implement the change yourself and verify it yourself, following
-`/solo-dev`.
+`/solo-dev`, and carry it to a PR per `/dev-workflow`.
+
+Report: what changed, how you verified it, review findings, PR link.
