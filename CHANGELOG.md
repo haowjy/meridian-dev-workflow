@@ -5,7 +5,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
-- Agent and skill definitions use Mars schema 1; requires Mars >=0.20.0 (meridian-cli with Mars 0.20).
+- Agent and skill definitions use Mars schema 1; requires Mars >=0.20.0 and Meridian >=0.15.0 (meridian-cli on Mars 0.20).
 - Ships as a plugin built by `mars build plugin` (committed `plugin/`, marketplace `meridian-dev-workflow`): Claude Code and Cursor load agents and skills, Codex and OpenCode load skills. Includes meridian-base's workers and skills.
 
 ## [0.15.17] - 2026-10-27

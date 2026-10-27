@@ -3,7 +3,7 @@
   "mars_version": "0.20.2",
   "plugin_name": "meridian-dev-workflow",
   "version": "0.15.17",
-  "inputs_hash": "sha256:79d881bb3a84448ee0b6dd74f8685dbd301f4ba1cbf17703b815569bf71bcc09",
+  "inputs_hash": "sha256:31fd20016b7076200ede9bc611d1b035669dba53ab78aea0f7c4e720ca59ac95",
   "dependencies": {
     "meridian-base": {
       "version": "0.12.1",
