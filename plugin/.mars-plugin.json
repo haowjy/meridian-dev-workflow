@@ -383,9 +383,6 @@
     ".cursor-plugin/marketplace.json": "sha256:cb815f371edf3d73eb4a5227da7af449291e3fbafbeec601ed4202cb0e299e8a",
     "package.json": "sha256:d48f0d16f8182d89d161bb423de5ba4c8b5137768ed60dcf3d366dbad9d25bcd"
   },
-  "root_files_previous": {
-    "package.json": "sha256:736aa8cf3848e49f13e7320035b0ef256d13c4b4972f94699be30466e79210bb"
-  },
   "root_directories": [
     ".claude-plugin",
     ".cursor-plugin"
