@@ -2,16 +2,16 @@
   "schema_version": 1,
   "mars_version": "0.20.2",
   "plugin_name": "meridian-dev-workflow",
-  "version": "0.15.17",
-  "inputs_hash": "sha256:31fd20016b7076200ede9bc611d1b035669dba53ab78aea0f7c4e720ca59ac95",
+  "version": "0.16.0",
+  "inputs_hash": "sha256:c34f55f898b860bcd2b32f08c3db48142ed3dca948a411691317e40fe63cbe39",
   "dependencies": {
     "meridian-base": {
-      "version": "0.12.1",
-      "commit": "c2368f0af0d8624ad1ced263a1015f11f7346e8a"
+      "version": "0.13.0",
+      "commit": "c5001a9800b58f08512a190afec3d7639d163189"
     }
   },
   "files": {
-    "claude/.claude-plugin/plugin.json": "sha256:b249bd45f8411d741cd9207b62d26f83f08042c59c117bdad712f39645583bcb",
+    "claude/.claude-plugin/plugin.json": "sha256:7975f156e6c574b4db6bf031fd86f481632ace5dcbf02d33dc503dfd65643e4e",
     "claude/agents/architect.md": "sha256:457326b15a7bf70b6f8724144aa169d0a4672119d4278d72cd77c41afdcda229",
     "claude/agents/browser.md": "sha256:a0f3a7673dbf3a15b578e7a905ac3eec0c0ed796249da77920d00f51ac9c2e4e",
     "claude/agents/coder.md": "sha256:164d5f33a426d4b03d8a9331835d70df7003122988e11b47d4a70f5d059f00f0",
@@ -143,7 +143,7 @@
     "claude/skills/visualize-codebase/resources/unravel-codebase.md": "sha256:3d6f4f709d6ebdde9f135e5e4a695f766a8855f895fe5ad02adf2b24f826de8c",
     "claude/skills/work-artifacts/SKILL.md": "sha256:7023858abef3f72e9e8cec48aea62601b6f0bab227840e3e41d277893826171b",
     "claude/skills/zoom-out/SKILL.md": "sha256:de74f5446b1bf43887640c1a7624fc7a1c0b1c338ec30b8a5c095fd80140669c",
-    "cursor/.cursor-plugin/plugin.json": "sha256:b249bd45f8411d741cd9207b62d26f83f08042c59c117bdad712f39645583bcb",
+    "cursor/.cursor-plugin/plugin.json": "sha256:7975f156e6c574b4db6bf031fd86f481632ace5dcbf02d33dc503dfd65643e4e",
     "cursor/agents/architect.md": "sha256:42ff1d12c2dce7d83240767c398a9a32dbc3d8568c2c3dd320dd94d793dd8185",
     "cursor/agents/browser.md": "sha256:e2d5929282c28a567404684ea48582b314eefe150873037851152bbe1483ded6",
     "cursor/agents/coder.md": "sha256:de799473233c4a70ba900043be0cee9be85692f019b15b1cddad414ae0300e82",
@@ -272,7 +272,7 @@
     "cursor/skills/work-artifacts/SKILL.md": "sha256:bca2eb145e837759b32fe92432cfae500d7e7c830b946a2b426bfb10e6907d28",
     "cursor/skills/zoom-out/SKILL.md": "sha256:708ee02936cfe2a255d0c0e3e1b8577e8809ac84bad8ebdaa7839d20fb4803fb",
     "opencode/index.mjs": "sha256:c6760c0055df7521db3ee64dbbca482ffc6948259a24b5a0cb2eb0f56883c2d4",
-    "opencode/package.json": "sha256:ccaf4046353a7de524064e8915afda0715d5eb027588aa3c53f8e26a16be6138",
+    "opencode/package.json": "sha256:455cbf867302344476a6d1b658355a0ba6b8702b10b8c11d8b5803ea6d55daf2",
     "opencode/skills/agent-browser/SKILL.md": "sha256:54b2181ac31096bd7f30ea015c63e46d9275faae6ad9b89f5e0c2bc6ff57fadb",
     "opencode/skills/agent-browser/resources/capped-browser": "sha256:c67d5d6dad1fbc66e2ac81e94fb107d9dc34f3252324d771e1069bd651e784c8",
     "opencode/skills/agent-staffing/SKILL.md": "sha256:9cfbc86e4f91cf1c4786e872fbf9ed13c9a87d4a6473203730f5d74f2ff2db89",
@@ -381,6 +381,9 @@
   "root_files": {
     ".claude-plugin/marketplace.json": "sha256:c4fc350b6fc0f5f26eafa4e5e39dc45a9298a7de8cd499835f56bf31020fc86d",
     ".cursor-plugin/marketplace.json": "sha256:cb815f371edf3d73eb4a5227da7af449291e3fbafbeec601ed4202cb0e299e8a",
+    "package.json": "sha256:d48f0d16f8182d89d161bb423de5ba4c8b5137768ed60dcf3d366dbad9d25bcd"
+  },
+  "root_files_previous": {
     "package.json": "sha256:736aa8cf3848e49f13e7320035b0ef256d13c4b4972f94699be30466e79210bb"
   },
   "root_directories": [
