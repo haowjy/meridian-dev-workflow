@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- dev-workflow, post-dev, coder, frontend-coder, README: the changelog rule defers to the project's own convention instead of naming `CHANGELOG.md` `## [Unreleased]`. Where the convention puts the entry in the PR body, the coder writes the proposed entry in its report for the lead to place.
+
 ## [0.15.16] - 2026-10-27
 
 ### Changed

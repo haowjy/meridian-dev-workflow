@@ -15,7 +15,8 @@ model-invocable: true
 
 Run the full project gate at ship readiness, not after every implementation step, unless the project's policy or a specific risk requires it earlier.
 
-Where the project keeps a `CHANGELOG.md`, write its `## [Unreleased]` entries at commit time, not retroactively.
+Update the changelog according to the project's conventions, at commit time rather
+than retroactively.
 
 ## Deferrals
 
