@@ -2,16 +2,12 @@
 name: coder
 description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. It keeps a new test only when the user asked for one; pass that request on in the brief. Returns what changed, the failure modes it exercised, and verification by type."
 mode: subagent
-model: luna
-effort: max
+model: sonnet
+effort: medium
 model-policies:
-  - match: {alias: luna}
-    override: {effort: high}
-  - match: {alias: deepseek}
-    override: {effort: high}
-  - match: {alias: sol}
-    override: {effort: medium}
   - match: {alias: sonnet}
+    override: {effort: medium}
+  - match: {alias: sol}
     override: {effort: medium}
   - match: {alias: opus}
     override: {effort: medium}

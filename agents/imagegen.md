@@ -2,12 +2,12 @@
 name: imagegen
 description: "Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images."
 mode: subagent
-model: sol
+model: terra
 effort: high
 model-policies:
-  - match: {alias: sol}
-    override: {effort: high}
   - match: {alias: terra}
+    override: {}
+  - match: {alias: grok}
     override: {}
 skills:
   load: [intent-modeling]

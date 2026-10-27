@@ -2,9 +2,11 @@
 name: browser
 description: "Spawn to work a live website: design inspiration, scraping, data extraction, screenshots. Pass the task, entrypoints, constraints, and evidence needed. Skills: agent-browser."
 mode: subagent
-model: luna
-effort: high
+model: terra
+effort: medium
 model-policies:
+  - match: {alias: terra}
+    override: {effort: medium}
   - match: {alias: luna}
     override: {effort: high}
   - match: {alias: deepseek}
