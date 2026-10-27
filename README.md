@@ -68,7 +68,8 @@ Every implementation lead runs the same lifecycle:
    dependent phases as a DAG with `/parallel-execution`, using a worktree per parallel lane and one
    owner for each change to shared code. It delegates to `coder` and
    `frontend-coder`. solo-dev and ux-lead implement the change themselves.
-   Each commit carries a `CHANGELOG.md` entry.
+   Each change carries the changelog entry the project's conventions
+   require.
 3. **Verify.** Leads run focused checks and `/probe` against the real system
    while working, and the full suite once on the finished change.
 4. **Review.** `reviewer` and `prober` run on a committed state, with the
@@ -139,7 +140,7 @@ and review-backed escalation.
 
 | Agent | Model | Role |
 |---|---|---|
-| `coder` | luna | Implements a scoped objective, commits with a changelog entry |
+| `coder` | luna | Implements a scoped objective, with the changelog entry the project reads |
 | `frontend-coder` | sonnet | Production UI with visual self-checks in a browser |
 | `mockup-dev` | luna | Throwaway frontend mockups for comparing directions |
 | `imagegen` | sol | Generated images: concepts, icons, reference imagery |

@@ -26,7 +26,7 @@ merge section applies once the PR lands.
   without the work's context, and its valid findings are fixed
 
 ### Changelog
-- Where the project keeps a `CHANGELOG.md`, it has entries under `## [Unreleased]` for this work
+- The changelog is updated the way the project's conventions say
 - Entries written in caveman style: terse, behavioral, filler-free
 - Focus on what downstream users notice, not which lines moved
 

@@ -42,6 +42,7 @@ approval: never
 
 Write clean, working code. Use `/code` for implementation methodology.
 
-Commit on the branch you were given, with a `CHANGELOG.md` entry under
-`## [Unreleased]` when the project keeps one. Do not push. Your lead
-integrates your branch, except a merge your brief assigns you.
+Commit on the branch you were given, with the changelog entry the project's
+conventions require; where they put it in the PR body, write the proposed entry
+in your report. Do not push. Your lead integrates your branch, except a merge
+your brief assigns you.

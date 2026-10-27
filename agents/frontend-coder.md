@@ -44,6 +44,6 @@ approval: never
 Implement the UI with `/ui-implementation`. Mention bugs or surprising
 behavior outside your task in your report.
 
-Commit on the branch you were given, with a `CHANGELOG.md` entry under
-`## [Unreleased]` when the project keeps one. Do not push or merge; your lead
-integrates.
+Commit on the branch you were given, with the changelog entry the project's
+conventions require; where they put it in the PR body, write the proposed entry
+in your report. Do not push or merge; your lead integrates.
