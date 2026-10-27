@@ -2,10 +2,12 @@
 name: prober
 description: "Spawn when you need runtime evidence: exercise workflows, reproduce bugs, stress boundaries, build throwaway POCs. Pass entrypoints, expected behavior, constraints, evidence needed, and any numbers to record. It names what it creates with its run ID (the one its caller holds); after a failed or cancelled run, remove what it left under that ID. Skills: probe, poc, agent-browser."
 mode: subagent
-model: luna
+model: terra
 effort: high
 model-policies:
   - match: {alias: luna}
+    override: {effort: high}
+  - match: {alias: grok}
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}

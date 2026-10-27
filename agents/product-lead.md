@@ -19,9 +19,6 @@ skills:
   available: [handoff, grill-with-docs, uxdev, zoom-out, pre-dev, poc, issues, source-study, qi-layer, knowledge-layers]
 tools:
   bash: allow
-  'skill(deep-research)': deny
-  'skill(init)': deny
-  'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny

@@ -24,7 +24,6 @@ tools:
   edit: allow
   'skill(deep-research)': deny
   'skill(init)': deny
-  'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny

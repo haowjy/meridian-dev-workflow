@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Prober defaults to `terra` (GPT-6.1 Terra), not `luna`. Head-to-head replay of three past probes: Terra won two of three on blind grading, more accurate claims, 1.6–18x faster.
+- Leads (design, product, solo-dev, tech, ux) may `git revert`; still deny checkout, switch, stash, restore, reset --hard, clean, since leads share one checkout. Product, tech, ux leads no longer deny `deep-research`/`init` skills; ux-lead may run workflows.
+
 ## [0.15.15] - 2026-10-25
 
 ### Changed
