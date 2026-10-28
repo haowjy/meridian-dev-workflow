@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.16.3] - 2026-10-28
+
 ### Changed
 - Plugin bundles meridian-base 0.13.6: `md-validation` keeps the neutral method and Mermaid authoring rules; Meridian's validator details now come from meridian-cli's bundled `md-validation__meridian`.
 

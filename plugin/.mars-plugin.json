@@ -2,16 +2,16 @@
   "schema_version": 1,
   "mars_version": "0.24.1",
   "plugin_name": "meridian-dev-workflow",
-  "version": "0.16.2",
+  "version": "0.16.3",
   "inputs_hash": "sha256:0ba6fe6420e35f51d2f1fb9849c485ff30983b97559778433dd09a8f7abe4fdb",
   "dependencies": {
     "meridian-base": {
-      "version": "0.13.5",
-      "commit": "2cd720a8ed581109e50622706d39b87a9c90f12d"
+      "version": "0.13.6",
+      "commit": "da44adabdedf14b69372c066800b58cf51bd73ec"
     }
   },
   "files": {
-    "claude/.claude-plugin/plugin.json": "sha256:e4d59bbd0f3e29202ee49beb3eab2fae872cb6aaa123c6cd2fa0419969a4bf87",
+    "claude/.claude-plugin/plugin.json": "sha256:a53dc2a4948e4d22ddba9a35687bc04ff50f5d50ea08d190b294c15fb27c8a4e",
     "claude/agents/architect.md": "sha256:c39920b0f6fcc8f2424667d3abe304ada8138e1363a5281c83ea3db267625369",
     "claude/agents/browser.md": "sha256:8b5f83b16ef05f1adeefdea959233e1c99d5ccf2b6801ae34120d4c87062f216",
     "claude/agents/coder.md": "sha256:a6b58948c0c54e951f2c13ab67c64558c460848282654fbd17837c44207170d8",
@@ -82,9 +82,8 @@
     "claude/skills/llm-writing/SKILL.md": "sha256:d633d489f4ed4e6bed660f646ed22e61e5dfb165f5b1e4e0c2d89b9aa903c3be",
     "claude/skills/llm-writing/resources/cold-read.md": "sha256:c4d63298b9de3cc7193552b3d260a290d20429ffb3cf1bcf06d63e79ec4e7ff3",
     "claude/skills/llm-writing/resources/word-choice.md": "sha256:6cb930bb9f8dbf55cb8ce99c636beff942f48f5cb1a9040299f574f516b15e03",
-    "claude/skills/md-validation/SKILL.md": "sha256:054b0904917b9d33e03d99c64c5c02763f97b372ac7c909641973af9cc13104c",
-    "claude/skills/md-validation/resources/mermaid-authoring.md": "sha256:1b9b261e7f91811801b0590b92acebd7c66a615a904fd482757ef22a424dcb82",
-    "claude/skills/md-validation/resources/validation-inputs.md": "sha256:beb80cd40f6aa2b20dfdf201c538de3975d0b62b29de02be6216569d645041c2",
+    "claude/skills/md-validation/SKILL.md": "sha256:e7f941adda9c04845d388b29291b74d1332f06d77a51af18c08d3070ed3c1327",
+    "claude/skills/md-validation/resources/mermaid-authoring.md": "sha256:65a7ae06541858c299acc601e9f91f8c72b9874b7b7ddc3c77198e08c71a5a15",
     "claude/skills/merge-prep/SKILL.md": "sha256:e81c648855bdaa83c636ca44c9b29aedc722393b187fb59a96ac51bfd269c7db",
     "claude/skills/parallel-execution/SKILL.md": "sha256:74ea80abd28e77aeab5e767d89a172e0a7f98af893183fe44e8fb0492a39841e",
     "claude/skills/parallel-execution/resources/worktrees.md": "sha256:b8fd6a8707955db992ab1a7838bd11bdc2233a517cb7eeab3fdf37b256066fd7",
@@ -152,7 +151,7 @@
     "claude/skills/visualize-codebase/resources/unravel-codebase.md": "sha256:3d6f4f709d6ebdde9f135e5e4a695f766a8855f895fe5ad02adf2b24f826de8c",
     "claude/skills/work-artifacts/SKILL.md": "sha256:634849cb7d1a50f80705f080fbf19440f801dad01998d140c98e6af8ac394580",
     "claude/skills/zoom-out/SKILL.md": "sha256:de74f5446b1bf43887640c1a7624fc7a1c0b1c338ec30b8a5c095fd80140669c",
-    "cursor/.cursor-plugin/plugin.json": "sha256:e4d59bbd0f3e29202ee49beb3eab2fae872cb6aaa123c6cd2fa0419969a4bf87",
+    "cursor/.cursor-plugin/plugin.json": "sha256:a53dc2a4948e4d22ddba9a35687bc04ff50f5d50ea08d190b294c15fb27c8a4e",
     "cursor/agents/architect.md": "sha256:37a67bec0023f214021ec394c96f6e76d9e01948407edd38eedc077fe865d821",
     "cursor/agents/browser.md": "sha256:d54149e9720914f34d00d8ba520a9f0d672a15796e29f1ad553a39f74aa30727",
     "cursor/agents/coder.md": "sha256:b2caff09d9e50911ac40a26d996a6d5d801beb4594bf8956ebb155190e7ca1ec",
@@ -215,9 +214,8 @@
     "cursor/skills/llm-writing/SKILL.md": "sha256:8b3f8d2030ea941f8b95ee237b6b295c554aab7ed3b407f5620bc5af35e361f9",
     "cursor/skills/llm-writing/resources/cold-read.md": "sha256:c4d63298b9de3cc7193552b3d260a290d20429ffb3cf1bcf06d63e79ec4e7ff3",
     "cursor/skills/llm-writing/resources/word-choice.md": "sha256:6cb930bb9f8dbf55cb8ce99c636beff942f48f5cb1a9040299f574f516b15e03",
-    "cursor/skills/md-validation/SKILL.md": "sha256:f791088c71e548b5ef2d3019b541a48c919af5c93a9417169f27143d0ff2fe68",
-    "cursor/skills/md-validation/resources/mermaid-authoring.md": "sha256:1b9b261e7f91811801b0590b92acebd7c66a615a904fd482757ef22a424dcb82",
-    "cursor/skills/md-validation/resources/validation-inputs.md": "sha256:beb80cd40f6aa2b20dfdf201c538de3975d0b62b29de02be6216569d645041c2",
+    "cursor/skills/md-validation/SKILL.md": "sha256:25fa81b5eb705a08fd06dcaaf34484f430ca6f169a27c66b8c15d76b2d43f037",
+    "cursor/skills/md-validation/resources/mermaid-authoring.md": "sha256:65a7ae06541858c299acc601e9f91f8c72b9874b7b7ddc3c77198e08c71a5a15",
     "cursor/skills/merge-prep/SKILL.md": "sha256:d36173e1933d4784ba7b1e786216922655d54252816b3ebdafffbb71abff4b52",
     "cursor/skills/parallel-execution/SKILL.md": "sha256:d11819ab93157f02208d74a95398747304abec17e8c7e0c3ca7f97e7c83fd7b2",
     "cursor/skills/parallel-execution/resources/worktrees.md": "sha256:b8fd6a8707955db992ab1a7838bd11bdc2233a517cb7eeab3fdf37b256066fd7",
@@ -290,7 +288,7 @@
     "opencode/hooks/protect-tmux-server/run.py": "sha256:b0d1ec5005f9a10380e98f593f9dfe70361d4723be4109970b93df65de77c218",
     "opencode/hooks/protect-tmux-server/run.sh": "sha256:76d162813cbf7dbe08155e183f9cfcb2aa05d7d004275634716114c5a001515b",
     "opencode/index.mjs": "sha256:dde718e66a930c57b33f01e99203992f3622d45dea88e8907649c57adcae9c17",
-    "opencode/package.json": "sha256:c4f174ba296a7428439365a4ffbe13201d529d3e049258f7ded3c379388b2fac",
+    "opencode/package.json": "sha256:398a909ac9caff238312075a4a5bb6bc2570abbbeb4135a61e0877ceb662039e",
     "opencode/skills/agent-browser/SKILL.md": "sha256:54b2181ac31096bd7f30ea015c63e46d9275faae6ad9b89f5e0c2bc6ff57fadb",
     "opencode/skills/agent-browser/resources/capped-browser": "sha256:c67d5d6dad1fbc66e2ac81e94fb107d9dc34f3252324d771e1069bd651e784c8",
     "opencode/skills/agent-staffing/SKILL.md": "sha256:545bd276b7648a6f4ed10b241ac42b55b112b8644a3aed8975e412cbb9264f28",
@@ -330,9 +328,8 @@
     "opencode/skills/llm-writing/SKILL.md": "sha256:d633d489f4ed4e6bed660f646ed22e61e5dfb165f5b1e4e0c2d89b9aa903c3be",
     "opencode/skills/llm-writing/resources/cold-read.md": "sha256:c4d63298b9de3cc7193552b3d260a290d20429ffb3cf1bcf06d63e79ec4e7ff3",
     "opencode/skills/llm-writing/resources/word-choice.md": "sha256:6cb930bb9f8dbf55cb8ce99c636beff942f48f5cb1a9040299f574f516b15e03",
-    "opencode/skills/md-validation/SKILL.md": "sha256:054b0904917b9d33e03d99c64c5c02763f97b372ac7c909641973af9cc13104c",
-    "opencode/skills/md-validation/resources/mermaid-authoring.md": "sha256:1b9b261e7f91811801b0590b92acebd7c66a615a904fd482757ef22a424dcb82",
-    "opencode/skills/md-validation/resources/validation-inputs.md": "sha256:beb80cd40f6aa2b20dfdf201c538de3975d0b62b29de02be6216569d645041c2",
+    "opencode/skills/md-validation/SKILL.md": "sha256:e7f941adda9c04845d388b29291b74d1332f06d77a51af18c08d3070ed3c1327",
+    "opencode/skills/md-validation/resources/mermaid-authoring.md": "sha256:65a7ae06541858c299acc601e9f91f8c72b9874b7b7ddc3c77198e08c71a5a15",
     "opencode/skills/merge-prep/SKILL.md": "sha256:e81c648855bdaa83c636ca44c9b29aedc722393b187fb59a96ac51bfd269c7db",
     "opencode/skills/parallel-execution/SKILL.md": "sha256:74ea80abd28e77aeab5e767d89a172e0a7f98af893183fe44e8fb0492a39841e",
     "opencode/skills/parallel-execution/resources/worktrees.md": "sha256:b8fd6a8707955db992ab1a7838bd11bdc2233a517cb7eeab3fdf37b256066fd7",
@@ -404,7 +401,7 @@
   "root_files": {
     ".claude-plugin/marketplace.json": "sha256:c4fc350b6fc0f5f26eafa4e5e39dc45a9298a7de8cd499835f56bf31020fc86d",
     ".cursor-plugin/marketplace.json": "sha256:cb815f371edf3d73eb4a5227da7af449291e3fbafbeec601ed4202cb0e299e8a",
-    "package.json": "sha256:1066f240b700df0c313f12f50b79c8ffbf29af6677293bbefcd1c2e755f309b0"
+    "package.json": "sha256:b4e4d29bb13b0d7852e4e0cc151dfe3c1c53106fa1291d9a53b7bc05c664784c"
   },
   "root_directories": [
     ".claude-plugin",
