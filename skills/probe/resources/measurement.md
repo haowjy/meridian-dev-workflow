@@ -6,8 +6,8 @@ act on it.
 
 ## Before Running
 
-- Write the sentence you expect to report ("`spawn wait` returns in 40 ms
-  at p50 with 200 spawns on disk"). The checks below test that sentence.
+- Write the sentence you expect to report ("`git status` returns in 40 ms
+  at p50 on a 200,000-file checkout"). The checks below test that sentence.
 - Read the measurement script: what it times, what it counts, what it
   leaves out.
 - Check machine load with `uptime` and `nproc`. On a busy machine,

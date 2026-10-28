@@ -20,14 +20,15 @@ Should this work be on a worktree? Prefer worktrees for:
 - Parallel work alongside other agents
 - Changes spanning multiple files or subsystems
 
-If already in a worktree, confirm the work item's source checkout points at it;
-a worktree from another task is not this one's. If this work belongs on a
+If already in a worktree, confirm it is this task's: a worktree from another
+task is not this one's. If this work belongs on a
 worktree and you aren't in one, create one:
 ```bash
 git -C <repo> worktree add ../<repo>.worktrees/<slug> -b <branch>
 ```
 
-Then point the work item's source checkout at the new worktree.
+Make the worktree this task's default checkout: the one delegated agents work
+in unless you assign them another.
 
 Then build the generated artifacts the project's checks need in this
 worktree, so the first check doesn't fail on a missing build.

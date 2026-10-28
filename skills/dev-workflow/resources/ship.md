@@ -16,7 +16,7 @@ still missing before creating, and if the repo ships a body checker such as
 conventions for labels.
 
 If `pr-body-<slug>.md` doesn't exist (pre-dev was skipped, or the work directory
-was cleared), fall back to `.github/PULL_REQUEST_TEMPLATE.md` (or similar)
+is gone), fall back to `.github/PULL_REQUEST_TEMPLATE.md` (or similar)
 directly, fill it from the current diff and conversation, and note in your
 report that before-state evidence was not captured.
 
