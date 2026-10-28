@@ -59,7 +59,7 @@ Every durable layer — AGENTS.md, `.context/`, KB, `docs/` — holds the best
 current understanding; work directories may keep intermediate reasoning
 while their work item is active. When durable content is
 superseded, delete it or (for KB pages) move it to `archive/`
-(`.kgignore`'d, excluded from the knowledge graph). Live content never
+and exclude that directory from link validation (`/meridian-dev-workflow:md-validation`). Live content never
 references archived content. Pages read as current truth, never narrate
 their own evolution.
 

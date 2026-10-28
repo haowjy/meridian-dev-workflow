@@ -18,8 +18,8 @@ merge section applies once the PR lands.
   implementation added
 - Evidence images link to the commit that last touched them, taken after
   the file is pushed (`git log -1 --format=%H -- <file>` in the repo that
-  holds it), not to `main`: finished work is moved and later pruned, which
-  breaks every `main` link into it
+  holds it), not to a branch: a file on a branch can later move or be deleted,
+  which breaks the link
 - The PR follows the project's release conventions, wherever its AGENTS.md or
   docs keep them: its labels and title rules
 - `@cold-reader` has read the PR body, commissioned per `/meridian-dev-workflow:llm-writing`
@@ -67,5 +67,4 @@ merge section applies once the PR lands.
   dev processes and routes) per `/meridian-dev-workflow:dev-workflow` `resources/ship.md`; branch
   deletion needs merge evidence git can't supply alone: `-d` is blind to
   squash merges, `-D` discards unmerged commits.
-- Close and archive the work item; confirm its delegated agents are terminal
-  first
+- Close the work item once every agent you started for it has finished

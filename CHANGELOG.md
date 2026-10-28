@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.16.2] - 2026-10-28
+
 ### Changed
 - Skills stop stating Meridian mechanics as fact: `/agent-staffing` drops "automatic fallback policy", `/pre-dev` makes the worktree the task's default checkout instead of pointing "the work item's source checkout" at it, `/post-dev` closes the work item once its agents finish instead of archiving it, `/post-dev`'s commit-pinned evidence links no longer cite work-directory pruning, and `ship.md` and `probe/resources/measurement.md` lose Meridian-only wording and examples.
 

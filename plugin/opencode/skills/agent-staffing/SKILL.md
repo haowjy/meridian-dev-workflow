@@ -23,9 +23,9 @@ Most changes are staffed from these; the catalogs below cover the rest.
 
 ## Model Selection
 
-Honor explicit user model instructions. Otherwise launch each role through
-its configured routing, including user overrides and automatic fallback
-policy, rather than selecting a model for anticipated difficulty. Brief
+Honor explicit user model instructions. Otherwise launch each role on the
+model its configuration gives it, rather than selecting a model for
+anticipated difficulty. Brief
 the configured worker on concurrency hazards and other known risks, the
 invariants to preserve, and how to verify them. This applies to reviewers
 as well as implementers.

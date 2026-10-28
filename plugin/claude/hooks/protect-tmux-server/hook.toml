@@ -1,0 +1,11 @@
+visibility = "exported"
+
+[targets.".claude"]
+
+[targets.".codex"]
+
+[targets.".opencode"]
+fragment = "opencode.ts"
+
+[targets.".pi"]
+fragment = "pi.ts"

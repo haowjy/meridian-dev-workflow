@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: 'Use when the next phase belongs to a different interactive lead: writes a transition brief, runs applicable pre-phase checks, and hands off to a new primary session.'
+description: 'Use when the next phase belongs to a different interactive lead: writes a transition brief, runs applicable pre-phase checks, and hands off to a new interactive session.'
 metadata:
   type: mode-shift
 ---
@@ -36,6 +36,6 @@ next lead starts with its prerequisites ready.
 
 ## Hand Off
 
-Hand off to a new primary session. Give the user the chosen lead, the exact path
+Hand off to a new interactive session. Give the user the chosen lead, the exact path
 to the brief, and any work or source references the next session needs. The user
 starts the new session; do not start it for them.

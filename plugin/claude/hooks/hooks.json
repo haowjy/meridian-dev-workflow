@@ -20,6 +20,17 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/protect-tmux-server/run.sh\"",
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
     ]
   }
 }

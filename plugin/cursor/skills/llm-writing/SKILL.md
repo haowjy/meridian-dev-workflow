@@ -15,7 +15,7 @@ Load `/meridian-dev-workflow:information-hierarchy` when the piece grows beyond 
 
 Before producing a written artifact:
 
-1. **Scope.** Who reads this, and when? Text that outlives the conversation (files, prompts, docs, commit messages, PRs) is read by someone without it: a cold agent, a teammate, or the person who asked, after they've forgotten it. Write for that reader. What do they know when they start, and what should they know when they finish? What do they not need to know? Before writing, break the piece into beats: each beat is one move in the reader's journey, carrying one idea, purpose, or turn.
+1. **Scope.** Who reads this, and when? Text that outlives the conversation (files, prompts, docs, commit messages, PRs) is read by someone without it: a cold agent, a teammate, or the person who asked, after they've forgotten it. Write for that reader. What do they know when they start, and what should they know when they finish? What do they not need to know? What did they come for, and how do they arrive: a reviewer short on time, a user whose build broke, an agent that needs the rule before the reason? Lead with what serves that reader; cut what only serves the writer. Before writing, break the piece into beats: each beat is one move in the reader's journey, carrying one idea, purpose, or turn.
 2. **Ground.** Check any relevant source material, references, or notes before writing, and make sure they align.
 3. **Draft.** Write the whole piece where you can revise it before it reaches its reader: the file itself when you're writing one, otherwise a scratch file or your working notes. Text sent straight into a chat, a PR, or a commit gets no revision pass.
 4. **Revise.** Start with the whole artifact, then move inward: structure, beats, paragraphs, sentences, words. At each scale, ask what the writing is doing: is it correct, does it follow from what came before, and does the reader need it? Delete or rewrite anything that does not serve a purpose or give the reader something they need to understand or know. Move back and forth between scales: after a local change, zoom back out through the surrounding beat, larger structure, and full artifact; the change should still connect, and the rhythm should still vary. Check disclosure tiers: the answer still leads, depth hasn't crept forward, sources sit at the end.
@@ -23,8 +23,8 @@ Before producing a written artifact:
 ## Choose Words
 
 - Use the short, everyday word: "use", not "utilize"; "help", not "facilitate". A long word has to buy its length with precision.
-- The codebase is the word list. Write the real symbol, file, flag, or command name, not a synonym or a description of it, and call each thing by one name everywhere.
-- Don't invent jargon. Use the words a developer would say out loud ("move", "delete", "a budget that only decreases"), not a coined metaphor ("evacuate", "ratchet"). A named pattern is fine when the text says what it means the first time.
+- The project's own names are the word list. Write the real name as the project spells it, whether a symbol, a file, a flag, a character, or an invented term, not a synonym or a description of it, and call each thing by one name everywhere.
+- Don't invent jargon. Use the words the reader would say out loud ("move", "delete", "a budget that only decreases"), not a coined metaphor ("evacuate", "ratchet"). A named pattern is fine when the text says what it means the first time.
 - Be specific over sterile: not "schema changes can cause issues" but "a column rename fails the build".
 - Vary the rhythm. Short sentences land a point; longer ones carry a fact with its condition or consequence. Split the sentence that carries two thoughts; keep the long one that carries one.
 - Leave no sentence open to two readings: "only" and "not" next to the word they change, every "it" and "this" pointing at one noun, no noun strings. The cases and a before/after are in `resources/word-choice.md`.

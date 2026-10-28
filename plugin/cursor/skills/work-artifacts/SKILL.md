@@ -16,15 +16,14 @@ source checkout, not the work directory.
 
 This work item's artifacts go in the work directory; project-wide reference
 goes in the knowledge base. Keep raw files (traces, HARs, dumps, build output)
-out of the work directory, which syncs through git: record the excerpt that
-carries the finding.
+out of the work directory: record the excerpt that carries the finding.
 
 The agent that started a work item owns its state; leave it alone unless
 your brief says otherwise.
 
 ## Maintain the Work Directory
 
-Its `AGENTS.md` orients a delegated agent arriving cold: the goal, the artifact
+Give it an `AGENTS.md` that orients a delegated agent arriving cold: the goal, the artifact
 layout, and what is settled versus still moving. Keep it current as the work
 shifts, following `/meridian-dev-workflow:qi-layer`.
 
