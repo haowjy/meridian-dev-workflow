@@ -85,3 +85,8 @@ if the runs show otherwise.
   `reviewers.md`.** It enumerates edge cases before committing, offers built
   variants when uncertain, challenges the converged design with the three
   lanes, and brings the impasse to its caller at the round limit.
+- **`/pre-dev` names the worktree as the task's default checkout (0.16.2),
+  not "the work item's source checkout".** On the next tech-lead run that
+  creates or reuses a worktree under Meridian: it still sets the work item's
+  checkout (`meridian work task-dir`) so its spawns land in the worktree, and
+  parallel lanes still get their own.
