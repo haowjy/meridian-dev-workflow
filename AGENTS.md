@@ -53,6 +53,11 @@ harnesses. Codex and OpenCode plugins carry skills only, so no `@agent` resolves
 there. Check `plugin/<harness>/` before claiming a name is missing outside
 Meridian.
 
+The plugin carries the meridian-base version recorded in
+`plugin/.mars-plugin.json`, so a meridian-base release reaches plugin users only
+when this package releases. After a meridian-base release that changes its agents
+or skills, release this package too.
+
 ## Editing
 
 Patch source files only:
