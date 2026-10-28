@@ -43,7 +43,15 @@ skills/           # Skill definitions (SKILL.md + resources/)
 mars.toml         # Package manifest
 mars.lock         # Generated local lock — ignored, do not track
 .mars/            # Generated — do not edit directly
+plugin/           # Generated harness plugins — do not edit directly
 ```
+
+The plugin build includes meridian-base: its agents (`@explorer`, `@kb-lead`,
+`@kb-maintainer`, `@cold-reader`, `@session-miner`) and skills ship inside the
+Claude Code and Cursor plugins, so references to them resolve in those bare
+harnesses. Codex and OpenCode plugins carry skills only, so no `@agent` resolves
+there. Check `plugin/<harness>/` before claiming a name is missing outside
+Meridian.
 
 ## Editing
 
