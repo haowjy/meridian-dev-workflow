@@ -46,17 +46,19 @@ mars.lock         # Generated local lock — ignored, do not track
 plugin/           # Generated harness plugins — do not edit directly
 ```
 
-The plugin build includes meridian-base: its agents (`@explorer`, `@kb-lead`,
-`@kb-maintainer`, `@cold-reader`, `@session-miner`) and skills ship inside the
-Claude Code and Cursor plugins, so references to them resolve in those bare
-harnesses. Codex and OpenCode plugins carry skills only, so no `@agent` resolves
-there. Check `plugin/<harness>/` before claiming a name is missing outside
-Meridian.
+## Depends on meridian-base
 
-The plugin carries the meridian-base version recorded in
-`plugin/.mars-plugin.json`, so a meridian-base release reaches plugin users only
-when this package releases. After a meridian-base release that changes its agents
-or skills, release this package too.
+This package depends on meridian-base (`[dependencies.meridian-base]` in
+`mars.toml`). Its agents (`@explorer`, `@kb-lead`, `@kb-maintainer`,
+`@cold-reader`, `@session-miner`) and skills (`/llm-writing`,
+`/knowledge-layers`, `/md-validation`, ...) are installed wherever this package
+is, so references to them here resolve: Mars installs meridian-base alongside
+it, and the `plugin/` build bundles it. Codex and OpenCode plugins carry skills
+only, so no `@agent` resolves there.
+
+The plugin bundles the meridian-base version recorded in
+`plugin/.mars-plugin.json`; after a meridian-base release that changes its
+agents or skills, release this package so plugin users get it.
 
 ## Editing
 
