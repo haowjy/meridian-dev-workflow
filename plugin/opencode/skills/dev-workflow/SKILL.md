@@ -7,7 +7,26 @@ metadata:
 
 # Dev Workflow
 
-Plan the change, then run `/meridian-dev-workflow:pre-dev` before its first source edit.
+## Plan
+
+Account for the earlier work on the subject first (`/meridian-dev-workflow:explore-and-engage`),
+then write the plan into the work directory.
+
+When the change adds something the project doesn't have yet (a module,
+contract, seam, data format, or UI pattern), moves responsibility between
+modules, or grows existing code beyond a local edit, settle its
+architecture in the plan with `/meridian-dev-workflow:architecture` loaded: how others have built
+it, where it lands, the boundaries it adds or moves, how it reorganizes the
+code, and which later changes it makes easier or harder.
+
+Have a `@reviewer` with `/meridian-dev-workflow:thermo-nuclear-review` and `/meridian-dev-workflow:architecture`
+review that plan against the code it lands in, and put the enabling refactors it finds first: found
+now, a simpler structure is a refactor; after the code exists, a rewrite.
+When several structures would work and none is clearly better, have
+`@design-lead` lay out the options with a recommendation, then decide from
+its report; a tradeoff that is the user's goes to them.
+
+Then run `/meridian-dev-workflow:pre-dev` before the first source edit.
 
 ## Keep Going
 
@@ -15,12 +34,14 @@ Keep moving until the requested outcome is implemented, verified, and ready
 to ship. A spawn returning is not a stopping point: fold its findings in,
 decide the next step, and continue. Where the brief leaves something
 unclear, write the question in the work directory with the call you made,
-keep going, and put the open questions to the user at the end.
+keep going, and put the open questions to the user at the end. A product
+decision only the user can make, or a departure from one they made
+(`/meridian-dev-workflow:intent-modeling`), goes to them now; meanwhile work on what doesn't
+depend on it.
 
-Stop early only for: (a) a critical product decision only the user can
-make, (b) a scope problem, sent to your caller as a Redesign Brief
-(`/meridian-dev-workflow:review` `resources/redesign-escalation.md`), (c) a blocker you cannot
-clear yourself.
+Stop early only for: (a) a scope problem, sent to your caller as a Redesign
+Brief (`/meridian-dev-workflow:review` `resources/redesign-escalation.md`), (b) a blocker you
+cannot clear yourself.
 
 ## Verify
 
@@ -34,10 +55,11 @@ code or the test.
 
 ## Review
 
-Staff the review lanes the change needs (`/meridian-dev-workflow:agent-staffing`
-`resources/reviewers.md`), once per coherent change rather than per edit.
-Prepare `/meridian-dev-workflow:post-dev` while the lanes run, then fix their findings as
-`reviewers.md` says, up to its round limits.
+Once per coherent change, not per edit, open `/meridian-dev-workflow:agent-staffing`
+`resources/reviewers.md` and staff the lanes it calls for; a change whose
+plan needed the architecture step gets the structure lane, not only
+correctness. Prepare `/meridian-dev-workflow:post-dev` while the lanes run, then fix their
+findings as `reviewers.md` says, up to its round limits.
 
 ## Merges and Rebases
 

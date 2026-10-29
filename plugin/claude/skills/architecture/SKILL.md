@@ -55,9 +55,11 @@ during implementation" is a risk flag; run the cheapest probe instead.
 
 Explore the solution space before committing: consider alternatives, think
 through failure modes, challenge fragile assumptions. Before proposing a
-novel mechanism, look for prior art, and look again when convergence
-stalls. When evidence challenges an assumption, dig further before
-converging.
+mechanism the project doesn't have yet, find out how others have built it
+(search the web yourself, or spawn `@web-researcher` or
+`@source-researcher`), record in the design what you found and what you
+take from it, and look again when convergence stalls. When evidence
+challenges an assumption, dig further before converging.
 
 When uncertain, present several built variants, concrete enough to choose
 between. Low-confidence convergence on one option defers the decision to

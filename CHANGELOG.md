@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.16.4] - 2026-10-29
+
 ### Changed
 - Requires meridian-base >=0.13.7, which ships `/intent-modeling`'s The Human's Decisions and `/explore-and-engage`'s earlier-work sweep that `tech-lead` and `/dev-workflow` point at.
 - `/dev-workflow` gets a Plan step: account for earlier work first (`/explore-and-engage`). A change that adds a module, contract, seam, data format or UI pattern, moves responsibility, or grows code beyond a local edit settles its architecture in the plan (prior art, boundaries, code organization, later changes it helps or hurts), and a thermo + architecture reviewer checks the plan before code. Open structure goes to `@design-lead`. Moved from `/pre-dev`'s Structure review, which is gone.

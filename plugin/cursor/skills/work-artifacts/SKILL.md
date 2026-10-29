@@ -23,6 +23,10 @@ your brief says otherwise.
 
 ## Maintain the Work Directory
 
+A work item carries one goal, stated as what is true when it is done; work
+beyond that goal gets its own item. An item whose goal no longer matches its
+work misleads every agent that reads it.
+
 Give it an `AGENTS.md` that orients a delegated agent arriving cold: the goal, the artifact
 layout, and what is settled versus still moving. Keep it current as the work
 shifts, following `/meridian-dev-workflow:qi-layer`.
