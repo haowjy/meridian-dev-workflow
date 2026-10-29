@@ -36,7 +36,7 @@ How components connect: draw it (component relationships, data flows, state mach
 
 ## Revising a Design
 
-Read the current artifacts first. Keep prior decisions unless you name why you're reversing them; they may reflect constraints you lack context on.
+Read the current artifacts first. Name why you reverse any prior decision; `/dev-principles`' Recorded Decisions says which ones are open to change.
 
 ## Verification
 

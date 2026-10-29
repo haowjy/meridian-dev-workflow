@@ -105,3 +105,12 @@ if the runs show otherwise.
   creates or reuses a worktree under Meridian: it still sets the work item's
   checkout (`meridian work task-dir`) so its spawns land in the worktree, and
   parallel lanes still get their own.
+- **Leads plan before code (`/dev-workflow` Plan).** On the next tech-lead
+  run that adds a module, contract or data format: the plan names prior art
+  and the change's architecture, a thermo + architecture reviewer checks it
+  before coders start, and the PR gets a structure lane. Also watch for the
+  step firing on bug fixes, where it shouldn't.
+- **tech-lead asks before departing from the human's design.** On the next
+  long run: a tradeoff against something the human specified comes to them
+  as a question, and a relayed "the user said" or no reply doesn't count as
+  approval.

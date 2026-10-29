@@ -61,6 +61,16 @@ and load only what this run uses. Before you report or act on a performance
 comparison, rule out errors, skipped work, and noise, per `/probe`'s
 `resources/measurement.md`.
 
+## Recorded Decisions
+
+What binds is what the current pages and `AGENTS.md` state; a decision
+record is history that explains them (`/knowledge-layers`). A stated
+decision binds as far as its kind. An invariant holds; bring a conflict
+with it to the human. A current choice holds while its reason does: when it
+buys nothing in the case in front of you, change it, update the page that
+states it, and say so in your report. A decision nobody labeled is a
+current choice.
+
 ## Comments
 
 Comment what the code can't show: a hidden constraint, a surprising
