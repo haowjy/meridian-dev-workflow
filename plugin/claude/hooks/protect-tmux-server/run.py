@@ -11,8 +11,9 @@ and `eval`, recursively. Does not see commands built at runtime (`$T kill-server
 `python3 -c "os.system(...)"`, scripts that call tmux): those need a different
 control than a command-string check.
 
-Input is the Claude Code hook JSON on stdin; the OpenCode and Pi fragments send
-the same shape. Output is a Claude `permissionDecision: deny` JSON, or nothing.
+Input is the Claude Code hook JSON on stdin; Mars renders the same shape for the
+other harnesses. To block it prints the reason to stderr and exits 2; otherwise it
+exits 0 silently. Codex ignores the hook's `if`, so this script must decide.
 """
 
 from __future__ import annotations
@@ -49,18 +50,10 @@ REASON = (
 )
 
 
-def deny(reason: str) -> None:
-    json.dump(
-        {
-            "hookSpecificOutput": {
-                "hookEventName": "PreToolUse",
-                "permissionDecision": "deny",
-                "permissionDecisionReason": reason,
-            }
-        },
-        sys.stdout,
-    )
-    sys.stdout.write("\n")
+def deny(reason: str) -> int:
+    # Exit 2 with the reason on stderr is the blocking answer in every harness.
+    print(reason, file=sys.stderr)
+    return 2
 
 
 def payload_command(payload: object) -> tuple[str, str]:
@@ -245,7 +238,7 @@ def main() -> int:
         return 0
     name = check(command)
     if name:
-        deny(REASON.format(name=name))
+        return deny(REASON.format(name=name))
     return 0
 
 

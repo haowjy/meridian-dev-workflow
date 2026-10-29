@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.16.5] - 2026-10-29
+
 ### Changed
 - Requires meridian-base >=0.14.0: `protect-tmux-server` and `context-autosync` are portable `[hooks]` and their per-target fragments are gone. This package's OpenCode tree carries the generated `mars-protect-tmux-server.hooks.ts`, so the tmux guard still runs for OpenCode plugin users.
 - `protect-tmux-server` blocks with exit 2 and the reason on stderr on every harness, instead of Claude's JSON deny.

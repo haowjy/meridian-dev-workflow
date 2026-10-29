@@ -5,7 +5,7 @@
         "hooks": [
           {
             "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/context-autosync/run.sh\"",
-            "timeout": 30,
+            "timeout": 10,
             "type": "command"
           }
         ]
@@ -16,6 +16,7 @@
         "hooks": [
           {
             "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/context-autosync/run.sh\"",
+            "timeout": 10,
             "type": "command"
           }
         ]
@@ -26,6 +27,9 @@
         "hooks": [
           {
             "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/protect-tmux-server/run.sh\"",
+            "if": "Bash(*tmux*)",
+            "onFailure": "block",
+            "timeout": 10,
             "type": "command"
           }
         ],

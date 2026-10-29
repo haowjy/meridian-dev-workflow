@@ -1,11 +1,11 @@
 visibility = "exported"
 
-[targets.".claude"]
+[[hooks.PreToolUse]]
+matcher = "Bash"
 
-[targets.".codex"]
-
-[targets.".opencode"]
-fragment = "opencode.ts"
-
-[targets.".pi"]
-fragment = "pi.ts"
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = 'bash "${MARS_HOOK_DIR}/run.sh"'
+if = "Bash(*tmux*)"
+onFailure = "block"
+timeout = 10

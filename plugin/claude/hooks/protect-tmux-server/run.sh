@@ -10,9 +10,8 @@ if ! command -v python3 >/dev/null 2>&1; then
   payload=$(cat)
   case "$payload" in
     *tmux*)
-      cat <<'JSON'
-{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"Blocked: python3 is required to check this tmux command. Name a private server with `tmux -L <name> ...` and install python3, or ask the user."}}
-JSON
+      echo 'Blocked: python3 is required to check this tmux command. Name a private server with `tmux -L <name> ...` and install python3, or ask the user.' >&2
+      exit 2
       ;;
   esac
   exit 0

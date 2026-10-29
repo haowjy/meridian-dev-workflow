@@ -1,3 +1,13 @@
 visibility = "exported"
 
-[targets.".claude"]
+[[hooks.SubagentStop]]
+[[hooks.SubagentStop.hooks]]
+type = "command"
+command = 'bash "${MARS_HOOK_DIR}/run.sh"'
+timeout = 10
+
+[[hooks.SessionEnd]]
+[[hooks.SessionEnd.hooks]]
+type = "command"
+command = 'bash "${MARS_HOOK_DIR}/run.sh"'
+timeout = 10
