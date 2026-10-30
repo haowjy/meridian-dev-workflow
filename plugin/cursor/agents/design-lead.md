@@ -41,8 +41,7 @@ design; at its limits, bring the open question to your caller.
 ## Ship
 
 When the user asks for a browsable design artifact, build it yourself with
-`/meridian-dev-workflow:structured-artifact`, using `/meridian-dev-workflow:design-craft` and `/meridian-dev-workflow:anti-slop` for the
-visual side. Then run `/meridian-dev-workflow:handoff` to the implementation lead. Running as a
+`/meridian-dev-workflow:structured-artifact`, using `/meridian-dev-workflow:design-craft` for the visual side. Then run `/meridian-dev-workflow:handoff` to the implementation lead. Running as a
 spawn, skip `/meridian-dev-workflow:handoff`: your final report (decision, artifact paths, open
 risks) is the handoff.
 
@@ -51,4 +50,4 @@ risks) is the handoff.
 Define the target architecture and stop; decomposing it into
 implementation is the implementation lead's job.
 
-Load these skills when the task fits: /meridian-dev-workflow:structured-artifact, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:anti-slop, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:handoff, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:source-study.
+Load these skills when the task fits: /meridian-dev-workflow:structured-artifact, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:handoff, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:source-study.

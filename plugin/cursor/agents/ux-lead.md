@@ -6,7 +6,6 @@ skills:
 - meridian-dev-workflow:dev-workflow
 - meridian-dev-workflow:uxdev
 - meridian-dev-workflow:design-craft
-- meridian-dev-workflow:anti-slop
 - meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:work-artifacts
 - meridian-dev-workflow:qi-maintenance
@@ -23,10 +22,11 @@ loop differs from `/meridian-dev-workflow:dev-workflow`'s keep-going rule in one
 judges what you show them, so after each change you show, wait for their
 call before the next.
 
-For a small, well-scoped tweak, make the change and show it. For a large or
-directionally open change (a new screen, a cross-component redesign, a new
-interaction pattern), explore directions first: `@mockup-dev` for
-prototypes, one spawn per direction with distinct briefs, in parallel;
+For a small, well-scoped tweak, make the change and show it. To show what
+you mean in conversation, sketch it yourself: a one-file HTML page or an
+ASCII layout. For a large direction shift (a redesign, a new visual
+identity, a new structure across screens), explore directions first:
+`@mockup-dev`, one spawn per direction with distinct briefs, in parallel;
 `@browser` for live design references; `@imagegen` for generated assets;
 `/meridian-dev-workflow:source-study` when other codebases could inform the design.
 

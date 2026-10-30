@@ -1,58 +1,81 @@
 ---
 name: design-craft
-description: Load when making production visual decisions (color, typography, layout, motion, interaction), so each choice is deliberate rather than a default.
+description: 'Load for any frontend work, HTML reports included: makes each visual and copy choice deliberate (colour, type, layout, motion, words on screen) and catches the AI-generated defaults that show up regardless of the brief.'
 metadata:
   type: reference
 ---
 
 # Design Craft
 
-Follow the explicit brief and established product system. The guidance below gives defaults, not bans; apply only what is relevant to the task. Preserve accessibility and usability requirements. If a requested style may conflict with them, explain the tradeoff and work with the human on an acceptable choice rather than silently overriding the brief.
+Follow the brief and the product's established system; what follows are
+defaults, not bans. When a requested style would break accessibility, say so
+and offer a compliant option rather than silently overriding either.
 
-## Color
+## Name the Surface
 
-For new color decisions, prefer OKLCH when the project supports it. When extending an existing system, follow its token format rather than migrating formats as part of visual work.
+The defaults that make a result read as "AI made this" depend on the kind of
+surface. Name it from what the person comes to do there, not from the
+product, and open its resource:
 
-**Contrast.** Body text needs at least 4.5:1 against its background. Large text (at least 18pt / 24 CSS px, or 14pt / about 18.67 CSS px when bold) needs at least 3:1. Placeholder text needs the same 4.5:1. Muted gray body text on a tinted near-white is a common contrast failure; check actual contrast and adjust when needed.
+- **Persuade** (a landing or marketing page that has to win attention):
+  `resources/persuade.md`.
+- **Operate** (an app screen, dashboard, tool, or settings page where people
+  get work done): `resources/operate.md`.
+- **Read** (an HTML report, doc, or article people read to understand and
+  decide): `resources/read.md`.
 
-**Tinted neutrals** (backgrounds, surfaces): when developing a palette, subtle chroma toward the brand's hue can add depth. Add warmth or coolness only for a reason.
+A surface that mixes kinds, such as a dashboard with a written summary, takes
+each resource for its part. On every surface, question these reflexes and
+keep one only when the brand or the content calls for it: cream or beige
+page backgrounds, side-stripe borders, gradient text, purple gradients, and
+glassmorphism. Several together mean the design drifted from the brief.
 
-**Dark vs light.** For a new visual identity, describe who uses it, where, under what ambient light, and in what mood. For an existing product, follow its established system unless the brief calls for a change.
+## Visual Decisions
 
-**Color strategy** (for a new or replacement visual identity):
-- **Restrained**: tinted neutrals + one accent <=10%. Product default.
-- **Committed**: one saturated color carries 30-60% of the surface. Brand default.
-- **Full palette**: 3-4 named roles, each deliberate. Campaigns, data viz.
-- **Drenched**: the surface IS the color. Brand heroes, campaign pages.
+Open the resource for the decision in front of you:
 
-## Typography
+- `resources/color.md`: contrast, neutrals, light or dark, colour strategy
+  for a new identity.
+- `resources/typography.md`: type scale, pairing, line length, wrapping.
+- `resources/layout.md`: spacing, cards, z-index, dropdowns that escape
+  clipping.
+- `resources/motion.md`: easing, reduced motion, reveal transitions.
 
-For a new type system, aim for body line lengths of 65-75ch, clear scale and weight contrast, and a small number of font families. For existing products, follow the established type scale.
+## Words on Screen
 
-Pair fonts that contrast, or use one family in multiple weights; either is usually more cohesive than two similar fonts. Use all-caps body copy, very large headings, or tight tracking only when they serve the brief and remain readable.
+Ask of every hint, subtitle, and helper text what question it answers that
+the control or heading doesn't, and delete it when the answer is none. Text
+that explains how the screen works means the layout is wrong: name the
+outcome on the control, rewrite the title, or fix the layout. A subtitle says
+something about the data (the finding, the period, the scope), never about
+the interface. Keep text the screen can't show: a required format, a
+consequence, how to recover. Cut taglines and intros that repeat the title.
 
-Use `text-wrap: balance` on h1-h3 and `text-wrap: pretty` on long prose where supported.
+Use the audience's own words in labels, navigation, and empty states
+("Waiting on the customer", "Due on the 28th"), not a template's nouns
+("Items", "Records", "Status"). Buttons name their action ("Save changes",
+not "OK"), and links make sense out of context ("View pricing", not "Click
+here").
 
-## Layout
+Where people read values, add a label last: let the value's format or
+position say what it is ("$4,200", a date, an avatar), else fold the label
+into the value ("12 left in stock", not "Stock: 12"), else add a quiet
+label. Where people find things by their label (a settings page, a spec
+table, a form), the label is what they scan for: keep it stable and visible.
+Separate labels and metadata with spacing, not a decorative `•`.
 
-Vary spacing for rhythm. Use cards when they make the content or interaction clearer. Nested card surfaces often add visual depth without useful hierarchy; use them when the relationship needs it. Flexbox is a good default for one-dimensional layouts, Grid for two-dimensional ones.
+Use standard controls and familiar icons for standard actions, and give
+every icon-only button an accessible name and a tooltip. Few icons are
+understood unlabelled in every context: add a visible label for primary
+navigation, for actions costly to undo, and for icons specific to this
+product. An icon alone suits a familiar action, settled by its context, on a
+screen people use often.
 
-For responsive grids, auto-fitting columns often need fewer breakpoints.
+Em dashes, aphoristic cadence, and marketing words ("streamline",
+"empower", "seamless", "world-class") make copy read as generated; keep one
+only when it says something precise.
 
-Follow the project's semantic z-index scale. When none exists, establish one for the relevant layer; avoid arbitrary values like 999 or 9999.
+## Check What Renders
 
-Dropdowns need to escape clipping containers; render them outside the relevant stacking context.
-
-## Motion
-
-Prefer animating transform and opacity over layout properties. Ease-out curves are a useful default; bounce or elastic motion should fit the product's motion language and the interaction's purpose.
-
-Respect reduced-motion preferences with a crossfade or instant alternative.
-
-Reveal animations must enhance an already-visible default, since hidden tabs and headless renderers never fire the transition trigger.
-
-## Copy
-
-Every word earns its place. Cut taglines, restated headings, and intros that repeat the title.
-
-A hint, subtitle, or helper text that explains how the screen works means the layout is wrong: name the outcome on the control, rewrite the title, or fix the layout. Keep text that tells the user something the screen can't show: a required format, a consequence, how to recover.
+Run the page checks in `resources/checks.md` on the rendered page before you
+show it or ship it.

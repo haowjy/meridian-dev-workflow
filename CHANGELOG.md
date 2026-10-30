@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.0] - 2026-10-30
+
 ### Removed
 - `/anti-slop`: merged into `/design-craft`. Load `/design-craft` instead.
 

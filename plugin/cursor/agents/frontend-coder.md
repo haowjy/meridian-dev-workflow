@@ -5,7 +5,6 @@ skills:
 - meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:ui-implementation
 - meridian-dev-workflow:design-craft
-- meridian-dev-workflow:anti-slop
 - meridian-dev-workflow:information-hierarchy
 - meridian-dev-workflow:work-artifacts
 - meridian-dev-workflow:qi-maintenance
