@@ -16,12 +16,6 @@ skills:
 - meridian-dev-workflow:agent-staffing
 effort: medium
 disallowedTools:
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
 - Bash(tmux kill-server *)
 - Bash(agent-browser close --all *)
 - Bash(agent-browser quit --all *)
