@@ -2,16 +2,16 @@
   "schema_version": 1,
   "mars_version": "0.26.1",
   "plugin_name": "meridian-dev-workflow",
-  "version": "0.16.5",
-  "inputs_hash": "sha256:f2951c079149d2d9917076e1f854b6a2983158c15a9aa859d928bac13d9f795f",
+  "version": "0.16.7",
+  "inputs_hash": "sha256:cc1a0ef5e871ca8b98b384d04e562f629e56190f8d5a53a1414df375cae64e12",
   "dependencies": {
     "meridian-base": {
-      "version": "0.14.0",
-      "commit": "ef6ffae0085cb92b5be288273832213ace0b9e47"
+      "version": "0.14.1",
+      "commit": "186de039bba854387127828e37564d6b5816d988"
     }
   },
   "files": {
-    "claude/.claude-plugin/plugin.json": "sha256:9271095cef40c6eb86f7950fb734d04bc291aa1f18e2fc26d8349da8940c24d8",
+    "claude/.claude-plugin/plugin.json": "sha256:d05376e1eb86bc3ede1df4a38b45ec86396b44b9c6adb2f42d8f08c7e218a516",
     "claude/agents/architect.md": "sha256:c39920b0f6fcc8f2424667d3abe304ada8138e1363a5281c83ea3db267625369",
     "claude/agents/browser.md": "sha256:8b5f83b16ef05f1adeefdea959233e1c99d5ccf2b6801ae34120d4c87062f216",
     "claude/agents/coder.md": "sha256:a6b58948c0c54e951f2c13ab67c64558c460848282654fbd17837c44207170d8",
@@ -26,14 +26,14 @@
     "claude/agents/kb-maintainer.md": "sha256:30fe195c67c9667bc0bab3fc061eddbf835f94dcff4a7e4d164f882954c48f51",
     "claude/agents/mockup-dev.md": "sha256:5503cde6198f054ae764e15499ea94cf2263d038e646a4b5afaa4a18c2b4b965",
     "claude/agents/prober.md": "sha256:dfd4c6f630e31db7a33cc2f994174850b6d068d55f6a92f1bd68c3318d3e408b",
-    "claude/agents/product-lead.md": "sha256:5d922af48261f3e69ba439b24cb281b86473b3687fb873bd5184a42cb1ae12aa",
+    "claude/agents/product-lead.md": "sha256:f4990edbf4b21dba1cb3ae28fdad7f501c8cb2442ac28204a656b9518e67d155",
     "claude/agents/reviewer.md": "sha256:118f06a33c218090844ad74627ba7c6d62a6c896d97a95af11506847daacb842",
     "claude/agents/session-miner.md": "sha256:d67f32276dce6f23469e538d4f4c69691e37b407a93ac360bc042794a2f8d61a",
-    "claude/agents/solo-dev.md": "sha256:a8141ab5b43adbe22648b6acddf6b7dfdfa3d4ea9558800392692fe6fb4cfe95",
+    "claude/agents/solo-dev.md": "sha256:d718d5b114c29a7d1cac5d58517806ebef47f99952a61235a6ca53dd897f0d5b",
     "claude/agents/source-researcher.md": "sha256:f47e726d7f8341d34e9d3cdd395a05c389fb9a566d6938459ce4b21234b31e46",
     "claude/agents/subagent.md": "sha256:bb42d1b245b5c4a4d90ffa0c335d094226bb43aef6dfc3e28a0c3f3180b5d85f",
-    "claude/agents/tech-lead.md": "sha256:be9775df6b3ebe9820ed60e6ed8d9e60be55899ab24436c7cdebc03a4184c14a",
-    "claude/agents/ux-lead.md": "sha256:22b669c9a40787b8549dcbf071faacc77a76ff923b623efe9af8bfa7fb38c2c0",
+    "claude/agents/tech-lead.md": "sha256:1d2d471f3cc1d6e9e7e8fa0a9a9d50a1d73549a66601eab608466a1d73688b51",
+    "claude/agents/ux-lead.md": "sha256:92d82cf90cd3d8d81d76f0b9ecc57ca37cf05e7ec84bf26ad730000941afff63",
     "claude/agents/web-researcher.md": "sha256:33bc8acc126aac54e92410ef1237f6f8e8097101d7e8f30e92bd26fb2a10aa37",
     "claude/hooks/context-autosync/hook.toml": "sha256:5b3bcd2f817958b9ca909b9252e6c57c8f0120c4c33adc0aaf64f5b434e5180e",
     "claude/hooks/context-autosync/run.sh": "sha256:28d3110073c457b6d7aaa88f0a500a3d95561406057bcd1fd4009b8fb8c646d3",
@@ -149,7 +149,7 @@
     "claude/skills/visualize-codebase/resources/unravel-codebase.md": "sha256:3d6f4f709d6ebdde9f135e5e4a695f766a8855f895fe5ad02adf2b24f826de8c",
     "claude/skills/work-artifacts/SKILL.md": "sha256:3d9bd80d65bb4e720c62ec0299173a4ee6e64be0959e01465f35065ee209b7e0",
     "claude/skills/zoom-out/SKILL.md": "sha256:de74f5446b1bf43887640c1a7624fc7a1c0b1c338ec30b8a5c095fd80140669c",
-    "cursor/.cursor-plugin/plugin.json": "sha256:9271095cef40c6eb86f7950fb734d04bc291aa1f18e2fc26d8349da8940c24d8",
+    "cursor/.cursor-plugin/plugin.json": "sha256:d05376e1eb86bc3ede1df4a38b45ec86396b44b9c6adb2f42d8f08c7e218a516",
     "cursor/agents/architect.md": "sha256:37a67bec0023f214021ec394c96f6e76d9e01948407edd38eedc077fe865d821",
     "cursor/agents/browser.md": "sha256:d54149e9720914f34d00d8ba520a9f0d672a15796e29f1ad553a39f74aa30727",
     "cursor/agents/coder.md": "sha256:b2caff09d9e50911ac40a26d996a6d5d801beb4594bf8956ebb155190e7ca1ec",
@@ -286,7 +286,7 @@
     "opencode/hooks/protect-tmux-server/run.py": "sha256:4266b3ecdffdcea57cd9c02f05a3e07665dd5c6201e05c94f79a3eee647d415f",
     "opencode/hooks/protect-tmux-server/run.sh": "sha256:d92bb2c9e2fde4eb0bd6332ffef8cad4428444b752c2e3c6bf38f76b4ea8ba81",
     "opencode/index.mjs": "sha256:aacb6bad3091c16eed9d56a560ad0eeb752eb30ec5474d1d1dc2ae6c1b2bcaa5",
-    "opencode/package.json": "sha256:20b43dc44d2624b1565f3252f1a2010d8b537112b65533aecb42b5793ece5afb",
+    "opencode/package.json": "sha256:8fa7ffb458ebd72c280a3e05ecfdb003a7dd7711a07d914934accc2c9e8281f7",
     "opencode/skills/agent-browser/SKILL.md": "sha256:54b2181ac31096bd7f30ea015c63e46d9275faae6ad9b89f5e0c2bc6ff57fadb",
     "opencode/skills/agent-browser/resources/capped-browser": "sha256:c67d5d6dad1fbc66e2ac81e94fb107d9dc34f3252324d771e1069bd651e784c8",
     "opencode/skills/agent-staffing/SKILL.md": "sha256:545bd276b7648a6f4ed10b241ac42b55b112b8644a3aed8975e412cbb9264f28",
@@ -399,7 +399,7 @@
   "root_files": {
     ".claude-plugin/marketplace.json": "sha256:c4fc350b6fc0f5f26eafa4e5e39dc45a9298a7de8cd499835f56bf31020fc86d",
     ".cursor-plugin/marketplace.json": "sha256:cb815f371edf3d73eb4a5227da7af449291e3fbafbeec601ed4202cb0e299e8a",
-    "package.json": "sha256:ef00a72fdfd300beb25ba2321d4414d3e8417e7b2fb2875b3b88258899ba0746"
+    "package.json": "sha256:5663a9c28b1fcce4237c8af2c3e51dfe5be5fbc42d56968d7630478772a53c51"
   },
   "root_directories": [
     ".claude-plugin",

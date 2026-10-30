@@ -4,6 +4,11 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.16.7] - 2026-10-30
+
+- simplify bash
+- bump
+
 ## [0.16.5] - 2026-10-29
 
 ### Changed
