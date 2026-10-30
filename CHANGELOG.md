@@ -4,6 +4,19 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Removed
+- `/anti-slop`: merged into `/design-craft`. Load `/design-craft` instead.
+
+### Added
+- `/design-craft` `resources/checks.md` and `scripts/page-audit.js`: page checks on the rendered page. The audit (run with `agent-browser eval --stdin`) lists on-screen sentences, text that narrates the interface, internal IDs/timestamps/`snake_case`/tool calls, unnamed controls, and text that repeats its heading. Visual tells via `npx -y impeccable@4 detect --json`. `/uxdev`, `/ui-implementation`, and the direction method point to them.
+- `/uxdev` `resources/direction.md`: method for designing a new direction (audience, the components they need, how components work together, identity, constraints traced to the human, a toggleable notes layer naming the job of every control, which surfaces cuts and missing features).
+
+### Changed
+- `mockup-dev`: Opus, for large direction shifts only (redesign, new identity, new structure across screens); works through the direction method; drops `/poc` and `dev-principles`; reports proposed features.
+- `ux-lead`: sketches "what I mean" itself (one-file HTML or ASCII); spawns `@mockup-dev` only for large direction shifts.
+- `/design-craft`: names the surface first (Persuade, Operate, Read), each with a resource; colour, type, layout, motion move to resources; Words on Screen adds the helper-text test, the audience's own words, label-last for values (stable labels where people scan), and an icon rule.
+- `/ui-implementation`: empty is several states, each with its own words; missing data never shows as zero or a green check.
+
 ## [0.16.7] - 2026-10-30
 
 - simplify bash

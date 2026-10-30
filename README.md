@@ -224,10 +224,9 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 
 | Skill | What it covers |
 |---|---|
-| `uxdev` | Visual thinking grounded in the brief and the existing design language |
+| `uxdev` | Visual thinking grounded in the brief and the existing design language; designing a new direction |
 | `ui-implementation` | Turning a settled direction into production UI |
-| `design-craft` | Deliberate color, typography, layout, motion, interaction |
-| `anti-slop` | AI-generated UI tells to avoid |
+| `design-craft` | Deliberate color, typography, layout, motion, and copy; AI-generated UI tells by surface |
 | `agent-browser` | Driving a live browser: snapshots, interaction, screenshots |
 
 **Research and docs**

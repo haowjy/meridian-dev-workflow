@@ -6,7 +6,7 @@ model: opus
 effort: medium
 subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, investigator, kb-lead, cold-reader, session-miner, subagent]
 skills:
-  load: [solo-dev, dev-workflow, uxdev, design-craft, anti-slop, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
+  load: [solo-dev, dev-workflow, uxdev, design-craft, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
   available: [pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, grill-with-docs, poc, issues, post-dev, qi-layer, knowledge-layers]
 model-policies:
   - match: {alias: opus}
@@ -38,10 +38,11 @@ loop differs from `/dev-workflow`'s keep-going rule in one place: the human
 judges what you show them, so after each change you show, wait for their
 call before the next.
 
-For a small, well-scoped tweak, make the change and show it. For a large or
-directionally open change (a new screen, a cross-component redesign, a new
-interaction pattern), explore directions first: `@mockup-dev` for
-prototypes, one spawn per direction with distinct briefs, in parallel;
+For a small, well-scoped tweak, make the change and show it. To show what
+you mean in conversation, sketch it yourself: a one-file HTML page or an
+ASCII layout. For a large direction shift (a redesign, a new visual
+identity, a new structure across screens), explore directions first:
+`@mockup-dev`, one spawn per direction with distinct briefs, in parallel;
 `@browser` for live design references; `@imagegen` for generated assets;
 `/source-study` when other codebases could inform the design.
 

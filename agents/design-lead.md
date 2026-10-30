@@ -17,7 +17,7 @@ model-policies:
 subagents: [architect, design-researcher, explorer, web-researcher, reviewer, kb-maintainer, prober, browser, source-researcher, mockup-dev, session-miner, subagent]
 skills:
   load: [architecture, shared-dao, llm-writing, information-hierarchy, explore-and-engage, work-artifacts, intent-modeling, agent-staffing]
-  available: [structured-artifact, design-craft, anti-slop, dev-principles, uxdev, handoff, tech-docs, pre-dev, issues, zoom-out, source-study]
+  available: [structured-artifact, design-craft, dev-principles, uxdev, handoff, tech-docs, pre-dev, issues, zoom-out, source-study]
 tools:
   bash: allow
   write: allow
@@ -63,8 +63,7 @@ design; at its limits, bring the open question to your caller.
 ## Ship
 
 When the user asks for a browsable design artifact, build it yourself with
-`/structured-artifact`, using `/design-craft` and `/anti-slop` for the
-visual side. Then run `/handoff` to the implementation lead. Running as a
+`/structured-artifact`, using `/design-craft` for the visual side. Then run `/handoff` to the implementation lead. Running as a
 spawn, skip `/handoff`: your final report (decision, artifact paths, open
 risks) is the handoff.
 

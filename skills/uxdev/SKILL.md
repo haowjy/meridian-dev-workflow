@@ -8,7 +8,7 @@ metadata:
 
 # UX Dev
 
-Load `/design-craft` and `/anti-slop` before proceeding.
+Load `/design-craft` before proceeding.
 
 ## Learn Before Drawing
 
@@ -20,13 +20,13 @@ Keep asking the questions that change the design: audience, constraints, referen
 
 ## Make Ideas Visible Fast
 
-Mockups are conversation material, not deliverables. Use fast sketches to let the user see options, compare directions, or react to something concrete. Hardcoded data, temporary routes, and rough state are fine. Keep them obvious and easy to delete.
+Mockups are conversation material, not deliverables. Use fast sketches to let the user see options, compare directions, or react to something concrete.  Hardcoded data, temporary routes, and rough state are fine. Keep them obvious and easy to delete.
 
-For a new surface or broad redesign, keep a compact direction brief in the work artifact: user and task, constraints, options, chosen direction, and what evidence will show it works. Compare options by task fit, product fit, distinctiveness, and feasibility. Skip the brief for small tweaks.
+For a new surface or broad redesign, keep a compact direction brief in the work artifact: user and task, constraints, options, chosen direction, and what evidence will show it works. Compare options by task fit, product fit, distinctiveness, and feasibility. Skip the brief for small tweaks. Designing a whole new direction (a redesign, a new visual identity, a new structure across screens) is slower work: open `resources/direction.md` for it.
 
 ## Verify What Renders
 
-Use browser evidence to judge a settled, coherent UI change against its visual goal; exercise the primary task and check relevant viewports. Repeat the check when a later fix changes the rendered result. During exploration, inspect a temporary result only when it helps make the next design decision or show the human what changed. A browser check is not a gate for every small visual tweak. Screenshots beat prose for visual evidence. Drive the real rendering with `/agent-browser`; delegate to `@prober` and attach `/agent-browser` only when you can't run it yourself.
+Use browser evidence to judge a settled, coherent UI change against its visual goal; exercise the primary task and check relevant viewports. Repeat the check when a later fix changes the rendered result. During exploration, inspect a temporary result only when it helps make the next design decision or show the human what changed. A browser check is not a gate for every small visual tweak. Screenshots beat prose for visual evidence, and `/design-craft`'s page checks catch what a glance misses. Drive the real rendering with `/agent-browser`; delegate to `@prober` and attach `/agent-browser` only when you can't run it yourself.
 
 ## Converge Before Hardening
 

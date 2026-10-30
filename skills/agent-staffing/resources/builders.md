@@ -6,7 +6,7 @@
 
 @frontend-coder: production UI work where design fidelity matters, not merely work in a frontend file. Use the same objective boundaries as @coder; pass mockups or screenshots when available.
 
-@mockup-dev: disposable visual prototypes for comparing directions before production. Hardcoded data and temporary routes are acceptable; @ux-lead decides what to keep, adapt, or delete.
+@mockup-dev: one designed direction per spawn for a large visual shift (a redesign, a new identity, a new structure across screens), built as a disposable clickable mockup. A quick sketch of what you mean is the lead's own work, not a spawn. @ux-lead decides what to keep, adapt, or delete.
 
 @imagegen: native image generation for concepts, icons, and reference imagery. Usually spawned by @ux-lead on explicit user request because generation is expensive.
 
