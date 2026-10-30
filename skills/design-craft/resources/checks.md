@@ -22,7 +22,7 @@ It returns counts and up to 25 examples, each with its location:
   screen ("Select an AI to…", "opens here"). Fix the layout or the control's
   name and delete the text.
 - **internal_strings:** IDs, hashes, timestamps, `snake_case` names, dotted
-  fields, tool calls. Remove each one the reader doesn't act on, or replace
+  fields, tool calls, raw markdown. Remove each one the reader doesn't act on, or replace
   it with the reader's word for it.
 - **unnamed_controls:** buttons and links with no accessible name. Add one.
 - **restated_headings:** text right under a heading that repeats it.
@@ -40,10 +40,28 @@ Exit code 2 means findings. It reports a failure once per element, so group
 findings by rule and snippet: forty low-contrast findings are often three
 colour pairs. It flags the generated look (gradients, glows, overused fonts,
 cream surfaces, side stripes) and rendering faults (low contrast, tiny text,
-overflow, clipped text, broken images). A few rules encode one taste rather
-than a fault: weigh `kicker-above-heading`, `numbered-section-labels`,
-`overused-font`, and `cream-palette` against the brief and the product's
-established system before changing anything. `cramped-padding` also fires on
-panes that hold an image, a video, or a 3D view edge to edge by design. Scan
-a production build where you can: on a dev server, framework devtools panels
-count as page content and trip `content-hidden-at-rest`.
+overflow, clipped text, broken images).
+
+When a finding is a choice the project made on purpose and wrote down (its
+`DESIGN.md` names the font or the surface), record it so later runs stay
+quiet, citing where it was decided:
+
+```bash
+npx -y impeccable@4 ignores add-value overused-font Inter --reason "DESIGN.md: one font, Inter"
+```
+
+This writes the committed `.impeccable/config.json`. Faults (contrast, text
+size, overflow) are never choices. Taste rules such as
+`kicker-above-heading` and `numbered-section-labels` are weighed against the
+brief like any other default.
+
+Two findings come from the setup rather than the page: on a dev server,
+framework devtools panels count as page content and trip
+`content-hidden-at-rest` and `shape-assembled-illustration`, so scan a
+production build where you can; and `cramped-padding` fires on panes that
+hold an image, a video, or a 3D view edge to edge by design.
+
+To scan a page behind a login, sign in with `/agent-browser`, then attach to
+that browser: `agent-browser get cdp-url` gives the port, and
+`npx -y impeccable@4 detect --json --cdp <port> --target <url substring>`
+scans the open page.

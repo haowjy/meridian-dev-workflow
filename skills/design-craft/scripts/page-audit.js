@@ -61,6 +61,7 @@
     ["snake_case", /\b([a-z]+(_[a-z0-9]+)+|[A-Z][A-Z0-9]+(_[A-Z0-9]+)+)\b/],
     ["dotted.field", /\b[a-z]+[A-Za-z]*\.[a-z]+[A-Za-z]*(\.[a-z]+)*\b(?!\.\w)/],
     ["camelCase", /\b[a-z]+[A-Z][a-z]+[A-Za-z]*\b/],
+    ["raw-markdown", /`[^`\n]+`|\*\*[^*\n]+\*\*|(^|\s)#{1,6} \S|\[[^\]\n]+\]\([^)\s]+\)/],
   ];
   for (const [el, text] of texts) {
     if (!text) continue;
