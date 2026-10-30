@@ -48,9 +48,9 @@
   // Text about the interface instead of the content: instructions to operate
   // it, or descriptions of what a control or panel does.
   const NARRATION = [
-    /^(select|choose|pick|click|tap|drag|hover|press|toggle|use|open|expand)\b/i,
+    /^(select|choose|pick|click|tap|drag|hover|press|toggle|use|open|expand)\w*\b/i,
     /\b(this (page|screen|view|panel|section|dashboard|table|tab|card) (shows|lets|displays|contains|lists|is)|here you can|you can (see|use|find|switch|click))\b/i,
-    /\b(click|tap|hover over|drag)\b/i,
+    /\b(click|tap|hover|drag)(s|ed|ing)?\b/i,
     /\b(button|toggle|tab|sidebar|rail|panel|dropdown|menu|action) (opens|shows|lets|switches|takes you)\b/i,
     /\b(one click away|stays visible|appears here|shown here|opens here)\b/i,
   ];
@@ -58,7 +58,7 @@
     ["uuid", /\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b/i],
     ["hash", /\b[0-9a-f]{12,}\b/i],
     ["iso-timestamp", /\b\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/],
-    ["snake_case", /\b[a-z]+(_[a-z0-9]+)+\b/],
+    ["snake_case", /\b([a-z]+(_[a-z0-9]+)+|[A-Z][A-Z0-9]+(_[A-Z0-9]+)+)\b/],
     ["dotted.field", /\b[a-z]+[A-Za-z]*\.[a-z]+[A-Za-z]*(\.[a-z]+)*\b(?!\.\w)/],
     ["camelCase", /\b[a-z]+[A-Z][a-z]+[A-Za-z]*\b/],
   ];

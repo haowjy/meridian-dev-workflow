@@ -41,7 +41,9 @@ findings by rule and snippet: forty low-contrast findings are often three
 colour pairs. It flags the generated look (gradients, glows, overused fonts,
 cream surfaces, side stripes) and rendering faults (low contrast, tiny text,
 overflow, clipped text, broken images). A few rules encode one taste rather
-than a fault: weigh `kicker-above-heading`, `numbered-section-labels`, and
-`overused-font` against the brief and the product's established system
-before changing anything. `cramped-padding` also fires on panes that hold an
-image, a video, or a 3D view edge to edge by design.
+than a fault: weigh `kicker-above-heading`, `numbered-section-labels`,
+`overused-font`, and `cream-palette` against the brief and the product's
+established system before changing anything. `cramped-padding` also fires on
+panes that hold an image, a video, or a 3D view edge to edge by design. Scan
+a production build where you can: on a dev server, framework devtools panels
+count as page content and trip `content-hidden-at-rest`.
