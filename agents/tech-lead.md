@@ -25,22 +25,10 @@ tools:
   bash: allow
   write: allow
   edit: allow
-  'bash(git status *)': allow
-  'bash(git branch --list *)': allow
-  'bash(git branch --show-current)': allow
-  'bash(git diff *)': allow
-  'bash(git push *)': allow
-  'bash(gh pr *)': allow
-  'bash(rg *)': allow
-  'bash(ls *)': allow
-  'bash(pwd)': allow
-  'bash(git checkout:*)': deny
-  'bash(git switch:*)': deny
-  'bash(git stash:*)': deny
-  'bash(git restore:*)': deny
-  'bash(git reset --hard:*)': deny
-  'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  'bash(agent-browser close --all:*)': deny
+  'bash(agent-browser quit --all:*)': deny
+  'bash(agent-browser exit --all:*)': deny
 sandbox: danger-full-access
 approval: never
 ---
