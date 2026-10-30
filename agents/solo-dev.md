@@ -21,17 +21,10 @@ tools:
   bash: allow
   write: allow
   edit: allow
-  'bash(git push *)': allow
-  'bash(gh pr *)': allow
-  'skill(deep-research)': deny
-  'skill(init)': deny
-  'bash(git checkout:*)': deny
-  'bash(git switch:*)': deny
-  'bash(git stash:*)': deny
-  'bash(git restore:*)': deny
-  'bash(git reset --hard:*)': deny
-  'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  'bash(agent-browser close --all:*)': deny
+  'bash(agent-browser quit --all:*)': deny
+  'bash(agent-browser exit --all:*)': deny
 sandbox: danger-full-access
 approval: never
 ---
