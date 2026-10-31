@@ -1,5 +1,5 @@
 {
   "name": "meridian-dev-workflow",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "description": "A multi-agent development team: leads you work with in a session, the specialists they delegate to, and the skills that carry a change from first edit to merged PR."
 }

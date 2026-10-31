@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.1] - 2026-10-31
+
+- bump investigator off luna...
+
 ## [0.17.0] - 2026-10-30
 
 ### Removed
