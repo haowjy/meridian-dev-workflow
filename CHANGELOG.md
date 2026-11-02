@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- "run ID" now "spawn ID" (`/probe`, `/agent-browser` `--session <spawn-id>-<task>`, `/issues` Found-by line, `@prober`). Same ID, the one caller holds; Meridian names it spawn ID everywhere.
+
 ## [0.17.1] - 2026-10-31
 
 - bump investigator off luna...
