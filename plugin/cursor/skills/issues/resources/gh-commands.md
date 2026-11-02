@@ -81,7 +81,7 @@ Use this structure for all issues. It gives enough context for someone to pick u
 ```markdown
 ## Context
 Found during: [work item and phase when available; otherwise standalone task]
-Found by: [agent role] ([run ID])
+Found by: [agent role] ([spawn ID])
 
 ## Description
 [What was found: clear, specific, one to three paragraphs]
@@ -98,7 +98,7 @@ Found by: [agent role] ([run ID])
 ### Filling in the template
 
 - **Context**: Use the active work item name and current phase when one exists;
-  otherwise name the standalone task. The run ID helps trace back to the
+  otherwise name the standalone task. The spawn ID helps trace back to the
   agent session that found it.
 - **Description**: State what's wrong or surprising. Be specific: "token refresh fails" is less useful than "token refresh catches all exceptions and returns None, masking network errors."
 - **Evidence**: Include file paths with line numbers. Short code snippets are fine inline. For longer evidence, describe what to look for and where.

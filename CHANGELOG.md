@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.2] - 2026-11-02
+
 ### Changed
 - "run ID" now "spawn ID" (`/probe`, `/agent-browser` `--session <spawn-id>-<task>`, `/issues` Found-by line, `@prober`). Same ID, the one caller holds; Meridian names it spawn ID everywhere.
 
