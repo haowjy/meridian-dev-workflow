@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/issues`: fix first. File only for a product decision or a project of its own. Dropped the 5-minute rule and adjacent bugs.
+- `/dev-workflow`: one list of what needs no permission and what goes to the human.
+
 ## [0.17.4] - 2026-11-06
 
 ### Changed

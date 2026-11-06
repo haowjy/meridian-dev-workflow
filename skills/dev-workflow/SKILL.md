@@ -40,6 +40,12 @@ decision only the user can make, or a departure from one they made
 (`/intent-modeling`), goes to them now; meanwhile work on what doesn't
 depend on it.
 
+Worktrees, installs, commits, pushes, PRs, issues, knowledge capture, doc and
+comment fixes, and work already approved need no permission: do them. Only
+three things go to the human: a product decision only they can make, a
+departure from an invariant, and the merges the project reserves for them. A
+project can narrow or widen this in its `AGENTS.md` or `CLAUDE.md`.
+
 Stop early only for: (a) a scope problem, sent to your caller as a Redesign
 Brief (`/review` `resources/redesign-escalation.md`), (b) a blocker you
 cannot clear yourself.
