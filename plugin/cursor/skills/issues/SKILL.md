@@ -21,15 +21,13 @@ the draft locally.
 All items below assume the item is cross-cutting or needs external
 visibility; directory-scoped items go to `.context/TODO` or `.context/FUTURE`.
 
-- Bug in adjacent code spanning multiple areas or needing triage
-- Unexpected behavior that isn't broken enough to stop for but needs
-  visibility beyond the local directory
+- A bug you can't fix now: it needs a product decision or is a project of its own
 - Backlog items that cross directory boundaries or need team coordination
 - Deferred design decisions that need broader context or discussion
 - Review findings marked non-blocking that affect multiple subsystems
 
-Quick rule: fix it if < 5 minutes and you're in the area. Otherwise, route
-by scope per the policy above.
+Fix what you find first. Route it here, by scope per the policy above, only
+when a fix needs a product decision or is a project of its own.
 
 ## Mechanics
 
