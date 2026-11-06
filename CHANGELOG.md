@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/dev-principles`: current choice holds until evidence shows something better, not only when it buys nothing.
+
 ## [0.17.2] - 2026-11-02
 
 ### Changed
