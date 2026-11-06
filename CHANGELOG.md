@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/code`, `/dev-workflow`: fix what you find, old problems too. Small fix in current change, larger one in own change now, every found fix called out in PR body. Issue only for a product decision or a project of its own.
+
 ## [0.17.3] - 2026-11-06
 
 ### Changed
