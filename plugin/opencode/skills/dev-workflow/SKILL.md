@@ -83,8 +83,8 @@ than retroactively.
 
 ## Deferrals
 
-When you skip something during implementation — a cleanup, an edge case, a
-better approach — route it immediately through `/meridian-dev-workflow:issues`.
+Fix what you find. When something truly can't be fixed now, route it through
+`/meridian-dev-workflow:issues`.
 
 ## Ship
 

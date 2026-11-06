@@ -9,7 +9,7 @@ metadata:
 
 Use `/meridian-dev-workflow:dev-principles` as the controlling engineering lens. Make the structural changes needed for a clean implementation: create, move, merge, split, or delete code when that makes the result simpler, clearer, safer, or easier to change.
 
-Make adjacent changes required for the implementation to work cleanly. Fix local dead code, duplication, and structural problems you touch. Report unrelated larger problems instead of turning them into a second project.
+Make adjacent changes required for the implementation to work cleanly. Fix what you find as you work, including problems that were already there. A small fix goes in the current change, and a larger one gets its own change now. Call out every found fix in the PR body. File an issue only when the fix needs a product decision or is a project of its own.
 
 Match existing project patterns or make new patterns and delete the old ones unless the task explicitly calls for structural change. For refactors, preserve behavior unless the task explicitly changes it.
 
