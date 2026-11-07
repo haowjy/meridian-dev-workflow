@@ -18,33 +18,32 @@ Judge the code as it stands, not the delta. Use the diff
 (`git diff <base>...HEAD`) to find the touched surface, then read that
 surface whole: the full file, the concern it belongs to, its neighbors and
 callers, and what the change left without a caller. A serious problem you
-trace outside the diff, such as an older weakness the change now relies
-on, is a finding like any other: you have eyes on code your caller doesn't.
+trace outside the diff is a finding like any other: you have eyes on code
+your caller doesn't.
 
 A re-review, whose brief names the fix commits and the report they answer,
 reviews the fixes and what they touch: each fix's diff, read whole with its
 callers, the paths beside it, and the screens or output it changes. Check
 that each fix ends its finding and the class behind it, follows the rule
 the finding named instead of adding a case beside it, and broke nothing
-nearby. Fixes are where many regressions start, and where structure drifts
-once the first review has passed. The rest of the change had its review.
+nearby: fixes are where many regressions start. The rest of the change had
+its review.
 
 Read the source before prior reviews, reports, or approvals, so their
 conclusions don't anchor yours. Then compare their scope and evidence with
 your findings.
 
-A plan or design is reviewed against the code it lands in and the
-requirements it serves; check that its spec and architecture cross-link
-each other and that each link lands.
+Review a plan or design against the code it lands in and the requirements
+it serves.
 
 ## Run It
 
 Find out whether the code works by running it (`/probe`): the command,
 the endpoint, a throwaway test against the real stack, written in a scratch
-directory. For a plan or design, run what tests its assumptions about the
-existing system. Go after how it fails, not how it succeeds: boundaries, ordering,
+directory; for a plan, what tests its assumptions about the existing
+system. Go after how it fails, not how it succeeds: boundaries, ordering,
 partial failure, bad input, an assumption nothing enforces. Then use it as
-its user would, and notice what's awkward or surprising.
+its user would.
 
 ## What to Report
 
@@ -62,13 +61,12 @@ its user would, and notice what's awkward or surprising.
 - **Bad structure:** concerns braided together, a responsibility in the
   wrong place, a new path beside the old one it should replace, code the
   change should have deleted. Name the move you'd make
-  (`resources/structural-health/` has the catalog). Findings that share one
-  structural cause are one structural finding: say so, since patching each
-  symptom brings the cause back. Your caller takes structure findings to
-  whoever owns the design, so write them for a reader deciding whether to
-  redesign.
-- **Cost:** for each hot path the change touches (per chunk, per turn, per
-  poll, per invocation), what its cost grows with. Tests rarely catch this.
+  (`resources/structural-health/` has the catalog). Your caller takes
+  structure findings to whoever owns the design, so write them for a
+  reader deciding whether to redesign.
+- **Cost:** for each hot path the change touches (per turn, per poll, per
+  invocation), what its cost grows with (`resources/efficiency.md`). Tests
+  rarely catch this.
 
 Project standards (AGENTS.md, CLAUDE.md, CONTRIBUTING, style docs) override
 generic judgment, with `/dev-principles` as the shared lens. Skip what
@@ -86,8 +84,6 @@ Load depth for what you suspect, not for every review:
   `/thermo-nuclear-review`.
 - Trust boundaries, input, auth, secrets: `resources/security.md`.
 - Races, shared state, cancellation: `resources/concurrency.md`.
-- Hot paths, polling, scans that grow with history:
-  `resources/efficiency.md`.
 - Tests: `/test-architecture` and `resources/test-quality.md`.
 - React structure: `/react-architecture`. What a UI shows first and what
   it buries: `/information-hierarchy`.
@@ -95,11 +91,10 @@ Load depth for what you suspect, not for every review:
 - Docs: `/tech-docs` and `/llm-writing`.
 - Patching that won't converge: `resources/redesign-escalation.md`.
 
-When a finding hinges on external facts (library semantics, upstream
-issues, known CVEs), spawn `@web-researcher` in the background and keep
-reviewing; collect the result before your verdict. When a suspected bug
-needs root-cause work deeper than a review, spawn `@investigator` for the
-causal chain, not the fix.
+For a finding that hinges on external facts (library semantics, upstream
+issues, CVEs), spawn `@web-researcher` in the background and collect it
+before your verdict. For a bug that needs deeper root-cause work, spawn
+`@investigator` for the causal chain.
 
 ## Verify Each Finding
 
@@ -112,8 +107,8 @@ Hypotheses, with what blocked it.
 
 ## Blocking or Not
 
-A finding blocks when it is a defect, a security or data-loss risk, a miss
-of the goal, or a structural problem that will keep producing defects.
+A finding blocks when it is a defect, a miss of the goal, or a structural
+problem that will keep producing defects.
 Everything else is a note: the caller fixes it now or doesn't, and it never
 earns another review round. For each blocking finding, say whether it is a
 one-off or one instance of a class, and for a class, the fix that ends it
@@ -135,8 +130,6 @@ or what the end user would hit, that no check could settle. Then
 what blocked it. End with a verdict: approve, approve with notes, request
 changes, or **frame-rot**.
 
-Frame-rot means the approach is wrong: patching will not converge, the work
-needs a redesign. It is always blocking and must be constructive: name the
-structural problem, cite the findings that share that root, and recommend a
-direction, written as the Redesign Brief in
+Frame-rot means the approach is wrong and patching won't converge. It
+always blocks; write it as the Redesign Brief in
 `resources/redesign-escalation.md`.
