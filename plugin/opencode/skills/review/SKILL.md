@@ -9,7 +9,9 @@ metadata:
 Find what would hurt the people who use this change and the people who next
 change its code. Keep the goal in view: read what the change is for (the
 plan, issue, or brief) and judge whether it gets there, not only whether
-its lines are right. A finding without a fix direction is a complaint.
+its lines are right. Give each finding a fix direction at the level it
+needs: a different approach, a structural move, or the shape the code
+should take. Leave the patch to whoever fixes it.
 
 ## Read It Whole
 
@@ -44,7 +46,7 @@ system. Go after how it fails, not how it succeeds: boundaries, ordering,
 partial failure, bad input, an assumption nothing enforces. Then use it as
 its user would.
 
-## What to Report
+## What to Look For
 
 - **Defects:** what breaks, regresses, loses data, opens a security hole,
   or misses the goal.
@@ -59,12 +61,13 @@ its user would.
   an edit gone after reload, a command that succeeds and does nothing.
 - **Bad structure:** concerns braided together, a responsibility in the
   wrong place, a new path beside the old one it should replace, code the
-  change should have deleted. Name the move you'd make
-  (`resources/structural-health/` has the catalog). Your caller takes
+  change should have deleted. Suggest the move, or the structure you'd aim
+  for when one move won't get there (`resources/structural-health/` has the
+  catalog of moves; `/meridian-dev-workflow:architecture` the vocabulary). Your caller takes
   structure findings to whoever owns the design, so write them for a
   reader deciding whether to redesign.
-- **Cost:** for each hot path the change touches (per turn, per poll, per
-  invocation), what its cost grows with (`resources/efficiency.md`). Tests
+- **Cost:** a hot path (per turn, per poll, per invocation) whose cost
+  grows with something it shouldn't (`resources/efficiency.md`). Tests
   rarely catch this.
 
 Project standards (AGENTS.md, CLAUDE.md, CONTRIBUTING, style docs) override
@@ -90,10 +93,13 @@ Load depth for what you suspect, not for every review:
 - Docs: `/meridian-dev-workflow:tech-docs` and `/meridian-dev-workflow:llm-writing`.
 - Patching that won't converge: `resources/redesign-escalation.md`.
 
-For a finding that hinges on external facts (library semantics, upstream
-issues, CVEs), spawn `@web-researcher` in the background and collect it
-before your verdict. For a bug that needs deeper root-cause work, spawn
-`@investigator` for the causal chain.
+Check what the code assumes and what you recommend against the real
+thing: a library's docs or its installed source, the platform's behavior,
+upstream issues and CVEs, and whether a built-in or an established pattern
+already does what the change hand-rolls. Spawn `@web-researcher` in the
+background for what needs the web, and collect it before your verdict. For
+a bug that needs deeper root-cause work, spawn `@investigator` for the
+causal chain.
 
 ## Verify Each Finding
 
@@ -101,8 +107,8 @@ Check every finding before you report it, matched to the claim. Behavioral:
 run what shows the failure on the real system. Structural: run the search
 or trace that backs it. Plan or design: quote the conflicting passages or
 show the missing mapping. Report the check and what it showed. A check
-that disproves the concern drops it; one you couldn't complete goes under
-Hypotheses, with what blocked it.
+that disproves the concern drops it; for one you couldn't complete, say
+what blocked it.
 
 ## Blocking or Not
 
@@ -120,14 +126,11 @@ structure keeps producing it.
 ## Your Report
 
 Name what you reviewed: the commit and base, or the artifact's path and
-version. Open with a brief assessment that names any cause several findings
-share. Then **Blocking** and **Notes**, each finding with its check and what
-it showed, and structure findings tagged `structure` in either group. Then
-**What looks off**: judgment calls, what doesn't make sense or look right
-or what the end user would hit, that no check could settle. Then
-**Hypotheses**: factual claims you tried to check and couldn't, each with
-what blocked it. End with a verdict: approve, approve with notes, request
-changes, or **frame-rot**.
+version. Lead with what blocks and any cause several findings share, then
+the rest, shaped to what you found. Keep what you verified apart from what
+you only judged or couldn't check, so your caller knows what rests on
+evidence, and mark structure findings as such. End with a verdict: approve,
+approve with notes, request changes, or **frame-rot**.
 
 Frame-rot means the approach is wrong and patching won't converge. It
 always blocks; write it as the Redesign Brief in

@@ -44,16 +44,17 @@ scratch directory to reproduce one failure against the real stack is: use
 one where a user can't create the condition, such as a race or a crash
 mid-write.
 
-After the happy path, go adversarial: bad input, interruption, sequencing,
-boundaries, invalid state, fresh state. Watch what the user sees: exit
+After the happy path, go after the ways this change could fail; bad
+input, interruption, ordering, and invalid or fresh state are the usual
+places to look. Watch what the user sees: exit
 codes, error messages, output shape, side effects. When something fails,
 record the exact command or UI actions, the actual result, and the
 expected behavior; when the expectation is uncertain, report an
 observation or open question rather than a bug.
 
-When the result is visual (a web UI, a TUI, rendered output), take
-screenshots at the states that matter: before and after the action, each
-error, each viewport. Load `/meridian-dev-workflow:agent-browser` for web UIs. Look at each
+When the result is visual (a web UI, a TUI, rendered output), screenshot
+what your report cites: the state that shows a finding, or a requirement
+met. Load `/meridian-dev-workflow:agent-browser` for web UIs. Look at each
 screenshot yourself before you report it. Save them in the active work
 directory and cite their paths. Keep raw captures (traces, HARs, profiles,
 browser data, dumps) out of the work directory; save the excerpt that shows
@@ -76,10 +77,9 @@ running and why.
 
 ## Measurements
 
-Record the numbers the brief names, plus the few this task makes useful,
-so the next run has something to compare against: time, latency, memory,
-steps or clicks to finish a workflow, retries, error counts. Give each its
-unit, conditions, and how you got it. Vet every performance comparison you
+Record the numbers the brief names, and any that show a finding: time,
+latency, memory, steps or clicks to finish a workflow, retries, error
+counts. Give each its unit, conditions, and how you got it. Vet every performance comparison you
 report (faster, slower, a regression) with `resources/measurement.md`
 first.
 

@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.11] - 2026-11-07
+
 ### Changed
 - `/review`: fix direction at the level it needs (approach, move, target structure), patch left to fixer; structure findings may suggest target structure, not only a move. Checks code's assumptions and own recommendations against docs, installed source, upstream, and whether a built-in or established pattern already does it (`@web-researcher` for web). Report no longer fixed sections: lead with blocking and shared cause, keep verified apart from judged or unchecked. Cost no longer per hot path on every review.
 - `/probe`: failure modes the change could have, not a fixed list; screenshot what report cites, not every step and viewport; record numbers brief names and any showing a finding.
