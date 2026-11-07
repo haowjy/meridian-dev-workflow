@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/probe`: terminal capture no longer assumes tmux. CLI output with color forced on; TUI screen from whatever multiplexer or recorder machine has, tmux as one example.
+
 ## [0.17.12] - 2026-11-07
 
 ### Changed
