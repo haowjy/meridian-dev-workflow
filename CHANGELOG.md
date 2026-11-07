@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.15] - 2026-11-07
+
 ### Changed
 - `/review`: reviewer reads change and surrounding code itself; explorers only for sweeps past it, and reviewer reads code behind their results before making a finding.
 
