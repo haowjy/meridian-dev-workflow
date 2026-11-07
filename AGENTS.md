@@ -114,11 +114,11 @@ if the runs show otherwise.
   long run: a tradeoff against something the human specified comes to them
   as a question, and a relayed "the user said" or no reply doesn't count as
   approval.
-- **Reviewers hand wide reading to `@explorer`s (`/review` Read It
+- **Reviewers hand wide reading to one `@explorer` (`/review` Read It
   Whole).** On the next reviews of a change that deletes or replaces code
-  or repeats a pattern: the reviewer spawns explorers for the sweep instead
-  of grepping it all itself, and doesn't spawn them for a small local
-  change.
+  or repeats a pattern: the reviewer still reads the change itself, spawns
+  one explorer for the sweep instead of grepping it all, and spawns none
+  for a small local change.
 - **One reviewer, one round, one probe per feature.** On the next lead run
   that builds a feature in phases or part PRs: one code review of the whole
   feature, not one per part; the reviewer loads `/thermo-nuclear-review` or
