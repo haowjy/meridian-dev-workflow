@@ -5,10 +5,9 @@ Selection policy for routing and escalation.
 
 ## When Review Runs
 
-A feature gets two reviews: its plan, before code is written, and its code,
-once all of it is built. A plan review is the cheapest catch: a better
-structure found in the plan costs an edit, and found in code, a rewrite. A
-feature built in phases, moves, or part PRs still gets one code review, of
+A feature's code gets one review, once all of it is built. Its plan gets
+one first when `/dev-workflow` Plan calls for it: a better structure found
+in the plan costs an edit, and found in code, a rewrite. A feature built in phases, moves, or part PRs still gets one code review, of
 everything it changed since its base. Each extra gate repeats the review,
 its fixes, and the runtime check.
 
