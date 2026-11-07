@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.7] - 2026-11-07
+
 ### Changed
 - Fewer review and probe spawns. One `@reviewer` per change covers everything (correctness, structure, what makes no sense, what end user hits) and loads skills it needs; no thermo, dead-code explorer or per-risk lanes by default. One code review per feature, not per phase, move or part PR (`/agent-staffing` reviewers, `/dev-workflow`, `/parallel-execution` phase gates now suite + lead read).
 - One round per feature: review, fixes, one fix-only re-review, one probe, one re-check of probe fixes; nothing repeats. Blocking structure findings and shared causes go to `@design-lead` as Redesign Brief, not patched. Still blocking after re-review or re-check goes to design-lead or user, not another round. Notes never earn another round. Final gate fixes stay inside the round, not new phases (`/parallel-execution`, `/post-dev`).

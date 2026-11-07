@@ -7,132 +7,136 @@ alwaysApply: false
 ---
 # Review
 
-Find the risks the implementer can't see. A finding without a fix direction
-is a complaint.
+Find what would hurt the people who use this change and the people who next
+change its code. Keep the goal in view: read what the change is for (the
+plan, issue, or brief) and judge whether it gets there, not only whether
+its lines are right. A finding without a fix direction is a complaint.
 
-## Scope the Review
+## Read It Whole
 
-Judge the code as it stands now, not the delta. A branch or diff tells you
-*where* to look — pin it (`git diff <base>...HEAD`) to locate the touched
-surface — but then read that surface whole: the full file, the concern it belongs
-to, how it composes with its neighbors. A change can be clean line by line
-and still leave the component incoherent.
+Judge the code as it stands, not the delta. Use the diff
+(`git diff <base>...HEAD`) to find the touched surface, then read that
+surface whole: the full file, the concern it belongs to, its neighbors and
+callers, and what the change left without a caller. A serious problem you
+trace outside the diff, such as an older weakness the change now relies
+on, is a finding like any other: you have eyes on code your caller doesn't.
 
-With no diff given, review the assigned surface; if none assigned,
-prioritize highest-risk surfaces. Go deep on the assigned lane. A serious
-issue outside the lane or the diff, including a cause you trace there such
-as an older weakness the change now relies on, is a finding like any other,
-with severity and a fix direction, not a side note: you have eyes on the
-code that your caller doesn't.
+A re-review, whose brief names the fix commits and the report they answer,
+reviews the fixes and what they touch: each fix's diff, read whole with its
+callers, the paths beside it, and the screens or output it changes. Check
+that each fix ends its finding and the class behind it, follows the rule
+the finding named instead of adding a case beside it, and broke nothing
+nearby. Fixes are where many regressions start, and where structure drifts
+once the first review has passed. The rest of the change had its review.
 
 Read the source before prior reviews, reports, or approvals, so their
 conclusions don't anchor yours. Then compare their scope and evidence with
 your findings.
 
-## Two Axes
+A plan or design is reviewed against the code it lands in and the
+requirements it serves; check that its spec and architecture cross-link
+each other and that each link lands.
 
-**Standards.** Check against the project's own conventions wherever they live —
-AGENTS.md, CLAUDE.md, CONTRIBUTING, style docs — with `/meridian-dev-workflow:dev-principles` as
-the shared lens. Project standards override generic judgment. Skip anything
-tooling already enforces.
+## Run It
 
-**Design.** Check the change against what it was supposed to build:
-requirements, design docs, `DIVERGENCE/` in the work directory. For systematic
-coverage and drift checking, load `/meridian-dev-workflow:review-alignment`. When the target is
-a design artifact, check that its spec and architecture cross-link each
-other and that each link lands.
+Find out whether the code works by running it (`/meridian-dev-workflow:probe`): the command,
+the endpoint, a throwaway test against the real stack, written in a scratch
+directory. For a plan or design, run what tests its assumptions about the
+existing system. Go after how it fails, not how it succeeds: boundaries, ordering,
+partial failure, bad input, an assumption nothing enforces. Then use it as
+its user would, and notice what's awkward or surprising.
 
-Attached skills deepen a lane: `/meridian-dev-workflow:thermo-nuclear-review`,
-`/meridian-dev-workflow:test-architecture`, `/meridian-dev-workflow:react-architecture`. For a UI or frontend change,
-load `/meridian-dev-workflow:information-hierarchy` to judge whether the interface communicates
-clearly: what the user sees first, what's buried.
+## What to Report
 
-## Maintainability
+- **Defects:** what breaks, regresses, loses data, opens a security hole,
+  or misses the goal.
+- **What doesn't make sense:** a name that says something other than what
+  the code does, a step whose reason you can't find, a rule enforced in one
+  place and skipped in the next.
+- **What doesn't look right:** code that works but that you'd stop on, such
+  as a special case beside the rule it should follow, or a state nothing
+  can leave.
+- **What the end user would hit:** what the person using it sees, waits
+  for, or loses when it goes wrong: the error text, a stuck or blank screen,
+  an edit gone after reload, a command that succeeds and does nothing.
+- **Bad structure:** concerns braided together, a responsibility in the
+  wrong place, a new path beside the old one it should replace, code the
+  change should have deleted. Name the move you'd make
+  (`resources/structural-health/` has the catalog). Findings that share one
+  structural cause are one structural finding: say so, since patching each
+  symptom brings the cause back. Your caller takes structure findings to
+  whoever owns the design, so write them for a reader deciding whether to
+  redesign.
+- **Cost:** for each hot path the change touches (per chunk, per turn, per
+  poll, per invocation), what its cost grows with. Tests rarely catch this.
 
-Judge quality as ease of change: how few concepts a reader must hold to
-change the code safely. Check both on every review:
+Project standards (AGENTS.md, CLAUDE.md, CONTRIBUTING, style docs) override
+generic judgment, with `/meridian-dev-workflow:dev-principles` as the shared lens. Skip what
+tooling enforces. Unfamiliar is not a finding: "I'd have written it
+differently" is about you, not the code. If the code is good, say so, and
+earn that by looking.
 
-- **Entanglement.** Concerns braided together that could be independent. The
-  finding points at the interleaving; the fix direction is the disentangling
-  move. `/meridian-dev-workflow:architecture` carries the full test.
-- **Deletion.** LLM-written code keeps what it should delete. Name what the
-  change could delete or simplify: dead paths, a mechanism it duplicates
-  instead of replacing, wrappers, branches a simpler structure would remove. A
-  new path beside an old one it should replace is a finding. A diff hides
-  what the change left without a caller: search for remaining references to
-  what it removed.
+## Go Deeper Where Something Looks Wrong
 
-Unfamiliar is not a finding. "I'd have written it differently" is relative
-to the reviewer; entanglement is in the code.
+Load depth for what you suspect, not for every review:
 
-## Efficiency by Construction
-
-Tests rarely catch large efficiency problems. On every review, name the hot
-paths the change touches (per chunk, per turn, per poll, per invocation) and
-what their cost scales with, against `/meridian-dev-workflow:dev-principles`' efficiency principle. Load `resources/efficiency.md`
-when the change touches a hot path. Skip micro-optimizations.
-
-## What Makes a Good Finding
-
-- **Specific.** File, line, function.
-- **Reasoned.** The failure mode, not just the pattern name.
-- **Constructive.** A concrete fix direction the implementer can act on.
-- **Non-obvious.** Linters catch formatting; you're here for context, intent,
-  and interaction between components.
-- **Verified.** Check every finding before you report it, and match the check
-  to the claim. Behavioral: run the command, failing test, or script that
-  shows the failure on the real system (`/meridian-dev-workflow:probe`). Structural: run the search or trace that backs it
-  (callers, remaining references). Design or plan: quote the conflicting
-  passages or show the missing mapping. Report the check and the observation
-  that settled it. A check that disproves the concern drops the finding; a
-  check you could not complete goes under Hypotheses in the report, with what
-  blocked it.
-
-Probe how the code fails, not how it succeeds: boundary conditions, ordering
-assumptions, partial failure, unenforced assumptions. If the code is
-genuinely good, say so — but earn that by looking.
+- Tangled concerns, a misplaced boundary, an ownership question:
+  `/meridian-dev-workflow:architecture` and `resources/architecture.md`; for strict
+  maintainability of a new module, abstraction, or seam,
+  `/meridian-dev-workflow:thermo-nuclear-review`.
+- Trust boundaries, input, auth, secrets: `resources/security.md`.
+- Races, shared state, cancellation: `resources/concurrency.md`.
+- Hot paths, polling, scans that grow with history:
+  `resources/efficiency.md`.
+- Tests: `/meridian-dev-workflow:test-architecture` and `resources/test-quality.md`.
+- React structure: `/meridian-dev-workflow:react-architecture`. What a UI shows first and what
+  it buries: `/meridian-dev-workflow:information-hierarchy`.
+- Fidelity to a spec, design, or `DIVERGENCE/` log: `/meridian-dev-workflow:review-alignment`.
+- Docs: `/meridian-dev-workflow:tech-docs` and `/meridian-dev-workflow:llm-writing`.
+- Patching that won't converge: `resources/redesign-escalation.md`.
 
 When a finding hinges on external facts (library semantics, upstream
 issues, known CVEs), spawn `@web-researcher` in the background and keep
-reviewing; collect the result before writing your verdict. When a suspected
-bug needs root-cause work deeper than the review lane can give it, spawn
-`@investigator` and ask for the causal chain, not the fix.
+reviewing; collect the result before your verdict. When a suspected bug
+needs root-cause work deeper than a review, spawn `@investigator` for the
+causal chain, not the fix.
 
-**Suggest refactors.** When structure is the problem, propose the move
-(`resources/structural-health/` has the catalog). Code is cheapest to change
-now, before more work lands on top of it.
+## Verify Each Finding
 
-## Look Past This Round
+Check every finding before you report it, matched to the claim. Behavioral:
+run what shows the failure on the real system. Structural: run the search
+or trace that backs it. Plan or design: quote the conflicting passages or
+show the missing mapping. Report the check and what it showed. A check
+that disproves the concern drops it; one you couldn't complete goes under
+Hypotheses, with what blocked it.
 
-A blocking finding is a one-off or one instance of a class; say which. For
-a class, name the move that would end it, and whether your fix direction
-makes that move or patches this instance. Earlier review reports on the
-same surface, when your brief passes them, are your evidence: cite each
-earlier finding that lands on the same concern as one of yours. Recurrence across rounds is evidence for the
-signals in `resources/redesign-escalation.md`.
+## Blocking or Not
+
+A finding blocks when it is a defect, a security or data-loss risk, a miss
+of the goal, or a structural problem that will keep producing defects.
+Everything else is a note: the caller fixes it now or doesn't, and it never
+earns another review round. For each blocking finding, say whether it is a
+one-off or one instance of a class, and for a class, the fix that ends it
+rather than the patch for this instance: the caller gets one round of
+fixes. Earlier review reports, when your brief passes them, are evidence:
+cite each earlier finding that lands on the same concern as one of yours,
+and say whether it recurs because a fix fell short or because the
+structure keeps producing it.
 
 ## Your Report
 
-Name the commit and base you reviewed. Then a brief overall assessment,
-findings grouped by severity — lead with real damage: bugs, security holes,
-data loss, broken invariants — then verdict: approve, approve with notes,
-request changes, or **frame-rot**. Every finding in the severity groups is
-verified, with its check and what it showed. A closing **Hypotheses** section
-lists what you could not check, each with what blocked it.
+Name what you reviewed: the commit and base, or the artifact's path and
+version. Open with a brief assessment that names any cause several findings
+share. Then **Blocking** and **Notes**, each finding with its check and what
+it showed, and structure findings tagged `structure` in either group. Then
+**What looks off**: judgment calls, what doesn't make sense or look right
+or what the end user would hit, that no check could settle. Then
+**Hypotheses**: factual claims you tried to check and couldn't, each with
+what blocked it. End with a verdict: approve, approve with notes, request
+changes, or **frame-rot**.
 
 Frame-rot means the approach is wrong: patching will not converge, the work
-needs a redesign. It is always blocking — and it must be constructive: name
-the structural problem, cite the findings that share that root, and
-recommend a direction (load `/meridian-dev-workflow:architecture` for the structural vocabulary a
-redesign needs). See `resources/redesign-escalation.md` for the signals and
-the escalation shape.
-
-## Resources
-
-- [`resources/redesign-escalation.md`](resources/redesign-escalation.md): signals that patching won't converge, how to write the escalation
-- [`resources/security.md`](resources/security.md): trust boundaries, input validation, auth, secrets
-- [`resources/concurrency.md`](resources/concurrency.md): races, deadlocks, shared state, cancellation
-- [`resources/efficiency.md`](resources/efficiency.md): hot paths, write amplification, polling, scans that grow with history, eager startup, contention
-- [`resources/architecture.md`](resources/architecture.md): independence, boundaries, module structure, design alignment
-- [`resources/structural-health/`](resources/structural-health/): code smells, refactoring moves, deprecation patterns (use when focus is structural)
-- [`resources/test-quality.md`](resources/test-quality.md): edge cases over happy paths, tautological assertions, tier placement, test effectiveness (use when focus is test quality)
+needs a redesign. It is always blocking and must be constructive: name the
+structural problem, cite the findings that share that root, and recommend a
+direction, written as the Redesign Brief in
+`resources/redesign-escalation.md`.

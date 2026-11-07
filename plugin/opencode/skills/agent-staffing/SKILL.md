@@ -14,8 +14,8 @@ Most changes are staffed from these; the catalogs below cover the rest.
 - `@explorer`: reads across files and history, so your context stays on
   decisions
 - `@coder`: for general coding; `@frontend-coder` for frontend coding
-- `@reviewer`: finds risks in code, designs, or requirements before they're
-  acted on, with skills matched to what it reviews (`resources/reviewers.md`)
+- `@reviewer`: one per change, reviewing its plan and then its code, and
+  loading the skills its findings call for (`resources/reviewers.md`)
 - `@prober`: runtime evidence from the real system: workflows, bug
   reproductions, boundaries
 - `@investigator`: root cause when behavior is unclear
@@ -41,8 +41,7 @@ Choose the least-cost upgrade whose strengths in the current model catalog
 address the demonstrated failure. Try suitable intermediate options before
 the premium tier; move higher only when review of the attempted fix still
 shows substantial defects. Pass the findings and prior work to the next
-worker. Model changes do not reset the review and redesign limits in
-`resources/reviewers.md`.
+worker. Model changes do not reset the review round in `resources/reviewers.md`.
 
 ## Parallel Work and Review
 

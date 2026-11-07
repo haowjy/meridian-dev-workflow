@@ -9,7 +9,7 @@ alwaysApply: false
 # Probe
 
 Run the real system and observe what happens. Real commands, real filesystem,
-real network. Exercise the thing the way a user would. Read the project's
+real network. Use it as a real user would, and notice what's weird. Read the project's
 testing instructions (README, AGENTS.md) before starting.
 
 ## Two Modes
@@ -33,12 +33,19 @@ Report findings as observations, not pass/fail.
 
 ### Verification
 
-Confirmatory. Verify the change delivers what the requirements describe.
+Confirmatory. Does the change deliver what the requirements describe, and
+does it work for the person using it?
 
-- Treat each stated requirement as mandatory baseline coverage
-- Verify each requirement, then probe beyond what's claimed
+- Use it first as the user the brief names would, toward their goal, and
+  notice what feels off: misleading feedback, inconsistent output, awkward
+  steps, a wait with no sign of progress, unclear next actions or recovery.
+  Anything abnormal is probably a UX bug; report it, even when every
+  assigned check passes, without turning the run into an unrelated audit
+  or fixing it.
+- Treat each stated requirement as mandatory baseline coverage: verify
+  each, then probe beyond what's claimed.
 
-Report per-requirement outcomes with evidence.
+Report per-requirement outcomes with evidence, and what felt off.
 
 ## Execution
 
@@ -58,12 +65,6 @@ Run actual commands and capture exact output. Go adversarial after the happy
 path: bad input, interruption, sequencing, boundary conditions, invalid state,
 fresh-state variants. Focus on user-visible behavior: exit codes, error
 messages, output shape, side effects.
-
-Notice confusing or surprising behavior while using the interface, even when
-the assigned checks pass: misleading feedback, inconsistent output, awkward
-steps, or unclear next actions and recovery. Anything abnormal is probably a
-UX bug; report it. Report incidental findings outside the assertions without
-turning the run into an unrelated audit or fixing them.
 
 Generate edge cases beyond what was described. When something fails, record
 the exact command or UI actions, the actual result, and the expected behavior.
@@ -98,6 +99,10 @@ comparison you report (faster, slower, a regression) with
 
 Separate reproduced defects from usability concerns and unconfirmed observations.
 For each, include the evidence, user impact, and basis for the expectation.
+
+Every report has a **What felt off** part, even when every check passed:
+what confused, surprised, or slowed you as the user, with where it happened.
+Write "nothing" there only after you looked.
 
 **Probing:** discovered behavior, constraints, surprises, numbers, exact
 commands and outputs, screenshot paths, open questions.
