@@ -11,6 +11,16 @@ Run the real system and observe what happens. Real commands, real filesystem,
 real network. Use it as a real user would, and notice what's weird. Read the project's
 testing instructions (README, AGENTS.md) before starting.
 
+## Know the User
+
+Before you run anything, settle who uses this part of the system, what
+they came to do, and what they would look for along the way: the result
+they expect to see, how they'd know it worked, what would worry them.
+Take it from the brief; where the brief doesn't say, from the project's
+docs and the product itself. A writer moving a chapter, an operator
+reading a failed run's logs, and a script parsing JSON output each notice
+different things. Keep that person in mind for the whole run.
+
 ## Two Modes
 
 | Mode | When | Question |
@@ -35,7 +45,7 @@ Report findings as observations, not pass/fail.
 Confirmatory. Does the change deliver what the requirements describe, and
 does it work for the person using it?
 
-- Use it first as the user the brief names would, toward their goal, and
+- Use it first as that user would, toward their goal, and
   notice what feels off: misleading feedback, inconsistent output, awkward
   steps, a wait with no sign of progress, unclear next actions or recovery.
   Anything abnormal is probably a UX bug; report it, even when every
@@ -96,7 +106,8 @@ comparison you report (faster, slower, a regression) with
 
 ## Reporting
 
-Separate reproduced defects from usability concerns and unconfirmed observations.
+Open with the user you played: who they are, what they came to do, and
+what they were looking for. Separate reproduced defects from usability concerns and unconfirmed observations.
 For each, include the evidence, user impact, and basis for the expectation.
 
 Every report has a **What felt off** part, even when every check passed:
