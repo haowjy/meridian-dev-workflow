@@ -83,8 +83,8 @@ if the runs show otherwise.
   next tech-lead and solo-dev runs: a returning spawn is not a stopping
   point; an unclear point is written to the work directory with the call
   made, and the questions come to the user at the end; a failing test is
-  triaged before either side is changed; review lanes are staffed from
-  `reviewers.md` and stop at its limits.
+  triaged before either side is changed; review is staffed from
+  `reviewers.md` and stops at its one round.
 - **tech-lead with `/parallel-execution` loaded on every run.** A single
   change that doesn't split gets one lane, not a DAG.
 - **tech-lead without `/dev-principles` loaded.** It still holds the
@@ -98,8 +98,8 @@ if the runs show otherwise.
   waits for the human, and runs review and probe once per coherent change.
 - **design-lead reaches its loop through `/architecture` and
   `reviewers.md`.** It enumerates edge cases before committing, offers built
-  variants when uncertain, challenges the converged design with the three
-  lanes, and brings the impasse to its caller at the round limit.
+  variants when uncertain, challenges the converged design with one
+  reviewer and a prober, and brings the impasse to its caller at the round limit.
 - **`/pre-dev` names the worktree as the task's default checkout (0.16.2),
   not "the work item's source checkout".** On the next tech-lead run that
   creates or reuses a worktree under Meridian: it still sets the work item's
@@ -108,9 +108,19 @@ if the runs show otherwise.
 - **Leads plan before code (`/dev-workflow` Plan).** On the next tech-lead
   run that adds a module, contract or data format: the plan names prior art
   and the change's architecture, a thermo + architecture reviewer checks it
-  before coders start, and the PR gets a structure lane. Also watch for the
+  before coders start. Also watch for the
   step firing on bug fixes, where it shouldn't.
 - **tech-lead asks before departing from the human's design.** On the next
   long run: a tradeoff against something the human specified comes to them
   as a question, and a relayed "the user said" or no reply doesn't count as
   approval.
+- **One reviewer, one round, one probe per feature.** On the next lead run
+  that builds a feature in phases or part PRs: one code review of the whole
+  feature, not one per part; the reviewer loads `/thermo-nuclear-review` or
+  `/architecture` on its own when structure looks wrong, and still reports
+  structure findings; blocking structure findings and shared causes go to
+  `@design-lead` instead of a second round; the re-review stays on the
+  fixes; the prober runs once on final code, from a brief that leads with
+  the user's goal, and its report has a "What felt off" part. Watch for the
+  structure lens going soft without the thermo lane, and for regressions
+  that the narrow re-review or the single probe missed.

@@ -44,11 +44,9 @@ If the coder reports a failed integration check, isolate which branch interactio
 
 A gate runs once a phase's branches merge, and the next phase starts only once it passes. A problem found at a phase gate costs one phase of rework; found at the end, every later phase is built on it. A phase nothing later builds on gains nothing from its own gate: the final gate covers it.
 
-Before staffing a gate, open `/agent-staffing` `resources/reviewers.md` and staff the lanes the gate's work needs.
+**Phase gate**: the suite, and your own read of the merged code: what the phase changed, and whether the next phase can build on it. Review lanes and the prober wait for the final gate, so the feature is reviewed once (`/agent-staffing` `resources/reviewers.md`).
 
-**Phase gate**: lanes focused on what the phase changed and the code around it.
-
-**Final gate**, on the last phase: lanes focused on everything the change touched since the original base, the `@prober` running the user-facing workflows end to end when the change alters them, and the full suite, once.
+**Final gate**, on the last phase: open `reviewers.md` and staff lanes focused on everything the change touched since the original base, the `@prober` running the user-facing workflows end to end when the change alters them, and the full suite, once.
 
 Gaps the final gate finds become new phases in the DAG.
 

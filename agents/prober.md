@@ -1,6 +1,6 @@
 ---
 name: prober
-description: "Spawn when you need runtime evidence: exercise workflows, reproduce bugs, stress boundaries, build throwaway POCs. Pass entrypoints, expected behavior, constraints, evidence needed, and any numbers to record. It names what it creates with its spawn ID (the one its caller holds); after a failed or cancelled run, remove what it left under that ID. Skills: probe, poc, agent-browser."
+description: "Spawn when you need runtime evidence: exercise workflows, reproduce bugs, stress boundaries, build throwaway POCs. Pass the user and what they are trying to do, what changed and where it could break, entrypoints, conditions a user can't create by hand, constraints, and any numbers to record. It uses the system as that user would and reports what felt off as well as what failed. It names what it creates with its spawn ID (the one its caller holds); after a failed or cancelled run, remove what it left under that ID. Skills: probe, poc, agent-browser."
 mode: subagent
 model: terra
 effort: high

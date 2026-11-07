@@ -1,82 +1,64 @@
 # Reviewers
 
-Spawn `@reviewer` with skills matched to the change's risks. Use
-`/agent-staffing`'s Model Selection policy for routing and escalation.
+Spawn `@reviewer` for a change's review. Use `/agent-staffing`'s Model
+Selection policy for routing and escalation.
+
+## When Review Runs
+
+A feature gets two reviews: its plan, before code is written, and its code,
+once all of it is built. A plan review is the cheapest catch: a better
+structure found in the plan costs an edit, and found in code, a rewrite. A
+feature built in phases, moves, or part PRs still gets one code review, of
+everything it changed since its base. Each extra gate repeats the review,
+its fixes, and the browser run.
 
 ## Lanes a Change Needs
 
-Review and probe the system as it stands, so each lane sees how the change
-fits the code around it and what it left without a caller. Brief each lane
-with where the change landed, the risks to check, and the earlier review
-reports on the same code, so it can tell a recurring concern from a new one.
+- One `@reviewer` for the code. It reviews everything about the change and
+  loads the skills its findings call for. Brief it with what the feature is
+  for, where the change landed, the risks you see, and the earlier review
+  reports on the same code, so it can tell a recurring concern from a new
+  one. One reviewer sees one cause behind several symptoms, where split
+  lanes each report their own.
+- `@prober` once, on the final code, when the change alters what the
+  running system does (`testers.md`). Confirm the stack it runs was built
+  from the final code, and tell it to use its own test data and browser
+  session and not to reset or restart shared services.
 
-- `@reviewer` for correctness, regressions, and behavior.
-- `@reviewer` with `/thermo-nuclear-review` when the change adds a module,
-  abstraction, or seam, moves responsibility between them, or grows
-  existing code beyond a local edit. Code drifts from `/dev-principles`
-  even when its writer loaded them; a reviewer focused there catches what
-  a general pass skims.
-- `@explorer` when the change deletes or replaces code, and before the
-  thermo lane: it lists what the change and its fixes left without a
-  caller, given the change's base. Delete what is clearly dead, and pass
-  the rest to the reviewers.
-- One more `@reviewer` for each risk the change carries, from the picker
-  below.
-- `@prober` when the change alters what the running system does
-  (`testers.md`).
+## After the Review
 
-Spawn the other lanes together, and the thermo lane after their fixes land,
-so it folds those patches into the code's structure. Confirm the stack the prober runs was built from
-the code under review, and tell each lane to use its own test data and
-browser session and not to reset or restart shared services; run lanes one after the other when they would share state
-you can't separate.
+One review round per feature: the review, then the fixes it calls for.
+Fix valid blocking findings; notes are yours to take or leave. Record
+reasons for deferrals with the work item's decisions, and resolve
+conflicting findings using the design and evidence.
 
-## Skill Picker
+Read the findings by concern, the code behind one responsibility, before
+fixing any. Blocking structure findings, findings that share a cause, and a
+frame-rot verdict go to `@design-lead` (the user, when you can't spawn
+one) as a Redesign Brief (`/review`
+`resources/redesign-escalation.md`) with the report, not to a patch:
+symptoms patched one at a time bring the cause back in the next round. A
+question about what the feature should do goes to the user.
 
-| Review kind | Spawn | When |
-|-------------|-------|------|
-| Default review | `@reviewer` | Correctness, maintainability, efficiency, security |
-| Strict maintainability | `@reviewer`; attach `/thermo-nuclear-review` | New modules, abstractions, or seams; moved responsibility; growth beyond a local edit |
-| Efficiency | `@reviewer` with the efficiency lane named in the prompt | Runtime paths, polling, persistence, scans, startup |
-| Architecture / boundaries | `@reviewer`; attach `/thermo-nuclear-review` and `/architecture` | Cross-module boundary changes, dependency direction; repeat findings on one concern (Synthesizing Findings) |
-| Test structure | `@reviewer`; attach `/test-architecture` | Test suite changes |
-| Design alignment | `@reviewer`; attach `/review-alignment` | Cross-artifact fidelity vs design/requirements |
-| Frontend structural | `@reviewer`; attach `/react-architecture` | React component boundaries, state, tokens |
-| Doc structure | `@reviewer`; attach `/tech-docs`, `/llm-writing`, and `/md-validation` | Doc-heavy changes |
+Each fix is committed, the suite rerun, and the fix checked on the real
+system, on what it changes and the screens or commands next to it. Read
+small fixes yourself. Send fixes that restructure code or change behavior
+to one re-review, all fixes from the report together: a `@reviewer` briefed
+with the fix commits, the report they answer, and what each fix was meant
+to end. It reviews the fixes and what they touch, not the whole change
+again.
 
-## Synthesizing Findings
-
-Fix valid findings; record reasons for deferrals with the work item's
-decisions. Commit a fix that restructures code or changes behavior, rerun
-the suite, and rerun the lanes whose verdicts it could change; read smaller
-fixes yourself.
-
-Resolve conflicting findings using the design and evidence. Read
-findings by concern, the code behind one responsibility, not by symptom or
-file.
-
-Count rounds per review target: each gate in phased work, otherwise the
-change. A round is one review and the fixes it calls for. At each limit,
-stop sending rounds:
-- **A concern that would need a third round of fixes:** trace the root
-  cause, yourself or with `@investigator`, then have the system reviewed as
-  a whole (`@reviewer`; attach `/thermo-nuclear-review` and `/architecture`) with
-  every earlier report. Ask whether the findings share a cause, and for
-  either the move that ends it or a frame-rot verdict. The cause often sits
-  where two parts own one invariant.
-- **A concern that would need a second redesign:** bring the impasse to
-  your caller. A failed redesign usually means the problem sits in scope or
-  requirements.
-- **A target that would need a third review round**, whatever the
-  concerns: investigate the design rather than cycling reviewers.
+A re-review that still finds blocking problems ends the round. Take them to
+`@design-lead`, or to the user when they turn on what the feature should
+do, rather than starting another round. A failed redesign goes to your
+caller: the problem usually sits in scope or requirements.
 
 ## Reviewing Requirements or a Design
 
 Requirements and designs are review targets like code: a `@reviewer` can
 challenge the requirements or the framing, not only an implementation. For
-a converged design, run the challenge lanes in parallel: `@prober` for
-feasibility against the real system, `@reviewer` for correctness and edge
-cases, and `@reviewer` with `/review-alignment` for requirement coverage.
-Substantive findings mean another round; minor refinements mean converged.
-Each challenge cycle counts as a round under the limits above, and at a
-limit the open question goes to your caller.
+a converged design, have one `@reviewer` challenge its correctness, edge
+cases, and requirement coverage, and a `@prober` check what it assumes of
+the real system. Substantive findings mean another round; minor
+refinements mean converged. Substantive findings after a second round go to
+your caller as the open question.

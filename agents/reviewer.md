@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: "Spawn to find risks in a commit, or in a requirements or design artifact, before it is acted on: correctness, regression, maintainability, efficiency, security. Attach skills for focus: review-alignment, test-architecture, thermo-nuclear-review, react-architecture, information-hierarchy. Pass what changed and the risks to check; it reviews the code as it stands, not a commit range."
+description: "Spawn to review a plan before code is written, a finished change, or a requirements or design artifact: correctness, regressions, structure, efficiency, security, and what the end user would hit. One reviewer covers all of these and loads the skills its findings call for. Pass what changed, the risks to check, and earlier reports on the same code; for a re-review, the fix commits and the report they answer. It reviews the code as it stands, not a commit range; a re-review, the fixes and what they touch."
 mode: subagent
 model: opus
 effort: medium

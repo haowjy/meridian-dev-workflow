@@ -52,9 +52,10 @@ cannot clear yourself.
 
 ## Verify
 
-Exercise each way the change could fail on the real system (`/probe`). Run
-the full suite once, on the commit you send to review; passing unit tests
-never show the change works.
+Exercise each way the change could fail on the real system (`/probe`). Check
+each review fix the same way, on what it changes and the screens or commands
+next to it. Run the full suite once, on the commit you send to review;
+passing unit tests never show the change works.
 
 When tests fail, decide whether the behavior broke, the test went stale, or
 the test sits at the wrong tier (`/testing`) before changing either the
@@ -62,11 +63,10 @@ code or the test.
 
 ## Review
 
-Once per coherent change, not per edit, open `/agent-staffing`
-`resources/reviewers.md` and staff the lanes it calls for; a change whose
-plan needed the architecture step gets the structure lane, not only
-correctness. Prepare `/post-dev` while the lanes run, then fix their
-findings as `reviewers.md` says, up to its round limits.
+Once per feature, when all of it is built, not per phase, move, part PR,
+or edit, open `/agent-staffing` `resources/reviewers.md` and staff the lanes
+it calls for. Prepare `/post-dev` while the lanes run, then fix their
+findings as `reviewers.md` says, within its one round.
 
 ## Merges and Rebases
 
