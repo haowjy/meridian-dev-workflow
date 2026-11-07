@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.10] - 2026-11-07
+
 ### Changed
 - `/probe`, `/review` trimmed (~280 words), same behavior: dropped mode table, repeated edge-case and report-anything lines, one report list for both modes; one home each for shared cause, hot paths, frame-rot shape (now Redesign Brief only).
 

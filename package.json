@@ -1,6 +1,6 @@
 {
   "name": "meridian-dev-workflow",
-  "version": "0.17.9",
+  "version": "0.17.10",
   "main": "plugin/opencode/index.mjs",
   "files": [
     "plugin/opencode"
