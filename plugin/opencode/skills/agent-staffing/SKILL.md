@@ -50,7 +50,7 @@ apart from the writer's.
 
 ## Agent Catalogs
 
-- `resources/reviewers.md`: the lanes a change needs, the skills for each reviewer, and when review-fix loops stop. Open it before staffing any review.
-- `resources/testers.md`: @prober modes, runtime verification, browser, POC
+- `resources/reviewers.md`: when a change is reviewed, who reviews it, and the one round of fixes that ends it. Open it before staffing any review.
+- `resources/testers.md`: briefing `@prober` and when it runs, browser and POC skills, automated tests
 - `resources/builders.md`: @coder, @frontend-coder, @mockup-dev, and design exploration (@architect, @web-researcher, @browser, @design-researcher, @source-researcher, @explorer, @session-miner)
 - `resources/maintainers.md`: @kb-lead, @kb-maintainer, @investigator

@@ -1,34 +1,20 @@
 # Testers
 
-Match testing to what the phase touches. Coders self-verify with the narrowest
-useful evidence. Beyond that, delegate to `@prober` and attach the skill for the
-verification kind.
-
-## Skill Picker
-
-| Verification kind | Spawn | When |
-|-------------------|-------|------|
-| Quick manual smoke | `@prober` | CLI, process, non-UI behavior checks |
-| Structured manual QA | `@prober` | Verify affected existing behavior and new requirements; brief it as below |
-| Frontend / UI | `@prober`; attach `/meridian-dev-workflow:agent-browser` | Rendering, flows, console errors in a real browser |
-| Feasibility spike | `@prober`; attach `/meridian-dev-workflow:poc` | Can we do X? Throwaway code, verdict, delete |
-| Heavy / destructive env | `@prober` | Temp repos, clean-baseline comparisons |
-
-Testers generate their own edge cases beyond the requirements the caller
-hands over.
+Coders check their own work with the narrowest useful evidence. Beyond
+that, delegate to `@prober`: attach `/meridian-dev-workflow:agent-browser` for rendering, flows,
+and console errors in a real browser, and `/meridian-dev-workflow:poc` for a feasibility spike
+(throwaway code, a verdict, then delete it).
 
 ## Model and Context Selection
 
-Use `/meridian-dev-workflow:agent-staffing`'s Model Selection policy. For browser/UI verification,
-attach `/meridian-dev-workflow:agent-browser`. Confirm the configured route supports the required
+Use `/meridian-dev-workflow:agent-staffing`'s Model Selection policy. Confirm the configured route supports the required
 inputs and tools; screenshot checks require image understanding. Submitted
 context must also be approved for the route's data-use policy, including
 training. Report a capability or data-use mismatch before sending the work
 rather than silently substituting a model.
 
 Use `@browser` for general website interaction or design research; use `@prober`
-for independent verification against requirements. Both can use the same browser
-tools without having the same assignment.
+for independent verification against requirements.
 
 ## Briefing a Prober
 

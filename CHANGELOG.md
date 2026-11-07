@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.17] - 2026-11-07
+
 ### Changed
 - `/review`, `/probe`, `/agent-staffing` reviewers and testers trimmed, same behavior: read-yourself and explorer sweep in one paragraph; testers' picker table (three rows only said `@prober`) now one line for `/agent-browser` and `/poc`; dropped repeats and leftover lane wording.
 

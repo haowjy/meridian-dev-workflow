@@ -59,8 +59,8 @@ met. Load `/meridian-dev-workflow:agent-browser` for web UIs. For a CLI or TUI, 
 terminal at those states as text, with color codes when color carries
 meaning: a CLI's output with color forced on, a TUI's screen from whatever
 multiplexer or recorder the machine has (with tmux, `capture-pane -p -e`).
-Text is exact, and you read it more reliably than an image of it. Look at each capture and
-screenshot yourself before you report it. Save them in the active work
+Text is exact, and you read it more reliably than an image of it. Look at
+each capture and screenshot yourself before you report it. Save them in the active work
 directory and cite their paths. Keep raw captures (traces, HARs, profiles,
 browser data, dumps) out of the work directory; save the excerpt that shows
 the finding.
@@ -82,9 +82,8 @@ running and why.
 
 ## Measurements
 
-Record the numbers the brief names, and any that show a finding: time,
-latency, memory, steps or clicks to finish a workflow, retries, error
-counts. Give each its unit, conditions, and how you got it. Vet every performance comparison you
+Record the numbers the brief names, and any that show a finding, each with
+its unit, conditions, and how you got it. Vet every performance comparison you
 report (faster, slower, a regression) with `resources/measurement.md`
 first.
 

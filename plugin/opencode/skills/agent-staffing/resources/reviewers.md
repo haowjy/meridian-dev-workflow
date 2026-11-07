@@ -7,18 +7,18 @@ Selection policy for routing and escalation.
 
 A feature's code gets one review, once all of it is built. Its plan gets
 one first when `/meridian-dev-workflow:dev-workflow` Plan calls for it: a better structure found
-in the plan costs an edit, and found in code, a rewrite. A feature built in phases, moves, or part PRs still gets one code review, of
-everything it changed since its base. Each extra gate repeats the review,
+in the plan costs an edit, and found in code, a rewrite. A feature built in
+phases, moves, or part PRs still gets one code review, of everything it
+changed since its base. Each extra gate repeats the review,
 its fixes, and the runtime check.
 
-## Lanes a Change Needs
+## Who Reviews
 
 - One `@reviewer` for the code. It reviews everything about the change and
   loads the skills its findings call for. Brief it with what the feature is
   for, where the change landed, the risks you see, and the earlier review
   reports on the same code, so it can tell a recurring concern from a new
-  one. One reviewer sees one cause behind several symptoms, where split
-  lanes each report their own.
+  one.
 - `@prober` once, on the final code, when the change alters what the
   running system does (`testers.md`). Confirm the stack it runs was built
   from the final code, and tell it to use its own test data and browser
@@ -28,8 +28,8 @@ its fixes, and the runtime check.
 
 One round per feature, in this order: the review, its fixes, one
 re-review of those fixes, the prober's run, and one re-check of what the
-probe's fixes change. Nothing in it repeats. Fix valid blocking findings; notes are yours to take or leave. Record
-reasons for deferrals with the work item's decisions, and resolve
+probe's fixes change. Nothing in it repeats. Fix valid blocking findings;
+notes are yours to take or leave. Record reasons for deferrals with the work item's decisions, and resolve
 conflicting findings using the design and evidence.
 
 Read the findings by concern, the code behind one responsibility, before
@@ -54,8 +54,8 @@ those fixes change.
 
 A re-review or probe re-check that still finds blocking problems ends the
 round. Take them to `@design-lead`, or to the user when they turn on what
-the feature should do, rather than starting another round. A failed redesign goes to your
-caller: the problem usually sits in scope or requirements.
+the feature should do. A failed redesign goes to your caller: the problem
+usually sits in scope or requirements.
 
 ## Reviewing Requirements or a Design
 
