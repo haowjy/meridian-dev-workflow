@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/probe`: project test suites still not evidence, but throwaway test or script reproducing one failure against real stack is. Was "never run test suites", which contradicted `/review` telling reviewers to write throwaway tests.
+
 ## [0.17.8] - 2026-11-07
 
 ### Changed
