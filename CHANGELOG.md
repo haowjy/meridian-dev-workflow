@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/agent-staffing` reviewers: each lane uses own test data and browser session. Dropped example list; "accounts" read as required, stack with one dev login has none spare.
+
 ## [0.17.5] - 2026-11-06
 
 ### Changed

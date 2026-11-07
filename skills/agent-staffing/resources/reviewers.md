@@ -27,9 +27,8 @@ reports on the same code, so it can tell a recurring concern from a new one.
 
 Spawn the other lanes together, and the thermo lane after their fixes land,
 so it folds those patches into the code's structure. Confirm the stack the prober runs was built from
-the code under review, and tell each lane to use its own test data
-(accounts, records, fixtures, browser session) and not to reset or restart
-shared services; run lanes one after the other when they would share state
+the code under review, and tell each lane to use its own test data and
+browser session and not to reset or restart shared services; run lanes one after the other when they would share state
 you can't separate.
 
 ## Skill Picker
