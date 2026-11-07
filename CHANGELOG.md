@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/probe`: know the user first. Before running, settle who uses this part, what they came to do, what they'd look for; from brief, else project docs and product. Report opens with the user played.
+
 ## [0.17.7] - 2026-11-07
 
 ### Changed
