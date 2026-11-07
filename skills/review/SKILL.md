@@ -39,9 +39,10 @@ each other and that each link lands.
 
 ## Run It
 
-Find out whether the change works by running it (`/probe`): the command,
+Find out whether the code works by running it (`/probe`): the command,
 the endpoint, a throwaway test against the real stack, written in a scratch
-directory. Go after how it fails, not how it succeeds: boundaries, ordering,
+directory. For a plan or design, run what tests its assumptions about the
+existing system. Go after how it fails, not how it succeeds: boundaries, ordering,
 partial failure, bad input, an assumption nothing enforces. Then use it as
 its user would, and notice what's awkward or surprising.
 
@@ -114,19 +115,25 @@ Hypotheses, with what blocked it.
 A finding blocks when it is a defect, a security or data-loss risk, a miss
 of the goal, or a structural problem that will keep producing defects.
 Everything else is a note: the caller fixes it now or doesn't, and it never
-earns another review round. Earlier review reports, when your brief passes
-them, are evidence: cite each earlier finding that lands on the same
-concern as one of yours, since a concern that recurs is structural.
+earns another review round. For each blocking finding, say whether it is a
+one-off or one instance of a class, and for a class, the fix that ends it
+rather than the patch for this instance: the caller gets one round of
+fixes. Earlier review reports, when your brief passes them, are evidence:
+cite each earlier finding that lands on the same concern as one of yours,
+and say whether it recurs because a fix fell short or because the
+structure keeps producing it.
 
 ## Your Report
 
-Name the commit and base you reviewed. Open with a brief assessment that
-names any cause several findings share. Then blocking findings, notes, and
-structure findings marked as such, each with its check and what it showed.
-Then **What looks off**: what doesn't make sense or look right, and what the
-end user would hit, that you couldn't turn into a verified finding. Close
-with **Hypotheses**, what you could not check, and a verdict: approve,
-approve with notes, request changes, or **frame-rot**.
+Name what you reviewed: the commit and base, or the artifact's path and
+version. Open with a brief assessment that names any cause several findings
+share. Then **Blocking** and **Notes**, each finding with its check and what
+it showed, and structure findings tagged `structure` in either group. Then
+**What looks off**: judgment calls, what doesn't make sense or look right
+or what the end user would hit, that no check could settle. Then
+**Hypotheses**: factual claims you tried to check and couldn't, each with
+what blocked it. End with a verdict: approve, approve with notes, request
+changes, or **frame-rot**.
 
 Frame-rot means the approach is wrong: patching will not converge, the work
 needs a redesign. It is always blocking and must be constructive: name the

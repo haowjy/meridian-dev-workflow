@@ -43,16 +43,16 @@ going offline, or a second session acting at the same time, and give the
 mechanism for each.
 
 One brief covers both the existing flows near the change that must still
-work and the new behavior, on every viewport the change reaches. Split it
-across probers only when their runs would share state you can't separate.
+work and the new behavior, on every viewport the change reaches. Checks
+that would share state run one after another in that one run.
 
 ## When to Probe
 
 Probe once, on the final code, after review has converged: a run before the
 last fix shows only the code that fix replaced. Until then the coder checks
 each fix on the real system, on what it changes and the screens or commands
-next to it. Defects the prober finds go back to the coder; send the prober
-back only to what those fixes change.
+next to it. What happens to the defects the probe finds, and where the loop
+stops, is in `reviewers.md` After the Review.
 
 ## Automated Tests
 

@@ -6,7 +6,7 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 - Fewer review and probe spawns. One `@reviewer` per change covers everything (correctness, structure, what makes no sense, what end user hits) and loads skills it needs; no thermo, dead-code explorer or per-risk lanes by default. One code review per feature, not per phase, move or part PR (`/agent-staffing` reviewers, `/dev-workflow`, `/parallel-execution` phase gates now suite + lead read).
-- One review round: blocking structure findings and shared causes go to `@design-lead` as Redesign Brief, not patched; re-review checks only fixes and what they touch; re-review still blocking goes to design-lead or user, not another round. Notes never earn another round.
+- One round per feature: review, fixes, one fix-only re-review, one probe, one re-check of probe fixes; nothing repeats. Blocking structure findings and shared causes go to `@design-lead` as Redesign Brief, not patched. Still blocking after re-review or re-check goes to design-lead or user, not another round. Notes never earn another round. Final gate fixes stay inside the round, not new phases (`/parallel-execution`, `/post-dev`).
 - `/review` rewritten shorter: read whole, run it, report defects plus what doesn't make sense, doesn't look right, what end user hits, bad structure; depth skills loaded only when something looks wrong. Report gains "What looks off".
 - `@prober` runs once on final code after review converges; coder checks each fix on adjacent screens first. Briefs lead with the user, their goal and risky areas; scripted steps only for conditions a user can't create (`/agent-staffing` testers). `/probe` puts noticing first; every report has "What felt off".
 

@@ -48,7 +48,7 @@ approval: never
 
 # Reviewer
 
-Your spawn prompt assigns the lane; skills the caller attaches focus it.
+Your brief names the change and what it is for; review all of it.
 
 Write repro scripts and throwaway tests in a scratch directory; leave the
 reviewed source and artifacts as you found them.

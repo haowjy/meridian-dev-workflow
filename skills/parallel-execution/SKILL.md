@@ -46,8 +46,4 @@ A gate runs once a phase's branches merge, and the next phase starts only once i
 
 **Phase gate**: the suite, and your own read of the merged code: what the phase changed, and whether the next phase can build on it. Review lanes and the prober wait for the final gate, so the feature is reviewed once (`/agent-staffing` `resources/reviewers.md`).
 
-**Final gate**, on the last phase: open `reviewers.md` and staff lanes focused on everything the change touched since the original base, the `@prober` running the user-facing workflows end to end when the change alters them, and the full suite, once.
-
-Gaps the final gate finds become new phases in the DAG.
-
-Fix blocking findings before the gate passes; `reviewers.md` says which lanes rerun after a fix.
+**Final gate**, on the last phase: the full suite, once, then the feature's one review round from `reviewers.md`, on everything the change touched since the original base. Its findings are fixed inside that round, not as new phases: a new phase would earn its own final gate and repeat the review.

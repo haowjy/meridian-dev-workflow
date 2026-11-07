@@ -10,7 +10,7 @@ once all of it is built. A plan review is the cheapest catch: a better
 structure found in the plan costs an edit, and found in code, a rewrite. A
 feature built in phases, moves, or part PRs still gets one code review, of
 everything it changed since its base. Each extra gate repeats the review,
-its fixes, and the browser run.
+its fixes, and the runtime check.
 
 ## Lanes a Change Needs
 
@@ -27,8 +27,9 @@ its fixes, and the browser run.
 
 ## After the Review
 
-One review round per feature: the review, then the fixes it calls for.
-Fix valid blocking findings; notes are yours to take or leave. Record
+One round per feature, in this order: the review, its fixes, one
+re-review of those fixes, the prober's run, and one re-check of what the
+probe's fixes change. Nothing in it repeats. Fix valid blocking findings; notes are yours to take or leave. Record
 reasons for deferrals with the work item's decisions, and resolve
 conflicting findings using the design and evidence.
 
@@ -37,7 +38,7 @@ fixing any. Blocking structure findings, findings that share a cause, and a
 frame-rot verdict go to `@design-lead` (the user, when you can't spawn
 one) as a Redesign Brief (`/review`
 `resources/redesign-escalation.md`) with the report, not to a patch:
-symptoms patched one at a time bring the cause back in the next round. A
+symptoms patched one at a time bring the cause back in the re-review. A
 question about what the feature should do goes to the user.
 
 Each fix is committed, the suite rerun, and the fix checked on the real
@@ -48,9 +49,13 @@ with the fix commits, the report they answer, and what each fix was meant
 to end. It reviews the fixes and what they touch, not the whole change
 again.
 
-A re-review that still finds blocking problems ends the round. Take them to
-`@design-lead`, or to the user when they turn on what the feature should
-do, rather than starting another round. A failed redesign goes to your
+Defects the prober finds go back to the coder, who fixes and checks them;
+read the fix diffs yourself, then send the prober back once, only to what
+those fixes change.
+
+A re-review or probe re-check that still finds blocking problems ends the
+round. Take them to `@design-lead`, or to the user when they turn on what
+the feature should do, rather than starting another round. A failed redesign goes to your
 caller: the problem usually sits in scope or requirements.
 
 ## Reviewing Requirements or a Design
