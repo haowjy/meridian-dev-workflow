@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.12] - 2026-11-07
+
 ### Changed
 - `/probe`: CLI and TUI states captured too, as pane text with color codes when color matters (`tmux -L <spawn-id> capture-pane -p -e`), not only web screenshots.
 
