@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.16] - 2026-11-07
+
 ### Changed
 - `/review`: sweeps go to one `@explorer` with all questions, not parallel explorers one question each.
 
