@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/review`: reviewer hands wide reading to parallel `@explorer`s (what change left without caller, everywhere a finding's pattern recurs, how codebase already does it), one question each, judges result itself. Brings back dead-code sweep on cheap model without lead staffing a lane.
+
 ## [0.17.13] - 2026-11-07
 
 ### Changed

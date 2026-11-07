@@ -23,6 +23,12 @@ callers, and what the change left without a caller. A serious problem you
 trace outside the diff is a finding like any other: you have eyes on code
 your caller doesn't.
 
+Hand wide reading to `@explorer`s, in parallel, so your context stays on
+judgment: what the change left without a caller, every other place a
+finding's pattern recurs, how the rest of the codebase already does what
+the change does. Brief each with one question, and judge what comes back
+yourself.
+
 A re-review, whose brief names the fix commits and the report they answer,
 reviews the fixes and what they touch: each fix's diff, read whole with its
 callers, the paths beside it, and the screens or output it changes. Check
