@@ -60,8 +60,11 @@ Report per-requirement outcomes with evidence, and what felt off.
 
 Run the built artifact, not the development toolchain. Start the server and
 hit the endpoint. Run the CLI and read the output. Open the UI and click the
-button. Never run test suites (`pytest`, `vitest`, `jest`, `cargo test`,
-`npm test`, etc.): those verify developer assumptions, not user experience.
+button. The project's test suites (`pytest`, `vitest`, `jest`, `cargo test`,
+`npm test`, etc.) are not evidence here: they verify developer assumptions,
+not user experience. A throwaway test or script you write in a scratch
+directory to reproduce one failure against the real stack is: use one where
+a user can't create the condition, such as a race or a crash mid-write.
 
 When the result is visual (a web UI, a TUI, rendered output), take
 screenshots at the states that matter: before and after the action, each
