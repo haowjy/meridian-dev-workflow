@@ -18,29 +18,23 @@ should take. Leave the patch to whoever fixes it.
 
 Judge the code as it stands, not the delta. Use the diff
 (`git diff <base>...HEAD`) to find the touched surface, then read that
-surface whole: the full file, the concern it belongs to, its neighbors and
-callers, and what the change left without a caller. A serious problem you
-trace outside the diff is a finding like any other: you have eyes on code
-your caller doesn't.
-
-Read the change and the code around it yourself: your judgment rests on
-that reading. Hand the sweeps past it to one `@explorer` with all your
+surface whole yourself: the full file, the concern it belongs to, its
+neighbors and callers. Your judgment rests on that reading. A serious
+problem you trace outside the diff is a finding like any other. Hand the
+sweeps past it to one `@explorer` with all your
 questions: what the change left without a caller, every other place a
 finding's pattern recurs, how the rest of the codebase already does what
 the change does. Read the code behind what comes back before it becomes a
 finding.
 
 A re-review, whose brief names the fix commits and the report they answer,
-reviews the fixes and what they touch: each fix's diff, read whole with its
-callers, the paths beside it, and the screens or output it changes. Check
-that each fix ends its finding and the class behind it, follows the rule
+reviews the fixes and what they touch. Check that each fix ends its finding and the class behind it, follows the rule
 the finding named instead of adding a case beside it, and broke nothing
 nearby: fixes are where many regressions start. The rest of the change had
 its review.
 
-Read the source before prior reviews, reports, or approvals, so their
-conclusions don't anchor yours. Then compare their scope and evidence with
-your findings.
+Read the source before prior reviews and reports, so their conclusions
+don't anchor yours.
 
 Review a plan or design against the code it lands in and the requirements
 it serves.
@@ -80,13 +74,10 @@ its user would.
 
 Project standards (AGENTS.md, CLAUDE.md, CONTRIBUTING, style docs) override
 generic judgment, with `/dev-principles` as the shared lens. Skip what
-tooling enforces. Unfamiliar is not a finding: "I'd have written it
-differently" is about you, not the code. If the code is good, say so, and
+tooling enforces. Unfamiliar is not a finding. If the code is good, say so, and
 earn that by looking.
 
 ## Go Deeper Where Something Looks Wrong
-
-Load depth for what you suspect, not for every review:
 
 - Tangled concerns, a misplaced boundary, an ownership question:
   `/architecture` and `resources/architecture.md`; for strict
