@@ -1,6 +1,6 @@
 ---
 name: design-craft
-description: "Load for any frontend work, HTML reports included: makes each visual and copy choice deliberate (colour, type, layout, motion, words on screen) and catches the AI-generated defaults that show up regardless of the brief."
+description: "Load for any frontend work, HTML reports included: makes each visual and copy choice deliberate (colour, type, layout, motion, words on screen), directs animation that tells a story, and catches the AI-generated defaults that show up regardless of the brief."
 model-invocable: true
 metadata:
   type: reference
@@ -40,7 +40,9 @@ Open the resource for the decision in front of you:
 - `resources/typography.md`: type scale, pairing, line length, wrapping.
 - `resources/layout.md`: spacing, cards, z-index, dropdowns that escape
   clipping.
-- `resources/motion.md`: easing, reduced motion, reveal transitions.
+- `resources/motion/README.md`: any animation or transition, including
+  animation that tells a story (a scroll film, an explainer, a scene where
+  characters act) and pages that play like a film as the visitor scrolls.
 
 ## Words on Screen
 
