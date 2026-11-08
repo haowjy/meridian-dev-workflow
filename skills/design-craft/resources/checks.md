@@ -2,7 +2,9 @@
 
 Run both checks on the rendered page before you show it or ship it, and
 again after a fix that changes what renders. Each finding is a question: fix
-it, or keep it and say why.
+it, or keep it and say why. To see what a visual fix changed, take a
+screenshot before it and compare after:
+`agent-browser diff screenshot --baseline before.png`.
 
 ## Information
 
@@ -50,7 +52,10 @@ quiet, citing where it was decided:
 npx -y impeccable@4 ignores add-value overused-font Inter --reason "DESIGN.md: one font, Inter"
 ```
 
-This writes the committed `.impeccable/config.json`. Faults (contrast, text
+This writes the committed `.impeccable/config.json`. A project `DESIGN.md`
+whose frontmatter lists its colours, type and radii also turns on
+impeccable's design-system rules, which flag values off that system; they
+run on local files and `file://` URLs, not on `http` pages. Faults (contrast, text
 size, overflow) are never choices. Taste rules such as
 `kicker-above-heading` and `numbered-section-labels` are weighed against the
 brief like any other default.
@@ -65,3 +70,13 @@ To scan a page behind a login, sign in with `/agent-browser`, then attach to
 that browser: `agent-browser get cdp-url` gives the port, and
 `npx -y impeccable@4 detect --json --cdp <port> --target <url substring>`
 scans the open page.
+
+## Motion
+
+On a page that animates, run `scripts/motion-audit.js` the same way. It
+lists the CSS and Web Animations on the page with their durations and
+curves, and counts `transition: all`, animated layout properties, entrances
+from `scale(0)`, endless loops, and reduced-motion rules. Many distinct
+durations and curves mean the page has no motion language. Motion drawn by
+script each frame doesn't appear in it; capture that with
+`scripts/motion-strip.sh` (`resources/motion/directing.md`).

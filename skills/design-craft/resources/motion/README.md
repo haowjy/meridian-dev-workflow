@@ -19,7 +19,10 @@ is decoration. Cut it on anything people use often. Match the amount of
 motion to how often people see it: an action people repeat many times a day
 (a command palette, a keyboard shortcut, moving through a list) gets little
 or none beyond what shows a state or a position change, while a first-run or
-once-a-visit moment can carry the most.
+once-a-visit moment can carry the most. Sections that fade and rise into
+view one after another as the page scrolls are the generated default; one
+orchestrated moment, such as a single entrance or one scene, lands better
+than motion scattered over every section.
 
 ## Timing and Easing
 

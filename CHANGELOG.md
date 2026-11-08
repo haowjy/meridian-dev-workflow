@@ -6,6 +6,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 - `/design-craft`: motion moves to `resources/motion/`. `README.md` is general motion (should it move, timing and easing, shape of a move, several elements at once). New `directing.md`: story animation as beats, staging, continuity, review as a sequence, reports in scene terms. New `cinematic-scroll.md`: scroll-film toolbox, one timeline of scenes, phones (lvh/svh, iOS clip), performance and reduced motion.
+- `/design-craft` `scripts/motion-audit.js`: inventory of a page's CSS and Web Animations (durations, curves, `transition: all`, layout properties, `scale(0)`, loops, reduced-motion rules); `checks.md` runs it on pages that animate.
+- `/design-craft` `motion-strip.sh --perf`: frame gaps and long animation frames over three steady scrolls; `cinematic-scroll.md` measures before and after heavy changes with it.
+- `/design-craft` `checks.md`: before/after screenshot diff; a project `DESIGN.md` turns on impeccable's design-system rules (local files only). `motion/README.md`: scroll reveals on every section are the generated default.
 - `/uxdev`: reads a reachable design tool (Figma MCP) as the system the code should match; `direction.md` names live products and paid reference libraries (Refero, Mobbin) for how real products handle a job, not for the look.
 - `/design-craft` `persuade.md`: offers a scroll film as an option for a page with a story to show; the page's owner chooses it.
 - `/design-craft` `scripts/motion-strip.sh`: evenly spaced frames across a scroll range in an agent-browser session, tiled into one strip, optional video.

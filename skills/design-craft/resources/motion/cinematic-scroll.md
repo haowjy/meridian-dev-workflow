@@ -88,8 +88,12 @@ of these is noise.
 - Run one animation loop for the whole film, skip painting when nothing
   changed, and pause canvases and shaders that are off screen or in a hidden
   tab.
-- Measure frame times on a mid-range phone, not only a desktop. Let shaders
-  lower their resolution when frames run slow.
+- Measure frame times before and after each heavy change:
+  `scripts/motion-strip.sh --perf SECONDS` scrolls the range three times
+  and reports slow frames and the browser's long animation frames with the
+  scripts behind them. A desktop headless browser is faster than a phone,
+  so compare runs with each other and check a mid-range phone before
+  launch. Let shaders lower their resolution when frames run slow.
 - Under `prefers-reduced-motion`, show each scene's resting state with the
   full story and content, and change between scenes with a crossfade or
   instantly. Nothing flashes more than three times a second.
