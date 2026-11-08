@@ -12,7 +12,7 @@ Load `/design-craft` before proceeding.
 
 ## Learn Before Drawing
 
-Understand the existing design language: tokens, components, typography, spacing, and interaction patterns. Read a representative component or page. Additions inherit the established system by default; missing documentation is not permission to replace it. Explore a new visual identity only when the brief calls for a new or replacement system.
+Understand the existing design language: tokens, components, typography, spacing, and interaction patterns. Read a representative component or page. Additions inherit the established system by default; missing documentation is not permission to replace it. When the design also lives in a design tool you can reach, such as Figma through its MCP server, read its variables and component mappings too: they are the system the code should match. Explore a new visual identity only when the brief calls for a new or replacement system.
 
 ## Stay Close to Taste
 

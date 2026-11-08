@@ -24,6 +24,12 @@ when similar products have them. Name the few components the user spends
 most of their time in. They carry the direction, so design them hardest and
 let the rest follow their language.
 
+To see how real products handle a job (an empty state, onboarding, a
+settings flow), look at their screens: the live products, or a reference
+library such as Refero or Mobbin. Both are paid, and both have MCP servers
+an agent can search when the person has an account. Take from them how a
+job is done, not the look: the identity comes from this audience.
+
 Make the mockup explain itself. Give it a notes layer the viewer can toggle
 that says, for every control, label, and panel, which job it serves and what
 it does. Writing these notes is the test: a control whose note you can't
