@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.18] - 2026-11-08
+
 ### Added
 - `/design-craft`: motion moves to `resources/motion/`. `README.md` is general motion (should it move, timing and easing, shape of a move, several elements at once). New `directing.md`: story animation as beats, staging, continuity, review as a sequence, reports in scene terms. New `cinematic-scroll.md`: scroll-film toolbox, one timeline of scenes, phones (lvh/svh, iOS clip), performance and reduced motion.
 - `/design-craft` `scripts/motion-audit.js`: inventory of a page's CSS and Web Animations (durations, curves, `transition: all`, layout properties, `scale(0)`, loops, reduced-motion rules); `checks.md` runs it on pages that animate.

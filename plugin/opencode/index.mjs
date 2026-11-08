@@ -43,7 +43,7 @@ const DATA = {
     {
       "directory": "design-craft",
       "name": "design-craft",
-      "description": "Load for any frontend work, HTML reports included: makes each visual and copy choice deliberate (colour, type, layout, motion, words on screen) and catches the AI-generated defaults that show up regardless of the brief."
+      "description": "Load for any frontend work, HTML reports included: makes each visual and copy choice deliberate (colour, type, layout, motion, words on screen), directs animation that tells a story, and catches the AI-generated defaults that show up regardless of the brief."
     },
     {
       "directory": "dev-principles",
