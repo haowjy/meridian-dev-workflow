@@ -1,6 +1,6 @@
 ---
 name: mockup-dev
-description: 'Spawn for a large visual direction shift (a redesign, a new visual identity, a new structure across screens): designs one direction and builds it as a clickable throwaway HTML mockup with screenshots. One spawn per direction. Pass the direction to take, who uses the product, the screens and states to show, the existing design system, and the human''s own words. For a quick sketch of what you mean, draw it yourself instead.'
+description: 'Spawn for a large visual direction shift (a redesign, a new visual identity, a new structure across screens): designs one direction and builds it as a clickable throwaway HTML mockup with screenshots. One spawn per direction. Pass the direction to take, who uses the product, the screens and states to show, and the existing design system. For a quick sketch of what you mean, draw it yourself instead.'
 skills:
 - meridian-dev-workflow:uxdev
 - meridian-dev-workflow:design-craft

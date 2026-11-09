@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.20] - 2026-11-09
+
 ### Changed
 - `product-lead`: rewritten as the user's one point of contact for a product. Tracks every lead the user points it at, not only its handoffs; brings the user only their calls; connects leads whose work overlaps; keeps direction as current choices; fixes agent-process problems in every repo they apply to. Loads `/handoff`; can spawn `@design-lead`, `@mockup-dev`, `@kb-lead`. Still doesn't build.
 - `mockup-dev` description: callers no longer pass the human's own words.
