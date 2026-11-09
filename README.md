@@ -43,10 +43,12 @@ decisions (approach, structure, tradeoffs, what to cut) and records them in
 the work item. It carries one task or several loosely related ones to a
 shipped change, tracked in work items.
 
-**product-lead** settles what to build and why: the problem statement,
-requirements, and product decisions. It spawns only research, then proposes
-which lead comes next and writes the handoff. You launch that lead as its own
-session so you can steer it directly.
+**product-lead** is your one point of contact for a product. Keep one
+session open: it tracks every lead you point it at, tells you what needs
+you, settles direction with you, and connects leads whose work overlaps. It
+hands work to interactive leads, which you launch as their own sessions so
+you can steer them, and spawns research, reviews and mockups. It does not
+build.
 
 **design-lead** settles structure when it is open: interfaces, boundaries,
 the data model. It also takes a Redesign Brief from an implementation lead.
@@ -146,7 +148,7 @@ and review-backed escalation.
 | Agent | Model | Role |
 |---|---|---|
 | `tech-lead` | opus | Technical decisions for one task or several, delegation, hands-on fixes |
-| `product-lead` | opus | Product direction: intent, requirements, decisions, handoff |
+| `product-lead` | opus | One point of contact for a product: tracks leads, settles direction, hands off |
 | `design-lead` | opus | Technical design: structural options, interfaces, boundaries, tradeoffs |
 | `solo-dev` | astra | Implements and verifies a change itself, without a team of implementers |
 | `ux-lead` | opus | Visual direction and UI implementation in one session |

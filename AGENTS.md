@@ -79,6 +79,12 @@ Behavior a released change expects but no real run has shown yet. Check it on
 the next runs that exercise it, then delete the entry, fixing the prompt first
 if the runs show otherwise.
 
+- **product-lead as the user's point of contact.** On the next long
+  product-lead runs in meridian-flow: it keeps what it knows about each lead
+  outside its context and picks it up after compaction; it tracks leads the
+  user launched, not only its handoffs; its handoff briefs say it coordinates
+  the lead, and the lead keeps it informed. If leads don't report back, the
+  brief line needs to say what to report.
 - **Leads run the lifecycle from `/dev-workflow`, not their bodies.** On the
   next tech-lead and solo-dev runs: a returning spawn is not a stopping
   point; an unclear point is written to the work directory with the call
