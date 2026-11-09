@@ -54,6 +54,10 @@ if [ -z "$real" ] || [ ! -x "$real" ]; then
     exit 127
 fi
 
+# Render on the GPU. Tested on Linux with NVIDIA only; machines without one are untested.
+# Do not add --enable-features=Vulkan: it blanks WebGL in screenshots.
+set -- "$@" --use-angle=vulkan
+
 if command -v systemd-run >/dev/null 2>&1 \
     && command -v systemctl >/dev/null 2>&1 \
     && systemctl --user show-environment >/dev/null 2>&1; then

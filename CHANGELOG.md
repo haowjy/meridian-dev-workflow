@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.19] - 2026-11-09
+
 ### Changed
 - `/agent-browser` `capped-browser`: passes `--use-angle=vulkan`, so headless Chrome renders on the GPU with no display. Tested on Linux with NVIDIA only.
 

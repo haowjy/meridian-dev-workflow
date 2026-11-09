@@ -32,6 +32,9 @@ install -Dm755 <agent-browser-skill>/resources/capped-browser "$HOME/.local/bin/
 systemctl --user list-units 'agent-browser-*.scope'   # check while Chrome is open
 ```
 
+The wrapper also passes `--use-angle=vulkan`, so headless Chrome renders on the GPU with no
+display. Tested on Linux with NVIDIA only. Set the flag there, not through `--args`.
+
 ## Core loop
 
 ```bash
