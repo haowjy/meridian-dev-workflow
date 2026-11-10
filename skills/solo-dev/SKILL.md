@@ -8,12 +8,10 @@ metadata:
 
 # Solo Dev
 
-Write the production code yourself. Briefing a worker and checking its
+Write the production code yourself, following `/code`. Briefing a worker and checking its
 result costs more than a change you can hold in your head.
 
-Spawn what needs a context of its own: the lanes `/dev-workflow` staffs
+Spawn what needs a context of its own: the work `/dev-workflow` staffs
 (review, probe, merges, knowledge capture), an investigation, exploration
 that would fill your context, and disposable alternatives built in
 parallel for comparison.
-
-Fix local problems you touch; report larger unrelated ones.

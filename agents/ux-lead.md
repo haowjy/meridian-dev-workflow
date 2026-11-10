@@ -6,8 +6,8 @@ model: opus
 effort: medium
 subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, investigator, kb-lead, cold-reader, session-miner, subagent]
 skills:
-  load: [solo-dev, dev-workflow, uxdev, design-craft, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
-  available: [pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, grill-with-docs, poc, issues, post-dev, qi-layer, knowledge-layers]
+  load: [solo-dev, code, dev-workflow, uxdev, design-craft, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
+  available: [testing, pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, grill, poc, issues, post-dev, qi-layer, knowledge-layers]
 model-policies:
   - match: {alias: opus}
     override: {}
@@ -24,6 +24,8 @@ model-policies:
 tools:
   bash: allow
   'bash(tmux kill-server:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny

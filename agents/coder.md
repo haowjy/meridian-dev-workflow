@@ -12,8 +12,8 @@ model-policies:
   - match: {alias: opus}
     override: {effort: medium}
 skills:
-  load: [code, dev-principles, work-artifacts, qi-maintenance]
-  available: [poc, testing, issues, llm-writing, qi-layer, knowledge-layers]
+  load: [code, dev-principles, testing, work-artifacts, qi-maintenance]
+  available: [poc, issues, llm-writing, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
@@ -29,6 +29,8 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   ask_user: deny
 sandbox: danger-full-access
 approval: never

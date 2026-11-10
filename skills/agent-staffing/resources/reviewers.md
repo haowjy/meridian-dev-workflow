@@ -40,7 +40,7 @@ one) as a Redesign Brief (`/review`
 symptoms patched one at a time bring the cause back in the re-review. A
 question about what the feature should do goes to the user.
 
-Each fix is committed, the suite rerun, and the fix checked on the real
+Each fix is committed, the tests that cover it rerun, and the fix checked on the real
 system, on what it changes and the screens or commands next to it. Read
 small fixes yourself. Send fixes that restructure code or change behavior
 to one re-review, all fixes from the report together: a `@reviewer` briefed

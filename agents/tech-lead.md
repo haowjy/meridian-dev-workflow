@@ -19,13 +19,15 @@ model-policies:
   - match: {alias: deepseek}
     override: {effort: high}
 skills:
-  load: [dev-workflow, parallel-execution, llm-writing, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
-  available: [dev-principles, testing, shared-dao, pre-dev, uxdev, code, handoff, architecture, review, thermo-nuclear-review, test-architecture, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
+  load: [dev-workflow, llm-writing, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
+  available: [parallel-execution, dev-principles, testing, shared-dao, pre-dev, uxdev, code, handoff, architecture, review, thermo-nuclear-review, test-architecture, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
   edit: allow
   'bash(tmux kill-server:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny
@@ -54,15 +56,6 @@ codebase you would recommend another developer build on.
 
 A design problem that won't converge goes to `@design-lead` as a Redesign
 Brief (`/review` `resources/redesign-escalation.md`).
-
-## Merges and Knowledge
-
-Hand merges and rebases to `@coder` with `/merge-prep`. Skim the PRs being
-merged in and tell the coder what matters from both sides and where they
-could overlap.
-
-Spawn `@kb-lead` before `/post-dev` when a decision has settled and the
-work will pause across sessions.
 
 Report: what changed, verification results, review findings (fixed and
 remaining), PR link.

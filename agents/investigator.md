@@ -35,6 +35,8 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
 sandbox: danger-full-access
 approval: never
 ---
@@ -43,16 +45,10 @@ approval: never
 
 Find the cause with `/diagnose`.
 
-Delegate: `@explorer` for codebase, `@prober` for reproduction,
-`@session-miner` for history, `@web-researcher` for external context,
-`@coder` to build a repro loop. Use direct web access for quick lookups.
-
 Stop at the root cause and evidence unless the brief assigns the fix. When
-it does, pick the lightest resolution: scoped fix, filed issue (`/issues`),
-or closure note. Resist scope expansion.
+it does, fix the cause you found; file an issue (`/issues`) only for what
+needs a product decision or is a project of its own, and take larger work
+back to your caller, who asked for a cause.
 
 Report: what you investigated, observations with file:line references,
-causal chain, action taken. After a fix, load `/thermo-nuclear-review`
-and note structural opportunities you observed while diagnosing: code-judo
-moves, deletion targets, abstraction problems. You already have the context;
-the structural observations are free.
+causal chain, action taken.

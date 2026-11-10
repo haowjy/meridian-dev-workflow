@@ -4,6 +4,38 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- All profiles deny `pkill -f`, `killall`: pattern kill hits other agents' sessions. Kill by PID.
+- README: the change lifecycle in five steps, matching `/dev-workflow`.
+- `investigator` picks its own helpers. `/tech-docs`, `/source-study`: shorter.
+- `/code`, `frontend-coder`: the codebase is the agent's own; it merges repeated code and fixes the bugs it finds, naming each in its report.
+- `coder`, `frontend-coder` load `/testing`, which holds the verification rule; `/code` and `/dev-principles` point to it.
+- `/dev-workflow` Plan: settle the structure before code, enabling refactors first; a `@reviewer` reviews a plan that adds a module, contract or data format other code depends on.
+- `/architecture`, `/thermo-nuclear-review`, `/diagnose`, `/pre-dev`, `/post-dev`, `/testing`, `/review-alignment`, `/source-study`, `/issues`, `/merge-prep`: shorter; each keeps the checks that change behavior.
+- `/thermo-nuclear-review` blockers: kept edge cases, bolted-on flags, wrong layer, dead code, hidden invariants, half-applied state, multiplying tests.
+- `design-lead` chooses its own staffing, and zooms out to the system around the problem before designing. It loads `/information-hierarchy` when it writes a long doc.
+- `/uxdev`: before hardening a direction a doc argues against, tell the human what the doc says.
+- `/dev-principles` Recorded Choices: a recorded design or implementation choice is a current choice with its reason; change it when the reason stops holding or the human asks, and say so. Instructions about how agents work stay instructions; invariants go to the human.
+- `/dev-principles` Deletion: search for callers, then delete what the change leaves dead.
+- `/agent-staffing`: open the passages `@session-miner` returns and judge them yourself. `kb-lead` reorganizes what it touches; `kb-maintainer` is for a whole tree hard to navigate.
+- `investigator`: each instruction says what it is for.
+- `product-lead`, `ux-lead`: `/grill` available.
+- `solo-dev`, `ux-lead` load `/code` and `/testing`: the codebase is theirs, and they fix what they find.
+- `/dev-workflow` Verify: whoever writes the code checks it on the real system; the full suite runs on the commit sent to review and on the commit shipped. A review fix reruns the tests that cover it.
+- `/post-dev`: user docs describe the change; one `@cold-reader` reads the PR body and the prose the branch added. Tests are kept or deleted as `/testing` says.
+- `frontend-coder` loads `/code`; `solo-dev` can spawn `@coder` for merges; `ux-lead` loads `/testing` when it changes real code.
+- `investigator`, assigned a fix, fixes the cause and files an issue only for what needs a product decision or is a project of its own.
+- `/dev-workflow`: a departure from an instruction the human gave for this work goes to them. Review is one reviewer, not lanes.
+- `/pre-dev` runs before the first source edit, by the lead doing the change; `design-lead` and `product-lead` don't run it.
+- `@explorer` finds what's related in an area too large to search yourself (`/agent-staffing`).
+- `reviewer`, `source-researcher` don't load `/agent-staffing`; `product-lead` doesn't load `/dev-principles` or `/qi-maintenance`; `tech-lead` loads `/parallel-execution` when the work splits.
+- `ship.md`, `testers.md`, `maintainers.md`, `investigator`, `tech-lead`: repeats of other skills removed.
+
+### Removed
+- `architect`: `design-lead` settles the structure itself.
+- `/react-architecture`: project stack picks go in the project's AGENTS.md; tokens are covered by `/uxdev` and `/ui-implementation`.
+- `/design-analysis`, `design-researcher`: `@design-lead` compares options.
+
 ## [0.17.20] - 2026-11-09
 
 ### Changed

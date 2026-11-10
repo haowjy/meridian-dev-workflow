@@ -25,8 +25,8 @@ model-policies:
     no-fallback: true
     override: {effort: high}
 skills:
-  load: [dev-principles, review, agent-staffing]
-  available: [shared-dao, md-validation, information-hierarchy, react-architecture, thermo-nuclear-review, test-architecture, review-alignment, architecture, tech-docs, llm-writing, probe]
+  load: [dev-principles, review]
+  available: [agent-staffing, shared-dao, md-validation, information-hierarchy, thermo-nuclear-review, test-architecture, review-alignment, architecture, tech-docs, llm-writing, probe]
 tools:
   bash: allow
   read: allow
@@ -41,6 +41,8 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   ask_user: deny
 sandbox: danger-full-access
 approval: never

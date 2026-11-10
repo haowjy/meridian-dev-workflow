@@ -52,8 +52,8 @@ build.
 
 **design-lead** settles structure when it is open: interfaces, boundaries,
 the data model. It also takes a Redesign Brief from an implementation lead.
-It investigates in parallel, converges, challenges the design with the checks its risks
-call for (prober, reviewer, alignment review), and returns design docs with a recommendation. Run
+It zooms out to the system around the problem, compares alternatives and prototypes
+what's unproven, has the design reviewed, and returns design docs with a recommendation. Run
 it as a session or spawn it.
 
 **solo-dev** implements and verifies a change itself, without a team of
@@ -73,52 +73,25 @@ When structure is open:  design-lead ─handoff→ tech-lead | solo-dev
 
 ### A Change, End to End
 
-Every implementation lead runs the same lifecycle:
+Every implementation lead runs the same lifecycle; `/dev-workflow` owns it.
 
-1. **`/pre-dev`** runs once the plan exists, before the first source edit.
-   When the change adds structure or grows code beyond a local edit, a
-   `thermo-nuclear-review` reviewer reads the plan and any design doc against the code, so a simpler
-   structure becomes an enabling refactor. It also sets up a worktree for the
-   work item, drafts the PR body from the repo template, and captures
-   before-state evidence while it still exists.
-2. **Implement.** tech-lead plans work that splits into parallel lanes or
-   dependent phases as a DAG with `/parallel-execution`, using a worktree per parallel lane and one
-   owner for each change to shared code. It delegates to `coder` and
-   `frontend-coder`. solo-dev and ux-lead implement the change themselves.
-   Each change carries the changelog entry the project's conventions
-   require.
-3. **Verify.** Leads run focused checks and `/probe` against the real system
-   while working, and the full suite once on the finished change.
-4. **Review.** `reviewer` and `prober` run on a committed state, with the
-   lanes the change needs (`agent-staffing` `resources/reviewers.md`): a
-   correctness reviewer always, `thermo-nuclear-review` when the change adds
-   structure or grows code beyond a local edit, a reviewer per risk, a prober when runtime behavior
-   changes. The thermo lane runs once the other lanes' fixes land, to fold
-   those patches into the code instead of leaving them bolted on. Phased
-   work gets a gate where later phases build on a phase, and a final gate
-   over the whole change. A fix that restructures code or changes behavior
-   goes back to the lanes whose verdicts it could change.
-   Reviewers judge the code as it stands, never only the diff, and get the
-   earlier rounds' findings on that code, so they can say whether a bug is
-   a one-off or part of a pattern.
-5. **`/post-dev`** runs before the PR. It checks the PR body, the changelog,
-   the review sign-off, and deferred work (routed to `.context/` or issues).
-   It also runs `kb-lead` for the whole change.
-6. **Ship** with `/dev-workflow`. The lead pushes the feature branch and
-   opens the PR with the drafted body and a `release:*` label. Merging to
-   `main` waits for a human.
+1. **Plan.** Settle the structure before code, enabling refactors first. A
+   `reviewer` reads a plan that adds a module, contract or data format other
+   code depends on. Then `/pre-dev` sets up the worktree, drafts the PR body
+   from the repo template, and captures before-state evidence.
+2. **Implement.** tech-lead splits parallel work with `/parallel-execution`
+   and delegates to `coder` and `frontend-coder`; solo-dev and ux-lead
+   implement the change themselves.
+3. **Verify and review.** Whoever wrote the code checks it on the real
+   system; the lead then runs `reviewer` and `prober` with the lanes the change needs
+   (`agent-staffing` `resources/reviewers.md`).
+4. **`/post-dev`** checks the PR body, changelog, review sign-off and
+   deferred work, and runs `kb-lead`.
+5. **Ship.** The lead pushes the branch and opens the PR with a `release:*`
+   label. Merging to `main` waits for a human.
 
-### When Fixes Don't Converge
-
-The lead groups review findings by concern, the code behind one
-responsibility, however many files that spans. When one concern would need
-a third round of coders, the lead steps back, has an investigator
-trace the root cause, then has the system reviewed as a whole with every
-earlier report; the cause often sits where two parts own one invariant. A
-model change follows `/agent-staffing`'s review-evidence and cost-tier
-policy. When the structure itself is wrong, the lead writes a Redesign
-Brief: design problems go to design-lead, scope problems go back to you and
-product-lead.
+When the structure itself is wrong, the lead writes a Redesign Brief for
+design-lead; scope problems go back to you and product-lead.
 
 ### Review
 
@@ -174,8 +147,6 @@ and review-backed escalation.
 
 | Agent | Model | Role |
 |---|---|---|
-| `architect` | opus | Compares structural options and writes design docs |
-| `design-researcher` | sol | Structured analysis of design alternatives |
 | `web-researcher` | luna | External facts: library docs, upstream issues, changelogs |
 | `source-researcher` | luna | How real open-source projects solve a similar problem |
 | `browser` | luna | Live websites: design references, scraping, screenshots |
@@ -220,7 +191,6 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | `thermo-nuclear-review` | Strict maintainability: the code-judo move that makes a change, a plan, or the system around it dramatically simpler |
 | `test-architecture` | Tests that pin implementation, mock rot, sprawl worth deleting |
 | `review-alignment` | Systematic check that one artifact matches another |
-| `react-architecture` | React composition, state architecture, token discipline |
 
 **UI and visual**
 
@@ -237,14 +207,13 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 |---|---|
 | `research-web` | Gathering external facts that may postdate training data |
 | `source-study` | Evidence from real codebases before designing |
-| `design-analysis` | Turning findings into a design analysis with compared options |
 | `tech-docs` | Writing design documents |
 | `unravel-codebase` | Human-paced walkthrough of how a codebase works (human-invoked) |
 | `visualize-codebase` | Browsable visual map of a codebase (human-invoked) |
 
 Agents here also load meridian-base skills, including `work-artifacts`,
 `shared-dao`, `llm-writing`, `information-hierarchy`, `intent-modeling`,
-`explore-and-engage`, `grill-with-docs`, `zoom-out`, `qi-maintenance`,
+`explore-and-engage`, `zoom-out`, `qi-maintenance`,
 `qi-layer`, and `knowledge-layers`. Runtime-supplied capabilities let them
 hand off to a new primary session and read past sessions.
 

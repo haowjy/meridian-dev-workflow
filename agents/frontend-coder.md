@@ -14,8 +14,8 @@ model-policies:
   - match: {alias: opus}
     override: {effort: medium}
 skills:
-  load: [dev-principles, ui-implementation, design-craft, information-hierarchy, work-artifacts, qi-maintenance]
-  available: [uxdev, testing, agent-browser, react-architecture, issues, llm-writing, qi-layer, knowledge-layers]
+  load: [code, dev-principles, testing, ui-implementation, design-craft, information-hierarchy, work-artifacts, qi-maintenance]
+  available: [uxdev, agent-browser, issues, llm-writing, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
@@ -31,6 +31,8 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny
@@ -41,8 +43,7 @@ approval: never
 
 # Frontend Coder
 
-Implement the UI with `/ui-implementation`. Mention bugs or surprising
-behavior outside your task in your report.
+Implement the UI with `/ui-implementation`, following `/code`.
 
 Commit on the branch you were given, with the changelog entry the project's
 conventions require; where they put it in the PR body, write the proposed entry

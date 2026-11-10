@@ -3,7 +3,7 @@ name: solo-dev
 description: "Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
 mode: primary
 model: astra
-subagents: [reviewer, prober, explorer, investigator, kb-lead, cold-reader, subagent]
+subagents: [coder, reviewer, prober, explorer, investigator, kb-lead, cold-reader, subagent]
 effort: high
 model-policies:
   - match: {alias: astra}
@@ -15,13 +15,15 @@ model-policies:
   - match: {alias: deepseekpro}
     override: {effort: high}
 skills:
-  load: [solo-dev, dev-workflow, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
-  available: [shared-dao, pre-dev, testing, review, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
+  load: [solo-dev, code, testing, dev-workflow, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
+  available: [shared-dao, pre-dev, review, post-dev, issues, architecture, qi-layer, knowledge-layers, probe]
 tools:
   bash: allow
   write: allow
   edit: allow
   'bash(tmux kill-server:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny

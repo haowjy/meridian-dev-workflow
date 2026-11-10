@@ -86,8 +86,7 @@ earn that by looking.
 - Trust boundaries, input, auth, secrets: `resources/security.md`.
 - Races, shared state, cancellation: `resources/concurrency.md`.
 - Tests: `/test-architecture` and `resources/test-quality.md`.
-- React structure: `/react-architecture`. What a UI shows first and what
-  it buries: `/information-hierarchy`.
+- What a UI shows first and what it buries: `/information-hierarchy`.
 - Fidelity to a spec, design, or `DIVERGENCE/` log: `/review-alignment`.
 - Docs: `/tech-docs` and `/llm-writing`.
 - Patching that won't converge: `resources/redesign-escalation.md`.

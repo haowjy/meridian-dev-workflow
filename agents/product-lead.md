@@ -15,11 +15,13 @@ model-policies:
   - match: {alias: deepseekpro}
     override: {effort: high}
 skills:
-  load: [dev-principles, shared-dao, llm-writing, explore-and-engage, work-artifacts, qi-maintenance, intent-modeling, agent-staffing, handoff]
-  available: [grill-with-docs, uxdev, zoom-out, pre-dev, poc, issues, source-study, qi-layer, knowledge-layers]
+  load: [shared-dao, llm-writing, explore-and-engage, work-artifacts, intent-modeling, agent-staffing, handoff]
+  available: [grill, dev-principles, uxdev, zoom-out, poc, issues, source-study, qi-layer, knowledge-layers]
 tools:
   bash: allow
   'bash(tmux kill-server:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny
@@ -62,4 +64,4 @@ settled. The brief tells the lead that you coordinate it.
 - `@solo-dev`: a change one agent implements and verifies itself
 - `@tech-lead`: technical work that needs ongoing technical decisions, from one change to several loosely related tasks
 
-Spawn work that reports back to you, such as a `@design-lead` review.
+Spawn work that reports back to you, such as a design from `@design-lead`.
