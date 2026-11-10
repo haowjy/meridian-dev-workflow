@@ -73,7 +73,7 @@ Reporting pytest unit/integration test counts as "regression tests" or "e2e cove
 **Sign:** "Ran 236 regression tests" when all you did was `pytest tests/unit`.
 
 **Fix:** Check the project's testing conventions FIRST. Look for:
-- `tests/AGENTS.md` or `tests/CLAUDE.md`: project-specific guidance
+- `tests/AGENTS.md`: project-specific guidance
 - `tests/e2e/` or `tests/smoke/`: if these contain markdown guides, they are MANUAL tests that require actually running CLI commands, not pytest
 - CI config: what does the pipeline consider "smoke" vs "unit"?
 

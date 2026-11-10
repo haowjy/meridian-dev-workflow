@@ -17,8 +17,8 @@ the pair true as the tree changes.
 
 `AGENTS.md` is loaded automatically: the root one into every session, a
 nested one when an agent works in its directory, on harnesses that load
-nested files. Claude reads a `CLAUDE.md` in place of a sibling `AGENTS.md`,
-so a `CLAUDE.md` beside one starts with `@AGENTS.md`. Every line costs every
+nested files. Write instructions there, not in a `CLAUDE.md`: Claude reads
+`AGENTS.md` only when no `CLAUDE.md` sits in the directory or above it. Every line costs every
 agent that works there, every time, so it holds only the most important
 information: what must an agent understand before working here? Write it
 like a prompt, as short as the directory allows, rarely past 200 lines.
