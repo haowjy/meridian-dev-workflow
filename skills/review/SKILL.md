@@ -72,7 +72,7 @@ its user would.
   grows with something it shouldn't (`resources/efficiency.md`). Tests
   rarely catch this.
 
-Project standards (AGENTS.md, CLAUDE.md, CONTRIBUTING, style docs) override
+Project standards (AGENTS.md, CONTRIBUTING, style docs) override
 generic judgment, with `/dev-principles` as the shared lens. Skip what
 tooling enforces. Unfamiliar is not a finding. If the code is good, say so, and
 earn that by looking.

@@ -38,7 +38,7 @@ comment fixes, and work already approved need no permission: do them. Only
 these go to the human: a product decision only they can make, a departure
 from an instruction they gave for this work or from an invariant, and the
 merges the project reserves for them. A
-project can narrow or widen this in its `AGENTS.md` or `CLAUDE.md`.
+project can narrow or widen this in its `AGENTS.md`.
 
 Stop early only for: (a) a scope problem, sent to your caller as a Redesign
 Brief (`/review` `resources/redesign-escalation.md`), (b) a blocker you
