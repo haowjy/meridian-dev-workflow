@@ -4,6 +4,7 @@ description: 'Spawn for implementation work: features, refactors, fixes. Give a 
 skills:
 - meridian-dev-workflow:code
 - meridian-dev-workflow:dev-principles
+- meridian-dev-workflow:testing
 - meridian-dev-workflow:work-artifacts
 - meridian-dev-workflow:qi-maintenance
 mode: subagent
@@ -18,4 +19,4 @@ conventions require; where they put it in the PR body, write the proposed entry
 in your report. Do not push. Your lead integrates your branch, except a merge
 your brief assigns you.
 
-Load these skills when the task fits: /meridian-dev-workflow:poc, /meridian-dev-workflow:testing, /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.
+Load these skills when the task fits: /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

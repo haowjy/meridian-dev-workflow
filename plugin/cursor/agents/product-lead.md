@@ -2,12 +2,10 @@
 name: product-lead
 description: 'Launch as your one point of contact for a product: tracks every lead you point it at, tells you what needs you, settles direction with you, hands work to interactive leads, and connects leads whose work overlaps. Does not build.'
 skills:
-- meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:shared-dao
 - meridian-dev-workflow:llm-writing
 - meridian-dev-workflow:explore-and-engage
 - meridian-dev-workflow:work-artifacts
-- meridian-dev-workflow:qi-maintenance
 - meridian-dev-workflow:intent-modeling
 - meridian-dev-workflow:agent-staffing
 - meridian-dev-workflow:handoff
@@ -49,6 +47,6 @@ settled. The brief tells the lead that you coordinate it.
 - `@solo-dev`: a change one agent implements and verifies itself
 - `@tech-lead`: technical work that needs ongoing technical decisions, from one change to several loosely related tasks
 
-Spawn work that reports back to you, such as a `@design-lead` review.
+Spawn work that reports back to you, such as a design from `@design-lead`.
 
-Load these skills when the task fits: /meridian-dev-workflow:grill-with-docs, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:source-study, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.
+Load these skills when the task fits: /meridian-dev-workflow:grill, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:source-study, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

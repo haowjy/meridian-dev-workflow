@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.21] - 2026-11-10
+
 ### Changed
 - All profiles deny `pkill -f`, `killall`: pattern kill hits other agents' sessions. Kill by PID.
 - README: the change lifecycle in five steps, matching `/dev-workflow`.

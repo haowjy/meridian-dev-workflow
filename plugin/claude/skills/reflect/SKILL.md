@@ -13,4 +13,4 @@ Load `/meridian-dev-workflow:intent-modeling` if it isn't already loaded.
 
 Did you deliver what they actually needed? Given what you changed, is there anything adjacent worth improving now while context is fresh, without opening a new project?
 
-If something should survive this session, put it in the right layer: `/meridian-dev-workflow:knowledge-layers` for placement (AGENTS.md, `.context/`, KB, docs), `/meridian-dev-workflow:qi-layer` for writing AGENTS.md and `.context/CONTEXT.md`.
+If something should survive this session, put it in the right layer: `/meridian-dev-workflow:knowledge-layers` for placement (AGENTS.md, `.context/`, KB), `/meridian-dev-workflow:qi-layer` for writing AGENTS.md and `.context/CONTEXT.md`.

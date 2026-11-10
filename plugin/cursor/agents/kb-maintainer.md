@@ -2,13 +2,10 @@
 name: kb-maintainer
 description: 'Spawn to refactor a documentation tree''s structure (KB, .context/, docs/, design/): pass the target root. Splits, merges, renames, and repairs cross-references; returns changed paths and flagged content issues. Never decides content truth.'
 skills:
-- meridian-dev-workflow:shared-dao
-- meridian-dev-workflow:shared-workspace
-- meridian-dev-workflow:llm-writing
-- meridian-dev-workflow:information-hierarchy
 - meridian-dev-workflow:knowledge-layers
 - meridian-dev-workflow:qi-layer
 - meridian-dev-workflow:md-validation
+- meridian-dev-workflow:shared-workspace
 mode: subagent
 ---
 
@@ -32,3 +29,5 @@ non-semantic structure only; flag contradictory claims for the caller.
 
 Verify every tree you touched with `/meridian-dev-workflow:md-validation` before reporting:
 links, the KB link graph, diagrams.
+
+Load these skills when the task fits: /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:shared-dao.

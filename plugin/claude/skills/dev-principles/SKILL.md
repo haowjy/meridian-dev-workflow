@@ -32,10 +32,11 @@ owner, state model, or shared path.
 
 ## Deletion
 
-LLMs default to preserving code; fight that. Delete dead code, stale
-imports, and orphaned files in the same change, and collapse obvious
-duplication. When new code replaces old
-behavior, delete the old path instead of keeping it as a fallback or
+Delete what the change leaves dead (dead code, stale imports, orphaned
+files) in the same change, and collapse obvious duplication: code nothing
+uses still costs every later reader. Keeping code feels safe when you can't
+see who depends on it, so search for its callers, then delete it. When new
+code replaces old behavior, delete the old path instead of keeping it as a fallback or
 compatibility layer, unless the project's policy requires one. Fix the
 structural problems you touch: circular dependencies, god modules, leaky
 abstractions.
@@ -60,14 +61,15 @@ and load only what this run uses. Before you report or act on a performance
 comparison, rule out errors, skipped work, and noise, per `/meridian-dev-workflow:probe`'s
 `resources/measurement.md`.
 
-## Recorded Decisions
+## Recorded Choices
 
-What binds is what the current pages and `AGENTS.md` state; a decision
-record is history that explains them (`/meridian-dev-workflow:knowledge-layers`). A stated
-decision binds as far as its kind. An invariant holds; bring a conflict
-with it to the human. A current choice holds until the evidence shows
-something better. Then change it, update the page, and say so in your report.
-A decision nobody labeled is a current choice.
+A design or implementation choice recorded in the KB, `AGENTS.md` or
+`.context/` is a current choice with its reason, not a ruling
+(`/meridian-dev-workflow:knowledge-layers`). Instructions about how agents work there
+(permissions, approvals, what needs the human) stay instructions. Change it when the reason no longer holds or
+the human asks for something else, update the page, and say so in your
+report. Invariants are the exception: bring a conflict with one to the
+human.
 
 ## Comments
 
@@ -78,7 +80,5 @@ message.
 
 ## Testing
 
-Verify by listing how the change could fail and checking each failure on
-the running program, plus the existing tests that cover what you touched.
-Keep no new test the user didn't ask for (`/meridian-dev-workflow:testing`); propose one you
-think would earn a permanent place to whoever you report to.
+Verify on the running program, and keep no new test the user didn't ask for
+(`/meridian-dev-workflow:testing`).

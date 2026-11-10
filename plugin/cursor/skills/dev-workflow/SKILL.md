@@ -13,19 +13,12 @@ alwaysApply: false
 Account for the earlier work on the subject first (`/meridian-dev-workflow:explore-and-engage`),
 then write the plan into the work directory.
 
-When the change adds something the project doesn't have yet (a module,
-contract, seam, data format, or UI pattern), moves responsibility between
-modules, or grows existing code beyond a local edit, settle its
-architecture in the plan with `/meridian-dev-workflow:architecture` loaded: how others have built
-it, where it lands, the boundaries it adds or moves, how it reorganizes the
-code, and which later changes it makes easier or harder.
-
-Have a `@reviewer` with `/meridian-dev-workflow:thermo-nuclear-review` and `/meridian-dev-workflow:architecture`
-review that plan against the code it lands in, and put the enabling refactors it finds first: found
-now, a simpler structure is a refactor; after the code exists, a rewrite.
-When several structures would work and none is clearly better, have
-`@design-lead` lay out the options with a recommendation, then decide from
-its report; a tradeoff that is the user's goes to them.
+Settle the structure in the plan before any code: where the change lands,
+what it adds or moves, and the refactors in the existing code that would
+shrink it. Put those refactors first: found now, a simpler structure is a
+refactor; after the code exists, it's a rewrite. When the plan adds a
+module, contract or data format that other code will depend on, have a
+`@reviewer` review it against the code it lands in.
 
 Then run `/meridian-dev-workflow:pre-dev` before the first source edit.
 
@@ -36,14 +29,15 @@ to ship. A spawn returning is not a stopping point: fold its findings in,
 decide the next step, and continue. Where the brief leaves something
 unclear, write the question in the work directory with the call you made,
 keep going, and put the open questions to the user at the end. A product
-decision only the user can make, or a departure from one they made
-(`/meridian-dev-workflow:intent-modeling`), goes to them now; meanwhile work on what doesn't
+decision only the user can make, or a departure from an instruction they
+gave for this work (`/meridian-dev-workflow:intent-modeling`), goes to them now; meanwhile work on what doesn't
 depend on it.
 
 Worktrees, installs, commits, pushes, PRs, issues, knowledge capture, doc and
 comment fixes, and work already approved need no permission: do them. Only
-three things go to the human: a product decision only they can make, a
-departure from an invariant, and the merges the project reserves for them. A
+these go to the human: a product decision only they can make, a departure
+from an instruction they gave for this work or from an invariant, and the
+merges the project reserves for them. A
 project can narrow or widen this in its `AGENTS.md` or `CLAUDE.md`.
 
 Stop early only for: (a) a scope problem, sent to your caller as a Redesign
@@ -52,9 +46,10 @@ cannot clear yourself.
 
 ## Verify
 
-Exercise each way the change could fail on the real system (`/meridian-dev-workflow:probe`). Check
-each review fix the same way, on what it changes and the screens or commands
-next to it. Run the full suite once, on the commit you send to review;
+Whoever writes the code exercises each way it could fail on the real system
+(`/meridian-dev-workflow:testing`); read its report for what it left unverified. Check each review fix the same way, on what it changes and the screens or commands
+next to it. Run the full suite on the commit you send to review and on the commit you
+ship;
 passing unit tests never show the change works.
 
 When tests fail, decide whether the behavior broke, the test went stale, or
@@ -64,8 +59,8 @@ code or the test.
 ## Review
 
 Once per feature, when all of it is built, not per phase, move, part PR,
-or edit, open `/meridian-dev-workflow:agent-staffing` `resources/reviewers.md` and staff the lanes
-it calls for. Prepare `/meridian-dev-workflow:post-dev` while the lanes run, then fix their
+or edit, open `/meridian-dev-workflow:agent-staffing` `resources/reviewers.md` and staff the review
+it calls for. Prepare `/meridian-dev-workflow:post-dev` while it runs, then fix its
 findings as `reviewers.md` says, within its one round.
 
 ## Merges and Rebases
@@ -83,7 +78,7 @@ sessions.
 
 ## Commit Discipline
 
-Commit each self-contained change after the focused checks that cover its risks. Run the full project gate at ship readiness, not after every implementation step, unless the project's policy or a specific risk requires it earlier.
+Commit each self-contained change after the focused checks that cover its risks.
 
 Update the changelog according to the project's conventions, at commit time rather
 than retroactively.
@@ -105,4 +100,3 @@ the branch claimed the moment it merges, both per `resources/ship.md`.
 - Create or push `v*` tags manually (CI owns tagging)
 - Use `--no-verify` on push without explicit user permission
 - Delete untracked files without asking (may be someone else's work)
-- Edit `__version__` or `Cargo.toml` version for stable releases (CI-owned)

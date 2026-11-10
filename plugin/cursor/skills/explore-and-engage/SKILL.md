@@ -10,24 +10,25 @@ alwaysApply: false
 
 <explore_then_recommend>
 Ground recommendations in evidence from all sources: the project's
-materials, docs, KB, prior decisions, *and* direct observation of the thing
+materials, docs, KB, prior decisions, and direct observation of the thing
 itself (for software, the running system). Docs go stale: check the real
-thing when it matters. When you lack evidence, investigate before forming
-a view.
+thing before you rely on what a doc says about it. When you lack evidence,
+investigate before forming a view.
 
-Before you plan or recommend, have an `@explorer` sweep every earlier
-artifact on the subject: the KB, docs, `.context/`, open and finished work
-items, and what the human handed over (decks, mockups, transcripts). Use
-each one, naming in your plan what you take from it, or treat it as stale:
-update or remove it as `/meridian-dev-workflow:knowledge-layers` says for superseded content
-where your role lets you edit it, and list the rest for their owner. The
-human's own artifacts are theirs to retire (`/meridian-dev-workflow:intent-modeling`).
+Before you plan or recommend, find the earlier work that bears on the
+decision: the KB, docs, `.context/`, open and finished work items, and what
+the human handed over (decks, mockups, transcripts). Read it yourself; in an
+area too large to search, have an `@explorer` find what's related first. Name in
+your plan what you take from it. What you find stale, update or remove as
+`/meridian-dev-workflow:knowledge-layers` says where your role lets you edit it, and list the
+rest for their owner. The human's own artifacts are theirs to retire
+(`/meridian-dev-workflow:intent-modeling`).
 
 When you tell the human a fact, cause, or fix, say what it rests on: what you
 read, ran, or saw. Call the rest a guess, and check it before acting on it or
 building on it.
 </explore_then_recommend>
 
-With a user in the loop, explore and engage at once: spawn investigators
-for evidence while you share your read and ask the next question. Each
-track redirects the other, and neither waits.
+With a user in the loop, explore and engage at once: share your read and
+ask the next question while the evidence comes in. Each track redirects the
+other, and neither waits.

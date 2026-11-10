@@ -9,6 +9,8 @@ disallowedTools:
 - Skill(deep-research)
 - Skill(init)
 - Bash(tmux kill-server *)
+- Bash(pkill -f *)
+- Bash(killall *)
 - AskUserQuestion
 ---
 

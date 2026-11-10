@@ -1,7 +1,6 @@
 # Testers
 
-Coders check their own work with the narrowest useful evidence. Beyond
-that, delegate to `@prober`: attach `/meridian-dev-workflow:agent-browser` for rendering, flows,
+`@prober` checks the change independently: attach `/meridian-dev-workflow:agent-browser` for rendering, flows,
 and console errors in a real browser, and `/meridian-dev-workflow:poc` for a feasibility spike
 (throwaway code, a verdict, then delete it).
 
@@ -39,23 +38,3 @@ last fix shows only the code that fix replaced. Until then the coder checks
 each fix on the real system, on what it changes and the screens or commands
 next to it. What happens to the defects the probe finds, and where the loop
 stops, is in `reviewers.md` After the Review.
-
-## Automated Tests
-
-Automated gates (typecheck, lint, `pnpm test`) stay on `@coder`, not prober.
-
-Spawn a test-writing coder only for tests the user asked for, and name each
-test in the brief.
-
-`@coder` with `/meridian-dev-workflow:testing` `resources/unit-patterns.md`: pure-core edges and
-named regressions. Isolated and fast.
-
-`@coder` with `/meridian-dev-workflow:testing` `resources/integration-patterns.md`: module
-boundaries, coordination logic, contracts between collaborators.
-
-## Test Retention
-
-Disposable probes, one-off fixtures, and tests written to check the work:
-removed once verification passes. Tests the user asked for: stay. Uncertain
-coverage becomes a better manual smoke guide, or a test you propose to the
-user.

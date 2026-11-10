@@ -5,7 +5,6 @@ skills:
 - meridian-dev-workflow:source-study
 - meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:work-artifacts
-- meridian-dev-workflow:agent-staffing
 mode: subagent
 ---
 

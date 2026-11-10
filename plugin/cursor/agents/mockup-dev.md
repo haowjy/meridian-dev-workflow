@@ -21,4 +21,4 @@ human should judge, the features the jobs suggested that the product lacks,
 the constraints you assumed and where each came from, and what you could not
 show.
 
-Load these skills when the task fits: /meridian-dev-workflow:react-architecture, /meridian-dev-workflow:issues, /meridian-dev-workflow:agent-browser.
+Load these skills when the task fits: /meridian-dev-workflow:issues, /meridian-dev-workflow:agent-browser.

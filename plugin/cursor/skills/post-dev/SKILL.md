@@ -8,64 +8,39 @@ alwaysApply: false
 
 # Post-Dev Checkpoint
 
-Run this when implementation is complete, before creating the PR. The After
-merge section applies once the PR lands.
+Run this when implementation is done, before opening the PR. The last item
+applies once the PR merges.
 
-## Checks
-
-### PR readiness
-- `pr-body-<slug>.md` (from `/meridian-dev-workflow:pre-dev`) has every template section filled,
-  including the before-state evidence captured at kickoff — top up whatever
-  implementation added
-- Evidence images link to the commit that last touched them, taken after
-  the file is pushed (`git log -1 --format=%H -- <file>` in the repo that
-  holds it), not to a branch: a file on a branch can later move or be deleted,
-  which breaks the link
-- The PR follows the project's release conventions, wherever its AGENTS.md or
-  docs keep them: its labels and title rules
-- `@cold-reader` has read the PR body, commissioned per `/meridian-dev-workflow:llm-writing`
-  `resources/cold-read.md` with the PR's reviewer as its reader, and its
-  valid findings are fixed
-
-### Changelog
-- The changelog is updated the way the project's conventions say
-- Entries written in caveman style: terse, behavioral, filler-free
-- Focus on what downstream users notice, not which lines moved
-
-### Review
-- The review passed on the commit it named, and each finding is fixed or explicitly accepted. Changes after that commit are small fixes you read yourself, doc updates, scaffolding-test deletions, or fixes that went through the re-review and probe re-check of `/meridian-dev-workflow:agent-staffing` `resources/reviewers.md`.
-- If the plan shifted during implementation, `DIVERGENCE/` in the work
-  directory reflects it — reviewers and knowledge capture read from it
-
-### Deferred work
-- Mine conversation history, touched files, and review findings for anything
-  deferred: TODOs, skipped improvements, known limitations, future ideas
-- Record each deferral per `/meridian-dev-workflow:issues`
-- Every `TODO` comment added or touched in this work must have a matching
-  entry in `.context/TODO` or a GitHub issue — no orphan TODOs
-
-### Knowledge capture
-- Spawn `@kb-lead` after review fixes have landed, covering the whole
-  change and anything an earlier capture left out.
-- Brief it as its description asks, and pass any `DIVERGENCE/` logs with
-  the decision records.
-- Colocated guidance (`.context/`, `AGENTS.md`) passes `/meridian-dev-workflow:qi-maintenance`'s
-  gap test.
-- Before this checkpoint passes, verify any colocated doc updates
-  (`.context/`, `AGENTS.md`) are present on the feature branch. Separate KB
-  repository updates may land independently.
-
-### Cleanup
-- No stale files, dead code, or debug artifacts left behind
-- Dev stacks, browsers, scratch worktrees, and temp dirs that you or your
-  spawns started are stopped and deleted; restart a stack when a fix cycle
-  needs it. Keep one running only when the human asked to use it.
-- New tests the user didn't ask for are deleted (`/meridian-dev-workflow:testing`)
-
-### After merge
-- Verify CI passed on main
-- Clean up what the work left behind (worktree, branch, scoped databases,
-  dev processes and routes) per `/meridian-dev-workflow:dev-workflow` `resources/ship.md`; branch
-  deletion needs merge evidence git can't supply alone: `-d` is blind to
-  squash merges, `-D` discards unmerged commits.
-- Close the work item once every agent you started for it has finished
+- **PR body.** `pr-body-<slug>.md` from `/meridian-dev-workflow:pre-dev` has every template section
+  filled, with the before-state evidence and what the work added. Evidence
+  images link to the commit that last touched them, taken after the push
+  (`git log -1 --format=%H -- <file>`), not to a branch, where the file can
+  later move. The PR follows the project's label and title rules. A
+  `@cold-reader` has read the body, with the PR's reviewer as its reader,
+  and the `docs/`, `AGENTS.md` and `.context/` prose the branch added or
+  rewrote: one reader for all of them (`/meridian-dev-workflow:llm-writing`
+  `resources/cold-read.md`). Its valid findings are fixed.
+- **User docs** describe the change: every page that names what it touched.
+- **Changelog** updated the way the project says: what downstream users
+  notice, in terse caveman style.
+- **Review.** The review passed on the commit it named, and each finding is
+  fixed or accepted. Later changes are small fixes you read yourself, doc
+  updates, deleted scaffolding tests, or fixes that went through the
+  re-review in `/meridian-dev-workflow:agent-staffing` `resources/reviewers.md`. A plan that
+  shifted shows in `DIVERGENCE/`.
+- **Deferred work** from the conversation, the touched files and the review
+  findings is recorded per `/meridian-dev-workflow:issues`, and every `TODO` comment added or
+  touched has an entry.
+- **Knowledge.** `@kb-lead` is spawned after the review fixes land, briefed
+  as its description asks, with any `DIVERGENCE/` logs. Colocated
+  `AGENTS.md` and `.context/` updates pass `/meridian-dev-workflow:qi-maintenance`'s gap test and
+  are on the branch.
+- **Cleanup.** No dead code, debug artifacts or stale files. Tests are
+  kept or deleted as `/meridian-dev-workflow:testing` Which Tests Stay says. Dev stacks, browsers, scratch
+  worktrees and temp dirs you or your spawns started are stopped and
+  removed, unless the human asked to keep one.
+- **After merge.** CI passed on main. The branch's worktree, branch,
+  databases and processes are cleaned up per `/meridian-dev-workflow:dev-workflow`
+  `resources/ship.md`; deleting the branch needs merge evidence, since `-d`
+  is blind to squash merges and `-D` discards unmerged commits. The work item
+  is closed once every agent you started for it has finished.

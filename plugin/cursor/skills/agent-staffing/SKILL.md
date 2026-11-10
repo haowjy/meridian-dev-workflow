@@ -1,6 +1,6 @@
 ---
 name: agent-staffing
-description: 'Load before you spawn a worker or a reviewer: which agent for which work, the review lanes a change needs, and when a model change is justified.'
+description: 'Load before you spawn a worker or a reviewer: which agent for which work, how a change is reviewed, and when a model change is justified.'
 metadata:
   type: reference
 alwaysApply: false
@@ -12,8 +12,7 @@ alwaysApply: false
 
 Most changes are staffed from these; the catalogs below cover the rest.
 
-- `@explorer`: reads across files and history, so your context stays on
-  decisions
+- `@explorer`: finds what's related in an area too large to search yourself
 - `@coder`: for general coding; `@frontend-coder` for frontend coding
 - `@reviewer`: one per change, reviewing its plan and then its code, and
   loading the skills its findings call for (`resources/reviewers.md`)
@@ -52,6 +51,6 @@ apart from the writer's.
 ## Agent Catalogs
 
 - `resources/reviewers.md`: when a change is reviewed, who reviews it, and the one round of fixes that ends it. Open it before staffing any review.
-- `resources/testers.md`: briefing `@prober` and when it runs, browser and POC skills, automated tests
-- `resources/builders.md`: @coder, @frontend-coder, @mockup-dev, and design exploration (@architect, @web-researcher, @browser, @design-researcher, @source-researcher, @explorer, @session-miner)
-- `resources/maintainers.md`: @kb-lead, @kb-maintainer, @investigator
+- `resources/testers.md`: briefing `@prober` and when it runs, browser and POC skills
+- `resources/builders.md`: @coder, @frontend-coder, @mockup-dev, and design exploration (@web-researcher, @browser, @source-researcher, @explorer, @session-miner)
+- `resources/maintainers.md`: @kb-lead, @kb-maintainer

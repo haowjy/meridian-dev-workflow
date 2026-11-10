@@ -24,8 +24,5 @@ plan's intent, unless a later choice replaced the plan: then rewrite the intent.
 Load `/meridian-dev-workflow:qi-layer` when creating, moving, restructuring, or substantially
 rewriting colocated knowledge.
 
-Track deferred work separately: directory-local must-do work goes in the
-nearest `.context/TODO`, directory-local nice-to-have work in
-`.context/FUTURE`, and cross-cutting or externally visible work in the project
-issue tracker. Load `/meridian-dev-workflow:knowledge-layers` when placement is unclear.
-Cross-cutting KB synthesis belongs to `@kb-lead`, after the change settles.
+Deferred work goes where `/meridian-dev-workflow:knowledge-layers` places it. Cross-cutting KB
+synthesis belongs to `@kb-lead`, after the change settles.

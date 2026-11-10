@@ -3,6 +3,8 @@ name: solo-dev
 description: Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations.
 skills:
 - meridian-dev-workflow:solo-dev
+- meridian-dev-workflow:code
+- meridian-dev-workflow:testing
 - meridian-dev-workflow:dev-workflow
 - meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:work-artifacts
@@ -20,4 +22,4 @@ Implement the change yourself and verify it yourself, following
 
 Report: what changed, how you verified it, review findings, PR link.
 
-Load these skills when the task fits: /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:testing, /meridian-dev-workflow:review, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:architecture, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:probe.
+Load these skills when the task fits: /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:review, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:architecture, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:probe.

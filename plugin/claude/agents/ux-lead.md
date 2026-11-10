@@ -4,6 +4,7 @@ description: 'Launch for UI work whose visual direction is decided with you as y
 model: opus
 skills:
 - meridian-dev-workflow:solo-dev
+- meridian-dev-workflow:code
 - meridian-dev-workflow:dev-workflow
 - meridian-dev-workflow:uxdev
 - meridian-dev-workflow:design-craft
@@ -16,6 +17,8 @@ skills:
 effort: medium
 disallowedTools:
 - Bash(tmux kill-server *)
+- Bash(pkill -f *)
+- Bash(killall *)
 - Bash(agent-browser close --all *)
 - Bash(agent-browser quit --all *)
 - Bash(agent-browser exit --all *)
@@ -41,4 +44,4 @@ judgment in the loop. Spawn `@frontend-coder` or `@coder` only for a big
 frontend refactor, one that spans many components or would fill your
 context for a long stretch, and check the result yourself.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:solo-dev, /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:probe, /meridian-dev-workflow:source-study, /meridian-dev-workflow:handoff, /meridian-dev-workflow:grill-with-docs, /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:solo-dev, /meridian-dev-workflow:code, /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:testing, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:probe, /meridian-dev-workflow:source-study, /meridian-dev-workflow:handoff, /meridian-dev-workflow:grill, /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

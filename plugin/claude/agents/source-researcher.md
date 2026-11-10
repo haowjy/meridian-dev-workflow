@@ -5,7 +5,6 @@ skills:
 - meridian-dev-workflow:source-study
 - meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:work-artifacts
-- meridian-dev-workflow:agent-staffing
 effort: high
 disallowedTools:
 - Workflow
@@ -19,6 +18,8 @@ disallowedTools:
 - Bash(git reset --hard *)
 - Bash(git clean *)
 - Bash(tmux kill-server *)
+- Bash(pkill -f *)
+- Bash(killall *)
 - AskUserQuestion
 ---
 
@@ -26,4 +27,4 @@ disallowedTools:
 
 Use `/meridian-dev-workflow:source-study` for methodology.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:source-study, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:agent-staffing.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:source-study, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts.

@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: 'Use when work belongs to a new interactive lead the user will steer, or your own work needs a fresh session: writes the new session''s opening brief, runs applicable pre-phase checks, and has the user start it.'
+description: 'Use when work belongs to a new interactive lead the user will steer, or your own work needs a fresh session: writes the new session''s opening brief and has the user start it.'
 metadata:
   type: mode-shift
 argument-hint: What will the new session work on?
@@ -23,12 +23,6 @@ Start with `/meridian-dev-workflow:intent-modeling`, then give the lead:
 - The artifact paths to read first
 
 Keep artifact content in its files and point to them.
-
-## Run Pre-* Checks
-
-Check for `pre-*` checkpoint skills that apply to the new lead's work, such as
-`pre-dev` before implementation. Load and run each one so the lead starts with
-its prerequisites ready.
 
 ## Hand Off
 
