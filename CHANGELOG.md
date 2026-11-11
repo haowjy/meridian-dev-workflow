@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.23] - 2026-11-11
+
 ### Changed
 - `/architecture`: before proposing a new mechanism, field or table, find the one the project has and extend or replace it.
 

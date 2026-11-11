@@ -23,8 +23,10 @@ module.
 
 Edge cases, failures and boundaries are requirements: list them before
 committing. "Find out during implementation" is a risk flag; run the
-cheapest probe instead. Before proposing a mechanism the project doesn't
-have yet, find out how others built it (search the web, or spawn a researcher), and record in the design what you
+cheapest probe instead. Before proposing a new mechanism, field or table,
+find the one the project already has and extend or replace it: a second
+copy of a concept drifts from the first. Before proposing one the project
+doesn't have yet, find out how others built it (search the web, or spawn a researcher), and record in the design what you
 found and what you take from it. When you're unsure between options, build
 variants concrete enough to choose between: converging on one with low
 confidence defers the decision to implementation, where it costs more.
