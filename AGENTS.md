@@ -1,33 +1,26 @@
 # meridian-dev-workflow
 
-Agent profiles and skills for the dev orchestration workflow.
+A development team for Meridian projects: leads the user works with in a session, the
+specialists they delegate to (coders, reviewers, probers, researchers), and the skills
+that carry a change from first edit to merged PR. It ships through `mars add` and as a
+plugin for Claude Code, Codex, Cursor and OpenCode.
 
-## Plugin
+## Rules
 
-A release rebuilds the committed `plugin/` tree and its marketplace catalogs
-(`.claude-plugin/`, `.cursor-plugin/`, `package.json`) at the new version. Never
-edit them by hand; run `meridian mars build plugin` after changing a source file
-if you want the tree current before a release.
-
-## Depends on meridian-base
-
-This package depends on meridian-base (`[dependencies.meridian-base]` in
-`mars.toml`). Its agents (`@explorer`, `@kb-lead`, `@kb-maintainer`,
-`@cold-reader`, `@session-miner`) and skills (`/llm-writing`,
-`/knowledge-layers`, `/md-validation`, ...) are installed wherever this package
-is, so references to them here resolve: Mars installs meridian-base alongside
-it, and the `plugin/` build bundles it. Codex and OpenCode plugins carry skills
-only, so no `@agent` resolves there.
-
-The plugin bundles the meridian-base version recorded in
-`plugin/.mars-plugin.json`; after a meridian-base release that changes its
-agents or skills, release this package so plugin users get it.
+- **meridian-base is always installed beside this package.** Name its agents
+  (`@explorer`, `@kb-lead`, `@kb-maintainer`, `@cold-reader`, `@session-miner`) and
+  skills (`/llm-writing`, `/knowledge-layers`, `/md-validation`, ...) freely: Mars
+  installs it alongside, and the plugin bundles it.
+- **Codex and OpenCode plugins carry skills only,** so no `@agent` a skill names
+  resolves for those users.
+- **`plugin/` and its catalogs are Mars output.** `plugin/`, `.claude-plugin/`,
+  `.cursor-plugin/` and `package.json` are rebuilt at each release; never edit them by
+  hand. `meridian mars build plugin` brings them current before one.
+- **The plugin bundles the meridian-base version recorded in
+  `plugin/.mars-plugin.json`.** After a meridian-base release that changes its agents
+  or skills, release this package too, or plugin users keep the old ones.
 
 ## Watching
-
-Behavior a released change expects but no real run has shown yet. Check it on
-the next runs that exercise it, then delete the entry, fixing the prompt first
-if the runs show otherwise.
 
 - **product-lead as the user's point of contact.** On the next long
   product-lead runs in meridian-flow: it keeps what it knows about each lead
