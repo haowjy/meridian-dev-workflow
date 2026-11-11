@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.24] - 2026-11-11
+
 ### Changed
 - Requires meridian-base 0.15 (`/correct` fixes causes instead of logging corrections; the corrections register is gone).
 
