@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+- `agent-browser`: the quick reference typed with `type "query"`, which needs a target and does nothing without one; it now shows `type @e2 "query"` and `keyboard type` for the focused element.
+
 ## [0.17.24] - 2026-11-11
 
 ### Changed

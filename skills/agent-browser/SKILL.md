@@ -55,7 +55,8 @@ Always re-snapshot before the next ref interaction.
 ```bash
 # interact
 agent-browser fill @e1 "user@example.com"
-agent-browser type "query"; agent-browser press Enter
+agent-browser type @e2 "query"; agent-browser press Enter   # type needs a target; without one it does nothing
+agent-browser keyboard type "query"   # real keystrokes into whatever has focus
 agent-browser select @e9 "value"; agent-browser check @e12; agent-browser hover @e4
 
 # read
