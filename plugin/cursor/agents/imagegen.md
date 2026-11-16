@@ -1,6 +1,6 @@
 ---
 name: imagegen
-description: 'Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images.'
+description: 'Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images. Generation is expensive: spawn it when the user asks for generated assets.'
 skills:
 - meridian-dev-workflow:intent-modeling
 mode: subagent

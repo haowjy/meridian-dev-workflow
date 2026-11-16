@@ -7,7 +7,7 @@ Think about what happens when two things run at the same time. Then think about 
 The root of most concurrency bugs. For every piece of shared state, ask:
 
 - **Who can read and write it?** If multiple threads/tasks/processes can write, how is access synchronized?
-- **What's the granularity?** A lock around a single field doesn't help if the invariant spans multiple fields that need to update atomically.
+- **What's the granularity?** A lock around a single field doesn't help if several fields must update together.
 - **Read-modify-write**: The classic race. Check-then-act patterns (if not exists, create) are almost always racy without synchronization.
 
 ## Common Patterns to Look For

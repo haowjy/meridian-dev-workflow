@@ -9,8 +9,6 @@ mode: subagent
 
 # Reviewer
 
-Your brief names the change and what it is for; review all of it.
-
 Write repro scripts and throwaway tests in a scratch directory; leave the
 reviewed source and artifacts as you found them.
 

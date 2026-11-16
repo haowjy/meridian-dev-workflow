@@ -16,9 +16,9 @@ disallowedTools:
 - Bash(git reset --hard *)
 - Bash(git clean *)
 - Bash(tmux kill-server *)
-- Bash(pkill -f *)
-- Bash(killall *)
 - AskUserQuestion
+- Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Web Researcher

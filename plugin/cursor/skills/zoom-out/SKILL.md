@@ -1,6 +1,6 @@
 ---
 name: zoom-out
-description: 'Use when you''ve lost the bigger picture or start in an area you don''t know: step back to what the area is for, how its parts connect and why it''s shaped this way. Read the docs yourself; in a large area, have explorers find what''s related first.'
+description: 'Use when you''ve lost the bigger picture or start in an area you don''t know: step back to what the area is for, how its parts connect and why it''s shaped this way.'
 metadata:
   type: mode-shift
 alwaysApply: false

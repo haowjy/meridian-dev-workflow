@@ -1,6 +1,6 @@
 ---
 name: work-artifacts
-description: 'Load when work must survive compaction or crashes or be shared with other agents: findings, decisions, and artifacts go in the work directory, not in context.'
+description: 'Load when work must survive compaction, crashes or a new session, or be shared with other agents: the work directory holds the current state, and what the work moved past is deleted.'
 metadata:
   type: principle
 ---
@@ -8,10 +8,12 @@ metadata:
 # Work Artifacts
 
 The work directory is the shared state between you, the user, and other
-agents; what isn't on disk doesn't survive a crash or compaction. Write
-findings and decisions there as you make them, with the alternatives you
-rejected, and commit where it is version-controlled. Source edits go in the
-source checkout, not the work directory.
+agents; what isn't on disk doesn't survive a crash, a compaction or a new
+session. Keep the state you own current as you go, each decision with its
+reason, the alternatives it beat and whether it is settled, and delete what
+the work has moved past instead of logging it: the next session needs where
+things stand, not how they got there. Commit where it is version-controlled. Source edits go in the source
+checkout, not the work directory.
 
 This work item's artifacts go in the work directory; project-wide reference
 goes in the knowledge base. Keep raw files (traces, HARs, dumps, build output)
@@ -32,5 +34,5 @@ shifts, following `/meridian-dev-workflow:qi-layer`.
 
 Decisions scoped to one change go with it, in its commit message or a note
 beside what they explain; structural decisions go in the work directory. When
-the plan shifts during execution, log the shift in `DIVERGENCE/`. Reviewers
-check alignment against it, and knowledge capture mines it.
+the plan shifts, update the plan and record the change as a decision with
+its reason, so reviewers check the code against the plan as it stands.

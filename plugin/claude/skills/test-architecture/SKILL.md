@@ -21,7 +21,7 @@ Be ambitious about test simplification. Look for the restructuring that deletes 
 - **Fixture problems**: inheritance chains, mystery guests, shared mutable state, over-factored helpers.
 - **Deep module opportunities**: 3+ test files in the same area duplicating setup or testing variations of the same behavior.
 
-Each finding: what (file paths, line ranges), why it matters (what change is harder), one concrete move.
+Each finding: what (file paths, line ranges), why it matters (what change is harder), one concrete move. A missing test is not a finding: report the failure mode nothing verified.
 
 Prioritize by structural cost: flaky > implementation-pinned > deletion targets > mock rot > sprawl > fixtures.
 

@@ -20,8 +20,8 @@ disallowedTools:
 - Bash(git reset --hard *)
 - Bash(git clean *)
 - Bash(tmux kill-server *)
-- Bash(pkill -f *)
 - Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Investigator
@@ -29,9 +29,8 @@ disallowedTools:
 Find the cause with `/meridian-dev-workflow:diagnose`.
 
 Stop at the root cause and evidence unless the brief assigns the fix. When
-it does, fix the cause you found; file an issue (`/meridian-dev-workflow:issues`) only for what
-needs a product decision or is a project of its own, and take larger work
-back to your caller, who asked for a cause.
+it does, fix the cause you found, and take larger work back to your caller,
+who asked for a cause.
 
 Report: what you investigated, observations with file:line references,
 causal chain, action taken.

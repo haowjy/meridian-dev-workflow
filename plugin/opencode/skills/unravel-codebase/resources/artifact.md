@@ -1,6 +1,6 @@
 # Companion Walkthrough Capture
 
-Load this when the walkthrough serves the `/meridian-dev-workflow:unravel-codebase` mode. That mode is a
+This captures an `/meridian-dev-workflow:unravel-codebase` walk as a browsable map. The walk is a
 companion walk: human-paced, conversational, source read-only unless they ask. The
 artifact follows that grain.
 

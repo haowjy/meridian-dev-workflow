@@ -21,21 +21,6 @@ Install once if the command is missing:
 npm i -g agent-browser && agent-browser install   # add --with-deps on Linux
 ```
 
-## Memory cap (Linux)
-
-Run Chrome in its own capped scope so browser memory pressure cannot take down the agent.
-One-time setup (replace `<agent-browser-skill>` with this skill’s installed path):
-
-```bash
-install -Dm755 <agent-browser-skill>/resources/capped-browser "$HOME/.local/bin/agent-browser-capped-browser"
-# ~/.agent-browser/config.json — use your absolute home path, not `~`
-{"executablePath":"/home/YOU/.local/bin/agent-browser-capped-browser"}
-systemctl --user list-units 'agent-browser-*.scope'   # check while Chrome is open
-```
-
-The wrapper also passes `--use-angle=vulkan`, so headless Chrome renders on the GPU with no
-display. Tested on Linux with NVIDIA only. Set the flag there, not through `--args`.
-
 ## Core loop
 
 ```bash
@@ -55,7 +40,8 @@ Always re-snapshot before the next ref interaction.
 ```bash
 # interact
 agent-browser fill @e1 "user@example.com"
-agent-browser type "query"; agent-browser press Enter
+agent-browser type @e2 "query"; agent-browser press Enter   # type needs a target; without one it does nothing
+agent-browser keyboard type "query"   # real keystrokes into whatever has focus
 agent-browser select @e9 "value"; agent-browser check @e12; agent-browser hover @e4
 
 # read
@@ -88,24 +74,6 @@ daemon. Name yours with your spawn ID (the one your caller holds): use
 other agent's browser mid-run.
 
 Add `--json` for structured output to pipe elsewhere.
-
-## Watch a session live
-
-The dashboard is bundled into the binary (no install) and shows a live
-viewport plus a command/console activity feed:
-
-```bash
-agent-browser dashboard start       # serves on :4848
-agent-browser open https://example.com
-```
-
-Open `http://localhost:4848` (or a proxied URL like
-`https://dashboard.agent-browser.localhost`). To watch from another device,
-expose the port over tailscale when it's available:
-
-```bash
-tailscale serve 4848
-```
 
 ## Going deeper
 

@@ -9,7 +9,6 @@ metadata:
 
 Load `/meridian-dev-workflow:qi-layer`, `/meridian-dev-workflow:information-hierarchy`, and `/meridian-dev-workflow:structured-artifact` if they
 aren't already loaded.
-When invoked with `/meridian-dev-workflow:unravel-codebase`, also load `resources/unravel-codebase.md`.
 
 Match what you show to what the human is trying to learn: a single flow needs Behavior,
 an onboarding overview needs all four dimensions. Build the mental model they couldn't get

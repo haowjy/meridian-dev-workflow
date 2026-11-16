@@ -1,6 +1,6 @@
 ---
 name: solo-dev
-description: Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations.
+description: Launch for a change one agent writes and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations.
 skills:
 - meridian-dev-workflow:solo-dev
 - meridian-dev-workflow:code

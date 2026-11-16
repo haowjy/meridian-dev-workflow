@@ -1,6 +1,6 @@
 ---
 name: tech-lead
-description: Launch for technical work that needs ongoing technical decisions, from one change to several tasks toward one goal. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings.
+description: Launch for technical work that needs ongoing technical decisions, from one change to several tasks toward one goal; it delegates the implementation to coders. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings.
 model: opus
 skills:
 - meridian-dev-workflow:dev-workflow
@@ -13,11 +13,11 @@ skills:
 effort: medium
 disallowedTools:
 - Bash(tmux kill-server *)
-- Bash(pkill -f *)
-- Bash(killall *)
 - Bash(agent-browser close --all *)
 - Bash(agent-browser quit --all *)
 - Bash(agent-browser exit --all *)
+- Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Tech Lead
@@ -45,4 +45,4 @@ Brief (`/meridian-dev-workflow:review` `resources/redesign-escalation.md`).
 Report: what changed, verification results, review findings (fixed and
 remaining), PR link.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:parallel-execution, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:code, /meridian-dev-workflow:handoff, /meridian-dev-workflow:architecture, /meridian-dev-workflow:review, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:divergence, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:parallel-execution, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:code, /meridian-dev-workflow:handoff, /meridian-dev-workflow:architecture, /meridian-dev-workflow:review, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

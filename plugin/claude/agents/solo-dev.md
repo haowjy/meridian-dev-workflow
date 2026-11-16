@@ -1,6 +1,6 @@
 ---
 name: solo-dev
-description: Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations.
+description: Launch for a change one agent writes and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations.
 skills:
 - meridian-dev-workflow:solo-dev
 - meridian-dev-workflow:code
@@ -15,11 +15,11 @@ skills:
 effort: high
 disallowedTools:
 - Bash(tmux kill-server *)
-- Bash(pkill -f *)
-- Bash(killall *)
 - Bash(agent-browser close --all *)
 - Bash(agent-browser quit --all *)
 - Bash(agent-browser exit --all *)
+- Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Solo Dev

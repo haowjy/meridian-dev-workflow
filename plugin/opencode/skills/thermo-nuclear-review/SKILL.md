@@ -38,7 +38,7 @@ Block unless the author justifies it:
 - logic in the wrong layer, or a bespoke helper where a canonical one exists;
 - dead code, including what the change left without a caller;
 - casts, needless optionality or silent fallbacks hiding an unclear
-  invariant;
+  contract;
 - related updates that can leave state half-applied;
 - test cases that multiply without covering new risk.
 

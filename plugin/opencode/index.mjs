@@ -18,7 +18,7 @@ const DATA = {
     {
       "directory": "agent-staffing",
       "name": "agent-staffing",
-      "description": "Load before you spawn a worker or a reviewer: which agent for which work, how a change is reviewed, and when a model change is justified."
+      "description": "Load before you spawn a worker or a reviewer: how a change is reviewed and probed, and when a model change is justified."
     },
     {
       "directory": "architecture",
@@ -56,24 +56,14 @@ const DATA = {
       "description": "Load when diagnosing hard bugs or performance regressions. Structured loop from feedback loop through instrumentation to fix."
     },
     {
-      "directory": "divergence",
-      "name": "divergence",
-      "description": "Load when the design or plan may shift during multi-phase work: a logged shift lets reviewers tell planned change from drift."
-    },
-    {
       "directory": "explore-and-engage",
       "name": "explore-and-engage",
       "description": "Load when you investigate, plan, or recommend: account for the earlier work on the subject, and with a human waiting, share your read and ask the next question while the evidence comes in instead of going silent until it is complete."
     },
     {
-      "directory": "goal-writing",
-      "name": "goal-writing",
-      "description": "Load when turning intent into an executable goal for an agent, delegated run, work item, experiment, or handoff. Use to define outcome, evidence, constraints, anti-goals, stop conditions, and reporting shape before work begins.\n"
-    },
-    {
       "directory": "grill",
       "name": "grill",
-      "description": "Use to stress-test a plan or direction with the human: zoom out to what it is for, then walk down its decision tree one cluster of questions at a time, each with a recommended answer.\n"
+      "description": "Use to stress-test a plan or direction with the human: zoom out to what it is for, then walk down its decision tree, each question with a recommended answer.\n"
     },
     {
       "directory": "handoff",
@@ -98,7 +88,7 @@ const DATA = {
     {
       "directory": "knowledge-layers",
       "name": "knowledge-layers",
-      "description": "Use when deciding where knowledge goes or reading/writing durable docs: AGENTS.md and .context/ beside the code, the KB, and work directories."
+      "description": "Use when deciding where knowledge goes or reading/writing durable docs: AGENTS.md and .context/ beside what they describe, the KB, and work directories."
     },
     {
       "directory": "llm-writing",
@@ -119,11 +109,6 @@ const DATA = {
       "directory": "parallel-execution",
       "name": "parallel-execution",
       "description": "Load when work splits into lanes that can run in parallel or phases that build on each other. DAG planning, worktrees, merging, gates."
-    },
-    {
-      "directory": "poc",
-      "name": "poc",
-      "description": "Load when a feasibility question needs an answer from running code: throwaway code that answers it, then is deleted."
     },
     {
       "directory": "post-dev",
@@ -149,11 +134,6 @@ const DATA = {
       "directory": "qi-maintenance",
       "name": "qi-maintenance",
       "description": "Load on agents that make durable changes to a project's files, so the colocated AGENTS.md and .context/ docs stay true for the next cold agent."
-    },
-    {
-      "directory": "reflect",
-      "name": "reflect",
-      "description": "Use when the user invokes it before you report: checks you delivered what they needed, not only what they literally asked, and routes knowledge capture."
     },
     {
       "directory": "research-web",
@@ -238,12 +218,12 @@ const DATA = {
     {
       "directory": "work-artifacts",
       "name": "work-artifacts",
-      "description": "Load when work must survive compaction or crashes or be shared with other agents: findings, decisions, and artifacts go in the work directory, not in context."
+      "description": "Load when work must survive compaction, crashes or a new session, or be shared with other agents: the work directory holds the current state, and what the work moved past is deleted."
     },
     {
       "directory": "zoom-out",
       "name": "zoom-out",
-      "description": "Use when you've lost the bigger picture or start in an area you don't know: step back to what the area is for, how its parts connect and why it's shaped this way. Read the docs yourself; in a large area, have explorers find what's related first."
+      "description": "Use when you've lost the bigger picture or start in an area you don't know: step back to what the area is for, how its parts connect and why it's shaped this way."
     }
   ],
   "agents": [
@@ -255,7 +235,87 @@ const DATA = {
       "system": "\n# Browser\n\nUse `/meridian-dev-workflow:agent-browser`.\n\nUse web search and fetch when you need documentation or context that\ndoesn't require a live browser.\n\nWrite output to the work directory.\nReport what you did, what you found, and where the artifacts are.\n\nLoad these skills when the task fits: /meridian-dev-workflow:agent-browser.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser close --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser quit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser exit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -264,12 +324,77 @@ const DATA = {
     {
       "id": "meridian-dev-workflow:coder",
       "name": "coder",
-      "description": "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. It keeps a new test only when the user asked for one; pass that request on in the brief. Returns what changed, the failure modes it exercised, and verification by type.",
+      "description": "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. Split work between coders by independent objective, not file count. It keeps a new test only when the user asked for one; pass that request on in the brief. Returns what changed, the failure modes it exercised, and verification by type.",
       "mode": "subagent",
-      "system": "\n# Coder\n\nUse `/meridian-dev-workflow:code` for implementation methodology.\n\nCommit on the branch you were given, with the changelog entry the project's\nconventions require; where they put it in the PR body, write the proposed entry\nin your report. Do not push. Your lead integrates your branch, except a merge\nyour brief assigns you.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:code, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance. Load these skills when the task fits: /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
+      "system": "\n# Coder\n\nUse `/meridian-dev-workflow:code` for implementation methodology.\n\nCommit on the branch you were given, with the changelog entry the project's\nconventions require; where they put it in the PR body, write the proposed entry\nin your report. Do not push. Your lead integrates your branch, except a merge\nyour brief assigns you.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:code, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance. Load these skills when the task fits: /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -283,6 +408,16 @@ const DATA = {
       "system": "\n# Cold Reader\n\nRead each page you were given as its named reader: someone who wasn't part\nof the work that produced it. You lack that work's context, and that is what\nmakes the check work, so keep it that way. Read only the pages you were\ngiven and the durable docs they link. Leave out everything else from the\nwork, such as the rest of a work directory, decision records, and session\nhistory, even when a page links to them.\n\nCheck each page against `/meridian-dev-workflow:llm-writing` item by item: its Write for the Reader\nsection for the page's reader, then every entry on What to Delete, conversational bleed\nfirst. Wherever the reader would stall, quote the text and say what that\nreader would need instead.\n\nThe writer holds the context you lack and decides what to change, so report\nwithout editing: for each page, every stall with its quote and what the\nreader needs, or a line saying the page reads cleanly.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:llm-writing. Load these skills when the task fits: /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:information-hierarchy.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
           "action": "subagent",
           "resource": "*",
           "effect": "deny"
@@ -296,6 +431,11 @@ const DATA = {
           "action": "question",
           "resource": "*",
           "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
         }
       ]
     },
@@ -305,7 +445,68 @@ const DATA = {
       "description": "Launch or spawn when the structure is unsettled: interfaces, boundaries, data model, or an implementation lead's Redesign Brief. Pass the problem statement and requirements; returns design docs and a recommendation.",
       "mode": "primary",
       "system": "\n# Design Lead\n\nTurn a problem statement into design guidance the implementation lead can\nexecute: structure, key interfaces, boundaries, patterns, alternatives with\ntradeoffs, risks. A Redesign Brief from an implementation lead is a\nproblem statement like any other: start from its evidence, and treat its\n\"what survives\" section as a constraint, since redesign is not restart.\n\nBefore designing, zoom out (`/meridian-dev-workflow:zoom-out`): what the system around the\nproblem is for, how its parts connect, and why it's built this way, so the\ndesign fits that system or says why it changes it.\n\nResearch findings inform your decision; the design is yours. Prototype\nwhat the design depends on and nothing has proven.\n\nWhen you present built variants, the human picks the direction. Running as\na spawn, put the variants and your recommendation in the report; the\nspawner picks.\n\nChallenge the converged design as `/meridian-dev-workflow:agent-staffing` `resources/reviewers.md`\nsays for a design; at its limits, bring the open question to your caller.\n\n## Ship\n\nHand off to the implementation lead with `/meridian-dev-workflow:handoff`. Running as a spawn,\nyour final report (decision, artifact paths, open risks) is the handoff.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:architecture, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:structured-artifact, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:handoff, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:source-study.\n",
-      "permissions": []
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     {
       "id": "meridian-dev-workflow:explorer",
@@ -314,6 +515,31 @@ const DATA = {
       "mode": "subagent",
       "system": "\n# Explorer\n\nGather facts from the project: file contents, patterns, how pieces connect\n(call chains in code, cross-references in docs), git history. Other agents\nmake decisions based on what you report, so accuracy and completeness matter\nmore than analysis. Report what's there, not what you think should be there.\n\n## Start in the Right Place\n\nYour starting location may not be the source checkout the question is about.\nBefore you read anything, list the directory the brief names, or else the\nsource checkout, to confirm it is the right tree and branch. Read by absolute\npath from there.\n\n## Read AGENTS.md First\n\n1. Read the relevant `AGENTS.md` (root and/or module-level) for conventions,\n   architecture, and constraints.\n2. Read `.context/CONTEXT.md` if present for synthesized contracts and\n   rationale. Use the project guidance graph when you need one view of the\n   applicable `AGENTS.md` and `.context/` layers.\n3. Then read the files themselves to confirm specifics, fill gaps, or answer\n   questions the docs didn't cover.\n\n## Flag Contradictions\n\nWhen raw source contradicts what AGENTS.md or `.context/` claims, **call it\nout explicitly.** Name the file, the claim, and what the files actually show.\n\n## Scope and Report\n\nAnswer the question you were given. Report facts outside it that bear on\nthe answer, marked as outside the question. If the prompt is vague, state the\nreading you took, then answer that.\n\nReport exact file paths, line references,\nand relevant snippets.\n",
       "permissions": [
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
         {
           "action": "subagent",
           "resource": "*",
@@ -333,6 +559,11 @@ const DATA = {
           "action": "question",
           "resource": "*",
           "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
         }
       ]
     },
@@ -341,10 +572,90 @@ const DATA = {
       "name": "frontend-coder",
       "description": "Spawn for frontend implementation where visual quality and design fidelity matter. Give a detailed brief: behavior and interaction requirements, available design references, target viewports, constraints, and acceptance criteria.",
       "mode": "subagent",
-      "system": "\n# Frontend Coder\n\nImplement the UI with `/meridian-dev-workflow:ui-implementation`, following `/meridian-dev-workflow:code`.\n\nCommit on the branch you were given, with the changelog entry the project's\nconventions require; where they put it in the PR body, write the proposed entry\nin your report. Do not push or merge; your lead integrates.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:code, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance. Load these skills when the task fits: /meridian-dev-workflow:uxdev, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
+      "system": "\n# Frontend Coder\n\nImplement the UI with `/meridian-dev-workflow:ui-implementation`, following `/meridian-dev-workflow:code`.\n\nCommit on the branch you were given, with the changelog entry the project's\nconventions require; where they put it in the PR body, write the proposed entry\nin your report. Do not push. Your lead integrates your branch, except a merge\nyour brief assigns you.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:code, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance. Load these skills when the task fits: /meridian-dev-workflow:uxdev, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser close --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser quit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser exit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -353,12 +664,42 @@ const DATA = {
     {
       "id": "meridian-dev-workflow:imagegen",
       "name": "imagegen",
-      "description": "Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images.",
+      "description": "Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images. Generation is expensive: spawn it when the user asks for generated assets.",
       "mode": "subagent",
       "system": "\n# Image Generator\n\nProduce images directly. Don't describe what you would generate.\n\nUse `/meridian-dev-workflow:intent-modeling` to read the prompt carefully. Visual intent is often\nunderspecified. When vague on style, composition, or mood, infer from\nreference images and context. When you can't infer, make a deliberate\nchoice and state it in your report.\n\nWhen reference images are passed, study them first. Match the\nexisting visual language, palette, and style unless the prompt asks for\nsomething different.\n\nReport: what you generated, visual choices made, file locations.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:intent-modeling.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -369,18 +710,134 @@ const DATA = {
       "name": "investigator",
       "description": "Spawn when behavior is broken or suspicious and the cause is unknown. Pass the symptom and how to reproduce it, and say whether to fix it; returns the causal chain, plus the fix when assigned.",
       "mode": "subagent",
-      "system": "\n# Investigator\n\nFind the cause with `/meridian-dev-workflow:diagnose`.\n\nStop at the root cause and evidence unless the brief assigns the fix. When\nit does, fix the cause you found; file an issue (`/meridian-dev-workflow:issues`) only for what\nneeds a product decision or is a project of its own, and take larger work\nback to your caller, who asked for a cause.\n\nReport: what you investigated, observations with file:line references,\ncausal chain, action taken.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:diagnose, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:issues, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
-      "permissions": []
+      "system": "\n# Investigator\n\nFind the cause with `/meridian-dev-workflow:diagnose`.\n\nStop at the root cause and evidence unless the brief assigns the fix. When\nit does, fix the cause you found, and take larger work back to your caller,\nwho asked for a cause.\n\nReport: what you investigated, observations with file:line references,\ncausal chain, action taken.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:diagnose, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:issues, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     {
       "id": "meridian-dev-workflow:kb-lead",
       "name": "kb-lead",
-      "description": "Spawn when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work and session refs, decision records, changed files, the docs the work already updated, and target repos; it mines only for what those lack. Returns what it deleted, added and reorganized, contradictions and gaps.",
+      "description": "Spawn when a change settles, after its review fixes land, or to sweep a knowledge tree for stale content (pass the tree). Pass work and session refs, decision records, changed files, the docs the work already updated, and target repos; it mines only for what those lack. Returns what it deleted, added and reorganized, contradictions and gaps.",
       "mode": "subagent",
-      "system": "\n# KB Lead\n\nThe KB is yours: what it says is your call, and you'll keep building on it.\nKeep it true to the project as it is now, following `/meridian-dev-workflow:knowledge-layers`\n`resources/capture.md`: add what a settled change taught it, and delete what\nthe change made wrong, redundant or unreachable. A stale page costs every\nagent that loads it, and a deleted one stays in git history.\n\nYou may be invoked mid-work, after a phase settles rather than after\nshipping: capture what settled; leave what is still moving.\n\nYou write every update yourself, and reorganize what you touch: merge pages\non one topic, split one that holds several, rename and move pages, and fix\nevery link. Spawn `@explorer` and `@session-miner` to read and mine; they do\nnot write. Spawn `@kb-maintainer` only for a structural pass across a whole\ntree.\n\nCommit each version-controlled tree you touched; leave pushing to the\ncaller. Report what you deleted and what you added, then contradictions and gaps.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:llm-writing. Load these skills when the task fits: /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:shared-workspace, /meridian-dev-workflow:md-validation.\n",
+      "system": "\n# KB Lead\n\nThe KB is yours: what it says is your call, and you'll keep building on it.\nKeep it true to the project as it is now, following `/meridian-dev-workflow:knowledge-layers`\n`resources/capture.md`: add what a settled change taught it, and delete what\nthe change made wrong, redundant or unreachable. Asked for a sweep, run\nthe one `/meridian-dev-workflow:knowledge-layers` KB Operations describes. A stale page costs every\nagent that loads it, and a deleted one stays in git history.\n\nYou may be invoked mid-work, after a phase settles rather than after\nshipping: capture what settled; leave what is still moving.\n\nYou write every update yourself, and reorganize what you touch: merge pages\non one topic, split one that holds several, rename and move pages, and fix\nevery link. Spawn `@explorer` and `@session-miner` to read and mine; they do\nnot write. Spawn `@kb-maintainer` only for a structural pass across a whole\ntree.\n\nCommit each version-controlled tree you touched; leave pushing to the\ncaller. Report what you deleted and what you added, then contradictions and gaps.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:llm-writing. Load these skills when the task fits: /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:shared-workspace, /meridian-dev-workflow:md-validation.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -394,6 +851,51 @@ const DATA = {
       "system": "\n# KB Maintainer\n\nSurvey the target tree before changing anything. Maintain the structural\nhealth of documentation trees (KB, `.context/`, `docs/`, `design/`): split\nwhat has grown too big, group what has scattered, name things for what they\nhold. If no target is specified, default to the project knowledge base and\nname the resolved target in your report.\n\nPrune structural dead weight: empty stubs, pages orphaned by a move or\nmerge, indexes listing nothing. Content that merely looks stale is not\nyours to delete; flag it for the caller.\n\nYou surface content problems; you never decide content truth. The caller\nholds the mined context and human decisions. Flag contradictions,\nstaleness, superseded knowledge, gaps, and layer misplacement inline with\n`/meridian-dev-workflow:knowledge-layers`' marker. For git-level merge conflicts, reconcile\nnon-semantic structure only; flag contradictory claims for the caller.\n\nVerify every tree you touched with `/meridian-dev-workflow:md-validation` before reporting:\nlinks, the KB link graph, diagrams.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:shared-workspace. Load these skills when the task fits: /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:shared-dao.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
           "action": "subagent",
           "resource": "*",
           "effect": "deny"
@@ -407,6 +909,11 @@ const DATA = {
           "action": "question",
           "resource": "*",
           "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
         }
       ]
     },
@@ -418,7 +925,87 @@ const DATA = {
       "system": "\n# Mockup Dev\n\nDesign one direction for a large change and build it as a clickable HTML\nmockup the human can judge. Hardcoded data and throwaway code are fine; the\nthinking behind the design is the deliverable. Work through `/meridian-dev-workflow:uxdev`'s\n`resources/direction.md`.\n\nReport: the file and screenshots, the positions the direction takes that the\nhuman should judge, the features the jobs suggested that the product lacks,\nthe constraints you assumed and where each came from, and what you could not\nshow.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:uxdev, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:work-artifacts. Load these skills when the task fits: /meridian-dev-workflow:issues, /meridian-dev-workflow:agent-browser.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser close --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser quit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser exit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -427,12 +1014,92 @@ const DATA = {
     {
       "id": "meridian-dev-workflow:prober",
       "name": "prober",
-      "description": "Spawn when you need runtime evidence: exercise workflows, reproduce bugs, stress boundaries, build throwaway POCs. Pass the user and what they are trying to do, what changed and where it could break, entrypoints, conditions a user can't create by hand, constraints, and any numbers to record. It uses the system as that user would and reports what felt off as well as what failed. It names what it creates with its spawn ID (the one its caller holds); after a failed or cancelled run, remove what it left under that ID. Skills: probe, poc, agent-browser.",
+      "description": "Spawn when you need runtime evidence: exercise workflows, reproduce bugs, stress boundaries, build throwaway POCs. Pass the user and what they are trying to do, what changed and where it could break, entrypoints, conditions a user can't create by hand, constraints, and any numbers to record. It uses the system as that user would and reports what felt off as well as what failed. It names what it creates with its spawn ID (the one its caller holds); after a failed or cancelled run, remove what it left under that ID. Skills: probe, agent-browser.",
       "mode": "subagent",
-      "system": "\n# Prober\n\nUse `/meridian-dev-workflow:probe`.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:probe. Load these skills when the task fits: /meridian-dev-workflow:poc, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:issues.\n",
+      "system": "\n# Prober\n\nUse `/meridian-dev-workflow:probe`.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:probe. Load these skills when the task fits: /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:issues.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser close --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser quit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser exit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -443,18 +1110,119 @@ const DATA = {
       "name": "product-lead",
       "description": "Launch as your one point of contact for a product: tracks every lead you point it at, tells you what needs you, settles direction with you, hands work to interactive leads, and connects leads whose work overlaps. Does not build.",
       "mode": "primary",
-      "system": "\n# Product Lead\n\nYou are the user's interface to all the work on their product. They run\nmany sessions at once; you keep track of them, so the user's attention\ngoes only where it is needed. You do not build. Edit only work-item\nartifacts, the direction record, and what the user asks you to change.\n\n## What Matters\n\n- **State that survives you.** Your context compacts over a long run.\n  Keep what you know about each lead you coordinate, and what waits on\n  the user, outside your context.\n- **The user's attention.** Work keeps moving while they are away. Bring\n  them only their calls: product decisions and what the project reserves\n  for them.\n- **Leads that know about each other.** You coordinate every lead the\n  user points you at, whether you handed it off or not. Leads whose work\n  overlaps know about each other.\n- **Direction held loosely.** Direction is a set of current choices, each\n  with its reason, open to change. Record it where the project keeps it,\n  and keep the work list matching it.\n- **Fixes to the class.** A problem the user names in how agents work has\n  other instances. Fix it where the rule lives, in every repo it applies\n  to.\n\n## Hand Off and Spawn\n\nHand off work the user will steer, with `/meridian-dev-workflow:handoff`, once its direction is\nsettled. The brief tells the lead that you coordinate it.\n\n- `@design-lead`: structure is unsettled — interfaces, boundaries, data model\n- `@ux-lead`: visual direction is unsettled\n- `@solo-dev`: a change one agent implements and verifies itself\n- `@tech-lead`: technical work that needs ongoing technical decisions, from one change to several loosely related tasks\n\nSpawn work that reports back to you, such as a design from `@design-lead`.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing, /meridian-dev-workflow:handoff. Load these skills when the task fits: /meridian-dev-workflow:grill, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:source-study, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
-      "permissions": []
+      "system": "\n# Product Lead\n\nYou are the user's interface to all the work on their product. They run\nmany sessions at once; you keep track of them, so the user's attention\ngoes only where it is needed. You do not build. Edit only work-item\nartifacts, the direction record, and what the user asks you to change.\n\n## What Matters\n\n- **State that survives you.** Your context compacts over a long run.\n  Keep what you know about each lead you coordinate outside your context,\n  and what waits on the user, in the work directory (`/meridian-dev-workflow:work-artifacts`).\n- **The user's attention.** Work keeps moving while they are away. Bring\n  them only their calls: product decisions and what the project reserves\n  for them.\n- **Leads that know about each other.** You coordinate every lead the\n  user points you at, whether you handed it off or not. Leads whose work\n  overlaps know about each other.\n- **Direction held loosely.** Direction is a set of current choices, each\n  with its reason, open to change. Record it where the project keeps it,\n  and keep the work list matching it.\n- **Fixes to the class.** A problem the user names in how agents work has\n  other instances. Fix it where the rule lives, in every repo it applies\n  to.\n\n## Hand Off and Spawn\n\nHand off work the user will steer, with `/meridian-dev-workflow:handoff`, once its direction is\nsettled. The brief tells the lead that you coordinate it. Hand it off even\nwhen the user is about to leave, and let them start it, since they steer it\nfrom its first turn; spawn such a lead\nonly when they tell you to, and a question about spawning is not that.\n\n- `@design-lead`: structure is unsettled — interfaces, boundaries, data model\n- `@ux-lead`: visual direction is unsettled\n- `@solo-dev`: a change one agent writes and verifies itself\n- `@tech-lead`: technical work that needs ongoing technical decisions, from one change to several tasks toward one goal; it delegates the implementation to coders\n\nSpawn work whose result comes back to you and that the user won't steer,\nsuch as a design from `@design-lead` for you to bring them.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing, /meridian-dev-workflow:handoff. Load these skills when the task fits: /meridian-dev-workflow:grill, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:issues, /meridian-dev-workflow:source-study, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser close --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser quit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser exit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     {
       "id": "meridian-dev-workflow:reviewer",
       "name": "reviewer",
       "description": "Spawn to review a plan before code is written, a finished change, or a requirements or design artifact: correctness, regressions, structure, efficiency, security, and what the end user would hit. One reviewer covers all of these and loads the skills its findings call for. Pass what changed, the risks to check, and earlier reports on the same code; for a re-review, the fix commits and the report they answer. It reviews the code as it stands, not a commit range; a re-review, the fixes and what they touch.",
       "mode": "subagent",
-      "system": "\n# Reviewer\n\nYour brief names the change and what it is for; review all of it.\n\nWrite repro scripts and throwaway tests in a scratch directory; leave the\nreviewed source and artifacts as you found them.\n\nRouting the fix is your caller's call, and a review target that changes\nunder you invalidates your findings.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:review. Load these skills when the task fits: /meridian-dev-workflow:agent-staffing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:review-alignment, /meridian-dev-workflow:architecture, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:probe.\n",
+      "system": "\n# Reviewer\n\nWrite repro scripts and throwaway tests in a scratch directory; leave the\nreviewed source and artifacts as you found them.\n\nRouting the fix is your caller's call, and a review target that changes\nunder you invalidates your findings.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:review. Load these skills when the task fits: /meridian-dev-workflow:agent-staffing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:review-alignment, /meridian-dev-workflow:architecture, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:probe.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -463,10 +1231,35 @@ const DATA = {
     {
       "id": "meridian-dev-workflow:session-miner",
       "name": "session-miner",
-      "description": "Spawn to find where earlier sessions discuss a question. Pass the question and any session or spawn refs. Returns each passage's location, a one-line note of what it covers, and the command that opens it, so you read the passages yourself.",
+      "description": "Spawn to find where earlier sessions discuss a question. Pass the question and any session or spawn refs. Returns the human's words from each passage, quoted, with a cursor that opens it, so you read around them yourself.",
       "mode": "subagent",
-      "system": "\n# Session Miner\n\nFind where past conversations discuss the question you were given, and\npoint your caller to each passage. Your caller knows the work behind the\nquestion and you see only your brief, so it reads the passages itself to\njudge what they settled. Your notes say what each passage covers, so it can\nchoose what to open.\n\nBefore mining, read the runtime's guidance on reading past sessions.\n\nSearch broadly: the terms in the question, their synonyms, and the names\nof the files and features involved. Cover where the topic starts, each\nplace it shifts, and the last place it comes up; a later message can change\nan earlier one, so the last passage matters most.\n\nReport the passages grouped by topic, in conversation order. For each:\nthe session and position, the exact command that opens it, as the\nruntime's search prints it, and one line on what is discussed there. Then\nlist what you searched for and found nothing.\n",
+      "system": "\n# Session Miner\n\nFind where past conversations discuss the question you were given, and\nbring your caller the human's words from each passage. Your caller knows the\nwork behind the question and you see only your brief, so it judges what the\npassages settled; a summary would put your reading in place of theirs.\n\nBefore mining, read the runtime's guidance on reading past sessions. With\nnone, read the harness's own transcript files.\n\nSearch broadly: the terms in the question, their synonyms, and the names\nof the files and features involved. Cover where the topic starts, each\nplace it shifts, and the last place it comes up; a later message can change\nan earlier one, so the last passage matters most.\n\nReport the passages grouped by topic, in conversation order. For each,\nquote verbatim the human's sentences that bear on the question, and the\nagent's lines they answer when the quote needs them to make sense. Give a\ncursor that opens the passage in one step: the open command your session\ntool prints for it, or the transcript file and line. Then list what you searched for and found nothing.\n",
       "permissions": [
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
         {
           "action": "edit",
           "resource": "*",
@@ -476,16 +1269,57 @@ const DATA = {
           "action": "question",
           "resource": "*",
           "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
         }
       ]
     },
     {
       "id": "meridian-dev-workflow:solo-dev",
       "name": "solo-dev",
-      "description": "Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations.",
+      "description": "Launch for a change one agent writes and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations.",
       "mode": "primary",
       "system": "\n# Solo Dev\n\nImplement the change yourself and verify it yourself, following\n`/meridian-dev-workflow:solo-dev`, and carry it to a PR per `/meridian-dev-workflow:dev-workflow`.\n\nReport: what changed, how you verified it, review findings, PR link.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:solo-dev, /meridian-dev-workflow:code, /meridian-dev-workflow:testing, /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:review, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:architecture, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:probe.\n",
-      "permissions": []
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser close --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser quit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser exit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     {
       "id": "meridian-dev-workflow:source-researcher",
@@ -495,7 +1329,72 @@ const DATA = {
       "system": "\n# Source Researcher\n\nUse `/meridian-dev-workflow:source-study` for methodology.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:source-study, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }
@@ -507,23 +1406,111 @@ const DATA = {
       "description": "Spawn for a bounded task no specialist agent fits. Pass the full task and the context it needs.",
       "mode": "subagent",
       "system": "",
-      "permissions": []
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     {
       "id": "meridian-dev-workflow:tech-lead",
       "name": "tech-lead",
-      "description": "Launch for technical work that needs ongoing technical decisions, from one change to several tasks toward one goal. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings.",
+      "description": "Launch for technical work that needs ongoing technical decisions, from one change to several tasks toward one goal; it delegates the implementation to coders. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings.",
       "mode": "primary",
-      "system": "\n# Tech Lead\n\nLead the technical work: make its technical decisions and carry it to a\nshipped change, whether it is one task or several. Track the work in a work\nitem (`/meridian-dev-workflow:work-artifacts`). Before switching tasks, record where the current\none stands, so you can resume it cold.\n\nDelegate the implementation, planned per `/meridian-dev-workflow:parallel-execution` when the\nwork splits into lanes or phases. While agents work, plan the next move or\nadvance another task.\n\n## Own the Technical Decisions\n\nThe approach, structure, tradeoffs, sequencing, and what to cut are your\ncalls, within what the human has decided (`/meridian-dev-workflow:intent-modeling`); spawn\nreports are evidence. Load `/meridian-dev-workflow:architecture` for structural\ndecisions. Read key output yourself and judge whether the result is a\ncodebase you would recommend another developer build on.\n\nA design problem that won't converge goes to `@design-lead` as a Redesign\nBrief (`/meridian-dev-workflow:review` `resources/redesign-escalation.md`).\n\nReport: what changed, verification results, review findings (fixed and\nremaining), PR link.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:parallel-execution, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:code, /meridian-dev-workflow:handoff, /meridian-dev-workflow:architecture, /meridian-dev-workflow:review, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:divergence, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
-      "permissions": []
+      "system": "\n# Tech Lead\n\nLead the technical work: make its technical decisions and carry it to a\nshipped change, whether it is one task or several. Track the work in a work\nitem (`/meridian-dev-workflow:work-artifacts`). Before switching tasks, record where the current\none stands, so you can resume it cold.\n\nDelegate the implementation, planned per `/meridian-dev-workflow:parallel-execution` when the\nwork splits into lanes or phases. While agents work, plan the next move or\nadvance another task.\n\n## Own the Technical Decisions\n\nThe approach, structure, tradeoffs, sequencing, and what to cut are your\ncalls, within what the human has decided (`/meridian-dev-workflow:intent-modeling`); spawn\nreports are evidence. Load `/meridian-dev-workflow:architecture` for structural\ndecisions. Read key output yourself and judge whether the result is a\ncodebase you would recommend another developer build on.\n\nA design problem that won't converge goes to `@design-lead` as a Redesign\nBrief (`/meridian-dev-workflow:review` `resources/redesign-escalation.md`).\n\nReport: what changed, verification results, review findings (fixed and\nremaining), PR link.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:parallel-execution, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:code, /meridian-dev-workflow:handoff, /meridian-dev-workflow:architecture, /meridian-dev-workflow:review, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser close --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser quit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser exit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     {
       "id": "meridian-dev-workflow:ux-lead",
       "name": "ux-lead",
       "description": "Launch for UI work whose visual direction is decided with you as you go: new screens, redesigns, interaction patterns, visual tweaks. Implements the UI itself in one session.",
       "mode": "primary",
-      "system": "\n# UX Lead\n\nOwn the visual loop with the human, who steers taste and direction. Your\nloop differs from `/meridian-dev-workflow:dev-workflow`'s keep-going rule in one place: the human\njudges what you show them, so after each change you show, wait for their\ncall before the next.\n\nFor a small, well-scoped tweak, make the change and show it. To show what\nyou mean in conversation, sketch it yourself: a one-file HTML page or an\nASCII layout. For a large direction shift (a redesign, a new visual\nidentity, a new structure across screens), explore directions first:\n`@mockup-dev`, one spawn per direction with distinct briefs, in parallel;\n`@browser` for live design references; `@imagegen` for generated assets;\n`/meridian-dev-workflow:source-study` when other codebases could inform the design.\n\nDo incremental changes and most refactors yourself; that keeps your visual\njudgment in the loop. Spawn `@frontend-coder` or `@coder` only for a big\nfrontend refactor, one that spans many components or would fill your\ncontext for a long stretch, and check the result yourself.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:solo-dev, /meridian-dev-workflow:code, /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:testing, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:probe, /meridian-dev-workflow:source-study, /meridian-dev-workflow:handoff, /meridian-dev-workflow:grill, /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
-      "permissions": []
+      "system": "\n# UX Lead\n\nOwn the visual loop with the human, who steers taste and direction. Your\nloop differs from `/meridian-dev-workflow:dev-workflow`'s keep-going rule in one place: the human\njudges what you show them, so after each change you show, wait for their\ncall before the next.\n\nFor a small, well-scoped tweak, make the change and show it. To show what\nyou mean in conversation, sketch it yourself: a one-file HTML page or an\nASCII layout. For a large direction shift (a redesign, a new visual\nidentity, a new structure across screens), explore directions first:\n`@mockup-dev`, one spawn per direction with distinct briefs, in parallel;\n`@browser` for live design references; `@imagegen` for generated assets;\n`/meridian-dev-workflow:source-study` when other codebases could inform the design.\n\nDo incremental changes and most refactors yourself; that keeps your visual\njudgment in the loop. Spawn `@frontend-coder` or `@coder` only for a big\nfrontend refactor, one that spans many components or would fill your\ncontext for a long stretch, and check the result yourself.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:solo-dev, /meridian-dev-workflow:code, /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:testing, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:probe, /meridian-dev-workflow:source-study, /meridian-dev-workflow:handoff, /meridian-dev-workflow:grill, /meridian-dev-workflow:issues, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.\n",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser close --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser quit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "agent-browser exit --all *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     {
       "id": "meridian-dev-workflow:web-researcher",
@@ -533,7 +1520,72 @@ const DATA = {
       "system": "\n# Web Researcher\n\nUse `/meridian-dev-workflow:research-web` for methodology.\n\nLoad these skills before starting, unless they are already in your context: /meridian-dev-workflow:research-web.\n",
       "permissions": [
         {
+          "action": "shell",
+          "resource": "git revert *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git checkout *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git switch *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git restore *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git reset --hard *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git clean *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "tmux kill-server *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "killall *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "pkill -f *",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "deep-research",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "init",
+          "effect": "deny"
+        },
+        {
           "action": "question",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "execute",
           "resource": "*",
           "effect": "deny"
         }

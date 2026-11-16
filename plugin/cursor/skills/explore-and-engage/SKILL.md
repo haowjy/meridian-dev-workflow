@@ -32,3 +32,13 @@ building on it.
 With a user in the loop, explore and engage at once: share your read and
 ask the next question while the evidence comes in. Each track redirects the
 other, and neither waits.
+
+## Asking the Human
+
+Group the questions under the decision branch each one settles, with a
+heading that names the branch. Give each question the background its
+reader lacks: all of it (what it decides, what raised it, the options and
+what each costs) when they will answer away from this conversation, and
+always your recommended answer and why. Name things as the human would, not
+by IDs or labels from your own work. Leave out a question that hangs on an
+answer still open, and ask it once that answer is in. Find facts yourself; ask the human only for decisions.

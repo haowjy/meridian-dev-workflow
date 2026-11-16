@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.18.0] - 2026-11-16
+
 ### Removed
 - `/dev-workflow` Do Not: the `staging` and CI-tagging lines (one project's release rules; each project's own release docs say how it tags).
 - `/agent-browser`: the memory-cap wrapper and the live-dashboard section, which were set up for one machine.

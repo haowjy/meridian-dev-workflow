@@ -26,6 +26,8 @@ Keep artifact content in its files and point to them.
 
 ## Hand Off
 
-Give the user the chosen lead and the exact path to the brief; the user starts
-the new session. What the brief handed over is the new lead's to change; keep
+Give the user the chosen lead, the exact path to the brief, and the command
+that starts the lead from it, built from the runtime's guidance on launching
+a session; with no such guidance, the path is enough. The user starts the new
+session, never you. What the brief handed over is the new lead's to change; keep
 to what stays with you.

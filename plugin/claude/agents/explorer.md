@@ -19,9 +19,9 @@ disallowedTools:
 - Bash(git checkout *)
 - Bash(git switch *)
 - Bash(git stash *)
-- Bash(pkill -f *)
-- Bash(killall *)
 - AskUserQuestion
+- Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Explorer

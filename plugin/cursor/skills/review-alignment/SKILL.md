@@ -12,8 +12,8 @@ Check, promise by promise, that one artifact delivers what another
 promised. `/meridian-dev-workflow:review` owns the verdict; load this when the check must be
 systematic.
 
-Read the source of truth first, including `DIVERGENCE/` in the work
-directory, since a logged divergence is plan, not drift. List what it
+Read the source of truth first, as it stands now: a plan change recorded
+with its reason in the work directory is plan, not drift. List what it
 promises: outcomes, structural intent (layer boundaries, seams, ownership),
 and, when you have the conversation, the human's stated priorities. Then
 mark each promise against the checked artifact:

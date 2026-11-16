@@ -19,6 +19,7 @@ Implement the UI with `/meridian-dev-workflow:ui-implementation`, following `/me
 
 Commit on the branch you were given, with the changelog entry the project's
 conventions require; where they put it in the PR body, write the proposed entry
-in your report. Do not push or merge; your lead integrates.
+in your report. Do not push. Your lead integrates your branch, except a merge
+your brief assigns you.
 
 Load these skills when the task fits: /meridian-dev-workflow:uxdev, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

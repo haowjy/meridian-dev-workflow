@@ -6,9 +6,7 @@ Opening the PR and cleaning up after the merge.
 
 When a feature branch (never `main`) is complete and passes the full gate, push
 it and open or update its PR without asking. Pass the PR body draft from
-`/meridian-dev-workflow:pre-dev` (`pr-body-<slug>.md`) as `--body-file` — the `gh` CLI's template
-prompting doesn't apply once `--body-file` is passed, so that draft, filled
-in as the work proceeded, is the source for the body. Fill in whatever it's
+`/meridian-dev-workflow:pre-dev` (`pr-body-<slug>.md`) as `--body-file`. Fill in whatever it's
 still missing before creating, and if the repo ships a body checker such as
 `tools/ci/check-pr-body.mjs`, run it on the draft first. Follow the project's release
 conventions for labels.
@@ -23,4 +21,6 @@ resources it held. Find the project's cleanup tooling (package scripts,
 batching cleanup for later.
 
 A squash merge further up can erase every trace that a branch merged, and
-cleanup after that is guesswork.
+cleanup after that is guesswork. Delete a branch only with evidence it
+merged: `git branch -d` is blind to squash merges, and `-D` discards
+unmerged commits.

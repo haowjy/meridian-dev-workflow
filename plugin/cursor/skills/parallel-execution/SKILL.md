@@ -36,7 +36,7 @@ At each convergence point:
 
 1. Verify each branch in its own worktree (parallel).
 2. Merge branches back: hand the whole convergence to one `@coder`, briefed
-   per `/meridian-dev-workflow:dev-workflow`'s merge hand-off, and have it merge the branches one
+   per `/meridian-dev-workflow:dev-workflow` Merges and Rebases, and have it merge the branches one
    after another.
 If the coder reports a failed integration check, isolate which branch interaction caused it before re-spawning.
 
@@ -44,6 +44,6 @@ If the coder reports a failed integration check, isolate which branch interactio
 
 A gate runs once a phase's branches merge, and the next phase starts only once it passes. A problem found at a phase gate costs one phase of rework; found at the end, every later phase is built on it. A phase nothing later builds on gains nothing from its own gate: the final gate covers it.
 
-**Phase gate**: the suite, and your own read of the merged code: what the phase changed, and whether the next phase can build on it. Review lanes and the prober wait for the final gate, so the feature is reviewed once (`/meridian-dev-workflow:agent-staffing` `resources/reviewers.md`).
+**Phase gate**: the suite, and your own read of the merged code: what the phase changed, and whether the next phase can build on it. Review waits for the final gate (`/meridian-dev-workflow:agent-staffing` `resources/reviewers.md`).
 
-**Final gate**, on the last phase: the full suite, then the feature's one review round from `reviewers.md`, on everything the change touched since the original base. Its findings are fixed inside that round, not as new phases: a new phase would earn its own final gate and repeat the review.
+**Final gate**, on the last phase: the full suite, then the feature's one review round from `reviewers.md`, on everything the change touched since the original base; its findings are fixed inside that round, not as new phases.

@@ -24,12 +24,12 @@ disallowedTools:
 - Bash(git reset --hard *)
 - Bash(git clean *)
 - Bash(tmux kill-server *)
-- Bash(pkill -f *)
-- Bash(killall *)
 - Bash(agent-browser close --all *)
 - Bash(agent-browser quit --all *)
 - Bash(agent-browser exit --all *)
 - AskUserQuestion
+- Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Frontend Coder
@@ -38,6 +38,7 @@ Implement the UI with `/meridian-dev-workflow:ui-implementation`, following `/me
 
 Commit on the branch you were given, with the changelog entry the project's
 conventions require; where they put it in the PR body, write the proposed entry
-in your report. Do not push or merge; your lead integrates.
+in your report. Do not push. Your lead integrates your branch, except a merge
+your brief assigns you.
 
 Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:code, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:testing, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance. Load these skills when the task fits: /meridian-dev-workflow:uxdev, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:issues, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

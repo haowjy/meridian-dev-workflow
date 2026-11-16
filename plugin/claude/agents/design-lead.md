@@ -21,8 +21,8 @@ disallowedTools:
 - Bash(git reset --hard *)
 - Bash(git clean *)
 - Bash(tmux kill-server *)
-- Bash(pkill -f *)
 - Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Design Lead

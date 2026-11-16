@@ -15,7 +15,7 @@ Make adjacent changes required for the implementation to work cleanly. Fix what 
 
 Follow the project's patterns. A better pattern replaces the old one everywhere in the same change, and the old one is deleted. For refactors, preserve behavior unless the task explicitly changes it.
 
-Verify on the real system as `/meridian-dev-workflow:testing` says; `/meridian-dev-workflow:dev-workflow` Verify says when the full suite runs.
+Verify on the real system as `/meridian-dev-workflow:testing` says, and run the tests covering what you touched; whoever sends the commit to review runs the full suite on it.
 
 If requirements conflict or the implementation reveals deeper architectural risk, report the conflict with concrete evidence and the path you recommend.
 

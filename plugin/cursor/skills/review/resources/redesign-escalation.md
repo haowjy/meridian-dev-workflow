@@ -16,13 +16,13 @@ One of these is a smell; several pointing at the same concern is frame-rot.
   them, and they cluster around one concern.
 - **Shotgun fixes.** A conceptually small fix keeps touching many files —
   the responsibility lives in the wrong place.
-- **The invariant can't be stated.** Nobody can say in one sentence what the
+- **The guarantee can't be stated.** Nobody can say in one sentence what the
   component guarantees; the code enforces fragments of several guesses.
 - **Tests fight the structure.** Every test of the area needs heavy mocking
   of the same dependency, or asserts implementation details because the
   behavior has no clean surface.
-- **The design doc no longer describes the code.** `DIVERGENCE/` entries pile
-  up in one area, each one bending the plan a little further.
+- **The design doc no longer describes the code.** The plan keeps changing
+  in one area, each change bending it a little further.
 
 ## The Redesign Brief
 

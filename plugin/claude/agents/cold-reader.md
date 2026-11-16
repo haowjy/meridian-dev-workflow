@@ -11,9 +11,9 @@ disallowedTools:
 - Edit
 - Write
 - NotebookEdit
-- Bash(pkill -f *)
-- Bash(killall *)
 - AskUserQuestion
+- Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Cold Reader

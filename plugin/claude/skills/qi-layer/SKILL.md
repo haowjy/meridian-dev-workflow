@@ -9,8 +9,6 @@ metadata:
 
 How to write the colocated pair, `AGENTS.md` and `.context/CONTEXT.md`, in
 any tree agents work in: code, a KB, docs, a work directory.
-`/meridian-dev-workflow:knowledge-layers` says what belongs in which place; `/meridian-dev-workflow:qi-maintenance` keeps
-the pair true as the tree changes.
 
 ## Writing AGENTS.md
 

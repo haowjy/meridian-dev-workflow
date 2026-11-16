@@ -36,4 +36,4 @@ judgment in the loop. Spawn `@frontend-coder` or `@coder` only for a big
 frontend refactor, one that spans many components or would fill your
 context for a long stretch, and check the result yourself.
 
-Load these skills when the task fits: /meridian-dev-workflow:testing, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:probe, /meridian-dev-workflow:source-study, /meridian-dev-workflow:handoff, /meridian-dev-workflow:grill, /meridian-dev-workflow:poc, /meridian-dev-workflow:issues, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.
+Load these skills when the task fits: /meridian-dev-workflow:testing, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:ui-implementation, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:probe, /meridian-dev-workflow:source-study, /meridian-dev-workflow:handoff, /meridian-dev-workflow:grill, /meridian-dev-workflow:issues, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

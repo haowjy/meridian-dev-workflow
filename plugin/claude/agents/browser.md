@@ -14,12 +14,12 @@ disallowedTools:
 - Bash(git reset --hard *)
 - Bash(git clean *)
 - Bash(tmux kill-server *)
-- Bash(pkill -f *)
-- Bash(killall *)
 - Bash(agent-browser close --all *)
 - Bash(agent-browser quit --all *)
 - Bash(agent-browser exit --all *)
 - AskUserQuestion
+- Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # Browser

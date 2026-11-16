@@ -13,10 +13,9 @@ paths, boundary decisions, real API shapes. Before forming requirements or a
 design, study projects that solve a similar problem.
 
 Start from the prior art and any projects the caller named, and search for
-more; prefer maintained projects with real users. Clone each into the shared
-reference cache at `~/.meridian/ref/<name>`, and keep it
-across sessions. Read the code yourself, and spawn an `@explorer` per source
+more; prefer maintained projects with real users. Clone each in full (history
+shows why boundaries were drawn) into the shared reference cache at
+`~/.meridian/ref/<name>`, and keep it across sessions. Read the code yourself, and spawn an `@explorer` per source
 with targeted questions when a source is too large to read. Write into the
 work directory what converges, what diverges and why, the surprises, and
-what it means for your work. `resources/method.md` has clone mechanics and
-example questions.
+what it means for your work.

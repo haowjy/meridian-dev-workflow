@@ -26,9 +26,9 @@ disallowedTools:
 - Bash(git restore *)
 - Bash(git reset --hard *)
 - Bash(git clean *)
-- Bash(pkill -f *)
-- Bash(killall *)
 - AskUserQuestion
+- Bash(killall *)
+- Bash(pkill -f *)
 ---
 
 # KB Maintainer

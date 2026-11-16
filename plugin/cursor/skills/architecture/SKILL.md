@@ -27,7 +27,14 @@ committing. "Find out during implementation" is a risk flag; run the
 cheapest probe instead. Before proposing a new mechanism, field or table,
 find the one the project already has and extend or replace it: a second
 copy of a concept drifts from the first. Before proposing one the project
-doesn't have yet, find out how others built it (search the web, or spawn a researcher), and record in the design what you
-found and what you take from it. When you're unsure between options, build
-variants concrete enough to choose between: converging on one with low
-confidence defers the decision to implementation, where it costs more.
+doesn't have yet, find out how others built it, and study each reference
+the human names the same way: how it actually works, from its source, its
+docs and its builders' own write-ups, not from what you remember of it
+(`/meridian-dev-workflow:source-study`, or a researcher). Record in the design what you read and
+what you take from it.
+
+Settle a boundary, data model or contract by comparing real alternatives, the first one
+you found among them, each with what it costs. When the comparison on paper
+doesn't settle it, build variants concrete enough to choose between:
+converging with low confidence defers the decision to implementation, where
+it costs more.

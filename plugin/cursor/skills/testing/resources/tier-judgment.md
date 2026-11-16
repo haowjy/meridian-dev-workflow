@@ -36,7 +36,6 @@ flowchart TD
 - **Move up a tier when the question is about collaboration or integration.** Unit tests cannot answer "do these modules agree on the contract."
 - **Move up a tier when mocking starts dominating.** A unit test with five mocks is usually an integration test wearing a disguise.
 - **Give each test a distinct risk to protect.** If the smoke test proves a code path works, a unit test that reasserts the same thing adds maintenance without protection; consolidate equivalent coverage.
-- **Critical paths get one test at the tier that reaches the failure.** Authentication, billing, data loss: pair that test with a probe recipe for the whole journey.
 
 ## Common Sizing Mistakes
 
