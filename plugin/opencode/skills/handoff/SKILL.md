@@ -18,7 +18,9 @@ Start with `/meridian-dev-workflow:intent-modeling`, then give the lead:
 
 - The goal: what is true when its work is done
 - What it now owns, and what stays with you
-- Current state, decisions with their reasons, and open questions
+- Current state, decisions with their reasons, and open questions; work that
+  is unreviewed or unproven goes in as the new lead's first work, not as
+  status
 - The artifact paths to read first
 
 Keep artifact content in its files and point to them.

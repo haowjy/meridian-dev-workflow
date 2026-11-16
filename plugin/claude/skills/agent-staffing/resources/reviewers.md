@@ -57,8 +57,8 @@ usually sits in scope or requirements.
 ## Reviewing Requirements or a Design
 
 Requirements and designs are review targets like code: a `@reviewer` can
-challenge the requirements or the framing, not only an implementation. For
-a converged design, have one `@reviewer` challenge its correctness, edge
+challenge the requirements or the framing, not only an implementation. Once a
+design has a draft, have one `@reviewer` challenge its correctness, edge
 cases, and requirement coverage, and a `@prober` check what it assumes of
 the real system. Substantive findings mean another round; minor
 refinements mean converged. Substantive findings after a second round go to
