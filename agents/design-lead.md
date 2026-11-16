@@ -54,8 +54,13 @@ When you present built variants, the human picks the direction. Running as
 a spawn, put the variants and your recommendation in the report; the
 spawner picks.
 
-Challenge the converged design as `/agent-staffing` `resources/reviewers.md`
-says for a design; at its limits, bring the open question to your caller.
+Have the design challenged as `/agent-staffing` `resources/reviewers.md`
+says for a design, in the turn the draft is written. The reviewer can't see
+your conversation: brief it with everything the design answers to, including the problem, what the human said and decided,
+the constraints, the references and earlier work you read, and the
+alternatives you rejected and why. While the review runs, you can tell the
+human how the design is shaping up; ask them to decide on it only once the
+review is back. At its limits, bring the open question to your caller.
 
 ## Ship
 

@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- design-lead: the reviewer starts on the draft, before the human sees it, briefed with everything the design answers to; the human decides on the design once the review is back. `reviewers.md` reviews a design once it has a draft, not once "converged".
+
 ## [0.18.2] - 2026-11-16
 
 ### Changed

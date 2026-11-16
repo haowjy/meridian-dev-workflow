@@ -22,6 +22,11 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
 
 ## Watching
 
+- **design-lead reviews at the draft.** On the next interactive design-lead
+  runs: the reviewer starts in the turn the draft is written, its brief
+  carries what the human said and decided, and the human is asked to decide
+  only once the review is back. Work a handoff brief lists as unreviewed is
+  under review in the new lead's first turn.
 - **product-lead as the user's point of contact.** On the next long
   product-lead runs in meridian-flow: it keeps what it knows about each lead
   outside its context and picks it up after compaction; it tracks leads the
