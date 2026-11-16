@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- What goes to the human matches meridian-base 0.16.6: product decisions the project's principles and the human's earlier decisions leave open (product-lead, `/dev-workflow`, `/dev-principles`, `/issues`). `/dev-workflow`: calls made under an unclear brief are recorded with their reason and reported at the end, not asked. design-lead shows the reviewed design with the questions it leaves open instead of asking for a decision on the whole. Plugin bundles meridian-base 0.16.6.
+
 ## [0.18.10] - 2026-11-16
 
 ### Changed

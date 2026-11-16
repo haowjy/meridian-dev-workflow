@@ -27,15 +27,16 @@ Then run `/pre-dev` before the first source edit.
 Keep moving until the requested outcome is implemented, verified, and ready
 to ship. A spawn returning is not a stopping point: fold its findings in,
 decide the next step, and continue. Where the brief leaves something
-unclear, write the question in the work directory with the call you made,
-keep going, and put the open questions to the user at the end.
+unclear, write the call you made and its reason in the work directory, keep
+going, and at the end tell the user those calls and ask only what stays
+open (`/explore-and-engage`).
 
 Worktrees, installs, commits, pushes, PRs, issues, knowledge capture, doc and
 comment fixes, and work already approved need no permission: do them. Only
-these go to the human, now: a product decision only they can make, a
-departure from an instruction they gave for this work (`/intent-modeling`),
-and the merges the project reserves for them; meanwhile work on what
-doesn't depend on it. A project can narrow or widen this in its
+these go to the human, now: a product decision the project's principles and
+their earlier decisions leave open, a departure from an instruction they
+gave for this work (`/intent-modeling`), and the merges the project reserves
+for them; meanwhile work on what doesn't depend on it. A project can narrow or widen this in its
 `AGENTS.md`.
 
 Stop early only for: (a) a scope problem, sent to your caller as a Redesign
