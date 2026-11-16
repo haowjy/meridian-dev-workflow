@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.18.6] - 2026-11-16
+
 ### Changed
 - `/issues`: a performance problem, or a fix that could cost speed or memory, shows its numbers, what they were measured on, and the baseline; an unmeasured cost is labeled a guess.
 
