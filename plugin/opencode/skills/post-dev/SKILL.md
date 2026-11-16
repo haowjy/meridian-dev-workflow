@@ -1,13 +1,13 @@
 ---
 name: post-dev
-description: 'Run when implementation is done, before the PR is marked ready: catches what would otherwise ship missing (PR body, changelog, review sign-off, deferred work, knowledge capture, cleanup).'
+description: 'Run when implementation is done, before the PR is ready for review: catches what would otherwise ship missing (PR body, changelog, review sign-off, deferred work, knowledge capture, cleanup).'
 metadata:
   type: checkpoint
 ---
 
 # Post-Dev Checkpoint
 
-Run this when implementation is done, before the PR is marked ready.
+Run this when implementation is done, before the PR is ready for review.
 
 - **PR body.** `pr-body-<slug>.md` from `/meridian-dev-workflow:pre-dev` has every template section
   filled, with the before-state evidence and what the work added. Evidence

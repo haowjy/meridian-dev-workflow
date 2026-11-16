@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.18.2] - 2026-11-16
+
 ### Changed
 - When PRs open (draft from the first commit, or at the end) is the project's convention again, not `ship.md`'s; `/post-dev` runs before the PR is ready for review, whichever it is.
 

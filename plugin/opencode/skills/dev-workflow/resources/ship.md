@@ -4,13 +4,12 @@ Opening the PR and cleaning up after the merge.
 
 ## Pushing and PRs
 
-Push a feature branch (never `main`) and open its PR as a draft at its
-first commit, without asking, so anyone can see the work's state from the
-PR. Pass the PR body draft from `/meridian-dev-workflow:pre-dev` (`pr-body-<slug>.md`) as
-`--body-file`, and update the body as the work changes. When the branch is
-complete, passes the full gate and `/meridian-dev-workflow:post-dev` is done, mark the PR ready.
-If the repo ships a body checker such as `tools/ci/check-pr-body.mjs`, run
-it on the body first. Follow the project's release conventions for labels.
+When a feature branch (never `main`) is complete, passes the full gate and
+`/meridian-dev-workflow:post-dev` is done, push it and open its PR, or mark it ready if it is a
+draft, without asking. Pass the PR body draft from `/meridian-dev-workflow:pre-dev`
+(`pr-body-<slug>.md`) as `--body-file`. If the repo ships a body checker such
+as `tools/ci/check-pr-body.mjs`, run it on the body first. Follow the
+project's conventions for when PRs open and how they are labelled.
 
 ## Branch Cleanup
 
