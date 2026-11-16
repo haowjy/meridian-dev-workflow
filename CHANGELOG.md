@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/issues` `resources/issue-template.md`: the fallback issue body (what happens, reproduce, screenshots, performance, where to start, done when); it also fills what a project's template lacks.
+
 ## [0.18.7] - 2026-11-16
 
 ### Changed
