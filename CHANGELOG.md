@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/issues`: an issue shows the problem: repro steps with expected and actual for a bug, a walked-through case for a gap, screenshots of anything visible, who it hits, where to start, and the check for done. Search before filing; images committed and linked at a commit.
+
 ## [0.18.4] - 2026-11-16
 
 ### Changed
