@@ -1,6 +1,6 @@
 ---
 name: post-dev
-description: 'Run when implementation is done, before opening the PR: catches what would otherwise ship missing (PR body, changelog, review sign-off, deferred work, knowledge capture, cleanup).'
+description: 'Run when implementation is done, before the PR is marked ready: catches what would otherwise ship missing (PR body, changelog, review sign-off, deferred work, knowledge capture, cleanup).'
 metadata:
   type: checkpoint
 alwaysApply: false
@@ -8,8 +8,7 @@ alwaysApply: false
 
 # Post-Dev Checkpoint
 
-Run this when implementation is done, before opening the PR. The last item
-applies once the PR merges.
+Run this when implementation is done, before the PR is marked ready.
 
 - **PR body.** `pr-body-<slug>.md` from `/meridian-dev-workflow:pre-dev` has every template section
   filled, with the before-state evidence and what the work added. Evidence
@@ -21,9 +20,7 @@ applies once the PR merges.
   rewrote: one reader for all of them (`/meridian-dev-workflow:llm-writing`
   `resources/cold-read.md`). Its valid findings are fixed.
 - **User docs** describe the change: every page that names what it touched.
-- **Changelog**, where the project keeps one, updated the way it says (a
-  `CHANGELOG.md`, or the PR body's changelog section): what downstream users
-  notice, tersely.
+- **Changelog**, where the project keeps one, updated per its conventions.
 - **Review.** The review passed on the commit it named, and each finding is
   fixed or accepted. Later changes are small fixes you read yourself, doc
   updates, deleted scaffolding tests, or fixes that went through the
@@ -39,6 +36,3 @@ applies once the PR merges.
   kept or deleted as `/meridian-dev-workflow:testing` Which Tests Stay says. Dev stacks, browsers, scratch
   worktrees and temp dirs you or your spawns started are stopped and
   removed, unless the human asked to keep one.
-- **After merge.** CI passed on main, cleanup is done per `/meridian-dev-workflow:dev-workflow`
-  `resources/ship.md`, and the work item is closed once every agent you
-  started for it has finished.

@@ -113,7 +113,7 @@ const DATA = {
     {
       "directory": "post-dev",
       "name": "post-dev",
-      "description": "Run when implementation is done, before opening the PR: catches what would otherwise ship missing (PR body, changelog, review sign-off, deferred work, knowledge capture, cleanup)."
+      "description": "Run when implementation is done, before the PR is marked ready: catches what would otherwise ship missing (PR body, changelog, review sign-off, deferred work, knowledge capture, cleanup)."
     },
     {
       "directory": "pre-dev",
