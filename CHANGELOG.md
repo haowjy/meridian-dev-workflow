@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.18.7] - 2026-11-16
+
 ### Changed
 - `/issues`: an issue follows the repo's issue template, else the PR template's sections that exist before the fix (problem, current behavior with screenshots, before timings, known risks), so the fixing PR starts from them.
 

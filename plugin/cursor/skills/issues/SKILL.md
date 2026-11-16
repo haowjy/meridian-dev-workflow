@@ -25,6 +25,14 @@ Whoever picks the issue up comes to it weeks later in a fresh session. Show
 them the problem; a description of it makes them rebuild your session to
 see it.
 
+Lay the issue out by the repo's issue template (`.github/ISSUE_TEMPLATE/`).
+Without one, use its PR template: fill every section that can be written
+before the fix (the problem and why it matters, the walkthrough and
+screenshots of how it behaves now, the before timings, the risks known so
+far) and leave out the sections only the fix can fill. The PR that fixes it
+then starts from those sections. With neither template, follow the order
+below. Whatever the layout, the issue carries:
+
 - **A bug:** steps that reproduce it from a clean start, what happened and
   what should have, and the commit or version it happened on. Paste error
   text and output verbatim. When you couldn't reproduce it, say what you
