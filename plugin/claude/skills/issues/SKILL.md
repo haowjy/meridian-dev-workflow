@@ -1,6 +1,6 @@
 ---
 name: issues
-description: 'Load when you defer work, so each item lands where it will be found: a colocated .context/ file or a GitHub issue.'
+description: 'Load when you defer work or file a GitHub issue: where each item lands (a colocated .context/ file or an issue), and what an issue shows so someone without your session can act on it.'
 metadata:
   type: reference
 ---
@@ -12,7 +12,33 @@ items in its `.context/TODO` or `FUTURE`, cross-cutting ones and those that
 need outside visibility in a GitHub issue. Fix what you find first, and
 defer only what needs a product decision or is a project of its own.
 
-An issue says where it was found, what it is, and what should be done. Give
-it the labels in `resources/labels.md`, plus `work:<slug>` when a work
-item is active. If `gh` is unavailable, say that filing was skipped and keep
-the draft in the work directory.
+Search the open issues before filing; add what you found to a matching one
+instead of opening a duplicate. Give an issue the labels in
+`resources/labels.md`, plus `work:<slug>` when a work item is active. If
+`gh` is unavailable, say that filing was skipped and keep the draft in the
+work directory.
+
+## What an Issue Shows
+
+Whoever picks the issue up comes to it weeks later in a fresh session. Show
+them the problem; a description of it makes them rebuild your session to
+see it.
+
+- **A bug:** steps that reproduce it from a clean start, what happened and
+  what should have, and the commit or version it happened on. Paste error
+  text and output verbatim. When you couldn't reproduce it, say what you
+  saw and what you tried.
+- **A gap or an improvement:** walk through one concrete case: what the
+  user does, what they see, and where it goes wrong or costs them.
+- **Anything visible** (a UI, a TUI, rendered output): a screenshot or a
+  recording of it, with what to look at.
+- **Who it hits and how often**, so whoever triages it can rank it.
+- **Where to start:** the files and functions involved, and what you ruled
+  out.
+- **Done:** the check that will show it's fixed.
+
+Leave out what won't outlast your session, such as spawn and chat IDs and
+local paths. `gh` can't attach an image, so commit it to a repo (the
+project's assets folder, or the work directory's repo) and link it at that
+commit: a link to a branch breaks when the file moves or its work directory
+is archived.

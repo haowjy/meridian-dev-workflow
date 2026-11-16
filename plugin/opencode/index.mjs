@@ -83,7 +83,7 @@ const DATA = {
     {
       "directory": "issues",
       "name": "issues",
-      "description": "Load when you defer work, so each item lands where it will be found: a colocated .context/ file or a GitHub issue."
+      "description": "Load when you defer work or file a GitHub issue: where each item lands (a colocated .context/ file or an issue), and what an issue shows so someone without your session can act on it."
     },
     {
       "directory": "knowledge-layers",
