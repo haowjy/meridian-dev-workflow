@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.18.12] - 2026-11-16
+
 ### Removed
 - product-lead: "Fixes to the class", which repeated `/intent-modeling` and asked it to edit rules outside its scope.
 - `/issues` labels: the color table and setup script; one table of labels, created with `gh label create` when missing.
