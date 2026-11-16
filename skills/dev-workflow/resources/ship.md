@@ -4,12 +4,13 @@ Opening the PR and cleaning up after the merge.
 
 ## Pushing and PRs
 
-When a feature branch (never `main`) is complete and passes the full gate, push
-it and open or update its PR without asking. Pass the PR body draft from
-`/pre-dev` (`pr-body-<slug>.md`) as `--body-file`. Fill in whatever it's
-still missing before creating, and if the repo ships a body checker such as
-`tools/ci/check-pr-body.mjs`, run it on the draft first. Follow the project's release
-conventions for labels.
+Push a feature branch (never `main`) and open its PR as a draft at its
+first commit, without asking, so anyone can see the work's state from the
+PR. Pass the PR body draft from `/pre-dev` (`pr-body-<slug>.md`) as
+`--body-file`, and update the body as the work changes. When the branch is
+complete, passes the full gate and `/post-dev` is done, mark the PR ready.
+If the repo ships a body checker such as `tools/ci/check-pr-body.mjs`, run
+it on the body first. Follow the project's release conventions for labels.
 
 ## Branch Cleanup
 
@@ -24,3 +25,6 @@ A squash merge further up can erase every trace that a branch merged, and
 cleanup after that is guesswork. Delete a branch only with evidence it
 merged: `git branch -d` is blind to squash merges, and `-D` discards
 unmerged commits.
+
+After the merge, check that CI passed on the target branch, and close the
+work item once every agent you started for it has finished.

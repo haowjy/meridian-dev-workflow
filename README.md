@@ -87,8 +87,8 @@ Every implementation lead runs the same lifecycle; `/dev-workflow` owns it.
    (`agent-staffing` `resources/reviewers.md`).
 4. **`/post-dev`** checks the PR body, changelog, review sign-off and
    deferred work, and runs `kb-lead`.
-5. **Ship.** The lead pushes the branch and opens the PR with a `release:*`
-   label. Merging to `main` waits for a human.
+5. **Ship.** The lead opened the PR as a draft at the first commit; it marks
+   it ready, with a `release:*` label. Merging to `main` waits for a human.
 
 When the structure itself is wrong, the lead writes a Redesign Brief for
 design-lead; scope problems go back to you and product-lead.
@@ -164,8 +164,8 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | `pre-dev` | Before the first edit: thermo review of the plan, worktree, PR body draft, before-state evidence |
 | `solo-dev` | Single-session implementation: when to review and probe, verification, when to stop patching |
 | `parallel-execution` | DAG planning, worktree lanes, merge and verify, phase gates |
-| `dev-workflow` | Commits, changelog, pushing and opening PRs, branch cleanup |
-| `post-dev` | Before the PR: PR body, changelog, review sign-off, deferred work, knowledge capture |
+| `dev-workflow` | Commits, draft PRs from the first commit, marking them ready, branch cleanup |
+| `post-dev` | Before the PR is marked ready: PR body, changelog, review sign-off, deferred work, knowledge capture |
 | `merge-prep` | Understanding both sides' intent before merging or rebasing |
 | `issues` | Routing deferred work to `.context/` or GitHub issues |
 | `agent-staffing` | How a change is reviewed and probed, and when a model change is justified |

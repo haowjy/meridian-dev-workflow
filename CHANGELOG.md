@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/post-dev`: the changelog item says only to update it per the project's conventions.
+- PRs open as drafts at the first commit and are marked ready after `/post-dev` (`/dev-workflow` `resources/ship.md`); `/post-dev` runs before the PR is marked ready, and its after-merge item moved to `ship.md`.
+
 ## [0.18.0] - 2026-11-16
 
 ### Removed
