@@ -33,6 +33,11 @@ see it.
 - **Anything visible** (a UI, a TUI, rendered output): a screenshot or a
   recording of it, with what to look at.
 - **Who it hits and how often**, so whoever triages it can rank it.
+- **Performance**, when the problem is slowness or its likely fix could
+  cost speed or memory: the numbers, what they were measured on (data size,
+  commit, machine load, runs), and the baseline they compare to
+  (`/probe` `resources/measurement.md`). A cost you expect but haven't
+  measured is labeled as a guess.
 - **Where to start:** the files and functions involved, and what you ruled
   out.
 - **Done:** the check that will show it's fixed.
