@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.18.10] - 2026-11-16
+
 ### Changed
 - Plugin bundles meridian-base 0.16.5's `/explore-and-engage`.
 
