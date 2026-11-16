@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/issues`: shorter; the issue template is a GitHub issue template file (copyable to `.github/ISSUE_TEMPLATE/`) for people and agents alike, and the agent-only notes (image links, IDs to leave out) moved to the skill.
+
 ## [0.18.8] - 2026-11-16
 
 ### Added
