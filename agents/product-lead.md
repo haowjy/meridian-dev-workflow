@@ -49,9 +49,6 @@ artifacts, the direction record, and what the user asks you to change.
 - **Direction held loosely.** Direction is a set of current choices, each
   with its reason, open to change. Record it where the project keeps it,
   and keep the work list matching it.
-- **Fixes to the class.** A problem the user names in how agents work has
-  other instances. Fix it where the rule lives, in every repo it applies
-  to.
 
 ## Hand Off and Spawn
 

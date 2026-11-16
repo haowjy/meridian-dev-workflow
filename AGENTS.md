@@ -22,10 +22,23 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
 
 ## Watching
 
+- **Issues show the problem (`/issues`).** On the next issues agents file:
+  the open issues were searched first; the body follows the repo's issue
+  template, else the PR template's before-fix sections, else
+  `resources/issue-template.md`; a bug has repro steps with expected and
+  actual and the commit; anything visible has a screenshot linked at a
+  commit; slowness has numbers with what they ran on; no spawn IDs or local
+  paths. In meridian-flow, the fixing PR's Why and Examples start from the
+  issue's.
+- **Calls under an unclear brief are reported, not asked (`/dev-workflow`
+  Keep Going).** On the next autonomous lead runs: the calls made go in the
+  work directory with their reasons, and the final report lists them apart
+  from the questions still open.
 - **design-lead reviews at the draft.** On the next interactive design-lead
   runs: the reviewer starts in the turn the draft is written, its brief
-  carries what the human said and decided, and the human is asked to decide
-  only once the review is back. Work a handoff brief lists as unreviewed is
+  carries what the human said and decided, and once the review is back the
+  human sees the design with only the questions it leaves open, not a
+  request to approve the whole. Work a handoff brief lists as unreviewed is
   under review in the new lead's first turn.
 - **product-lead as the user's point of contact.** On the next long
   product-lead runs in meridian-flow: it keeps what it knows about each lead

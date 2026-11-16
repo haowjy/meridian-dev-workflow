@@ -4,6 +4,13 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Removed
+- product-lead: "Fixes to the class", which repeated `/intent-modeling` and asked it to edit rules outside its scope.
+- `/issues` labels: the color table and setup script; one table of labels, created with `gh label create` when missing.
+
+### Changed
+- Plugin bundles meridian-base 0.16.7.
+
 ## [0.18.11] - 2026-11-16
 
 ### Changed
