@@ -18,22 +18,17 @@ instead of opening a duplicate. Give an issue the labels in
 `gh` is unavailable, say that filing was skipped and keep the draft in the
 work directory.
 
-## What an Issue Shows
+## Writing an Issue
 
-Whoever picks the issue up comes to it weeks later in a fresh session. Show
-them the problem; a description of it makes them rebuild your session to
-see it. Leave out what won't outlast your session, such as spawn and chat
-IDs and local paths.
+Whoever picks the issue up comes to it weeks later in a fresh session, so
+show the problem rather than describe it. Draft the body from the repo's
+issue template (`.github/ISSUE_TEMPLATE/`). Without one, use the sections of
+its PR template that can be written before the fix (the problem, how it
+behaves now, before timings), so the fixing PR starts from them. Without
+either, use `resources/issue-template.md`. Delete a section only when it
+can't apply.
 
-Draft the body from a template:
-
-- The repo's issue template (`.github/ISSUE_TEMPLATE/`), when it has one.
-- Otherwise its PR template: fill every section that can be written before
-  the fix (the problem and why it matters, the walkthrough and screenshots
-  of how it behaves now, the before timings, the risks known so far) and
-  leave out the sections only the fix can fill. The PR that fixes it then
-  starts from those sections.
-- With neither, `resources/issue-template.md`.
-
-Under a project's template, also cover the sections of
-`resources/issue-template.md` it lacks.
+`gh` can't attach images: commit each to a repo (the project's assets
+folder, or the work directory's repo) and link it at that commit, since a
+branch link breaks when the file moves. Leave out spawn and chat IDs and
+local paths, which mean nothing outside your session.

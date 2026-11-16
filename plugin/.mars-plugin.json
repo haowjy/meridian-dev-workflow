@@ -2,8 +2,8 @@
   "schema_version": 1,
   "mars_version": "0.31.0",
   "plugin_name": "meridian-dev-workflow",
-  "version": "0.18.8",
-  "inputs_hash": "sha256:0b49c707af325c5c4c7ba80af9f0db791b776ace34d275732510dc01bbbf6877",
+  "version": "0.18.9",
+  "inputs_hash": "sha256:9a713be13f83e48d024a8752487940588200e57a49e1a652080a1ae01710415c",
   "dependencies": {
     "meridian-base": {
       "version": "0.16.3",
@@ -11,7 +11,7 @@
     }
   },
   "files": {
-    "claude/.claude-plugin/plugin.json": "sha256:6c0a1fdeac217081dd49762f31d8564accdb40b77f7f9b8f4e335d9ffaacfb93",
+    "claude/.claude-plugin/plugin.json": "sha256:4119f763a17b8886c5028705fae3c30fa22aa274ddcec95e08b393f491362a60",
     "claude/agents/browser.md": "sha256:51c07a3170594e40133f8737d154cdddc7ff384cc4f359211bf50a45ea56f2f3",
     "claude/agents/coder.md": "sha256:7bbff6cfcbfd2ab2dd8fcb2164c97c0f743209feef726ce4a4c6cc6f8c566f0e",
     "claude/agents/cold-reader.md": "sha256:d06395190d13e9ff8926b947718eaa3df8dd4706f35ffd151e8da87ec5fe3144",
@@ -70,8 +70,8 @@
     "claude/skills/handoff/SKILL.md": "sha256:32653a7036c6c2a86257077a53778412d3cb1255170e79d3a5a1b8aadc25a0c9",
     "claude/skills/information-hierarchy/SKILL.md": "sha256:024e154158ccd04d94cd8dd7d4d32af9bf3210be43d6f6c819676d78e2e2cb08",
     "claude/skills/intent-modeling/SKILL.md": "sha256:6ffa5ddbadf91557c540e58e79b5f9c6545dd8d28a2fc0fe9501d7408988a5dd",
-    "claude/skills/issues/SKILL.md": "sha256:a025490beaa7d34d623b52342e76539f7b24ca4f6a0a5b6af16b9e8ba637b0a7",
-    "claude/skills/issues/resources/issue-template.md": "sha256:1868cac6275990fb8eb245527ea15cf6dbfb1e4e57ba527156d92657236d603f",
+    "claude/skills/issues/SKILL.md": "sha256:1ba58da6cf79f6d2317596b0e62fdbb2e61eb9f491e6ca89a33acad3c66ccdbc",
+    "claude/skills/issues/resources/issue-template.md": "sha256:6f34d2260e7f1d833a4d1532f1cbea24482692cfb7bd8e40e84330ce03edc7d2",
     "claude/skills/issues/resources/labels.md": "sha256:d16c66d988989a7f27db3c5ca6d93ecb9428a31aca48bd442c02b6089717f7a9",
     "claude/skills/knowledge-layers/SKILL.md": "sha256:dfaed990cf71cb4f92dbc867fdd39f9d3f0d7626bbf10074c0bf078a76c4223b",
     "claude/skills/knowledge-layers/resources/bootstrap.md": "sha256:fca62a527f01777e5a3aaaa420495c5c44189ad77ec35382571df33dea3d9cea",
@@ -127,7 +127,7 @@
     "claude/skills/visualize-codebase/resources/db-schema.md": "sha256:055d60c7e2b411d4269dfaee4969b26575cb133bd16efad188dc443b03244a6f",
     "claude/skills/work-artifacts/SKILL.md": "sha256:2976944dd979bb666885a07917f5583c018b727097124906948ab8fe370b6e27",
     "claude/skills/zoom-out/SKILL.md": "sha256:33f31cf79107b1abcd3f080ca2b50ebf7f1681924f8bc1bbeaaad6654194adae",
-    "cursor/.cursor-plugin/plugin.json": "sha256:6c0a1fdeac217081dd49762f31d8564accdb40b77f7f9b8f4e335d9ffaacfb93",
+    "cursor/.cursor-plugin/plugin.json": "sha256:4119f763a17b8886c5028705fae3c30fa22aa274ddcec95e08b393f491362a60",
     "cursor/agents/browser.md": "sha256:d54149e9720914f34d00d8ba520a9f0d672a15796e29f1ad553a39f74aa30727",
     "cursor/agents/coder.md": "sha256:192bbb57b635dbd13bc8d0c517210fd4570feddc4e369349275467e49777d0c2",
     "cursor/agents/cold-reader.md": "sha256:f92ef78ac4336bfd39a555533d969ec42ea8deae9998131d210663825ebcd2d7",
@@ -180,8 +180,8 @@
     "cursor/skills/handoff/SKILL.md": "sha256:3ef71b65a27a08e3c66175192a2b8407fb5b76755ecaecdb8c0e98275f99afb4",
     "cursor/skills/information-hierarchy/SKILL.md": "sha256:69331478f44cc5f5c6413348bd7a9bd6c8512f20ef10bd848f457250dcdba525",
     "cursor/skills/intent-modeling/SKILL.md": "sha256:519acf66c0329f1d903636ad61bf8d5e6b182febd6c22ce736881d1a19342255",
-    "cursor/skills/issues/SKILL.md": "sha256:dcf8df84bde358c90438eebd18f65f094a73c24f71023121d91ea15814e6299e",
-    "cursor/skills/issues/resources/issue-template.md": "sha256:1868cac6275990fb8eb245527ea15cf6dbfb1e4e57ba527156d92657236d603f",
+    "cursor/skills/issues/SKILL.md": "sha256:ca3ae297fb5759c4302a78cafa7b067ec84035e9c523b7105eb96b885b104fe5",
+    "cursor/skills/issues/resources/issue-template.md": "sha256:6f34d2260e7f1d833a4d1532f1cbea24482692cfb7bd8e40e84330ce03edc7d2",
     "cursor/skills/issues/resources/labels.md": "sha256:d16c66d988989a7f27db3c5ca6d93ecb9428a31aca48bd442c02b6089717f7a9",
     "cursor/skills/knowledge-layers/SKILL.md": "sha256:e6dfc6fe80a6b403316cba3e172ed946fb8c1ace439968a2729698715ba37bf2",
     "cursor/skills/knowledge-layers/resources/bootstrap.md": "sha256:fca62a527f01777e5a3aaaa420495c5c44189ad77ec35382571df33dea3d9cea",
@@ -242,7 +242,7 @@
     "opencode/hooks/protect-tmux-server/run.py": "sha256:4266b3ecdffdcea57cd9c02f05a3e07665dd5c6201e05c94f79a3eee647d415f",
     "opencode/hooks/protect-tmux-server/run.sh": "sha256:d92bb2c9e2fde4eb0bd6332ffef8cad4428444b752c2e3c6bf38f76b4ea8ba81",
     "opencode/index.mjs": "sha256:2868128df808a5eda87b7b5425bb0d33755806609bc7c5c6ad0834bed56e97f4",
-    "opencode/package.json": "sha256:45ba9acfde69b503eae186abf48af9cb16f6403cc03d9de9e7a5e15c14dfc3ce",
+    "opencode/package.json": "sha256:0a3332d40b59ac734e986b9fdb075759e294495600e856718a5bc2e5e6bab243",
     "opencode/skills/agent-browser/SKILL.md": "sha256:c77c734a2b285a4ea1516c1da55492dcc18b420123bfa0af5353190808aaae37",
     "opencode/skills/agent-staffing/SKILL.md": "sha256:ffa8797e856d4afa346fccb6028352e66446a7aa30db76b0dcf1f94dfe6a6eec",
     "opencode/skills/agent-staffing/resources/reviewers.md": "sha256:4cdd00a7deff1cfd5c4c77432a200693cd8d7f2725cd25c9204781f3811c2cba",
@@ -274,8 +274,8 @@
     "opencode/skills/handoff/SKILL.md": "sha256:964d4886d5097b1e0cb164374d7b2213c89ca355cfdbed53492a1baeeddcdfdb",
     "opencode/skills/information-hierarchy/SKILL.md": "sha256:024e154158ccd04d94cd8dd7d4d32af9bf3210be43d6f6c819676d78e2e2cb08",
     "opencode/skills/intent-modeling/SKILL.md": "sha256:6ffa5ddbadf91557c540e58e79b5f9c6545dd8d28a2fc0fe9501d7408988a5dd",
-    "opencode/skills/issues/SKILL.md": "sha256:a025490beaa7d34d623b52342e76539f7b24ca4f6a0a5b6af16b9e8ba637b0a7",
-    "opencode/skills/issues/resources/issue-template.md": "sha256:1868cac6275990fb8eb245527ea15cf6dbfb1e4e57ba527156d92657236d603f",
+    "opencode/skills/issues/SKILL.md": "sha256:1ba58da6cf79f6d2317596b0e62fdbb2e61eb9f491e6ca89a33acad3c66ccdbc",
+    "opencode/skills/issues/resources/issue-template.md": "sha256:6f34d2260e7f1d833a4d1532f1cbea24482692cfb7bd8e40e84330ce03edc7d2",
     "opencode/skills/issues/resources/labels.md": "sha256:d16c66d988989a7f27db3c5ca6d93ecb9428a31aca48bd442c02b6089717f7a9",
     "opencode/skills/knowledge-layers/SKILL.md": "sha256:dfaed990cf71cb4f92dbc867fdd39f9d3f0d7626bbf10074c0bf078a76c4223b",
     "opencode/skills/knowledge-layers/resources/bootstrap.md": "sha256:fca62a527f01777e5a3aaaa420495c5c44189ad77ec35382571df33dea3d9cea",
@@ -335,7 +335,7 @@
   "root_files": {
     ".claude-plugin/marketplace.json": "sha256:c4fc350b6fc0f5f26eafa4e5e39dc45a9298a7de8cd499835f56bf31020fc86d",
     ".cursor-plugin/marketplace.json": "sha256:cb815f371edf3d73eb4a5227da7af449291e3fbafbeec601ed4202cb0e299e8a",
-    "package.json": "sha256:910b0419c2478af1b9c994bdf6f853fb09bb45376b60ed873bc3775c5cdd263e"
+    "package.json": "sha256:247669d80712efb615b10b91dd8ec512c16b3eefb662983d6daa154d0d4ff558"
   },
   "root_directories": [
     ".claude-plugin",
