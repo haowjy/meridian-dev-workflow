@@ -10,7 +10,8 @@ metadata:
 Deferred work goes where `/meridian-dev-workflow:knowledge-layers` places it: a directory's own
 items in its `.context/TODO` or `FUTURE`, cross-cutting ones and those that
 need outside visibility in a GitHub issue. Fix what you find first, and
-defer only what needs a product decision or is a project of its own.
+defer only what waits on the human's decision (`/meridian-dev-workflow:explore-and-engage`) or is
+a project of its own.
 
 Search the open issues before filing; add what you found to a matching one
 instead of opening a duplicate. Give an issue the labels in

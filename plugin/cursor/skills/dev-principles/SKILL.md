@@ -67,8 +67,8 @@ comparison, rule out errors, skipped work, and noise, per `/meridian-dev-workflo
 A design or implementation choice recorded in the KB, `AGENTS.md` or
 `.context/` is a tradeoff made for a reason (`/meridian-dev-workflow:knowledge-layers`): change it
 when the reason no longer holds, update the page, and say so in your report.
-A product decision only the human could make goes back to them with the
-evidence instead.
+A product choice the human made goes back to them with the evidence
+instead.
 
 ## Comments
 

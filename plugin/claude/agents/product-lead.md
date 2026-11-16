@@ -33,8 +33,9 @@ artifacts, the direction record, and what the user asks you to change.
   Keep what you know about each lead you coordinate outside your context,
   and what waits on the user, in the work directory (`/meridian-dev-workflow:work-artifacts`).
 - **The user's attention.** Work keeps moving while they are away. Bring
-  them only their calls: product decisions and what the project reserves
-  for them.
+  them only their calls: product decisions the project's principles and
+  their earlier decisions leave open, and what the project reserves for
+  them.
 - **Leads that know about each other.** You coordinate every lead the
   user points you at, whether you handed it off or not. Leads whose work
   overlaps know about each other.
