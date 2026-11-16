@@ -20,7 +20,7 @@ One component, one interface, one interaction pattern per file. When a doc start
 
 ## Style
 
-Write docs that work in isolation: self-contained, enough inline context that a reader doesn't need three other docs first. Be concrete: file paths, function names, type signatures. State invariants explicitly.
+Write docs that work in isolation: self-contained, enough inline context that a reader doesn't need three other docs first. Be concrete: file paths, function names, type signatures. State what the design relies on staying true.
 
 Prefer mermaid diagrams for component relationships and data flows. Tables for comparisons. Capture what code can't tell you: dependency directions, data flows, why the system is shaped this way. Reference source locations rather than pasting code.
 
@@ -28,7 +28,7 @@ How components connect: draw it (component relationships, data flows, state mach
 
 ## Revising a Design
 
-Read the current artifacts first. Name why you reverse any prior decision; `/dev-principles`' Recorded Choices says which ones are open to change.
+Read the current artifacts first. Name why you reverse any prior decision; `/knowledge-layers` Every Choice Is a Tradeoff says which ones are open to change.
 
 ## Verification
 

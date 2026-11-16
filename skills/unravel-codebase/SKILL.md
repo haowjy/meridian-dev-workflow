@@ -25,4 +25,6 @@ Reading the docs is also a chance to improve them: correct KB and vocab drift, s
 what's confusing, flag what you can't resolve yet. Follow `/knowledge-layers` and
 `/shared-dao`; edit source only if the user asks.
 
+When the human wants the walk captured as a browsable map, open this skill's `resources/artifact.md`, then load `/visualize-codebase` to build it.
+
 Done when the starting question is answered or the user says they've seen enough.

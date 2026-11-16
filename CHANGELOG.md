@@ -4,6 +4,22 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Removed
+- `/dev-workflow` Do Not: the `staging` and CI-tagging lines (one project's release rules; each project's own release docs say how it tags).
+- `/agent-browser`: the memory-cap wrapper and the live-dashboard section, which were set up for one machine.
+- `/poc`: its one-line body said what its description already did; the prober's description still offers throwaway POCs.
+
+### Changed
+- `/post-dev`: the changelog item applies where the project keeps one, as a `CHANGELOG.md` or the PR body's changelog section; no "caveman style". `/dev-workflow`'s separate changelog line is gone.
+- Requires Mars 0.30, Meridian 0.21. `pkill -f`, `killall` denies now one `[package.tools]` entry, not 15 profiles x 2 lines.
+- product-lead: what waits on the user lives in the work directory with the rest of its state (`/work-artifacts`). A lead the user will steer is handed off even when the user is leaving; spawn one only when told to, and a question about spawning is not that.
+- `/architecture`: study each reference the human names by how it actually works (source, docs, its builders' write-ups), not from memory; settle a boundary, data model or contract by comparing real alternatives, the first idea among them, not only when unsure.
+- Cleanup, about 1,000 lines out. Removed: `/review` `resources/structural-health/` (refactoring catalog) and `resources/architecture.md` (its one rule now in `/review`), `resources/test-quality.md` (its one rule now in `/test-architecture`), `/agent-staffing` Standard Team, Parallel Work and its `builders.md`/`maintainers.md` catalogs (facts moved into coder and imagegen descriptions), `/divergence` and the `DIVERGENCE/` log (a plan shift updates the plan, with its reason recorded as a decision), `/source-study` `resources/method.md`, the `gh` tutorial in `/issues` (labels kept, now `resources/labels.md`), unit-patterns' test-priority lists and tier-judgment's critical-path line (they argued for writing tests `/testing` says not to keep), `/dev-principles` Testing.
+- One home per rule: the review round lives in `/agent-staffing` `resources/reviewers.md` (`/dev-workflow`, `/parallel-execution` and `testers.md` point to it); shipping in `/dev-workflow` `resources/ship.md`, which also gets post-dev's squash-merge branch-deletion caveat; deferrals in `/code`; recorded choices in `/knowledge-layers` (`/dev-principles` points there). `/dev-workflow` Keep Going says once what goes to the human.
+- Fixed: reviewer no longer told to "review all of it" on a re-review; `/code` tells implementers to run the tests they touched (the full suite is the lead's) instead of pointing at a lead-only skill; frontend-coder and coder end the same way; tech-lead and solo-dev descriptions say who writes the code; `/unravel-codebase` points to its map resource (moved from `/visualize-codebase`).
+- No more invariants. `/dev-principles`: recorded choice = tradeoff with a reason, no invariant exception; comments drop "surprising invariant". `/dev-workflow`: invariant departures no longer go to the human. `/agent-staffing`, `/thermo-nuclear-review`, `/review` resources, `/tech-docs` say what must keep working instead of "invariant".
+
+### Fixed
 - `agent-browser`: the quick reference typed with `type "query"`, which needs a target and does nothing without one; it now shows `type @e2 "query"` and `keyboard type` for the focused element.
 
 ## [0.17.24] - 2026-11-11

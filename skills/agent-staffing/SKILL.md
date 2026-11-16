@@ -1,6 +1,6 @@
 ---
 name: agent-staffing
-description: "Load before you spawn a worker or a reviewer: which agent for which work, how a change is reviewed, and when a model change is justified."
+description: "Load before you spawn a worker or a reviewer: how a change is reviewed and probed, and when a model change is justified."
 model-invocable: true
 metadata:
   type: reference
@@ -8,26 +8,18 @@ metadata:
 
 # Agent Staffing
 
-## Standard Team
+## Review
 
-Most changes are staffed from these; the catalogs below cover the rest.
-
-- `@explorer`: finds what's related in an area too large to search yourself
-- `@coder`: for general coding; `@frontend-coder` for frontend coding
-- `@reviewer`: one per change, reviewing its plan and then its code, and
-  loading the skills its findings call for (`resources/reviewers.md`)
-- `@prober`: runtime evidence from the real system: workflows, bug
-  reproductions, boundaries
-- `@investigator`: root cause when behavior is unclear
-- `@kb-lead`: knowledge capture when a change settles, from `/post-dev`
+Staff every review per `resources/reviewers.md`: when it runs, who reviews,
+and the one round of fixes that ends it.
 
 ## Model Selection
 
 Honor explicit user model instructions. Otherwise launch each role on the
 model its configuration gives it, rather than selecting a model for
 anticipated difficulty. Brief
-the configured worker on concurrency hazards and other known risks, the
-invariants to preserve, and how to verify them. This applies to reviewers
+the configured worker on concurrency hazards and other known risks, what
+must keep working, and how to verify them. This applies to reviewers
 as well as implementers.
 
 Escalate only after independent review verifies a substantial pattern of
@@ -43,14 +35,6 @@ the premium tier; move higher only when review of the attempted fix still
 shows substantial defects. Pass the findings and prior work to the next
 worker. Model changes do not reset the review round in `resources/reviewers.md`.
 
-## Parallel Work and Review
+## Probing
 
-Use parallel lanes for independent tasks. Run reviews in a session of their own,
-apart from the writer's.
-
-## Agent Catalogs
-
-- `resources/reviewers.md`: when a change is reviewed, who reviews it, and the one round of fixes that ends it. Open it before staffing any review.
-- `resources/testers.md`: briefing `@prober` and when it runs, browser and POC skills
-- `resources/builders.md`: @coder, @frontend-coder, @mockup-dev, and design exploration (@web-researcher, @browser, @source-researcher, @explorer, @session-miner)
-- `resources/maintainers.md`: @kb-lead, @kb-maintainer
+Brief `@prober` per `resources/testers.md`, which also says when it runs.

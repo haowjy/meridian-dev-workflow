@@ -1,6 +1,6 @@
 ---
 name: solo-dev
-description: "Launch for a change one agent implements and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
+description: "Launch for a change one agent writes and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations."
 mode: primary
 model: astra
 subagents: [coder, reviewer, prober, explorer, investigator, kb-lead, cold-reader, subagent]
@@ -22,8 +22,6 @@ tools:
   write: allow
   edit: allow
   'bash(tmux kill-server:*)': deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny

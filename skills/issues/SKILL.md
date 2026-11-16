@@ -13,6 +13,6 @@ need outside visibility in a GitHub issue. Fix what you find first, and
 defer only what needs a product decision or is a project of its own.
 
 An issue says where it was found, what it is, and what should be done. Give
-it the labels in `resources/gh-commands.md`, plus `work:<slug>` when a work
+it the labels in `resources/labels.md`, plus `work:<slug>` when a work
 item is active. If `gh` is unavailable, say that filing was skipped and keep
 the draft in the work directory.

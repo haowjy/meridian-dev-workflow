@@ -1,20 +1,5 @@
 # Testers
 
-`@prober` checks the change independently: attach `/agent-browser` for rendering, flows,
-and console errors in a real browser, and `/poc` for a feasibility spike
-(throwaway code, a verdict, then delete it).
-
-## Model and Context Selection
-
-Use `/agent-staffing`'s Model Selection policy. Confirm the configured route supports the required
-inputs and tools; screenshot checks require image understanding. Submitted
-context must also be approved for the route's data-use policy, including
-training. Report a capability or data-use mismatch before sending the work
-rather than silently substituting a model.
-
-Use `@browser` for general website interaction or design research; use `@prober`
-for independent verification against requirements.
-
 ## Briefing a Prober
 
 Lead with the user: who they are, what they are trying to get done, and what
@@ -33,8 +18,5 @@ that would share state run one after another in that one run.
 
 ## When to Probe
 
-Probe once, on the final code, after review has converged: a run before the
-last fix shows only the code that fix replaced. Until then the coder checks
-each fix on the real system, on what it changes and the screens or commands
-next to it. What happens to the defects the probe finds, and where the loop
-stops, is in `reviewers.md` After the Review.
+Probe once, on the final code, after review has converged; `reviewers.md`
+After the Review says what happens to what it finds.

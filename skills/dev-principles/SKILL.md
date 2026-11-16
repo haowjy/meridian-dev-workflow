@@ -65,21 +65,14 @@ comparison, rule out errors, skipped work, and noise, per `/probe`'s
 ## Recorded Choices
 
 A design or implementation choice recorded in the KB, `AGENTS.md` or
-`.context/` is a current choice with its reason, not a ruling
-(`/knowledge-layers`). Instructions about how agents work there
-(permissions, approvals, what needs the human) stay instructions. Change it when the reason no longer holds or
-the human asks for something else, update the page, and say so in your
-report. Invariants are the exception: bring a conflict with one to the
-human.
+`.context/` is a tradeoff made for a reason (`/knowledge-layers`): change it
+when the reason no longer holds, update the page, and say so in your report.
+A product decision only the human could make goes back to them with the
+evidence instead.
 
 ## Comments
 
-Comment what the code can't show: a hidden constraint, a surprising
-invariant, an external quirk, a race it avoids. Design rationale goes in
+Comment what the code can't show: a hidden constraint, an external
+quirk, a race it avoids. Design rationale goes in
 the directory's `.context/`; the story of a change goes in its commit
 message.
-
-## Testing
-
-Verify on the running program, and keep no new test the user didn't ask for
-(`/testing`).

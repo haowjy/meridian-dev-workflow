@@ -35,8 +35,6 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
 sandbox: danger-full-access
 approval: never
 ---
@@ -46,9 +44,8 @@ approval: never
 Find the cause with `/diagnose`.
 
 Stop at the root cause and evidence unless the brief assigns the fix. When
-it does, fix the cause you found; file an issue (`/issues`) only for what
-needs a product decision or is a project of its own, and take larger work
-back to your caller, who asked for a cause.
+it does, fix the cause you found, and take larger work back to your caller,
+who asked for a cause.
 
 Report: what you investigated, observations with file:line references,
 causal chain, action taken.

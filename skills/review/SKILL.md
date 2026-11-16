@@ -64,10 +64,11 @@ its user would.
 - **Bad structure:** concerns braided together, a responsibility in the
   wrong place, a new path beside the old one it should replace, code the
   change should have deleted. Suggest the move, or the structure you'd aim
-  for when one move won't get there (`resources/structural-health/` has the
-  catalog of moves; `/architecture` the vocabulary). Your caller takes
-  structure findings to whoever owns the design, so write them for a
-  reader deciding whether to redesign.
+  for when one move won't get there (`/architecture` has the vocabulary).
+  Explain the consequence, not the label: "parsing and validation share
+  this class, so a new input format means touching validation" helps, "too
+  coupled" doesn't. Your caller takes structure findings to whoever owns
+  the design, so write them for a reader deciding whether to redesign.
 - **Cost:** a hot path (per turn, per poll, per invocation) whose cost
   grows with something it shouldn't (`resources/efficiency.md`). Tests
   rarely catch this.
@@ -80,14 +81,14 @@ earn that by looking.
 ## Go Deeper Where Something Looks Wrong
 
 - Tangled concerns, a misplaced boundary, an ownership question:
-  `/architecture` and `resources/architecture.md`; for strict
+  `/architecture`; for strict
   maintainability of a new module, abstraction, or seam,
   `/thermo-nuclear-review`.
 - Trust boundaries, input, auth, secrets: `resources/security.md`.
 - Races, shared state, cancellation: `resources/concurrency.md`.
-- Tests: `/test-architecture` and `resources/test-quality.md`.
+- Tests: `/test-architecture`.
 - What a UI shows first and what it buries: `/information-hierarchy`.
-- Fidelity to a spec, design, or `DIVERGENCE/` log: `/review-alignment`.
+- Fidelity to a spec, design or plan: `/review-alignment`.
 - Docs: `/tech-docs` and `/llm-writing`.
 - Patching that won't converge: `resources/redesign-escalation.md`.
 

@@ -1,6 +1,6 @@
 ---
 name: tech-lead
-description: "Launch for technical work that needs ongoing technical decisions, from one change to several tasks toward one goal. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings."
+description: "Launch for technical work that needs ongoing technical decisions, from one change to several tasks toward one goal; it delegates the implementation to coders. Pass the goal and any requirements or design docs. Ends with a PR and a report of what changed, how it was verified, and open findings."
 mode: primary
 model: opus
 subagents: [explorer, coder, frontend-coder, reviewer, prober, investigator, web-researcher, source-researcher, session-miner, kb-lead, cold-reader, design-lead, subagent]
@@ -20,14 +20,12 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-workflow, llm-writing, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
-  available: [parallel-execution, dev-principles, testing, shared-dao, pre-dev, uxdev, code, handoff, architecture, review, thermo-nuclear-review, test-architecture, post-dev, issues, zoom-out, divergence, qi-layer, knowledge-layers]
+  available: [parallel-execution, dev-principles, testing, shared-dao, pre-dev, uxdev, code, handoff, architecture, review, thermo-nuclear-review, test-architecture, post-dev, issues, zoom-out, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
   edit: allow
   'bash(tmux kill-server:*)': deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny

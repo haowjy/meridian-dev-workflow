@@ -46,10 +46,16 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
 - **design-lead designs alone, after zooming out.** On the next
   design-lead runs: it zooms out to the system around the problem before
   proposing a structure, reading the docs itself and, in a large area,
-  having explorers find what's related first; without `@architect` it still builds or
+  having explorers find what's related first; it builds or
   compares real alternatives instead of settling on the first structure it
   finds; when it goes past the design into planning or code, the problem
-  needed it.
+  needed it. Since `/architecture` asks for it: the design compares real
+  alternatives even when the first looked right, and for each reference
+  the human named it says what it read of how that system works (source,
+  docs, its builders' write-ups), not what it recalled.
+- **product-lead hands off leads the user steers.** On the next run where
+  the user is about to leave or asks about spawning: it writes handoffs
+  and gives the launch commands, and spawns a lead only when told to.
 - **Implementers own the codebase (`/code`).** On the next `coder`,
   `frontend-coder`, `solo-dev` and `ux-lead` runs: they merge repeated code
   and fix the bugs they find instead of adding beside them or reporting

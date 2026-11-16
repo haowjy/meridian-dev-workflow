@@ -5,22 +5,11 @@ Write the tests your brief names. This resource shapes how to write them; `/test
 Load `/testing` for tier selection and the functional core /
 imperative shell pattern.
 
-## Test Value Model
-
-Most unit tests are disposable implementation guards. Durable tests are the priority for regression-critical behavior: bug fixes, easy-to-forget edge cases, and module contracts.
-
 ## Scope
 
 Requirements are verified by checking the running system. A unit test covers
 a requirement only when the requirement's edges live in pure logic the
 running system can't reach without a harness.
-
-## What to Prioritize
-
-- bug-regression guards
-- parsing / state-machine edge cases
-- module contract boundaries
-- failure and boundary inputs
 
 Test behavior callers rely on, and consolidate equivalent coverage; tests that mirror implementation details break on refactors without catching bugs. See `/testing` `resources/common-mistakes.md` for recurring anti-patterns.
 

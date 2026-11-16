@@ -1,6 +1,6 @@
 ---
 name: imagegen
-description: "Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images."
+description: "Spawn when a mockup or exploration needs generated images: icons, reference imagery, visual explorations. Pass the intent and any reference images. Generation is expensive: spawn it when the user asks for generated assets."
 mode: subagent
 model: terra
 effort: high
@@ -18,8 +18,6 @@ tools:
   'skill(deep-research)': deny
   'skill(init)': deny
   'bash(tmux kill-server:*)': deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
   ask_user: deny
 sandbox: workspace-write
 network: allow

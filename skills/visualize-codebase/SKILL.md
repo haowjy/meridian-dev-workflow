@@ -14,7 +14,6 @@ harness-overrides:
 
 Load `/qi-layer`, `/information-hierarchy`, and `/structured-artifact` if they
 aren't already loaded.
-When invoked with `/unravel-codebase`, also load `resources/unravel-codebase.md`.
 
 Match what you show to what the human is trying to learn: a single flow needs Behavior,
 an onboarding overview needs all four dimensions. Build the mental model they couldn't get

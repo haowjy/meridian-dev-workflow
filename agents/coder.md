@@ -1,6 +1,6 @@
 ---
 name: coder
-description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. It keeps a new test only when the user asked for one; pass that request on in the brief. Returns what changed, the failure modes it exercised, and verification by type."
+description: "Spawn for implementation work: features, refactors, fixes. Give a detailed brief: target behavior, relevant source and design context, constraints, acceptance criteria, and verification expectations. Split work between coders by independent objective, not file count. It keeps a new test only when the user asked for one; pass that request on in the brief. Returns what changed, the failure modes it exercised, and verification by type."
 mode: subagent
 model: sonnet
 effort: medium
@@ -13,7 +13,7 @@ model-policies:
     override: {effort: medium}
 skills:
   load: [code, dev-principles, testing, work-artifacts, qi-maintenance]
-  available: [poc, issues, llm-writing, qi-layer, knowledge-layers]
+  available: [issues, llm-writing, qi-layer, knowledge-layers]
 tools:
   bash: allow
   write: allow
@@ -29,8 +29,6 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
   ask_user: deny
 sandbox: danger-full-access
 approval: never

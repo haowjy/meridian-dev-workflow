@@ -1,8 +1,5 @@
 # Reviewers
 
-Spawn `@reviewer` for a change's review. Use `/agent-staffing`'s Model
-Selection policy for routing and escalation.
-
 ## When Review Runs
 
 A feature's code gets one review, once all of it is built. Its plan gets

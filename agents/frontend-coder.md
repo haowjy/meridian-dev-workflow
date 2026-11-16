@@ -31,8 +31,6 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny
@@ -47,4 +45,5 @@ Implement the UI with `/ui-implementation`, following `/code`.
 
 Commit on the branch you were given, with the changelog entry the project's
 conventions require; where they put it in the PR body, write the proposed entry
-in your report. Do not push or merge; your lead integrates.
+in your report. Do not push. Your lead integrates your branch, except a merge
+your brief assigns you.

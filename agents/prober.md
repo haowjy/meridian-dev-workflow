@@ -1,6 +1,6 @@
 ---
 name: prober
-description: "Spawn when you need runtime evidence: exercise workflows, reproduce bugs, stress boundaries, build throwaway POCs. Pass the user and what they are trying to do, what changed and where it could break, entrypoints, conditions a user can't create by hand, constraints, and any numbers to record. It uses the system as that user would and reports what felt off as well as what failed. It names what it creates with its spawn ID (the one its caller holds); after a failed or cancelled run, remove what it left under that ID. Skills: probe, poc, agent-browser."
+description: "Spawn when you need runtime evidence: exercise workflows, reproduce bugs, stress boundaries, build throwaway POCs. Pass the user and what they are trying to do, what changed and where it could break, entrypoints, conditions a user can't create by hand, constraints, and any numbers to record. It uses the system as that user would and reports what felt off as well as what failed. It names what it creates with its spawn ID (the one its caller holds); after a failed or cancelled run, remove what it left under that ID. Skills: probe, agent-browser."
 mode: subagent
 model: terra
 effort: high
@@ -17,7 +17,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [probe]
-  available: [poc, agent-browser, issues]
+  available: [agent-browser, issues]
 tools:
   bash: allow
   write: allow
@@ -33,8 +33,6 @@ tools:
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
   'bash(tmux kill-server:*)': deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
   'bash(agent-browser close --all:*)': deny
   'bash(agent-browser quit --all:*)': deny
   'bash(agent-browser exit --all:*)': deny

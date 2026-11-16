@@ -166,10 +166,9 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | `parallel-execution` | DAG planning, worktree lanes, merge and verify, phase gates |
 | `dev-workflow` | Commits, changelog, pushing and opening PRs, branch cleanup |
 | `post-dev` | Before the PR: PR body, changelog, review sign-off, deferred work, knowledge capture |
-| `divergence` | Logging plan shifts during multi-phase work in `DIVERGENCE/` |
 | `merge-prep` | Understanding both sides' intent before merging or rebasing |
 | `issues` | Routing deferred work to `.context/` or GitHub issues |
-| `agent-staffing` | Which agents and models to use, review and test coverage by risk |
+| `agent-staffing` | How a change is reviewed and probed, and when a model change is justified |
 
 **Engineering**
 
@@ -180,7 +179,6 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | `architecture` | Boundaries, dependencies, structural risk |
 | `testing` | Whether and how to test: tests earn their place by protecting a durable risk |
 | `probe` | Runtime verification against the real system |
-| `poc` | Throwaway code that answers a feasibility question |
 | `diagnose` | Diagnosis loop for hard bugs and performance regressions |
 
 **Review**
