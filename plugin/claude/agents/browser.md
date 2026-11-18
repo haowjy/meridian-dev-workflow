@@ -1,25 +1,11 @@
 ---
 name: browser
 description: 'Spawn to work a live website: design inspiration, scraping, data extraction, screenshots. Pass the task, entrypoints, constraints, and evidence needed. Skills: agent-browser.'
-effort: medium
+model: sonnet
 disallowedTools:
 - Workflow
-- Skill(deep-research)
-- Skill(init)
-- Bash(git revert *)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
-- Bash(tmux kill-server *)
-- Bash(agent-browser close --all *)
-- Bash(agent-browser quit --all *)
-- Bash(agent-browser exit --all *)
 - AskUserQuestion
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # Browser

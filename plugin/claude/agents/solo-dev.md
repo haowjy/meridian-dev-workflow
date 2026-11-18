@@ -1,6 +1,7 @@
 ---
 name: solo-dev
 description: Launch for a change one agent writes and verifies itself, without a team of implementers. Pass target behavior, relevant context, constraints, acceptance criteria, and verification expectations.
+model: opus
 skills:
 - meridian-dev-workflow:solo-dev
 - meridian-dev-workflow:code
@@ -12,14 +13,7 @@ skills:
 - meridian-dev-workflow:explore-and-engage
 - meridian-dev-workflow:intent-modeling
 - meridian-dev-workflow:agent-staffing
-effort: high
-disallowedTools:
-- Bash(tmux kill-server *)
-- Bash(agent-browser close --all *)
-- Bash(agent-browser quit --all *)
-- Bash(agent-browser exit --all *)
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # Solo Dev

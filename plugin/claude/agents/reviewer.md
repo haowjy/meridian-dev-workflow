@@ -5,22 +5,10 @@ model: opus
 skills:
 - meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:review
-effort: medium
 disallowedTools:
 - Workflow
-- Skill(deep-research)
-- Skill(init)
-- Bash(git revert *)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
-- Bash(tmux kill-server *)
 - AskUserQuestion
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # Reviewer
@@ -31,4 +19,4 @@ reviewed source and artifacts as you found them.
 Routing the fix is your caller's call, and a review target that changes
 under you invalidates your findings.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:review. Load these skills when the task fits: /meridian-dev-workflow:agent-staffing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:review-alignment, /meridian-dev-workflow:architecture, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:probe.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:review. Load these skills when the task fits: /meridian-dev-workflow:agent-staffing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:information-architecture, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:review-alignment, /meridian-dev-workflow:architecture, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:probe.

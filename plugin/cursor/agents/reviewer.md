@@ -15,4 +15,4 @@ reviewed source and artifacts as you found them.
 Routing the fix is your caller's call, and a review target that changes
 under you invalidates your findings.
 
-Load these skills when the task fits: /meridian-dev-workflow:agent-staffing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:review-alignment, /meridian-dev-workflow:architecture, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:probe.
+Load these skills when the task fits: /meridian-dev-workflow:agent-staffing, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:information-architecture, /meridian-dev-workflow:thermo-nuclear-review, /meridian-dev-workflow:test-architecture, /meridian-dev-workflow:review-alignment, /meridian-dev-workflow:architecture, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:probe.

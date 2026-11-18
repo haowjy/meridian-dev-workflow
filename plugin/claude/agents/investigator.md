@@ -1,27 +1,16 @@
 ---
 name: investigator
 description: Spawn when behavior is broken or suspicious and the cause is unknown. Pass the symptom and how to reproduce it, and say whether to fix it; returns the causal chain, plus the fix when assigned.
+model: sonnet
 skills:
 - meridian-dev-workflow:diagnose
 - meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:work-artifacts
 - meridian-dev-workflow:qi-maintenance
 - meridian-dev-workflow:agent-staffing
-effort: high
 disallowedTools:
 - Workflow
-- Skill(deep-research)
-- Skill(init)
-- Bash(git revert *)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
-- Bash(tmux kill-server *)
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # Investigator

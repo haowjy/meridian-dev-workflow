@@ -1,12 +1,12 @@
 ---
 name: kb-maintainer
 description: 'Spawn to refactor a documentation tree''s structure (KB, .context/, docs/, design/): pass the target root. Splits, merges, renames, and repairs cross-references; returns changed paths and flagged content issues. Never decides content truth.'
+model: sonnet
 skills:
 - meridian-dev-workflow:knowledge-layers
 - meridian-dev-workflow:qi-layer
 - meridian-dev-workflow:md-validation
 - meridian-dev-workflow:shared-workspace
-effort: medium
 disallowedTools:
 - Agent
 - SendMessage
@@ -19,16 +19,8 @@ disallowedTools:
 - TaskUpdate
 - TaskStop
 - TodoWrite
-- Bash(git revert *)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
 - AskUserQuestion
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # KB Maintainer
@@ -52,4 +44,4 @@ non-semantic structure only; flag contradictory claims for the caller.
 Verify every tree you touched with `/meridian-dev-workflow:md-validation` before reporting:
 links, the KB link graph, diagrams.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:shared-workspace. Load these skills when the task fits: /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:shared-dao.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:md-validation, /meridian-dev-workflow:shared-workspace. Load these skills when the task fits: /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:shared-dao.

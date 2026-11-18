@@ -87,7 +87,8 @@ earn that by looking.
 - Trust boundaries, input, auth, secrets: `resources/security.md`.
 - Races, shared state, cancellation: `resources/concurrency.md`.
 - Tests: `/meridian-dev-workflow:test-architecture`.
-- What a UI shows first and what it buries: `/meridian-dev-workflow:information-hierarchy`.
+- How a UI is organised: what each screen holds, what opens on request,
+  where things live: `/meridian-dev-workflow:information-architecture`.
 - Fidelity to a spec, design or plan: `/meridian-dev-workflow:review-alignment`.
 - Docs: `/meridian-dev-workflow:tech-docs` and `/meridian-dev-workflow:llm-writing`.
 - Patching that won't converge: `resources/redesign-escalation.md`.

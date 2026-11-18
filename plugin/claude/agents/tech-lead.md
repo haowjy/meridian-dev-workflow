@@ -11,13 +11,6 @@ skills:
 - meridian-dev-workflow:intent-modeling
 - meridian-dev-workflow:agent-staffing
 effort: medium
-disallowedTools:
-- Bash(tmux kill-server *)
-- Bash(agent-browser close --all *)
-- Bash(agent-browser quit --all *)
-- Bash(agent-browser exit --all *)
-- Bash(killall *)
-- Bash(pkill -f *)
 ---
 
 # Tech Lead

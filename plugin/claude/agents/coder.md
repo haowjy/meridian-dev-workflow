@@ -8,22 +8,10 @@ skills:
 - meridian-dev-workflow:testing
 - meridian-dev-workflow:work-artifacts
 - meridian-dev-workflow:qi-maintenance
-effort: medium
 disallowedTools:
 - Workflow
-- Skill(deep-research)
-- Skill(init)
-- Bash(git revert *)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
-- Bash(tmux kill-server *)
 - AskUserQuestion
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # Coder

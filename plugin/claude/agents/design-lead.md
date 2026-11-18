@@ -11,18 +11,6 @@ skills:
 - meridian-dev-workflow:intent-modeling
 - meridian-dev-workflow:agent-staffing
 effort: medium
-disallowedTools:
-- Skill(deep-research)
-- Skill(init)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
-- Bash(tmux kill-server *)
-- Bash(killall *)
-- Bash(pkill -f *)
 ---
 
 # Design Lead
@@ -57,4 +45,4 @@ it leaves open once the review is back. At its limits, bring the open question t
 Hand off to the implementation lead with `/meridian-dev-workflow:handoff`. Running as a spawn,
 your final report (decision, artifact paths, open risks) is the handoff.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:architecture, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:structured-artifact, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:handoff, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:source-study.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:architecture, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:information-architecture, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:structured-artifact, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:handoff, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:source-study.

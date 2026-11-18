@@ -7,7 +7,6 @@ skills:
 - meridian-dev-workflow:testing
 - meridian-dev-workflow:ui-implementation
 - meridian-dev-workflow:design-craft
-- meridian-dev-workflow:information-hierarchy
 - meridian-dev-workflow:work-artifacts
 - meridian-dev-workflow:qi-maintenance
 mode: subagent

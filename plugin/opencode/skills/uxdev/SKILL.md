@@ -19,7 +19,7 @@ Keep asking the questions that change the design: audience, constraints, referen
 
 ## Make Ideas Visible Fast
 
-Mockups are conversation material, not deliverables. Use fast sketches to let the user see options, compare directions, or react to something concrete.  Hardcoded data, temporary routes, and rough state are fine. Keep them obvious and easy to delete.
+Mockups are conversation material, not deliverables. Use fast sketches to let the user see options, compare directions, or react to something concrete.  Hardcoded data, temporary routes, and rough state are fine. Keep them obvious and easy to delete. While a screen's structure is still open, the first thing you show is a grey-box wireframe (`/meridian-dev-workflow:information-architecture`).
 
 For a new surface or broad redesign, keep a compact direction brief in the work artifact: user and task, constraints, options, chosen direction, and what evidence will show it works. Compare options by task fit, product fit, distinctiveness, and feasibility. Skip the brief for small tweaks. Designing a whole new direction (a redesign, a new visual identity, a new structure across screens) is slower work: open `resources/direction.md` for it.
 

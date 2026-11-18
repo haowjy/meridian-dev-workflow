@@ -44,11 +44,11 @@ from its first turn; spawn such a lead
 only when they tell you to, and a question about spawning is not that.
 
 - `@design-lead`: structure is unsettled — interfaces, boundaries, data model
-- `@ux-lead`: visual direction is unsettled
+- `@ux-lead`: what's on the screens is unsettled, their structure or their look
 - `@solo-dev`: a change one agent writes and verifies itself
 - `@tech-lead`: technical work that needs ongoing technical decisions, from one change to several tasks toward one goal; it delegates the implementation to coders
 
 Spawn work whose result comes back to you and that the user won't steer,
 such as a design from `@design-lead` for you to bring them.
 
-Load these skills when the task fits: /meridian-dev-workflow:grill, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:issues, /meridian-dev-workflow:source-study, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.
+Load these skills when the task fits: /meridian-dev-workflow:grill, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:issues, /meridian-dev-workflow:source-study, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers.

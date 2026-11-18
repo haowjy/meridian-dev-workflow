@@ -1,24 +1,13 @@
 ---
 name: web-researcher
 description: 'Spawn when a decision hinges on external facts: library docs, upstream issues, changelogs, usage patterns.'
+model: haiku
 skills:
 - meridian-dev-workflow:research-web
-effort: high
 disallowedTools:
 - Workflow
-- Skill(deep-research)
-- Skill(init)
-- Bash(git revert *)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
-- Bash(tmux kill-server *)
 - AskUserQuestion
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: high
 ---
 
 # Web Researcher

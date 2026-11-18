@@ -44,4 +44,4 @@ it leaves open once the review is back. At its limits, bring the open question t
 Hand off to the implementation lead with `/meridian-dev-workflow:handoff`. Running as a spawn,
 your final report (decision, artifact paths, open risks) is the handoff.
 
-Load these skills when the task fits: /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:structured-artifact, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:handoff, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:source-study.
+Load these skills when the task fits: /meridian-dev-workflow:information-architecture, /meridian-dev-workflow:agent-browser, /meridian-dev-workflow:structured-artifact, /meridian-dev-workflow:design-craft, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:uxdev, /meridian-dev-workflow:handoff, /meridian-dev-workflow:tech-docs, /meridian-dev-workflow:issues, /meridian-dev-workflow:zoom-out, /meridian-dev-workflow:source-study.

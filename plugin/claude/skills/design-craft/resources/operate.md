@@ -12,3 +12,6 @@ display type where labels belong, motion that delays work.
   a tile row earns its place only when each number is checked at a glance.
 - Keep most of the screen neutral and spend colour on meaning: state,
   selection, the one thing that needs attention.
+- The first view holds what the person came for and their next choice.
+  What they reach for only sometimes (history, evidence, a comparison they
+  don't make every visit) opens one step away, in place or as a tab.

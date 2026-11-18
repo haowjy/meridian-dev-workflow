@@ -1,9 +1,9 @@
 ---
 name: cold-reader
 description: 'Spawn to check text that outlives the work (KB pages, AGENTS.md, docs, PR bodies, prompts) for what a reader who wasn''t there can''t follow. Pass only the paths and who reads each one: no summary of the work, no reasons for the changes, and no labels from it, even as examples. Returns each place the reader stalls, quoted, with what that reader would need; edits nothing.'
+model: haiku
 skills:
 - meridian-dev-workflow:llm-writing
-effort: medium
 disallowedTools:
 - Agent
 - SendMessage
@@ -12,8 +12,7 @@ disallowedTools:
 - Write
 - NotebookEdit
 - AskUserQuestion
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # Cold Reader
@@ -34,4 +33,4 @@ The writer holds the context you lack and decides what to change, so report
 without editing: for each page, every stall with its quote and what the
 reader needs, or a line saying the page reads cleanly.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:llm-writing. Load these skills when the task fits: /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:information-hierarchy.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:llm-writing. Load these skills when the task fits: /meridian-dev-workflow:intent-modeling.

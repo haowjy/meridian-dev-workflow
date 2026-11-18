@@ -1,26 +1,15 @@
 ---
 name: source-researcher
 description: Spawn to see how real open-source projects handle a similar problem. Pass the problem and any candidate projects.
+model: sonnet
 skills:
 - meridian-dev-workflow:source-study
 - meridian-dev-workflow:dev-principles
 - meridian-dev-workflow:work-artifacts
-effort: high
 disallowedTools:
 - Workflow
-- Skill(deep-research)
-- Skill(init)
-- Bash(git revert *)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
-- Bash(tmux kill-server *)
 - AskUserQuestion
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # Source Researcher

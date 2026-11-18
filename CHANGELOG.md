@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.19.0] - 2026-11-18
+
 ### Added
 - `/information-architecture`: works out how a product is organised (its things, how they nest, where each opens, the frame, what each screen opens with), then draws grey-box wireframes from a fixed CSS kit, checked by `scripts/validate.py` and screenshots.
 

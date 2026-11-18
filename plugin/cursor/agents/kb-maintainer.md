@@ -30,4 +30,4 @@ non-semantic structure only; flag contradictory claims for the caller.
 Verify every tree you touched with `/meridian-dev-workflow:md-validation` before reporting:
 links, the KB link graph, diagrams.
 
-Load these skills when the task fits: /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:shared-dao.
+Load these skills when the task fits: /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:shared-dao.

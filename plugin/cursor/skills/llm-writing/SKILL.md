@@ -8,7 +8,7 @@ alwaysApply: false
 
 # LLM Writing
 
-Load `/meridian-dev-workflow:intent-modeling` if it isn't already loaded, and `/meridian-dev-workflow:information-hierarchy` when the piece grows beyond a short answer.
+Load `/meridian-dev-workflow:intent-modeling` if it isn't already loaded.
 
 ## Write for the Reader
 

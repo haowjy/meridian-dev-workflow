@@ -6,19 +6,10 @@ skills:
 - meridian-dev-workflow:knowledge-layers
 - meridian-dev-workflow:qi-maintenance
 - meridian-dev-workflow:llm-writing
-effort: medium
 disallowedTools:
 - NotebookEdit
-- Bash(git revert *)
-- Bash(git checkout *)
-- Bash(git switch *)
-- Bash(git stash *)
-- Bash(git restore *)
-- Bash(git reset --hard *)
-- Bash(git clean *)
 - AskUserQuestion
-- Bash(killall *)
-- Bash(pkill -f *)
+effort: medium
 ---
 
 # KB Lead
@@ -42,4 +33,4 @@ tree.
 Commit each version-controlled tree you touched; leave pushing to the
 caller. Report what you deleted and what you added, then contradictions and gaps.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:llm-writing. Load these skills when the task fits: /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:information-hierarchy, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:shared-workspace, /meridian-dev-workflow:md-validation.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:llm-writing. Load these skills when the task fits: /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:shared-workspace, /meridian-dev-workflow:md-validation.
