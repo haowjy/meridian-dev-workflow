@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/information-architecture`: `resources/svg-wireframes.md` and `assets/svgkit.py` draw grey-box wireframes as SVG; the skill orders the drawing options by fidelity and cost (markdown with Mermaid, HTML wireframes as the default, SVG wireframes, a styled mockup) and draws at the lowest one that shows the decision; `assets/svg-example.py` shows them at work.
+- `/information-architecture` HTML kit: form controls (select, textarea, checkbox, radio, switch, segmented control), breadcrumbs and steps, rows that open and close, progress, avatars, chat messages, a drawer, a toast, a drop target, and a phone bottom bar.
+
 ## [0.19.0] - 2026-11-18
 
 ### Added

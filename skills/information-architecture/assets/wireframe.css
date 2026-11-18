@@ -77,9 +77,55 @@ table.wf-table{width:100%;border-collapse:collapse;font-size:11px}
 .wf-table th{border-bottom:1.2px solid var(--ink);font-weight:600}
 .wf-table tr.on td{background:var(--soft);font-weight:600}
 
+/* Form controls; .on checks, selects or switches one */
+.wf-check,.wf-radio,.wf-switch{display:inline-flex;flex:none;align-items:center;gap:6px;white-space:nowrap}
+.wf-check::before,.wf-radio::before{content:"";flex:none;width:13px;height:13px;border:1.2px solid var(--line);border-radius:2px;background:var(--paper)}
+.wf-radio::before{border-radius:50%}
+.wf-check.on::before,.wf-radio.on::before{border-color:var(--ink);background:var(--ink);box-shadow:inset 0 0 0 2.5px var(--paper)}
+.wf-switch::before{content:"";flex:none;width:26px;height:15px;border:1.2px solid var(--line);border-radius:8px;background:radial-gradient(circle at 6px 50%,var(--line) 4px,transparent 4.5px) var(--paper)}
+.wf-switch.on::before{border-color:var(--ink);background:radial-gradient(circle at 18px 50%,var(--ink) 4px,transparent 4.5px) var(--dark)}
+.wf-select,.wf-textarea{display:flex;flex:none;align-items:center;min-height:28px;padding:0 8px;border:1.2px solid var(--line);border-radius:4px;background:var(--paper)}
+.wf-select::after{content:"\25BE";margin-left:auto;padding-left:8px;color:var(--muted)}
+.wf-textarea{align-items:flex-start;min-height:64px;padding:6px 8px;color:var(--muted)}
+.wf-seg{display:inline-flex;flex:none;align-self:flex-start;border:1.2px solid var(--line);border-radius:5px;overflow:hidden;white-space:nowrap}
+.wf-seg>span{padding:3px 10px;font-size:11px}
+.wf-seg>span+span{border-left:1px solid var(--line)}
+.wf-seg>span.on{background:var(--dark);font-weight:700}
+
+/* Where you are: a breadcrumb trail, the steps of a flow */
+.wf-crumbs{display:flex;flex:none;align-items:center;gap:6px;min-width:0;font-size:11px;color:var(--muted);white-space:nowrap}
+.wf-crumbs>span+span::before{content:"/";margin-right:6px;color:var(--line)}
+.wf-crumbs>span:last-child{color:var(--ink);font-weight:600}
+.wf-steps{display:flex;flex:none;align-self:flex-start;align-items:center;gap:16px;counter-reset:wf-step;font-size:11px;color:var(--muted);white-space:nowrap}
+.wf-steps>span{display:inline-flex;align-items:center;gap:6px;counter-increment:wf-step}
+.wf-steps>span::before{content:counter(wf-step);display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border:1.2px solid var(--line);border-radius:50%;font-size:10px}
+.wf-steps>span.done::before{background:var(--soft)}
+.wf-steps>span.on{color:var(--ink);font-weight:700}
+.wf-steps>span.on::before{background:var(--dark);border:1.6px solid var(--ink)}
+
+/* A row that opens and closes (a tree node, an accordion heading) */
+.wf-item.caret::before{content:"\25B8";flex:none;width:8px;color:var(--muted)}
+.wf-item.caret.open::before{content:"\25BE"}
+
+/* Progress, people, conversation */
+.wf-progress{flex:none;height:6px;border-radius:3px;background:var(--soft);overflow:hidden}
+.wf-progress>i{display:block;height:100%;background:var(--ink)}
+.wf-avatar{display:inline-flex;flex:none;align-items:center;justify-content:center;width:24px;height:24px;border:1.2px solid var(--line);border-radius:50%;background:var(--fill);font-size:9px;font-weight:700}
+.wf-msg{flex:none;align-self:flex-start;max-width:85%;padding:6px 9px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.wf-msg.mine{align-self:flex-end;border-color:var(--soft);background:var(--fill)}
+
+/* Phone: the rail becomes the bottom tab bar */
+.wf-screen.phone>.wf-rail{order:9;flex-direction:row;justify-content:space-around;width:auto;height:60px;padding:6px 0;border-right:none;border-top:1px solid var(--line)}
+.wf-screen.phone>.wf-rail>.wf-spacer{display:none}
+
 /* Overlays: a menu, popover or dialog placed with inline top/left/right/bottom */
 .wf-pop{position:absolute;z-index:2;display:flex;flex-direction:column;gap:6px;padding:8px;border:1.5px solid var(--ink);border-radius:6px;background:var(--paper)}
 .wf-scrim{position:absolute;inset:0;z-index:1;background:rgba(0,0,0,.08)}
+
+/* A drawer from the right edge (width inline), a toast, a drop target placed inline */
+.wf-drawer{position:absolute;top:0;right:0;bottom:0;z-index:2;display:flex;flex-direction:column;gap:8px;width:320px;padding:10px;border-left:1.5px solid var(--ink);background:var(--paper)}
+.wf-toast{position:absolute;bottom:14px;left:50%;z-index:3;display:flex;align-items:center;gap:14px;padding:6px 12px;border:1.5px solid var(--ink);border-radius:6px;background:var(--paper);white-space:nowrap;transform:translateX(-50%)}
+.wf-zone{position:absolute;z-index:2;display:flex;align-items:center;justify-content:center;border:1.6px dashed var(--ink);border-radius:5px;background:rgba(0,0,0,.06);font-weight:700}
 
 /* Annotation on the drawing, not part of the product */
 .wf-note{flex:none;padding:4px 6px;border:1px dashed var(--ink);border-radius:4px;background:var(--paper);font-size:10.5px;font-style:italic;color:var(--muted)}
