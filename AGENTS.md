@@ -22,6 +22,17 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
 
 ## Watching
 
+- **Structure before style (`/information-architecture`, `/uxdev`
+  `resources/direction.md`).** On the next UI run where the structure is
+  open: the agent loads `/information-architecture` without being told,
+  writes down the things, their nesting and the frame, draws grey-box
+  wireframes from the kit, runs `scripts/validate.py` and screenshots each
+  screen, and shows them before any styled mockup; a mockup-dev spawn stops
+  at the wireframes. Watch for the overcorrection, wireframes for a visual
+  tweak on a settled layout, for screens that copy `assets/example.html`'s
+  layout instead of the product's structure, and for parallel mockup-dev
+  spawns writing their structure into the project's design docs before the
+  human has chosen one.
 - **Issues show the problem (`/issues`).** On the next issues agents file:
   the open issues were searched first; the body follows the repo's issue
   template, else the PR template's before-fix sections, else

@@ -14,7 +14,7 @@ model-policies:
   - match: {alias: opus}
     override: {effort: medium}
 skills:
-  load: [code, dev-principles, testing, ui-implementation, design-craft, information-hierarchy, work-artifacts, qi-maintenance]
+  load: [code, dev-principles, testing, ui-implementation, design-craft, work-artifacts, qi-maintenance]
   available: [uxdev, agent-browser, issues, llm-writing, qi-layer, knowledge-layers]
 tools:
   bash: allow

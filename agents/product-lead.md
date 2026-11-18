@@ -16,7 +16,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [shared-dao, llm-writing, explore-and-engage, work-artifacts, intent-modeling, agent-staffing, handoff]
-  available: [grill, dev-principles, uxdev, zoom-out, issues, source-study, qi-layer, knowledge-layers]
+  available: [grill, dev-principles, zoom-out, issues, source-study, qi-layer, knowledge-layers]
 tools:
   bash: allow
   'bash(tmux kill-server:*)': deny
@@ -59,7 +59,7 @@ from its first turn; spawn such a lead
 only when they tell you to, and a question about spawning is not that.
 
 - `@design-lead`: structure is unsettled — interfaces, boundaries, data model
-- `@ux-lead`: visual direction is unsettled
+- `@ux-lead`: what's on the screens is unsettled, their structure or their look
 - `@solo-dev`: a change one agent writes and verifies itself
 - `@tech-lead`: technical work that needs ongoing technical decisions, from one change to several tasks toward one goal; it delegates the implementation to coders
 

@@ -17,7 +17,7 @@ model-policies:
 subagents: [explorer, web-researcher, reviewer, prober, browser, source-researcher, mockup-dev, session-miner, subagent]
 skills:
   load: [architecture, shared-dao, llm-writing, explore-and-engage, work-artifacts, intent-modeling, agent-staffing]
-  available: [information-hierarchy, structured-artifact, design-craft, dev-principles, uxdev, handoff, tech-docs, issues, zoom-out, source-study]
+  available: [information-architecture, agent-browser, structured-artifact, design-craft, dev-principles, uxdev, handoff, tech-docs, issues, zoom-out, source-study]
 tools:
   bash: allow
   write: allow

@@ -1,6 +1,6 @@
 # Checking a Rendered Page
 
-Run both checks on the rendered page before you show it or ship it, and
+Run both checks on the rendered page before you ship it, and
 again after a fix that changes what renders. Each finding is a question: fix
 it, or keep it and say why. To see what a visual fix changed, take a
 screenshot before it and compare after:

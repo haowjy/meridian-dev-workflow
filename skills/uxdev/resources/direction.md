@@ -16,6 +16,10 @@ each derivation down: "they compare twenty scans at a glance, so rows stay
 dense and numbers align." A choice with no derivation is a default; replace
 it or make it on purpose.
 
+Build on the structure the human accepted, or the product's own when the
+direction changes only its identity; with neither, settle it first with
+`/information-architecture`.
+
 ## Inventory the Components They Need
 
 Before drawing, list the jobs on each screen and the components those jobs

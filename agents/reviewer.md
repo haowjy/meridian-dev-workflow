@@ -26,7 +26,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [dev-principles, review]
-  available: [agent-staffing, shared-dao, md-validation, information-hierarchy, thermo-nuclear-review, test-architecture, review-alignment, architecture, tech-docs, llm-writing, probe]
+  available: [agent-staffing, shared-dao, md-validation, information-architecture, thermo-nuclear-review, test-architecture, review-alignment, architecture, tech-docs, llm-writing, probe]
 tools:
   bash: allow
   read: allow

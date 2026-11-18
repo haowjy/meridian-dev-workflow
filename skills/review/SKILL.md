@@ -87,7 +87,8 @@ earn that by looking.
 - Trust boundaries, input, auth, secrets: `resources/security.md`.
 - Races, shared state, cancellation: `resources/concurrency.md`.
 - Tests: `/test-architecture`.
-- What a UI shows first and what it buries: `/information-hierarchy`.
+- How a UI is organised: what each screen holds, what opens on request,
+  where things live: `/information-architecture`.
 - Fidelity to a spec, design or plan: `/review-alignment`.
 - Docs: `/tech-docs` and `/llm-writing`.
 - Patching that won't converge: `resources/redesign-escalation.md`.

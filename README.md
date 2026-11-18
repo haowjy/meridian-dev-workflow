@@ -60,15 +60,16 @@ it as a session or spawn it.
 implementers (`/solo-dev`).
 
 **ux-lead** works the same way for UI, with you steering visual direction.
-It makes small tweaks directly for you to check. For a large change it
+It makes small tweaks directly for you to check. When a screen's structure is
+open it shows grey-box wireframes before anything styled. For a large change it
 explores first, running mockups in parallel when you want to compare
 directions, then builds the UI itself. It spawns coders only for a big
-frontend refactor.
+frontend build or refactor.
 
 ```text
 Default: tech-lead.
 When direction is open:  product-lead ─handoff→ design-lead | ux-lead | solo-dev | tech-lead
-When structure is open:  design-lead ─handoff→ tech-lead | solo-dev
+When structure is open:  design-lead ─handoff→ ux-lead | tech-lead | solo-dev
 ```
 
 ### A Change, End to End
@@ -130,10 +131,10 @@ and review-backed escalation.
 
 | Agent | Model | Role |
 |---|---|---|
-| `coder` | luna | Implements a scoped objective, with the changelog entry the project reads |
+| `coder` | sonnet | Implements a scoped objective, with the changelog entry the project reads |
 | `frontend-coder` | sonnet | Production UI with visual self-checks in a browser |
-| `mockup-dev` | luna | Throwaway frontend mockups for comparing directions |
-| `imagegen` | sol | Generated images: concepts, icons, reference imagery |
+| `mockup-dev` | opus | Grey-box wireframes, then throwaway styled mockups, for comparing directions |
+| `imagegen` | terra | Generated images: concepts, icons, reference imagery |
 
 **Verification**
 
@@ -195,6 +196,7 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | Skill | What it covers |
 |---|---|
 | `uxdev` | Visual thinking grounded in the brief and the existing design language; designing a new direction |
+| `information-architecture` | How a product is organised (its things, how they nest, where each opens), drawn as grey-box wireframes |
 | `ui-implementation` | Turning a settled direction into production UI |
 | `design-craft` | Deliberate color, typography, layout, motion, and copy; AI-generated UI tells by surface |
 | `agent-browser` | Driving a live browser: snapshots, interaction, screenshots |
@@ -210,7 +212,7 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | `visualize-codebase` | Browsable visual map of a codebase (human-invoked) |
 
 Agents here also load meridian-base skills, including `work-artifacts`,
-`shared-dao`, `llm-writing`, `information-hierarchy`, `intent-modeling`,
+`shared-dao`, `llm-writing`, `intent-modeling`,
 `explore-and-engage`, `zoom-out`, `qi-maintenance`,
 `qi-layer`, and `knowledge-layers`. Runtime-supplied capabilities let them
 hand off to a new primary session and read past sessions.

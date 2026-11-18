@@ -81,4 +81,4 @@ only when it says something precise.
 ## Check What Renders
 
 Run the page checks in `resources/checks.md` on the rendered page before you
-show it or ship it.
+ship it.

@@ -4,6 +4,19 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/information-architecture`: works out how a product is organised (its things, how they nest, where each opens, the frame, what each screen opens with), then draws grey-box wireframes from a fixed CSS kit, checked by `scripts/validate.py` and screenshots.
+
+### Changed
+- `/uxdev`: while a screen's structure is open, the first thing shown is a grey-box wireframe. `resources/direction.md`: a direction builds on an accepted structure, or settles it first with `/information-architecture`.
+- ux-lead: sketches a layout as a grey-box wireframe and a visual idea as a one-file page, not ASCII; settles the things and their nesting with the user before parallel directions and passes them in each brief; spawns frontend-coder for a big build, not only a refactor.
+- mockup-dev: branches on whether the brief names a structure to build on: without one it returns grey-box wireframes and stops, with one it builds the styled direction.
+- `/design-craft`: `resources/operate.md` keeps the first view to what the person came for, with occasional needs one step away; the page checks run before shipping, not before every iteration shown.
+- product-lead routes unsettled screen structure to ux-lead and drops `/uxdev`; design-lead can hand off to ux-lead and load `/agent-browser`.
+- README: model table matches the profiles.
+- Requires and bundles meridian-base 0.17.0, which removes `/information-hierarchy`.
+- mockup-dev, frontend-coder, reviewer, design-lead, `/review`, `/visualize-codebase`: drop meridian-base's removed `/information-hierarchy`; design-lead, ux-lead and mockup-dev can load `/information-architecture`.
+
 ## [0.18.12] - 2026-11-16
 
 ### Removed
