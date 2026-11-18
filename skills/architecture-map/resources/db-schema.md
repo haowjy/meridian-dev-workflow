@@ -1,7 +1,7 @@
-# DB Schema Visualization
+# A Database Schema
 
-Generate an interactive ER diagram from a live database, scoped to the tables relevant to
-the walkthrough. The introspection gives you structure and relationships; layer data-flow
+Generate an ER diagram from a live database, scoped to the tables relevant to
+the page that shows them. The introspection gives you structure and relationships; layer data-flow
 annotations from code analysis on top.
 
 ## mermerd
@@ -23,8 +23,8 @@ Install globally if not present (`command -v mermerd`): download a prebuilt bina
 https://github.com/KarnerTh/mermerd/releases into a PATH directory (e.g. `/usr/local/bin`)
 or `go install github.com/KarnerTh/mermerd@latest` if Go is available.
 
-The output is raw Mermaid: embed it directly in a `structured-artifact` HTML file inside
-a `<pre class="mermaid">` block and wire click callbacks per `html-patterns.md`.
+The output is raw Mermaid. Put it in a Markdown doc that the store's box links under
+`Docs`: it reads on GitHub, and the viewer renders it.
 
 If `mermerd` isn't available, see `resources/db-schema-alternatives.md`.
 
@@ -34,7 +34,7 @@ Schema introspection shows what exists. To show how data moves through those tab
 
 1. **Identify the flow from code**: which service writes to which table, in what order.
 2. **Generate the ER subset**: only the tables involved in this flow.
-3. **Add a flowchart** showing mutation sequence on the same artifact page:
+3. **Add a flowchart** showing the order of writes in the same doc:
 
 ```mermaid
 flowchart LR
@@ -44,10 +44,3 @@ flowchart LR
   paymentSvc -->|INSERT| payments[(payments)]
   paymentSvc -->|UPDATE| orders
 ```
-
-4. **Wire click callbacks**: clicking a table node in the ER opens its schema detail;
-   clicking a flow node opens the code that performs that mutation.
-
-This gives two complementary views on one page: the static schema (what exists and how
-tables relate) and the runtime flow (what happens when a request arrives). Together they
-answer both "what is the data model?" and "how does data actually move through it?"

@@ -4,6 +4,17 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/architecture-map`: what a codebase's map holds (system, code, a page per service and package, journeys, state machines beside the code, dependency rules), solid arrows held to value imports, screenshots from a capture manifest, and the rules that keep it current. Builds on meridian-base's `/atlas`; `resources/state-machines.md` and the database schema guides move here.
+
+### Removed
+- `/visualize-codebase`, replaced by `/architecture-map` and meridian-base's `/atlas`.
+- `/unravel-codebase`.
+
+### Changed
+- design-lead lists `atlas` and `architecture-map`.
+- Requires and bundles meridian-base 0.18.0.
+
 ## [0.20.0] - 2026-11-18
 
 ### Added

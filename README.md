@@ -208,8 +208,7 @@ decisions), `kb-lead` (knowledge capture), `kb-maintainer` (doc structure),
 | `research-web` | Gathering external facts that may postdate training data |
 | `source-study` | Evidence from real codebases before designing |
 | `tech-docs` | Writing design documents |
-| `unravel-codebase` | Human-paced walkthrough of how a codebase works (human-invoked) |
-| `visualize-codebase` | Browsable visual map of a codebase (human-invoked) |
+| `architecture-map` | A codebase's atlas: what runs, the code's layers, journeys, state machines and dependency rules, held to the code |
 
 Agents here also load meridian-base skills, including `work-artifacts`,
 `shared-dao`, `llm-writing`, `intent-modeling`,
