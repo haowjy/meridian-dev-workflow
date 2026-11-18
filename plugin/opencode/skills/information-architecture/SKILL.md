@@ -48,8 +48,24 @@ Draw the screens as grey-box wireframes: layout and the words on screen,
 with no colour, type or decoration to judge. Draw the screens that decide
 something: the first view, the screen people spend most time in, each place
 the frame changes, and the states that change the layout (empty, many items,
-something that needs the person). Open `resources/wireframes.md` for the kit
-and how to check a page.
+something that needs the person).
 
-The human reacts to the wireframes before anything is styled; a styled
-mockup starts from the structure they accepted.
+Each step up in fidelity costs more tokens to make and to change, and gives
+more control over how the screen feels:
+
+1. **Markdown with the Mermaid graph**: the things and how they nest, with
+   no layout. Enough when the open question is what the things are.
+2. **HTML grey-box wireframes**, the default (`resources/wireframes.md`):
+   a fixed set of CSS classes, laid out by the browser and checked by a
+   script. Cheap to write and to change, but spacing and density are the
+   kit's.
+3. **SVG grey-box wireframes** (`resources/svg-wireframes.md`): every box
+   placed by hand, so spacing, density, overlap, a drag in progress or a
+   canvas look exactly as drawn, and the human can judge how the screen
+   feels. Several times the tokens, and each change moves coordinates.
+4. **A styled HTML mockup with believable data** (`/meridian-dev-workflow:uxdev`): colour, type
+   and real content. It starts from the structure the human accepted.
+
+Draw at the lowest step that shows what the human has to decide, and move
+up when they ask or when the question is one the lower step can't show.
+The human reacts to the wireframes before anything is styled.

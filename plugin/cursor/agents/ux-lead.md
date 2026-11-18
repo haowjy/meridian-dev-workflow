@@ -25,8 +25,8 @@ call before the next.
 
 For a small, well-scoped tweak, make the change and show it. To show what
 you mean in conversation, sketch it yourself: a layout as a grey-box
-wireframe (`/meridian-dev-workflow:information-architecture` `resources/wireframes.md`), a visual
-idea as a one-file HTML page. For a large direction shift (a redesign, a
+wireframe (`/meridian-dev-workflow:information-architecture`), a visual idea as a one-file HTML
+page. For a large direction shift (a redesign, a
 new visual identity, a new structure across screens), explore directions
 first: `@mockup-dev`, one spawn per direction with distinct briefs, in
 parallel. When the structure is open, settle the product's things and how
