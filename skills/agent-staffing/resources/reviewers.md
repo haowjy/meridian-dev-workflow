@@ -11,12 +11,12 @@ its fixes, and the runtime check.
 
 ## Who Reviews
 
-- One `@reviewer` for the code. It reviews everything about the change and
+- One `reviewer` for the code. It reviews everything about the change and
   loads the skills its findings call for. Brief it with what the feature is
   for, where the change landed, the risks you see, and the earlier review
   reports on the same code, so it can tell a recurring concern from a new
   one.
-- `@prober` once, on the final code, when the change alters what the
+- `prober` once, on the final code, when the change alters what the
   running system does (`testers.md`). Confirm the stack it runs was built
   from the final code, and tell it to use its own test data and browser
   session and not to reset or restart shared services.
@@ -31,7 +31,7 @@ conflicting findings using the design and evidence.
 
 Read the findings by concern, the code behind one responsibility, before
 fixing any. Blocking structure findings, findings that share a cause, and a
-frame-rot verdict go to `@design-lead` (the user, when you can't spawn
+frame-rot verdict go to `design-lead` (the user, when you can't spawn
 one) as a Redesign Brief (`/review`
 `resources/redesign-escalation.md`) with the report, not to a patch:
 symptoms patched one at a time bring the cause back in the re-review. A
@@ -40,7 +40,7 @@ question about what the feature should do goes to the user.
 Each fix is committed, the tests that cover it rerun, and the fix checked on the real
 system, on what it changes and the screens or commands next to it. Read
 small fixes yourself. Send fixes that restructure code or change behavior
-to one re-review, all fixes from the report together: a `@reviewer` briefed
+to one re-review, all fixes from the report together: a `reviewer` briefed
 with the fix commits, the report they answer, and what each fix was meant
 to end. It reviews the fixes and what they touch, not the whole change
 again.
@@ -50,16 +50,16 @@ read the fix diffs yourself, then send the prober back once, only to what
 those fixes change.
 
 A re-review or probe re-check that still finds blocking problems ends the
-round. Take them to `@design-lead`, or to the user when they turn on what
+round. Take them to `design-lead`, or to the user when they turn on what
 the feature should do. A failed redesign goes to your caller: the problem
 usually sits in scope or requirements.
 
 ## Reviewing Requirements or a Design
 
-Requirements and designs are review targets like code: a `@reviewer` can
+Requirements and designs are review targets like code: a `reviewer` can
 challenge the requirements or the framing, not only an implementation. Once a
-design has a draft, have one `@reviewer` challenge its correctness, edge
-cases, and requirement coverage, and a `@prober` check what it assumes of
+design has a draft, have one `reviewer` challenge its correctness, edge
+cases, and requirement coverage, and a `prober` check what it assumes of
 the real system. Substantive findings mean another round; minor
 refinements mean converged. Substantive findings after a second round go to
 your caller as the open question.

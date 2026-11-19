@@ -8,10 +8,10 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
 ## Rules
 
 - **meridian-base is always installed beside this package.** Name its agents
-  (`@explorer`, `@kb-lead`, `@kb-maintainer`, `@cold-reader`, `@session-miner`) and
+  (`explorer`, `kb-lead`, `kb-maintainer`, `cold-reader`, `session-miner`) and
   skills (`/llm-writing`, `/knowledge-layers`, `/md-validation`, ...) freely: Mars
   installs it alongside, and the plugin bundles it.
-- **Codex and OpenCode plugins carry skills only,** so no `@agent` a skill names
+- **Codex and OpenCode plugins carry skills only,** so no agent a skill names
   resolves for those users.
 - **`plugin/` and its catalogs are Mars output.** `plugin/`, `.claude-plugin/`,
   `.cursor-plugin/` and `package.json` are rebuilt at each release; never edit them by
@@ -57,7 +57,7 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
   user launched, not only its handoffs; its handoff briefs say it coordinates
   the lead, and the lead keeps it informed. If leads don't report back, the
   brief line needs to say what to report.
-- **Reviewers hand wide reading to one `@explorer` (`/review` Read It
+- **Reviewers hand wide reading to one `explorer` (`/review` Read It
   Whole).** On the next reviews of a change that deletes or replaces code
   or repeats a pattern: the reviewer still reads the change itself, spawns
   one explorer for the sweep instead of grepping it all, and spawns none
@@ -67,7 +67,7 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
   feature, not one per part; the reviewer loads `/thermo-nuclear-review` or
   `/architecture` on its own when structure looks wrong, and still reports
   structure findings; blocking structure findings and shared causes go to
-  `@design-lead` instead of a second round; the re-review stays on the
+  `design-lead` instead of a second round; the re-review stays on the
   fixes; the prober runs once on final code, from a brief that leads with
   the user's goal, and its report has a "What felt off" part. Watch for the
   structure lens going soft without the thermo lane, and for regressions
