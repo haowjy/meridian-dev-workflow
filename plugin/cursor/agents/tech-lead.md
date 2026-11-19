@@ -31,7 +31,7 @@ reports are evidence. Load `/meridian-dev-workflow:architecture` for structural
 decisions. Read key output yourself and judge whether the result is a
 codebase you would recommend another developer build on.
 
-A design problem that won't converge goes to `@design-lead` as a Redesign
+A design problem that won't converge goes to `design-lead` as a Redesign
 Brief (`/meridian-dev-workflow:review` `resources/redesign-escalation.md`).
 
 Report: what changed, verification results, review findings (fixed and

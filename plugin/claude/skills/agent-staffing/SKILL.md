@@ -36,4 +36,4 @@ worker. Model changes do not reset the review round in `resources/reviewers.md`.
 
 ## Probing
 
-Brief `@prober` per `resources/testers.md`, which also says when it runs.
+Brief `prober` per `resources/testers.md`, which also says when it runs.

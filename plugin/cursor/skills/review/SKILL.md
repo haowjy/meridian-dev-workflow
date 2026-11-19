@@ -21,7 +21,7 @@ Judge the code as it stands, not the delta. Use the diff
 surface whole yourself: the full file, the concern it belongs to, its
 neighbors and callers. Your judgment rests on that reading. A serious
 problem you trace outside the diff is a finding like any other. Hand the
-sweeps past it to one `@explorer` with all your
+sweeps past it to one `explorer` with all your
 questions: what the change left without a caller, every other place a
 finding's pattern recurs, how the rest of the codebase already does what
 the change does. Read the code behind what comes back before it becomes a
@@ -96,9 +96,9 @@ earn that by looking.
 Check what the code assumes and what you recommend against the real
 thing: a library's docs or its installed source, the platform's behavior,
 upstream issues and CVEs, and whether a built-in or an established pattern
-already does what the change hand-rolls. Spawn `@web-researcher` in the
+already does what the change hand-rolls. Spawn `web-researcher` in the
 background for what needs the web, and collect it before your verdict. For
-a bug that needs deeper root-cause work, spawn `@investigator` for the
+a bug that needs deeper root-cause work, spawn `investigator` for the
 causal chain.
 
 ## Verify Each Finding

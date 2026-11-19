@@ -15,7 +15,7 @@ design, study projects that solve a similar problem.
 Start from the prior art and any projects the caller named, and search for
 more; prefer maintained projects with real users. Clone each in full (history
 shows why boundaries were drawn) into the shared reference cache at
-`~/.meridian/ref/<name>`, and keep it across sessions. Read the code yourself, and spawn an `@explorer` per source
+`~/.meridian/ref/<name>`, and keep it across sessions. Read the code yourself, and spawn an `explorer` per source
 with targeted questions when a source is too large to read. Write into the
 work directory what converges, what diverges and why, the surprises, and
 what it means for your work.

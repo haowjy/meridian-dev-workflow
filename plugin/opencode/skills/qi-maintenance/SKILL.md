@@ -24,4 +24,4 @@ Load `/meridian-dev-workflow:qi-layer` when creating, moving, restructuring, or 
 rewriting colocated knowledge.
 
 Deferred work goes where `/meridian-dev-workflow:knowledge-layers` places it. Cross-cutting KB
-synthesis belongs to `@kb-lead`, after the change settles.
+synthesis belongs to `kb-lead`, after the change settles.

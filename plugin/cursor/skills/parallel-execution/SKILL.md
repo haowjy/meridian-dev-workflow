@@ -35,7 +35,7 @@ Each parallel branch gets its own worktree and dev stack; sequential phases run 
 At each convergence point:
 
 1. Verify each branch in its own worktree (parallel).
-2. Merge branches back: hand the whole convergence to one `@coder`, briefed
+2. Merge branches back: hand the whole convergence to one `coder`, briefed
    per `/meridian-dev-workflow:dev-workflow` Merges and Rebases, and have it merge the branches one
    after another.
 If the coder reports a failed integration check, isolate which branch interaction caused it before re-spawning.

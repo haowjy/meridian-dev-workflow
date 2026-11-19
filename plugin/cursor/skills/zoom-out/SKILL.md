@@ -15,8 +15,8 @@ Then return to the task with that picture.
 Start with the docs, and read them yourself: the `AGENTS.md` and
 `.context/` files along the path, the KB pages on the subject, the
 project's vocabulary. In an area too large to search yourself, have
-`@explorer`s find what's related first, then read what they point to.
-Spawn `@session-miner` when no doc says why the area is shaped this way.
+`explorer`s find what's related first, then read what they point to.
+Spawn `session-miner` when no doc says why the area is shaped this way.
 
 Write the picture down as one map, not a stack of reports:
 

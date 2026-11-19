@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.21.1] - 2026-11-19
+
 ### Changed
 - Agents are named in backticks without `@` (`explorer`, not `@explorer`): in Claude Code a bare `@path` in a skill or AGENTS.md loads that file. Bundles meridian-base 0.18.1.
 

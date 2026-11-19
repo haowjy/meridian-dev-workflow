@@ -14,7 +14,7 @@ the agent to the mistake, and change that.
 
 Start from the correction the human gave or the mistake they name. Read the
 session where it happened: what the agent read, what it was told, what it
-did (`@session-miner` finds the passages; read them yourself). When the
+did (`session-miner` finds the passages; read them yourself). When the
 human asks for a sweep, look for the same mistake in recent sessions,
 reverts and review comments.
 

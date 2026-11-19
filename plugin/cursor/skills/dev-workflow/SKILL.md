@@ -18,7 +18,7 @@ what it adds or moves, and the refactors in the existing code that would
 shrink it. Put those refactors first: found now, a simpler structure is a
 refactor; after the code exists, it's a rewrite. When the plan adds a
 module, contract or data format that other code will depend on, have a
-`@reviewer` review it against the code it lands in.
+`reviewer` review it against the code it lands in.
 
 Then run `/meridian-dev-workflow:pre-dev` before the first source edit.
 
@@ -61,14 +61,14 @@ Once the whole feature is built, staff its review per `/meridian-dev-workflow:ag
 
 ## Merges and Rebases
 
-Hand every merge and rebase to `@coder` with `/meridian-dev-workflow:merge-prep` attached. Skim
+Hand every merge and rebase to `coder` with `/meridian-dev-workflow:merge-prep` attached. Skim
 the PRs being merged in and tell the coder what matters from each side and
 where they could overlap: `/meridian-dev-workflow:merge-prep` has it read the sources, and your
 brief tells it what to look for.
 
 ## Knowledge Capture
 
-`/meridian-dev-workflow:post-dev` captures knowledge when the change settles. Spawn `@kb-lead`
+`/meridian-dev-workflow:post-dev` captures knowledge when the change settles. Spawn `kb-lead`
 earlier when a decision has settled and the work will pause across
 sessions.
 

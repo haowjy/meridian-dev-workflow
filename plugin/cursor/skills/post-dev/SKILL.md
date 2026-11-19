@@ -15,7 +15,7 @@ Run this when implementation is done, before the PR is ready for review.
   images link to the commit that last touched them, taken after the push
   (`git log -1 --format=%H -- <file>`), not to a branch, where the file can
   later move. The PR follows the project's label and title rules. A
-  `@cold-reader` has read the body, with the PR's reviewer as its reader,
+  `cold-reader` has read the body, with the PR's reviewer as its reader,
   and the `docs/`, `AGENTS.md` and `.context/` prose the branch added or
   rewrote: one reader for all of them (`/meridian-dev-workflow:llm-writing`
   `resources/cold-read.md`). Its valid findings are fixed.
@@ -28,7 +28,7 @@ Run this when implementation is done, before the PR is ready for review.
 - **Deferred work** from the conversation, the touched files and the review
   findings is recorded per `/meridian-dev-workflow:issues`, and every `TODO` comment added or
   touched has an entry.
-- **Knowledge.** `@kb-lead` is spawned after the review fixes land, briefed
+- **Knowledge.** `kb-lead` is spawned after the review fixes land, briefed
   as its description asks. Colocated
   `AGENTS.md` and `.context/` updates pass `/meridian-dev-workflow:qi-maintenance`'s gap test and
   are on the branch.
