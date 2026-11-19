@@ -59,8 +59,8 @@ terminal at those states as text, with color codes when color carries
 meaning: a CLI's output with color forced on, a TUI's screen from whatever
 multiplexer or recorder the machine has (with tmux, `capture-pane -p -e`).
 Text is exact, and you read it more reliably than an image of it. Look at
-each capture and screenshot yourself before you report it. Save them in the active work
-directory and cite their paths. Keep raw captures (traces, HARs, profiles,
+each capture and screenshot yourself before you report it. Save them, and
+any video, in the active work directory and cite their paths. Keep raw captures (traces, HARs, profiles,
 browser data, dumps) out of the work directory; save the excerpt that shows
 the finding.
 

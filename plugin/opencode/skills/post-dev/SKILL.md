@@ -10,10 +10,8 @@ metadata:
 Run this when implementation is done, before the PR is ready for review.
 
 - **PR body.** `pr-body-<slug>.md` from `/meridian-dev-workflow:pre-dev` has every template section
-  filled, with the before-state evidence and what the work added. Evidence
-  images link to the commit that last touched them, taken after the push
-  (`git log -1 --format=%H -- <file>`), not to a branch, where the file can
-  later move. The PR follows the project's label and title rules. A
+  filled, with the before-state evidence and what the work added. The PR
+  follows the project's label and title rules. A
   `cold-reader` has read the body, with the PR's reviewer as its reader,
   and the `docs/`, `AGENTS.md` and `.context/` prose the branch added or
   rewrote: one reader for all of them (`/meridian-dev-workflow:llm-writing`

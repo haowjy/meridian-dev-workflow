@@ -30,7 +30,6 @@ behaves now, before timings), so the fixing PR starts from them. Without
 either, use `resources/issue-template.md`. Delete a section only when it
 can't apply.
 
-`gh` can't attach images: commit each to a repo (the project's assets
-folder, or the work directory's repo) and link it at that commit, since a
-branch link breaks when the file moves. Leave out spawn and chat IDs and
-local paths, which mean nothing outside your session.
+Attach screenshots and videos with `gh issue create --attach`, as a PR does
+(`/meridian-dev-workflow:dev-workflow` `resources/ship.md`); never commit them. Leave out spawn
+and chat IDs and local paths, which mean nothing outside your session.
