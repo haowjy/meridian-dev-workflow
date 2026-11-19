@@ -37,8 +37,8 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
   the open issues were searched first; the body follows the repo's issue
   template, else the PR template's before-fix sections, else
   `resources/issue-template.md`; a bug has repro steps with expected and
-  actual and the commit; anything visible has a screenshot linked at a
-  commit; slowness has numbers with what they ran on; no spawn IDs or local
+  actual and the commit; anything visible has a screenshot attached with
+  `gh --attach`; slowness has numbers with what they ran on; no spawn IDs or local
   paths. In meridian-flow, the fixing PR's Why and Examples start from the
   issue's.
 - **Calls under an unclear brief are reported, not asked (`/dev-workflow`
@@ -96,3 +96,12 @@ plugin for Claude Code, Codex, Cursor and OpenCode.
   instead of probing again; the full suite runs on the commit sent to
   review and the commit shipped, and a review fix reruns only its tests;
   `/post-dev` catches user docs the change made stale.
+- **PR media goes up with `gh --attach` (`/agent-browser`, `/dev-workflow`
+  ship).** On the next PR with visible changes: screenshots, plus one short
+  video of the main flow from the browser run that showed it works, are
+  referenced from the draft by path and uploaded with `--attach`; nothing
+  is committed; the agent checked the contact sheet for secrets. Watch for
+  a run that records many videos where stills would do, for scraping or
+  design-reference runs that record at all, for a body still pointing at a
+  local path after a failed upload, and for a repo whose own template says
+  to commit media: the repo's rule wins until its owner changes it.

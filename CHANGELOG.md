@@ -4,6 +4,15 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/agent-browser`: capture guidance. Stills carry the evidence; a run that shows a change works records one short video of its main flow, and more for sequences, timing and motion, paired with stills agents can read; `record start`/`record stop`, `--cursor`, `--contact-sheet`, secrets check.
+- `/dev-workflow` ship: screenshots and videos go up with `gh pr create|edit --attach`, referenced from the draft by path; never committed.
+
+### Changed
+- `/pre-dev`: before-state evidence can include a short video; files sit beside the draft until the PR opens.
+- `/post-dev`, `/issues`: drop commit-linked evidence images; `/issues` attaches with `gh issue create --attach`.
+- `/probe`: videos saved in the work directory with the screenshots.
+
 ## [0.21.1] - 2026-11-19
 
 ### Changed

@@ -11,6 +11,15 @@ draft, without asking. Pass the PR body draft from `/pre-dev`
 as `tools/ci/check-pr-body.mjs`, run it on the body first. Follow the
 project's conventions for when PRs open and how they are labelled.
 
+Screenshots and videos go up with the PR, never into a commit. Reference
+each in the draft by its path relative to the draft
+(`![Before: the empty state](shots/before.png)`) and pass the file with
+`--attach` on `gh pr create` or `gh pr edit`: `gh` uploads it and rewrites
+the reference to the upload. When an upload fails, `gh` still opens or
+updates the PR and exits non-zero; attach the missing file again with
+`gh pr edit --attach`. Uploads can't be deleted, and on a public repo anyone
+with the link can open them.
+
 ## Branch Cleanup
 
 Clean up everything a branch's work claimed the moment it merges anywhere —

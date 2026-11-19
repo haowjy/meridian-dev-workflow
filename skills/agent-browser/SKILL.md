@@ -50,8 +50,11 @@ agent-browser snapshot              # full tree (omit -i)
 agent-browser eval "document.title"
 
 # capture
-agent-browser screenshot out.png    # --full for full-page
+agent-browser screenshot out.png    # --full for full-page, --annotate to label a finding
 agent-browser pdf out.pdf
+agent-browser record start out.mp4  # records the open page; --cursor, --contact-sheet
+agent-browser click @e3             # ...the actions to show...
+agent-browser record stop           # saves the file (needs ffmpeg; `doctor` checks)
 
 # diagnose
 agent-browser console               # console messages
@@ -63,6 +66,25 @@ agent-browser vitals                # performance
 # wait
 agent-browser wait --load networkidle
 ```
+
+## Capturing evidence
+
+Screenshot the state your report cites. Stills carry the evidence: they
+show layout, text, and before/after pairs faster than a video. A run that
+shows a change works also records one short video of its main flow, so the
+person reviewing it sees the change in use. Record more when the evidence
+is the sequence or the motion: a flow that breaks partway, flicker or
+timing, an animation, a hover state that vanishes, drag-and-drop, streaming
+text. A video is for a human; you and other agents read the stills, so pair
+each video with screenshots of its key states.
+
+Start the recording on the page you already have open, just before the
+action that matters, and stop once the result is on screen; keep it short.
+`--cursor` draws the pointer so clicks and drags show, and
+`--contact-sheet` saves a timestamped strip of the visual changes, which is
+how you check a video's content. `agent-browser record --help` has the rest.
+Check captures for secrets before they leave the machine: stills and video
+catch autofilled fields and tokens in the URL bar.
 
 ## Sessions are shared
 

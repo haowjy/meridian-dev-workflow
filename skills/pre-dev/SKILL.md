@@ -22,7 +22,11 @@ Run this before implementation starts, while the before-state still exists.
   template, so this draft is the only way the template reaches the PR.
 - **Before-state evidence.** Capture into the draft what the change will
   alter: screenshots of the current rendering, current output, failure text,
-  timings. Delegate to a browser or probe agent what you can't take yourself. Once the change lands, recovering "before" costs a stack swap and
-  a rebuilt fixture.
+  timings, and a short video where the change is in the motion
+  (`/agent-browser`, Capturing evidence). Save the files beside the draft
+  and reference them from it by path; they go up with the PR when it opens.
+  Delegate to a browser or probe agent what you can't take yourself. Once
+  the change lands, recovering "before" costs a stack swap and a rebuilt
+  fixture.
 - **Several repos.** Set up a checkout for each, and note the order they
   must land in.
