@@ -1,6 +1,6 @@
 ---
 name: architecture-map
-description: 'Load when building or reshaping a codebase''s architecture map: the atlas of what runs, how the code is layered, what a person does and sees, the state machines and the dependency rules, with its arrows held to the code and kept current in the same commit as the change.'
+description: 'Load when building or reshaping a codebase''s architecture map: which views of a system to draw (where it runs, code, data, a request''s path, lifecycles, boundaries, limits, journeys), what goes on each, examples by kind of system, with its arrows held to the code and kept current in the same commit as the change.'
 metadata:
   type: reference
 alwaysApply: false
@@ -13,11 +13,39 @@ a codebase, and `/meridian-dev-workflow:atlas` holds how to draw its pages, buil
 true. This skill holds what a codebase's map shows and how its arrows are
 held to the code.
 
+## Choose the Views
+
+A system has several architectures at once, and one diagram can show only
+one of them. Each view below answers a different question. Draw the first
+two for any codebase; add another when the system has something a reader
+would get wrong without it.
+
+| View | The question it answers | Frames and boxes |
+|---|---|---|
+| **Where it runs** | What processes and stores exist, and what runs in each? | A frame for each place code runs or data rests (browser, server, a per-item worker, database, object store); the modules inside; outside services unframed |
+| **Code** | What depends on what? | Apps and packages as layers; arrows mean "uses" |
+| **Data** | What is recorded, and what owns what? | The records and how they nest; a frame for each store when there are several |
+| **A request's path** | What happens, in order, when someone does the main thing? | The numbered arrows on the System page, and a flow per journey |
+| **Lifecycles** | What states can this be in, and what moves it? | One state machine per thing that has states |
+| **Boundaries** | What can read or reach what, and where do secrets sit? | A frame for each zone of trust; arrows only where something may cross |
+| **Limits** | What bounds cost, load or time, and what happens at the bound? | The budget or quota, what draws on it, what stops when it runs out |
+| **Journeys** | What does a person do and see? | Steps, each with its screen |
+
+`resources/views.md` says, for each view, what to put on the page, what its
+arrows mean and what to leave off. `resources/systems.md` gives examples of
+systems (a web app with workers, an agent system, a data pipeline, a
+library, an event-driven backend, a client that syncs) with the views each
+needs and the frames its "where it runs" page uses.
+
+The System page is the "where it runs" view: frame it by where each part
+runs, not by team or folder, and name a frame for its role ("Actor host"),
+with today's vendor in the box's text. A frame is a Mermaid `subgraph`.
+
 ## What the Map Holds
 
-- **System**: what runs (services, stores, external services), with the
-  path of one request or job numbered from start to end, and the
-  credentials each box holds under `Keys`.
+- **System**: what runs (services, stores, external services), framed by
+  where each part runs, with the path of one request or job numbered from
+  start to end, and the credentials each box holds under `Keys`.
 - **Code**: the apps and packages as layers. Its arrows mean "uses".
 - **A page for each service and package**, opened from its box, down to the
   domains and features inside it. A page's parent is the page whose box

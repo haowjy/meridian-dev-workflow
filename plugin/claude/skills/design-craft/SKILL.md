@@ -30,6 +30,15 @@ keep one only when the brand or the content calls for it: cream or beige
 page backgrounds, side-stripe borders, gradient text, purple gradients, and
 glassmorphism. Several together mean the design drifted from the brief.
 
+## Hold the Layout Still
+
+Nothing that opens, closes or appears may resize or move what is around it:
+a person loses their place when the thing they are reading shifts because
+something else opened. Content that expands (a menu, a description, a
+detail, a notice) opens over what is already there. A region changes size
+only when that is its job: a split the person drags, a sidebar they open or
+hide. The cases are in `resources/layout.md`.
+
 ## Visual Decisions
 
 Open the resource for the decision in front of you:
@@ -38,7 +47,7 @@ Open the resource for the decision in front of you:
   for a new identity.
 - `resources/typography.md`: type scale, pairing, line length, wrapping.
 - `resources/layout.md`: spacing, cards, z-index, dropdowns that escape
-  clipping.
+  clipping, what may change size.
 - `resources/motion/README.md`: any animation or transition, including
   animation that tells a story (a scroll film, an explainer, a scene where
   characters act) and pages that play like a film as the visitor scrolls.

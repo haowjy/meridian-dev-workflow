@@ -28,7 +28,7 @@ const DATA = {
     {
       "directory": "architecture-map",
       "name": "architecture-map",
-      "description": "Load when building or reshaping a codebase's architecture map: the atlas of what runs, how the code is layered, what a person does and sees, the state machines and the dependency rules, with its arrows held to the code and kept current in the same commit as the change."
+      "description": "Load when building or reshaping a codebase's architecture map: which views of a system to draw (where it runs, code, data, a request's path, lifecycles, boundaries, limits, journeys), what goes on each, examples by kind of system, with its arrows held to the code and kept current in the same commit as the change."
     },
     {
       "directory": "atlas",

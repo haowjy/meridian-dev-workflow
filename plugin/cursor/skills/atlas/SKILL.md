@@ -25,14 +25,27 @@ rest of this skill is for building an atlas.
   or a child page.
 - **A name and a one-line role on every box**, in the reader's words, so the
   diagram reads without the panel.
+- **A labelled Mermaid `subgraph` is a frame around a real boundary or collection of boxes**:
+  write `subgraph id["Label"]`, put the existing boxes inside, and close with `end`.
+  The viewer lays its members out as a block, keeps unrelated boxes outside, and follows the members
+  when they move. A frame is not a clickable box and needs no section. Use frames to clarify structure,
+  never as decoration.
+- **The automatic layout suits most pages; when one reads badly, place its boxes yourself.** Drag
+  them in the viewer, open Legend and press "Copy box positions", and paste the lines into the page's
+  Mermaid block (`%% at <box id> <x> <y>`). Put what flows in on one side, what flows out on the other,
+  and the box everything meets in the middle, so the arrows are short.
 - **Arrows say what flows or binds**, in a few words ("claims the run", "owes
   a debt to"). Where a page has a main path (a request, a scan, a plot
   line), number its arrows in order; the rest are side paths.
 - **A part with parts of its own opens its own page.** The index lists the
   top-level pages side by side; anything else is reached by clicking the box
   that holds it, so no part gets a section of the index to itself.
+- **A level page may begin with `- View: <kind>`** before its Mermaid block; the viewer shows that
+  descriptive value beside the page title.
 - **A box's section** starts with one sentence, which the panel shows; the
-  rest of the section and of the page is the depth, for whoever opens it.
+  rest of the section and of the page is the depth, for whoever opens it. A box
+  that opens a child page is drawn as a stacked card; do not add a glyph to its
+  Mermaid label.
 - **Images**: crop a screenshot or illustration to what the box covers, and
   let the engine spotlight the region. The explanation goes in the page, not
   on the image.
