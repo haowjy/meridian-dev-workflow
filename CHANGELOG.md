@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `/architecture-map`: choose views by the question a reader has. Eight views, each with what its boxes and arrows mean (`resources/views.md`); system page framed by where each part runs, with examples (`resources/systems.md`).
+- `/design-craft`: hold the layout still. Nothing that opens, closes or appears resizes or moves its neighbours; expanding content overlays; only dragged splits and sidebars resize. Toolbar controls known on sight are icons with tooltip and accessible name. Stability checks in `resources/checks.md`.
+
 ## [0.21.2] - 2026-11-19
 
 ### Added

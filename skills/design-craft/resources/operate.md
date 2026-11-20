@@ -8,6 +8,11 @@ display type where labels belong, motion that delays work.
 
 - Use the platform's standard controls and navigation: buttons, inputs,
   selects, tabs, sortable tables, a labelled sidebar. Identity lives in type, colour, density, and one or two signature moves, never in the layout model or the controls.
+- A toolbar is short on room. A control people know on sight (switch theme,
+  show or hide a sidebar, close) is one icon with a tooltip and an accessible
+  name, not a text button. A mark the product invented (an arrow that means
+  "opens a page") is not known on sight: label it or use the standard
+  affordance.
 - Show numbers as type, not as a row of identical tiles with icon squares;
   a tile row earns its place only when each number is checked at a glance.
 - Keep most of the screen neutral and spend colour on meaning: state,

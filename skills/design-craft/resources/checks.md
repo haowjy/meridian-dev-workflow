@@ -1,6 +1,6 @@
 # Checking a Rendered Page
 
-Run both checks on the rendered page before you ship it, and
+Run these checks on the rendered page before you ship it, and
 again after a fix that changes what renders. Each finding is a question: fix
 it, or keep it and say why. To see what a visual fix changed, take a
 screenshot before it and compare after:
@@ -70,6 +70,16 @@ To scan a page behind a login, sign in with `/agent-browser`, then attach to
 that browser: `agent-browser get cdp-url` gives the port, and
 `npx -y impeccable@4 detect --json --cdp <port> --target <url substring>`
 scans the open page.
+
+## Stability
+
+Open and close each thing on the page that opens (a menu, a disclosure, a
+panel, a notice) and select or hover what can be selected, watching the
+regions beside it. Compare a screenshot before and after:
+`agent-browser diff screenshot --baseline before.png`. A neighbour that
+moved or changed size is a fault unless the person resized it on purpose (a
+dragged split, a sidebar they toggled); `resources/layout.md` says how to fix
+it.
 
 ## Motion
 
