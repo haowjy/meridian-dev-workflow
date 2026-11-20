@@ -4,6 +4,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `/parallel-execution`: make `resources/worktrees.md` tool-agnostic and split tool mechanics into `resources/worktrees-wt.md` and `resources/worktrees-git.md` (1 hop from `SKILL.md`).
+- `/architecture-map`, `/information-architecture`, `/design-craft`: trim >300-char skill descriptions for Codex's description budget, and link `db-schema-alternatives.md`, `motion/directing.md`, and `motion/cinematic-scroll.md` directly from `SKILL.md`.
+
 ## [0.21.3] - 2026-11-20
 
 ### Added

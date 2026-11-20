@@ -1,6 +1,6 @@
 ---
 name: architecture-map
-description: "Load when building or reshaping a codebase's architecture map: which views of a system to draw (where it runs, code, data, a request's path, lifecycles, boundaries, limits, journeys), what goes on each, examples by kind of system, with its arrows held to the code and kept current in the same commit as the change."
+description: "Load when building or reshaping a codebase's architecture map: choosing views (where it runs, code, data, request path, lifecycles, boundaries, limits, journeys), holding arrows to code, and keeping maps current."
 model-invocable: true
 user-invocable: true
 metadata:
@@ -98,4 +98,4 @@ Write these rules into the map's `README.md` and the project's `AGENTS.md`:
 - The check passing is not the test: read the boxes you touched and ask
   whether their words, arrows and `Keys` are still true at run time.
 
-To draw a database's tables, open `resources/db-schema.md`.
+To draw a database's tables, open `resources/db-schema.md` (or `resources/db-schema-alternatives.md` if `mermerd` isn't available).

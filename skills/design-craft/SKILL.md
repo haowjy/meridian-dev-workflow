@@ -49,9 +49,10 @@ Open the resource for the decision in front of you:
 - `resources/typography.md`: type scale, pairing, line length, wrapping.
 - `resources/layout.md`: spacing, cards, z-index, dropdowns that escape
   clipping, what may change size.
-- `resources/motion/README.md`: any animation or transition, including
-  animation that tells a story (a scroll film, an explainer, a scene where
-  characters act) and pages that play like a film as the visitor scrolls.
+- `resources/motion/README.md`: any animation or transition; also open
+  `resources/motion/directing.md` for animation that tells a story (explainer,
+  character scene) and `resources/motion/cinematic-scroll.md` for pages that
+  play like a film as the visitor scrolls.
 
 ## Words on Screen
 
