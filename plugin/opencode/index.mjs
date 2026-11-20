@@ -28,7 +28,7 @@ const DATA = {
     {
       "directory": "architecture-map",
       "name": "architecture-map",
-      "description": "Load when building or reshaping a codebase's architecture map: which views of a system to draw (where it runs, code, data, a request's path, lifecycles, boundaries, limits, journeys), what goes on each, examples by kind of system, with its arrows held to the code and kept current in the same commit as the change."
+      "description": "Load when building or reshaping a codebase's architecture map: choosing views (where it runs, code, data, request path, lifecycles, boundaries, limits, journeys), holding arrows to code, and keeping maps current."
     },
     {
       "directory": "atlas",
@@ -83,7 +83,7 @@ const DATA = {
     {
       "directory": "information-architecture",
       "name": "information-architecture",
-      "description": "Load before the first mockup of a new product, area or redesign whose structure isn't settled, and when reviewing what a screen opens with and what sits behind a click: works out what the product's things are, how they nest and where each opens, then draws grey-box wireframes for the human to react to before anything is styled."
+      "description": "Load before the first mockup of an unsettled product, area, or redesign, or when reviewing what opens upfront vs. behind a click: defines the domain things, nesting, and frame, then draws grey-box wireframes before styling."
     },
     {
       "directory": "intent-modeling",

@@ -27,7 +27,7 @@ Update the written DAG when the shape changes: review findings, failed merges, a
 
 ## Execute with Worktrees
 
-Each parallel branch gets its own worktree and dev stack; sequential phases run on the current worktree. Set them up per `resources/worktrees.md`, which also covers lanes that run long.
+Each parallel branch gets its own worktree and dev stack; sequential phases run on the current worktree. Set them up per `resources/worktrees.md` (which also covers lanes that run long). For tool commands, open `resources/worktrees-wt.md` when using worktrunk (`wt`) or `resources/worktrees-git.md` when using plain `git worktree`.
 
 ## Merge and Verify
 
