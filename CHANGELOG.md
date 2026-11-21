@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Plugin bundles meridian-base 0.18.3: atlas, llm-writing, qi-layer, knowledge-layers, explorer, kb-maintainer wording.
+
 ## [0.21.4] - 2026-11-20
 
 ### Changed

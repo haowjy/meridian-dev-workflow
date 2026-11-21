@@ -1,6 +1,6 @@
 ---
 name: atlas
-description: 'Load when the human wants a map they click down through, of anything with parts and relationships (a codebase, a design not built yet, a story''s cast): Markdown pages with one Mermaid diagram each, and the viewer and check this skill carries. Its `resources/diagrams.md` holds diagram craft for any page.'
+description: 'Load when the human wants a clickable top-down map of parts and relationships (codebase, design, story cast): Markdown pages with one Mermaid diagram each, viewer, and check. Its `resources/diagrams.md` holds diagram craft for any page.'
 metadata:
   type: reference
 ---
@@ -53,13 +53,10 @@ rest of this skill is for building an atlas.
 
 Copy `assets/atlas/` into the project as `tools/atlas/`, unchanged, and
 follow its `README.md`, which holds the page format, the config and what the
-check catches; `example/` is a working toy. A change to the engine goes to
-this skill's source in meridian-base, not to `.mars/` or the project's copy:
-sync rewrites `.mars/`, and the check fails when the copy differs from it.
-To move a project's own older copy (such as `tools/architecture-map/`),
-replace it with this one, update every reference to it (scripts, the dev
-server's plugin, the viewer's URL, docs), and rewrite the project's rule for
-where engine changes go.
+check catches; `example/` is a working toy. To move a project's own older
+copy (such as `tools/architecture-map/`), replace it with this one, update
+every reference to it (scripts, the dev server's plugin, the viewer's URL,
+docs), and rewrite the project's rule for where engine changes go.
 
 Serve it (`node tools/atlas/serve.mjs <config>`) and look at every page in a
 browser, at desktop and phone width: a label that collides, a page whose
@@ -75,4 +72,5 @@ the code; it is a tripwire, not a proof. Whether each word and arrow is
 still true is yours to read.
 
 For craft the page format leaves to you (framing a large diagram, labels,
-keyboard access), open `resources/diagrams.md`.
+keyboard access), open `resources/diagrams.md`. For connected custom React
+components or an explorable node graph, open `resources/react-flow.md`.
