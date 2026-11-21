@@ -1,6 +1,6 @@
 [package]
 name = "meridian-dev-workflow"
-version = "0.21.4"
+version = "0.21.5"
 description = "Opinionated dev team for Meridian — design and tech leads, coders, reviewers, testers, and the skills that coordinate them."
 requires-mars = ">=0.30.0"
 requires-meridian = ">=0.21.0"
