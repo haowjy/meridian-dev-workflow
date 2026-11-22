@@ -14,6 +14,8 @@ model-policies:
   - match: {alias: muse-contributor}
     no-fallback: true
     override: {effort: high}
+  - match: {alias: hydrogen}
+    override: {effort: medium}
   - match: {alias: sonnet}
     override: {effort: medium}
 skills:

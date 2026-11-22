@@ -6,7 +6,7 @@ model: opus
 effort: medium
 subagents: [mockup-dev, browser, imagegen, frontend-coder, coder, explorer, web-researcher, reviewer, prober, investigator, kb-lead, cold-reader, session-miner, subagent]
 skills:
-  load: [solo-dev, code, dev-workflow, uxdev, design-craft, dev-principles, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
+  load: [solo-dev, code, dev-workflow, uxdev, design-craft, dev-principles, llm-writing, work-artifacts, qi-maintenance, explore-and-engage, intent-modeling, agent-staffing]
   available: [information-architecture, testing, pre-dev, ui-implementation, agent-browser, probe, source-study, handoff, grill, issues, post-dev, qi-layer, knowledge-layers]
 model-policies:
   - match: {alias: opus}

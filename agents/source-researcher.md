@@ -11,6 +11,8 @@ model-policies:
     override: {effort: high}
   - match: {alias: sol}
     override: {effort: medium}
+  - match: {alias: hydrogen}
+    override: {effort: medium}
   - match: {alias: sonnet}
     override: {effort: medium}
 subagents: [explorer, web-researcher, subagent]
