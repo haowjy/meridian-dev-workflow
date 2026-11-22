@@ -1,9 +1,9 @@
 ---
 name: solo-dev
 description: 'Load when you implement and verify a change yourself, in one session, instead of delegating it: what you do yourself and what still goes to a spawn.'
-disable-model-invocation: true
 metadata:
   type: reference
+disable-model-invocation: true
 ---
 
 # Solo Dev

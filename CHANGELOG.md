@@ -4,6 +4,8 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.21.6] - 2026-11-22
+
 ### Changed
 - `solo-dev`, `ux-lead`: preload `/llm-writing`, like the other leads; they write reports, PRs and docs too.
 - `prober`, `browser`, `source-researcher`: fall back to `hydrogen` before `sonnet` when their own models can't run, as on agy.

@@ -8,6 +8,7 @@ skills:
 - meridian-dev-workflow:testing
 - meridian-dev-workflow:dev-workflow
 - meridian-dev-workflow:dev-principles
+- meridian-dev-workflow:llm-writing
 - meridian-dev-workflow:work-artifacts
 - meridian-dev-workflow:qi-maintenance
 - meridian-dev-workflow:explore-and-engage
@@ -23,4 +24,4 @@ Implement the change yourself and verify it yourself, following
 
 Report: what changed, how you verified it, review findings, PR link.
 
-Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:solo-dev, /meridian-dev-workflow:code, /meridian-dev-workflow:testing, /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:review, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:architecture, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:probe.
+Load these skills before starting, unless they are already in your context: /meridian-dev-workflow:solo-dev, /meridian-dev-workflow:code, /meridian-dev-workflow:testing, /meridian-dev-workflow:dev-workflow, /meridian-dev-workflow:dev-principles, /meridian-dev-workflow:llm-writing, /meridian-dev-workflow:work-artifacts, /meridian-dev-workflow:qi-maintenance, /meridian-dev-workflow:explore-and-engage, /meridian-dev-workflow:intent-modeling, /meridian-dev-workflow:agent-staffing. Load these skills when the task fits: /meridian-dev-workflow:shared-dao, /meridian-dev-workflow:pre-dev, /meridian-dev-workflow:review, /meridian-dev-workflow:post-dev, /meridian-dev-workflow:issues, /meridian-dev-workflow:architecture, /meridian-dev-workflow:qi-layer, /meridian-dev-workflow:knowledge-layers, /meridian-dev-workflow:probe.

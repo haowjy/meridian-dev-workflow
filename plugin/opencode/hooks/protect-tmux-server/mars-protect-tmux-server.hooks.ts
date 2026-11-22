@@ -79,6 +79,7 @@ function claudeTool(native: string, input: any, cwd: string): { name: string; in
 }
 
 // Claude's matcher rule: exact (`|` or `,` list) for plain names, else an unanchored regex.
+// (The Rust runner's regex has no look-around: hook-vectors.json holds only what both agree on.)
 function matcherAccepts(pattern: string | null | undefined, value: string): boolean {
   if (pattern == null || pattern === "" || pattern === "*") return true;
   if (/^[A-Za-z0-9_ ,|-]+$/.test(pattern)) {
@@ -214,8 +215,10 @@ function readAnswer(event: string, stdout: string): Outcome | null {
   return answer;
 }
 
-async function runHandler(event: string, handler: any, stdin: string, cwd: string): Promise<Outcome | null> {
-  const run = await runCommand(handler, stdin, cwd);
+// What one finished command means: exit 0 parses stdout, exit 2 blocks (on an event that can),
+// any other end is ignored unless the handler asks `onFailure = "block"`. The Rust runner
+// (`src/hook_run/logic.rs`) ports this; hook-vectors.json pins the two together.
+function decide(event: string, handler: any, run: Run): Outcome | null {
   const blocking = BLOCKING.has(event);
   if (!run.ok || (run.status !== 0 && run.status !== 2)) {
     if (!blocking || handler.onFailure !== "block") return null;
@@ -226,6 +229,10 @@ async function runHandler(event: string, handler: any, stdin: string, cwd: strin
     return blocking ? { block: run.stderr.trim() || `Blocked by hook ${HOOK.name}` } : null;
   }
   return readAnswer(event, run.stdout);
+}
+
+async function runHandler(event: string, handler: any, stdin: string, cwd: string, run = runCommand): Promise<Outcome | null> {
+  return decide(event, handler, await run(handler, stdin, cwd));
 }
 
 type Moment = {
@@ -240,7 +247,8 @@ type Moment = {
 
 // Runs the event's matching handlers in order. The first block (or deny) wins over any allow; the context
 // of every handler before it is joined. A handler marked `async` runs without being awaited.
-async function fire(event: string, moment: Moment): Promise<Outcome> {
+// `run` is runCommand, except where hook-vectors.json scripts it.
+async function fire(event: string, moment: Moment, run = runCommand): Promise<Outcome> {
   const stdin = JSON.stringify({
     session_id: moment.sessionId,
     cwd: moment.cwd,
@@ -254,10 +262,10 @@ async function fire(event: string, moment: Moment): Promise<Outcome> {
     for (const handler of group.handlers) {
       if (handler.if && moment.tool && !conditionHolds(handler.if, moment.tool.name, moment.tool.input)) continue;
       if (handler.async) {
-        void runHandler(event, handler, stdin, moment.cwd);
+        void runHandler(event, handler, stdin, moment.cwd, run);
         continue;
       }
-      const answer = await runHandler(event, handler, stdin, moment.cwd);
+      const answer = await runHandler(event, handler, stdin, moment.cwd, run);
       if (!answer) continue;
       if (answer.context) contexts.push(answer.context);
       if (answer.permission?.behavior === "allow") outcome.permission = answer.permission;

@@ -1,9 +1,9 @@
 ---
 name: correct
 description: 'Use when the human wants a mistake agents keep making fixed. Starts from their correction or the mistake they name, finds what led the agent there, and fixes it where the cause is: the project''s docs, the code, or the prompt''s source; a cause in an installed prompt becomes a note for its owner.'
-disable-model-invocation: true
 metadata:
   type: mode-shift
+disable-model-invocation: true
 argument-hint: The correction or mistake to start from
 ---
 
