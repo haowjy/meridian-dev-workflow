@@ -4,6 +4,9 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- `web-researcher`: falls back to `hydrogen` before `haiku`, so agy can run it.
+
 ## [0.21.6] - 2026-11-22
 
 ### Changed

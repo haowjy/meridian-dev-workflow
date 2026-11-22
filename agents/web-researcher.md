@@ -9,6 +9,8 @@ model-policies:
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
+  - match: {alias: hydrogen}
+    override: {effort: high}
   - match: {alias: haiku}
     override: {effort: high}
 skills:
